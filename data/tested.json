@@ -1,0 +1,2366 @@
+{
+ "discord": "352.6 - Alpha",
+ "base": "dark",
+ "date": "2026-10-30",
+ "semantic": {
+  "ANDROID_NAVIGATION_SCRIM_BACKGROUND": {
+   "screens": {
+    "actionsheet": 65212,
+    "emoji": 68627
+   },
+   "example": "emoji",
+   "image": "images/semantic/ANDROID_NAVIGATION_SCRIM_BACKGROUND.webp"
+  },
+  "APP_FRAME_BORDER": {
+   "screens": {
+    "home": 5504,
+    "server": 9007
+   },
+   "example": "server",
+   "image": "images/semantic/APP_FRAME_BORDER.webp"
+  },
+  "BACKGROUND_BASE_LOW": {
+   "screens": {
+    "inbox": 2165961
+   },
+   "example": "inbox",
+   "image": "images/semantic/BACKGROUND_BASE_LOW.webp"
+  },
+  "BACKGROUND_BASE_LOWER": {
+   "screens": {
+    "chat": 35586,
+    "chatinput": 7252,
+    "emoji": 35332,
+    "forum": 1729266,
+    "home": 71210,
+    "keyboard": 35332,
+    "members": 35287,
+    "server": 71421,
+    "you": 8240
+   },
+   "example": "chat",
+   "image": "images/semantic/BACKGROUND_BASE_LOWER.webp"
+  },
+  "BACKGROUND_BASE_LOWEST": {
+   "screens": {
+    "home": 328000,
+    "inbox": 150,
+    "server": 353881
+   },
+   "example": "server",
+   "image": "images/semantic/BACKGROUND_BASE_LOWEST.webp"
+  },
+  "BACKGROUND_BRAND": {
+   "screens": {
+    "chatinput": 121698,
+    "emoji": 121606,
+    "forum": 2310,
+    "home": 12445,
+    "keyboard": 121606,
+    "search": 2656
+   },
+   "example": "chatinput",
+   "image": "images/semantic/BACKGROUND_BRAND.webp"
+  },
+  "BACKGROUND_CODE": {
+   "screens": {
+    "chat": 8533,
+    "members": 8523
+   },
+   "example": "chat",
+   "image": "images/semantic/BACKGROUND_CODE.webp"
+  },
+  "BACKGROUND_FEEDBACK_NOTIFICATION": {
+   "screens": {
+    "you": 317
+   },
+   "example": "you",
+   "image": "images/semantic/BACKGROUND_FEEDBACK_NOTIFICATION.webp"
+  },
+  "BACKGROUND_MOD_NORMAL": {
+   "screens": {
+    "server": 27154
+   },
+   "example": "server",
+   "image": "images/semantic/BACKGROUND_MOD_NORMAL.webp"
+  },
+  "BACKGROUND_MOD_STRONG": {
+   "screens": {
+    "actionsheet": 994,
+    "chat": 91356,
+    "chatinput": 4388,
+    "emoji": 2194,
+    "home": 21916,
+    "keyboard": 4388,
+    "members": 90356,
+    "search": 23275,
+    "server": 4926
+   },
+   "example": "chat",
+   "image": "images/semantic/BACKGROUND_MOD_STRONG.webp"
+  },
+  "BACKGROUND_MOD_SUBTLE": {
+   "screens": {
+    "search": 20374
+   },
+   "example": "search",
+   "image": "images/semantic/BACKGROUND_MOD_SUBTLE.webp"
+  },
+  "BACKGROUND_SCRIM": {
+   "screens": {
+    "actionsheet": 1035154,
+    "alert": 1793952,
+    "guildsheet": 2093461,
+    "component-buttons": 1142013
+   },
+   "example": "component-buttons",
+   "image": "images/semantic/BACKGROUND_SCRIM.webp"
+  },
+  "BACKGROUND_SURFACE_HIGH": {
+   "screens": {
+    "chat": 172282,
+    "emoji": 62014,
+    "forum": 442309,
+    "home": 124897,
+    "members": 169741,
+    "server": 126293,
+    "you": 62921
+   },
+   "example": "chat",
+   "image": "images/semantic/BACKGROUND_SURFACE_HIGH.webp"
+  },
+  "BACKGROUND_SURFACE_HIGHEST": {
+   "screens": {
+    "guildsheet": 248955
+   },
+   "example": "guildsheet",
+   "image": "images/semantic/BACKGROUND_SURFACE_HIGHEST.webp"
+  },
+  "BORDER_MUTED": {
+   "screens": {
+    "chat": 4836,
+    "chatinput": 684,
+    "emoji": 684,
+    "forum": 5756,
+    "home": 7142,
+    "keyboard": 684,
+    "members": 4836,
+    "plugins": 30325,
+    "server": 3045,
+    "you": 8659
+   },
+   "example": "plugins",
+   "image": "images/semantic/BORDER_MUTED.webp"
+  },
+  "BORDER_NORMAL": {
+   "screens": {
+    "chat": 1031,
+    "members": 1031
+   },
+   "example": "chat",
+   "image": "images/semantic/BORDER_NORMAL.webp"
+  },
+  "BORDER_SUBTLE": {
+   "screens": {
+    "actionsheet": 15282,
+    "alert": 5844,
+    "chat": 5794,
+    "colors": 1124,
+    "emoji": 2160,
+    "forum": 5876,
+    "guildsheet": 11976,
+    "home": 2910,
+    "inbox": 6277,
+    "members": 5794,
+    "search": 17943,
+    "server": 7488,
+    "settings": 25470,
+    "you": 4855
+   },
+   "example": "settings",
+   "image": "images/semantic/BORDER_SUBTLE.webp"
+  },
+  "CARD_MUTED_BG": {
+   "screens": {
+    "actionsheet": 1009224,
+    "colors": 174610,
+    "search": 720999,
+    "settings": 1582288,
+    "you": 558825
+   },
+   "example": "settings",
+   "image": "images/semantic/CARD_MUTED_BG.webp"
+  },
+  "CARD_SECONDARY_BACKGROUND_DEFAULT": {
+   "screens": {
+    "home": 97878
+   },
+   "example": "home",
+   "image": "images/semantic/CARD_SECONDARY_BACKGROUND_DEFAULT.webp"
+  },
+  "CHANNEL_BACKGROUND_DEFAULT": {
+   "screens": {
+    "chat": 1425772,
+    "chatinput": 840459,
+    "emoji": 467095,
+    "keyboard": 674469,
+    "members": 1421083
+   },
+   "example": "chat",
+   "image": "images/semantic/CHANNEL_BACKGROUND_DEFAULT.webp"
+  },
+  "CHANNEL_ICON": {
+   "screens": {
+    "server": 4952
+   },
+   "example": "server",
+   "image": "images/semantic/CHANNEL_ICON.webp"
+  },
+  "CHAT_INPUT_ACTION_BUTTON_ICON_DEFAULT_TINT": {
+   "screens": {
+    "chatinput": 1389,
+    "emoji": 1347,
+    "keyboard": 1367
+   },
+   "example": "chatinput",
+   "image": "images/semantic/CHAT_INPUT_ACTION_BUTTON_ICON_DEFAULT_TINT.webp"
+  },
+  "CHAT_INPUT_ICON_DEFAULT_TINT": {
+   "screens": {
+    "chatinput": 1771,
+    "emoji": 1479,
+    "keyboard": 1746
+   },
+   "example": "chatinput",
+   "image": "images/semantic/CHAT_INPUT_ICON_DEFAULT_TINT.webp"
+  },
+  "CONTROL_OVERLAY_SECONDARY_BACKGROUND_DEFAULT": {
+   "screens": {
+    "home": 5323,
+    "server": 5343,
+    "you": 6136
+   },
+   "example": "server",
+   "image": "images/semantic/CONTROL_OVERLAY_SECONDARY_BACKGROUND_DEFAULT.webp"
+  },
+  "CONTROL_PRIMARY_BACKGROUND_DEFAULT": {
+   "screens": {
+    "alert": 83233,
+    "chat": 71876,
+    "forum": 18152,
+    "home": 5496,
+    "members": 71876,
+    "plugins": 17936,
+    "you": 94692
+   },
+   "example": "plugins",
+   "image": "images/semantic/CONTROL_PRIMARY_BACKGROUND_DEFAULT.webp"
+  },
+  "CONTROL_PRIMARY_BORDER_DEFAULT": {
+   "screens": {
+    "alert": 3732,
+    "chat": 3972,
+    "forum": 932,
+    "home": 516,
+    "members": 3972,
+    "plugins": 932,
+    "you": 4248
+   },
+   "example": "plugins",
+   "image": "images/semantic/CONTROL_PRIMARY_BORDER_DEFAULT.webp"
+  },
+  "CONTROL_PRIMARY_TEXT_DEFAULT": {
+   "screens": {
+    "alert": 828,
+    "chat": 724,
+    "forum": 325,
+    "members": 724,
+    "plugins": 461,
+    "you": 1297
+   },
+   "example": "plugins",
+   "image": "images/semantic/CONTROL_PRIMARY_TEXT_DEFAULT.webp"
+  },
+  "CONTROL_SECONDARY_BACKGROUND_DEFAULT": {
+   "screens": {
+    "alert": 85257,
+    "colors": 4613,
+    "forum": 31965,
+    "home": 61504,
+    "plugins": 4984,
+    "server": 57785,
+    "you": 14617
+   },
+   "example": "plugins",
+   "image": "images/semantic/CONTROL_SECONDARY_BACKGROUND_DEFAULT.webp"
+  },
+  "CONTROL_SECONDARY_BORDER_DEFAULT": {
+   "screens": {
+    "alert": 3720,
+    "colors": 516,
+    "forum": 2272,
+    "home": 4052,
+    "plugins": 528,
+    "server": 3476,
+    "you": 1108,
+    "component-buttons": 7296
+   },
+   "example": "component-buttons",
+   "image": "images/semantic/CONTROL_SECONDARY_BORDER_DEFAULT.webp"
+  },
+  "CONTROL_SECONDARY_TEXT_DEFAULT": {
+   "screens": {
+    "alert": 676,
+    "colors": 844,
+    "forum": 1603,
+    "home": 2759,
+    "plugins": 829,
+    "server": 1627,
+    "you": 4628
+   },
+   "example": "forum",
+   "image": "images/semantic/CONTROL_SECONDARY_TEXT_DEFAULT.webp"
+  },
+  "EMBED_BACKGROUND": {
+   "screens": {
+    "chatinput": 935118,
+    "emoji": 740000,
+    "keyboard": 748279
+   },
+   "example": "chatinput",
+   "image": "images/semantic/EMBED_BACKGROUND.webp"
+  },
+  "ICON_MUTED": {
+   "screens": {
+    "chatinput": 736,
+    "emoji": 862,
+    "forum": 954,
+    "home": 278,
+    "keyboard": 731
+   },
+   "example": "chatinput",
+   "image": "images/semantic/ICON_MUTED.webp"
+  },
+  "ICON_STRONG": {
+   "screens": {
+    "chat": 736,
+    "chatinput": 311,
+    "emoji": 311,
+    "forum": 760,
+    "keyboard": 311,
+    "members": 731
+   },
+   "example": "chat",
+   "image": "images/semantic/ICON_STRONG.webp"
+  },
+  "ICON_SUBTLE": {
+   "screens": {
+    "chat": 706,
+    "chatinput": 728,
+    "emoji": 728,
+    "forum": 706,
+    "keyboard": 728,
+    "members": 728
+   },
+   "example": "chat",
+   "image": "images/semantic/ICON_SUBTLE.webp"
+  },
+  "ICON_VOICE_CONNECTED": {
+   "screens": {
+    "home": 418,
+    "component-activity": 230
+   },
+   "example": "component-activity",
+   "image": "images/semantic/ICON_VOICE_CONNECTED.webp"
+  },
+  "INPUT_BACKGROUND_DEFAULT": {
+   "screens": {
+    "emoji": 97908,
+    "plugins": 83571,
+    "search": 54896,
+    "settings": 96045
+   },
+   "example": "settings",
+   "image": "images/semantic/INPUT_BACKGROUND_DEFAULT.webp"
+  },
+  "INPUT_BORDER_ACTIVE": {
+   "screens": {
+    "search": 3464
+   },
+   "example": "search",
+   "image": "images/semantic/INPUT_BORDER_ACTIVE.webp"
+  },
+  "INPUT_BORDER_DEFAULT": {
+   "screens": {
+    "emoji": 4428,
+    "plugins": 3744,
+    "settings": 4260
+   },
+   "example": "settings",
+   "image": "images/semantic/INPUT_BORDER_DEFAULT.webp"
+  },
+  "INPUT_ICON_DEFAULT": {
+   "screens": {
+    "emoji": 221,
+    "plugins": 209,
+    "settings": 221
+   },
+   "example": "settings",
+   "image": "images/semantic/INPUT_ICON_DEFAULT.webp"
+  },
+  "INPUT_PLACEHOLDER_TEXT_DEFAULT": {
+   "screens": {
+    "emoji": 1559,
+    "plugins": 527,
+    "settings": 555
+   },
+   "example": "settings",
+   "image": "images/semantic/INPUT_PLACEHOLDER_TEXT_DEFAULT.webp"
+  },
+  "INTERACTIVE_BACKGROUND_ACTIVE": {
+   "screens": {
+    "emoji": 3610
+   },
+   "example": "emoji",
+   "image": "images/semantic/INTERACTIVE_BACKGROUND_ACTIVE.webp"
+  },
+  "INTERACTIVE_ICON_DEFAULT": {
+   "screens": {
+    "emoji": 1403,
+    "forum": 612
+   },
+   "example": "emoji",
+   "image": "images/semantic/INTERACTIVE_ICON_DEFAULT.webp"
+  },
+  "INTERACTIVE_TEXT_ACTIVE": {
+   "screens": {
+    "chatinput": 1902,
+    "emoji": 654,
+    "keyboard": 1846,
+    "server": 1722
+   },
+   "example": "chatinput",
+   "image": "images/semantic/INTERACTIVE_TEXT_ACTIVE.webp"
+  },
+  "INTERACTIVE_TEXT_DEFAULT": {
+   "screens": {
+    "actionsheet": 326,
+    "colors": 397,
+    "inbox": 2665,
+    "plugins": 397,
+    "search": 394,
+    "settings": 2121
+   },
+   "example": "settings",
+   "image": "images/semantic/INTERACTIVE_TEXT_DEFAULT.webp"
+  },
+  "MENTION_FOREGROUND": {
+   "screens": {
+    "inbox": 851
+   },
+   "example": "inbox",
+   "image": "images/semantic/MENTION_FOREGROUND.webp"
+  },
+  "MESSAGES_ITEM_CHANNEL_TEXT_DEFAULT": {
+   "screens": {
+    "home": 14465
+   },
+   "example": "home",
+   "image": "images/semantic/MESSAGES_ITEM_CHANNEL_TEXT_DEFAULT.webp"
+  },
+  "MOBILE_ACTIONSHEET_BACKGROUND": {
+   "screens": {
+    "colors": 2319390,
+    "plugins": 769126,
+    "search": 974261,
+    "settings": 811818
+   },
+   "example": "settings",
+   "image": "images/semantic/MOBILE_ACTIONSHEET_BACKGROUND.webp"
+  },
+  "MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT": {
+   "screens": {
+    "actionsheet": 335746
+   },
+   "example": "actionsheet",
+   "image": "images/semantic/MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT.webp"
+  },
+  "MOBILE_ALERT_BACKGROUND_DEFAULT": {
+   "screens": {
+    "alert": 365981
+   },
+   "example": "alert",
+   "image": "images/semantic/MOBILE_ALERT_BACKGROUND_DEFAULT.webp"
+  },
+  "MOBILE_CHAT_NEW_MESSAGE_BORDER": {
+   "screens": {
+    "chatinput": 743,
+    "keyboard": 743,
+    "chat-unread-preview": 743
+   },
+   "example": "chat-unread-preview",
+   "image": "images/semantic/MOBILE_CHAT_NEW_MESSAGE_BORDER.webp"
+  },
+  "MOBILE_CHAT_NEW_MESSAGE_TEXT": {
+   "screens": {
+    "chatinput": 1652,
+    "keyboard": 1652,
+    "chat-unread-preview": 1698
+   },
+   "example": "chat-unread-preview",
+   "image": "images/semantic/MOBILE_CHAT_NEW_MESSAGE_TEXT.webp"
+  },
+  "MOBILE_CHATINPUT_BACKGROUND_ACTIVE": {
+   "screens": {
+    "keyboard": 135462
+   },
+   "example": "keyboard",
+   "image": "images/semantic/MOBILE_CHATINPUT_BACKGROUND_ACTIVE.webp"
+  },
+  "MOBILE_CHATINPUT_BACKGROUND_DEFAULT": {
+   "screens": {
+    "chatinput": 137574,
+    "emoji": 135430
+   },
+   "example": "chatinput",
+   "image": "images/semantic/MOBILE_CHATINPUT_BACKGROUND_DEFAULT.webp"
+  },
+  "MOBILE_CHATINPUT_BORDER_ACTIVE": {
+   "screens": {
+    "keyboard": 4340
+   },
+   "example": "keyboard",
+   "image": "images/semantic/MOBILE_CHATINPUT_BORDER_ACTIVE.webp"
+  },
+  "MOBILE_CHATINPUT_BORDER_DEFAULT": {
+   "screens": {
+    "chatinput": 4340,
+    "emoji": 4308
+   },
+   "example": "chatinput",
+   "image": "images/semantic/MOBILE_CHATINPUT_BORDER_DEFAULT.webp"
+  },
+  "MOBILE_EMOJI_BUTTON_BACKGROUND": {
+   "screens": {
+    "actionsheet": 76202
+   },
+   "example": "actionsheet",
+   "image": "images/semantic/MOBILE_EMOJI_BUTTON_BACKGROUND.webp"
+  },
+  "MOBILE_EXPRESSION_PICKER_BACKGROUND_DEFAULT": {
+   "screens": {
+    "emoji": 151545
+   },
+   "example": "emoji",
+   "image": "images/semantic/MOBILE_EXPRESSION_PICKER_BACKGROUND_DEFAULT.webp"
+  },
+  "MOBILE_FLOATINGBAR_BACKGROUND": {
+   "screens": {
+    "chatinput": 9024,
+    "emoji": 9024,
+    "keyboard": 9024,
+    "chat-floating-preview": 9404
+   },
+   "example": "chat-floating-preview",
+   "image": "images/semantic/MOBILE_FLOATINGBAR_BACKGROUND.webp"
+  },
+  "MOBILE_FLOATINGBAR_BACKGROUND_NAMEPLATE": {
+   "screens": {
+    "home": 5393,
+    "server": 13561
+   },
+   "example": "server",
+   "image": "images/semantic/MOBILE_FLOATINGBAR_BACKGROUND_NAMEPLATE.webp"
+  },
+  "MOBILE_GUILDBAR_ICON_BACKGROUND_DEFAULT": {
+   "screens": {
+    "home": 13362,
+    "server": 25953
+   },
+   "example": "server",
+   "image": "images/semantic/MOBILE_GUILDBAR_ICON_BACKGROUND_DEFAULT.webp"
+  },
+  "MOBILE_GUILDBAR_ICON_DEFAULT": {
+   "screens": {
+    "home": 1146,
+    "server": 3313
+   },
+   "example": "server",
+   "image": "images/semantic/MOBILE_GUILDBAR_ICON_DEFAULT.webp"
+  },
+  "MOBILE_KEYBOARD_GAP_BACKGROUND": {
+   "screens": {
+    "chat": 65212,
+    "chatinput": 65212,
+    "emoji": 1588,
+    "keyboard": 65212,
+    "members": 65212
+   },
+   "example": "chat",
+   "image": "images/semantic/MOBILE_KEYBOARD_GAP_BACKGROUND.webp"
+  },
+  "MOBILE_SEGMENTED_CONTROL_BACKGROUND": {
+   "screens": {
+    "emoji": 80984
+   },
+   "example": "emoji",
+   "image": "images/semantic/MOBILE_SEGMENTED_CONTROL_BACKGROUND.webp"
+  },
+  "MOBILE_SEGMENTED_CONTROL_INDICATOR_BACKGROUND": {
+   "screens": {
+    "emoji": 29518
+   },
+   "example": "emoji",
+   "image": "images/semantic/MOBILE_SEGMENTED_CONTROL_INDICATOR_BACKGROUND.webp"
+  },
+  "MOBILE_TEXT_HEADING_PRIMARY": {
+   "screens": {
+    "alert": 3355,
+    "chat": 2817,
+    "chatinput": 853,
+    "colors": 1149,
+    "emoji": 853,
+    "forum": 1425,
+    "guildsheet": 1288,
+    "home": 6759,
+    "inbox": 3156,
+    "keyboard": 853,
+    "members": 2817,
+    "plugins": 1484,
+    "server": 6008,
+    "settings": 1725,
+    "you": 4766
+   },
+   "example": "settings",
+   "image": "images/semantic/MOBILE_TEXT_HEADING_PRIMARY.webp"
+  },
+  "MOBILE_TOAST_BACKGROUND_DEFAULT": {
+   "screens": {
+    "server": 3008
+   },
+   "example": "server",
+   "image": "images/semantic/MOBILE_TOAST_BACKGROUND_DEFAULT.webp"
+  },
+  "PANEL_BG": {
+   "screens": {
+    "home": 1279357,
+    "server": 1219025
+   },
+   "example": "server",
+   "image": "images/semantic/PANEL_BG.webp"
+  },
+  "RADIO_BORDER_DEFAULT": {
+   "screens": {
+    "colors": 400
+   },
+   "example": "colors",
+   "image": "images/semantic/RADIO_BORDER_DEFAULT.webp"
+  },
+  "REACTION_BACKGROUND_DEFAULT": {
+   "screens": {
+    "forum": 6580
+   },
+   "example": "forum",
+   "image": "images/semantic/REACTION_BACKGROUND_DEFAULT.webp"
+  },
+  "REACTION_BORDER_DEFAULT": {
+   "screens": {
+    "forum": 656
+   },
+   "example": "forum",
+   "image": "images/semantic/REACTION_BORDER_DEFAULT.webp"
+  },
+  "REDESIGN_BUTTON_TERTIARY_BACKGROUND": {
+   "screens": {
+    "inbox": 16139,
+    "plugins": 18112,
+    "search": 9569
+   },
+   "example": "plugins",
+   "image": "images/semantic/REDESIGN_BUTTON_TERTIARY_BACKGROUND.webp"
+  },
+  "REDESIGN_BUTTON_TERTIARY_TEXT": {
+   "screens": {
+    "plugins": 1567,
+    "search": 362
+   },
+   "example": "plugins",
+   "image": "images/semantic/REDESIGN_BUTTON_TERTIARY_TEXT.webp"
+  },
+  "REDESIGN_CHANNEL_NAME_MUTED_TEXT": {
+   "screens": {
+    "server": 7491
+   },
+   "example": "server",
+   "image": "images/semantic/REDESIGN_CHANNEL_NAME_MUTED_TEXT.webp"
+  },
+  "REDESIGN_CHANNEL_NAME_TEXT": {
+   "screens": {
+    "server": 3264
+   },
+   "example": "server",
+   "image": "images/semantic/REDESIGN_CHANNEL_NAME_TEXT.webp"
+  },
+  "SPINE_DEFAULT": {
+   "screens": {
+    "server": 523
+   },
+   "example": "server",
+   "image": "images/semantic/SPINE_DEFAULT.webp"
+  },
+  "SPOILER_HIDDEN_BACKGROUND": {
+   "screens": {
+    "you": 22117
+   },
+   "example": "you",
+   "image": "images/semantic/SPOILER_HIDDEN_BACKGROUND.webp"
+  },
+  "STANDALONE_CHANNEL_CONTENT_BACKGROUND": {
+   "screens": {
+    "chat": 292440,
+    "chatinput": 295654,
+    "emoji": 295722,
+    "forum": 291813,
+    "keyboard": 295719,
+    "members": 292246
+   },
+   "example": "chat",
+   "image": "images/semantic/STANDALONE_CHANNEL_CONTENT_BACKGROUND.webp"
+  },
+  "STANDALONE_CHANNEL_HEADER_BORDER": {
+   "screens": {
+    "chat": 3240,
+    "chatinput": 3240,
+    "emoji": 3240,
+    "forum": 3240,
+    "keyboard": 3240,
+    "members": 3240
+   },
+   "example": "chat",
+   "image": "images/semantic/STANDALONE_CHANNEL_HEADER_BORDER.webp"
+  },
+  "STATUS_POSITIVE": {
+   "screens": {
+    "home": 2753,
+    "search": 1249,
+    "server": 2565
+   },
+   "example": "server",
+   "image": "images/semantic/STATUS_POSITIVE.webp"
+  },
+  "SWITCH_BACKGROUND_DEFAULT": {
+   "screens": {
+    "plugins": 6424
+   },
+   "example": "plugins",
+   "image": "images/semantic/SWITCH_BACKGROUND_DEFAULT.webp"
+  },
+  "SWITCH_BACKGROUND_SELECTED_DEFAULT": {
+   "screens": {
+    "plugins": 34532
+   },
+   "example": "plugins",
+   "image": "images/semantic/SWITCH_BACKGROUND_SELECTED_DEFAULT.webp"
+  },
+  "SWITCH_BORDER_DEFAULT": {
+   "screens": {
+    "plugins": 648
+   },
+   "example": "plugins",
+   "image": "images/semantic/SWITCH_BORDER_DEFAULT.webp"
+  },
+  "SWITCH_BORDER_SELECTED_DEFAULT": {
+   "screens": {
+    "plugins": 3600
+   },
+   "example": "plugins",
+   "image": "images/semantic/SWITCH_BORDER_SELECTED_DEFAULT.webp"
+  },
+  "SWITCH_THUMB_BACKGROUND_DEFAULT": {
+   "screens": {
+    "plugins": 2040
+   },
+   "example": "plugins",
+   "image": "images/semantic/SWITCH_THUMB_BACKGROUND_DEFAULT.webp"
+  },
+  "SWITCH_THUMB_BACKGROUND_SELECTED_DEFAULT": {
+   "screens": {
+    "plugins": 10460
+   },
+   "example": "plugins",
+   "image": "images/semantic/SWITCH_THUMB_BACKGROUND_SELECTED_DEFAULT.webp"
+  },
+  "TABLEROW_BACKGROUND_DEFAULT": {
+   "screens": {
+    "plugins": 1417496,
+    "search": 4493
+   },
+   "example": "plugins",
+   "image": "images/semantic/TABLEROW_BACKGROUND_DEFAULT.webp"
+  },
+  "TABLEROW_ICON_COLOR_DEFAULT": {
+   "screens": {
+    "actionsheet": 9810,
+    "settings": 15377
+   },
+   "example": "settings",
+   "image": "images/semantic/TABLEROW_ICON_COLOR_DEFAULT.webp"
+  },
+  "TEXT_BRAND": {
+   "screens": {
+    "search": 1785,
+    "server": 330,
+    "you": 1471
+   },
+   "example": "search",
+   "image": "images/semantic/TEXT_BRAND.webp"
+  },
+  "TEXT_DEFAULT": {
+   "screens": {
+    "alert": 3052,
+    "chat": 5026,
+    "chatinput": 16249,
+    "emoji": 15480,
+    "home": 2285,
+    "keyboard": 14020,
+    "members": 5026,
+    "plugins": 38452,
+    "search": 4045,
+    "server": 1252,
+    "you": 18459
+   },
+   "example": "plugins",
+   "image": "images/semantic/TEXT_DEFAULT.webp"
+  },
+  "TEXT_FEEDBACK_POSITIVE": {
+   "screens": {
+    "you": 1631
+   },
+   "example": "you",
+   "image": "images/semantic/TEXT_FEEDBACK_POSITIVE.webp"
+  },
+  "TEXT_LINK": {
+   "screens": {
+    "you": 6162
+   },
+   "example": "you",
+   "image": "images/semantic/TEXT_LINK.webp"
+  },
+  "TEXT_MUTED": {
+   "screens": {
+    "chat": 2408,
+    "chatinput": 2911,
+    "colors": 4892,
+    "emoji": 3636,
+    "forum": 12439,
+    "home": 12181,
+    "inbox": 74660,
+    "keyboard": 2863,
+    "members": 2408,
+    "search": 3111,
+    "server": 5190,
+    "settings": 1914,
+    "you": 2443
+   },
+   "example": "colors",
+   "image": "images/semantic/TEXT_MUTED.webp"
+  },
+  "TEXT_OVERLAY_LIGHT": {
+   "screens": {
+    "chatinput": 2763,
+    "emoji": 2763,
+    "keyboard": 2763,
+    "chat-unread-preview": 2742
+   },
+   "example": "chat-unread-preview",
+   "image": "images/semantic/TEXT_OVERLAY_LIGHT.webp"
+  },
+  "TEXT_STRONG": {
+   "screens": {
+    "actionsheet": 9278,
+    "chat": 48707,
+    "chatinput": 471,
+    "colors": 820,
+    "emoji": 281,
+    "guildsheet": 7137,
+    "home": 2783,
+    "keyboard": 471,
+    "members": 48707,
+    "plugins": 31999,
+    "server": 2614,
+    "settings": 13262,
+    "you": 640
+   },
+   "example": "settings",
+   "image": "images/semantic/TEXT_STRONG.webp"
+  },
+  "TEXT_SUBTLE": {
+   "screens": {
+    "home": 2676,
+    "inbox": 2266,
+    "search": 8681,
+    "server": 1465,
+    "settings": 2869
+   },
+   "example": "settings",
+   "image": "images/semantic/TEXT_SUBTLE.webp"
+  },
+  "USER_PROFILE_ABOUT_ME_HEADING_TEXT": {
+   "screens": {
+    "you": 324
+   },
+   "example": "you",
+   "image": "images/semantic/USER_PROFILE_ABOUT_ME_HEADING_TEXT.webp"
+  },
+  "USER_PROFILE_GRADIENT_BACKGROUND": {
+   "screens": {
+    "you": 1222009
+   },
+   "example": "you",
+   "image": "images/semantic/USER_PROFILE_GRADIENT_BACKGROUND.webp"
+  },
+  "WHITE": {
+   "screens": {
+    "chatinput": 304,
+    "emoji": 304,
+    "forum": 430,
+    "home": 3200,
+    "keyboard": 304,
+    "search": 391,
+    "server": 977,
+    "you": 755
+   },
+   "example": "server",
+   "image": "images/semantic/WHITE.webp"
+  },
+  "BADGE_PREMIUM_BACKGROUND_GRADIENT_START": {
+   "screens": {
+    "component-badges-premium": 466
+   },
+   "example": "component-badges-premium",
+   "image": "images/semantic/BADGE_PREMIUM_BACKGROUND_GRADIENT_START.webp"
+  },
+  "BADGE_PREMIUM_TEXT": {
+   "screens": {
+    "component-badges-premium": 1086
+   },
+   "example": "component-badges-premium",
+   "image": "images/semantic/BADGE_PREMIUM_TEXT.webp"
+  },
+  "BADGE_COMMON_BORDER": {
+   "screens": {
+    "component-badges-rarity": 1292
+   },
+   "example": "component-badges-rarity",
+   "image": "images/semantic/BADGE_COMMON_BORDER.webp"
+  },
+  "BADGE_COMMON_BACKGROUND": {
+   "screens": {
+    "component-badges-rarity": 9379
+   },
+   "example": "component-badges-rarity",
+   "image": "images/semantic/BADGE_COMMON_BACKGROUND.webp"
+  },
+  "BADGE_COMMON_TEXT": {
+   "screens": {
+    "component-badges-rarity": 1740
+   },
+   "example": "component-badges-rarity",
+   "image": "images/semantic/BADGE_COMMON_TEXT.webp"
+  },
+  "BADGE_RARE_BORDER_GRADIENT_START": {
+   "screens": {
+    "component-badges-rarity": 1053
+   },
+   "example": "component-badges-rarity",
+   "image": "images/semantic/BADGE_RARE_BORDER_GRADIENT_START.webp"
+  },
+  "BADGE_RARE_TEXT": {
+   "screens": {
+    "component-badges-rarity": 1371
+   },
+   "example": "component-badges-rarity",
+   "image": "images/semantic/BADGE_RARE_TEXT.webp"
+  },
+  "BADGE_EPIC_BORDER_GRADIENT_START": {
+   "screens": {
+    "component-badges-rarity": 992
+   },
+   "example": "component-badges-rarity",
+   "image": "images/semantic/BADGE_EPIC_BORDER_GRADIENT_START.webp"
+  },
+  "BADGE_EPIC_BACKGROUND": {
+   "screens": {
+    "component-badges-rarity": 7215
+   },
+   "example": "component-badges-rarity",
+   "image": "images/semantic/BADGE_EPIC_BACKGROUND.webp"
+  },
+  "BADGE_EPIC_TEXT": {
+   "screens": {
+    "component-badges-rarity": 1217
+   },
+   "example": "component-badges-rarity",
+   "image": "images/semantic/BADGE_EPIC_TEXT.webp"
+  },
+  "BADGE_MYTHIC_TEXT": {
+   "screens": {
+    "component-badges-rarity": 2680
+   },
+   "example": "component-badges-rarity",
+   "image": "images/semantic/BADGE_MYTHIC_TEXT.webp"
+  },
+  "BADGE_MYTHIC_BACKGROUND": {
+   "screens": {
+    "component-badges-rarity": 8680
+   },
+   "example": "component-badges-rarity",
+   "image": "images/semantic/BADGE_MYTHIC_BACKGROUND.webp"
+  },
+  "BADGE_PRIMARY_BORDER": {
+   "screens": {
+    "component-badges": 788
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_PRIMARY_BORDER.webp"
+  },
+  "BADGE_PRIMARY_BACKGROUND": {
+   "screens": {
+    "component-badges": 5409
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_PRIMARY_BACKGROUND.webp"
+  },
+  "BADGE_SECONDARY_BORDER": {
+   "screens": {
+    "component-badges": 972
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_SECONDARY_BORDER.webp"
+  },
+  "BADGE_SECONDARY_BACKGROUND": {
+   "screens": {
+    "component-badges": 6779
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_SECONDARY_BACKGROUND.webp"
+  },
+  "BADGE_SECONDARY_TEXT": {
+   "screens": {
+    "component-badges": 1292
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_SECONDARY_TEXT.webp"
+  },
+  "BADGE_CRITICAL_BORDER": {
+   "screens": {
+    "component-badges": 794
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_CRITICAL_BORDER.webp"
+  },
+  "BADGE_CRITICAL_BACKGROUND": {
+   "screens": {
+    "component-badges": 5634
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_CRITICAL_BACKGROUND.webp"
+  },
+  "BADGE_CRITICAL_TEXT": {
+   "screens": {
+    "component-badges": 852
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_CRITICAL_TEXT.webp"
+  },
+  "BADGE_SUCCESS_BORDER": {
+   "screens": {
+    "component-badges": 784
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_SUCCESS_BORDER.webp"
+  },
+  "BADGE_SUCCESS_BACKGROUND": {
+   "screens": {
+    "component-badges": 5444
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_SUCCESS_BACKGROUND.webp"
+  },
+  "BADGE_RARE_BACKGROUND": {
+   "screens": {
+    "component-badges-rarity": 7520
+   },
+   "example": "component-badges-rarity",
+   "image": "images/semantic/BADGE_RARE_BACKGROUND.webp"
+  },
+  "BADGE_PRIMARY_TEXT": {
+   "screens": {
+    "component-badges": 997
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_PRIMARY_TEXT.webp"
+  },
+  "BADGE_SUCCESS_TEXT": {
+   "screens": {
+    "component-badges": 855
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_SUCCESS_TEXT.webp"
+  },
+  "BADGE_WARNING_BORDER": {
+   "screens": {
+    "component-badges": 812
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_WARNING_BORDER.webp"
+  },
+  "BADGE_WARNING_BACKGROUND": {
+   "screens": {
+    "component-badges": 5560
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_WARNING_BACKGROUND.webp"
+  },
+  "BADGE_WARNING_TEXT": {
+   "screens": {
+    "component-badges": 1067
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_WARNING_TEXT.webp"
+  },
+  "BADGE_EXPRESSIVE_BORDER": {
+   "screens": {
+    "component-badges": 968
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_EXPRESSIVE_BORDER.webp"
+  },
+  "BADGE_EXPRESSIVE_BACKGROUND": {
+   "screens": {
+    "component-badges": 6733
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_EXPRESSIVE_BACKGROUND.webp"
+  },
+  "BADGE_EXPRESSIVE_TEXT": {
+   "screens": {
+    "component-badges": 1310
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_EXPRESSIVE_TEXT.webp"
+  },
+  "BADGE_INVERTED_BACKGROUND": {
+   "screens": {
+    "component-badges": 5806
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_INVERTED_BACKGROUND.webp"
+  },
+  "BADGE_INVERTED_TEXT": {
+   "screens": {
+    "component-badges": 1063
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_INVERTED_TEXT.webp"
+  },
+  "BADGE_NOTIFICATION_BORDER": {
+   "screens": {
+    "component-badges": 1072
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_NOTIFICATION_BORDER.webp"
+  },
+  "BADGE_NOTIFICATION_BACKGROUND": {
+   "screens": {
+    "component-badges": 7604
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_NOTIFICATION_BACKGROUND.webp"
+  },
+  "BADGE_NOTIFICATION_TEXT": {
+   "screens": {
+    "component-badges": 1423
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_NOTIFICATION_TEXT.webp"
+  },
+  "CONTROL_CRITICAL_SECONDARY_BORDER_ACTIVE": {
+   "screens": {
+    "component-buttons-more-pressed-critical-secondary": 3512
+   },
+   "example": "component-buttons-more-pressed-critical-secondary",
+   "image": "images/semantic/CONTROL_CRITICAL_SECONDARY_BORDER_ACTIVE.webp"
+  },
+  "CONTROL_CRITICAL_SECONDARY_BACKGROUND_ACTIVE": {
+   "screens": {
+    "component-buttons-more-pressed-critical-secondary": 62100
+   },
+   "example": "component-buttons-more-pressed-critical-secondary",
+   "image": "images/semantic/CONTROL_CRITICAL_SECONDARY_BACKGROUND_ACTIVE.webp"
+  },
+  "CONTROL_CRITICAL_SECONDARY_TEXT_DEFAULT": {
+   "screens": {
+    "component-buttons-more": 1771
+   },
+   "example": "component-buttons-more",
+   "image": "images/semantic/CONTROL_CRITICAL_SECONDARY_TEXT_DEFAULT.webp"
+  },
+  "CONTROL_ICON_ONLY_ICON_DEFAULT": {
+   "screens": {
+    "component-icons": 1900
+   },
+   "example": "component-icons",
+   "image": "images/semantic/CONTROL_ICON_ONLY_ICON_DEFAULT.webp"
+  },
+  "REDESIGN_BUTTON_PREMIUM_PRIMARY_PURPLE_FOR_GRADIENT_2": {
+   "screens": {
+    "component-buttons-more": 2089
+   },
+   "example": "component-buttons-more",
+   "image": "images/semantic/REDESIGN_BUTTON_PREMIUM_PRIMARY_PURPLE_FOR_GRADIENT_2.webp"
+  },
+  "CONTROL_OVERLAY_PRIMARY_BACKGROUND_DEFAULT": {
+   "screens": {
+    "component-buttons-more": 64339
+   },
+   "example": "component-buttons-more",
+   "image": "images/semantic/CONTROL_OVERLAY_PRIMARY_BACKGROUND_DEFAULT.webp"
+  },
+  "CONTROL_CRITICAL_SECONDARY_BORDER_DEFAULT": {
+   "screens": {
+    "component-buttons-more": 3648
+   },
+   "example": "component-buttons-more",
+   "image": "images/semantic/CONTROL_CRITICAL_SECONDARY_BORDER_DEFAULT.webp"
+  },
+  "REDESIGN_BUTTON_PREMIUM_PRIMARY_PRESSED_BACKGROUND": {
+   "screens": {
+    "component-buttons-more-pressed-experimental_premium-basic": 64848
+   },
+   "example": "component-buttons-more-pressed-experimental_premium-basic",
+   "image": "images/semantic/REDESIGN_BUTTON_PREMIUM_PRIMARY_PRESSED_BACKGROUND.webp"
+  },
+  "CONTROL_OVERLAY_PRIMARY_BACKGROUND_ACTIVE": {
+   "screens": {
+    "component-buttons-more-pressed-experimental_premium-secondary": 61270
+   },
+   "example": "component-buttons-more-pressed-experimental_premium-secondary",
+   "image": "images/semantic/CONTROL_OVERLAY_PRIMARY_BACKGROUND_ACTIVE.webp"
+  },
+  "CONTROL_ICON_ONLY_BACKGROUND_ACTIVE": {
+   "screens": {
+    "component-icons-pressed-icon-only": 10378
+   },
+   "example": "component-icons-pressed-icon-only",
+   "image": "images/semantic/CONTROL_ICON_ONLY_BACKGROUND_ACTIVE.webp"
+  },
+  "CONTROL_CRITICAL_PRIMARY_BORDER_DEFAULT": {
+   "screens": {
+    "component-buttons": 3648
+   },
+   "example": "component-buttons",
+   "image": "images/semantic/CONTROL_CRITICAL_PRIMARY_BORDER_DEFAULT.webp"
+  },
+  "CONTROL_CRITICAL_PRIMARY_BACKGROUND_DEFAULT": {
+   "screens": {
+    "component-buttons": 64527
+   },
+   "example": "component-buttons",
+   "image": "images/semantic/CONTROL_CRITICAL_PRIMARY_BACKGROUND_DEFAULT.webp"
+  },
+  "CONTROL_CRITICAL_PRIMARY_TEXT_DEFAULT": {
+   "screens": {
+    "component-buttons": 1185
+   },
+   "example": "component-buttons",
+   "image": "images/semantic/CONTROL_CRITICAL_PRIMARY_TEXT_DEFAULT.webp"
+  },
+  "CONTROL_CONNECTED_BORDER_ACTIVE": {
+   "screens": {
+    "component-buttons-pressed-active": 3648
+   },
+   "example": "component-buttons-pressed-active",
+   "image": "images/semantic/CONTROL_CONNECTED_BORDER_ACTIVE.webp"
+  },
+  "CONTROL_CONNECTED_TEXT_DEFAULT": {
+   "screens": {
+    "component-buttons": 597
+   },
+   "example": "component-buttons",
+   "image": "images/semantic/CONTROL_CONNECTED_TEXT_DEFAULT.webp"
+  },
+  "CONTROL_EXPRESSIVE_TEXT_DEFAULT": {
+   "screens": {
+    "component-buttons": 1040
+   },
+   "example": "component-buttons",
+   "image": "images/semantic/CONTROL_EXPRESSIVE_TEXT_DEFAULT.webp"
+  },
+  "CONTROL_OVERLAY_PRIMARY_TEXT_DEFAULT": {
+   "screens": {
+    "component-buttons": 1542
+   },
+   "example": "component-buttons",
+   "image": "images/semantic/CONTROL_OVERLAY_PRIMARY_TEXT_DEFAULT.webp"
+  },
+  "CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT": {
+   "screens": {
+    "component-buttons": 1766
+   },
+   "example": "component-buttons",
+   "image": "images/semantic/CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT.webp"
+  },
+  "CONTROL_CRITICAL_PRIMARY_BORDER_ACTIVE": {
+   "screens": {
+    "component-buttons-pressed-destructive": 3648
+   },
+   "example": "component-buttons-pressed-destructive",
+   "image": "images/semantic/CONTROL_CRITICAL_PRIMARY_BORDER_ACTIVE.webp"
+  },
+  "CONTROL_CONNECTED_BORDER_DEFAULT": {
+   "screens": {
+    "component-buttons": 2828
+   },
+   "example": "component-buttons",
+   "image": "images/semantic/CONTROL_CONNECTED_BORDER_DEFAULT.webp"
+  },
+  "CONTROL_CONNECTED_BACKGROUND_DEFAULT": {
+   "screens": {
+    "component-buttons": 65552
+   },
+   "example": "component-buttons",
+   "image": "images/semantic/CONTROL_CONNECTED_BACKGROUND_DEFAULT.webp"
+  },
+  "CONTROL_PRIMARY_BORDER_ACTIVE": {
+   "screens": {
+    "component-buttons-pressed-primary": 3648
+   },
+   "example": "component-buttons-pressed-primary",
+   "image": "images/semantic/CONTROL_PRIMARY_BORDER_ACTIVE.webp"
+  },
+  "CONTROL_SECONDARY_BACKGROUND_ACTIVE": {
+   "screens": {
+    "component-toggles-pressed-primary unselected": 77504
+   },
+   "example": "component-toggles-pressed-primary unselected",
+   "image": "images/semantic/CONTROL_SECONDARY_BACKGROUND_ACTIVE.webp"
+  },
+  "CHECKBOX_BORDER_DEFAULT": {
+   "screens": {
+    "component-checks": 628
+   },
+   "example": "component-checks",
+   "image": "images/semantic/CHECKBOX_BORDER_DEFAULT.webp"
+  },
+  "CHECKBOX_BACKGROUND_DEFAULT": {
+   "screens": {
+    "component-checks": 3001
+   },
+   "example": "component-checks",
+   "image": "images/semantic/CHECKBOX_BACKGROUND_DEFAULT.webp"
+  },
+  "CHECKBOX_BORDER_SELECTED_DEFAULT": {
+   "screens": {
+    "component-checks": 628
+   },
+   "example": "component-checks",
+   "image": "images/semantic/CHECKBOX_BORDER_SELECTED_DEFAULT.webp"
+  },
+  "CHECKBOX_BACKGROUND_SELECTED_DEFAULT": {
+   "screens": {
+    "component-checks": 2828
+   },
+   "example": "component-checks",
+   "image": "images/semantic/CHECKBOX_BACKGROUND_SELECTED_DEFAULT.webp"
+  },
+  "CHECKBOX_ICON_ACTIVE": {
+   "screens": {
+    "component-checks": 213
+   },
+   "example": "component-checks",
+   "image": "images/semantic/CHECKBOX_ICON_ACTIVE.webp"
+  },
+  "REDESIGN_INPUT_CONTROL_SELECTED": {
+   "screens": {
+    "component-checks": 366
+   },
+   "example": "component-checks",
+   "image": "images/semantic/REDESIGN_INPUT_CONTROL_SELECTED.webp"
+  },
+  "TOGGLEBUTTON_ICON_DEFAULT": {
+   "screens": {
+    "component-icons": 1900
+   },
+   "example": "component-icons",
+   "image": "images/semantic/TOGGLEBUTTON_ICON_DEFAULT.webp"
+  },
+  "TOGGLEBUTTON_BORDER_SELECTED": {
+   "screens": {
+    "component-toggles": 7464
+   },
+   "example": "component-toggles",
+   "image": "images/semantic/TOGGLEBUTTON_BORDER_SELECTED.webp"
+  },
+  "TOGGLEBUTTON_BACKGROUND_SELECTED": {
+   "screens": {
+    "component-toggles": 162674
+   },
+   "example": "component-toggles",
+   "image": "images/semantic/TOGGLEBUTTON_BACKGROUND_SELECTED.webp"
+  },
+  "TOGGLEBUTTON_ICON_SELECTED": {
+   "screens": {
+    "component-icons": 1900
+   },
+   "example": "component-icons",
+   "image": "images/semantic/TOGGLEBUTTON_ICON_SELECTED.webp"
+  },
+  "TOGGLEBUTTON_CRITICAL_ICON_DEFAULT": {
+   "screens": {
+    "component-icons": 1900
+   },
+   "example": "component-icons",
+   "image": "images/semantic/TOGGLEBUTTON_CRITICAL_ICON_DEFAULT.webp"
+  },
+  "TOGGLEBUTTON_CRITICAL_BACKGROUND_SELECTED": {
+   "screens": {
+    "component-icons": 12283
+   },
+   "example": "component-icons",
+   "image": "images/semantic/TOGGLEBUTTON_CRITICAL_BACKGROUND_SELECTED.webp"
+  },
+  "TOGGLEBUTTON_CRITICAL_ICON_SELECTED": {
+   "screens": {
+    "component-icons": 1900
+   },
+   "example": "component-icons",
+   "image": "images/semantic/TOGGLEBUTTON_CRITICAL_ICON_SELECTED.webp"
+  },
+  "TOGGLEBUTTON_ICON_ONLY_ICON_DEFAULT": {
+   "screens": {
+    "component-icons": 1900
+   },
+   "example": "component-icons",
+   "image": "images/semantic/TOGGLEBUTTON_ICON_ONLY_ICON_DEFAULT.webp"
+  },
+  "TOGGLEBUTTON_ICON_ONLY_ICON_SELECTED": {
+   "screens": {
+    "component-icons": 1900
+   },
+   "example": "component-icons",
+   "image": "images/semantic/TOGGLEBUTTON_ICON_ONLY_ICON_SELECTED.webp"
+  },
+  "TOGGLEBUTTON_CRITICAL_BORDER_ACTIVE": {
+   "screens": {
+    "component-icons-pressed-toggle-icon-critical-on": 500
+   },
+   "example": "component-icons-pressed-toggle-icon-critical-on",
+   "image": "images/semantic/TOGGLEBUTTON_CRITICAL_BORDER_ACTIVE.webp"
+  },
+  "TOGGLEBUTTON_CRITICAL_ICON_ACTIVE": {
+   "screens": {
+    "component-icons-pressed-toggle-icon-critical-on": 1713
+   },
+   "example": "component-icons-pressed-toggle-icon-critical-on",
+   "image": "images/semantic/TOGGLEBUTTON_CRITICAL_ICON_ACTIVE.webp"
+  },
+  "TOGGLEBUTTON_CRITICAL_BACKGROUND_SELECTED_HOVER": {
+   "screens": {
+    "component-icons-pressed-toggle-icon-critical-on": 10394
+   },
+   "example": "component-icons-pressed-toggle-icon-critical-on",
+   "image": "images/semantic/TOGGLEBUTTON_CRITICAL_BACKGROUND_SELECTED_HOVER.webp"
+  },
+  "TOGGLEBUTTON_BORDER_ACTIVE": {
+   "screens": {
+    "component-icons-pressed-toggle-icon-default-off": 508
+   },
+   "example": "component-icons-pressed-toggle-icon-default-off",
+   "image": "images/semantic/TOGGLEBUTTON_BORDER_ACTIVE.webp"
+  },
+  "TOGGLEBUTTON_ICON_ACTIVE": {
+   "screens": {
+    "component-icons-pressed-toggle-icon-default-on": 1727
+   },
+   "example": "component-icons-pressed-toggle-icon-default-on",
+   "image": "images/semantic/TOGGLEBUTTON_ICON_ACTIVE.webp"
+  },
+  "TOGGLEBUTTON_BACKGROUND_SELECTED_HOVER": {
+   "screens": {
+    "component-icons-pressed-toggle-icon-default-on": 11153
+   },
+   "example": "component-icons-pressed-toggle-icon-default-on",
+   "image": "images/semantic/TOGGLEBUTTON_BACKGROUND_SELECTED_HOVER.webp"
+  },
+  "CONTROL_ICON_ONLY_BORDER_ACTIVE": {
+   "screens": {
+    "component-icons-pressed-toggle-icon-only-off": 572
+   },
+   "example": "component-icons-pressed-toggle-icon-only-off",
+   "image": "images/semantic/CONTROL_ICON_ONLY_BORDER_ACTIVE.webp"
+  },
+  "TOGGLEBUTTON_ICON_ONLY_ICON_ACTIVE": {
+   "screens": {
+    "component-icons-pressed-toggle-icon-only-off": 1883
+   },
+   "example": "component-icons-pressed-toggle-icon-only-off",
+   "image": "images/semantic/TOGGLEBUTTON_ICON_ONLY_ICON_ACTIVE.webp"
+  },
+  "INPUT_BORDER_ERROR_DEFAULT": {
+   "screens": {
+    "component-inputs": 9510
+   },
+   "example": "component-inputs",
+   "image": "images/semantic/INPUT_BORDER_ERROR_DEFAULT.webp"
+  },
+  "TEXT_FEEDBACK_CRITICAL": {
+   "screens": {
+    "component-inputs": 2325
+   },
+   "example": "component-inputs",
+   "image": "images/semantic/TEXT_FEEDBACK_CRITICAL.webp"
+  },
+  "TOAST_CRITICAL_BORDER": {
+   "screens": {
+    "component-toast-critical": 2788
+   },
+   "example": "component-toast-critical",
+   "image": "images/semantic/TOAST_CRITICAL_BORDER.webp"
+  },
+  "TOAST_CRITICAL_BACKGROUND": {
+   "screens": {
+    "component-toast-critical": 62267
+   },
+   "example": "component-toast-critical",
+   "image": "images/semantic/TOAST_CRITICAL_BACKGROUND.webp"
+  },
+  "ICON_FEEDBACK_CRITICAL": {
+   "screens": {
+    "component-toast-critical": 1268
+   },
+   "example": "component-toast-critical",
+   "image": "images/semantic/ICON_FEEDBACK_CRITICAL.webp"
+  },
+  "TOAST_SUCCESS_BORDER": {
+   "screens": {
+    "component-toast-success": 2844
+   },
+   "example": "component-toast-success",
+   "image": "images/semantic/TOAST_SUCCESS_BORDER.webp"
+  },
+  "TOAST_SUCCESS_BACKGROUND": {
+   "screens": {
+    "component-toast-success": 63589
+   },
+   "example": "component-toast-success",
+   "image": "images/semantic/TOAST_SUCCESS_BACKGROUND.webp"
+  },
+  "ICON_FEEDBACK_POSITIVE": {
+   "screens": {
+    "component-toast-success": 1258
+   },
+   "example": "component-toast-success",
+   "image": "images/semantic/ICON_FEEDBACK_POSITIVE.webp"
+  },
+  "TOGGLEBUTTON_BACKGROUND_SELECTED_ACTIVE": {
+   "screens": {
+    "component-toggles-pressed-primary selected": 78770
+   },
+   "example": "component-toggles-pressed-primary selected",
+   "image": "images/semantic/TOGGLEBUTTON_BACKGROUND_SELECTED_ACTIVE.webp"
+  },
+  "REDESIGN_BUTTON_PREMIUM_PRIMARY_PURPLE_FOR_GRADIENT": {
+   "screens": {
+    "component-buttons-more": 1433
+   },
+   "example": "component-buttons-more",
+   "image": "images/semantic/REDESIGN_BUTTON_PREMIUM_PRIMARY_PURPLE_FOR_GRADIENT.webp"
+  },
+  "BADGE_INVERTED_BORDER": {
+   "screens": {
+    "component-badges": 836
+   },
+   "example": "component-badges",
+   "image": "images/semantic/BADGE_INVERTED_BORDER.webp"
+  },
+  "CONTROL_CRITICAL_SECONDARY_BACKGROUND_DEFAULT": {
+   "screens": {
+    "component-buttons-more": 65352
+   },
+   "example": "component-buttons-more",
+   "image": "images/semantic/CONTROL_CRITICAL_SECONDARY_BACKGROUND_DEFAULT.webp"
+  },
+  "CONTROL_CONNECTED_BACKGROUND_ACTIVE": {
+   "screens": {
+    "component-buttons-pressed-active": 62367
+   },
+   "example": "component-buttons-pressed-active",
+   "image": "images/semantic/CONTROL_CONNECTED_BACKGROUND_ACTIVE.webp"
+  },
+  "CONTROL_CRITICAL_PRIMARY_BACKGROUND_ACTIVE": {
+   "screens": {
+    "component-buttons-pressed-destructive": 61418
+   },
+   "example": "component-buttons-pressed-destructive",
+   "image": "images/semantic/CONTROL_CRITICAL_PRIMARY_BACKGROUND_ACTIVE.webp"
+  },
+  "CONTROL_OVERLAY_SECONDARY_BACKGROUND_ACTIVE": {
+   "screens": {
+    "component-buttons-pressed-secondary-overlay": 63716
+   },
+   "example": "component-buttons-pressed-secondary-overlay",
+   "image": "images/semantic/CONTROL_OVERLAY_SECONDARY_BACKGROUND_ACTIVE.webp"
+  },
+  "CONTROL_SECONDARY_BORDER_ACTIVE": {
+   "screens": {
+    "component-buttons-pressed-secondary": 1956
+   },
+   "example": "component-buttons-pressed-secondary",
+   "image": "images/semantic/CONTROL_SECONDARY_BORDER_ACTIVE.webp"
+  },
+  "BORDER_STRONG": {
+   "screens": {
+    "component-cards": 11008
+   },
+   "example": "component-cards",
+   "image": "images/semantic/BORDER_STRONG.webp"
+  }
+ },
+ "raw": {
+  "BLUE_160": {
+   "screens": {
+    "inbox": 2160
+   },
+   "example": "inbox",
+   "image": "images/raw/BLUE_160.webp"
+  },
+  "BLUE_NEW_27": {
+   "screens": {
+    "chat": 416,
+    "chatinput": 16979,
+    "emoji": 6180,
+    "keyboard": 7424,
+    "members": 416,
+    "you": 5974
+   },
+   "example": "chatinput",
+   "image": "images/raw/BLUE_NEW_27.webp"
+  },
+  "BLURPLE_26": {
+   "screens": {
+    "search": 1785,
+    "server": 320,
+    "you": 1469
+   },
+   "example": "search",
+   "image": "images/raw/BLURPLE_26.webp"
+  },
+  "BLURPLE_50": {
+   "screens": {
+    "alert": 83233,
+    "chat": 71884,
+    "chatinput": 121652,
+    "emoji": 121652,
+    "forum": 20462,
+    "home": 17944,
+    "keyboard": 121652,
+    "members": 71884,
+    "plugins": 52468,
+    "search": 6117,
+    "you": 94700
+   },
+   "example": "plugins",
+   "image": "images/raw/BLURPLE_50.webp"
+  },
+  "BLURPLE_8": {
+   "screens": {
+    "inbox": 851
+   },
+   "example": "inbox",
+   "image": "images/raw/BLURPLE_8.webp"
+  },
+  "GREEN_360": {
+   "screens": {
+    "home": 2751,
+    "search": 1249,
+    "server": 2565
+   },
+   "example": "server",
+   "image": "images/raw/GREEN_360.webp"
+  },
+  "GREEN_NEW_22": {
+   "screens": {
+    "you": 1541
+   },
+   "example": "you",
+   "image": "images/raw/GREEN_NEW_22.webp"
+  },
+  "GREEN_NEW_25": {
+   "screens": {
+    "home": 418,
+    "component-activity": 230
+   },
+   "example": "component-activity",
+   "image": "images/raw/GREEN_NEW_25.webp"
+  },
+  "GUILD_BOOSTING_PINK": {
+   "screens": {
+    "search": 438
+   },
+   "example": "search",
+   "image": "images/raw/GUILD_BOOSTING_PINK.webp"
+  },
+  "NEUTRAL_1": {
+   "screens": {
+    "actionsheet": 18556,
+    "alert": 4885,
+    "chat": 54693,
+    "chatinput": 6246,
+    "colors": 2824,
+    "emoji": 5768,
+    "forum": 4046,
+    "guildsheet": 8425,
+    "home": 12327,
+    "inbox": 3155,
+    "keyboard": 6246,
+    "members": 54693,
+    "plugins": 47358,
+    "server": 15235,
+    "settings": 30364,
+    "you": 12280
+   },
+   "example": "settings",
+   "image": "images/raw/NEUTRAL_1.webp"
+  },
+  "NEUTRAL_16": {
+   "screens": {
+    "actionsheet": 290,
+    "chat": 10854,
+    "chatinput": 3859,
+    "colors": 397,
+    "emoji": 8319,
+    "forum": 1404,
+    "home": 17046,
+    "inbox": 4931,
+    "keyboard": 3859,
+    "members": 10854,
+    "plugins": 606,
+    "search": 10086,
+    "server": 4778,
+    "settings": 5159
+   },
+   "example": "settings",
+   "image": "images/raw/NEUTRAL_16.webp"
+  },
+  "NEUTRAL_2": {
+   "screens": {
+    "profile": 994
+   },
+   "example": "profile",
+   "image": "images/raw/NEUTRAL_2.webp"
+  },
+  "NEUTRAL_23": {
+   "screens": {
+    "chat": 2463,
+    "chatinput": 3646,
+    "colors": 4892,
+    "emoji": 5249,
+    "forum": 13393,
+    "home": 12613,
+    "inbox": 76309,
+    "keyboard": 3646,
+    "members": 2463,
+    "search": 3117,
+    "server": 24442,
+    "settings": 1947,
+    "you": 2524
+   },
+   "example": "colors",
+   "image": "images/raw/NEUTRAL_23.webp"
+  },
+  "NEUTRAL_25": {
+   "screens": {
+    "emoji": 1559,
+    "plugins": 550,
+    "settings": 555
+   },
+   "example": "settings",
+   "image": "images/raw/NEUTRAL_25.webp"
+  },
+  "NEUTRAL_28": {
+   "screens": {
+    "server": 4952
+   },
+   "example": "server",
+   "image": "images/raw/NEUTRAL_28.webp"
+  },
+  "NEUTRAL_4": {
+   "screens": {
+    "alert": 3052,
+    "chat": 8827,
+    "chatinput": 19576,
+    "emoji": 18797,
+    "home": 2285,
+    "keyboard": 17322,
+    "members": 8827,
+    "plugins": 40019,
+    "search": 4432,
+    "server": 282,
+    "you": 16223
+   },
+   "example": "plugins",
+   "image": "images/raw/NEUTRAL_4.webp"
+  },
+  "NEUTRAL_47": {
+   "screens": {
+    "chat": 2832,
+    "members": 2832,
+    "server": 753
+   },
+   "example": "chat",
+   "image": "images/raw/NEUTRAL_47.webp"
+  },
+  "NEUTRAL_60": {
+   "screens": {
+    "guildsheet": 248777,
+    "home": 5396,
+    "server": 16569
+   },
+   "example": "server",
+   "image": "images/raw/NEUTRAL_60.webp"
+  },
+  "NEUTRAL_63": {
+   "screens": {
+    "chatinput": 137574,
+    "emoji": 135439,
+    "keyboard": 134947
+   },
+   "example": "chatinput",
+   "image": "images/raw/NEUTRAL_63.webp"
+  },
+  "NEUTRAL_64": {
+   "screens": {
+    "actionsheet": 335420,
+    "alert": 356081,
+    "chat": 286986,
+    "chatinput": 843339,
+    "colors": 2320313,
+    "emoji": 981984,
+    "forum": 438354,
+    "home": 124953,
+    "keyboard": 757291,
+    "members": 286986,
+    "plugins": 769509,
+    "search": 1093927,
+    "server": 126293,
+    "settings": 811882,
+    "you": 109283
+   },
+   "example": "settings",
+   "image": "images/raw/NEUTRAL_64.webp"
+  },
+  "NEUTRAL_66": {
+   "screens": {
+    "inbox": 2165789
+   },
+   "example": "inbox",
+   "image": "images/raw/NEUTRAL_66.webp"
+  },
+  "NEUTRAL_69": {
+   "screens": {
+    "chat": 1897572,
+    "chatinput": 1222173,
+    "emoji": 813194,
+    "forum": 2023705,
+    "home": 1354555,
+    "keyboard": 1084237,
+    "members": 1871849,
+    "server": 1335937,
+    "you": 8237
+   },
+   "example": "chat",
+   "image": "images/raw/NEUTRAL_69.webp"
+  },
+  "NEUTRAL_73": {
+   "screens": {
+    "home": 301009,
+    "server": 353971,
+    "you": 1118185
+   },
+   "example": "server",
+   "image": "images/raw/NEUTRAL_73.webp"
+  },
+  "PLUM_9": {
+   "screens": {
+    "inbox": 2160
+   },
+   "example": "inbox",
+   "image": "images/raw/PLUM_9.webp"
+  },
+  "PRIMARY_300": {
+   "screens": {
+    "actionsheet": 2070
+   },
+   "example": "actionsheet",
+   "image": "images/raw/PRIMARY_300.webp"
+  },
+  "RED_NEW_18": {
+   "screens": {
+    "chatinput": 1652,
+    "keyboard": 1652,
+    "chat-unread-preview": 1698
+   },
+   "example": "chat-unread-preview",
+   "image": "images/raw/RED_NEW_18.webp"
+  },
+  "RED_NEW_50": {
+   "screens": {
+    "you": 317
+   },
+   "example": "you",
+   "image": "images/raw/RED_NEW_50.webp"
+  },
+  "WHITE": {
+   "screens": {
+    "chatinput": 430,
+    "emoji": 725,
+    "forum": 311,
+    "home": 3199,
+    "keyboard": 1146,
+    "search": 389,
+    "server": 815,
+    "you": 763
+   },
+   "example": "chatinput",
+   "image": "images/raw/WHITE.webp"
+  },
+  "YELLOW_NEW_70": {
+   "screens": {
+    "inbox": 982
+   },
+   "example": "inbox",
+   "image": "images/raw/YELLOW_NEW_70.webp"
+  },
+  "PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS": {
+   "screens": {
+    "component-badges-premium": 464
+   },
+   "example": "component-badges-premium",
+   "image": "images/raw/PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS.webp"
+  },
+  "NEUTRAL_35": {
+   "screens": {
+    "component-badges-rarity": 1292
+   },
+   "example": "component-badges-rarity",
+   "image": "images/raw/NEUTRAL_35.webp"
+  },
+  "NEUTRAL_15": {
+   "screens": {
+    "component-badges-rarity": 1740
+   },
+   "example": "component-badges-rarity",
+   "image": "images/raw/NEUTRAL_15.webp"
+  },
+  "ILLO_BLUE_40": {
+   "screens": {
+    "component-badges-rarity": 1048
+   },
+   "example": "component-badges-rarity",
+   "image": "images/raw/ILLO_BLUE_40.webp"
+  },
+  "ILLO_BLUE_30": {
+   "screens": {
+    "component-badges-rarity": 1371
+   },
+   "example": "component-badges-rarity",
+   "image": "images/raw/ILLO_BLUE_30.webp"
+  },
+  "ILLO_PINK_40": {
+   "screens": {
+    "component-badges-rarity": 992
+   },
+   "example": "component-badges-rarity",
+   "image": "images/raw/ILLO_PINK_40.webp"
+  },
+  "ILLO_PURPLE_30": {
+   "screens": {
+    "component-badges-rarity": 1217
+   },
+   "example": "component-badges-rarity",
+   "image": "images/raw/ILLO_PURPLE_30.webp"
+  },
+  "ILLO_ORANGE_30": {
+   "screens": {
+    "component-badges-rarity": 2425
+   },
+   "example": "component-badges-rarity",
+   "image": "images/raw/ILLO_ORANGE_30.webp"
+  },
+  "GREEN_NEW_50": {
+   "screens": {
+    "component-buttons": 65364
+   },
+   "example": "component-buttons",
+   "image": "images/raw/GREEN_NEW_50.webp"
+  },
+  "YELLOW_NEW_45": {
+   "screens": {
+    "component-badges": 5560
+   },
+   "example": "component-badges",
+   "image": "images/raw/YELLOW_NEW_45.webp"
+  },
+  "NEUTRAL_100": {
+   "screens": {
+    "component-buttons": 2582
+   },
+   "example": "component-buttons",
+   "image": "images/raw/NEUTRAL_100.webp"
+  },
+  "NEUTRAL_71": {
+   "screens": {
+    "component-badges": 1310
+   },
+   "example": "component-badges",
+   "image": "images/raw/NEUTRAL_71.webp"
+  },
+  "PREMIUM_TIER_0_BLUE_FOR_GRADIENTS_2": {
+   "screens": {
+    "component-buttons-more": 982
+   },
+   "example": "component-buttons-more",
+   "image": "images/raw/PREMIUM_TIER_0_BLUE_FOR_GRADIENTS_2.webp"
+  },
+  "NEUTRAL_17": {
+   "screens": {
+    "component-buttons-more-pressed-experimental_premium-secondary": 61270
+   },
+   "example": "component-buttons-more-pressed-experimental_premium-secondary",
+   "image": "images/raw/NEUTRAL_17.webp"
+  },
+  "GREEN_NEW_65": {
+   "screens": {
+    "component-buttons-pressed-active": 65552
+   },
+   "example": "component-buttons-pressed-active",
+   "image": "images/raw/GREEN_NEW_65.webp"
+  },
+  "RED_NEW_65": {
+   "screens": {
+    "component-buttons-pressed-destructive": 64527
+   },
+   "example": "component-buttons-pressed-destructive",
+   "image": "images/raw/RED_NEW_65.webp"
+  },
+  "BLURPLE_65": {
+   "screens": {
+    "component-buttons-pressed-primary": 65261
+   },
+   "example": "component-buttons-pressed-primary",
+   "image": "images/raw/BLURPLE_65.webp"
+  },
+  "TRANSPARENT": {
+   "screens": {
+    "component-cards": 90100
+   },
+   "example": "component-cards",
+   "image": "images/raw/TRANSPARENT.webp"
+  },
+  "BRAND_500": {
+   "screens": {
+    "component-checks": 4110
+   },
+   "example": "component-checks",
+   "image": "images/raw/BRAND_500.webp"
+  },
+  "RED_NEW_46": {
+   "screens": {
+    "component-icons": 1900
+   },
+   "example": "component-icons",
+   "image": "images/raw/RED_NEW_46.webp"
+  },
+  "BLUE_345": {
+   "screens": {
+    "component-notices": 6154
+   },
+   "example": "component-notices",
+   "image": "images/raw/BLUE_345.webp"
+  },
+  "GREEN_400": {
+   "screens": {
+    "component-notices": 6127
+   },
+   "example": "component-notices",
+   "image": "images/raw/GREEN_400.webp"
+  },
+  "YELLOW_300": {
+   "screens": {
+    "component-notices": 6174
+   },
+   "example": "component-notices",
+   "image": "images/raw/YELLOW_300.webp"
+  },
+  "RED_400": {
+   "screens": {
+    "component-notices": 5996
+   },
+   "example": "component-notices",
+   "image": "images/raw/RED_400.webp"
+  },
+  "RED_NEW_42": {
+   "screens": {
+    "component-toast-critical": 2788
+   },
+   "example": "component-toast-critical",
+   "image": "images/raw/RED_NEW_42.webp"
+  },
+  "GREEN_NEW_42": {
+   "screens": {
+    "component-toast-success": 2844
+   },
+   "example": "component-toast-success",
+   "image": "images/raw/GREEN_NEW_42.webp"
+  },
+  "PREMIUM_TIER_0_PURPLE_FOR_GRADIENTS": {
+   "screens": {
+    "component-buttons-more": 391
+   },
+   "example": "component-buttons-more",
+   "image": "images/raw/PREMIUM_TIER_0_PURPLE_FOR_GRADIENTS.webp"
+  },
+  "PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS_2": {
+   "screens": {
+    "component-buttons-more": 2089
+   },
+   "example": "component-buttons-more",
+   "image": "images/raw/PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS_2.webp"
+  },
+  "OPACITY_12": {
+   "screens": {
+    "component-buttons-more": 67951
+   },
+   "example": "component-buttons-more",
+   "image": "images/raw/OPACITY_12.webp"
+  },
+  "OPACITY_16": {
+   "screens": {
+    "component-badges": 8995
+   },
+   "example": "component-badges",
+   "image": "images/raw/OPACITY_16.webp"
+  },
+  "OPACITY_20": {
+   "screens": {
+    "component-toggles-pressed-primary selected": 79098
+   },
+   "example": "component-toggles-pressed-primary selected",
+   "image": "images/raw/OPACITY_20.webp"
+  },
+  "OPACITY_BLACK_80": {
+   "screens": {
+    "component-buttons": 1410918
+   },
+   "example": "component-buttons",
+   "image": "images/raw/OPACITY_BLACK_80.webp"
+  },
+  "OPACITY_WHITE_8": {
+   "screens": {
+    "component-buttons": 5560
+   },
+   "example": "component-buttons",
+   "image": "images/raw/OPACITY_WHITE_8.webp"
+  },
+  "OPACITY_BLACK_8": {
+   "screens": {
+    "component-checks": 3770
+   },
+   "example": "component-checks",
+   "image": "images/raw/OPACITY_BLACK_8.webp"
+  },
+  "OPACITY_64": {
+   "screens": {
+    "component-checks": 900
+   },
+   "example": "component-checks",
+   "image": "images/raw/OPACITY_64.webp"
+  },
+  "OPACITY_24": {
+   "screens": {
+    "component-badges-rarity": 11219
+   },
+   "example": "component-badges-rarity",
+   "image": "images/raw/OPACITY_24.webp"
+  },
+  "ILLO_PURPLE_40": {
+   "screens": {
+    "component-badges-rarity": 8508
+   },
+   "example": "component-badges-rarity",
+   "image": "images/raw/ILLO_PURPLE_40.webp"
+  },
+  "ILLO_ORANGE_40": {
+   "screens": {
+    "component-badges-rarity": 8970
+   },
+   "example": "component-badges-rarity",
+   "image": "images/raw/ILLO_ORANGE_40.webp"
+  },
+  "BLACK": {
+   "screens": {
+    "component-buttons-more-pressed-experimental_premium-basic": 5684
+   },
+   "example": "component-buttons-more-pressed-experimental_premium-basic",
+   "image": "images/raw/BLACK.webp"
+  },
+  "OPACITY_BLURPLE_16": {
+   "screens": {
+    "component-toggles": 169123
+   },
+   "example": "component-toggles",
+   "image": "images/raw/OPACITY_BLURPLE_16.webp"
+  },
+  "OPACITY_BLURPLE_84": {
+   "screens": {
+    "component-icons-pressed-toggle-icon-default-off": 1260
+   },
+   "example": "component-icons-pressed-toggle-icon-default-off",
+   "image": "images/raw/OPACITY_BLURPLE_84.webp"
+  },
+  "OPACITY_BLURPLE_24": {
+   "screens": {
+    "component-icons-pressed-toggle-icon-default-on": 10250
+   },
+   "example": "component-icons-pressed-toggle-icon-default-on",
+   "image": "images/raw/OPACITY_BLURPLE_24.webp"
+  },
+  "OPACITY_RED_20": {
+   "screens": {
+    "component-toast-critical": 65980
+   },
+   "example": "component-toast-critical",
+   "image": "images/raw/OPACITY_RED_20.webp"
+  },
+  "OPACITY_4": {
+   "screens": {
+    "component-buttons": 11040
+   },
+   "example": "component-buttons",
+   "image": "images/raw/OPACITY_4.webp"
+  },
+  "OPACITY_RED_12": {
+   "screens": {
+    "component-icons": 12905
+   },
+   "example": "component-icons",
+   "image": "images/raw/OPACITY_RED_12.webp"
+  },
+  "OPACITY_RED_32": {
+   "screens": {
+    "component-icons-pressed-toggle-icon-critical-on": 1244
+   },
+   "example": "component-icons-pressed-toggle-icon-critical-on",
+   "image": "images/raw/OPACITY_RED_32.webp"
+  },
+  "OPACITY_RED_16": {
+   "screens": {
+    "component-icons-pressed-toggle-icon-critical-on": 10693
+   },
+   "example": "component-icons-pressed-toggle-icon-critical-on",
+   "image": "images/raw/OPACITY_RED_16.webp"
+  },
+  "OPACITY_GREEN_20": {
+   "screens": {
+    "component-toast-success": 66290
+   },
+   "example": "component-toast-success",
+   "image": "images/raw/OPACITY_GREEN_20.webp"
+  },
+  "PRIMARY_830": {
+   "screens": {
+    "emoji": 77530
+   },
+   "example": "emoji",
+   "image": "images/raw/PRIMARY_830.webp"
+  },
+  "OPACITY_8": {
+   "screens": {
+    "plugins": 1516277
+   },
+   "example": "plugins",
+   "image": "images/raw/OPACITY_8.webp"
+  },
+  "OPACITY_BLACK_56": {
+   "screens": {
+    "server": 5790
+   },
+   "example": "server",
+   "image": "images/raw/OPACITY_BLACK_56.webp"
+  },
+  "OPACITY_BLACK_12": {
+   "screens": {
+    "plugins": 7562
+   },
+   "example": "plugins",
+   "image": "images/raw/OPACITY_BLACK_12.webp"
+  },
+  "NEUTRAL_36": {
+   "screens": {
+    "you": 22117
+   },
+   "example": "you",
+   "image": "images/raw/NEUTRAL_36.webp"
+  }
+ },
+ "coverage": {
+  "catalogue": {
+   "semantic": 449,
+   "raw": 1711
+  },
+  "individualExamples": {
+   "semantic": 197,
+   "raw": 77
+  },
+  "nativeScreens": 18,
+  "componentStates": 40,
+  "method": "Full-catalogue colour probe followed by individual pink overrides through the Themes API. Translucent aliases also use a baseline comparison inside a verified target region. Screenshots visually reviewed on Ash.",
+  "notObservedIndividually": {
+   "semantic/CONTROL_PRIMARY_BACKGROUND_ACTIVE": {
+    "status": "not-observed-individually",
+    "screen": "component-buttons-pressed-primary",
+    "review": "No visible single-key highlight after full reload and settled UI. Not classified as unused."
+   },
+   "raw/OPACITY_BLURPLE_40": {
+    "status": "not-observed-individually",
+    "screen": "component-buttons-more",
+    "review": "No visible single-key highlight after full reload and settled UI. Not classified as unused."
+   },
+   "raw/RED_260": {
+    "status": "not-observed-individually",
+    "screen": "component-buttons",
+    "review": "No visible single-key highlight after full reload and settled UI. Not classified as unused."
+   },
+   "raw/CHECKPOINT_PERSONA_THREE_GRADIENT_END": {
+    "status": "not-observed-individually",
+    "screen": "component-buttons-more-pressed-critical-secondary",
+    "review": "No visible single-key highlight after full reload and settled UI. Not classified as unused."
+   },
+   "raw/OPACITY_BLURPLE_8": {
+    "status": "not-observed-individually",
+    "screen": "chat",
+    "review": "No measurable pink change in verified semantic target region; not classified as unused."
+   },
+   "raw/OPACITY_1": {
+    "status": "not-observed-individually",
+    "screen": "plugins",
+    "review": "No measurable pink change in verified semantic target region; not classified as unused."
+   }
+  },
+  "unobserved": "Keys without an example have not been observed in these screens and states; this does not establish that they are unused.",
+  "groupedExamples": 70,
+  "groupedKeys": 45,
+  "expandedEmojiPicker": "Full semantic and raw catalogue probe; no additional unmapped matches."
+ }
+}

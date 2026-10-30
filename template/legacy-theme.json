@@ -1,0 +1,37 @@
+{
+	"name": "Dusk",
+	"description": "A starter theme. Make it yours.",
+	"authors": [
+		{ "name": "Your Name", "id": "0" }
+	],
+	"semanticColors": {
+		"BACKGROUND_BASE_LOWEST": ["#16131f"],
+		"BACKGROUND_BASE_LOWER": ["#1c1827"],
+		"BACKGROUND_BASE_LOW": ["#211c2e"],
+		"PANEL_BG": ["#1c1827"],
+		"CHANNEL_BACKGROUND_DEFAULT": ["#1c1827"],
+		"STANDALONE_CHANNEL_CONTENT_BACKGROUND": ["#1c1827"],
+		"MOBILE_ACTIONSHEET_BACKGROUND": ["#211c2e"],
+		"BACKGROUND_SURFACE_HIGH": ["#2a2439"],
+		"BACKGROUND_SURFACE_HIGHEST": ["#2f2941"],
+		"CARD_MUTED_BG": ["#2a2439"],
+		"TABLEROW_BACKGROUND_DEFAULT": ["#2a2439"],
+		"EMBED_BACKGROUND": ["#241f33"],
+		"MOBILE_ALERT_BACKGROUND_DEFAULT": ["#241f33"],
+		"MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT": ["#241f33"],
+		"MOBILE_EXPRESSION_PICKER_BACKGROUND_DEFAULT": ["#211c2e"],
+		"MOBILE_CHATINPUT_BACKGROUND_DEFAULT": ["#2a2439"],
+		"MOBILE_CHATINPUT_BACKGROUND_ACTIVE": ["#2f2941"],
+		"INPUT_BACKGROUND_DEFAULT": ["#1c1827"],
+		"MOBILE_TEXT_HEADING_PRIMARY": ["#ffffff"],
+		"TEXT_STRONG": ["#f1ecff"],
+		"TEXT_DEFAULT": ["#ddd5f3"],
+		"TEXT_SUBTLE": ["#b3a9cc"],
+		"TEXT_MUTED": ["#9a90b5"],
+		"TEXT_LINK": ["#9cc4ff"]
+	},
+	"rawColors": {
+		"BLURPLE_50": "#8b5cf6"
+	},
+	"spec": 2
+}

@@ -1,0 +1,5344 @@
+{
+	"discord": "352.6 - Alpha",
+	"base": "dark",
+	"tested": "2026-10-30",
+	"semantic": [
+		{
+			"key": "ANDROID_NAVIGATION_SCRIM_BACKGROUND",
+			"area": "Chat box and pickers",
+			"description": "Android navigation bar area while a sheet or the emoji picker is open.",
+			"image": "images/semantic/ANDROID_NAVIGATION_SCRIM_BACKGROUND.webp",
+			"screens": [
+				"actionsheet",
+				"emoji"
+			],
+			"defaults": {
+				"dark": "#0c0c0d80",
+				"darker": "#0f101480",
+				"light": "#f9f9f980",
+				"midnight": "#0f101480"
+			},
+			"raw": {
+				"dark": "PRIMARY_830",
+				"darker": "PLUM_24",
+				"light": "PRIMARY_100",
+				"midnight": "PLUM_24"
+			}
+		},
+		{
+			"key": "APP_FRAME_BORDER",
+			"area": "Borders and dividers",
+			"description": "Thin outline around the main rounded panel.",
+			"image": "images/semantic/APP_FRAME_BORDER.webp",
+			"screens": [
+				"home",
+				"server"
+			],
+			"defaults": {
+				"dark": "#97979f1f",
+				"darker": "#97979f1f",
+				"light": "#97979f47",
+				"midnight": "#97979f33"
+			},
+			"raw": {
+				"dark": "OPACITY_12",
+				"darker": "OPACITY_12",
+				"light": "OPACITY_28",
+				"midnight": "OPACITY_20"
+			}
+		},
+		{
+			"key": "BACKGROUND_BASE_LOW",
+			"area": "Backgrounds",
+			"description": "Notifications (inbox) page background.",
+			"image": "images/semantic/BACKGROUND_BASE_LOW.webp",
+			"screens": [
+				"inbox"
+			],
+			"defaults": {
+				"dark": "#36373e",
+				"darker": "#202024",
+				"light": "#fbfbfb",
+				"midnight": "#000000"
+			},
+			"raw": {
+				"dark": "NEUTRAL_66",
+				"darker": "NEUTRAL_82",
+				"light": "NEUTRAL_2",
+				"midnight": "NEUTRAL_100"
+			}
+		},
+		{
+			"key": "BACKGROUND_BASE_LOWER",
+			"area": "Backgrounds",
+			"description": "Behind the user panel at the bottom, under the chat box, and forum post lists. Valenced also uses it as the surface colour over custom backgrounds.",
+			"image": "images/semantic/BACKGROUND_BASE_LOWER.webp",
+			"screens": [
+				"chat",
+				"chatinput",
+				"emoji",
+				"forum",
+				"home",
+				"keyboard",
+				"members",
+				"server",
+				"you"
+			],
+			"defaults": {
+				"dark": "#323339",
+				"darker": "#1a1a1e",
+				"light": "#fbfbfb",
+				"midnight": "#000000"
+			},
+			"raw": {
+				"dark": "NEUTRAL_69",
+				"darker": "NEUTRAL_86",
+				"light": "NEUTRAL_2",
+				"midnight": "NEUTRAL_100"
+			}
+		},
+		{
+			"key": "BACKGROUND_BASE_LOWEST",
+			"area": "Backgrounds",
+			"description": "The darkest layer. Server rail on the left, and the status bar on the main screen.",
+			"image": "images/semantic/BACKGROUND_BASE_LOWEST.webp",
+			"screens": [
+				"home",
+				"inbox",
+				"server"
+			],
+			"defaults": {
+				"dark": "#2c2d32",
+				"darker": "#121214",
+				"light": "#f3f3f4",
+				"midnight": "#000000"
+			},
+			"raw": {
+				"dark": "NEUTRAL_73",
+				"darker": "NEUTRAL_92",
+				"light": "NEUTRAL_4",
+				"midnight": "NEUTRAL_100"
+			}
+		},
+		{
+			"key": "BACKGROUND_BRAND",
+			"area": "Backgrounds",
+			"description": "Brand (blurple) fill: the selected Messages button on the server rail, the pinned-post badge in forums.",
+			"image": "images/semantic/BACKGROUND_BRAND.webp",
+			"screens": [
+				"chatinput",
+				"emoji",
+				"forum",
+				"home",
+				"keyboard",
+				"search"
+			],
+			"defaults": {
+				"dark": "#5865f2",
+				"darker": "#5865f2",
+				"light": "#5865f2",
+				"midnight": "#5865f2"
+			},
+			"raw": {
+				"dark": "BLURPLE_50",
+				"darker": "BLURPLE_50",
+				"light": "BLURPLE_50",
+				"midnight": "BLURPLE_50"
+			}
+		},
+		{
+			"key": "BACKGROUND_CODE",
+			"area": "Chat",
+			"description": "Inline `code` background in messages.",
+			"image": "images/semantic/BACKGROUND_CODE.webp",
+			"screens": [
+				"chat",
+				"members"
+			],
+			"defaults": {
+				"dark": "#5865f214",
+				"darker": "#5865f214",
+				"light": "#5865f20a",
+				"midnight": "#5865f214"
+			},
+			"raw": {
+				"dark": "OPACITY_BLURPLE_8",
+				"darker": "OPACITY_BLURPLE_8",
+				"light": "OPACITY_BLURPLE_4",
+				"midnight": "OPACITY_BLURPLE_8"
+			}
+		},
+		{
+			"key": "BACKGROUND_FEEDBACK_NOTIFICATION",
+			"area": "Status and badges",
+			"description": "Red notification dot.",
+			"image": "images/semantic/BACKGROUND_FEEDBACK_NOTIFICATION.webp",
+			"screens": [
+				"you"
+			],
+			"defaults": {
+				"dark": "#d22d39",
+				"darker": "#d22d39",
+				"light": "#d22d39",
+				"midnight": "#d22d39"
+			},
+			"raw": {
+				"dark": "RED_NEW_50",
+				"darker": "RED_NEW_50",
+				"light": "RED_NEW_50",
+				"midnight": "RED_NEW_50"
+			}
+		},
+		{
+			"key": "BACKGROUND_MOD_NORMAL",
+			"area": "Backgrounds",
+			"description": "Track of progress bars, like the server Boost Goal bar.",
+			"image": "images/semantic/BACKGROUND_MOD_NORMAL.webp",
+			"screens": [
+				"server"
+			],
+			"defaults": {
+				"dark": "#97979f29",
+				"darker": "#97979f29",
+				"light": "#97979f29",
+				"midnight": "#97979f33"
+			},
+			"raw": {
+				"dark": "OPACITY_16",
+				"darker": "OPACITY_16",
+				"light": "OPACITY_16",
+				"midnight": "OPACITY_20"
+			}
+		},
+		{
+			"key": "BACKGROUND_MOD_STRONG",
+			"area": "Backgrounds",
+			"description": "Small pills: reactions you haven't added, role/clan tags next to names.",
+			"image": "images/semantic/BACKGROUND_MOD_STRONG.webp",
+			"screens": [
+				"actionsheet",
+				"chat",
+				"chatinput",
+				"emoji",
+				"home",
+				"keyboard",
+				"members",
+				"search",
+				"server"
+			],
+			"defaults": {
+				"dark": "#97979f33",
+				"darker": "#97979f33",
+				"light": "#97979f3d",
+				"midnight": "#97979f3d"
+			},
+			"raw": {
+				"dark": "OPACITY_20",
+				"darker": "OPACITY_20",
+				"light": "OPACITY_24",
+				"midnight": "OPACITY_24"
+			}
+		},
+		{
+			"key": "BACKGROUND_MOD_SUBTLE",
+			"area": "Backgrounds",
+			"description": "Filter chips in search, like \"in: announcements\".",
+			"image": "images/semantic/BACKGROUND_MOD_SUBTLE.webp",
+			"screens": [
+				"search"
+			],
+			"defaults": {
+				"dark": "#97979f1f",
+				"darker": "#97979f1f",
+				"light": "#97979f1f",
+				"midnight": "#97979f1f"
+			},
+			"raw": {
+				"dark": "OPACITY_12",
+				"darker": "OPACITY_12",
+				"light": "OPACITY_12",
+				"midnight": "OPACITY_12"
+			}
+		},
+		{
+			"key": "BACKGROUND_SCRIM",
+			"area": "Backgrounds",
+			"description": "The dim layer behind sheets, menus and alerts. Keep some transparency (#RRGGBBAA) or it hides the screen.",
+			"image": "images/semantic/BACKGROUND_SCRIM.webp",
+			"screens": [
+				"actionsheet",
+				"alert",
+				"guildsheet",
+				"component-buttons"
+			],
+			"defaults": {
+				"dark": "#000000cc",
+				"darker": "#000000cc",
+				"light": "#000000a3",
+				"midnight": "#000000cc"
+			},
+			"raw": {
+				"dark": "OPACITY_BLACK_80",
+				"darker": "OPACITY_BLACK_80",
+				"light": "OPACITY_BLACK_64",
+				"midnight": "OPACITY_BLACK_80"
+			}
+		},
+		{
+			"key": "BACKGROUND_SURFACE_HIGH",
+			"area": "Backgrounds",
+			"description": "Raised cards: the \"Follow this channel\" card, the quest card above the user panel, emoji picker header.",
+			"image": "images/semantic/BACKGROUND_SURFACE_HIGH.webp",
+			"screens": [
+				"chat",
+				"emoji",
+				"forum",
+				"home",
+				"members",
+				"server",
+				"you"
+			],
+			"defaults": {
+				"dark": "#393a41",
+				"darker": "#242429",
+				"light": "#ffffff",
+				"midnight": "#0a0a0c"
+			},
+			"raw": {
+				"dark": "NEUTRAL_64",
+				"darker": "NEUTRAL_79",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_96"
+			}
+		},
+		{
+			"key": "BACKGROUND_SURFACE_HIGHEST",
+			"area": "Backgrounds",
+			"description": "Popup menus, like the one from long-pressing a server icon.",
+			"image": "images/semantic/BACKGROUND_SURFACE_HIGHEST.webp",
+			"screens": [
+				"guildsheet"
+			],
+			"defaults": {
+				"dark": "#3f4048",
+				"darker": "#2c2d32",
+				"light": "#ffffff",
+				"midnight": "#17181b"
+			},
+			"raw": {
+				"dark": "NEUTRAL_60",
+				"darker": "NEUTRAL_73",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_88"
+			}
+		},
+		{
+			"key": "BORDER_MUTED",
+			"area": "Borders and dividers",
+			"description": "Outline of cards, like plugin cards and the user panel.",
+			"image": "images/semantic/BORDER_MUTED.webp",
+			"screens": [
+				"chat",
+				"chatinput",
+				"emoji",
+				"forum",
+				"home",
+				"keyboard",
+				"members",
+				"plugins",
+				"server",
+				"you"
+			],
+			"defaults": {
+				"dark": "#97979f0a",
+				"darker": "#97979f0a",
+				"light": "#97979f33",
+				"midnight": "#97979f29"
+			},
+			"raw": {
+				"dark": "OPACITY_4",
+				"darker": "OPACITY_4",
+				"light": "OPACITY_20",
+				"midnight": "OPACITY_16"
+			}
+		},
+		{
+			"key": "BORDER_NORMAL",
+			"area": "Borders and dividers",
+			"description": "Outline around inline `code`.",
+			"image": "images/semantic/BORDER_NORMAL.webp",
+			"screens": [
+				"chat",
+				"members"
+			],
+			"defaults": {
+				"dark": "#97979f33",
+				"darker": "#97979f33",
+				"light": "#97979f66",
+				"midnight": "#97979f3d"
+			},
+			"raw": {
+				"dark": "OPACITY_20",
+				"darker": "OPACITY_20",
+				"light": "OPACITY_40",
+				"midnight": "OPACITY_24"
+			}
+		},
+		{
+			"key": "BORDER_SUBTLE",
+			"area": "Borders and dividers",
+			"description": "Divider lines between rows and around sheets.",
+			"image": "images/semantic/BORDER_SUBTLE.webp",
+			"screens": [
+				"actionsheet",
+				"alert",
+				"chat",
+				"colors",
+				"emoji",
+				"forum",
+				"guildsheet",
+				"home",
+				"inbox",
+				"members",
+				"search",
+				"server",
+				"settings",
+				"you"
+			],
+			"defaults": {
+				"dark": "#97979f1f",
+				"darker": "#97979f1f",
+				"light": "#97979f47",
+				"midnight": "#97979f33"
+			},
+			"raw": {
+				"dark": "OPACITY_12",
+				"darker": "OPACITY_12",
+				"light": "OPACITY_28",
+				"midnight": "OPACITY_20"
+			}
+		},
+		{
+			"key": "CARD_MUTED_BG",
+			"area": "Rows, cards and inputs",
+			"description": "Grouped rows in Settings and in the message menu.",
+			"image": "images/semantic/CARD_MUTED_BG.webp",
+			"screens": [
+				"actionsheet",
+				"colors",
+				"search",
+				"settings",
+				"you"
+			],
+			"defaults": {
+				"dark": "#97979f14",
+				"darker": "#97979f14",
+				"light": "#97979f14",
+				"midnight": "#97979f14"
+			},
+			"raw": {
+				"dark": "OPACITY_8",
+				"darker": "OPACITY_8",
+				"light": "OPACITY_8",
+				"midnight": "OPACITY_8"
+			}
+		},
+		{
+			"key": "CARD_SECONDARY_BACKGROUND_DEFAULT",
+			"area": "Server rail and channel list",
+			"description": "Activity cards at the top of the Messages list (who's playing/listening).",
+			"image": "images/semantic/CARD_SECONDARY_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"home"
+			],
+			"defaults": {
+				"dark": "#97979f1f",
+				"darker": "#97979f1f",
+				"light": "#97979f1f",
+				"midnight": "#97979f1f"
+			},
+			"raw": {
+				"dark": "OPACITY_12",
+				"darker": "OPACITY_12",
+				"light": "OPACITY_12",
+				"midnight": "OPACITY_12"
+			}
+		},
+		{
+			"key": "CHANNEL_BACKGROUND_DEFAULT",
+			"area": "Backgrounds",
+			"description": "Chat background, behind messages.",
+			"image": "images/semantic/CHANNEL_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"chat",
+				"chatinput",
+				"emoji",
+				"keyboard",
+				"members"
+			],
+			"defaults": {
+				"dark": "#323339",
+				"darker": "#1a1a1e",
+				"light": "#fbfbfb",
+				"midnight": "#000000"
+			},
+			"raw": {
+				"dark": "NEUTRAL_69",
+				"darker": "NEUTRAL_86",
+				"light": "NEUTRAL_2",
+				"midnight": "NEUTRAL_100"
+			}
+		},
+		{
+			"key": "CHANNEL_ICON",
+			"area": "Server rail and channel list",
+			"description": "Channel icons (#, megaphone, forum) in the channel list.",
+			"image": "images/semantic/CHANNEL_ICON.webp",
+			"screens": [
+				"server"
+			],
+			"defaults": {
+				"dark": "#999aa1",
+				"darker": "#81828a",
+				"light": "#666770",
+				"midnight": "#7a7b83"
+			},
+			"raw": {
+				"dark": "NEUTRAL_28",
+				"darker": "NEUTRAL_35",
+				"light": "NEUTRAL_43",
+				"midnight": "NEUTRAL_37"
+			}
+		},
+		{
+			"key": "CHAT_INPUT_ACTION_BUTTON_ICON_DEFAULT_TINT",
+			"area": "Chat box and pickers",
+			"description": "The + and gift icons in the chat box.",
+			"image": "images/semantic/CHAT_INPUT_ACTION_BUTTON_ICON_DEFAULT_TINT.webp",
+			"screens": [
+				"chatinput",
+				"emoji",
+				"keyboard"
+			],
+			"defaults": {
+				"dark": "#c5c6ca",
+				"darker": "#abacb2",
+				"light": "#595a63",
+				"midnight": "#96979e"
+			},
+			"raw": {
+				"dark": "NEUTRAL_16",
+				"darker": "NEUTRAL_23",
+				"light": "NEUTRAL_47",
+				"midnight": "NEUTRAL_29"
+			}
+		},
+		{
+			"key": "CHAT_INPUT_ICON_DEFAULT_TINT",
+			"area": "Chat box and pickers",
+			"description": "The emoji icon in the chat box.",
+			"image": "images/semantic/CHAT_INPUT_ICON_DEFAULT_TINT.webp",
+			"screens": [
+				"chatinput",
+				"emoji",
+				"keyboard"
+			],
+			"defaults": {
+				"dark": "#c5c6ca",
+				"darker": "#abacb2",
+				"light": "#595a63",
+				"midnight": "#96979e"
+			},
+			"raw": {
+				"dark": "NEUTRAL_16",
+				"darker": "NEUTRAL_23",
+				"light": "NEUTRAL_47",
+				"midnight": "NEUTRAL_29"
+			}
+		},
+		{
+			"key": "CONTROL_OVERLAY_SECONDARY_BACKGROUND_DEFAULT",
+			"area": "Buttons",
+			"description": "Round buttons floating over content: the bell on the user panel, the close button on your profile.",
+			"image": "images/semantic/CONTROL_OVERLAY_SECONDARY_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"home",
+				"server",
+				"you"
+			],
+			"defaults": {
+				"dark": "#0000008f",
+				"darker": "#0000008f",
+				"light": "#0000008f",
+				"midnight": "#0000008f"
+			},
+			"raw": {
+				"dark": "OPACITY_BLACK_56",
+				"darker": "OPACITY_BLACK_56",
+				"light": "OPACITY_BLACK_56",
+				"midnight": "OPACITY_BLACK_56"
+			}
+		},
+		{
+			"key": "CONTROL_PRIMARY_BACKGROUND_DEFAULT",
+			"area": "Buttons",
+			"description": "Main buttons: Follow, Edit Profile, Confirm, the + button on Plugins.",
+			"image": "images/semantic/CONTROL_PRIMARY_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"alert",
+				"chat",
+				"forum",
+				"home",
+				"members",
+				"plugins",
+				"you"
+			],
+			"defaults": {
+				"dark": "#5865f2",
+				"darker": "#5865f2",
+				"light": "#5865f2",
+				"midnight": "#5865f2"
+			},
+			"raw": {
+				"dark": "BLURPLE_50",
+				"darker": "BLURPLE_50",
+				"light": "BLURPLE_50",
+				"midnight": "BLURPLE_50"
+			}
+		},
+		{
+			"key": "CONTROL_PRIMARY_BORDER_DEFAULT",
+			"area": "Buttons",
+			"description": "Outline of main buttons.",
+			"image": "images/semantic/CONTROL_PRIMARY_BORDER_DEFAULT.webp",
+			"screens": [
+				"alert",
+				"chat",
+				"forum",
+				"home",
+				"members",
+				"plugins",
+				"you"
+			],
+			"defaults": {
+				"dark": "#ffffff14",
+				"darker": "#ffffff14",
+				"light": "#ffffff14",
+				"midnight": "#ffffff14"
+			},
+			"raw": {
+				"dark": "OPACITY_WHITE_8",
+				"darker": "OPACITY_WHITE_8",
+				"light": "OPACITY_WHITE_8",
+				"midnight": "OPACITY_WHITE_8"
+			}
+		},
+		{
+			"key": "CONTROL_PRIMARY_TEXT_DEFAULT",
+			"area": "Buttons",
+			"description": "Text and icon on main buttons.",
+			"image": "images/semantic/CONTROL_PRIMARY_TEXT_DEFAULT.webp",
+			"screens": [
+				"alert",
+				"chat",
+				"forum",
+				"members",
+				"plugins",
+				"you"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#ffffff",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "CONTROL_SECONDARY_BACKGROUND_DEFAULT",
+			"area": "Buttons",
+			"description": "Grey buttons: Cancel, Add Friends, search buttons, \"Sort & view\".",
+			"image": "images/semantic/CONTROL_SECONDARY_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"alert",
+				"colors",
+				"forum",
+				"home",
+				"plugins",
+				"server",
+				"you"
+			],
+			"defaults": {
+				"dark": "#97979f1f",
+				"darker": "#97979f1f",
+				"light": "#97979f1f",
+				"midnight": "#97979f1f"
+			},
+			"raw": {
+				"dark": "OPACITY_12",
+				"darker": "OPACITY_12",
+				"light": "OPACITY_12",
+				"midnight": "OPACITY_12"
+			}
+		},
+		{
+			"key": "CONTROL_SECONDARY_BORDER_DEFAULT",
+			"area": "Buttons",
+			"description": "Outline of grey buttons.",
+			"image": "images/semantic/CONTROL_SECONDARY_BORDER_DEFAULT.webp",
+			"screens": [
+				"alert",
+				"colors",
+				"forum",
+				"home",
+				"plugins",
+				"server",
+				"you",
+				"component-buttons"
+			],
+			"defaults": {
+				"dark": "#97979f0a",
+				"darker": "#97979f0a",
+				"light": "#97979f33",
+				"midnight": "#97979f29"
+			},
+			"raw": {
+				"dark": "OPACITY_4",
+				"darker": "OPACITY_4",
+				"light": "OPACITY_20",
+				"midnight": "OPACITY_16"
+			}
+		},
+		{
+			"key": "CONTROL_SECONDARY_TEXT_DEFAULT",
+			"area": "Buttons",
+			"description": "Text and icon on grey buttons.",
+			"image": "images/semantic/CONTROL_SECONDARY_TEXT_DEFAULT.webp",
+			"screens": [
+				"alert",
+				"colors",
+				"forum",
+				"home",
+				"plugins",
+				"server",
+				"you"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#fbfbfb",
+				"light": "#28282d",
+				"midnight": "#dcdcdf"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_2",
+				"light": "NEUTRAL_76",
+				"midnight": "NEUTRAL_10"
+			}
+		},
+		{
+			"key": "EMBED_BACKGROUND",
+			"area": "Chat",
+			"description": "Embed cards (bot messages, link previews).",
+			"image": "images/semantic/EMBED_BACKGROUND.webp",
+			"screens": [
+				"chatinput",
+				"emoji",
+				"keyboard"
+			],
+			"defaults": {
+				"dark": "#393a41",
+				"darker": "#242429",
+				"light": "#ffffff",
+				"midnight": "#0a0a0c"
+			},
+			"raw": {
+				"dark": "NEUTRAL_64",
+				"darker": "NEUTRAL_79",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_96"
+			}
+		},
+		{
+			"key": "ICON_MUTED",
+			"area": "Icons",
+			"description": "Quiet icons: the send arrow before you type, emoji picker footer icons, forum comment icon.",
+			"image": "images/semantic/ICON_MUTED.webp",
+			"screens": [
+				"chatinput",
+				"emoji",
+				"forum",
+				"home",
+				"keyboard"
+			],
+			"defaults": {
+				"dark": "#abacb2",
+				"darker": "#96979e",
+				"light": "#6c6d76",
+				"midnight": "#81828a"
+			},
+			"raw": {
+				"dark": "NEUTRAL_23",
+				"darker": "NEUTRAL_29",
+				"light": "NEUTRAL_41",
+				"midnight": "NEUTRAL_35"
+			}
+		},
+		{
+			"key": "ICON_STRONG",
+			"area": "Icons",
+			"description": "The channel-type icon in the channel header.",
+			"image": "images/semantic/ICON_STRONG.webp",
+			"screens": [
+				"chat",
+				"chatinput",
+				"emoji",
+				"forum",
+				"keyboard",
+				"members"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#fbfbfb",
+				"light": "#28282d",
+				"midnight": "#dcdcdf"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_2",
+				"light": "NEUTRAL_76",
+				"midnight": "NEUTRAL_10"
+			}
+		},
+		{
+			"key": "ICON_SUBTLE",
+			"area": "Icons",
+			"description": "Back arrow and search icon in the channel header.",
+			"image": "images/semantic/ICON_SUBTLE.webp",
+			"screens": [
+				"chat",
+				"chatinput",
+				"emoji",
+				"forum",
+				"keyboard",
+				"members"
+			],
+			"defaults": {
+				"dark": "#c5c6ca",
+				"darker": "#abacb2",
+				"light": "#595a63",
+				"midnight": "#96979e"
+			},
+			"raw": {
+				"dark": "NEUTRAL_16",
+				"darker": "NEUTRAL_23",
+				"light": "NEUTRAL_47",
+				"midnight": "NEUTRAL_29"
+			}
+		},
+		{
+			"key": "ICON_VOICE_CONNECTED",
+			"area": "Icons",
+			"description": "Listening icon at the top right of activity cards.",
+			"image": "images/semantic/ICON_VOICE_CONNECTED.webp",
+			"screens": [
+				"home",
+				"component-activity"
+			],
+			"defaults": {
+				"dark": "#73c48b",
+				"darker": "#53ad71",
+				"light": "#01783e",
+				"midnight": "#3d9e60"
+			},
+			"raw": {
+				"dark": "GREEN_NEW_25",
+				"darker": "GREEN_NEW_34",
+				"light": "GREEN_NEW_55",
+				"midnight": "GREEN_NEW_40"
+			}
+		},
+		{
+			"key": "INPUT_BACKGROUND_DEFAULT",
+			"area": "Rows, cards and inputs",
+			"description": "Search boxes and text fields.",
+			"image": "images/semantic/INPUT_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"emoji",
+				"plugins",
+				"search",
+				"settings"
+			],
+			"defaults": {
+				"dark": "#00000014",
+				"darker": "#0000001f",
+				"light": "#00000005",
+				"midnight": "#0000001f"
+			},
+			"raw": {
+				"dark": "OPACITY_BLACK_8",
+				"darker": "OPACITY_BLACK_12",
+				"light": "OPACITY_BLACK_1",
+				"midnight": "OPACITY_BLACK_12"
+			}
+		},
+		{
+			"key": "INPUT_BORDER_ACTIVE",
+			"area": "Rows, cards and inputs",
+			"description": "Outline of the field you're typing in.",
+			"image": "images/semantic/INPUT_BORDER_ACTIVE.webp",
+			"screens": [
+				"search"
+			],
+			"defaults": {
+				"dark": "#5865f2",
+				"darker": "#5865f2",
+				"light": "#5865f2",
+				"midnight": "#5865f2"
+			},
+			"raw": {
+				"dark": "BLURPLE_50",
+				"darker": "BLURPLE_50",
+				"light": "BLURPLE_50",
+				"midnight": "BLURPLE_50"
+			}
+		},
+		{
+			"key": "INPUT_BORDER_DEFAULT",
+			"area": "Rows, cards and inputs",
+			"description": "Outline of search boxes and text fields.",
+			"image": "images/semantic/INPUT_BORDER_DEFAULT.webp",
+			"screens": [
+				"emoji",
+				"plugins",
+				"settings"
+			],
+			"defaults": {
+				"dark": "#97979f33",
+				"darker": "#97979f33",
+				"light": "#97979f66",
+				"midnight": "#97979f3d"
+			},
+			"raw": {
+				"dark": "OPACITY_20",
+				"darker": "OPACITY_20",
+				"light": "OPACITY_40",
+				"midnight": "OPACITY_24"
+			}
+		},
+		{
+			"key": "INPUT_ICON_DEFAULT",
+			"area": "Rows, cards and inputs",
+			"description": "Magnifier icon in search boxes.",
+			"image": "images/semantic/INPUT_ICON_DEFAULT.webp",
+			"screens": [
+				"emoji",
+				"plugins",
+				"settings"
+			],
+			"defaults": {
+				"dark": "#c5c6ca",
+				"darker": "#abacb2",
+				"light": "#595a63",
+				"midnight": "#96979e"
+			},
+			"raw": {
+				"dark": "NEUTRAL_16",
+				"darker": "NEUTRAL_23",
+				"light": "NEUTRAL_47",
+				"midnight": "NEUTRAL_29"
+			}
+		},
+		{
+			"key": "INPUT_PLACEHOLDER_TEXT_DEFAULT",
+			"area": "Rows, cards and inputs",
+			"description": "Placeholder text like \"Search\".",
+			"image": "images/semantic/INPUT_PLACEHOLDER_TEXT_DEFAULT.webp",
+			"screens": [
+				"emoji",
+				"plugins",
+				"settings"
+			],
+			"defaults": {
+				"dark": "#a4a5ab",
+				"darker": "#8f9097",
+				"light": "#696a73",
+				"midnight": "#7d7e87"
+			},
+			"raw": {
+				"dark": "NEUTRAL_25",
+				"darker": "NEUTRAL_31",
+				"light": "NEUTRAL_42",
+				"midnight": "NEUTRAL_36"
+			}
+		},
+		{
+			"key": "INTERACTIVE_BACKGROUND_ACTIVE",
+			"area": "Chat box and pickers",
+			"description": "Highlight behind the selected category in the emoji picker.",
+			"image": "images/semantic/INTERACTIVE_BACKGROUND_ACTIVE.webp",
+			"screens": [
+				"emoji"
+			],
+			"defaults": {
+				"dark": "#97979f29",
+				"darker": "#97979f29",
+				"light": "#97979f29",
+				"midnight": "#97979f33"
+			},
+			"raw": {
+				"dark": "OPACITY_16",
+				"darker": "OPACITY_16",
+				"light": "OPACITY_16",
+				"midnight": "OPACITY_20"
+			}
+		},
+		{
+			"key": "INTERACTIVE_ICON_DEFAULT",
+			"area": "Icons",
+			"description": "Category icons along the bottom of the emoji picker, forum sort icon.",
+			"image": "images/semantic/INTERACTIVE_ICON_DEFAULT.webp",
+			"screens": [
+				"emoji",
+				"forum"
+			],
+			"defaults": {
+				"dark": "#c5c6ca",
+				"darker": "#abacb2",
+				"light": "#595a63",
+				"midnight": "#96979e"
+			},
+			"raw": {
+				"dark": "NEUTRAL_16",
+				"darker": "NEUTRAL_23",
+				"light": "NEUTRAL_47",
+				"midnight": "NEUTRAL_29"
+			}
+		},
+		{
+			"key": "INTERACTIVE_TEXT_ACTIVE",
+			"area": "Chat",
+			"description": "Usernames in chat for people without a role colour.",
+			"image": "images/semantic/INTERACTIVE_TEXT_ACTIVE.webp",
+			"screens": [
+				"chatinput",
+				"emoji",
+				"keyboard",
+				"server"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#fbfbfb",
+				"light": "#28282d",
+				"midnight": "#dcdcdf"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_2",
+				"light": "NEUTRAL_76",
+				"midnight": "NEUTRAL_10"
+			}
+		},
+		{
+			"key": "INTERACTIVE_TEXT_DEFAULT",
+			"area": "Text",
+			"description": "Chevrons (>) on settings rows and the back/close buttons on settings pages.",
+			"image": "images/semantic/INTERACTIVE_TEXT_DEFAULT.webp",
+			"screens": [
+				"actionsheet",
+				"colors",
+				"inbox",
+				"plugins",
+				"search",
+				"settings"
+			],
+			"defaults": {
+				"dark": "#c5c6ca",
+				"darker": "#abacb2",
+				"light": "#595a63",
+				"midnight": "#96979e"
+			},
+			"raw": {
+				"dark": "NEUTRAL_16",
+				"darker": "NEUTRAL_23",
+				"light": "NEUTRAL_47",
+				"midnight": "NEUTRAL_29"
+			}
+		},
+		{
+			"key": "MENTION_FOREGROUND",
+			"area": "Chat",
+			"description": "@mention text, like your name in notifications.",
+			"image": "images/semantic/MENTION_FOREGROUND.webp",
+			"screens": [
+				"inbox"
+			],
+			"defaults": {
+				"dark": "#cdd7ff",
+				"darker": "#a9bbff",
+				"light": "#2e3c88",
+				"midnight": "#8ca0fd"
+			},
+			"raw": {
+				"dark": "BLURPLE_8",
+				"darker": "BLURPLE_19",
+				"light": "BLURPLE_71",
+				"midnight": "BLURPLE_29"
+			}
+		},
+		{
+			"key": "MESSAGES_ITEM_CHANNEL_TEXT_DEFAULT",
+			"area": "Text",
+			"description": "Names in the Messages (DM) list.",
+			"image": "images/semantic/MESSAGES_ITEM_CHANNEL_TEXT_DEFAULT.webp",
+			"screens": [
+				"home"
+			],
+			"defaults": {
+				"dark": "#c5c6ca",
+				"darker": "#abacb2",
+				"light": "#595a63",
+				"midnight": "#96979e"
+			},
+			"raw": {
+				"dark": "NEUTRAL_16",
+				"darker": "NEUTRAL_23",
+				"light": "NEUTRAL_47",
+				"midnight": "NEUTRAL_29"
+			}
+		},
+		{
+			"key": "MOBILE_ACTIONSHEET_BACKGROUND",
+			"area": "Backgrounds",
+			"description": "Background of pages that open on top: Settings, Plugins, Themes, Search.",
+			"image": "images/semantic/MOBILE_ACTIONSHEET_BACKGROUND.webp",
+			"screens": [
+				"colors",
+				"plugins",
+				"search",
+				"settings"
+			],
+			"defaults": {
+				"dark": "#393a41",
+				"darker": "#242429",
+				"light": "#ffffff",
+				"midnight": "#0a0a0c"
+			},
+			"raw": {
+				"dark": "NEUTRAL_64",
+				"darker": "NEUTRAL_79",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_96"
+			}
+		},
+		{
+			"key": "MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT",
+			"area": "Sheets, menus and alerts",
+			"description": "Long-press message menu background.",
+			"image": "images/semantic/MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"actionsheet"
+			],
+			"defaults": {
+				"dark": "#393a41",
+				"darker": "#242429",
+				"light": "#ffffff",
+				"midnight": "#0a0a0c"
+			},
+			"raw": {
+				"dark": "NEUTRAL_64",
+				"darker": "NEUTRAL_79",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_96"
+			}
+		},
+		{
+			"key": "MOBILE_ALERT_BACKGROUND_DEFAULT",
+			"area": "Sheets, menus and alerts",
+			"description": "Alert / confirm dialog background.",
+			"image": "images/semantic/MOBILE_ALERT_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"alert"
+			],
+			"defaults": {
+				"dark": "#393a41",
+				"darker": "#242429",
+				"light": "#ffffff",
+				"midnight": "#0a0a0c"
+			},
+			"raw": {
+				"dark": "NEUTRAL_64",
+				"darker": "NEUTRAL_79",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_96"
+			}
+		},
+		{
+			"key": "MOBILE_CHAT_NEW_MESSAGE_BORDER",
+			"area": "Chat",
+			"description": "The line of the \"NEW MESSAGES\" divider in chat.",
+			"image": "images/semantic/MOBILE_CHAT_NEW_MESSAGE_BORDER.webp",
+			"screens": [
+				"chatinput",
+				"keyboard",
+				"chat-unread-preview"
+			],
+			"defaults": {
+				"dark": "#da3e4470",
+				"darker": "#da3e4470",
+				"light": "#d22d3970",
+				"midnight": "#da3e4470"
+			},
+			"raw": {
+				"dark": "RED_NEW_46",
+				"darker": "RED_NEW_46",
+				"light": "RED_NEW_50",
+				"midnight": "RED_NEW_46"
+			}
+		},
+		{
+			"key": "MOBILE_CHAT_NEW_MESSAGE_TEXT",
+			"area": "Chat",
+			"description": "The \"NEW MESSAGES\" label on that divider.",
+			"image": "images/semantic/MOBILE_CHAT_NEW_MESSAGE_TEXT.webp",
+			"screens": [
+				"chatinput",
+				"keyboard",
+				"chat-unread-preview"
+			],
+			"defaults": {
+				"dark": "#ffa09b",
+				"darker": "#f87e7a",
+				"light": "#b92733",
+				"midnight": "#f06a67"
+			},
+			"raw": {
+				"dark": "RED_NEW_18",
+				"darker": "RED_NEW_28",
+				"light": "RED_NEW_56",
+				"midnight": "RED_NEW_34"
+			}
+		},
+		{
+			"key": "MOBILE_CHATINPUT_BACKGROUND_ACTIVE",
+			"area": "Chat box and pickers",
+			"description": "Chat box background while you're typing.",
+			"image": "images/semantic/MOBILE_CHATINPUT_BACKGROUND_ACTIVE.webp",
+			"screens": [
+				"keyboard"
+			],
+			"defaults": {
+				"dark": "#3b3c43",
+				"darker": "#242429",
+				"light": "#efeff1",
+				"midnight": "#19191c"
+			},
+			"raw": {
+				"dark": "NEUTRAL_63",
+				"darker": "NEUTRAL_79",
+				"light": "NEUTRAL_5",
+				"midnight": "NEUTRAL_87"
+			}
+		},
+		{
+			"key": "MOBILE_CHATINPUT_BACKGROUND_DEFAULT",
+			"area": "Chat box and pickers",
+			"description": "Chat box background.",
+			"image": "images/semantic/MOBILE_CHATINPUT_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"chatinput",
+				"emoji"
+			],
+			"defaults": {
+				"dark": "#3b3c43",
+				"darker": "#242429",
+				"light": "#efeff1",
+				"midnight": "#19191c"
+			},
+			"raw": {
+				"dark": "NEUTRAL_63",
+				"darker": "NEUTRAL_79",
+				"light": "NEUTRAL_5",
+				"midnight": "NEUTRAL_87"
+			}
+		},
+		{
+			"key": "MOBILE_CHATINPUT_BORDER_ACTIVE",
+			"area": "Chat box and pickers",
+			"description": "Chat box outline while you're typing.",
+			"image": "images/semantic/MOBILE_CHATINPUT_BORDER_ACTIVE.webp",
+			"screens": [
+				"keyboard"
+			],
+			"defaults": {
+				"dark": "#97979f1f",
+				"darker": "#97979f1f",
+				"light": "#97979f47",
+				"midnight": "#97979f33"
+			},
+			"raw": {
+				"dark": "OPACITY_12",
+				"darker": "OPACITY_12",
+				"light": "OPACITY_28",
+				"midnight": "OPACITY_20"
+			}
+		},
+		{
+			"key": "MOBILE_CHATINPUT_BORDER_DEFAULT",
+			"area": "Chat box and pickers",
+			"description": "Chat box outline.",
+			"image": "images/semantic/MOBILE_CHATINPUT_BORDER_DEFAULT.webp",
+			"screens": [
+				"chatinput",
+				"emoji"
+			],
+			"defaults": {
+				"dark": "#97979f0a",
+				"darker": "#97979f0a",
+				"light": "#97979f33",
+				"midnight": "#97979f29"
+			},
+			"raw": {
+				"dark": "OPACITY_4",
+				"darker": "OPACITY_4",
+				"light": "OPACITY_20",
+				"midnight": "OPACITY_16"
+			}
+		},
+		{
+			"key": "MOBILE_EMOJI_BUTTON_BACKGROUND",
+			"area": "Sheets, menus and alerts",
+			"description": "Quick-reaction buttons at the top of the message menu.",
+			"image": "images/semantic/MOBILE_EMOJI_BUTTON_BACKGROUND.webp",
+			"screens": [
+				"actionsheet"
+			],
+			"defaults": {
+				"dark": "#97979f1f",
+				"darker": "#97979f1f",
+				"light": "#97979f1f",
+				"midnight": "#97979f1f"
+			},
+			"raw": {
+				"dark": "OPACITY_12",
+				"darker": "OPACITY_12",
+				"light": "OPACITY_12",
+				"midnight": "OPACITY_12"
+			}
+		},
+		{
+			"key": "MOBILE_EXPRESSION_PICKER_BACKGROUND_DEFAULT",
+			"area": "Chat box and pickers",
+			"description": "Emoji / GIF / sticker picker background.",
+			"image": "images/semantic/MOBILE_EXPRESSION_PICKER_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"emoji"
+			],
+			"defaults": {
+				"dark": "#393a41",
+				"darker": "#242429",
+				"light": "#ffffff",
+				"midnight": "#0a0a0c"
+			},
+			"raw": {
+				"dark": "NEUTRAL_64",
+				"darker": "NEUTRAL_79",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_96"
+			}
+		},
+		{
+			"key": "MOBILE_FLOATINGBAR_BACKGROUND",
+			"area": "Chat",
+			"description": "The round jump-to-latest button above the chat box.",
+			"image": "images/semantic/MOBILE_FLOATINGBAR_BACKGROUND.webp",
+			"screens": [
+				"chatinput",
+				"emoji",
+				"keyboard",
+				"chat-floating-preview"
+			],
+			"defaults": {
+				"dark": "#393a41",
+				"darker": "#242429",
+				"light": "#ffffff",
+				"midnight": "#0a0a0c"
+			},
+			"raw": {
+				"dark": "NEUTRAL_64",
+				"darker": "NEUTRAL_79",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_96"
+			}
+		},
+		{
+			"key": "MOBILE_FLOATINGBAR_BACKGROUND_NAMEPLATE",
+			"area": "Server rail and channel list",
+			"description": "Behind your avatar in the user panel.",
+			"image": "images/semantic/MOBILE_FLOATINGBAR_BACKGROUND_NAMEPLATE.webp",
+			"screens": [
+				"home",
+				"server"
+			],
+			"defaults": {
+				"dark": "#3f4048",
+				"darker": "#2c2d32",
+				"light": "#ffffff",
+				"midnight": "#17181b"
+			},
+			"raw": {
+				"dark": "NEUTRAL_60",
+				"darker": "NEUTRAL_73",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_88"
+			}
+		},
+		{
+			"key": "MOBILE_GUILDBAR_ICON_BACKGROUND_DEFAULT",
+			"area": "Server rail and channel list",
+			"description": "Messages and Favourites buttons at the top of the server rail.",
+			"image": "images/semantic/MOBILE_GUILDBAR_ICON_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"home",
+				"server"
+			],
+			"defaults": {
+				"dark": "#97979f1f",
+				"darker": "#97979f1f",
+				"light": "#97979f1f",
+				"midnight": "#97979f1f"
+			},
+			"raw": {
+				"dark": "OPACITY_12",
+				"darker": "OPACITY_12",
+				"light": "OPACITY_12",
+				"midnight": "OPACITY_12"
+			}
+		},
+		{
+			"key": "MOBILE_GUILDBAR_ICON_DEFAULT",
+			"area": "Server rail and channel list",
+			"description": "Icons on those two buttons.",
+			"image": "images/semantic/MOBILE_GUILDBAR_ICON_DEFAULT.webp",
+			"screens": [
+				"home",
+				"server"
+			],
+			"defaults": {
+				"dark": "#c5c6ca",
+				"darker": "#abacb2",
+				"light": "#595a63",
+				"midnight": "#96979e"
+			},
+			"raw": {
+				"dark": "NEUTRAL_16",
+				"darker": "NEUTRAL_23",
+				"light": "NEUTRAL_47",
+				"midnight": "NEUTRAL_29"
+			}
+		},
+		{
+			"key": "MOBILE_KEYBOARD_GAP_BACKGROUND",
+			"area": "Chat box and pickers",
+			"description": "Strip under the chat box, behind the gesture bar.",
+			"image": "images/semantic/MOBILE_KEYBOARD_GAP_BACKGROUND.webp",
+			"screens": [
+				"chat",
+				"chatinput",
+				"emoji",
+				"keyboard",
+				"members"
+			],
+			"defaults": {
+				"dark": "#323339",
+				"darker": "#1a1a1e",
+				"light": "#fbfbfb",
+				"midnight": "#000000"
+			},
+			"raw": {
+				"dark": "NEUTRAL_69",
+				"darker": "NEUTRAL_86",
+				"light": "NEUTRAL_2",
+				"midnight": "NEUTRAL_100"
+			}
+		},
+		{
+			"key": "MOBILE_SEGMENTED_CONTROL_BACKGROUND",
+			"area": "Chat box and pickers",
+			"description": "Track behind the Emoji / GIFs / Stickers tabs.",
+			"image": "images/semantic/MOBILE_SEGMENTED_CONTROL_BACKGROUND.webp",
+			"screens": [
+				"emoji"
+			],
+			"defaults": {
+				"dark": "#97979f1f",
+				"darker": "#97979f1f",
+				"light": "#97979f1f",
+				"midnight": "#97979f1f"
+			},
+			"raw": {
+				"dark": "OPACITY_12",
+				"darker": "OPACITY_12",
+				"light": "OPACITY_12",
+				"midnight": "OPACITY_12"
+			}
+		},
+		{
+			"key": "MOBILE_SEGMENTED_CONTROL_INDICATOR_BACKGROUND",
+			"area": "Chat box and pickers",
+			"description": "The selected tab pill in Emoji / GIFs / Stickers.",
+			"image": "images/semantic/MOBILE_SEGMENTED_CONTROL_INDICATOR_BACKGROUND.webp",
+			"screens": [
+				"emoji"
+			],
+			"defaults": {
+				"dark": "#97979f33",
+				"darker": "#97979f33",
+				"light": "#97979f3d",
+				"midnight": "#97979f3d"
+			},
+			"raw": {
+				"dark": "OPACITY_20",
+				"darker": "OPACITY_20",
+				"light": "OPACITY_24",
+				"midnight": "OPACITY_24"
+			}
+		},
+		{
+			"key": "MOBILE_TEXT_HEADING_PRIMARY",
+			"area": "Text",
+			"description": "Page titles: \"Messages\", \"Settings\", channel names in headers, alert titles.",
+			"image": "images/semantic/MOBILE_TEXT_HEADING_PRIMARY.webp",
+			"screens": [
+				"alert",
+				"chat",
+				"chatinput",
+				"colors",
+				"emoji",
+				"forum",
+				"guildsheet",
+				"home",
+				"inbox",
+				"keyboard",
+				"members",
+				"plugins",
+				"server",
+				"settings",
+				"you"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#fbfbfb",
+				"light": "#28282d",
+				"midnight": "#dcdcdf"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_2",
+				"light": "NEUTRAL_76",
+				"midnight": "NEUTRAL_10"
+			}
+		},
+		{
+			"key": "MOBILE_TOAST_BACKGROUND_DEFAULT",
+			"area": "Server rail and channel list",
+			"description": "Toast pop-ups, and the \"NEW\" pill next to Channels & Roles.",
+			"image": "images/semantic/MOBILE_TOAST_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"server"
+			],
+			"defaults": {
+				"dark": "#3f4048",
+				"darker": "#2c2d32",
+				"light": "#ffffff",
+				"midnight": "#17181b"
+			},
+			"raw": {
+				"dark": "NEUTRAL_60",
+				"darker": "NEUTRAL_73",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_88"
+			}
+		},
+		{
+			"key": "PANEL_BG",
+			"area": "Backgrounds",
+			"description": "The big rounded panel holding the DM list and a server's channel list.",
+			"image": "images/semantic/PANEL_BG.webp",
+			"screens": [
+				"home",
+				"server"
+			],
+			"defaults": {
+				"dark": "#323339",
+				"darker": "#1a1a1e",
+				"light": "#fbfbfb",
+				"midnight": "#000000"
+			},
+			"raw": {
+				"dark": "NEUTRAL_69",
+				"darker": "NEUTRAL_86",
+				"light": "NEUTRAL_2",
+				"midnight": "NEUTRAL_100"
+			}
+		},
+		{
+			"key": "RADIO_BORDER_DEFAULT",
+			"area": "Switches and radios",
+			"description": "Radio button outline.",
+			"image": "images/semantic/RADIO_BORDER_DEFAULT.webp",
+			"screens": [
+				"colors"
+			],
+			"defaults": {
+				"dark": "#97979fa3",
+				"darker": "#97979fa3",
+				"light": "#84858d",
+				"midnight": "#97979fa3"
+			},
+			"raw": {
+				"dark": "OPACITY_64",
+				"darker": "OPACITY_64",
+				"light": "NEUTRAL_34",
+				"midnight": "OPACITY_64"
+			}
+		},
+		{
+			"key": "REACTION_BACKGROUND_DEFAULT",
+			"area": "Chat",
+			"description": "Reaction pills on forum posts.",
+			"image": "images/semantic/REACTION_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"forum"
+			],
+			"defaults": {
+				"dark": "#97979f1f",
+				"darker": "#97979f1f",
+				"light": "#97979f1f",
+				"midnight": "#97979f1f"
+			},
+			"raw": {
+				"dark": "OPACITY_12",
+				"darker": "OPACITY_12",
+				"light": "OPACITY_12",
+				"midnight": "OPACITY_12"
+			}
+		},
+		{
+			"key": "REACTION_BORDER_DEFAULT",
+			"area": "Chat",
+			"description": "Outline of those reaction pills.",
+			"image": "images/semantic/REACTION_BORDER_DEFAULT.webp",
+			"screens": [
+				"forum"
+			],
+			"defaults": {
+				"dark": "#97979f1f",
+				"darker": "#97979f1f",
+				"light": "#97979f47",
+				"midnight": "#97979f33"
+			},
+			"raw": {
+				"dark": "OPACITY_12",
+				"darker": "OPACITY_12",
+				"light": "OPACITY_28",
+				"midnight": "OPACITY_20"
+			}
+		},
+		{
+			"key": "REDESIGN_BUTTON_TERTIARY_BACKGROUND",
+			"area": "Buttons",
+			"description": "Small square icon buttons, like the gear and filter buttons on the Plugins page.",
+			"image": "images/semantic/REDESIGN_BUTTON_TERTIARY_BACKGROUND.webp",
+			"screens": [
+				"inbox",
+				"plugins",
+				"search"
+			],
+			"defaults": {
+				"dark": "#97979f00",
+				"darker": "#97979f00",
+				"light": "#97979f00",
+				"midnight": "#97979f00"
+			},
+			"raw": {
+				"dark": "OPACITY_1",
+				"darker": "OPACITY_1",
+				"light": "OPACITY_1",
+				"midnight": "OPACITY_1"
+			}
+		},
+		{
+			"key": "REDESIGN_BUTTON_TERTIARY_TEXT",
+			"area": "Buttons",
+			"description": "Icon on those small square buttons.",
+			"image": "images/semantic/REDESIGN_BUTTON_TERTIARY_TEXT.webp",
+			"screens": [
+				"plugins",
+				"search"
+			],
+			"defaults": {
+				"dark": "#f3f3f4",
+				"darker": "#efeff1",
+				"light": "#2e2e34",
+				"midnight": "#d4d5d8"
+			},
+			"raw": {
+				"dark": "NEUTRAL_4",
+				"darker": "NEUTRAL_5",
+				"light": "NEUTRAL_72",
+				"midnight": "NEUTRAL_12"
+			}
+		},
+		{
+			"key": "REDESIGN_CHANNEL_NAME_MUTED_TEXT",
+			"area": "Server rail and channel list",
+			"description": "Names of read channels.",
+			"image": "images/semantic/REDESIGN_CHANNEL_NAME_MUTED_TEXT.webp",
+			"screens": [
+				"server"
+			],
+			"defaults": {
+				"dark": "#abacb2",
+				"darker": "#96979e",
+				"light": "#6c6d76",
+				"midnight": "#81828a"
+			},
+			"raw": {
+				"dark": "NEUTRAL_23",
+				"darker": "NEUTRAL_29",
+				"light": "NEUTRAL_41",
+				"midnight": "NEUTRAL_35"
+			}
+		},
+		{
+			"key": "REDESIGN_CHANNEL_NAME_TEXT",
+			"area": "Server rail and channel list",
+			"description": "Names of unread channels.",
+			"image": "images/semantic/REDESIGN_CHANNEL_NAME_TEXT.webp",
+			"screens": [
+				"server"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#fbfbfb",
+				"light": "#28282d",
+				"midnight": "#dcdcdf"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_2",
+				"light": "NEUTRAL_76",
+				"midnight": "NEUTRAL_10"
+			}
+		},
+		{
+			"key": "SPINE_DEFAULT",
+			"area": "Server rail and channel list",
+			"description": "The line connecting threads to their channel.",
+			"image": "images/semantic/SPINE_DEFAULT.webp",
+			"screens": [
+				"server"
+			],
+			"defaults": {
+				"dark": "#595a63",
+				"darker": "#474851",
+				"light": "#c5c6ca",
+				"midnight": "#383940"
+			},
+			"raw": {
+				"dark": "NEUTRAL_47",
+				"darker": "NEUTRAL_55",
+				"light": "NEUTRAL_16",
+				"midnight": "NEUTRAL_65"
+			}
+		},
+		{
+			"key": "SPOILER_HIDDEN_BACKGROUND",
+			"area": "Status and badges",
+			"description": "Hidden spoiler blocks.",
+			"image": "images/semantic/SPOILER_HIDDEN_BACKGROUND.webp",
+			"screens": [
+				"you"
+			],
+			"defaults": {
+				"dark": "#7d7e87",
+				"darker": "#666770",
+				"light": "#8f9097",
+				"midnight": "#595a63"
+			},
+			"raw": {
+				"dark": "NEUTRAL_36",
+				"darker": "NEUTRAL_43",
+				"light": "NEUTRAL_31",
+				"midnight": "NEUTRAL_47"
+			}
+		},
+		{
+			"key": "STANDALONE_CHANNEL_CONTENT_BACKGROUND",
+			"area": "Backgrounds",
+			"description": "The header bar at the top of a channel (with the channel name), status bar included.",
+			"image": "images/semantic/STANDALONE_CHANNEL_CONTENT_BACKGROUND.webp",
+			"screens": [
+				"chat",
+				"chatinput",
+				"emoji",
+				"forum",
+				"keyboard",
+				"members"
+			],
+			"defaults": {
+				"dark": "#323339",
+				"darker": "#1a1a1e",
+				"light": "#fbfbfb",
+				"midnight": "#000000"
+			},
+			"raw": {
+				"dark": "NEUTRAL_69",
+				"darker": "NEUTRAL_86",
+				"light": "NEUTRAL_2",
+				"midnight": "NEUTRAL_100"
+			}
+		},
+		{
+			"key": "STANDALONE_CHANNEL_HEADER_BORDER",
+			"area": "Borders and dividers",
+			"description": "Line under the channel header.",
+			"image": "images/semantic/STANDALONE_CHANNEL_HEADER_BORDER.webp",
+			"screens": [
+				"chat",
+				"chatinput",
+				"emoji",
+				"forum",
+				"keyboard",
+				"members"
+			],
+			"defaults": {
+				"dark": "#97979f1f",
+				"darker": "#97979f1f",
+				"light": "#97979f47",
+				"midnight": "#97979f33"
+			},
+			"raw": {
+				"dark": "OPACITY_12",
+				"darker": "OPACITY_12",
+				"light": "OPACITY_28",
+				"midnight": "OPACITY_20"
+			}
+		},
+		{
+			"key": "STATUS_POSITIVE",
+			"area": "Status and badges",
+			"description": "Online status dot.",
+			"image": "images/semantic/STATUS_POSITIVE.webp",
+			"screens": [
+				"home",
+				"search",
+				"server"
+			],
+			"defaults": {
+				"dark": "#23a55a",
+				"darker": "#23a55a",
+				"light": "#24934e",
+				"midnight": "#23a55a"
+			},
+			"raw": {
+				"dark": "GREEN_360",
+				"darker": "GREEN_360",
+				"light": "GREEN_400",
+				"midnight": "GREEN_360"
+			}
+		},
+		{
+			"key": "SWITCH_BACKGROUND_DEFAULT",
+			"area": "Switches and radios",
+			"description": "Switch track when off.",
+			"image": "images/semantic/SWITCH_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"plugins"
+			],
+			"defaults": {
+				"dark": "#0000001f",
+				"darker": "#0000001f",
+				"light": "#00000005",
+				"midnight": "#0000001f"
+			},
+			"raw": {
+				"dark": "OPACITY_BLACK_12",
+				"darker": "OPACITY_BLACK_12",
+				"light": "OPACITY_BLACK_1",
+				"midnight": "OPACITY_BLACK_12"
+			}
+		},
+		{
+			"key": "SWITCH_BACKGROUND_SELECTED_DEFAULT",
+			"area": "Switches and radios",
+			"description": "Switch track when on.",
+			"image": "images/semantic/SWITCH_BACKGROUND_SELECTED_DEFAULT.webp",
+			"screens": [
+				"plugins"
+			],
+			"defaults": {
+				"dark": "#5865f2",
+				"darker": "#5865f2",
+				"light": "#5865f2",
+				"midnight": "#5865f2"
+			},
+			"raw": {
+				"dark": "BLURPLE_50",
+				"darker": "BLURPLE_50",
+				"light": "BLURPLE_50",
+				"midnight": "BLURPLE_50"
+			}
+		},
+		{
+			"key": "SWITCH_BORDER_DEFAULT",
+			"area": "Switches and radios",
+			"description": "Switch outline when off.",
+			"image": "images/semantic/SWITCH_BORDER_DEFAULT.webp",
+			"screens": [
+				"plugins"
+			],
+			"defaults": {
+				"dark": "#97979f33",
+				"darker": "#97979f33",
+				"light": "#00000029",
+				"midnight": "#97979f33"
+			},
+			"raw": {
+				"dark": "OPACITY_20",
+				"darker": "OPACITY_20",
+				"light": "OPACITY_BLACK_16",
+				"midnight": "OPACITY_20"
+			}
+		},
+		{
+			"key": "SWITCH_BORDER_SELECTED_DEFAULT",
+			"area": "Switches and radios",
+			"description": "Switch outline when on.",
+			"image": "images/semantic/SWITCH_BORDER_SELECTED_DEFAULT.webp",
+			"screens": [
+				"plugins"
+			],
+			"defaults": {
+				"dark": "#97979f1f",
+				"darker": "#97979f1f",
+				"light": "#97979f47",
+				"midnight": "#97979f33"
+			},
+			"raw": {
+				"dark": "OPACITY_12",
+				"darker": "OPACITY_12",
+				"light": "OPACITY_28",
+				"midnight": "OPACITY_20"
+			}
+		},
+		{
+			"key": "SWITCH_THUMB_BACKGROUND_DEFAULT",
+			"area": "Switches and radios",
+			"description": "Switch knob when off.",
+			"image": "images/semantic/SWITCH_THUMB_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"plugins"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#62636d",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "NEUTRAL_44",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "SWITCH_THUMB_BACKGROUND_SELECTED_DEFAULT",
+			"area": "Switches and radios",
+			"description": "Switch knob when on.",
+			"image": "images/semantic/SWITCH_THUMB_BACKGROUND_SELECTED_DEFAULT.webp",
+			"screens": [
+				"plugins"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#ffffff",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "TABLEROW_BACKGROUND_DEFAULT",
+			"area": "Rows, cards and inputs",
+			"description": "Plugin cards and other list rows.",
+			"image": "images/semantic/TABLEROW_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"plugins",
+				"search"
+			],
+			"defaults": {
+				"dark": "#97979f14",
+				"darker": "#97979f14",
+				"light": "#97979f1f",
+				"midnight": "#97979f14"
+			},
+			"raw": {
+				"dark": "OPACITY_8",
+				"darker": "OPACITY_8",
+				"light": "OPACITY_12",
+				"midnight": "OPACITY_8"
+			}
+		},
+		{
+			"key": "TABLEROW_ICON_COLOR_DEFAULT",
+			"area": "Icons",
+			"description": "Icons at the start of settings rows and action sheet rows.",
+			"image": "images/semantic/TABLEROW_ICON_COLOR_DEFAULT.webp",
+			"screens": [
+				"actionsheet",
+				"settings"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#fbfbfb",
+				"light": "#28282d",
+				"midnight": "#dcdcdf"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_2",
+				"light": "NEUTRAL_76",
+				"midnight": "NEUTRAL_10"
+			}
+		},
+		{
+			"key": "TEXT_BRAND",
+			"area": "Text",
+			"description": "Brand-coloured text: the selected tab (e.g. \"Members\" in search), the \"NEW\" label.",
+			"image": "images/semantic/TEXT_BRAND.webp",
+			"screens": [
+				"search",
+				"server",
+				"you"
+			],
+			"defaults": {
+				"dark": "#94a8ff",
+				"darker": "#798df9",
+				"light": "#525fe0",
+				"midnight": "#6374f4"
+			},
+			"raw": {
+				"dark": "BLURPLE_26",
+				"darker": "BLURPLE_36",
+				"light": "BLURPLE_53",
+				"midnight": "BLURPLE_45"
+			}
+		},
+		{
+			"key": "TEXT_DEFAULT",
+			"area": "Text",
+			"description": "Normal text: row descriptions, embed text, alert body, clan tag text.",
+			"image": "images/semantic/TEXT_DEFAULT.webp",
+			"screens": [
+				"alert",
+				"chat",
+				"chatinput",
+				"emoji",
+				"home",
+				"keyboard",
+				"members",
+				"plugins",
+				"search",
+				"server",
+				"you"
+			],
+			"defaults": {
+				"dark": "#f3f3f4",
+				"darker": "#efeff1",
+				"light": "#2e2e34",
+				"midnight": "#d4d5d8"
+			},
+			"raw": {
+				"dark": "NEUTRAL_4",
+				"darker": "NEUTRAL_5",
+				"light": "NEUTRAL_72",
+				"midnight": "NEUTRAL_12"
+			}
+		},
+		{
+			"key": "TEXT_FEEDBACK_POSITIVE",
+			"area": "Text",
+			"description": "Green \"good\" text, like the playing-time counter on an activity.",
+			"image": "images/semantic/TEXT_FEEDBACK_POSITIVE.webp",
+			"screens": [
+				"you"
+			],
+			"defaults": {
+				"dark": "#7ecb94",
+				"darker": "#5eb479",
+				"light": "#01713a",
+				"midnight": "#41a063"
+			},
+			"raw": {
+				"dark": "GREEN_NEW_22",
+				"darker": "GREEN_NEW_31",
+				"light": "GREEN_NEW_58",
+				"midnight": "GREEN_NEW_39"
+			}
+		},
+		{
+			"key": "TEXT_LINK",
+			"area": "Text",
+			"description": "Links.",
+			"image": "images/semantic/TEXT_LINK.webp",
+			"screens": [
+				"you"
+			],
+			"defaults": {
+				"dark": "#76aff6",
+				"darker": "#4d96ee",
+				"light": "#006dd4",
+				"midnight": "#2781e7"
+			},
+			"raw": {
+				"dark": "BLUE_NEW_27",
+				"darker": "BLUE_NEW_37",
+				"light": "BLUE_NEW_53",
+				"midnight": "BLUE_NEW_45"
+			}
+		},
+		{
+			"key": "TEXT_MUTED",
+			"area": "Text",
+			"description": "Secondary text: timestamps, DM previews, hints like \"Default Discord colors\".",
+			"image": "images/semantic/TEXT_MUTED.webp",
+			"screens": [
+				"chat",
+				"chatinput",
+				"colors",
+				"emoji",
+				"forum",
+				"home",
+				"inbox",
+				"keyboard",
+				"members",
+				"search",
+				"server",
+				"settings",
+				"you"
+			],
+			"defaults": {
+				"dark": "#abacb2",
+				"darker": "#96979e",
+				"light": "#6c6d76",
+				"midnight": "#81828a"
+			},
+			"raw": {
+				"dark": "NEUTRAL_23",
+				"darker": "NEUTRAL_29",
+				"light": "NEUTRAL_41",
+				"midnight": "NEUTRAL_35"
+			}
+		},
+		{
+			"key": "TEXT_OVERLAY_LIGHT",
+			"area": "Chat",
+			"description": "Text on the unread banner at the top of a channel (\"18 new messages since...\").",
+			"image": "images/semantic/TEXT_OVERLAY_LIGHT.webp",
+			"screens": [
+				"chatinput",
+				"emoji",
+				"keyboard",
+				"chat-unread-preview"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#ffffff",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "TEXT_STRONG",
+			"area": "Text",
+			"description": "Main text: message content, settings row titles, action sheet items.",
+			"image": "images/semantic/TEXT_STRONG.webp",
+			"screens": [
+				"actionsheet",
+				"chat",
+				"chatinput",
+				"colors",
+				"emoji",
+				"guildsheet",
+				"home",
+				"keyboard",
+				"members",
+				"plugins",
+				"server",
+				"settings",
+				"you"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#fbfbfb",
+				"light": "#28282d",
+				"midnight": "#dcdcdf"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_2",
+				"light": "NEUTRAL_76",
+				"midnight": "NEUTRAL_10"
+			}
+		},
+		{
+			"key": "TEXT_SUBTLE",
+			"area": "Text",
+			"description": "Section headers in settings, like \"Valenced\" and \"Account Settings\".",
+			"image": "images/semantic/TEXT_SUBTLE.webp",
+			"screens": [
+				"home",
+				"inbox",
+				"search",
+				"server",
+				"settings"
+			],
+			"defaults": {
+				"dark": "#c5c6ca",
+				"darker": "#abacb2",
+				"light": "#595a63",
+				"midnight": "#96979e"
+			},
+			"raw": {
+				"dark": "NEUTRAL_16",
+				"darker": "NEUTRAL_23",
+				"light": "NEUTRAL_47",
+				"midnight": "NEUTRAL_29"
+			}
+		},
+		{
+			"key": "USER_PROFILE_ABOUT_ME_HEADING_TEXT",
+			"area": "Profiles",
+			"description": "Section headings on profiles, like \"Bio\".",
+			"image": "images/semantic/USER_PROFILE_ABOUT_ME_HEADING_TEXT.webp",
+			"screens": [
+				"you"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#fbfbfb",
+				"light": "#28282d",
+				"midnight": "#dcdcdf"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_2",
+				"light": "NEUTRAL_76",
+				"midnight": "NEUTRAL_10"
+			}
+		},
+		{
+			"key": "USER_PROFILE_GRADIENT_BACKGROUND",
+			"area": "Profiles",
+			"description": "Your profile (the You page) background when you have no profile theme.",
+			"image": "images/semantic/USER_PROFILE_GRADIENT_BACKGROUND.webp",
+			"screens": [
+				"you"
+			],
+			"defaults": {
+				"dark": "#2c2d32",
+				"darker": "#121214",
+				"light": "#f3f3f4",
+				"midnight": "#000000"
+			},
+			"raw": {
+				"dark": "NEUTRAL_73",
+				"darker": "NEUTRAL_92",
+				"light": "NEUTRAL_4",
+				"midnight": "NEUTRAL_100"
+			}
+		},
+		{
+			"key": "WHITE",
+			"area": "Icons",
+			"description": "Pure white used for icons on coloured buttons (bell button, rail icons). Changing it affects a lot.",
+			"image": "images/semantic/WHITE.webp",
+			"screens": [
+				"chatinput",
+				"emoji",
+				"forum",
+				"home",
+				"keyboard",
+				"search",
+				"server",
+				"you"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#ffffff",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "WHITE",
+				"darker": "WHITE",
+				"light": "WHITE",
+				"midnight": "WHITE"
+			}
+		},
+		{
+			"key": "BADGE_PREMIUM_BACKGROUND_GRADIENT_START",
+			"area": "Status and badges",
+			"description": "Fill of the premium badge.",
+			"image": "images/semantic/BADGE_PREMIUM_BACKGROUND_GRADIENT_START.webp",
+			"screens": [
+				"component-badges-premium"
+			],
+			"defaults": {
+				"dark": "#8547c6",
+				"darker": "#8547c6",
+				"light": "#8547c6",
+				"midnight": "#8547c6"
+			},
+			"raw": {
+				"dark": "PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS",
+				"darker": "PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS",
+				"light": "PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS",
+				"midnight": "PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS"
+			}
+		},
+		{
+			"key": "BADGE_PREMIUM_TEXT",
+			"area": "Status and badges",
+			"description": "Text of the premium badge.",
+			"image": "images/semantic/BADGE_PREMIUM_TEXT.webp",
+			"screens": [
+				"component-badges-premium"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#ffffff",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "BADGE_COMMON_BORDER",
+			"area": "Status and badges",
+			"description": "Outline of the common badge.",
+			"image": "images/semantic/BADGE_COMMON_BORDER.webp",
+			"screens": [
+				"component-badges-rarity"
+			],
+			"defaults": {
+				"dark": "#81828a",
+				"darker": "#81828a",
+				"light": "#81828a",
+				"midnight": "#81828a"
+			},
+			"raw": {
+				"dark": "NEUTRAL_35",
+				"darker": "NEUTRAL_35",
+				"light": "NEUTRAL_35",
+				"midnight": "NEUTRAL_35"
+			}
+		},
+		{
+			"key": "BADGE_COMMON_BACKGROUND",
+			"area": "Status and badges",
+			"description": "Fill of the common badge.",
+			"image": "images/semantic/BADGE_COMMON_BACKGROUND.webp",
+			"screens": [
+				"component-badges-rarity"
+			],
+			"defaults": {
+				"dark": "#97979f3d",
+				"darker": "#97979f3d",
+				"light": "#97979f3d",
+				"midnight": "#97979f3d"
+			},
+			"raw": {
+				"dark": "OPACITY_24",
+				"darker": "OPACITY_24",
+				"light": "OPACITY_24",
+				"midnight": "OPACITY_24"
+			}
+		},
+		{
+			"key": "BADGE_COMMON_TEXT",
+			"area": "Status and badges",
+			"description": "Text of the common badge.",
+			"image": "images/semantic/BADGE_COMMON_TEXT.webp",
+			"screens": [
+				"component-badges-rarity"
+			],
+			"defaults": {
+				"dark": "#c9cace",
+				"darker": "#c9cace",
+				"light": "#5f606a",
+				"midnight": "#c9cace"
+			},
+			"raw": {
+				"dark": "NEUTRAL_15",
+				"darker": "NEUTRAL_15",
+				"light": "NEUTRAL_45",
+				"midnight": "NEUTRAL_15"
+			}
+		},
+		{
+			"key": "BADGE_RARE_BORDER_GRADIENT_START",
+			"area": "Status and badges",
+			"description": "Outline of the rare badge.",
+			"image": "images/semantic/BADGE_RARE_BORDER_GRADIENT_START.webp",
+			"screens": [
+				"component-badges-rarity"
+			],
+			"defaults": {
+				"dark": "#5865f2",
+				"darker": "#5865f2",
+				"light": "#5865f2",
+				"midnight": "#5865f2"
+			},
+			"raw": {
+				"dark": "ILLO_BLUE_40",
+				"darker": "ILLO_BLUE_40",
+				"light": "ILLO_BLUE_40",
+				"midnight": "ILLO_BLUE_40"
+			}
+		},
+		{
+			"key": "BADGE_RARE_TEXT",
+			"area": "Status and badges",
+			"description": "Text of the rare badge.",
+			"image": "images/semantic/BADGE_RARE_TEXT.webp",
+			"screens": [
+				"component-badges-rarity"
+			],
+			"defaults": {
+				"dark": "#a0a9fa",
+				"darker": "#a0a9fa",
+				"light": "#2d35ad",
+				"midnight": "#a0a9fa"
+			},
+			"raw": {
+				"dark": "ILLO_BLUE_30",
+				"darker": "ILLO_BLUE_30",
+				"light": "ILLO_BLUE_50",
+				"midnight": "ILLO_BLUE_30"
+			}
+		},
+		{
+			"key": "BADGE_EPIC_BORDER_GRADIENT_START",
+			"area": "Status and badges",
+			"description": "Outline of the epic badge.",
+			"image": "images/semantic/BADGE_EPIC_BORDER_GRADIENT_START.webp",
+			"screens": [
+				"component-badges-rarity"
+			],
+			"defaults": {
+				"dark": "#ff4cd2",
+				"darker": "#ff4cd2",
+				"light": "#ff4cd2",
+				"midnight": "#ff4cd2"
+			},
+			"raw": {
+				"dark": "ILLO_PINK_40",
+				"darker": "ILLO_PINK_40",
+				"light": "ILLO_PINK_40",
+				"midnight": "ILLO_PINK_40"
+			}
+		},
+		{
+			"key": "BADGE_EPIC_BACKGROUND",
+			"area": "Status and badges",
+			"description": "Fill of the epic badge.",
+			"image": "images/semantic/BADGE_EPIC_BACKGROUND.webp",
+			"screens": [
+				"component-badges-rarity"
+			],
+			"defaults": {
+				"dark": "#a056f23d",
+				"darker": "#a056f23d",
+				"light": "#a056f23d",
+				"midnight": "#a056f23d"
+			},
+			"raw": {
+				"dark": "ILLO_PURPLE_40",
+				"darker": "ILLO_PURPLE_40",
+				"light": "ILLO_PURPLE_40",
+				"midnight": "ILLO_PURPLE_40"
+			}
+		},
+		{
+			"key": "BADGE_EPIC_TEXT",
+			"area": "Status and badges",
+			"description": "Text of the epic badge.",
+			"image": "images/semantic/BADGE_EPIC_TEXT.webp",
+			"screens": [
+				"component-badges-rarity"
+			],
+			"defaults": {
+				"dark": "#ca9ef9",
+				"darker": "#ca9ef9",
+				"light": "#612caf",
+				"midnight": "#ca9ef9"
+			},
+			"raw": {
+				"dark": "ILLO_PURPLE_30",
+				"darker": "ILLO_PURPLE_30",
+				"light": "ILLO_PURPLE_50",
+				"midnight": "ILLO_PURPLE_30"
+			}
+		},
+		{
+			"key": "BADGE_MYTHIC_TEXT",
+			"area": "Status and badges",
+			"description": "Text and outline of the mythic badge.",
+			"image": "images/semantic/BADGE_MYTHIC_TEXT.webp",
+			"screens": [
+				"component-badges-rarity"
+			],
+			"defaults": {
+				"dark": "#fe9242",
+				"darker": "#fe9242",
+				"light": "#f25e0c",
+				"midnight": "#fe9242"
+			},
+			"raw": {
+				"dark": "ILLO_ORANGE_30",
+				"darker": "ILLO_ORANGE_30",
+				"light": "ILLO_ORANGE_50",
+				"midnight": "ILLO_ORANGE_30"
+			}
+		},
+		{
+			"key": "BADGE_MYTHIC_BACKGROUND",
+			"area": "Status and badges",
+			"description": "Fill of the mythic badge.",
+			"image": "images/semantic/BADGE_MYTHIC_BACKGROUND.webp",
+			"screens": [
+				"component-badges-rarity"
+			],
+			"defaults": {
+				"dark": "#fe6e0d3d",
+				"darker": "#fe6e0d3d",
+				"light": "#fe6e0d3d",
+				"midnight": "#fe6e0d3d"
+			},
+			"raw": {
+				"dark": "ILLO_ORANGE_40",
+				"darker": "ILLO_ORANGE_40",
+				"light": "ILLO_ORANGE_40",
+				"midnight": "ILLO_ORANGE_40"
+			}
+		},
+		{
+			"key": "BADGE_PRIMARY_BORDER",
+			"area": "Status and badges",
+			"description": "Outline of the primary badge.",
+			"image": "images/semantic/BADGE_PRIMARY_BORDER.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#5865f2",
+				"darker": "#5865f2",
+				"light": "#5865f2",
+				"midnight": "#5865f2"
+			},
+			"raw": {
+				"dark": "BLURPLE_50",
+				"darker": "BLURPLE_50",
+				"light": "BLURPLE_50",
+				"midnight": "BLURPLE_50"
+			}
+		},
+		{
+			"key": "BADGE_PRIMARY_BACKGROUND",
+			"area": "Status and badges",
+			"description": "Fill of the primary badge.",
+			"image": "images/semantic/BADGE_PRIMARY_BACKGROUND.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#5865f2",
+				"darker": "#5865f2",
+				"light": "#5865f2",
+				"midnight": "#5865f2"
+			},
+			"raw": {
+				"dark": "BLURPLE_50",
+				"darker": "BLURPLE_50",
+				"light": "BLURPLE_50",
+				"midnight": "BLURPLE_50"
+			}
+		},
+		{
+			"key": "BADGE_SECONDARY_BORDER",
+			"area": "Status and badges",
+			"description": "Outline of the secondary badge.",
+			"image": "images/semantic/BADGE_SECONDARY_BORDER.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#97979f29",
+				"darker": "#97979f29",
+				"light": "#97979f29",
+				"midnight": "#97979f33"
+			},
+			"raw": {
+				"dark": "OPACITY_16",
+				"darker": "OPACITY_16",
+				"light": "OPACITY_16",
+				"midnight": "OPACITY_20"
+			}
+		},
+		{
+			"key": "BADGE_SECONDARY_BACKGROUND",
+			"area": "Status and badges",
+			"description": "Fill of the secondary badge.",
+			"image": "images/semantic/BADGE_SECONDARY_BACKGROUND.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#97979f29",
+				"darker": "#97979f29",
+				"light": "#97979f29",
+				"midnight": "#97979f33"
+			},
+			"raw": {
+				"dark": "OPACITY_16",
+				"darker": "OPACITY_16",
+				"light": "OPACITY_16",
+				"midnight": "OPACITY_20"
+			}
+		},
+		{
+			"key": "BADGE_SECONDARY_TEXT",
+			"area": "Status and badges",
+			"description": "Text of the secondary badge.",
+			"image": "images/semantic/BADGE_SECONDARY_TEXT.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#fbfbfb",
+				"light": "#28282d",
+				"midnight": "#dcdcdf"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_2",
+				"light": "NEUTRAL_76",
+				"midnight": "NEUTRAL_10"
+			}
+		},
+		{
+			"key": "BADGE_CRITICAL_BORDER",
+			"area": "Status and badges",
+			"description": "Outline of the critical badge.",
+			"image": "images/semantic/BADGE_CRITICAL_BORDER.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#ffffff14",
+				"darker": "#ffffff14",
+				"light": "#ffffff14",
+				"midnight": "#ffffff14"
+			},
+			"raw": {
+				"dark": "OPACITY_WHITE_8",
+				"darker": "OPACITY_WHITE_8",
+				"light": "OPACITY_WHITE_8",
+				"midnight": "OPACITY_WHITE_8"
+			}
+		},
+		{
+			"key": "BADGE_CRITICAL_BACKGROUND",
+			"area": "Status and badges",
+			"description": "Fill of the critical badge.",
+			"image": "images/semantic/BADGE_CRITICAL_BACKGROUND.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#d22d39",
+				"darker": "#d22d39",
+				"light": "#d22d39",
+				"midnight": "#d22d39"
+			},
+			"raw": {
+				"dark": "RED_NEW_50",
+				"darker": "RED_NEW_50",
+				"light": "RED_NEW_50",
+				"midnight": "RED_NEW_50"
+			}
+		},
+		{
+			"key": "BADGE_CRITICAL_TEXT",
+			"area": "Status and badges",
+			"description": "Text of the critical badge.",
+			"image": "images/semantic/BADGE_CRITICAL_TEXT.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#ffffff",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "BADGE_SUCCESS_BORDER",
+			"area": "Status and badges",
+			"description": "Outline of the success badge.",
+			"image": "images/semantic/BADGE_SUCCESS_BORDER.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#ffffff14",
+				"darker": "#ffffff14",
+				"light": "#ffffff14",
+				"midnight": "#ffffff14"
+			},
+			"raw": {
+				"dark": "OPACITY_WHITE_8",
+				"darker": "OPACITY_WHITE_8",
+				"light": "OPACITY_WHITE_8",
+				"midnight": "OPACITY_WHITE_8"
+			}
+		},
+		{
+			"key": "BADGE_SUCCESS_BACKGROUND",
+			"area": "Status and badges",
+			"description": "Fill of the success badge.",
+			"image": "images/semantic/BADGE_SUCCESS_BACKGROUND.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#008545",
+				"darker": "#008545",
+				"light": "#008545",
+				"midnight": "#008545"
+			},
+			"raw": {
+				"dark": "GREEN_NEW_50",
+				"darker": "GREEN_NEW_50",
+				"light": "GREEN_NEW_50",
+				"midnight": "GREEN_NEW_50"
+			}
+		},
+		{
+			"key": "BADGE_RARE_BACKGROUND",
+			"area": "Status and badges",
+			"description": "Fill of the rare badge.",
+			"image": "images/semantic/BADGE_RARE_BACKGROUND.webp",
+			"screens": [
+				"component-badges-rarity"
+			],
+			"defaults": {
+				"dark": "#5865f23d",
+				"darker": "#5865f23d",
+				"light": "#5865f23d",
+				"midnight": "#5865f23d"
+			},
+			"raw": {
+				"dark": "ILLO_BLUE_40",
+				"darker": "ILLO_BLUE_40",
+				"light": "ILLO_BLUE_40",
+				"midnight": "ILLO_BLUE_40"
+			}
+		},
+		{
+			"key": "BADGE_PRIMARY_TEXT",
+			"area": "Status and badges",
+			"description": "Text of the primary badge.",
+			"image": "images/semantic/BADGE_PRIMARY_TEXT.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#ffffff",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "BADGE_SUCCESS_TEXT",
+			"area": "Status and badges",
+			"description": "Text of the success badge.",
+			"image": "images/semantic/BADGE_SUCCESS_TEXT.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#ffffff",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "BADGE_WARNING_BORDER",
+			"area": "Status and badges",
+			"description": "Outline of the warning badge.",
+			"image": "images/semantic/BADGE_WARNING_BORDER.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#00000014",
+				"darker": "#00000014",
+				"light": "#00000014",
+				"midnight": "#00000014"
+			},
+			"raw": {
+				"dark": "OPACITY_BLACK_8",
+				"darker": "OPACITY_BLACK_8",
+				"light": "OPACITY_BLACK_8",
+				"midnight": "OPACITY_BLACK_8"
+			}
+		},
+		{
+			"key": "BADGE_WARNING_BACKGROUND",
+			"area": "Status and badges",
+			"description": "Fill of the warning badge.",
+			"image": "images/semantic/BADGE_WARNING_BACKGROUND.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#faaa00",
+				"darker": "#faaa00",
+				"light": "#faaa00",
+				"midnight": "#faaa00"
+			},
+			"raw": {
+				"dark": "YELLOW_NEW_45",
+				"darker": "YELLOW_NEW_45",
+				"light": "YELLOW_NEW_45",
+				"midnight": "YELLOW_NEW_45"
+			}
+		},
+		{
+			"key": "BADGE_WARNING_TEXT",
+			"area": "Status and badges",
+			"description": "Text of the warning badge.",
+			"image": "images/semantic/BADGE_WARNING_TEXT.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#000000",
+				"darker": "#000000",
+				"light": "#000000",
+				"midnight": "#000000"
+			},
+			"raw": {
+				"dark": "NEUTRAL_100",
+				"darker": "NEUTRAL_100",
+				"light": "NEUTRAL_100",
+				"midnight": "NEUTRAL_100"
+			}
+		},
+		{
+			"key": "BADGE_EXPRESSIVE_BORDER",
+			"area": "Status and badges",
+			"description": "Outline of the expressive badge.",
+			"image": "images/semantic/BADGE_EXPRESSIVE_BORDER.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#5865f2",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "BLURPLE_50",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "BADGE_EXPRESSIVE_BACKGROUND",
+			"area": "Status and badges",
+			"description": "Fill of the expressive badge.",
+			"image": "images/semantic/BADGE_EXPRESSIVE_BACKGROUND.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#5865f2",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "BLURPLE_50",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "BADGE_EXPRESSIVE_TEXT",
+			"area": "Status and badges",
+			"description": "Text of the expressive badge.",
+			"image": "images/semantic/BADGE_EXPRESSIVE_TEXT.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#2f3035",
+				"darker": "#2f3035",
+				"light": "#ffffff",
+				"midnight": "#2f3035"
+			},
+			"raw": {
+				"dark": "NEUTRAL_71",
+				"darker": "NEUTRAL_71",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_71"
+			}
+		},
+		{
+			"key": "BADGE_INVERTED_BACKGROUND",
+			"area": "Status and badges",
+			"description": "Fill of the inverted badge.",
+			"image": "images/semantic/BADGE_INVERTED_BACKGROUND.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#000000",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "NEUTRAL_100",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "BADGE_INVERTED_TEXT",
+			"area": "Status and badges",
+			"description": "Text of the inverted badge.",
+			"image": "images/semantic/BADGE_INVERTED_TEXT.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#000000",
+				"darker": "#000000",
+				"light": "#ffffff",
+				"midnight": "#000000"
+			},
+			"raw": {
+				"dark": "NEUTRAL_100",
+				"darker": "NEUTRAL_100",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_100"
+			}
+		},
+		{
+			"key": "BADGE_NOTIFICATION_BORDER",
+			"area": "Status and badges",
+			"description": "Outline of the notification badge.",
+			"image": "images/semantic/BADGE_NOTIFICATION_BORDER.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#ffffff14",
+				"darker": "#ffffff14",
+				"light": "#ffffff14",
+				"midnight": "#ffffff14"
+			},
+			"raw": {
+				"dark": "OPACITY_WHITE_8",
+				"darker": "OPACITY_WHITE_8",
+				"light": "OPACITY_WHITE_8",
+				"midnight": "OPACITY_WHITE_8"
+			}
+		},
+		{
+			"key": "BADGE_NOTIFICATION_BACKGROUND",
+			"area": "Status and badges",
+			"description": "Fill of the notification badge.",
+			"image": "images/semantic/BADGE_NOTIFICATION_BACKGROUND.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#d22d39",
+				"darker": "#d22d39",
+				"light": "#d22d39",
+				"midnight": "#d22d39"
+			},
+			"raw": {
+				"dark": "RED_NEW_50",
+				"darker": "RED_NEW_50",
+				"light": "RED_NEW_50",
+				"midnight": "RED_NEW_50"
+			}
+		},
+		{
+			"key": "BADGE_NOTIFICATION_TEXT",
+			"area": "Status and badges",
+			"description": "Text of the notification badge.",
+			"image": "images/semantic/BADGE_NOTIFICATION_TEXT.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#ffffff",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "CONTROL_CRITICAL_SECONDARY_BORDER_ACTIVE",
+			"area": "Buttons",
+			"description": "Outline of the critical secondary button while pressed.",
+			"image": "images/semantic/CONTROL_CRITICAL_SECONDARY_BORDER_ACTIVE.webp",
+			"screens": [
+				"component-buttons-more-pressed-critical-secondary"
+			],
+			"defaults": {
+				"dark": "#97979f0a",
+				"darker": "#97979f0a",
+				"light": "#97979f33",
+				"midnight": "#97979f29"
+			},
+			"raw": {
+				"dark": "OPACITY_4",
+				"darker": "OPACITY_4",
+				"light": "OPACITY_20",
+				"midnight": "OPACITY_16"
+			}
+		},
+		{
+			"key": "CONTROL_CRITICAL_SECONDARY_BACKGROUND_ACTIVE",
+			"area": "Buttons",
+			"description": "Fill of the critical secondary button while pressed.",
+			"image": "images/semantic/CONTROL_CRITICAL_SECONDARY_BACKGROUND_ACTIVE.webp",
+			"screens": [
+				"component-buttons-more-pressed-critical-secondary"
+			],
+			"defaults": {
+				"dark": "#97979f33",
+				"darker": "#97979f33",
+				"light": "#97979f3d",
+				"midnight": "#97979f3d"
+			},
+			"raw": {
+				"dark": "OPACITY_20",
+				"darker": "OPACITY_20",
+				"light": "OPACITY_24",
+				"midnight": "OPACITY_24"
+			}
+		},
+		{
+			"key": "CONTROL_CRITICAL_SECONDARY_TEXT_DEFAULT",
+			"area": "Buttons",
+			"description": "Text of the critical secondary button.",
+			"image": "images/semantic/CONTROL_CRITICAL_SECONDARY_TEXT_DEFAULT.webp",
+			"screens": [
+				"component-buttons-more"
+			],
+			"defaults": {
+				"dark": "#ffa09b",
+				"darker": "#f87e7a",
+				"light": "#b92733",
+				"midnight": "#eb5f5e"
+			},
+			"raw": {
+				"dark": "RED_NEW_18",
+				"darker": "RED_NEW_28",
+				"light": "RED_NEW_56",
+				"midnight": "RED_NEW_37"
+			}
+		},
+		{
+			"key": "CONTROL_ICON_ONLY_ICON_DEFAULT",
+			"area": "Buttons",
+			"description": "Icon of the icon only button.",
+			"image": "images/semantic/CONTROL_ICON_ONLY_ICON_DEFAULT.webp",
+			"screens": [
+				"component-icons"
+			],
+			"defaults": {
+				"dark": "#c5c6ca",
+				"darker": "#abacb2",
+				"light": "#595a63",
+				"midnight": "#96979e"
+			},
+			"raw": {
+				"dark": "NEUTRAL_16",
+				"darker": "NEUTRAL_23",
+				"light": "NEUTRAL_47",
+				"midnight": "NEUTRAL_29"
+			}
+		},
+		{
+			"key": "REDESIGN_BUTTON_PREMIUM_PRIMARY_PURPLE_FOR_GRADIENT_2",
+			"area": "Buttons",
+			"description": "Purple part of the premium primary button gradient.",
+			"image": "images/semantic/REDESIGN_BUTTON_PREMIUM_PRIMARY_PURPLE_FOR_GRADIENT_2.webp",
+			"screens": [
+				"component-buttons-more"
+			],
+			"defaults": {
+				"dark": "#b845c1",
+				"darker": "#b845c1",
+				"light": "#b845c1",
+				"midnight": "#b845c1"
+			},
+			"raw": {
+				"dark": "PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS_2",
+				"darker": "PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS_2",
+				"light": "PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS_2",
+				"midnight": "PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS_2"
+			}
+		},
+		{
+			"key": "CONTROL_OVERLAY_PRIMARY_BACKGROUND_DEFAULT",
+			"area": "Buttons",
+			"description": "Fill of the premium secondary button.",
+			"image": "images/semantic/CONTROL_OVERLAY_PRIMARY_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"component-buttons-more"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#ffffff",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "CONTROL_CRITICAL_SECONDARY_BORDER_DEFAULT",
+			"area": "Buttons",
+			"description": "Outline of the critical secondary button.",
+			"image": "images/semantic/CONTROL_CRITICAL_SECONDARY_BORDER_DEFAULT.webp",
+			"screens": [
+				"component-buttons-more"
+			],
+			"defaults": {
+				"dark": "#97979f0a",
+				"darker": "#97979f0a",
+				"light": "#97979f33",
+				"midnight": "#97979f29"
+			},
+			"raw": {
+				"dark": "OPACITY_4",
+				"darker": "OPACITY_4",
+				"light": "OPACITY_20",
+				"midnight": "OPACITY_16"
+			}
+		},
+		{
+			"key": "REDESIGN_BUTTON_PREMIUM_PRIMARY_PRESSED_BACKGROUND",
+			"area": "Buttons",
+			"description": "Premium basic button fill while pressed.",
+			"image": "images/semantic/REDESIGN_BUTTON_PREMIUM_PRIMARY_PRESSED_BACKGROUND.webp",
+			"screens": [
+				"component-buttons-more-pressed-experimental_premium-basic"
+			],
+			"defaults": {
+				"dark": "#0000001a",
+				"darker": "#0000001a",
+				"light": "#0000001a",
+				"midnight": "#0000001a"
+			},
+			"raw": {
+				"dark": "BLACK",
+				"darker": "BLACK",
+				"light": "BLACK",
+				"midnight": "BLACK"
+			}
+		},
+		{
+			"key": "CONTROL_OVERLAY_PRIMARY_BACKGROUND_ACTIVE",
+			"area": "Buttons",
+			"description": "Premium secondary button fill while pressed.",
+			"image": "images/semantic/CONTROL_OVERLAY_PRIMARY_BACKGROUND_ACTIVE.webp",
+			"screens": [
+				"component-buttons-more-pressed-experimental_premium-secondary"
+			],
+			"defaults": {
+				"dark": "#c2c2c7",
+				"darker": "#c2c2c7",
+				"light": "#c2c2c7",
+				"midnight": "#c2c2c7"
+			},
+			"raw": {
+				"dark": "NEUTRAL_17",
+				"darker": "NEUTRAL_17",
+				"light": "NEUTRAL_17",
+				"midnight": "NEUTRAL_17"
+			}
+		},
+		{
+			"key": "CONTROL_ICON_ONLY_BACKGROUND_ACTIVE",
+			"area": "Buttons",
+			"description": "Fill of the icon only button while pressed.",
+			"image": "images/semantic/CONTROL_ICON_ONLY_BACKGROUND_ACTIVE.webp",
+			"screens": [
+				"component-icons-pressed-icon-only"
+			],
+			"defaults": {
+				"dark": "#97979f33",
+				"darker": "#97979f33",
+				"light": "#97979f3d",
+				"midnight": "#97979f3d"
+			},
+			"raw": {
+				"dark": "OPACITY_20",
+				"darker": "OPACITY_20",
+				"light": "OPACITY_24",
+				"midnight": "OPACITY_24"
+			}
+		},
+		{
+			"key": "CONTROL_CRITICAL_PRIMARY_BORDER_DEFAULT",
+			"area": "Buttons",
+			"description": "Outline of the destructive button.",
+			"image": "images/semantic/CONTROL_CRITICAL_PRIMARY_BORDER_DEFAULT.webp",
+			"screens": [
+				"component-buttons"
+			],
+			"defaults": {
+				"dark": "#ffffff14",
+				"darker": "#ffffff14",
+				"light": "#ffffff14",
+				"midnight": "#ffffff14"
+			},
+			"raw": {
+				"dark": "OPACITY_WHITE_8",
+				"darker": "OPACITY_WHITE_8",
+				"light": "OPACITY_WHITE_8",
+				"midnight": "OPACITY_WHITE_8"
+			}
+		},
+		{
+			"key": "CONTROL_CRITICAL_PRIMARY_BACKGROUND_DEFAULT",
+			"area": "Buttons",
+			"description": "Fill of the destructive button.",
+			"image": "images/semantic/CONTROL_CRITICAL_PRIMARY_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"component-buttons"
+			],
+			"defaults": {
+				"dark": "#d22d39",
+				"darker": "#d22d39",
+				"light": "#d22d39",
+				"midnight": "#d22d39"
+			},
+			"raw": {
+				"dark": "RED_NEW_50",
+				"darker": "RED_NEW_50",
+				"light": "RED_NEW_50",
+				"midnight": "RED_NEW_50"
+			}
+		},
+		{
+			"key": "CONTROL_CRITICAL_PRIMARY_TEXT_DEFAULT",
+			"area": "Buttons",
+			"description": "Text of the destructive button.",
+			"image": "images/semantic/CONTROL_CRITICAL_PRIMARY_TEXT_DEFAULT.webp",
+			"screens": [
+				"component-buttons"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#ffffff",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "CONTROL_CONNECTED_BORDER_ACTIVE",
+			"area": "Buttons",
+			"description": "Outline of the connected (active) button while pressed.",
+			"image": "images/semantic/CONTROL_CONNECTED_BORDER_ACTIVE.webp",
+			"screens": [
+				"component-buttons-pressed-active"
+			],
+			"defaults": {
+				"dark": "#ffffff14",
+				"darker": "#ffffff14",
+				"light": "#ffffff14",
+				"midnight": "#ffffff14"
+			},
+			"raw": {
+				"dark": "OPACITY_WHITE_8",
+				"darker": "OPACITY_WHITE_8",
+				"light": "OPACITY_WHITE_8",
+				"midnight": "OPACITY_WHITE_8"
+			}
+		},
+		{
+			"key": "CONTROL_CONNECTED_TEXT_DEFAULT",
+			"area": "Buttons",
+			"description": "Text of the connected (active) button.",
+			"image": "images/semantic/CONTROL_CONNECTED_TEXT_DEFAULT.webp",
+			"screens": [
+				"component-buttons"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#ffffff",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "CONTROL_EXPRESSIVE_TEXT_DEFAULT",
+			"area": "Buttons",
+			"description": "Text of the expressive button.",
+			"image": "images/semantic/CONTROL_EXPRESSIVE_TEXT_DEFAULT.webp",
+			"screens": [
+				"component-buttons"
+			],
+			"defaults": {
+				"dark": "#000000",
+				"darker": "#000000",
+				"light": "#ffffff",
+				"midnight": "#000000"
+			},
+			"raw": {
+				"dark": "NEUTRAL_100",
+				"darker": "NEUTRAL_100",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_100"
+			}
+		},
+		{
+			"key": "CONTROL_OVERLAY_PRIMARY_TEXT_DEFAULT",
+			"area": "Buttons",
+			"description": "Text of the primary overlay button.",
+			"image": "images/semantic/CONTROL_OVERLAY_PRIMARY_TEXT_DEFAULT.webp",
+			"screens": [
+				"component-buttons"
+			],
+			"defaults": {
+				"dark": "#000000",
+				"darker": "#000000",
+				"light": "#000000",
+				"midnight": "#000000"
+			},
+			"raw": {
+				"dark": "NEUTRAL_100",
+				"darker": "NEUTRAL_100",
+				"light": "NEUTRAL_100",
+				"midnight": "NEUTRAL_100"
+			}
+		},
+		{
+			"key": "CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT",
+			"area": "Buttons",
+			"description": "Text of the secondary overlay button.",
+			"image": "images/semantic/CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT.webp",
+			"screens": [
+				"component-buttons"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#ffffff",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "CONTROL_CRITICAL_PRIMARY_BORDER_ACTIVE",
+			"area": "Buttons",
+			"description": "Outline of the destructive button while pressed.",
+			"image": "images/semantic/CONTROL_CRITICAL_PRIMARY_BORDER_ACTIVE.webp",
+			"screens": [
+				"component-buttons-pressed-destructive"
+			],
+			"defaults": {
+				"dark": "#ffffff14",
+				"darker": "#ffffff14",
+				"light": "#ffffff14",
+				"midnight": "#ffffff14"
+			},
+			"raw": {
+				"dark": "OPACITY_WHITE_8",
+				"darker": "OPACITY_WHITE_8",
+				"light": "OPACITY_WHITE_8",
+				"midnight": "OPACITY_WHITE_8"
+			}
+		},
+		{
+			"key": "CONTROL_CONNECTED_BORDER_DEFAULT",
+			"area": "Buttons",
+			"description": "Outline of the connected (active) button.",
+			"image": "images/semantic/CONTROL_CONNECTED_BORDER_DEFAULT.webp",
+			"screens": [
+				"component-buttons"
+			],
+			"defaults": {
+				"dark": "#ffffff14",
+				"darker": "#ffffff14",
+				"light": "#ffffff14",
+				"midnight": "#ffffff14"
+			},
+			"raw": {
+				"dark": "OPACITY_WHITE_8",
+				"darker": "OPACITY_WHITE_8",
+				"light": "OPACITY_WHITE_8",
+				"midnight": "OPACITY_WHITE_8"
+			}
+		},
+		{
+			"key": "CONTROL_CONNECTED_BACKGROUND_DEFAULT",
+			"area": "Buttons",
+			"description": "Fill of the connected (active) button.",
+			"image": "images/semantic/CONTROL_CONNECTED_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"component-buttons"
+			],
+			"defaults": {
+				"dark": "#008545",
+				"darker": "#008545",
+				"light": "#008545",
+				"midnight": "#008545"
+			},
+			"raw": {
+				"dark": "GREEN_NEW_50",
+				"darker": "GREEN_NEW_50",
+				"light": "GREEN_NEW_50",
+				"midnight": "GREEN_NEW_50"
+			}
+		},
+		{
+			"key": "CONTROL_PRIMARY_BORDER_ACTIVE",
+			"area": "Buttons",
+			"description": "Outline of the primary button while pressed.",
+			"image": "images/semantic/CONTROL_PRIMARY_BORDER_ACTIVE.webp",
+			"screens": [
+				"component-buttons-pressed-primary"
+			],
+			"defaults": {
+				"dark": "#ffffff14",
+				"darker": "#ffffff14",
+				"light": "#ffffff14",
+				"midnight": "#ffffff14"
+			},
+			"raw": {
+				"dark": "OPACITY_WHITE_8",
+				"darker": "OPACITY_WHITE_8",
+				"light": "OPACITY_WHITE_8",
+				"midnight": "OPACITY_WHITE_8"
+			}
+		},
+		{
+			"key": "CONTROL_SECONDARY_BACKGROUND_ACTIVE",
+			"area": "Buttons",
+			"description": "Fill of an unselected text toggle while pressed.",
+			"image": "images/semantic/CONTROL_SECONDARY_BACKGROUND_ACTIVE.webp",
+			"screens": [
+				"component-toggles-pressed-primary unselected"
+			],
+			"defaults": {
+				"dark": "#97979f33",
+				"darker": "#97979f33",
+				"light": "#97979f3d",
+				"midnight": "#97979f3d"
+			},
+			"raw": {
+				"dark": "OPACITY_20",
+				"darker": "OPACITY_20",
+				"light": "OPACITY_24",
+				"midnight": "OPACITY_24"
+			}
+		},
+		{
+			"key": "CHECKBOX_BORDER_DEFAULT",
+			"area": "Switches and radios",
+			"description": "Outline of an unchecked checkbox.",
+			"image": "images/semantic/CHECKBOX_BORDER_DEFAULT.webp",
+			"screens": [
+				"component-checks"
+			],
+			"defaults": {
+				"dark": "#97979fa3",
+				"darker": "#97979fa3",
+				"light": "#84858d",
+				"midnight": "#97979fa3"
+			},
+			"raw": {
+				"dark": "OPACITY_64",
+				"darker": "OPACITY_64",
+				"light": "NEUTRAL_34",
+				"midnight": "OPACITY_64"
+			}
+		},
+		{
+			"key": "CHECKBOX_BACKGROUND_DEFAULT",
+			"area": "Switches and radios",
+			"description": "Fill inside an unchecked checkbox.",
+			"image": "images/semantic/CHECKBOX_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"component-checks"
+			],
+			"defaults": {
+				"dark": "#00000014",
+				"darker": "#00000014",
+				"light": "#0000000a",
+				"midnight": "#00000014"
+			},
+			"raw": {
+				"dark": "OPACITY_BLACK_8",
+				"darker": "OPACITY_BLACK_8",
+				"light": "OPACITY_BLACK_4",
+				"midnight": "OPACITY_BLACK_8"
+			}
+		},
+		{
+			"key": "CHECKBOX_BORDER_SELECTED_DEFAULT",
+			"area": "Switches and radios",
+			"description": "Outline of a checked checkbox.",
+			"image": "images/semantic/CHECKBOX_BORDER_SELECTED_DEFAULT.webp",
+			"screens": [
+				"component-checks"
+			],
+			"defaults": {
+				"dark": "#97979f1f",
+				"darker": "#97979f1f",
+				"light": "#97979f47",
+				"midnight": "#97979f33"
+			},
+			"raw": {
+				"dark": "OPACITY_12",
+				"darker": "OPACITY_12",
+				"light": "OPACITY_28",
+				"midnight": "OPACITY_20"
+			}
+		},
+		{
+			"key": "CHECKBOX_BACKGROUND_SELECTED_DEFAULT",
+			"area": "Switches and radios",
+			"description": "Fill inside a checked checkbox.",
+			"image": "images/semantic/CHECKBOX_BACKGROUND_SELECTED_DEFAULT.webp",
+			"screens": [
+				"component-checks"
+			],
+			"defaults": {
+				"dark": "#5865f2",
+				"darker": "#5865f2",
+				"light": "#5865f2",
+				"midnight": "#5865f2"
+			},
+			"raw": {
+				"dark": "BLURPLE_50",
+				"darker": "BLURPLE_50",
+				"light": "BLURPLE_50",
+				"midnight": "BLURPLE_50"
+			}
+		},
+		{
+			"key": "CHECKBOX_ICON_ACTIVE",
+			"area": "Switches and radios",
+			"description": "Tick inside a checked checkbox.",
+			"image": "images/semantic/CHECKBOX_ICON_ACTIVE.webp",
+			"screens": [
+				"component-checks"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#ffffff",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "NEUTRAL_1",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "REDESIGN_INPUT_CONTROL_SELECTED",
+			"area": "Switches and radios",
+			"description": "Radio control and the filled part of the slider.",
+			"image": "images/semantic/REDESIGN_INPUT_CONTROL_SELECTED.webp",
+			"screens": [
+				"component-checks"
+			],
+			"defaults": {
+				"dark": "#5865f2",
+				"darker": "#5865f2",
+				"light": "#5865f2",
+				"midnight": "#5865f2"
+			},
+			"raw": {
+				"dark": "BRAND_500",
+				"darker": "BRAND_500",
+				"light": "BRAND_500",
+				"midnight": "BRAND_500"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_ICON_DEFAULT",
+			"area": "Buttons",
+			"description": "Icon in an unselected toggle button.",
+			"image": "images/semantic/TOGGLEBUTTON_ICON_DEFAULT.webp",
+			"screens": [
+				"component-icons"
+			],
+			"defaults": {
+				"dark": "#f3f3f4",
+				"darker": "#efeff1",
+				"light": "#2e2e34",
+				"midnight": "#d4d5d8"
+			},
+			"raw": {
+				"dark": "NEUTRAL_4",
+				"darker": "NEUTRAL_5",
+				"light": "NEUTRAL_72",
+				"midnight": "NEUTRAL_12"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_BORDER_SELECTED",
+			"area": "Buttons",
+			"description": "Outline of a selected toggle button.",
+			"image": "images/semantic/TOGGLEBUTTON_BORDER_SELECTED.webp",
+			"screens": [
+				"component-toggles"
+			],
+			"defaults": {
+				"dark": "#5865f2",
+				"darker": "#5865f2",
+				"light": "#5865f2",
+				"midnight": "#5865f2"
+			},
+			"raw": {
+				"dark": "BLURPLE_50",
+				"darker": "BLURPLE_50",
+				"light": "BLURPLE_50",
+				"midnight": "BLURPLE_50"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_BACKGROUND_SELECTED",
+			"area": "Buttons",
+			"description": "Fill of a selected toggle button.",
+			"image": "images/semantic/TOGGLEBUTTON_BACKGROUND_SELECTED.webp",
+			"screens": [
+				"component-toggles"
+			],
+			"defaults": {
+				"dark": "#5865f229",
+				"darker": "#5865f229",
+				"light": "#5865f229",
+				"midnight": "#5865f229"
+			},
+			"raw": {
+				"dark": "OPACITY_BLURPLE_16",
+				"darker": "OPACITY_BLURPLE_16",
+				"light": "OPACITY_BLURPLE_16",
+				"midnight": "OPACITY_BLURPLE_16"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_ICON_SELECTED",
+			"area": "Buttons",
+			"description": "Icon in a selected toggle button.",
+			"image": "images/semantic/TOGGLEBUTTON_ICON_SELECTED.webp",
+			"screens": [
+				"component-icons"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#fbfbfb",
+				"light": "#28282d",
+				"midnight": "#dcdcdf"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_2",
+				"light": "NEUTRAL_76",
+				"midnight": "NEUTRAL_10"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_CRITICAL_ICON_DEFAULT",
+			"area": "Buttons",
+			"description": "Icon in an unselected critical toggle button.",
+			"image": "images/semantic/TOGGLEBUTTON_CRITICAL_ICON_DEFAULT.webp",
+			"screens": [
+				"component-icons"
+			],
+			"defaults": {
+				"dark": "#f3f3f4",
+				"darker": "#efeff1",
+				"light": "#2e2e34",
+				"midnight": "#d4d5d8"
+			},
+			"raw": {
+				"dark": "NEUTRAL_4",
+				"darker": "NEUTRAL_5",
+				"light": "NEUTRAL_72",
+				"midnight": "NEUTRAL_12"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_CRITICAL_BACKGROUND_SELECTED",
+			"area": "Buttons",
+			"description": "Fill of a selected critical icon toggle.",
+			"image": "images/semantic/TOGGLEBUTTON_CRITICAL_BACKGROUND_SELECTED.webp",
+			"screens": [
+				"component-icons"
+			],
+			"defaults": {
+				"dark": "#d22d391f",
+				"darker": "#d22d391f",
+				"light": "#d22d391f",
+				"midnight": "#d22d391f"
+			},
+			"raw": {
+				"dark": "OPACITY_RED_12",
+				"darker": "OPACITY_RED_12",
+				"light": "OPACITY_RED_12",
+				"midnight": "OPACITY_RED_12"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_CRITICAL_ICON_SELECTED",
+			"area": "Buttons",
+			"description": "Icon in a selected critical toggle button.",
+			"image": "images/semantic/TOGGLEBUTTON_CRITICAL_ICON_SELECTED.webp",
+			"screens": [
+				"component-icons"
+			],
+			"defaults": {
+				"dark": "#da3e44",
+				"darker": "#da3e44",
+				"light": "#d22d39",
+				"midnight": "#da3e44"
+			},
+			"raw": {
+				"dark": "RED_NEW_46",
+				"darker": "RED_NEW_46",
+				"light": "RED_NEW_50",
+				"midnight": "RED_NEW_46"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_ICON_ONLY_ICON_DEFAULT",
+			"area": "Buttons",
+			"description": "Icon in an unselected icon-only toggle.",
+			"image": "images/semantic/TOGGLEBUTTON_ICON_ONLY_ICON_DEFAULT.webp",
+			"screens": [
+				"component-icons"
+			],
+			"defaults": {
+				"dark": "#f3f3f4",
+				"darker": "#efeff1",
+				"light": "#2e2e34",
+				"midnight": "#d4d5d8"
+			},
+			"raw": {
+				"dark": "NEUTRAL_4",
+				"darker": "NEUTRAL_5",
+				"light": "NEUTRAL_72",
+				"midnight": "NEUTRAL_12"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_ICON_ONLY_ICON_SELECTED",
+			"area": "Buttons",
+			"description": "Icon in a selected icon-only toggle.",
+			"image": "images/semantic/TOGGLEBUTTON_ICON_ONLY_ICON_SELECTED.webp",
+			"screens": [
+				"component-icons"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#fbfbfb",
+				"light": "#28282d",
+				"midnight": "#dcdcdf"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_2",
+				"light": "NEUTRAL_76",
+				"midnight": "NEUTRAL_10"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_CRITICAL_BORDER_ACTIVE",
+			"area": "Buttons",
+			"description": "Outline of the critical icon toggle while pressed.",
+			"image": "images/semantic/TOGGLEBUTTON_CRITICAL_BORDER_ACTIVE.webp",
+			"screens": [
+				"component-icons-pressed-toggle-icon-critical-on"
+			],
+			"defaults": {
+				"dark": "#d22d3952",
+				"darker": "#d22d3952",
+				"light": "#d22d3952",
+				"midnight": "#d22d3952"
+			},
+			"raw": {
+				"dark": "OPACITY_RED_32",
+				"darker": "OPACITY_RED_32",
+				"light": "OPACITY_RED_32",
+				"midnight": "OPACITY_RED_32"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_CRITICAL_ICON_ACTIVE",
+			"area": "Buttons",
+			"description": "Critical toggle icon while pressed.",
+			"image": "images/semantic/TOGGLEBUTTON_CRITICAL_ICON_ACTIVE.webp",
+			"screens": [
+				"component-icons-pressed-toggle-icon-critical-on"
+			],
+			"defaults": {
+				"dark": "#da3e44",
+				"darker": "#da3e44",
+				"light": "#d22d39",
+				"midnight": "#da3e44"
+			},
+			"raw": {
+				"dark": "RED_NEW_46",
+				"darker": "RED_NEW_46",
+				"light": "RED_NEW_50",
+				"midnight": "RED_NEW_46"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_CRITICAL_BACKGROUND_SELECTED_HOVER",
+			"area": "Buttons",
+			"description": "Selected critical toggle fill while pressed on Android.",
+			"image": "images/semantic/TOGGLEBUTTON_CRITICAL_BACKGROUND_SELECTED_HOVER.webp",
+			"screens": [
+				"component-icons-pressed-toggle-icon-critical-on"
+			],
+			"defaults": {
+				"dark": "#d22d3929",
+				"darker": "#d22d3929",
+				"light": "#d22d3929",
+				"midnight": "#d22d3929"
+			},
+			"raw": {
+				"dark": "OPACITY_RED_16",
+				"darker": "OPACITY_RED_16",
+				"light": "OPACITY_RED_16",
+				"midnight": "OPACITY_RED_16"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_BORDER_ACTIVE",
+			"area": "Buttons",
+			"description": "Outline of an icon toggle while pressed.",
+			"image": "images/semantic/TOGGLEBUTTON_BORDER_ACTIVE.webp",
+			"screens": [
+				"component-icons-pressed-toggle-icon-default-off"
+			],
+			"defaults": {
+				"dark": "#5865f2d6",
+				"darker": "#5865f2d6",
+				"light": "#5865f2d6",
+				"midnight": "#5865f2d6"
+			},
+			"raw": {
+				"dark": "OPACITY_BLURPLE_84",
+				"darker": "OPACITY_BLURPLE_84",
+				"light": "OPACITY_BLURPLE_84",
+				"midnight": "OPACITY_BLURPLE_84"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_ICON_ACTIVE",
+			"area": "Buttons",
+			"description": "Toggle icon while pressed.",
+			"image": "images/semantic/TOGGLEBUTTON_ICON_ACTIVE.webp",
+			"screens": [
+				"component-icons-pressed-toggle-icon-default-on"
+			],
+			"defaults": {
+				"dark": "#f3f3f4",
+				"darker": "#efeff1",
+				"light": "#2e2e34",
+				"midnight": "#d4d5d8"
+			},
+			"raw": {
+				"dark": "NEUTRAL_4",
+				"darker": "NEUTRAL_5",
+				"light": "NEUTRAL_72",
+				"midnight": "NEUTRAL_12"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_BACKGROUND_SELECTED_HOVER",
+			"area": "Buttons",
+			"description": "Selected icon toggle fill while pressed on Android.",
+			"image": "images/semantic/TOGGLEBUTTON_BACKGROUND_SELECTED_HOVER.webp",
+			"screens": [
+				"component-icons-pressed-toggle-icon-default-on"
+			],
+			"defaults": {
+				"dark": "#5865f23d",
+				"darker": "#5865f23d",
+				"light": "#5865f23d",
+				"midnight": "#5865f23d"
+			},
+			"raw": {
+				"dark": "OPACITY_BLURPLE_24",
+				"darker": "OPACITY_BLURPLE_24",
+				"light": "OPACITY_BLURPLE_24",
+				"midnight": "OPACITY_BLURPLE_24"
+			}
+		},
+		{
+			"key": "CONTROL_ICON_ONLY_BORDER_ACTIVE",
+			"area": "Buttons",
+			"description": "Outline of an icon-only toggle while pressed.",
+			"image": "images/semantic/CONTROL_ICON_ONLY_BORDER_ACTIVE.webp",
+			"screens": [
+				"component-icons-pressed-toggle-icon-only-off"
+			],
+			"defaults": {
+				"dark": "#97979f0a",
+				"darker": "#97979f0a",
+				"light": "#97979f33",
+				"midnight": "#97979f29"
+			},
+			"raw": {
+				"dark": "OPACITY_4",
+				"darker": "OPACITY_4",
+				"light": "OPACITY_20",
+				"midnight": "OPACITY_16"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_ICON_ONLY_ICON_ACTIVE",
+			"area": "Buttons",
+			"description": "Icon-only toggle icon while pressed.",
+			"image": "images/semantic/TOGGLEBUTTON_ICON_ONLY_ICON_ACTIVE.webp",
+			"screens": [
+				"component-icons-pressed-toggle-icon-only-off"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#fbfbfb",
+				"light": "#28282d",
+				"midnight": "#dcdcdf"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_2",
+				"light": "NEUTRAL_76",
+				"midnight": "NEUTRAL_10"
+			}
+		},
+		{
+			"key": "INPUT_BORDER_ERROR_DEFAULT",
+			"area": "Rows, cards and inputs",
+			"description": "Outline of a text field showing an error.",
+			"image": "images/semantic/INPUT_BORDER_ERROR_DEFAULT.webp",
+			"screens": [
+				"component-inputs"
+			],
+			"defaults": {
+				"dark": "#ffa09b",
+				"darker": "#f87e7a",
+				"light": "#b92733",
+				"midnight": "#eb5f5e"
+			},
+			"raw": {
+				"dark": "RED_NEW_18",
+				"darker": "RED_NEW_28",
+				"light": "RED_NEW_56",
+				"midnight": "RED_NEW_37"
+			}
+		},
+		{
+			"key": "TEXT_FEEDBACK_CRITICAL",
+			"area": "Text",
+			"description": "Error text and icon below a text field.",
+			"image": "images/semantic/TEXT_FEEDBACK_CRITICAL.webp",
+			"screens": [
+				"component-inputs"
+			],
+			"defaults": {
+				"dark": "#ffa09b",
+				"darker": "#f87e7a",
+				"light": "#b92733",
+				"midnight": "#eb5f5e"
+			},
+			"raw": {
+				"dark": "RED_NEW_18",
+				"darker": "RED_NEW_28",
+				"light": "RED_NEW_56",
+				"midnight": "RED_NEW_37"
+			}
+		},
+		{
+			"key": "TOAST_CRITICAL_BORDER",
+			"area": "Sheets, menus and alerts",
+			"description": "Outline of an error notification.",
+			"image": "images/semantic/TOAST_CRITICAL_BORDER.webp",
+			"screens": [
+				"component-toast-critical"
+			],
+			"defaults": {
+				"dark": "#e24d50",
+				"darker": "#e24d50",
+				"light": "#e24d50",
+				"midnight": "#e24d50"
+			},
+			"raw": {
+				"dark": "RED_NEW_42",
+				"darker": "RED_NEW_42",
+				"light": "RED_NEW_42",
+				"midnight": "RED_NEW_42"
+			}
+		},
+		{
+			"key": "TOAST_CRITICAL_BACKGROUND",
+			"area": "Sheets, menus and alerts",
+			"description": "Fill of an error notification at the top of the screen.",
+			"image": "images/semantic/TOAST_CRITICAL_BACKGROUND.webp",
+			"screens": [
+				"component-toast-critical"
+			],
+			"defaults": {
+				"dark": "#d22d3933",
+				"darker": "#d22d391f",
+				"light": "#d22d391f",
+				"midnight": "#d22d391f"
+			},
+			"raw": {
+				"dark": "OPACITY_RED_20",
+				"darker": "OPACITY_RED_12",
+				"light": "OPACITY_RED_12",
+				"midnight": "OPACITY_RED_12"
+			}
+		},
+		{
+			"key": "ICON_FEEDBACK_CRITICAL",
+			"area": "Icons",
+			"description": "Error icon in a critical notification.",
+			"image": "images/semantic/ICON_FEEDBACK_CRITICAL.webp",
+			"screens": [
+				"component-toast-critical"
+			],
+			"defaults": {
+				"dark": "#ffa09b",
+				"darker": "#f87e7a",
+				"light": "#b92733",
+				"midnight": "#eb5f5e"
+			},
+			"raw": {
+				"dark": "RED_NEW_18",
+				"darker": "RED_NEW_28",
+				"light": "RED_NEW_56",
+				"midnight": "RED_NEW_37"
+			}
+		},
+		{
+			"key": "TOAST_SUCCESS_BORDER",
+			"area": "Sheets, menus and alerts",
+			"description": "Outline of a success notification.",
+			"image": "images/semantic/TOAST_SUCCESS_BORDER.webp",
+			"screens": [
+				"component-toast-success"
+			],
+			"defaults": {
+				"dark": "#34995b",
+				"darker": "#34995b",
+				"light": "#34995b",
+				"midnight": "#34995b"
+			},
+			"raw": {
+				"dark": "GREEN_NEW_42",
+				"darker": "GREEN_NEW_42",
+				"light": "GREEN_NEW_42",
+				"midnight": "GREEN_NEW_42"
+			}
+		},
+		{
+			"key": "TOAST_SUCCESS_BACKGROUND",
+			"area": "Sheets, menus and alerts",
+			"description": "Fill of a success notification at the top of the screen.",
+			"image": "images/semantic/TOAST_SUCCESS_BACKGROUND.webp",
+			"screens": [
+				"component-toast-success"
+			],
+			"defaults": {
+				"dark": "#00854533",
+				"darker": "#0085451f",
+				"light": "#0085451f",
+				"midnight": "#0085451f"
+			},
+			"raw": {
+				"dark": "OPACITY_GREEN_20",
+				"darker": "OPACITY_GREEN_12",
+				"light": "OPACITY_GREEN_12",
+				"midnight": "OPACITY_GREEN_12"
+			}
+		},
+		{
+			"key": "ICON_FEEDBACK_POSITIVE",
+			"area": "Icons",
+			"description": "Tick icon in a success notification.",
+			"image": "images/semantic/ICON_FEEDBACK_POSITIVE.webp",
+			"screens": [
+				"component-toast-success"
+			],
+			"defaults": {
+				"dark": "#7ecb94",
+				"darker": "#5eb479",
+				"light": "#01713a",
+				"midnight": "#41a063"
+			},
+			"raw": {
+				"dark": "GREEN_NEW_22",
+				"darker": "GREEN_NEW_31",
+				"light": "GREEN_NEW_58",
+				"midnight": "GREEN_NEW_39"
+			}
+		},
+		{
+			"key": "TOGGLEBUTTON_BACKGROUND_SELECTED_ACTIVE",
+			"area": "Buttons",
+			"description": "Selected text toggle fill while pressed.",
+			"image": "images/semantic/TOGGLEBUTTON_BACKGROUND_SELECTED_ACTIVE.webp",
+			"screens": [
+				"component-toggles-pressed-primary selected"
+			],
+			"defaults": {
+				"dark": "#97979f33",
+				"darker": "#97979f33",
+				"light": "#97979f3d",
+				"midnight": "#97979f3d"
+			},
+			"raw": {
+				"dark": "OPACITY_20",
+				"darker": "OPACITY_20",
+				"light": "OPACITY_24",
+				"midnight": "OPACITY_24"
+			}
+		},
+		{
+			"key": "REDESIGN_BUTTON_PREMIUM_PRIMARY_PURPLE_FOR_GRADIENT",
+			"area": "Buttons",
+			"description": "Purple end of the premium primary button gradient.",
+			"image": "images/semantic/REDESIGN_BUTTON_PREMIUM_PRIMARY_PURPLE_FOR_GRADIENT.webp",
+			"screens": [
+				"component-buttons-more"
+			],
+			"defaults": {
+				"dark": "#8547c6",
+				"darker": "#8547c6",
+				"light": "#8547c6",
+				"midnight": "#8547c6"
+			},
+			"raw": {
+				"dark": "PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS",
+				"darker": "PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS",
+				"light": "PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS",
+				"midnight": "PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS"
+			}
+		},
+		{
+			"key": "BADGE_INVERTED_BORDER",
+			"area": "Status and badges",
+			"description": "Outline of the inverted badge.",
+			"image": "images/semantic/BADGE_INVERTED_BORDER.webp",
+			"screens": [
+				"component-badges"
+			],
+			"defaults": {
+				"dark": "#ffffff",
+				"darker": "#ffffff",
+				"light": "#000000",
+				"midnight": "#ffffff"
+			},
+			"raw": {
+				"dark": "NEUTRAL_1",
+				"darker": "NEUTRAL_1",
+				"light": "NEUTRAL_100",
+				"midnight": "NEUTRAL_1"
+			}
+		},
+		{
+			"key": "CONTROL_CRITICAL_SECONDARY_BACKGROUND_DEFAULT",
+			"area": "Buttons",
+			"description": "Fill of the critical secondary button.",
+			"image": "images/semantic/CONTROL_CRITICAL_SECONDARY_BACKGROUND_DEFAULT.webp",
+			"screens": [
+				"component-buttons-more"
+			],
+			"defaults": {
+				"dark": "#97979f1f",
+				"darker": "#97979f1f",
+				"light": "#97979f1f",
+				"midnight": "#97979f1f"
+			},
+			"raw": {
+				"dark": "OPACITY_12",
+				"darker": "OPACITY_12",
+				"light": "OPACITY_12",
+				"midnight": "OPACITY_12"
+			}
+		},
+		{
+			"key": "CONTROL_CONNECTED_BACKGROUND_ACTIVE",
+			"area": "Buttons",
+			"description": "Fill of the connected (active) button while pressed.",
+			"image": "images/semantic/CONTROL_CONNECTED_BACKGROUND_ACTIVE.webp",
+			"screens": [
+				"component-buttons-pressed-active"
+			],
+			"defaults": {
+				"dark": "#005f30",
+				"darker": "#005f30",
+				"light": "#005f30",
+				"midnight": "#005f30"
+			},
+			"raw": {
+				"dark": "GREEN_NEW_65",
+				"darker": "GREEN_NEW_65",
+				"light": "GREEN_NEW_65",
+				"midnight": "GREEN_NEW_65"
+			}
+		},
+		{
+			"key": "CONTROL_CRITICAL_PRIMARY_BACKGROUND_ACTIVE",
+			"area": "Buttons",
+			"description": "Fill of the destructive button while pressed.",
+			"image": "images/semantic/CONTROL_CRITICAL_PRIMARY_BACKGROUND_ACTIVE.webp",
+			"screens": [
+				"component-buttons-pressed-destructive"
+			],
+			"defaults": {
+				"dark": "#971d28",
+				"darker": "#971d28",
+				"light": "#971d28",
+				"midnight": "#971d28"
+			},
+			"raw": {
+				"dark": "RED_NEW_65",
+				"darker": "RED_NEW_65",
+				"light": "RED_NEW_65",
+				"midnight": "RED_NEW_65"
+			}
+		},
+		{
+			"key": "CONTROL_OVERLAY_SECONDARY_BACKGROUND_ACTIVE",
+			"area": "Buttons",
+			"description": "Fill of the secondary overlay button while pressed.",
+			"image": "images/semantic/CONTROL_OVERLAY_SECONDARY_BACKGROUND_ACTIVE.webp",
+			"screens": [
+				"component-buttons-pressed-secondary-overlay"
+			],
+			"defaults": {
+				"dark": "#0000008f",
+				"darker": "#0000008f",
+				"light": "#0000008f",
+				"midnight": "#0000008f"
+			},
+			"raw": {
+				"dark": "OPACITY_BLACK_56",
+				"darker": "OPACITY_BLACK_56",
+				"light": "OPACITY_BLACK_56",
+				"midnight": "OPACITY_BLACK_56"
+			}
+		},
+		{
+			"key": "CONTROL_SECONDARY_BORDER_ACTIVE",
+			"area": "Buttons",
+			"description": "Outline of the secondary button while pressed.",
+			"image": "images/semantic/CONTROL_SECONDARY_BORDER_ACTIVE.webp",
+			"screens": [
+				"component-buttons-pressed-secondary"
+			],
+			"defaults": {
+				"dark": "#97979f0a",
+				"darker": "#97979f0a",
+				"light": "#97979f33",
+				"midnight": "#97979f29"
+			},
+			"raw": {
+				"dark": "OPACITY_4",
+				"darker": "OPACITY_4",
+				"light": "OPACITY_20",
+				"midnight": "OPACITY_16"
+			}
+		},
+		{
+			"key": "BORDER_STRONG",
+			"area": "Borders and dividers",
+			"description": "Strong outlines around cards.",
+			"image": "images/semantic/BORDER_STRONG.webp",
+			"screens": [
+				"component-cards"
+			],
+			"defaults": {
+				"dark": "#97979f70",
+				"darker": "#97979f70",
+				"light": "#97979f85",
+				"midnight": "#97979f70"
+			},
+			"raw": {
+				"dark": "OPACITY_44",
+				"darker": "OPACITY_44",
+				"light": "OPACITY_52",
+				"midnight": "OPACITY_44"
+			}
+		}
+	],
+	"raw": [
+		{
+			"key": "BLUE_NEW_27",
+			"description": "Links.",
+			"image": "images/raw/BLUE_NEW_27.webp",
+			"value": "#76aff6",
+			"usedBy": [
+				"TEXT_LINK"
+			]
+		},
+		{
+			"key": "BLURPLE_26",
+			"description": "Brand text, like the selected tab.",
+			"image": "images/raw/BLURPLE_26.webp",
+			"value": "#94a8ff",
+			"usedBy": [
+				"ICON_BRAND",
+				"TEXT_BRAND"
+			]
+		},
+		{
+			"key": "BLURPLE_50",
+			"description": "The brand colour: main buttons, switches when on, selected rail button.",
+			"image": "images/raw/BLURPLE_50.webp",
+			"value": "#5865f2",
+			"usedBy": [
+				"ACTIVITY_TIMEBAR_PROGRESS_BACKGROUND",
+				"BACKGROUND_BRAND",
+				"BADGE_PRIMARY_BACKGROUND",
+				"BADGE_PRIMARY_BORDER",
+				"CHAT_INPUT_SEND_BUTTON_ACTIVE_BACKGROUND",
+				"CHECKBOX_BACKGROUND_SELECTED_DEFAULT",
+				"CONTROL_PRIMARY_BACKGROUND_DEFAULT",
+				"INPUT_BORDER_ACTIVE",
+				"INTERACTIVE_ACCENT_BACKGROUND_SELECTED",
+				"MOBILE_VOICE_MESSAGE_RECORDING_LOCK_BACKGROUND_ACTIVE",
+				"PROGRESSBAR_INDICATOR_BACKGROUND",
+				"REACTION_BORDER_REACTED_DEFAULT",
+				"SWITCH_BACKGROUND_SELECTED_DEFAULT",
+				"SWITCH_THUMB_ICON_ACTIVE",
+				"TOGGLEBUTTON_BORDER_SELECTED"
+			]
+		},
+		{
+			"key": "BLURPLE_8",
+			"description": "Mention text, like @name in notifications.",
+			"image": "images/raw/BLURPLE_8.webp",
+			"value": "#cdd7ff",
+			"usedBy": [
+				"MENTION_FOREGROUND"
+			]
+		},
+		{
+			"key": "GREEN_360",
+			"description": "Online status dot.",
+			"image": "images/raw/GREEN_360.webp",
+			"value": "#23a55a",
+			"usedBy": [
+				"POLLS_VICTOR_FILL",
+				"STATUS_ONLINE",
+				"STATUS_POSITIVE",
+				"STATUS_SPEAKING"
+			]
+		},
+		{
+			"key": "GREEN_NEW_22",
+			"description": "Success text, like the playing-time counter.",
+			"image": "images/raw/GREEN_NEW_22.webp",
+			"value": "#7ecb94",
+			"usedBy": [
+				"BORDER_FEEDBACK_POSITIVE",
+				"ICON_FEEDBACK_POSITIVE",
+				"TEXT_FEEDBACK_POSITIVE"
+			]
+		},
+		{
+			"key": "GREEN_NEW_25",
+			"description": "Listening icons on activity cards.",
+			"image": "images/raw/GREEN_NEW_25.webp",
+			"value": "#73c48b",
+			"usedBy": [
+				"ICON_VOICE_CONNECTED",
+				"TEXT_VOICE_CONNECTED"
+			]
+		},
+		{
+			"key": "GUILD_BOOSTING_PINK",
+			"description": "Server boost icon next to boosters' names. Used directly, not through a semantic key.",
+			"image": "images/raw/GUILD_BOOSTING_PINK.webp",
+			"value": "#ff73fa",
+			"usedBy": []
+		},
+		{
+			"key": "NEUTRAL_1",
+			"description": "Strongest text: titles, message text, row titles.",
+			"image": "images/raw/NEUTRAL_1.webp",
+			"value": "#ffffff",
+			"usedBy": [
+				"BADGE_CRITICAL_TEXT",
+				"BADGE_EXPRESSIVE_BACKGROUND",
+				"BADGE_EXPRESSIVE_BORDER",
+				"BADGE_INVERTED_BACKGROUND",
+				"BADGE_INVERTED_BORDER",
+				"BADGE_NOTIFICATION_TEXT",
+				"BADGE_PREMIUM_TEXT",
+				"BADGE_PRIMARY_TEXT",
+				"BADGE_SECONDARY_TEXT",
+				"BADGE_SUCCESS_TEXT",
+				"CHAT_INPUT_ACTION_ICON_ACTIVE_TINT",
+				"CHAT_INPUT_SEND_BUTTON_ICON_ACTIVE_TINT",
+				"CHECKBOX_ICON_ACTIVE",
+				"CONTROL_CONNECTED_TEXT_DEFAULT",
+				"CONTROL_CRITICAL_PRIMARY_TEXT_DEFAULT",
+				"CONTROL_EXPRESSIVE_BACKGROUND_DEFAULT",
+				"CONTROL_ICON_ONLY_ICON_ACTIVE",
+				"CONTROL_OVERLAY_PRIMARY_BACKGROUND_DEFAULT",
+				"CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT",
+				"CONTROL_PRIMARY_TEXT_DEFAULT",
+				"CONTROL_SECONDARY_TEXT_DEFAULT",
+				"ICON_OVERLAY_LIGHT",
+				"ICON_STRONG",
+				"INTERACTIVE_ICON_ACTIVE",
+				"INTERACTIVE_ICON_HOVER",
+				"INTERACTIVE_TEXT_ACTIVE",
+				"INTERACTIVE_TEXT_HOVER",
+				"MOBILE_HEADER_ICON_DEFAULT",
+				"MOBILE_TEXT_HEADING_PRIMARY",
+				"MOBILE_VOICE_MESSAGE_RECORDING_LOCK_ICON_ACTIVE",
+				"MOBILE_VOICE_MESSAGE_RECORDING_LOCK_ICON_DEFAULT",
+				"REACTION_TEXT_ACTIVE",
+				"REACTION_TEXT_HOVER",
+				"REDESIGN_CHANNEL_NAME_TEXT",
+				"SWITCH_THUMB_BACKGROUND_DEFAULT",
+				"SWITCH_THUMB_BACKGROUND_SELECTED_DEFAULT",
+				"TAB_LABEL_TEXT_FOCUSED",
+				"TABLEROW_ICON_COLOR_DEFAULT",
+				"TEXT_CODE",
+				"TEXT_OVERLAY_LIGHT",
+				"TEXT_STRONG",
+				"TOGGLEBUTTON_ICON_ONLY_ICON_ACTIVE",
+				"TOGGLEBUTTON_ICON_ONLY_ICON_HOVER",
+				"TOGGLEBUTTON_ICON_ONLY_ICON_SELECTED",
+				"TOGGLEBUTTON_ICON_ONLY_ICON_SELECTED_HOVER",
+				"TOGGLEBUTTON_ICON_SELECTED",
+				"TOGGLEBUTTON_ICON_SELECTED_HOVER",
+				"USER_PROFILE_ABOUT_ME_HEADING_TEXT"
+			]
+		},
+		{
+			"key": "NEUTRAL_16",
+			"description": "Subtle icons and chevrons, DM names, chat box icons.",
+			"image": "images/raw/NEUTRAL_16.webp",
+			"value": "#c5c6ca",
+			"usedBy": [
+				"CHAT_INPUT_ACTION_BUTTON_ICON_DEFAULT_TINT",
+				"CHAT_INPUT_ICON_DEFAULT_TINT",
+				"CONTROL_ICON_ONLY_ICON_DEFAULT",
+				"ICON_SUBTLE",
+				"INPUT_ICON_DEFAULT",
+				"INTERACTIVE_ICON_DEFAULT",
+				"INTERACTIVE_TEXT_DEFAULT",
+				"MESSAGES_ITEM_CHANNEL_TEXT_DEFAULT",
+				"MOBILE_GUILDBAR_ICON_DEFAULT",
+				"MOBILE_UNREADBAR_TEXT_DEFAULT",
+				"REACTION_TEXT_DEFAULT",
+				"TAB_LABEL_TEXT_DEFAULT",
+				"TEXT_SUBTLE",
+				"VOICE_CHANNEL_USER_LIMIT_ICON",
+				"VOICE_CHANNEL_USER_LIMIT_TEXT"
+			]
+		},
+		{
+			"key": "NEUTRAL_23",
+			"description": "Muted text and icons, read channel names.",
+			"image": "images/raw/NEUTRAL_23.webp",
+			"value": "#abacb2",
+			"usedBy": [
+				"ICON_MUTED",
+				"REDESIGN_CHANNEL_NAME_MUTED_TEXT",
+				"TEXT_MUTED"
+			]
+		},
+		{
+			"key": "NEUTRAL_25",
+			"description": "Placeholder text in search boxes.",
+			"image": "images/raw/NEUTRAL_25.webp",
+			"value": "#a4a5ab",
+			"usedBy": [
+				"INPUT_PLACEHOLDER_TEXT_DEFAULT"
+			]
+		},
+		{
+			"key": "NEUTRAL_28",
+			"description": "Channel icons in the channel list.",
+			"image": "images/raw/NEUTRAL_28.webp",
+			"value": "#999aa1",
+			"usedBy": [
+				"CHANNEL_ICON",
+				"CHANNELS_DEFAULT"
+			]
+		},
+		{
+			"key": "NEUTRAL_4",
+			"description": "Default text and icons.",
+			"image": "images/raw/NEUTRAL_4.webp",
+			"value": "#f3f3f4",
+			"usedBy": [
+				"ICON_DEFAULT",
+				"INPUT_TEXT_DEFAULT",
+				"INPUT_TEXT_ERROR_DEFAULT",
+				"MOBILE_VOICE_MESSAGE_RECORDING_SPINNER_COLOR",
+				"MOBILE_VOICE_MESSAGE_RECORDING_WAVEFORM_BAR_BACKGROUND",
+				"REDESIGN_BUTTON_TERTIARY_TEXT",
+				"TEXT_DEFAULT",
+				"TOGGLEBUTTON_CRITICAL_ICON_DEFAULT",
+				"TOGGLEBUTTON_CRITICAL_ICON_HOVER",
+				"TOGGLEBUTTON_ICON_ACTIVE",
+				"TOGGLEBUTTON_ICON_DEFAULT",
+				"TOGGLEBUTTON_ICON_HOVER",
+				"TOGGLEBUTTON_ICON_ONLY_ICON_DEFAULT"
+			]
+		},
+		{
+			"key": "NEUTRAL_47",
+			"description": "Thread lines and slider tracks.",
+			"image": "images/raw/NEUTRAL_47.webp",
+			"value": "#595a63",
+			"usedBy": [
+				"SLIDER_TRACK_BACKGROUND",
+				"SPINE_DEFAULT"
+			]
+		},
+		{
+			"key": "NEUTRAL_60",
+			"description": "Popup menus, toasts, the user panel nameplate.",
+			"image": "images/raw/NEUTRAL_60.webp",
+			"value": "#3f4048",
+			"usedBy": [
+				"BACKGROUND_SURFACE_HIGHEST",
+				"CUSTOM_STATUS_BUBBLE_BG",
+				"MOBILE_FLOATINGBAR_BACKGROUND_NAMEPLATE",
+				"MOBILE_TOAST_BACKGROUND_DEFAULT"
+			]
+		},
+		{
+			"key": "NEUTRAL_63",
+			"description": "Chat box.",
+			"image": "images/raw/NEUTRAL_63.webp",
+			"value": "#3b3c43",
+			"usedBy": [
+				"MOBILE_CHATINPUT_BACKGROUND_ACTIVE",
+				"MOBILE_CHATINPUT_BACKGROUND_DEFAULT"
+			]
+		},
+		{
+			"key": "NEUTRAL_64",
+			"description": "Most raised surfaces: settings pages, sheets, cards, embeds, alerts.",
+			"image": "images/raw/NEUTRAL_64.webp",
+			"value": "#393a41",
+			"usedBy": [
+				"BACKGROUND_SURFACE_HIGH",
+				"CARD_BACKGROUND_DEFAULT",
+				"CHAT_BANNER_BG",
+				"EMBED_BACKGROUND",
+				"EMBED_BACKGROUND_ALTERNATE",
+				"MOBILE_ACTIONSHEET_BACKGROUND",
+				"MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT",
+				"MOBILE_ALERT_BACKGROUND_DEFAULT",
+				"MOBILE_COACHMARK_BACKGROUND_DEFAULT",
+				"MOBILE_COMMAND_CATEGORIES_BACKGROUND",
+				"MOBILE_EMBED_BACKGROUND_DEFAULT",
+				"MOBILE_EXPRESSION_PICKER_BACKGROUND_DEFAULT",
+				"MOBILE_FLOATING_ACCESSORY_BACKGROUND",
+				"MOBILE_FLOATINGBAR_BACKGROUND",
+				"MOBILE_KEYBOARD_PANEL_BACKGROUND",
+				"MOBILE_THREAD_EMBED_BACKGROUND",
+				"MOBILE_VOICE_MESSAGE_RECORDING_LOCK_BACKGROUND_DEFAULT",
+				"MODAL_BACKGROUND",
+				"MODAL_FOOTER_BACKGROUND"
+			]
+		},
+		{
+			"key": "NEUTRAL_66",
+			"description": "Notifications page background.",
+			"image": "images/raw/NEUTRAL_66.webp",
+			"value": "#36373e",
+			"usedBy": [
+				"BACKGROUND_BASE_LOW",
+				"MOBILE_COMMAND_BAR_BACKGROUND",
+				"MOBILE_FLOATINGBAR_BACKGROUND_SCRIM",
+				"TAB_BAR_BACKGROUND",
+				"VOICE_CHANNEL_USER_LIMIT_BACKGROUND"
+			]
+		},
+		{
+			"key": "NEUTRAL_69",
+			"description": "Chat, channel list and DM list background.",
+			"image": "images/raw/NEUTRAL_69.webp",
+			"value": "#323339",
+			"usedBy": [
+				"BACKGROUND_BASE_LOWER",
+				"CHANNEL_BACKGROUND_DEFAULT",
+				"MOBILE_KEYBOARD_GAP_BACKGROUND",
+				"MOBILE_SEARCHBAR_GRADIENT_BACKGROUND",
+				"MOBILE_TYPING_INDICATOR_BACKGROUND_DEFAULT",
+				"PANEL_BG",
+				"STANDALONE_CHANNEL_CONTENT_BACKGROUND"
+			]
+		},
+		{
+			"key": "NEUTRAL_73",
+			"description": "Darkest Ash grey. Server rail, your profile background.",
+			"image": "images/raw/NEUTRAL_73.webp",
+			"value": "#2c2d32",
+			"usedBy": [
+				"BACKGROUND_BASE_LOWEST",
+				"GUILD_PROFILE_BANNER_BACKGROUND_DEFAULT",
+				"MOBILE_VOICE_PANEL_BACKGROUND",
+				"USER_PROFILE_GRADIENT_BACKGROUND"
+			]
+		},
+		{
+			"key": "RED_NEW_18",
+			"description": "Error text and the \"NEW MESSAGES\" divider.",
+			"image": "images/raw/RED_NEW_18.webp",
+			"value": "#ffa09b",
+			"usedBy": [
+				"BORDER_FEEDBACK_CRITICAL",
+				"CONTROL_CRITICAL_SECONDARY_TEXT_DEFAULT",
+				"ICON_FEEDBACK_CRITICAL",
+				"ICON_VOICE_DISCONNECTED",
+				"INPUT_BORDER_ERROR_DEFAULT",
+				"MOBILE_CHAT_NEW_MESSAGE_TEXT",
+				"TEXT_FEEDBACK_CRITICAL",
+				"TEXT_VOICE_DISCONNECTED"
+			]
+		},
+		{
+			"key": "RED_NEW_50",
+			"description": "Notification dots and danger buttons.",
+			"image": "images/raw/RED_NEW_50.webp",
+			"value": "#d22d39",
+			"usedBy": [
+				"BACKGROUND_FEEDBACK_NOTIFICATION",
+				"BADGE_CRITICAL_BACKGROUND",
+				"BADGE_NOTIFICATION_BACKGROUND",
+				"BUTTON_DANGER_BACKGROUND_DISABLED",
+				"CONTROL_CRITICAL_PRIMARY_BACKGROUND_DEFAULT",
+				"ICON_FEEDBACK_NOTIFICATION"
+			]
+		},
+		{
+			"key": "WHITE",
+			"description": "Icons and text on coloured buttons and badges.",
+			"image": "images/raw/WHITE.webp",
+			"value": "#ffffff",
+			"usedBy": [
+				"APP_MESSAGE_EMBED_SECONDARY_TEXT",
+				"BUTTON_OUTLINE_PRIMARY_TEXT",
+				"CONTENT_INVENTORY_OVERLAY_TEXT_PRIMARY",
+				"CONTENT_INVENTORY_OVERLAY_TEXT_SECONDARY",
+				"MOBILE_ANDROID_BUTTON_BACKGROUND_RIPPLE",
+				"MOBILE_LEGACY_BUTTON_SECONDARY_TEXT_DEFAULT",
+				"NAVIGATOR_HEADER_TINT",
+				"PROFILE_GRADIENT_ROLE_PILL_BORDER",
+				"STATUS_POSITIVE_TEXT",
+				"WHITE"
+			]
+		},
+		{
+			"key": "PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS",
+			"description": "Purple colouring in the premium badge.",
+			"image": "images/raw/PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS.webp",
+			"value": "#8547c6",
+			"usedBy": [
+				"BADGE_PREMIUM_BACKGROUND_GRADIENT_START",
+				"REDESIGN_BUTTON_PREMIUM_PRIMARY_PURPLE_FOR_GRADIENT"
+			]
+		},
+		{
+			"key": "NEUTRAL_35",
+			"description": "Outline of the common rarity badge.",
+			"image": "images/raw/NEUTRAL_35.webp",
+			"value": "#81828a",
+			"usedBy": [
+				"BADGE_COMMON_BORDER"
+			]
+		},
+		{
+			"key": "NEUTRAL_15",
+			"description": "Text in the common rarity badge.",
+			"image": "images/raw/NEUTRAL_15.webp",
+			"value": "#c9cace",
+			"usedBy": [
+				"BADGE_COMMON_TEXT"
+			]
+		},
+		{
+			"key": "ILLO_BLUE_40",
+			"description": "Outline of the rare badge.",
+			"image": "images/raw/ILLO_BLUE_40.webp",
+			"value": "#5865f2",
+			"usedBy": [
+				"BADGE_RARE_BACKGROUND",
+				"BADGE_RARE_BORDER_GRADIENT_START",
+				"EXPRESSIVE_GRADIENT_BLUE_START"
+			]
+		},
+		{
+			"key": "ILLO_BLUE_30",
+			"description": "Text in the rare badge.",
+			"image": "images/raw/ILLO_BLUE_30.webp",
+			"value": "#a0a9fa",
+			"usedBy": [
+				"BADGE_RARE_TEXT"
+			]
+		},
+		{
+			"key": "ILLO_PINK_40",
+			"description": "Outline of the epic badge.",
+			"image": "images/raw/ILLO_PINK_40.webp",
+			"value": "#ff4cd2",
+			"usedBy": [
+				"BADGE_EPIC_BORDER_GRADIENT_START"
+			]
+		},
+		{
+			"key": "ILLO_PURPLE_30",
+			"description": "Text in the epic badge.",
+			"image": "images/raw/ILLO_PURPLE_30.webp",
+			"value": "#ca9ef9",
+			"usedBy": [
+				"BADGE_EPIC_TEXT"
+			]
+		},
+		{
+			"key": "ILLO_ORANGE_30",
+			"description": "Outline and text of the mythic badge.",
+			"image": "images/raw/ILLO_ORANGE_30.webp",
+			"value": "#fe9242",
+			"usedBy": [
+				"BADGE_MYTHIC_TEXT",
+				"EXPRESSIVE_GRADIENT_TENURE_BADGE_BRONZE_START"
+			]
+		},
+		{
+			"key": "GREEN_NEW_50",
+			"description": "Fill of the connected (active) button.",
+			"image": "images/raw/GREEN_NEW_50.webp",
+			"value": "#008545",
+			"usedBy": [
+				"BADGE_SUCCESS_BACKGROUND",
+				"CONTROL_CONNECTED_BACKGROUND_DEFAULT"
+			]
+		},
+		{
+			"key": "YELLOW_NEW_45",
+			"description": "Fill of the warning badge.",
+			"image": "images/raw/YELLOW_NEW_45.webp",
+			"value": "#faaa00",
+			"usedBy": [
+				"BADGE_WARNING_BACKGROUND"
+			]
+		},
+		{
+			"key": "NEUTRAL_100",
+			"description": "Dark text on expressive and overlay buttons.",
+			"image": "images/raw/NEUTRAL_100.webp",
+			"value": "#000000",
+			"usedBy": [
+				"BADGE_INVERTED_TEXT",
+				"BADGE_WARNING_TEXT",
+				"CONTROL_EXPRESSIVE_TEXT_DEFAULT",
+				"CONTROL_OVERLAY_PRIMARY_TEXT_DEFAULT",
+				"ICON_OVERLAY_DARK",
+				"TEXT_OVERLAY_DARK"
+			]
+		},
+		{
+			"key": "NEUTRAL_71",
+			"description": "Text in the expressive badge.",
+			"image": "images/raw/NEUTRAL_71.webp",
+			"value": "#2f3035",
+			"usedBy": [
+				"BADGE_EXPRESSIVE_TEXT",
+				"SWITCH_THUMB_ICON_DEFAULT"
+			]
+		},
+		{
+			"key": "PREMIUM_TIER_0_BLUE_FOR_GRADIENTS_2",
+			"description": "Blue part of the premium basic button gradient.",
+			"image": "images/raw/PREMIUM_TIER_0_BLUE_FOR_GRADIENTS_2.webp",
+			"value": "#1776cf",
+			"usedBy": []
+		},
+		{
+			"key": "NEUTRAL_17",
+			"description": "Premium secondary button fill while pressed.",
+			"image": "images/raw/NEUTRAL_17.webp",
+			"value": "#c2c2c7",
+			"usedBy": [
+				"CONTROL_OVERLAY_PRIMARY_BACKGROUND_ACTIVE"
+			]
+		},
+		{
+			"key": "GREEN_NEW_65",
+			"description": "Connected button fill while pressed.",
+			"image": "images/raw/GREEN_NEW_65.webp",
+			"value": "#005f30",
+			"usedBy": [
+				"CONTROL_CONNECTED_BACKGROUND_ACTIVE"
+			]
+		},
+		{
+			"key": "RED_NEW_65",
+			"description": "Destructive button fill while pressed.",
+			"image": "images/raw/RED_NEW_65.webp",
+			"value": "#971d28",
+			"usedBy": [
+				"CONTROL_CRITICAL_PRIMARY_BACKGROUND_ACTIVE"
+			]
+		},
+		{
+			"key": "BLURPLE_65",
+			"description": "Primary button fill while pressed.",
+			"image": "images/raw/BLURPLE_65.webp",
+			"value": "#3a48a3",
+			"usedBy": [
+				"CONTROL_PRIMARY_BACKGROUND_ACTIVE",
+				"INTERACTIVE_ACCENT_BACKGROUND_ACTIVE"
+			]
+		},
+		{
+			"key": "TRANSPARENT",
+			"description": "Normally transparent card fill. An opaque override makes this area visible.",
+			"image": "images/raw/TRANSPARENT.webp",
+			"value": "#00000000",
+			"usedBy": [
+				"CHAT_INPUT_ACTION_BUTTON_BACKGROUND",
+				"ICON_TRANSPARENT",
+				"MOBILE_VOICE_PANEL_BADGE_BACKGROUND"
+			]
+		},
+		{
+			"key": "BRAND_500",
+			"description": "Radio control and the filled part of the slider.",
+			"image": "images/raw/BRAND_500.webp",
+			"value": "#5865f2",
+			"usedBy": [
+				"BUTTON_OUTLINE_BRAND_BACKGROUND_HOVER",
+				"MOBILE_LEGACY_BUTTON_SECONDARY_BORDER_DEFAULT",
+				"POLLS_VOTED_FILL",
+				"REDESIGN_INPUT_CONTROL_SELECTED"
+			]
+		},
+		{
+			"key": "RED_NEW_46",
+			"description": "Critical toggle icon when selected or pressed.",
+			"image": "images/raw/RED_NEW_46.webp",
+			"value": "#da3e44",
+			"usedBy": [
+				"ICON_VOICE_MUTED",
+				"MOBILE_CHAT_NEW_MESSAGE_BORDER",
+				"TOGGLEBUTTON_CRITICAL_ICON_ACTIVE",
+				"TOGGLEBUTTON_CRITICAL_ICON_SELECTED",
+				"TOGGLEBUTTON_CRITICAL_ICON_SELECTED_HOVER"
+			]
+		},
+		{
+			"key": "BLUE_345",
+			"description": "Outline and information icon of an info notice.",
+			"image": "images/raw/BLUE_345.webp",
+			"value": "#00aafc",
+			"usedBy": []
+		},
+		{
+			"key": "GREEN_400",
+			"description": "Outline and icon of a positive notice.",
+			"image": "images/raw/GREEN_400.webp",
+			"value": "#24934e",
+			"usedBy": []
+		},
+		{
+			"key": "YELLOW_300",
+			"description": "Outline and icon of a warning notice.",
+			"image": "images/raw/YELLOW_300.webp",
+			"value": "#f0b232",
+			"usedBy": [
+				"STATUS_WARNING",
+				"STATUS_WARNING_BACKGROUND"
+			]
+		},
+		{
+			"key": "RED_400",
+			"description": "Outline and icon of a critical notice.",
+			"image": "images/raw/RED_400.webp",
+			"value": "#f23f43",
+			"usedBy": [
+				"MESSAGE_AUTOMOD_BACKGROUND_DEFAULT",
+				"MESSAGE_AUTOMOD_BACKGROUND_HOVER",
+				"STATUS_DANGER"
+			]
+		},
+		{
+			"key": "RED_NEW_42",
+			"description": "Outline of an error notification.",
+			"image": "images/raw/RED_NEW_42.webp",
+			"value": "#e24d50",
+			"usedBy": [
+				"TOAST_CRITICAL_BORDER"
+			]
+		},
+		{
+			"key": "GREEN_NEW_42",
+			"description": "Outline of a success notification.",
+			"image": "images/raw/GREEN_NEW_42.webp",
+			"value": "#34995b",
+			"usedBy": [
+				"TOAST_SUCCESS_BORDER"
+			]
+		},
+		{
+			"key": "PREMIUM_TIER_0_PURPLE_FOR_GRADIENTS",
+			"description": "Purple end of the premium basic button gradient.",
+			"image": "images/raw/PREMIUM_TIER_0_PURPLE_FOR_GRADIENTS.webp",
+			"value": "#5865f2",
+			"usedBy": []
+		},
+		{
+			"key": "PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS_2",
+			"description": "Purple end of the premium primary button gradient.",
+			"image": "images/raw/PREMIUM_TIER_2_PURPLE_FOR_GRADIENTS_2.webp",
+			"value": "#b845c1",
+			"usedBy": [
+				"BADGE_PREMIUM_BACKGROUND_GRADIENT_MID",
+				"REDESIGN_BUTTON_PREMIUM_PRIMARY_PURPLE_FOR_GRADIENT_2"
+			]
+		},
+		{
+			"key": "OPACITY_12",
+			"description": "Fill of the critical secondary button.",
+			"image": "images/raw/OPACITY_12.webp",
+			"value": "#97979f1f",
+			"usedBy": [
+				"APP_FRAME_BORDER",
+				"BACKGROUND_MOD_SUBTLE",
+				"BORDER_SUBTLE",
+				"CARD_BORDER_DEFAULT",
+				"CARD_MUTED_PRESSED_BG",
+				"CARD_SECONDARY_BACKGROUND_DEFAULT",
+				"CARD_SECONDARY_BG",
+				"CHAT_BORDER",
+				"CHECKBOX_BORDER_SELECTED_DEFAULT",
+				"CONTROL_CRITICAL_SECONDARY_BACKGROUND_DEFAULT",
+				"CONTROL_OVERLAY_PRIMARY_BORDER_DEFAULT",
+				"CONTROL_SECONDARY_BACKGROUND_DEFAULT",
+				"GUILD_FOLDER_BACKGROUND",
+				"INTERACTIVE_ACCENT_BACKGROUND_DEFAULT",
+				"INTERACTIVE_BACKGROUND_HOVER",
+				"MESSAGE_BACKGROUND_HOVER",
+				"MOBILE_CHATINPUT_BORDER_ACTIVE",
+				"MOBILE_COACHMARK_BORDER_DEFAULT",
+				"MOBILE_EMOJI_BUTTON_BACKGROUND",
+				"MOBILE_FLOATING_ACCESSORY_BORDER",
+				"MOBILE_GUILDBAR_ICON_BACKGROUND_DEFAULT",
+				"MOBILE_SEGMENTED_CONTROL_BACKGROUND",
+				"REACTION_BACKGROUND_DEFAULT",
+				"REACTION_BORDER_DEFAULT",
+				"STAGE_CARD_PILL_BG",
+				"STANDALONE_CHANNEL_HEADER_BORDER",
+				"SWITCH_BORDER_SELECTED_DEFAULT",
+				"USER_PROFILE_CONTAINER_BACKGROUND"
+			]
+		},
+		{
+			"key": "OPACITY_16",
+			"description": "Fill of the secondary badge.",
+			"image": "images/raw/OPACITY_16.webp",
+			"value": "#97979f29",
+			"usedBy": [
+				"BACKGROUND_MOD_NORMAL",
+				"BADGE_SECONDARY_BACKGROUND",
+				"BADGE_SECONDARY_BORDER",
+				"INTERACTIVE_BACKGROUND_ACTIVE",
+				"TABLEROW_BACKGROUND_PRESSED"
+			]
+		},
+		{
+			"key": "OPACITY_20",
+			"description": "Selected text toggle fill while pressed.",
+			"image": "images/raw/OPACITY_20.webp",
+			"value": "#97979f33",
+			"usedBy": [
+				"BACKGROUND_MOD_STRONG",
+				"BORDER_NORMAL",
+				"CARD_SECONDARY_BACKGROUND_ACTIVE",
+				"CONTROL_CRITICAL_SECONDARY_BACKGROUND_ACTIVE",
+				"CONTROL_ICON_ONLY_BACKGROUND_ACTIVE",
+				"CONTROL_SECONDARY_BACKGROUND_ACTIVE",
+				"INPUT_BORDER_DEFAULT",
+				"INTERACTIVE_BACKGROUND_SELECTED",
+				"KEYWORD_HIGHLIGHT_BACKGROUND",
+				"MOBILE_CHANNEL_ITEM_BACKGROUND_SELECTED",
+				"MOBILE_SEGMENTED_CONTROL_INDICATOR_BACKGROUND",
+				"PROGRESSBAR_TRACK_BACKGROUND",
+				"REDESIGN_BUTTON_TERTIARY_PRESSED_BACKGROUND",
+				"SWITCH_BORDER_DEFAULT",
+				"TOGGLEBUTTON_BACKGROUND_SELECTED_ACTIVE",
+				"VOICE_CHANNEL_USER_LIMIT_ACCENT_BACKGROUND"
+			]
+		},
+		{
+			"key": "OPACITY_BLACK_80",
+			"description": "The dim layer behind sheets, menus and alerts. Keep some transparency (#RRGGBBAA) or it hides the screen.",
+			"image": "images/raw/OPACITY_BLACK_80.webp",
+			"value": "#000000cc",
+			"usedBy": [
+				"BACKGROUND_SCRIM",
+				"CONTEXT_MENU_BACKDROP_BACKGROUND"
+			]
+		},
+		{
+			"key": "OPACITY_WHITE_8",
+			"description": "Faint outlines of primary, destructive and active buttons.",
+			"image": "images/raw/OPACITY_WHITE_8.webp",
+			"value": "#ffffff14",
+			"usedBy": [
+				"BADGE_CRITICAL_BORDER",
+				"BADGE_NOTIFICATION_BORDER",
+				"BADGE_SUCCESS_BORDER",
+				"CONTROL_CONNECTED_BORDER_ACTIVE",
+				"CONTROL_CONNECTED_BORDER_DEFAULT",
+				"CONTROL_CRITICAL_PRIMARY_BORDER_ACTIVE",
+				"CONTROL_CRITICAL_PRIMARY_BORDER_DEFAULT",
+				"CONTROL_PRIMARY_BORDER_ACTIVE",
+				"CONTROL_PRIMARY_BORDER_DEFAULT"
+			]
+		},
+		{
+			"key": "OPACITY_BLACK_8",
+			"description": "Fill inside an unchecked checkbox.",
+			"image": "images/raw/OPACITY_BLACK_8.webp",
+			"value": "#00000014",
+			"usedBy": [
+				"BADGE_WARNING_BORDER",
+				"CHAT_INPUT_BACKGROUND",
+				"CHECKBOX_BACKGROUND_DEFAULT",
+				"INPUT_BACKGROUND_DEFAULT"
+			]
+		},
+		{
+			"key": "OPACITY_64",
+			"description": "Outlines of the unchecked checkbox and unselected radio control.",
+			"image": "images/raw/OPACITY_64.webp",
+			"value": "#97979fa3",
+			"usedBy": [
+				"CHECKBOX_BORDER_DEFAULT",
+				"RADIO_BORDER_DEFAULT"
+			]
+		},
+		{
+			"key": "OPACITY_24",
+			"description": "Fill of the common badge.",
+			"image": "images/raw/OPACITY_24.webp",
+			"value": "#97979f3d",
+			"usedBy": [
+				"BADGE_COMMON_BACKGROUND"
+			]
+		},
+		{
+			"key": "ILLO_PURPLE_40",
+			"description": "Fill of the epic badge.",
+			"image": "images/raw/ILLO_PURPLE_40.webp",
+			"value": "#a056f2",
+			"usedBy": [
+				"BADGE_EPIC_BACKGROUND",
+				"EXPRESSIVE_GRADIENT_PURPLE_START",
+				"EXPRESSIVE_GRADIENT_TENURE_BADGE_DIAMOND_START"
+			]
+		},
+		{
+			"key": "ILLO_ORANGE_40",
+			"description": "Fill of the mythic badge.",
+			"image": "images/raw/ILLO_ORANGE_40.webp",
+			"value": "#fe6e0d",
+			"usedBy": [
+				"BADGE_MYTHIC_BACKGROUND"
+			]
+		},
+		{
+			"key": "BLACK",
+			"description": "Premium basic button fill while pressed.",
+			"image": "images/raw/BLACK.webp",
+			"value": "#000000",
+			"usedBy": [
+				"BLACK",
+				"HEXAGON_CAMPAIGN_PROMO_GRADIENT_SHADE",
+				"LEGACY_ANDROID_BLUR_OVERLAY_ULTRA_THIN",
+				"LEGACY_BLUR_FALLBACK_ULTRA_THIN",
+				"MOBILE_BACKGROUND_SCRIM_OPAQUE",
+				"PROFILE_GRADIENT_NOTE_BACKGROUND",
+				"PROFILE_GRADIENT_OVERLAY",
+				"PROFILE_GRADIENT_OVERLAY_SYNCED_WITH_USER_THEME",
+				"PROFILE_GRADIENT_SECTION_BOX",
+				"REDESIGN_BUTTON_PREMIUM_PRIMARY_PRESSED_BACKGROUND",
+				"REDESIGN_IMAGE_BUTTON_PRESSED_BACKGROUND",
+				"STATUS_WARNING_TEXT"
+			]
+		},
+		{
+			"key": "OPACITY_BLURPLE_16",
+			"description": "Fill of a selected toggle button.",
+			"image": "images/raw/OPACITY_BLURPLE_16.webp",
+			"value": "#5865f229",
+			"usedBy": [
+				"MESSAGE_HIGHLIGHT_BACKGROUND_DEFAULT",
+				"TOGGLEBUTTON_BACKGROUND_SELECTED"
+			]
+		},
+		{
+			"key": "OPACITY_BLURPLE_84",
+			"description": "Outline of an icon toggle while pressed.",
+			"image": "images/raw/OPACITY_BLURPLE_84.webp",
+			"value": "#5865f2d6",
+			"usedBy": [
+				"TOGGLEBUTTON_BORDER_ACTIVE"
+			]
+		},
+		{
+			"key": "OPACITY_BLURPLE_24",
+			"description": "Selected icon toggle fill while pressed on Android.",
+			"image": "images/raw/OPACITY_BLURPLE_24.webp",
+			"value": "#5865f23d",
+			"usedBy": [
+				"MENTION_BACKGROUND",
+				"REACTION_BACKGROUND_REACTED_DEFAULT",
+				"TOGGLEBUTTON_BACKGROUND_SELECTED_HOVER"
+			]
+		},
+		{
+			"key": "OPACITY_RED_20",
+			"description": "Fill of an error notification at the top of the screen.",
+			"image": "images/raw/OPACITY_RED_20.webp",
+			"value": "#d22d3933",
+			"usedBy": [
+				"TOAST_CRITICAL_BACKGROUND"
+			]
+		},
+		{
+			"key": "OPACITY_4",
+			"description": "Outline of grey buttons.",
+			"image": "images/raw/OPACITY_4.webp",
+			"value": "#97979f0a",
+			"usedBy": [
+				"BORDER_MUTED",
+				"CONTROL_CRITICAL_SECONDARY_BORDER_ACTIVE",
+				"CONTROL_CRITICAL_SECONDARY_BORDER_DEFAULT",
+				"CONTROL_ICON_ONLY_BORDER_ACTIVE",
+				"CONTROL_OVERLAY_SECONDARY_BORDER_DEFAULT",
+				"CONTROL_SECONDARY_BORDER_ACTIVE",
+				"CONTROL_SECONDARY_BORDER_DEFAULT",
+				"MOBILE_CHATINPUT_BORDER_DEFAULT",
+				"MOBILE_COMMAND_BAR_DIVIDER"
+			]
+		},
+		{
+			"key": "OPACITY_RED_12",
+			"description": "Fill of a selected critical icon toggle.",
+			"image": "images/raw/OPACITY_RED_12.webp",
+			"value": "#d22d391f",
+			"usedBy": [
+				"BACKGROUND_VOICE_MUTED",
+				"BORDER_VOICE_MUTED",
+				"TOGGLEBUTTON_CRITICAL_BACKGROUND_SELECTED"
+			]
+		},
+		{
+			"key": "OPACITY_RED_32",
+			"description": "Outline of the critical icon toggle while pressed.",
+			"image": "images/raw/OPACITY_RED_32.webp",
+			"value": "#d22d3952",
+			"usedBy": [
+				"TOGGLEBUTTON_CRITICAL_BORDER_ACTIVE"
+			]
+		},
+		{
+			"key": "OPACITY_RED_16",
+			"description": "Selected critical toggle fill while pressed on Android.",
+			"image": "images/raw/OPACITY_RED_16.webp",
+			"value": "#d22d3929",
+			"usedBy": [
+				"TOGGLEBUTTON_CRITICAL_BACKGROUND_SELECTED_HOVER"
+			]
+		},
+		{
+			"key": "OPACITY_GREEN_20",
+			"description": "Fill of a success notification at the top of the screen.",
+			"image": "images/raw/OPACITY_GREEN_20.webp",
+			"value": "#00854533",
+			"usedBy": [
+				"TOAST_SUCCESS_BACKGROUND"
+			]
+		},
+		{
+			"key": "PRIMARY_830",
+			"description": "Android navigation bar area while a sheet or the emoji picker is open.",
+			"image": "images/raw/PRIMARY_830.webp",
+			"value": "#0c0c0d",
+			"usedBy": [
+				"ANDROID_NAVIGATION_BAR_BACKGROUND",
+				"ANDROID_NAVIGATION_SCRIM_BACKGROUND"
+			]
+		},
+		{
+			"key": "OPACITY_8",
+			"description": "Plugin cards and other list rows.",
+			"image": "images/raw/OPACITY_8.webp",
+			"value": "#97979f14",
+			"usedBy": [
+				"BACKGROUND_APP_LAUNCHER_CARD_DEFAULT",
+				"BACKGROUND_APP_LAUNCHER_ROW_DEFAULT",
+				"BACKGROUND_MOD_MUTED",
+				"CARD_MUTED_BG",
+				"INTERACTIVE_BACKGROUND_DEFAULT",
+				"TABLEROW_BACKGROUND_DEFAULT"
+			]
+		},
+		{
+			"key": "OPACITY_BLACK_56",
+			"description": "Fill behind the notification bell in the user panel.",
+			"image": "images/raw/OPACITY_BLACK_56.webp",
+			"value": "#0000008f",
+			"usedBy": [
+				"CONTROL_OVERLAY_SECONDARY_BACKGROUND_ACTIVE",
+				"CONTROL_OVERLAY_SECONDARY_BACKGROUND_DEFAULT"
+			]
+		},
+		{
+			"key": "OPACITY_BLACK_12",
+			"description": "Switch track when off.",
+			"image": "images/raw/OPACITY_BLACK_12.webp",
+			"value": "#0000001f",
+			"usedBy": [
+				"SWITCH_BACKGROUND_DEFAULT"
+			]
+		},
+		{
+			"key": "NEUTRAL_36",
+			"description": "Hidden spoilers.",
+			"image": "images/raw/NEUTRAL_36.webp",
+			"value": "#7d7e87",
+			"usedBy": [
+				"SPOILER_HIDDEN_BACKGROUND"
+			]
+		}
+	]
+}
