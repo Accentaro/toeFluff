@@ -1,0 +1,21 @@
+{
+	"name": "toefluff-tools",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"bridge": "node bridge.js",
+		"dump": "node dump.js",
+		"capture": "node capture.js",
+		"build-docs": "node build-docs.js",
+		"update": "node update.js",
+		"test": "node test/selftest.js"
+	},
+	"dependencies": {
+		"@revenge-mod/devtools-shared": "1.3.0",
+		"sharp": "^0.34.0",
+		"ws": "^8.18.0"
+	},
+	"devDependencies": {
+		"@revenge-mod/devtools-client": "1.4.0"
+	}
+}

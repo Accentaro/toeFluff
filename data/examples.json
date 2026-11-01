@@ -1,0 +1,1289 @@
+{
+  "semantic": {
+    "INPUT_BACKGROUND_DEFAULT": [
+      {
+        "pixels": 83571,
+        "focus": {
+          "x": 0.025,
+          "y": 0.13083333333333333,
+          "width": 0.8333333333333334,
+          "height": 0.05625
+        },
+        "private": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 62626,
+        "image": "/images/semantic/INPUT_BACKGROUND_DEFAULT-plugins.webp",
+        "screen": "plugins",
+        "description": "Search-field background on the Plugins page."
+      },
+      {
+        "pixels": 97908,
+        "focus": {
+          "x": 0.005555555555555556,
+          "y": 0.18416666666666667,
+          "width": 0.9888888888888889,
+          "height": 0.05625
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 705568,
+        "image": "/images/semantic/INPUT_BACKGROUND_DEFAULT-emoji.webp",
+        "screen": "emoji",
+        "description": "Fill of the emoji search field."
+      }
+    ],
+    "ANDROID_NAVIGATION_SCRIM_BACKGROUND": [
+      {
+        "pixels": 65212,
+        "focus": {
+          "x": 0,
+          "y": 0.96625,
+          "width": 1,
+          "height": 0.03375
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 77250,
+        "image": "/images/semantic/ANDROID_NAVIGATION_SCRIM_BACKGROUND-actionsheet.webp",
+        "screen": "actionsheet",
+        "description": "Android navigation area beneath the message menu."
+      }
+    ],
+    "BACKGROUND_BASE_LOWER": [
+      {
+        "pixels": 71421,
+        "focus": {
+          "x": 0,
+          "y": 0.9391666666666667,
+          "width": 1,
+          "height": 0.060833333333333336
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 355240,
+        "image": "/images/semantic/BACKGROUND_BASE_LOWER-server.webp",
+        "screen": "server",
+        "description": "Bottom strip beneath the user panel."
+      },
+      {
+        "pixels": 1729266,
+        "focus": {
+          "x": 0,
+          "y": 0.11041666666666666,
+          "width": 1,
+          "height": 0.8895833333333333
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 32754,
+        "image": "/images/semantic/BACKGROUND_BASE_LOWER-forum.webp",
+        "screen": "forum",
+        "description": "Forum background behind the post cards."
+      }
+    ],
+    "BACKGROUND_BRAND": [
+      {
+        "pixels": 2310,
+        "focus": {
+          "x": 0.044444444444444446,
+          "y": 0.19625,
+          "width": 0.08888888888888889,
+          "height": 0.04
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 32026,
+        "image": "/images/semantic/BACKGROUND_BRAND-forum.webp",
+        "screen": "forum",
+        "description": "Fill of the pinned-post badge."
+      }
+    ],
+    "BACKGROUND_MOD_STRONG": [
+      {
+        "pixels": 4926,
+        "focus": {
+          "x": 0.09074074074074075,
+          "y": 0.6608333333333334,
+          "width": 0.46944444444444444,
+          "height": 0.2891666666666667
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 269404,
+        "image": "/images/semantic/BACKGROUND_MOD_STRONG-server.webp",
+        "screen": "server",
+        "description": "Small clan tags beside names."
+      }
+    ],
+    "BACKGROUND_SCRIM": [
+      {
+        "pixels": 1035154,
+        "focus": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 0.42875
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 31724,
+        "image": "/images/semantic/BACKGROUND_SCRIM-actionsheet.webp",
+        "screen": "actionsheet",
+        "description": "Layer that dims the chat behind the message menu. Keep transparency in a finished theme."
+      }
+    ],
+    "BACKGROUND_SURFACE_HIGH": [
+      {
+        "pixels": 126293,
+        "focus": {
+          "x": 0.024074074074074074,
+          "y": 0.8458333333333333,
+          "width": 0.9518518518518518,
+          "height": 0.07541666666666667
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 357356,
+        "image": "/images/semantic/BACKGROUND_SURFACE_HIGH-server.webp",
+        "screen": "server",
+        "description": "Quest card above the user panel."
+      },
+      {
+        "pixels": 442309,
+        "focus": {
+          "x": 0.014814814814814815,
+          "y": 0.1825,
+          "width": 0.9712962962962963,
+          "height": 0.21541666666666667
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 32306,
+        "image": "/images/semantic/BACKGROUND_SURFACE_HIGH-forum.webp",
+        "screen": "forum",
+        "description": "Background of forum post cards."
+      }
+    ],
+    "BORDER_MUTED": [
+      {
+        "pixels": 3045,
+        "focus": {
+          "x": 0.022222222222222223,
+          "y": 0.845,
+          "width": 0.9555555555555556,
+          "height": 0.13625
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 272548,
+        "image": "/images/semantic/BORDER_MUTED-server.webp",
+        "screen": "server",
+        "description": "Outline around the quest card and user panel."
+      },
+      {
+        "pixels": 5756,
+        "focus": {
+          "x": 0.012962962962962963,
+          "y": 0.18166666666666667,
+          "width": 0.975,
+          "height": 0.21708333333333332
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 32150,
+        "image": "/images/semantic/BORDER_MUTED-forum.webp",
+        "screen": "forum",
+        "description": "Outline of the forum post card."
+      }
+    ],
+    "BORDER_SUBTLE": [
+      {
+        "pixels": 7488,
+        "focus": {
+          "x": 0.012962962962962963,
+          "y": 0.175,
+          "width": 0.9648148148148148,
+          "height": 0.08875
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 267114,
+        "image": "/images/semantic/BORDER_SUBTLE-server.webp",
+        "screen": "server",
+        "description": "Dividers below the server header and Channels & Roles row."
+      },
+      {
+        "pixels": 5844,
+        "focus": {
+          "x": 0.022222222222222223,
+          "y": 0.3754166666666667,
+          "width": 0.9555555555555556,
+          "height": 0.24916666666666668
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 98524,
+        "image": "/images/semantic/BORDER_SUBTLE-alert.webp",
+        "screen": "alert",
+        "description": "Outer outline of the alert."
+      }
+    ],
+    "CARD_MUTED_BG": [
+      {
+        "pixels": 1009224,
+        "focus": {
+          "x": 0.022222222222222223,
+          "y": 0.4979166666666667,
+          "width": 0.9555555555555556,
+          "height": 0.48333333333333334
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 79826,
+        "image": "/images/semantic/CARD_MUTED_BG-actionsheet.webp",
+        "screen": "actionsheet",
+        "description": "Background of the message-menu rows."
+      }
+    ],
+    "CHAT_INPUT_ACTION_BUTTON_ICON_DEFAULT_TINT": [],
+    "CHAT_INPUT_ICON_DEFAULT_TINT": [],
+    "CONTROL_PRIMARY_BACKGROUND_DEFAULT": [
+      {
+        "pixels": 83233,
+        "focus": {
+          "x": 0.08611111111111111,
+          "y": 0.4875,
+          "width": 0.8277777777777777,
+          "height": 0.05625
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 98236,
+        "image": "/images/semantic/CONTROL_PRIMARY_BACKGROUND_DEFAULT-alert.webp",
+        "screen": "alert",
+        "description": "Fill of the Confirm button."
+      },
+      {
+        "pixels": 18152,
+        "focus": {
+          "x": 0.8111111111111111,
+          "y": 0.88875,
+          "width": 0.1638888888888889,
+          "height": 0.07375
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 31920,
+        "image": "/images/semantic/CONTROL_PRIMARY_BACKGROUND_DEFAULT-forum.webp",
+        "screen": "forum",
+        "description": "Fill of the new-post button at the bottom right."
+      }
+    ],
+    "CONTROL_PRIMARY_BORDER_DEFAULT": [
+      {
+        "pixels": 3732,
+        "focus": {
+          "x": 0.08333333333333333,
+          "y": 0.48625,
+          "width": 0.8333333333333334,
+          "height": 0.05875
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 98932,
+        "image": "/images/semantic/CONTROL_PRIMARY_BORDER_DEFAULT-alert.webp",
+        "screen": "alert",
+        "description": "Outline of the Confirm button."
+      },
+      {
+        "pixels": 932,
+        "focus": {
+          "x": 0.8083333333333333,
+          "y": 0.8875,
+          "width": 0.16944444444444445,
+          "height": 0.07625
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 32096,
+        "image": "/images/semantic/CONTROL_PRIMARY_BORDER_DEFAULT-forum.webp",
+        "screen": "forum",
+        "description": "Outline of the new-post button at the bottom right."
+      }
+    ],
+    "CONTROL_PRIMARY_TEXT_DEFAULT": [
+      {
+        "pixels": 828,
+        "focus": {
+          "x": 0.42407407407407405,
+          "y": 0.50125,
+          "width": 0.15,
+          "height": 0.02625
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 98778,
+        "image": "/images/semantic/CONTROL_PRIMARY_TEXT_DEFAULT-alert.webp",
+        "screen": "alert",
+        "description": "Confirm button label."
+      },
+      {
+        "pixels": 325,
+        "focus": {
+          "x": 0.8611111111111112,
+          "y": 0.9108333333333334,
+          "width": 0.06574074074074074,
+          "height": 0.029583333333333333
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 32004,
+        "image": "/images/semantic/CONTROL_PRIMARY_TEXT_DEFAULT-forum.webp",
+        "screen": "forum",
+        "description": "Plus icon in the new-post button."
+      }
+    ],
+    "CONTROL_SECONDARY_BACKGROUND_DEFAULT": [
+      {
+        "pixels": 57785,
+        "focus": {
+          "x": 0.20185185185185187,
+          "y": 0.12333333333333334,
+          "width": 0.774074074074074,
+          "height": 0.04833333333333333
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 267734,
+        "image": "/images/semantic/CONTROL_SECONDARY_BACKGROUND_DEFAULT-server.webp",
+        "screen": "server",
+        "description": "Fill of the Search and member-list buttons."
+      },
+      {
+        "pixels": 85257,
+        "focus": {
+          "x": 0.08518518518518518,
+          "y": 0.5395833333333333,
+          "width": 0.8296296296296296,
+          "height": 0.05708333333333333
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 98932,
+        "image": "/images/semantic/CONTROL_SECONDARY_BACKGROUND_DEFAULT-alert.webp",
+        "screen": "alert",
+        "description": "Fill of the Cancel button."
+      }
+    ],
+    "CONTROL_SECONDARY_BORDER_DEFAULT": [
+      {
+        "pixels": 528,
+        "focus": {
+          "x": 0.6805555555555556,
+          "y": 0.8808333333333334,
+          "width": 0.1111111111111111,
+          "height": 0.05
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 61476,
+        "image": "/images/semantic/CONTROL_SECONDARY_BORDER_DEFAULT-plugins.webp",
+        "screen": "plugins",
+        "description": "Outline of the settings button on the Themes card."
+      },
+      {
+        "pixels": 3476,
+        "focus": {
+          "x": 0.2,
+          "y": 0.26458333333333334,
+          "width": 0.7777777777777778,
+          "height": 0.05
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 358210,
+        "image": "/images/semantic/CONTROL_SECONDARY_BORDER_DEFAULT-server.webp",
+        "screen": "server",
+        "description": "Outlines of the Search and member-list buttons."
+      }
+    ],
+    "CONTROL_SECONDARY_TEXT_DEFAULT": [
+      {
+        "pixels": 829,
+        "focus": {
+          "x": 0.6990740740740741,
+          "y": 0.8891666666666667,
+          "width": 0.07314814814814814,
+          "height": 0.032916666666666664
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 62338,
+        "image": "/images/semantic/CONTROL_SECONDARY_TEXT_DEFAULT-plugins.webp",
+        "screen": "plugins",
+        "description": "Settings icon on the Themes card."
+      },
+      {
+        "pixels": 1627,
+        "focus": {
+          "x": 0.4425925925925926,
+          "y": 0.27291666666666664,
+          "width": 0.5175925925925926,
+          "height": 0.03375
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 359066,
+        "image": "/images/semantic/CONTROL_SECONDARY_TEXT_DEFAULT-server.webp",
+        "screen": "server",
+        "description": "Search label and icons in the Search and member-list buttons."
+      }
+    ],
+    "ICON_MUTED": [
+      {
+        "pixels": 954,
+        "focus": {
+          "x": 0.04722222222222222,
+          "y": 0.34958333333333336,
+          "width": 0.06574074074074074,
+          "height": 0.029166666666666667
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 32100,
+        "image": "/images/semantic/ICON_MUTED-forum.webp",
+        "screen": "forum",
+        "description": "Comment-count icon on the forum post."
+      },
+      {
+        "pixels": 862,
+        "focus": {
+          "x": 0.44537037037037036,
+          "y": 0.11916666666666667,
+          "width": 0.10925925925925926,
+          "height": 0.019583333333333335
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 701856,
+        "image": "/images/semantic/ICON_MUTED-emoji.webp",
+        "screen": "emoji",
+        "description": "Grab handle at the top of the emoji picker."
+      }
+    ],
+    "ICON_STRONG": [
+      {
+        "pixels": 760,
+        "focus": {
+          "x": 0.12222222222222222,
+          "y": 0.07291666666666667,
+          "width": 0.06574074074074074,
+          "height": 0.03
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 32270,
+        "image": "/images/semantic/ICON_STRONG-forum.webp",
+        "screen": "forum",
+        "description": "Forum icon beside the channel name."
+      }
+    ],
+    "ICON_SUBTLE": [
+      {
+        "pixels": 706,
+        "focus": {
+          "x": 0.03148148148148148,
+          "y": 0.07083333333333333,
+          "width": 0.925,
+          "height": 0.03208333333333333
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 32986,
+        "image": "/images/semantic/ICON_SUBTLE-forum.webp",
+        "screen": "forum",
+        "description": "Back arrow and search icon in the forum header."
+      }
+    ],
+    "INPUT_BORDER_DEFAULT": [
+      {
+        "pixels": 4428,
+        "focus": {
+          "x": 0.002777777777777778,
+          "y": 0.18291666666666667,
+          "width": 0.9944444444444445,
+          "height": 0.05875
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 706264,
+        "image": "/images/semantic/INPUT_BORDER_DEFAULT-emoji.webp",
+        "screen": "emoji",
+        "description": "Outline of the emoji search field."
+      }
+    ],
+    "INPUT_ICON_DEFAULT": [
+      {
+        "pixels": 221,
+        "focus": {
+          "x": 0.037037037037037035,
+          "y": 0.19708333333333333,
+          "width": 0.06666666666666667,
+          "height": 0.03
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 706414,
+        "image": "/images/semantic/INPUT_ICON_DEFAULT-emoji.webp",
+        "screen": "emoji",
+        "description": "Magnifying-glass icon in the emoji search field."
+      }
+    ],
+    "INPUT_PLACEHOLDER_TEXT_DEFAULT": [
+      {
+        "pixels": 1559,
+        "focus": {
+          "x": 0.09537037037037037,
+          "y": 0.19833333333333333,
+          "width": 0.3925925925925926,
+          "height": 0.03125
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 708458,
+        "image": "/images/semantic/INPUT_PLACEHOLDER_TEXT_DEFAULT-emoji.webp",
+        "screen": "emoji",
+        "description": "Find the perfect emoji placeholder text."
+      }
+    ],
+    "INTERACTIVE_ICON_DEFAULT": [
+      {
+        "pixels": 612,
+        "focus": {
+          "x": 0.04722222222222222,
+          "y": 0.13166666666666665,
+          "width": 0.8287037037037037,
+          "height": 0.02625
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 32870,
+        "image": "/images/semantic/INTERACTIVE_ICON_DEFAULT-forum.webp",
+        "screen": "forum",
+        "description": "Icons in the Sort & view and Tags buttons."
+      }
+    ],
+    "INTERACTIVE_TEXT_ACTIVE": [
+      {
+        "pixels": 1722,
+        "focus": {
+          "x": 0.16111111111111112,
+          "y": 0.42541666666666667,
+          "width": 0.11203703703703703,
+          "height": 0.2
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 268478,
+        "image": "/images/semantic/INTERACTIVE_TEXT_ACTIVE-server.webp",
+        "screen": "server",
+        "description": "Icons and indicators beside unread channels."
+      },
+      {
+        "pixels": 654,
+        "focus": {
+          "x": 0.13425925925925927,
+          "y": 0.14583333333333334,
+          "width": 0.1111111111111111,
+          "height": 0.028333333333333332
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 704388,
+        "image": "/images/semantic/INTERACTIVE_TEXT_ACTIVE-emoji.webp",
+        "screen": "emoji",
+        "description": "Label of the selected Emoji tab."
+      }
+    ],
+    "INTERACTIVE_TEXT_DEFAULT": [
+      {
+        "pixels": 326,
+        "focus": {
+          "x": 0.875,
+          "y": 0.85375,
+          "width": 0.05092592592592592,
+          "height": 0.09083333333333334
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 80494,
+        "image": "/images/semantic/INTERACTIVE_TEXT_DEFAULT-actionsheet.webp",
+        "screen": "actionsheet",
+        "description": "Right-hand arrows beside Create Reminder and Apps."
+      }
+    ],
+    "MOBILE_TEXT_HEADING_PRIMARY": [
+      {
+        "pixels": 6008,
+        "focus": {
+          "x": 0.16018518518518518,
+          "y": 0.19458333333333333,
+          "width": 0.33611111111111114,
+          "height": 0.75625
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 356438,
+        "image": "/images/semantic/MOBILE_TEXT_HEADING_PRIMARY-server.webp",
+        "screen": "server",
+        "description": "Server name, quest heading, and name in the user panel."
+      },
+      {
+        "pixels": 3355,
+        "focus": {
+          "x": 0.3388888888888889,
+          "y": 0.40708333333333335,
+          "width": 0.32407407407407407,
+          "height": 0.035
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 100612,
+        "image": "/images/semantic/MOBILE_TEXT_HEADING_PRIMARY-alert.webp",
+        "screen": "alert",
+        "description": "Alert title."
+      }
+    ],
+    "STANDALONE_CHANNEL_CONTENT_BACKGROUND": [
+      {
+        "pixels": 291813,
+        "focus": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 0.12416666666666666
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 33932,
+        "image": "/images/semantic/STANDALONE_CHANNEL_CONTENT_BACKGROUND-forum.webp",
+        "screen": "forum",
+        "description": "Forum header background, including the status bar."
+      }
+    ],
+    "STANDALONE_CHANNEL_HEADER_BORDER": [
+      {
+        "pixels": 3240,
+        "focus": {
+          "x": 0,
+          "y": 0.10916666666666666,
+          "width": 1,
+          "height": 0.01625
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 32764,
+        "image": "/images/semantic/STANDALONE_CHANNEL_HEADER_BORDER-forum.webp",
+        "screen": "forum",
+        "description": "Divider beneath the forum header."
+      }
+    ],
+    "TABLEROW_ICON_COLOR_DEFAULT": [
+      {
+        "pixels": 9810,
+        "focus": {
+          "x": 0.06481481481481481,
+          "y": 0.5183333333333333,
+          "width": 0.08796296296296297,
+          "height": 0.42875
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 83104,
+        "image": "/images/semantic/TABLEROW_ICON_COLOR_DEFAULT-actionsheet.webp",
+        "screen": "actionsheet",
+        "description": "Icons beside the message-menu actions."
+      }
+    ],
+    "TEXT_BRAND": [
+      {
+        "pixels": 330,
+        "focus": {
+          "x": 0.8796296296296297,
+          "y": 0.38375,
+          "width": 0.0824074074074074,
+          "height": 0.0225
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 355564,
+        "image": "/images/semantic/TEXT_BRAND-server.webp",
+        "screen": "server",
+        "description": "NEW label beside Channels & Roles."
+      }
+    ],
+    "TEXT_DEFAULT": [
+      {
+        "pixels": 1252,
+        "focus": {
+          "x": 0.23148148148148148,
+          "y": 0.34291666666666665,
+          "width": 0.7046296296296296,
+          "height": 0.6020833333333333
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 360772,
+        "image": "/images/semantic/TEXT_DEFAULT-server.webp",
+        "screen": "server",
+        "description": "Boost-progress count beside the server boost bar."
+      },
+      {
+        "pixels": 3052,
+        "focus": {
+          "x": 0.23148148148148148,
+          "y": 0.4425,
+          "width": 0.5370370370370371,
+          "height": 0.0275
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 100818,
+        "image": "/images/semantic/TEXT_DEFAULT-alert.webp",
+        "screen": "alert",
+        "description": "Body text inside the alert."
+      }
+    ],
+    "TEXT_MUTED": [
+      {
+        "pixels": 5190,
+        "focus": {
+          "x": 0.16018518518518518,
+          "y": 0.22041666666666668,
+          "width": 0.8157407407407408,
+          "height": 0.7466666666666667
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 358620,
+        "image": "/images/semantic/TEXT_MUTED-server.webp",
+        "screen": "server",
+        "description": "Member count, unread-message count, and quest and activity details."
+      },
+      {
+        "pixels": 12439,
+        "focus": {
+          "x": 0.046296296296296294,
+          "y": 0.20375,
+          "width": 0.8972222222222223,
+          "height": 0.17166666666666666
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 35012,
+        "image": "/images/semantic/TEXT_MUTED-forum.webp",
+        "screen": "forum",
+        "description": "Post title, excerpt, tag labels, age, and comment count."
+      }
+    ],
+    "TEXT_STRONG": [
+      {
+        "pixels": 2614,
+        "focus": {
+          "x": 0,
+          "y": 0.14333333333333334,
+          "width": 0.026851851851851852,
+          "height": 0.7595833333333334
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 274660,
+        "image": "/images/semantic/TEXT_STRONG-server.webp",
+        "screen": "server",
+        "description": "Boost Goal label."
+      },
+      {
+        "pixels": 9278,
+        "focus": {
+          "x": 0.15925925925925927,
+          "y": 0.5208333333333334,
+          "width": 0.35555555555555557,
+          "height": 0.4245833333333333
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 86970,
+        "image": "/images/semantic/TEXT_STRONG-actionsheet.webp",
+        "screen": "actionsheet",
+        "description": "Message-menu action labels."
+      }
+    ],
+    "TEXT_SUBTLE": [
+      {
+        "pixels": 1465,
+        "focus": {
+          "x": 0.20092592592592592,
+          "y": 0.2,
+          "width": 0.3074074074074074,
+          "height": 0.47125
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 356050,
+        "image": "/images/semantic/TEXT_SUBTLE-server.webp",
+        "screen": "server",
+        "description": "Channel-category names such as Info and Addons."
+      }
+    ],
+    "WHITE": [
+      {
+        "pixels": 430,
+        "focus": {
+          "x": 0.05925925925925926,
+          "y": 0.08833333333333333,
+          "width": 0.06018518518518518,
+          "height": 0.14166666666666666
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 32954,
+        "image": "/images/semantic/WHITE-forum.webp",
+        "screen": "forum",
+        "description": "Pin symbol on the post and number in the unread badge."
+      }
+    ]
+  },
+  "raw": {
+    "BLURPLE_26": [],
+    "BLURPLE_50": [
+      {
+        "pixels": 83233,
+        "focus": {
+          "x": 0.08611111111111111,
+          "y": 0.4875,
+          "width": 0.8277777777777777,
+          "height": 0.05625
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 99094,
+        "image": "/images/raw/BLURPLE_50-alert.webp",
+        "screen": "alert",
+        "description": "Fill of the Confirm button."
+      },
+      {
+        "pixels": 20462,
+        "focus": {
+          "x": 0.044444444444444446,
+          "y": 0.19625,
+          "width": 0.9305555555555556,
+          "height": 0.76625
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 32702,
+        "image": "/images/raw/BLURPLE_50-forum.webp",
+        "screen": "forum",
+        "description": "Fill of the pinned-post badge and new-post button."
+      }
+    ],
+    "NEUTRAL_1": [
+      {
+        "pixels": 15235,
+        "focus": {
+          "x": 0,
+          "y": 0.07166666666666667,
+          "width": 0.9601851851851851,
+          "height": 0.8791666666666667
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 271500,
+        "image": "/images/raw/NEUTRAL_1-server.webp",
+        "screen": "server",
+        "description": "Server name, unread channel names, Search label, and quest title."
+      },
+      {
+        "pixels": 4885,
+        "focus": {
+          "x": 0.3388888888888889,
+          "y": 0.40708333333333335,
+          "width": 0.32407407407407407,
+          "height": 0.17291666666666666
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 103274,
+        "image": "/images/raw/NEUTRAL_1-alert.webp",
+        "screen": "alert",
+        "description": "Alert title and button labels."
+      }
+    ],
+    "NEUTRAL_16": [
+      {
+        "pixels": 4778,
+        "focus": {
+          "x": 0.046296296296296294,
+          "y": 0.07166666666666667,
+          "width": 0.462037037037037,
+          "height": 0.5995833333333334
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 358964,
+        "image": "/images/raw/NEUTRAL_16-server.webp",
+        "screen": "server",
+        "description": "Messages and favourites icons, plus category arrows."
+      },
+      {
+        "pixels": 1404,
+        "focus": {
+          "x": 0.03148148148148148,
+          "y": 0.07083333333333333,
+          "width": 0.925,
+          "height": 0.08708333333333333
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 33306,
+        "image": "/images/raw/NEUTRAL_16-forum.webp",
+        "screen": "forum",
+        "description": "Header arrows and search, sorting and tag icons."
+      }
+    ],
+    "NEUTRAL_23": [
+      {
+        "pixels": 24442,
+        "focus": {
+          "x": 0.16018518518518518,
+          "y": 0.0975,
+          "width": 0.8138888888888889,
+          "height": 0.8695833333333334
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 274968,
+        "image": "/images/raw/NEUTRAL_23-server.webp",
+        "screen": "server",
+        "description": "Read channel names, member count, unread count, and quest and activity details."
+      },
+      {
+        "pixels": 13393,
+        "focus": {
+          "x": 0.046296296296296294,
+          "y": 0.20375,
+          "width": 0.8972222222222223,
+          "height": 0.175
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 34958,
+        "image": "/images/raw/NEUTRAL_23-forum.webp",
+        "screen": "forum",
+        "description": "Post title, excerpt, tags, age, and comment indicator."
+      }
+    ],
+    "NEUTRAL_25": [
+      {
+        "pixels": 1559,
+        "focus": {
+          "x": 0.09537037037037037,
+          "y": 0.19833333333333333,
+          "width": 0.3925925925925926,
+          "height": 0.03125
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 703112,
+        "image": "/images/raw/NEUTRAL_25-emoji.webp",
+        "screen": "emoji",
+        "description": "Placeholder text in the emoji search field."
+      }
+    ],
+    "NEUTRAL_4": [
+      {
+        "pixels": 282,
+        "focus": {
+          "x": 0.3101851851851852,
+          "y": 0.9208333333333333,
+          "width": 0.07777777777777778,
+          "height": 0.024166666666666666
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 266576,
+        "image": "/images/raw/NEUTRAL_4-server.webp",
+        "screen": "server",
+        "description": "Text inside the clan tag on the user panel."
+      },
+      {
+        "pixels": 3052,
+        "focus": {
+          "x": 0.23148148148148148,
+          "y": 0.4425,
+          "width": 0.5370370370370371,
+          "height": 0.0275
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 99980,
+        "image": "/images/raw/NEUTRAL_4-alert.webp",
+        "screen": "alert",
+        "description": "Body text inside the alert."
+      }
+    ],
+    "NEUTRAL_47": [
+      {
+        "pixels": 753,
+        "focus": {
+          "x": 0.21666666666666667,
+          "y": 0.7933333333333333,
+          "width": 0.062037037037037036,
+          "height": 0.06666666666666667
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 354466,
+        "image": "/images/raw/NEUTRAL_47-server.webp",
+        "screen": "server",
+        "description": "Lines connecting forum threads beneath a channel."
+      }
+    ],
+    "NEUTRAL_63": [],
+    "NEUTRAL_64": [
+      {
+        "pixels": 126293,
+        "focus": {
+          "x": 0.024074074074074074,
+          "y": 0.8458333333333333,
+          "width": 0.9518518518518518,
+          "height": 0.07541666666666667
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 267702,
+        "image": "/images/raw/NEUTRAL_64-server.webp",
+        "screen": "server",
+        "description": "Quest-card background above the user panel."
+      },
+      {
+        "pixels": 356081,
+        "focus": {
+          "x": 0.025,
+          "y": 0.37666666666666665,
+          "width": 0.95,
+          "height": 0.24666666666666667
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 99626,
+        "image": "/images/raw/NEUTRAL_64-alert.webp",
+        "screen": "alert",
+        "description": "Background of the alert panel."
+      }
+    ],
+    "NEUTRAL_69": [
+      {
+        "pixels": 1335937,
+        "focus": {
+          "x": 0,
+          "y": 0.17291666666666666,
+          "width": 1,
+          "height": 0.8270833333333333
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 358810,
+        "image": "/images/raw/NEUTRAL_69-server.webp",
+        "screen": "server",
+        "description": "Channel-list panel and bottom navigation area."
+      },
+      {
+        "pixels": 2023705,
+        "focus": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 33500,
+        "image": "/images/raw/NEUTRAL_69-forum.webp",
+        "screen": "forum",
+        "description": "Forum header and background behind the post cards."
+      }
+    ],
+    "WHITE": [
+      {
+        "pixels": 815,
+        "focus": {
+          "x": 0.8601851851851852,
+          "y": 0.9266666666666666,
+          "width": 0.06574074074074074,
+          "height": 0.0325
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 268286,
+        "image": "/images/raw/WHITE-server.webp",
+        "screen": "server",
+        "description": "Notification-bell icon on the user panel."
+      },
+      {
+        "pixels": 311,
+        "focus": {
+          "x": 0.05925925925925926,
+          "y": 0.20291666666666666,
+          "width": 0.06018518518518518,
+          "height": 0.027083333333333334
+        },
+        "private": false,
+        "textScrambled": false,
+        "width": 1080,
+        "height": 2400,
+        "bytes": 32282,
+        "image": "/images/raw/WHITE-forum.webp",
+        "screen": "forum",
+        "description": "Pin symbol inside the pinned-post badge."
+      }
+    ]
+  }
+}

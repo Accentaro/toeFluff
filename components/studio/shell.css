@@ -1,0 +1,70 @@
+/* Frame for the vanilla studio (studio/engine): full-bleed next to the sidebar, plus the old site's tokens and
+   control styles it was written against, mapped onto this site's palette and scoped to the studio. */
+
+main:has(> .studio-shell) { padding: 0; }
+
+.studio-shell {
+	--surface: var(--card);
+	--surface-2: var(--card-2);
+	--border: var(--line);
+	--control-border: #4a4a55;
+	--accent-text: #fff;
+	--highlight: #ff00e6;
+	--focus: #c4b5fd;
+	--radius: 8px;
+	--panel-radius: 12px;
+	--motion: 140ms;
+	--space-1: 4px;
+	--space-2: 8px;
+	--space-3: 12px;
+	--space-4: 16px;
+	--space-6: 24px;
+	--space-8: 32px;
+	--space-12: 48px;
+	--text-xs: 12px;
+	--text-sm: 13px;
+	--text-md: 15px;
+	--text-lg: 18px;
+	--text-xl: 26px;
+	--shell-height: 0px;
+	--font: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
+	line-height: 1.55;
+}
+
+/* :where keeps these as weak as the old site's globals, so studio.css rules still win */
+:where(.studio-shell) :where(button):not(.vp *) {
+	padding: 7px var(--space-3); border: 1px solid var(--control-border); border-radius: var(--radius);
+	background: var(--surface); color: var(--text); font: var(--text-sm)/1.5 var(--font);
+	cursor: pointer; transition: background var(--motion), border-color var(--motion);
+}
+:where(.studio-shell) :where(button):hover:not(.vp *) { background: var(--surface-2); }
+:where(.studio-shell) :where(button):disabled:not(.vp *) { opacity: .45; cursor: default; }
+:where(.studio-shell) :where(input:not([type="checkbox"]):not([type="range"]), select, textarea):not(.vp *) {
+	background: var(--surface); color: var(--text); border: 1px solid var(--control-border); border-radius: var(--radius);
+	padding: 7px 10px; font: var(--text-sm)/1.5 var(--font); min-width: 0;
+}
+:where(.studio-shell) :where(input[type="checkbox"]):not(.vp *) { accent-color: var(--accent); }
+:where(.studio-shell) .primary:not(.vp *) { background: var(--accent-strong); color: var(--accent-text); border-color: var(--accent-strong); font-weight: 600; }
+:where(.studio-shell) .primary:hover:not(.vp *) { background: var(--accent); }
+:where(.studio-shell) .segmented { display: flex; background: var(--surface-2); border-radius: var(--radius); padding: 3px; }
+:where(.studio-shell) .segmented button { border: 0; background: transparent; color: var(--muted); padding: 6px 14px; }
+:where(.studio-shell) .segmented button.on { background: var(--accent-soft); color: var(--text); font-weight: 600; box-shadow: 0 1px 2px #0002; }
+:where(.studio-shell) code, :where(.studio-shell) pre { font-size: 0.9em; }
+:where(.studio-shell) .st-empty { color: var(--muted); padding: var(--space-8) var(--space-4); text-align: center; font-size: var(--text-sm); }
+:where(.studio-shell) :focus-visible:not(.vp *) { outline: 2px solid var(--focus); outline-offset: 3px; }
+:where(.studio-shell) [hidden] { display: none !important; }
+
+.studio-shell .toast[popover] { inset: auto auto 24px 50%; margin: 0; color: var(--text); max-width: calc(100vw - 32px); }
+
+.studio-status { padding: 40px; text-align: center; color: var(--muted); }
+
+/* Screenshot viewer for VT.openImage */
+.studio-image { background: var(--card); color: var(--text); border: 1px solid var(--line); border-radius: 12px; padding: 12px; max-width: min(520px, calc(100vw - 24px)); }
+.studio-image::backdrop { background: #000c; }
+.studio-image img { display: block; max-width: 100%; max-height: calc(100dvh - 140px); margin: 0 auto; border-radius: 8px; }
+.studio-image header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; font: 600 13px var(--mono); }
+
+@media (max-width: 900px) {
+	/* leave room for the fixed menu button */
+	.studio-shell .st-bar { padding-left: 66px; }
+}
