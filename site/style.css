@@ -190,6 +190,10 @@ table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .template-head p { margin: 2px 0 10px; }
 .buttons { display: flex; gap: var(--space-2); margin-bottom: 10px; }
 .template pre { max-height: 460px; }
+.steps { margin: var(--space-4) 0; padding-left: 22px; color: var(--muted); line-height: 1.8; max-width: 760px; }
+.steps strong { color: var(--text); font-weight: 600; }
+.steps code { background: var(--surface-2); padding: 1px 5px; border-radius: 4px; }
+.code-toggle summary { cursor: pointer; color: var(--muted); font-size: var(--text-sm); margin-bottom: var(--space-3); }
 
 /* Lightbox and toast */
 #lightbox {

@@ -94,8 +94,8 @@
 			<div class="template">
 				<div class="template-head">
 					<div>
-						<h2>JSON, for Legacy Themes</h2>
-						<p class="muted">No code. Edit, upload, import by URL.</p>
+						<h2>JSON file</h2>
+						<p class="muted">No code needed. Dark always uses the same colours as Ash.</p>
 					</div>
 					<div class="buttons">
 						<a class="button" href="#studio/!dusk">Open in the studio</a>
@@ -103,20 +103,33 @@
 						<a class="button" href="../template/legacy-theme.json" download>Download</a>
 					</div>
 				</div>
-				<pre><code id="tpl-legacy"></code></pre>
+				<ol class="steps">
+					<li>Change the colours, or build them in the <a href="#studio">studio</a> and export.</li>
+					<li>Upload the file somewhere that serves it as plain text, like a GitHub Gist, and copy the <strong>raw</strong> link.</li>
+					<li>In Discord, open <strong>Settings &gt; Themes &gt; Manage theme plugins</strong> and install <strong>Legacy Themes</strong>.</li>
+					<li>In its settings, paste the link under <strong>Theme or font pack URL</strong> and tap <strong>Import theme</strong>.</li>
+					<li>Pick it under <strong>Themes &gt; Colors</strong>.</li>
+				</ol>
+				<details class="code-toggle"><summary>Show the JSON</summary><pre><code id="tpl-legacy"></code></pre></details>
 			</div>
 			<div class="template">
 				<div class="template-head">
 					<div>
-						<h2>Plugin, js/index.ts</h2>
-						<p class="muted">Goes in the plugin template's themes/ folder, next to <a href="../template/plugin/manifest.json">manifest.json</a>.</p>
+						<h2>Theme plugin</h2>
+						<p class="muted">More control: separate Ash and Dark colours, backgrounds, fonts and icons.</p>
 					</div>
 					<div class="buttons">
 						<button data-copy="plugin">Copy</button>
 						<a class="button" href="../template/plugin/js/index.ts" download>Download</a>
 					</div>
 				</div>
-				<pre><code id="tpl-plugin"></code></pre>
+				<ol class="steps">
+					<li>Get the <a href="https://github.com/Valenced/valenced-plugin-template">Valenced plugin template</a> and follow its setup.</li>
+					<li>Copy the <a href="https://github.com/Accentaro/toeFluff/tree/main/template/plugin">starter plugin</a> into its <code>themes/</code> folder and change the ID in <code>manifest.json</code>.</li>
+					<li>Edit the colours in <code>js/index.ts</code>, then build with <code>./gradlew packageAllPlugins</code>.</li>
+					<li>In Discord, open <strong>Settings &gt; Plugins</strong>, tap the gear, then <strong>Install from file</strong>, and pick the ZIP from <code>build/dist/</code>.</li>
+				</ol>
+				<details class="code-toggle"><summary>Show the code</summary><pre><code id="tpl-plugin"></code></pre></details>
 			</div>
 		</section>
 	</main>
