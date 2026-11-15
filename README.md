@@ -170,7 +170,8 @@ Limitations:
 
 - The preview places each colour from the key data; keys without a documented example are marked
   **Unverified** in the inspector, since their real target is inferred from the name.
-- Fonts fall back to the system font when gg sans is not installed, so text runs slightly wider than on a phone.
+- gg sans is Discord's own font and isn't redistributable, so the preview uses Figtree when gg sans isn't installed.
+  Text sizes match Discord 352 on Android; Figtree runs about 4% wider.
 - Pressed states only show while you hold a control; hover, ripple and scroll effects are simplified.
 - Profile themes, backgrounds from themes, font, icon and emoji packs are not previewed.
 - The Light, Dark and Onyx defaults come from Discord's exported tokens; only Ash was checked against screenshots.
