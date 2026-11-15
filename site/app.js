@@ -167,35 +167,43 @@ function renderKeys() {
 			const description = `Pink shows: ${shot.description || k.description}${shot.measurement === 'baseline-difference' ? ' This colour is partly transparent.' : ''}${shot.textScrambled ? ' Personal text is scrambled.' : ''}`
 			return `<figure><button class="image-button" data-name="${esc(k.key)}" data-screen="${esc(screen)}" data-description="${esc(description)}" aria-label="Enlarge ${esc(k.key)}: ${esc(screen)}"><img src="${esc(shot.image)}" alt="${esc(k.key)} in ${esc(screen)}" loading="lazy" width="1080" height="2400">${focusOutline(shot)}<span class="image-zoom">Enlarge</span></button><figcaption>${esc(screen)}${shot.measurement === 'baseline-difference' ? ' / Partly transparent' : ''}${shot.textScrambled ? ' / Text scrambled' : ''}</figcaption></figure>`
 		}).join('')
+		// Base defaults with their hex, which themers copy from constantly; click a hex to copy it
+		const hex = v => v ? `<button class="hex" data-key="${esc(v)}" title="Copy ${esc(v)}">${esc(v)}</button>` : '<span class="hex">none</span>'
 		const swatches = kind === 'semantic'
-			? BASES.map(([b, name]) => `<span class="swatch">${dot(k.defaults[b])}${name}</span>`).join('')
-			: `<span class="swatch">${dot(k.value)}${esc(k.value)}</span>`
+			? BASES.map(([b, name]) => `<span class="swatch">${dot(k.defaults[b])}<span class="swatch-base">${name}</span>${hex(k.defaults[b])}</span>`).join('') + (k.raw?.dark ? `<span class="used-by swatch-raw">Raw on Ash: ${esc(k.raw.dark)}</span>` : '')
+			: `<span class="swatch">${dot(k.value)}${hex(k.value)}</span>${k.usedBy.length ? `<span class="used-by swatch-raw">Used by ${k.usedBy.length} semantic key${k.usedBy.length > 1 ? 's' : ''}</span>` : ''}`
 		const current = kind === 'semantic' ? store.semanticInfo(k.key, 'dark') : store.rawInfo(k.key)
-		const extra = (kind === 'semantic'
-			? `<span class="used-by">Ash default ${esc(k.defaults.dark)}, raw ${esc(k.raw.dark ?? 'none')}</span>`
-			: k.usedBy.length ? `<span class="used-by">Used by ${k.usedBy.length} semantic key${k.usedBy.length > 1 ? 's' : ''}</span>` : '')
-			+ `<span class="card-actions"><a class="studio-link" href="#studio/${kind === 'raw' ? '@' : ''}${esc(k.key)}">Edit in the studio</a><span class="yours">${dot(current.value)}Your theme (Ash): ${esc(current.value)}${current.source === 'default' ? ' · default' : ''}</span><button class="key-preview-button" data-preview-key="${kind === 'raw' ? '@' : ''}${esc(k.key)}">Preview this key</button></span>`
+		const yours = current.source === 'default' ? '' : `<span class="yours">${dot(current.value)}Your theme: ${esc(current.value)}</span>`
 		return `<div class="card">
 			<div class="card-body">
 				<button class="key" data-key="${esc(k.key)}" title="Copy">${esc(k.key).replace(/_/g, '_<wbr>')}</button>
-				<span class="focus-label"><i aria-hidden="true"></i> Pink shows</span>
 				<p>${inline(esc(k.description))}</p>
-				${extra}
 				<div class="swatches">${swatches}</div>
+				${yours}
+				<span class="card-actions"><a class="studio-link" href="#studio/${kind === 'raw' ? '@' : ''}${esc(k.key)}">Edit in the studio</a><button class="key-preview-button" data-preview-key="${kind === 'raw' ? '@' : ''}${esc(k.key)}">Preview on the phone</button></span>
 			</div>
 			<div class="key-gallery" role="group" aria-label="${esc(k.key)} examples">${gallery}</div>
 		</div>`
 	}
 
-	if (kind === 'semantic') {
-		$('#keys-list').innerHTML = areas
-			.map(a => [a, items.filter(k => k.area === a)])
-			.filter(([, list]) => list.length)
-			.map(([a, list]) => `<h2 class="area-title">${esc(a)}</h2><div class="grid">${list.map(card).join('')}</div>`)
-			.join('')
-	} else {
-		$('#keys-list').innerHTML = `<div class="grid">${items.map(card).join('')}</div>`
-	}
+	// Areas start collapsed and build their cards when opened; a search or area filter opens what matches.
+	const groupOf = k => kind === 'semantic' ? k.area : k.key.replace(/_?(NEW_)?\d.*$/, '')
+	const order = kind === 'semantic' ? areas : [...new Set(data.raw.map(groupOf))]
+	const groups = order.map(g => [g, items.filter(k => groupOf(k) === g)]).filter(([, list]) => list.length)
+	const expand = !!query || !!area || groups.length === 1
+	const opened = keyState.open[kind]
+	$('#keys-list').innerHTML = groups.map(([g, list]) => {
+		const open = expand || opened.has(g)
+		return `<details class="area" data-group="${esc(g)}"${open ? ' open' : ''}><summary><h2 class="area-title">${esc(g)}</h2><span class="area-count">${list.length} key${list.length === 1 ? '' : 's'}</span></summary><div class="grid">${open ? list.map(card).join('') : ''}</div></details>`
+	}).join('')
+	$('#keys-list').querySelectorAll('details.area').forEach(el => el.addEventListener('toggle', () => {
+		const g = el.dataset.group
+		if (el.open) {
+			opened.add(g)
+			const grid = el.querySelector('.grid')
+			if (!grid.children.length) grid.innerHTML = groups.find(([name]) => name === g)[1].map(card).join('')
+		} else opened.delete(g)
+	}))
 }
 
 $('#keys-search').oninput = e => { keyState.q = e.target.value; renderKeys() }
@@ -362,7 +370,7 @@ function route() {
 	// One copy of the reference data, shared with the studio so the two cannot disagree
 	store = createStore({ tokens })
 	window.VT = { store, data, resolved, tokens, descriptions, captures, examples, screenNames, openImage: (src, alt) => openImage(src, alt, null), toast, copy }
-	$('#keys-meta').textContent = `Discord ${data.discord} / Ash / ${data.tested}. Pink marks a single changed key; outlines locate smaller targets. Examples include live screens and isolated Discord controls. Select an image to enlarge it or a key name to copy it.`
+	$('#keys-meta').textContent = `Each picture shows one key set to pink, so you can see exactly what it paints. Tap a picture to enlarge it, or a key name to copy it. Captured on Discord ${data.discord}, Ash theme.`
 	await Promise.all([renderGuide(), renderTemplates()])
 	store.on('change', () => {
 		updateThemePresence()
