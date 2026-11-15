@@ -331,6 +331,8 @@ function updateThemePresence() {
 	const el = $('#theme-presence')
 	el.textContent = `${store.theme.meta.name || 'Untitled theme'} · ${count} changed`
 	el.title = 'Open your theme in the studio'
+	// Only worth showing once there is a theme to go back to
+	el.hidden = !count && !store.canUndo && !store.hasTheme
 	const guide = $('#guide-live')
 	if (guide?.dataset.dusk === 'true' && (count || store.canUndo)) {
 		guide.dispose?.()
@@ -380,12 +382,10 @@ function route() {
 		a.classList.toggle('on', active)
 		if (active) a.setAttribute('aria-current', 'page')
 		else a.removeAttribute('aria-current')
-		if (active) {
-			$('#current-page').textContent = a.textContent
-			a.scrollIntoView({ block: 'nearest', inline: 'nearest' })
-		}
+		if (active) a.scrollIntoView({ block: 'nearest', inline: 'nearest' })
 	})
-	document.title = `${$('#current-page').textContent} · Valenced Theming`
+	const label = document.querySelector(`[data-page="${id}"]`).textContent
+	document.title = id === 'guide' ? 'Valenced Theme Studio' : `${label} · Valenced Theme Studio`
 	document.body.classList.toggle('studio-mode', id === 'studio')
 	if (id === 'studio') {
 		openStudio(section, location.hash).catch(err => toast(`Studio unavailable: ${err.message}`))

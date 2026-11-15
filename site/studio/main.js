@@ -527,7 +527,7 @@ export async function mount(host) {
 				${capture ? `<button class="st-thumb" data-shot="${esc(capture.image)}" title="Open the documented screenshot"><img src="${esc(capture.image)}" alt="${esc(key)} in ${esc(screenLabel(capture.screen))}" loading="lazy"><span class="st-thumb-focus" style="left:${capture.focus.x * 100}%;top:${capture.focus.y * 100}%;width:${capture.focus.width * 100}%;height:${capture.focus.height * 100}%"></span></button>` : ''}
 			</header>
 			<p class="st-desc">${esc(description)}</p>
-			<p class="st-meta"><span class="st-verify ${v.level}">${esc(v.level === 'none' ? (known ? 'No documented example' : 'Unknown key') : m.tested ? `Tested on ${(raw ? 1 : m.tested.screens.length)} screen${raw || m.tested.screens.length === 1 ? '' : 's'}` : '')}</span><a href="${docsLink(key, raw)}">Read in the docs &rarr;</a></p>
+			<p class="st-meta"><span class="st-verify ${v.level}">${esc(v.level === 'none' ? (known ? 'No documented example' : 'Unknown key') : m.tested ? `Tested on ${(raw ? 1 : m.tested.screens.length)} screen${raw || m.tested.screens.length === 1 ? '' : 's'}` : '')}</span><a href="${docsLink(key, raw)}">${(raw ? testedRaw : tested).has(key) ? 'See tested examples' : 'See in All colour keys'} &rarr;</a></p>
 			<div class="st-presence"></div>
 			<div class="st-values"></div>
 			<div class="st-picker-slot"></div>
