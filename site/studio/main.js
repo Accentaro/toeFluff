@@ -3,10 +3,11 @@
 import { BASES, BASE_NAMES, LINKABLE } from './store.js'
 import { createPreview, PROPS } from './preview.js'
 import { createPicker } from './picker.js'
-import { exportLegacy, exportManifest, exportPlugin, importText, validate } from './formats.js'
+import { exportLegacy, exportManifest, exportPlugin, importText, setRawPalette, validate } from './formats.js'
+import { modernize } from './convert.js'
 import { HEX, contrast, over, parse } from './color.js'
 import * as mock from './mock.js'
-import { createRepair, outdatedKeys, repairAll } from './repair.js'
+import { createRepair } from './repair.js'
 
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
 const UI_KEY = 'valenced-studio:ui'
@@ -148,17 +149,47 @@ export async function mount(host) {
 	const sourcePane = $('[data-pane="source"]')
 	const themePane = $('[data-pane="theme"]')
 	const repair = createRepair({ host: $('[data-pane="repair"]'), store, tokens: VT.tokens, toast: VT.toast })
-	let repairReport = null
-	function renderRepairBanner() {
-		const outdated = outdatedKeys(store.theme, VT.tokens)
-		const banner = $('.st-repair-banner')
-		banner.hidden = !outdated.length && !repairReport
-		banner.innerHTML = `${repairReport ? `<p role="status">Repaired ${repairReport.repaired.length} outdated key${repairReport.repaired.length === 1 ? '' : 's'}. ${repairReport.unresolved.length} need manual attention. Undo restores the previous theme.</p>` : ''}
-			${outdated.length ? `<div class="st-row wrap"><strong>${outdated.length} outdated colour key${outdated.length === 1 ? '' : 's'} found.</strong><button class="primary" data-cmd="repair-all">Repair all</button><button data-cmd="repair">Review details</button></div><p class="small muted">Updates known legacy keys using <a href="https://github.com/blancodagoat/theme-fixer/blob/32a3f861955e216bf0eec88079a677cea27d68a8/map.json" target="_blank" rel="noreferrer">community mappings</a>. Your colours are kept; conflicts and unknown replacements stay untouched.</p>` : ''}
-			${repairReport?.repaired.length ? `<details><summary>Repaired keys</summary>${repairReport.repaired.map(item => `<p class="small">${esc(item.key)} &rarr; ${item.targets.map(esc).join(", ")}</p>`).join('')}</details>` : ''}
-			${repairReport?.unresolved.length ? `<details><summary>Keys still needing attention</summary>${repairReport.unresolved.map(item => `<p class="small">${esc(item.key)}: ${esc(item.reason)}</p>`).join('')}</details>` : ''}`
+	setRawPalette(VT.tokens.raw)
+	let repairReport = null, pendingUpdate = null, history = null
+	// Token history drives the update; it is only fetched once a theme might need it.
+	const loadHistory = () => history ??= fetch(new URL('./token-history.json', import.meta.url)).then(r => r.ok ? r.json() : null).catch(() => null)
+	async function checkForUpdate() {
+		const hist = await loadHistory()
+		const { report } = modernize(store.theme, VT.tokens, hist)
+		pendingUpdate = report.changes ? report : null
+		renderRepairBanner()
 	}
-
+	async function updateTheme({ quiet = false } = {}) {
+		const hist = await loadHistory()
+		const { theme, report } = modernize(store.theme, VT.tokens, hist)
+		if (!report.changes) { if (!quiet) VT.toast('This theme is already up to date.'); return null }
+		store.replace(theme, 'update')
+		repairReport = report
+		pendingUpdate = null
+		renderRepairBanner()
+		return report
+	}
+	const plural = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`
+	function renderRepairBanner() {
+		const banner = $('.st-repair-banner')
+		banner.hidden = !repairReport && !pendingUpdate
+		if (banner.hidden) return
+		if (repairReport) {
+			const r = repairReport
+			const parts = [
+				r.renamed.length && `renamed ${plural(r.renamed.length, 'old key')}`,
+				(r.pinned + r.unpinned) && `matched ${plural(r.pinned + r.unpinned, 'colour')} to today's layout`,
+				r.rawRenamed.length && `renamed ${plural(r.rawRenamed.length, 'raw colour')}`,
+				r.removed.length && `removed ${plural(r.removed.length, 'key')} Discord no longer has`,
+			].filter(Boolean)
+			banner.innerHTML = `<p role="status"><strong>Updated for Discord ${esc(VT.data.discord.split(' ')[0])}.</strong> ${esc(parts.join(', '))}. Undo shows the theme as it was.</p>
+				${r.renamed.length ? `<details><summary>Renamed keys</summary>${r.renamed.map(item => `<p class="small">${esc(item.from)} &rarr; ${item.to.map(esc).join(', ')}</p>`).join('')}</details>` : ''}
+				${r.removed.length ? `<details><summary>Removed keys</summary><p class="small">${r.removed.map(esc).join(', ')}</p></details>` : ''}`
+		} else {
+			banner.innerHTML = `<div class="st-row wrap"><strong>Made for an older Discord.</strong><button class="primary" data-cmd="repair-all">Update theme</button><button data-cmd="repair">Fix keys by hand</button></div>
+				<p class="small muted">Renames old keys, carries colours over to the surfaces Discord moved them to, and removes keys it no longer has. Undo restores the original.</p>`
+		}
+	}
 
 	// ---------- preview
 
@@ -811,13 +842,7 @@ export async function mount(host) {
 			setTab('repair')
 			if (matchMedia('(max-width: 900px)').matches) setView('edit')
 		}
-		if (e.target.closest('[data-cmd="repair-all"]')) {
-			const result = repairAll(store.theme, VT.tokens)
-			if (result.repaired.length) store.replace(result.theme, 'repair')
-			repairReport = result
-			renderRepairBanner()
-			VT.toast(`Repaired ${result.repaired.length} keys. ${result.unresolved.length} need attention.`)
-		}
+		if (e.target.closest('[data-cmd="repair-all"]')) updateTheme()
 	})
 	const fileInput = $('.st-file')
 	async function importFromText(text, source) {
@@ -826,8 +851,11 @@ export async function mount(host) {
 			if (!theme.meta.name || theme.meta.name === 'Untitled theme') theme.meta.name = store.theme.meta.name
 			store.replace(theme, 'import')
 			const n = BASES.reduce((s, b) => s + Object.keys(theme.semantic[b]).length, 0) + Object.keys(theme.raw).length
-			VT.toast(`Imported ${format === 'legacy' ? 'legacy theme' : format === 'plugin' ? 'plugin theme' : 'colours'}: ${n} colour${n === 1 ? '' : 's'}. Ctrl+Z undoes it.`)
-			if (warnings.length) setTimeout(() => VT.toast(warnings[0]), 1600)
+			// Old themes are brought up to date straight away, as a separate step that Undo can take back
+			const updated = await updateTheme({ quiet: true })
+			VT.toast(`Imported ${format === 'legacy' ? 'legacy theme' : format === 'plugin' ? 'plugin theme' : 'colours'}: ${n} colour${n === 1 ? '' : 's'}${updated ? ', updated for this Discord' : ''}. Ctrl+Z undoes it.`)
+			const notice = warnings.find(w => !w.startsWith('Kept other fields'))
+			if (notice) setTimeout(() => VT.toast(notice), 1600)
 			setTab('theme')
 		} catch (err) {
 			VT.toast(`Could not import ${source}: ${err.message}`)
@@ -1114,12 +1142,15 @@ export async function mount(host) {
 		savedEl.textContent = r.ok ? 'Saved locally' : 'Not saved: storage is full or blocked'
 		savedEl.className = 'st-saved ' + (r.ok ? 'ok' : 'bad')
 	})
+	let updateCheck
 	store.on('change', detail => {
-		repairReport = null
+		if (detail.label !== 'update') repairReport = null
+		clearTimeout(updateCheck)
+		updateCheck = setTimeout(checkForUpdate, 400)
 		renderRepairBanner()
 		updateRows(detail)
 		if (detail.all) {
-			if (detail.label === 'import' || detail.label === 'template' || detail.label === 'new' || detail.label === 'repair' || detail.history) renderKeyList()
+			if (detail.label === 'import' || detail.label === 'template' || detail.label === 'new' || detail.label === 'repair' || detail.label === 'update' || detail.history) renderKeyList()
 			host.querySelectorAll('.st-bases-switch button').forEach(b => b.classList.toggle('on', b.dataset.base === store.base))
 		}
 		if (ui.selected && (detail.all || (ui.selected.raw ? detail.raw?.includes(ui.selected.key) : detail.semantic?.includes(ui.selected.key)) || (!ui.selected.raw && detail.raw?.length))) renderValues()
@@ -1162,6 +1193,7 @@ export async function mount(host) {
 	// ---------- start
 
 	renderRepairBanner()
+	checkForUpdate()
 
 	$('.st-name').value = store.theme.meta.name
 	host.querySelectorAll('.st-bases-switch button').forEach(b => b.classList.toggle('on', b.dataset.base === store.base))

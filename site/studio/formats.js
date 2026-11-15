@@ -4,6 +4,7 @@
 //  - A theme plugin's ThemeColors ({ semantic: { dark, darker, light, midnight }, raw }), as in template/plugin/js/index.ts.
 import { HEX } from './color.js'
 import { BASES, emptyTheme, normalizeTheme } from './store.js'
+import { cssToHex } from './convert.js'
 
 const LEGACY_KNOWN = new Set(['name', 'description', 'authors', 'semanticColors', 'rawColors', 'spec'])
 
@@ -165,20 +166,88 @@ export function exportManifest(theme) {
 
 /** Works out the format from the text and converts it. Returns { theme, format, warnings } or throws a SourceError. */
 export function importText(text) {
-	const trimmed = text.trim()
+	const trimmed = text.replace(/^﻿/, '').trim()
 	if (!trimmed) throw new SourceError('The file is empty.')
 	if (trimmed.startsWith('{')) {
-		let json
+		let json, repaired = false
 		try {
 			json = JSON.parse(trimmed)
 		} catch (err) {
-			throw jsonError(err, text)
+			// Hand-written themes often have comments, trailing commas or a missing comma. Vendetta-era tools
+			// were forgiving about these, so fix them rather than refuse the file.
+			try {
+				json = JSON.parse(looseJson(trimmed))
+				repaired = true
+			} catch {
+				throw jsonError(err, text)
+			}
 		}
-		if (json && typeof json === 'object' && ('semanticColors' in json || 'rawColors' in json || 'spec' in json)) return importLegacy(json)
-		if (json && typeof json === 'object' && ('semantic' in json || 'raw' in json)) return importThemeColors(json, 'ThemeColors JSON')
-		throw new SourceError('This JSON has no semanticColors, rawColors or semantic fields, so it is not a Valenced theme.')
+		const result = importJson(json)
+		if (repaired) result.warnings.unshift('Fixed the JSON syntax (comments, trailing or missing commas).')
+		return result
 	}
 	return importPlugin(text)
+}
+
+function importJson(json) {
+	if (!json || typeof json !== 'object' || Array.isArray(json)) throw new SourceError('This JSON is not a theme object.')
+	// Same order as Kettu's parser: spec 3, spec 2, then Enmity (spec 1 or a theme_color_map)
+	if (json.spec === 3 && json.main && typeof json.main === 'object') return importBunny3(json)
+	if (json.spec !== 2 && !('semanticColors' in json) && (json.spec === 1 || json.theme_color_map || json.colours || json.colors)) return importEnmity(json)
+	if ('semanticColors' in json || 'rawColors' in json || 'spec' in json) return importLegacy(json)
+	if ('semantic' in json || 'raw' in json) return importThemeColors(json, 'ThemeColors JSON')
+	throw new SourceError('This JSON has no semanticColors, rawColors or semantic fields, so it is not a theme.')
+}
+
+/** JSON with comments, trailing commas and missing commas between entries fixed. Strings are left alone. */
+export function looseJson(src) {
+	let out = '', i = 0
+	const stack = []
+	let last = '' // kind of the last token written: 'value' (string, number, literal, ] or }), 'open', ',', ':'
+	const skipSpace = j => {
+		for (;;) {
+			while (/\s/.test(src[j] || '')) j++
+			if (src[j] === '/' && src[j + 1] === '/') { while (j < src.length && src[j] !== '\n') j++; continue }
+			if (src[j] === '/' && src[j + 1] === '*') { const e = src.indexOf('*/', j + 2); j = e < 0 ? src.length : e + 2; continue }
+			return j
+		}
+	}
+	while (i < src.length) {
+		const c = src[i]
+		if (c === '/' && (src[i + 1] === '/' || src[i + 1] === '*')) { i = skipSpace(i); continue }
+		if (/\s/.test(c)) { out += c; i++; continue }
+		if (c === ',') {
+			// a trailing comma before } or ] is dropped
+			const j = skipSpace(i + 1)
+			if (src[j] !== '}' && src[j] !== ']') { out += ','; last = ',' }
+			i++
+			continue
+		}
+		// a value straight after another value is missing its comma
+		const startsValue = c === '"' || c === '{' || c === '[' || /[\w.+-]/.test(c)
+		if (startsValue && last === 'value') out += ','
+		if (c === '"') {
+			let j = i + 1
+			while (j < src.length && src[j] !== '"') j += src[j] === '\\' ? 2 : 1
+			out += src.slice(i, j + 1)
+			i = j + 1
+			last = 'value'
+		} else if (/[\w.+-]/.test(c)) {
+			const word = src.slice(i).match(/^[\w.+-]+/)[0]
+			out += word
+			i += word.length
+			last = 'value'
+		} else {
+			out += c
+			i++
+			last = c === '}' || c === ']' ? 'value' : c === ':' ? ':' : 'open'
+			if (c === '{' || c === '[') stack.push(c === '{' ? '}' : ']')
+			// stop at the end of the theme object; anything after it (a stray brace, a code fence) is not JSON
+			if ((c === '}' || c === ']') && stack.pop() && !stack.length) break
+		}
+	}
+	// a file cut off before its closing braces
+	return out + stack.reverse().join('')
 }
 
 export class SourceError extends Error {
@@ -195,39 +264,123 @@ function jsonError(err, text) {
 	return new SourceError(`JSON error: ${err.message.replace(/^JSON\.parse: /, '')}`, Number.isNaN(line) ? undefined : line)
 }
 
-/** Mirrors legacyThemeColors(): dark paints Ash and Dark, midnight falls back to dark. */
+/** Colours as Valenced hex, collecting what had to be converted. '' keeps Discord's colour. */
+function colourReader(warnings) {
+	const converted = new Set(), unreadable = []
+	const read = (value, where) => {
+		const hex = cssToHex(value)
+		if (hex === null) unreadable.push(`${where} (${JSON.stringify(value)})`)
+		else if (hex && !(typeof value === 'string' && HEX.test(value.trim()))) converted.add(String(value).trim().replace(/\d+(\.\d+)?/g, 'n').slice(0, 28))
+		return hex || ''
+	}
+	read.finish = () => {
+		if (converted.size) warnings.push(`Converted ${converted.size > 1 ? 'colours' : 'a colour'} Valenced can't read to hex, such as ${[...converted].slice(0, 3).join(', ')}.`)
+		if (unreadable.length) warnings.push(`Skipped ${unreadable.length} unreadable colour${unreadable.length > 1 ? 's' : ''}: ${unreadable.slice(0, 4).join(', ')}${unreadable.length > 4 ? '...' : ''}`)
+	}
+	return read
+}
+
+function legacyMeta(theme, json, known, warnings) {
+	const display = json.display && typeof json.display === 'object' ? json.display : {}
+	const pick = (...v) => v.find(x => typeof x === 'string' && x.trim())
+	theme.meta.name = pick(json.name, display.name) || 'Untitled theme'
+	theme.meta.description = pick(json.description, display.description) || ''
+	const authors = Array.isArray(json.authors) ? json.authors : Array.isArray(display.authors) ? display.authors : typeof json.author === 'string' ? [json.author] : []
+	theme.meta.authors = authors.map(a => typeof a === 'string' ? { name: a } : a).filter(a => a && typeof a.name === 'string')
+	theme.meta.extra = Object.fromEntries(Object.entries(json).filter(([k]) => !known.has(k)))
+	if (Object.keys(theme.meta.extra).length) warnings.push(`Kept other fields as they are: ${Object.keys(theme.meta.extra).join(', ')}.`)
+}
+
+/** Vendetta, Bunny, Revenge and Kettu spec 2. Mirrors Valenced's legacyThemeColors(): dark paints Ash and Dark, midnight falls back to dark. */
 export function importLegacy(json) {
 	const warnings = []
-	if (json.spec !== 2) warnings.push(`spec is ${JSON.stringify(json.spec)}; Valenced only imports spec 2. Exports will use spec 2.`)
-	if (typeof json.name !== 'string') warnings.push('The theme has no name; Valenced refuses themes without one.')
+	if (json.spec !== 2) warnings.push(`spec was ${JSON.stringify(json.spec)}; Valenced only imports spec 2, so exports use spec 2.`)
+	if (typeof json.name !== 'string' || !json.name.trim()) warnings.push('The theme had no name, which Valenced refuses; it was given one.')
 	const theme = emptyTheme()
-	theme.meta.name = typeof json.name === 'string' ? json.name : 'Untitled theme'
-	theme.meta.description = typeof json.description === 'string' ? json.description : ''
-	theme.meta.authors = Array.isArray(json.authors) ? json.authors : []
-	theme.meta.extra = Object.fromEntries(Object.entries(json).filter(([k]) => !LEGACY_KNOWN.has(k)))
+	legacyMeta(theme, json, new Set([...LEGACY_KNOWN, 'author']), warnings)
+	const read = colourReader(warnings)
 
 	const sc = json.semanticColors && typeof json.semanticColors === 'object' ? json.semanticColors : {}
+	const rows = {}
+	let extraValues = 0
+	for (const [key, value] of Object.entries(sc)) {
+		// a lone colour instead of a list
+		const values = Array.isArray(value) ? value : [value]
+		if (values.length > 3 && values.slice(3).some(v => cssToHex(v) && cssToHex(v) !== cssToHex(values[0]))) extraValues++
+		const [d, l, m] = values.slice(0, 3).map(v => read(v, key))
+		rows[key] = [d, l, values.length > 2 ? m : undefined]
+	}
+	if (extraValues) warnings.push(`${extraValues} key${extraValues > 1 ? 's have' : ' has'} more than three colours. Valenced reads [Ash and Dark, Light, Onyx], so the rest were left out.`)
 	let onyxFollowsAsh = true
-	for (const [key, values] of Object.entries(sc)) {
-		if (!Array.isArray(values)) {
-			warnings.push(`${key} is not a list of colours; it was skipped.`)
-			continue
-		}
-		const [d, l, m] = values
-		if (d) theme.semantic.dark[key] = String(d)
-		if (l) theme.semantic.light[key] = String(l)
-		if (m !== undefined && m !== null && m !== d) onyxFollowsAsh = false
+	for (const [key, [d, l, m]] of Object.entries(rows)) {
+		if (d) theme.semantic.dark[key] = d
+		if (l) theme.semantic.light[key] = l
+		if (m !== undefined && m !== d) onyxFollowsAsh = false
 	}
 	theme.links = { darker: true, midnight: onyxFollowsAsh }
 	if (!onyxFollowsAsh)
-		for (const [key, values] of Object.entries(sc)) {
-			if (!Array.isArray(values)) continue
-			const mid = values[2] ?? values[0]
-			if (mid) theme.semantic.midnight[key] = String(mid)
+		for (const [key, [d, , m]] of Object.entries(rows)) {
+			const mid = m === undefined ? d : m
+			if (mid) theme.semantic.midnight[key] = mid
 		}
 	const rc = json.rawColors && typeof json.rawColors === 'object' ? json.rawColors : {}
-	for (const [key, value] of Object.entries(rc)) theme.raw[key] = String(value)
-	if (Object.keys(theme.meta.extra).length) warnings.push(`Kept other fields as they are: ${Object.keys(theme.meta.extra).join(', ')}.`)
+	for (const [key, value] of Object.entries(rc)) { const hex = read(value, key); if (hex) theme.raw[key] = hex }
+	read.finish()
+	return { theme: normalizeTheme(theme), format: 'legacy', warnings }
+}
+
+// Discord's raw palette, for Bunny spec 3 themes that name raw colours. Set from data/tokens.json.
+let rawPalette = {}
+export function setRawPalette(raw) { rawPalette = raw || {} }
+const withAlpha = (hex, opacity) => {
+	if (!(opacity < 1)) return hex
+	const base = hex.length === 9 ? parseInt(hex.slice(7), 16) / 255 : 1
+	return hex.slice(0, 7) + Math.round(base * opacity * 255).toString(16).padStart(2, '0')
+}
+
+/** Bunny and Revenge spec 3: { main: { type, semantic, raw, background } }, one base per theme. */
+function importBunny3(json) {
+	const warnings = ['Bunny spec 3 theme, converted to the legacy format Valenced reads.']
+	const theme = emptyTheme()
+	legacyMeta(theme, json, new Set(['spec', 'main', 'name', 'description', 'authors', 'display', 'id', 'type']), warnings)
+	const read = colourReader(warnings)
+	const { main } = json
+	const base = main.type === 'light' ? 'light' : 'dark'
+	const rawHex = name => (typeof name === 'string' && cssToHex(rawPalette[name])) || ''
+	for (const [key, def] of Object.entries(main.semantic || {})) {
+		let hex = ''
+		if (typeof def === 'string') hex = def.trim().startsWith('#') ? read(def, key) : rawHex(def)
+		else if (def && typeof def === 'object') {
+			const colour = def.type === 'raw' ? read(def.value, key) : rawHex(def.value)
+			hex = colour ? withAlpha(colour, typeof def.opacity === 'number' ? def.opacity : 1) : ''
+		}
+		if (hex) theme.semantic[base][key] = hex
+	}
+	for (const [key, value] of Object.entries(main.raw || {})) { const hex = read(value, key); if (hex) theme.raw[key] = hex }
+	const bg = main.background
+	if (bg?.url) theme.meta.extra.background = { url: bg.url, ...(typeof bg.blur === 'number' ? { blur: bg.blur } : {}), ...(typeof bg.opacity === 'number' ? { alpha: bg.opacity } : {}) }
+	theme.links = { darker: true, midnight: true }
+	read.finish()
+	return { theme: normalizeTheme(theme), format: 'legacy', warnings }
+}
+
+/** Enmity, as Kettu reads it: theme_color_map [dark, light], colours/colors and unsafe_colors as raw. */
+function importEnmity(json) {
+	const warnings = ['Enmity theme, converted to the legacy format Valenced reads.']
+	const theme = emptyTheme()
+	legacyMeta(theme, json, new Set(['spec', 'name', 'description', 'authors', 'author', 'theme_color_map', 'colours', 'colors', 'unsafe_colors', 'version']), warnings)
+	const read = colourReader(warnings)
+	for (const [key, values] of Object.entries(json.theme_color_map || {})) {
+		const [d, l] = (Array.isArray(values) ? values : [values]).map(v => read(v, key))
+		if (d) theme.semantic.dark[key] = d
+		if (l) theme.semantic.light[key] = l
+	}
+	for (const [key, value] of Object.entries({ ...(json.colours || json.colors || {}), ...(json.unsafe_colors || {}) })) {
+		const hex = read(value, key)
+		if (hex) theme.raw[key] = hex
+	}
+	theme.links = { darker: true, midnight: true }
+	read.finish()
 	return { theme: normalizeTheme(theme), format: 'legacy', warnings }
 }
 

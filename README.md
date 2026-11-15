@@ -183,9 +183,25 @@ Limitations:
 The idea and layout come from [Purple-EyeZ/Bunny-Theme-Keys](https://github.com/Purple-EyeZ/Bunny-Theme-Keys),
 which did this for Bunny.
 
-## Repairing older themes
+## Updating older themes
 
-After importing a theme with keys absent from the current table, a banner shows **Repair all**. One click migrates all supported legacy keys, preserving their colours across bases, with one Undo step for the entire batch. Existing destination conflicts, conflicting legacy sources, invalid colours, and keys without known replacements are retained and listed for manual attention. The banner also appears for previously saved themes. Batch mappings are pinned to [theme-fixer map.json](https://github.com/blancodagoat/theme-fixer/blob/32a3f861955e216bf0eec88079a677cea27d68a8/map.json), a community Discord 345.0 reference; destinations are checked against this site's current table. These mappings approximate intent where Discord split or changed tokens, so review the preview after repair.
+Themes made for Vendetta, Bunny, Revenge, Kettu or Rain, and Enmity, are converted when you import them into
+the studio, then updated for the current Discord build as one Undo step:
+
+- **Formats.** Vendetta spec 2, Bunny spec 3, and Enmity (`theme_color_map`, `colours`, `unsafe_colors`) all come in.
+  Colours Valenced can't read, like `rgba()`, `hsl()`, `transparent` or `false`, become hex. Comments, trailing or
+  missing commas and a missing closing brace in hand-written JSON are fixed.
+- **Renamed keys.** Old semantic keys move to their current names (`site/studio/migrations.js`), and a key the
+  theme already sets is never overwritten. Enmity's `PRIMARY_DARK_*` and the old `BRAND_NEW_*` raw names are renamed.
+- **Moved palette.** Discord 352 paints most surfaces from `NEUTRAL_*` instead of `PRIMARY_*`, so recolouring
+  `PRIMARY_600` now changes almost nothing. For each key the old build had, the colour the theme gave it then is
+  set on the key directly, using the bindings in `site/studio/token-history.json`. Themes already written for the
+  new palette are left alone.
+- **Removed keys.** Keys Discord no longer has are dropped, so Valenced isn't sent anything it ignores.
+
+Tested on 291 public theme files from GitHub. Before conversion, Valenced dropped 906 of their colour values and
+10,337 of their keys no longer existed. After it, none were dropped or missing, and the average theme coloured 184
+of Discord's surfaces on Ash instead of 49. The converted Rosé Pine was checked on the Valenced emulator.
 
 For manual corrections, open **Theme studio > Repair** (or **Review repairs** under Needs attention). Select an imported semantic or raw key, compare historical bindings with the captured current build, choose a current destination, and correct the saved hex colours. Apply moves the overrides; conflicting destination colours require explicit replacement. Undo restores the complete previous theme. Metadata and unrelated keys are preserved. Export the repaired theme using the normal export menu.
 
