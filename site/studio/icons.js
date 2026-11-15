@@ -14,6 +14,7 @@ const P = {
 	search: stroke('M10.5 3.5a7 7 0 1 0 0 14 7 7 0 0 0 0-14ZM15.6 15.6l5 5', 2.1),
 	back: stroke('M20 12H4.5M11 5l-7 7 7 7', 2.1),
 	chevronRight: stroke('M9 5.5 15.5 12 9 18.5', 2.2),
+	chevronLeft: stroke('M15 5.5 8.5 12 15 18.5', 2.2),
 	chevronDown: stroke('M5.5 9 12 15.5 18.5 9', 2.2),
 	close: stroke('M5.5 5.5l13 13M18.5 5.5l-13 13', 2.2),
 	plus: stroke('M12 4.5v15M4.5 12h15', 2.2),

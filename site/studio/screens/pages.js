@@ -195,7 +195,7 @@ export const inboxPage = {
 		const cleared = ui.cleared
 		return `${statusBar('BACKGROUND_BASE_LOW', '2:37')}
 		<div class="vp-page" data-k="bg:BACKGROUND_BASE_LOW" data-n="Notifications page">
-			<header class="vp-page-header" data-k="bg:BACKGROUND_BASE_LOW bb:BORDER_SUBTLE" data-n="Page header">
+			<header class="vp-page-header divided" data-k="bg:BACKGROUND_BASE_LOW bb:BORDER_SUBTLE" data-n="Page header">
 				<button class="vp-icon-btn" data-back data-k="fg:INTERACTIVE_TEXT_DEFAULT" data-n="Back button" aria-label="Back">${icon('back', 24)}</button>
 				<h1 data-k="fg:MOBILE_TEXT_HEADING_PRIMARY">Notifications</h1>
 				<span class="vp-header-tools">${['bookmark', 'clock', 'more'].map(i => `<button class="vp-square-btn" data-k="bg:REDESIGN_BUTTON_TERTIARY_BACKGROUND fg:INTERACTIVE_TEXT_DEFAULT" data-n="Header button" data-act="${i === 'more' ? 'clear' : 'na'}" aria-label="${i}">${icon(i, 22)}</button>`).join('')}</span>

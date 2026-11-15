@@ -124,7 +124,7 @@ export const search = {
 		return `${statusBar('MOBILE_ACTIONSHEET_BACKGROUND', '2:37')}
 		<div class="vp-page" data-k="bg:MOBILE_ACTIONSHEET_BACKGROUND" data-n="Search page">
 			<div class="vp-search-head">
-				<button class="vp-icon-btn" data-back data-k="fg:INTERACTIVE_TEXT_DEFAULT" data-n="Back button" aria-label="Back">${icon('back', 24)}</button>
+				<button class="vp-icon-btn" data-back data-k="fg:INTERACTIVE_TEXT_DEFAULT" data-n="Back button" aria-label="Back">${icon('chevronLeft', 24)}</button>
 				<label class="vp-search active" data-k="bg:INPUT_BACKGROUND_DEFAULT bd:INPUT_BORDER_ACTIVE" data-n="Search field (focused)">
 					<span data-k="fg:INPUT_ICON_DEFAULT">${icon('search', 20)}</span>
 					<span class="vp-chip" data-k="bg:BACKGROUND_MOD_SUBTLE fg:TEXT_DEFAULT" data-n="Filter chip">in: announcements</span>
