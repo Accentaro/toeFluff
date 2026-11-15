@@ -85,7 +85,7 @@ $('#lightbox').addEventListener('keydown', e => {
 	}
 })
 
-// ---------- markdown, just what README.md uses
+// ---------- inline markdown for key descriptions
 
 function inline(text) {
 	return text
@@ -104,98 +104,37 @@ function linkFor(href) {
 	return ROOT + href
 }
 
-function markdown(src) {
-	const lines = src.replace(/\r/g, '').split('\n')
-	let html = ''
-	for (let i = 0; i < lines.length; i++) {
-		const line = lines[i]
-		if (line.startsWith('```')) {
-			let code = ''
-			while (++i < lines.length && !lines[i].startsWith('```')) code += lines[i] + '\n'
-			html += `<pre><code>${esc(code)}</code></pre>`
-		} else if (/^#{1,3} /.test(line)) {
-			const n = line.indexOf(' ')
-			html += `<h${n}>${inline(line.slice(n + 1))}</h${n}>`
-		} else if (line.startsWith('|')) {
-			const rows = []
-			while (i < lines.length && lines[i].startsWith('|')) rows.push(lines[i++])
-			i--
-			const cells = r => r.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim())
-			const head = cells(rows[0])
-			// an all-empty header row (used for image grids) is left out
-			html += '<table>' + (head.some(Boolean) ? '<thead><tr>' + head.map(c => `<th>${inline(c)}</th>`).join('') + '</tr></thead>' : '') + '<tbody>'
-			for (const r of rows.slice(2)) html += '<tr>' + cells(r).map(c => `<td>${inline(c)}</td>`).join('') + '</tr>'
-			html += '</tbody></table>'
-		} else if (/^(-|\d+\.) /.test(line)) {
-			const ordered = /^\d/.test(line)
-			let items = ''
-			while (i < lines.length && /^(-|\d+\.) /.test(lines[i])) {
-				let item = lines[i].replace(/^(-|\d+\.) /, '')
-				while (i + 1 < lines.length && /^ {2,}\S/.test(lines[i + 1])) item += ' ' + lines[++i].trim()
-				items += `<li>${inline(item)}</li>`
-				i++
-			}
-			i--
-			html += ordered ? `<ol>${items}</ol>` : `<ul>${items}</ul>`
-		} else if (line.startsWith('<')) {
-			html += line
-		} else if (line.trim()) {
-			let para = line
-			while (i + 1 < lines.length && lines[i + 1].trim() && !/^([#|<`]|- |\d+\. )/.test(lines[i + 1])) para += ' ' + lines[++i]
-			html += `<p>${inline(para)}</p>`
-		}
-	}
-	// image paths in the README are relative to the repo root
-	return html.replace(/src="(?!https?:)([^"]+)"/g, `src="${ROOT}$1"`)
-}
-
 // ---------- pages
 
 let data, resolved, tokens, areas, captures, examples, descriptions, store
 
-async function renderGuide() {
-	const el = $('#page-guide')
-	const readme = await get('README.md', 'text')
-	el.innerHTML = `<div class="guide-hero">
-		<div class="hero-copy"><p class="eyebrow">VALENCED / THEME WORKSPACE</p>
+// The overview is for people making a theme. How the keys were captured, maintenance and credits live in the repo README.
+function renderGuide() {
+	$('#page-guide').innerHTML = `<div class="guide-hero">
+		<div class="hero-copy">
 		<h1>Your colours.<br>Your Discord.</h1>
-		<p class="lead">Make Valenced feel like you. Explore the colour keys behind Discord on Android, see every change in the studio, and export a theme ready to use.</p>
-		<div class="hero-actions"><a class="button primary" href="#studio/!dusk">Start from Dusk <span aria-hidden="true">↗</span></a><a class="button" href="#studio/!new">Start blank</a><button data-start-import>Import a theme</button></div>
-		<a class="browse-link" href="#keys">Find the key you need <span aria-hidden="true">→</span></a>
-		<p class="hero-note">Local autosave. No account. Your theme stays in your browser.</p>
+		<p class="lead">Recolour Discord on Android with Valenced. Change colours on a live preview, then export a theme you can install.</p>
+		<div class="hero-actions"><a class="button primary" href="#studio">Open the studio</a><a class="button" href="#keys">Browse tested keys</a></div>
+		<p class="hero-note">Free, no account. Your theme is saved in this browser.</p>
 		</div>
-		<div class="hero-demo"><div class="demo-label"><span class="eyebrow">LIVE PREVIEW</span><a href="#studio">Open studio ↗</a></div><div id="guide-live" class="live-preview" aria-label="Live theme preview"><p class="empty" role="status">Loading preview…</p></div></div>
+		<div class="hero-demo"><div id="guide-live" class="live-preview" aria-label="Live theme preview"><p class="empty" role="status">Loading preview…</p></div></div>
 	</div>
-	<div class="workflow"><a href="#keys"><span>01 / EXPLORE</span><strong>Find what a key paints</strong><p>Tested examples, searchable by screen.</p></a><a href="#studio"><span>02 / CREATE</span><strong>See your changes live</strong><p>Four bases. One theme. Full control.</p></a><a href="#templates"><span>03 / EXPORT</span><strong>Take your theme with you</strong><p>Legacy JSON or a theme plugin.</p></a></div>
-	<div class="guide-layout"><article class="guide-body">${markdown(readme.slice(readme.indexOf('## How colours work')))}</article><nav class="contents" aria-label="On this page"><p class="nav-label">ON THIS PAGE</p></nav></div>`
-	el.querySelectorAll('.guide-body h2').forEach((heading, index) => {
-		heading.id = `guide-section-${index}`
-		const link = document.createElement('a')
-		link.href = `#guide/${heading.id}`
-		link.textContent = heading.textContent
-		$('.contents').append(link)
-	})
-	el.querySelectorAll('td img').forEach(img => {
-		const name = img.closest('td').querySelector('code')?.textContent
-		const capture = captures.semantic[name]
-		const key = data.semantic.find(key => key.key === name)
-		const button = document.createElement('button')
-		button.className = 'image-button'
-		button.setAttribute('aria-label', `Enlarge ${name || 'screenshot'}`)
-		if (capture) img.src = capture.image
-		if (key) {
-			button.dataset.name = name
-			button.dataset.description = `Pink shows: ${key.description}${capture?.textScrambled ? ' Personal text is scrambled.' : ''}`
-			img.alt = `What ${name} colours`
-		}
-		img.replaceWith(button)
-		button.append(img)
-		button.insertAdjacentHTML('beforeend', focusOutline(capture))
-		button.onclick = () => openImage(img.src, button.getAttribute('aria-label'), button)
-	})
+	<ol class="workflow">
+		<li><a href="#studio"><span>1</span><strong>Pick a colour</strong><p>Turn on Inspect and tap anything on the phone to see which key paints it.</p></a></li>
+		<li><a href="#studio"><span>2</span><strong>Check every screen</strong><p>Chat, settings, menus and more, on all four of Discord's themes.</p></a></li>
+		<li><a href="#templates"><span>3</span><strong>Install it</strong><p>Export a JSON file for Legacy Themes, or a theme plugin.</p></a></li>
+	</ol>
+	<section class="basics" aria-labelledby="basics-title">
+		<h2 id="basics-title">Good to know</h2>
+		<div class="basics-grid">
+			<div><h3>Two kinds of key</h3><p><strong>Semantic</strong> keys name a job, like <code>TEXT_DEFAULT</code>. <strong>Raw</strong> keys are the palette underneath, like <code>BLURPLE_50</code>, and change everything that uses them. Start with semantic.</p></div>
+			<div><h3>Four bases</h3><p>Ash, Dark, Light and Onyx are the themes in Discord's Appearance settings. Your theme can cover any of them; the rest keep Discord's colours.</p></div>
+			<div><h3>Keep overlays see-through</h3><p>Some keys, like <code>BACKGROUND_SCRIM</code>, sit over other things. Give them transparency with <code>#RRGGBBAA</code>, for example <code>#00000099</code>.</p></div>
+		</div>
+	</section>`
 }
 
-const keyState = { kind: 'semantic', area: null, q: '' }
+const keyState = { kind: 'semantic', area: null, q: '', open: { semantic: new Set(), raw: new Set() } }
 
 function renderKeys() {
 	document.querySelectorAll('.key-live').forEach(host => host.dispose?.())
@@ -432,7 +371,6 @@ function route() {
 	})
 	store.on('meta', updateThemePresence)
 	updateThemePresence()
-	$('[data-start-import]').onclick = () => { location.hash = 'studio/!import' }
 	renderAll()
 	window.addEventListener('hashchange', route)
 	route()

@@ -144,8 +144,8 @@ Discord defaults alongside a live Ash swatch from your theme, including colours 
 Use **Edit in the studio** to move directly from a key to its editor, or **Preview this key** for a read-only
 phone with the affected areas outlined. Preview code loads when needed.
 
-Overview offers Dusk, a blank theme, file import and the key reference. Its interactive phone shows your
-theme, or Dusk before you start one. The Templates page previews Dusk without changing your saved work;
+Overview is a short landing page: what the site does, three steps, and the basics of keys and bases. Its
+interactive phone shows your theme, or Dusk before you start one. The Templates page previews Dusk without changing your saved work;
 the original four-screen capture and both template downloads remain available. Starting blank or loading
 Dusk is undoable in the studio. All saved themes and editor preferences keep their existing storage keys.
 On narrow screens, the shared navigation scrolls horizontally and the studio uses Keys, Edit and Preview

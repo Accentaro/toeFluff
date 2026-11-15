@@ -509,7 +509,7 @@ export async function mount(host) {
 			propPane.innerHTML = `${inspectedCard()}<div class="st-blank">
 				<h2>Pick something to edit</h2>
 				<p>Choose a key on the left, or turn on <b>Inspect</b> (I) and click anything in the phone to see which keys paint it.</p>
-				<p class="muted">Start with the twelve keys in the Overview, or the raw key <code>BLURPLE_50</code> for the brand colour.</p>
+				<p class="muted">These cover most of what you see. For the brand colour, use the raw key <code>BLURPLE_50</code>.</p>
 				<div class="st-quick">${['BACKGROUND_BASE_LOWEST', 'PANEL_BG', 'CHANNEL_BACKGROUND_DEFAULT', 'TEXT_STRONG', 'MOBILE_ACTIONSHEET_BACKGROUND', 'CARD_MUTED_BG'].map(k => `<button class="st-chip" data-select="${k}">${k}</button>`).join('')}<button class="st-chip" data-select="BLURPLE_50" data-raw="1">BLURPLE_50</button></div>
 			</div>`
 			return
