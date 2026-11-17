@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "fa39a51315afe7e6d8a06b557dc91f50d5aacef500e08a25ac9db83504ed09cb",
+    "stability.png": "fa39a51315afe7e6d8a06b557dc91f50d5aacef500e08a25ac9db83504ed09cb",
+    "after.png": "587662e1e4616e27de0d4ede6c097fb09c4419fee7c79e3bbe7da554ece67e60",
+    "restored.png": "fa39a51315afe7e6d8a06b557dc91f50d5aacef500e08a25ac9db83504ed09cb"
+  },
+  "annotationSha256": "cd44ac81bc634961eb5c2d3d64965eb860e856e89ccc4762ad07e9104dcebdeb",
+  "comparisonSha256": "e3cc02296595caae95ab864dc6546719f96ee4ec1f19bec4af299de846a0b8d2",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Runtime resolver consumer matches the visible part described by this comparison.",
+      "references": [
+        "manifest.json: AccountEditPassword resolver stack and exact pixel bounds on 352206",
+        "research/tabsv2/evidence/modern-352204/modules/m/15961.js: AccountEditPassword container.backgroundColor"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames show stock labels and empty password fields. No credentials or account data entered."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames and focused crop inspected. Geometry is unchanged, and the restored frame matches the original."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline identifies the affected region without covering labels or controls."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "The form body changes; translucent input fields and the disabled button blend with the new body background. Header remains unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the body behind the Password form."
+    }
+  }
+}

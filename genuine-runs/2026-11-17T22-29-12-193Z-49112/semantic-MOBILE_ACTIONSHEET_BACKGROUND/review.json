@@ -1,0 +1,45 @@
+{
+  "hashes": {
+    "before.png": "5bdc14da9d360600d1d4999cc5993de59f121383c97b322f2749fe17986a1c67",
+    "stability.png": "5bdc14da9d360600d1d4999cc5993de59f121383c97b322f2749fe17986a1c67",
+    "after.png": "1965907b88b4ebc585cdc26695efdb4e130bead2c435b6d0ba5940d6f1b76636",
+    "restored.png": "5bdc14da9d360600d1d4999cc5993de59f121383c97b322f2749fe17986a1c67"
+  },
+  "annotationSha256": "9bdec5aae32da28eb63aeaf15d90fe6ee8ff3e7fa71304a80bda1521c78753dd",
+  "comparisonSha256": "b4a8d74b88b14a5295612ff3cc4cdaf73e4dd85e5421d0f32dd9744ceac23357",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Current native resolver and changed-pixel bounds identify the documented region.",
+      "references": [
+        "manifest.json: current resolver stacks and exact changed-pixel bounds"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames show an invented channel name, topic and category. No real text or media shown. No form changes submitted."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames and comparison inspected. Layout and restored frame match."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline identifies the effect without covering any entered text or labels."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "The affected form controls or background match the documented diff. Other visible colours follow their original values and transparency."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the background of the Channel Settings page."
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "1b4c9bb1f90fbc15f217ef9bc154d1061040492254081a7e29cce95e7ce8a97b",
+    "stability.png": "1b4c9bb1f90fbc15f217ef9bc154d1061040492254081a7e29cce95e7ce8a97b",
+    "after.png": "26ef00824494cf1528f4bab091cd2f953689bb096de7985fa9c0ece5c7573903",
+    "restored.png": "1b4c9bb1f90fbc15f217ef9bc154d1061040492254081a7e29cce95e7ce8a97b"
+  },
+  "annotationSha256": "db7a2f6fcc7d15ff752c00cef48a2a040e0f202a4137aa098665b9fbfd05eeac",
+  "comparisonSha256": "80709c999a9a9f9cc3f5b11b310e5df958e377a125a041fded95c8762feba32c",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Current build resolves BACKGROUND_BASE_LOWER in YouBarFloatingShade. The native chat backdrop also references this key.",
+      "references": [
+        "manifest.json: YouBarFloatingShade in current 352206 runtime",
+        "research/tabsv2/evidence/modern-352204/modules/m/13074.js: ChatInputScrimGradient"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Whole frames show synthetic avatars, author, channel, and messages. No personal content appears."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "The gradient behind the composer changes. The screenshot dimensions, message layout, and restored appearance match."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline sits inside the changed gradient without covering the composer or any text."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "The changed pixels are confined to the bottom backdrop, including edges composited over it."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the gradient behind the floating chat composer."
+    }
+  }
+}

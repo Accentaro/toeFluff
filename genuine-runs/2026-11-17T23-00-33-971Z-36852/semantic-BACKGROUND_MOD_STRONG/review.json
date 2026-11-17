@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "7a7680fb34740eb332c27987343b8fa627b03f9db8df21155e81e6e483b03576",
+    "stability.png": "7a7680fb34740eb332c27987343b8fa627b03f9db8df21155e81e6e483b03576",
+    "after.png": "45103bd415492ff8828564315242e8fb2db45be343641383fbcf634ac2ecce3b",
+    "restored.png": "7a7680fb34740eb332c27987343b8fa627b03f9db8df21155e81e6e483b03576"
+  },
+  "annotationSha256": "5d818b5d84cc6828d7281215231e945069b628b0d5f8eccdda96c66841038548",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Android 352.6 runtime trace resolves this token in the genuine Discord Badge component.",
+      "references": [
+        "capture manifest runtimeConsumerStacks, Badge, Android 352.6",
+        "research/tabsv2/evidence/modern-352204/modules/m/15366.js:113?149, design/void/Badge/native/Badge.tsx"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "All visible test captions and counts are fictional or generic, with no account or message data."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "The original screen and focused comparison render the native counts cleanly at their original size."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "The outline surrounds the lower-priority count pill."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Only the lower-priority count fill changes, in one 1,618-pixel area. Baseline and restored images match exactly."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "The description identifies the exact count visual that the key colours."
+    }
+  },
+  "comparisonSha256": "a9a6349b3e170cc09ee04d7e2342e06dd171a67fb47c8dc45c8212a0eed01d76"
+}

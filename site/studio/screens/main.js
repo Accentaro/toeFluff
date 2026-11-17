@@ -1,6 +1,6 @@
 // The main screens: the Messages list, a server's channel list, and DM conversations.
 import { activities, avatar, conversations, dms, users, valenced } from '../mock.js'
-import { channelHeader, channelIcon, chatInput, clanTag, esc, icon, message, navBar, rail, statusBar, userPanel } from './common.js'
+import { channelHeader, channelIcon, chatInput, clanTag, esc, icon, message, navBar, notificationCount, rail, statusBar, userPanel } from './common.js'
 
 /** The rounded panel to the right of the rail, shared by Messages and a server's channel list. */
 const panel = (inner, n) => `<section class="vp-panel" data-k="bg:PANEL_BG bd:APP_FRAME_BORDER" data-n="${n}" data-scroll="panel">${inner}</section>`
@@ -68,10 +68,18 @@ export const server = {
 				<button class="vp-chan${active ? ' on' : ''}" data-act="channel:${c.id}" data-n="Channel row" ${active ? 'data-k="bg:MOBILE_CHANNEL_ITEM_BACKGROUND_SELECTED"' : ''}>
 					<span class="${c.muted ? 'vp-chan-muted' : ''}" data-k="fg:${unread || active ? UNREAD_ICON : 'CHANNEL_ICON'}" data-n="${unread ? 'Unread channel icon' : 'Channel icon'}">${channelIcon(c.type, 22)}</span>
 					<span class="vp-chan-name${unread ? ' unread' : ''}${c.muted ? ' vp-chan-muted' : ''}" data-k="fg:${unread || active ? 'REDESIGN_CHANNEL_NAME_TEXT' : 'REDESIGN_CHANNEL_NAME_MUTED_TEXT'}" data-n="${c.muted ? 'Muted channel name' : unread ? 'Unread channel name' : 'Channel name'}">${esc(c.name)}</span>
-					${c.mentions && unread ? `<span class="vp-chan-count" data-k="fg:TEXT_MUTED">${c.mentions}</span>` : ''}
+					${c.mentions && unread ? notificationCount(c.mentions, 'Channel mention count') : ''}
 				</button>
 				${(c.members || []).map(id => `<div class="vp-voice-user" data-n="Person in the voice channel">${avatar(id, 24, { status: false })}<span data-k="fg:REDESIGN_CHANNEL_NAME_MUTED_TEXT">${esc(users[id].name)}</span></div>`).join('')}
-				${(c.threads || []).map(t => `<div class="vp-subthread"><i class="vp-spine" data-k="bd:SPINE_DEFAULT" data-n="Thread spine"></i><span data-k="fg:REDESIGN_CHANNEL_NAME_MUTED_TEXT">${esc(t)}</span></div>`).join('')}
+				${(c.threads || []).map(t => {
+					const name = `<span data-k="fg:REDESIGN_CHANNEL_NAME_MUTED_TEXT">${esc(t)}</span>`
+					return `<div class="vp-subthread">
+						<i class="vp-spine" data-k="bd:SPINE_DEFAULT" data-n="Channel list thread spine"></i>
+						${c.preview ? `<button data-go="thread-chat" aria-label="Open ${esc(t)}">
+							<span data-k="fg:CHANNEL_ICON" data-n="Thread channel icon">${icon('thread', 18)}</span>${name}
+						</button>` : name}
+					</div>`
+				}).join('')}
 			</div>`
 		}
 		const b = valenced.boost
@@ -110,6 +118,7 @@ export const server = {
 			ui.selected = arg
 			ui.read = { ...ui.read, [arg]: true }
 			const c = valenced.categories.flatMap(x => x.channels).find(x => x.id === arg)
+			if (c.preview) return api.go(c.preview)
 			if (c.type === 'voice') return api.open('voice', { arg, keepScreen: true })
 			if (c.type === 'forum') return api.go('forum', { id: arg })
 			if (arg === 'bots' || arg === 'general' || arg === 'github') return api.go('bots', { id: arg })

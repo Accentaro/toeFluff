@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "ba0aa76eb674217e5c36fc0bb56261538580c233979c7d605e11ab911bcad82b",
+    "stability.png": "ba0aa76eb674217e5c36fc0bb56261538580c233979c7d605e11ab911bcad82b",
+    "after.png": "ee9baa01eb8e069fce2a60435429530bcb45089e07d7a3253ab7941042d9f658",
+    "restored.png": "ba0aa76eb674217e5c36fc0bb56261538580c233979c7d605e11ab911bcad82b"
+  },
+  "annotationSha256": "2490aa0a40552272a0a22ee0be0630e42aa14eefeee72972bc38d171419495f2",
+  "comparisonSha256": "903ede01b2f7115b73ee9f1101da8b7208789e38c8c6d07d1d836001fa5c8177",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "PinImage resolves the outer background in the current runtime; a display-only hasUnreadPins override activates the original native badge for the test channel.",
+      "references": [
+        "manifest.json: current resolver stacks and exact changed-pixel bounds",
+        "research/tabsv2/evidence/modern-352204/modules/m/18155.js: PinImage outer background and hasUnreadPins"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames show an invented channel name, topic and category. No real text or media shown. No form changes submitted."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames and comparison inspected. Layout and restored frame match."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline identifies the effect without covering any entered text or labels."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "The 476 changed pixels are limited to the 31 by 31 region around the red dot."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the surround of the unread dot beside Pinned Messages in Channel Settings."
+    }
+  }
+}

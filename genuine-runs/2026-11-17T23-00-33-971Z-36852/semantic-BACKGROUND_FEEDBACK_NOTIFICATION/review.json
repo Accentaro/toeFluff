@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "7a7680fb34740eb332c27987343b8fa627b03f9db8df21155e81e6e483b03576",
+    "stability.png": "7a7680fb34740eb332c27987343b8fa627b03f9db8df21155e81e6e483b03576",
+    "after.png": "358937c90b7efd9af8b9f32867fbcd85a255503862ff307b3da04e3ed455fb54",
+    "restored.png": "7a7680fb34740eb332c27987343b8fa627b03f9db8df21155e81e6e483b03576"
+  },
+  "annotationSha256": "572d9649f8eceb494692cb3c2fc9024e86892f316704b2bd09b1081aa19fc956",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Android 352.6 runtime trace resolves this token in the genuine Discord Badge component.",
+      "references": [
+        "capture manifest runtimeConsumerStacks, Badge, Android 352.6",
+        "research/tabsv2/evidence/modern-352204/modules/m/15366.js:113?149, design/void/Badge/native/Badge.tsx"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "All visible test captions and counts are fictional or generic, with no account or message data."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "The original screen and focused comparison render the native counts cleanly at their original size."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "The outline surrounds the direct-mention pill in the focused comparison."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "The direct count fill (1,330 pixels) and the Back count fill (1,355 pixels) are the only changed regions. Baseline and restored images match exactly."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "The description identifies the exact count visual that the key colours."
+    }
+  },
+  "comparisonSha256": "949b42e49da607e7b61dd2946f76f7bb64ddf0689149a4ccecb67d810375698b"
+}

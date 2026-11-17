@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "7a7680fb34740eb332c27987343b8fa627b03f9db8df21155e81e6e483b03576",
+    "stability.png": "7a7680fb34740eb332c27987343b8fa627b03f9db8df21155e81e6e483b03576",
+    "after.png": "c000141cf52f571eeb0be648e24f0a16ba26211b28d071a5b106197bffe1e72c",
+    "restored.png": "7a7680fb34740eb332c27987343b8fa627b03f9db8df21155e81e6e483b03576"
+  },
+  "annotationSha256": "de4987a853cf536ca75726f956464c65c28992152cedaa35840a9f4fbe232316",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Android 352.6 runtime trace resolves this token in the genuine Discord Badge component.",
+      "references": [
+        "capture manifest runtimeConsumerStacks, Badge, Android 352.6",
+        "research/tabsv2/evidence/modern-352204/modules/m/15366.js:113?149, design/void/Badge/native/Badge.tsx"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "All visible test captions and counts are fictional or generic, with no account or message data."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "The original screen and focused comparison render the native counts cleanly at their original size."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "The outline surrounds the lower-priority count digits."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "The changes are confined to the Back, direct and lower-priority badge digits: 145, 214 and 441 pixels. Baseline and restored images match exactly."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "The description identifies the exact count visual that the key colours."
+    }
+  },
+  "comparisonSha256": "a28eb1e081ecea96908b0d0aa88c166376ad6a6a4102bb038600e3d77a3b6773"
+}

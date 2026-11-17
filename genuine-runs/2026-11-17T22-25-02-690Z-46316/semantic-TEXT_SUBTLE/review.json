@@ -1,0 +1,45 @@
+{
+  "hashes": {
+    "before.png": "78bea00c3a6c7219ec7397a4a8487f770a4fb2d034837cc59add0cf2588db4b3",
+    "stability.png": "78bea00c3a6c7219ec7397a4a8487f770a4fb2d034837cc59add0cf2588db4b3",
+    "after.png": "1c0b503a1c0c9184c1ee9c53f4aea8d7b1d23341d6340f4cb68ca690eba0a315",
+    "restored.png": "78bea00c3a6c7219ec7397a4a8487f770a4fb2d034837cc59add0cf2588db4b3"
+  },
+  "annotationSha256": "dc3f6520f1a389838f9267fa4ffc13081f65f538f6f05148fc271a3991fa5a5b",
+  "comparisonSha256": "bd214d0831d86155021bc85667699a736a3d45ace6518ca356ee093499a9fee1",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Current Text and BaseIconImage traces, plus exact changed-pixel regions, identify switch helper glyphs and the chevron behind the menu.",
+      "references": [
+        "manifest.json: resolver stacks and scoped pixel differences on 352206"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames show fictional server and channel labels, invented description and generic icon. No account or message content appears."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames and comparison inspected. Screen, list position and restored appearance are identical."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline points at the affected surface or text and leaves the native contents legible."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Helper text and the small underlying server chevron change. Switch and primary label are unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the helper text beneath server menu switches."
+    }
+  }
+}

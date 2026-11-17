@@ -1221,6 +1221,14 @@ export async function mount(host) {
 		route(param) {
 			if (!param) return layoutPhone()
 			const value = decodeURIComponent(param)
+			if (value.startsWith('!screen=')) {
+				const screen = value.slice('!screen='.length)
+				if (Object.hasOwn(preview.screens, screen)) {
+					preview.go(screen)
+					setView('preview')
+				}
+				return layoutPhone()
+			}
 			if (value === '!dusk') {
 				window.history.replaceState(null, '', '#studio')
 				return loadTemplate()

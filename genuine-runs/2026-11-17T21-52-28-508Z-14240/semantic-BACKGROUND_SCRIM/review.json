@@ -1,0 +1,45 @@
+{
+  "hashes": {
+    "before.png": "91d1e31698038b924050a837affd469118893879ce39248f08d3dc9ff942bc13",
+    "stability.png": "91d1e31698038b924050a837affd469118893879ce39248f08d3dc9ff942bc13",
+    "after.png": "bcb0c55449e43249be418b4464688310850f4832de8dac21351c26a9aa982b8f",
+    "restored.png": "91d1e31698038b924050a837affd469118893879ce39248f08d3dc9ff942bc13"
+  },
+  "annotationSha256": "84e556e8ee131742c44d9b517440a05a79b7c7afc076ff06522db1dc0c146cd0",
+  "comparisonSha256": "f9c32f1fa5aa1958d769a812a0dba53d76319a05899f5019bafbaab4068fcfb5",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Current native Backdrop resolves BACKGROUND_SCRIM. The override is visible only where the dim layer is exposed.",
+      "references": [
+        "manifest.json: Backdrop resolver stack from 352206"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full images show fictional guild and channel labels, server description and generic icon. No account or message content appears."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames and annotated crop inspected; the opaque override covers the dimmed region. Native sheet content and position match."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline marks the dimming layer above the sheet without covering its title or contents."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Only the exposed overlay and its composited edges change. The menu remains unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the dimming layer behind the server menu sheet."
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "hashes": {
+    "before.png": "fa39a51315afe7e6d8a06b557dc91f50d5aacef500e08a25ac9db83504ed09cb",
+    "stability.png": "fa39a51315afe7e6d8a06b557dc91f50d5aacef500e08a25ac9db83504ed09cb",
+    "after.png": "5690adf4a852bceec30f05c6a08c9ac4a3bfc7805a39b2573c08bd90b708e323",
+    "restored.png": "fa39a51315afe7e6d8a06b557dc91f50d5aacef500e08a25ac9db83504ed09cb"
+  },
+  "annotationSha256": "8e49209b6ac7f2e9f6050726f88f8c7c4b5d76c61f9d3501b09c206e8997426a",
+  "comparisonSha256": "1d0a20fd26940b2bc1a7b99c22f4e3f3a367dfc87d4438a9b6b6db598ca24f4b",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Runtime resolver consumer matches the visible part described by this comparison.",
+      "references": [
+        "manifest.json: SettingsNavigator resolver stack and exact pixel bounds on 352206"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames show stock labels and empty password fields. No credentials or account data entered."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames and focused crop inspected. Geometry is unchanged, and the restored frame matches the original."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline identifies the affected region without covering labels or controls."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "The change is confined to the documented header or input region as shown in the full original."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the Password page header behind its title and back button."
+    }
+  }
+}

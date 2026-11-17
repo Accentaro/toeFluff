@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "56a99eacb1d2d01b5e8908cac8d7ceb70a4b2ef5b0e23506905ba85080e3f8a4",
+    "stability.png": "56a99eacb1d2d01b5e8908cac8d7ceb70a4b2ef5b0e23506905ba85080e3f8a4",
+    "after.png": "748fda769cad680111a87af0db1b55667c699a83f15d7597c75461ad21b53e9e",
+    "restored.png": "56a99eacb1d2d01b5e8908cac8d7ceb70a4b2ef5b0e23506905ba85080e3f8a4"
+  },
+  "annotationSha256": "13c7ec980d3cabda58976a38ff05a70d1ce9eb6256540f997bca851deb27662f",
+  "comparisonSha256": "3e661541bef219e18acb4e833c5a162019dee9f2d09f9204f6789645cb9fe0b7",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Matched native source and current resolver stack to the observed effect.",
+      "references": [
+        "research/tabsv2/evidence/modern-352204/modules/m/17745.js: Notifications content background",
+        "manifest.json: Notifications resolver stack on 352206"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full images inspected. Names, servers, channels and previews are fictional. Avatars are generic. Native notification input records were copied and scrubbed before rendering."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Compared full frames and original-scale crops. The viewport and list positions are identical. Baseline and restoration hashes match."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "The outline points to the affected component without covering text or icons."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Header and list backgrounds change, including their translucent edges. Text and avatar colours do not change."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the Inbox background behind its header and notification rows."
+    }
+  }
+}

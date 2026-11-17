@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "56a99eacb1d2d01b5e8908cac8d7ceb70a4b2ef5b0e23506905ba85080e3f8a4",
+    "stability.png": "56a99eacb1d2d01b5e8908cac8d7ceb70a4b2ef5b0e23506905ba85080e3f8a4",
+    "after.png": "384c83b7e116cd3fbff7470f07cdc39b943212d2d3c3c1771aea1a0aeb9589b6",
+    "restored.png": "56a99eacb1d2d01b5e8908cac8d7ceb70a4b2ef5b0e23506905ba85080e3f8a4"
+  },
+  "annotationSha256": "c7d8ef804bb08c090775a010b3014c0a33308b688b8d1a28997fcfa610adb751",
+  "comparisonSha256": "d594e61e8a8ac48c83926e2d48e44b0519b2d303e75f9776827373b39189aa25",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Matched native source and current resolver stack to the observed effect.",
+      "references": [
+        "research/tabsv2/evidence/modern-352204/modules/m/17745.js: HeaderInner divider",
+        "research/tabsv2/evidence/modern-352204/modules/m/17761.js: preview bar",
+        "manifest.json: HeaderInner and ForYouMessagePreviewV2 resolver stacks on 352206"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full images inspected. Names, servers, channels and previews are fictional. Avatars are generic. Native notification input records were copied and scrubbed before rendering."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Compared full frames and original-scale crops. The viewport and list positions are identical. Baseline and restoration hashes match."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "The outline points to the affected component without covering text or icons."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "The header divider and preview bars change. Other text, icons and background remain stable."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the Inbox header divider and the bars beside notification previews."
+    }
+  }
+}

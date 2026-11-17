@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "142d75ee2eadef281ec8a415d44a27c5bf49c7df1f38d53e7fb75486ce385718",
+    "stability.png": "142d75ee2eadef281ec8a415d44a27c5bf49c7df1f38d53e7fb75486ce385718",
+    "after.png": "456c0ca5b73f1a2cc1ad8707ce69029a4ecb736c93bebcc9f75a9140693591e0",
+    "restored.png": "142d75ee2eadef281ec8a415d44a27c5bf49c7df1f38d53e7fb75486ce385718"
+  },
+  "annotationSha256": "23338e02d044bc651da37309b2078121576b8a20957668f8e666417b0aae3ac2",
+  "comparisonSha256": "2f3c860d02cb999b47e98831d1b2569e9fe6c1eb10bc00b564ac5b276ee09925",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Native ChannelDetails resolves this key for the header and surrounding member surface.",
+      "references": [
+        "manifest.json: ChannelDetailsNavigator, ChannelDetails and UsersFastListInner resolver stacks on 352206",
+        "research/tabsv2/evidence/modern-352204/modules/m/17956.js: native ChannelDetails"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full images inspected: invented server, channel, channel topic and member names. All avatars are generic defaults."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Both full frames and annotated comparison were inspected. The list is populated and stable with exact restoration."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline marks the exposed surface beside the channel details without covering any labels."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "The common background and translucent objects composited over it change. Text, icons and layout retain their state."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the channel details background behind its header, tabs and member list."
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "hashes": {
+    "before.png": "5bdc14da9d360600d1d4999cc5993de59f121383c97b322f2749fe17986a1c67",
+    "stability.png": "5bdc14da9d360600d1d4999cc5993de59f121383c97b322f2749fe17986a1c67",
+    "after.png": "3de85903616d136d55e95ed2b5a7155b6a5503775c824efafbe4f7975337e646",
+    "restored.png": "5bdc14da9d360600d1d4999cc5993de59f121383c97b322f2749fe17986a1c67"
+  },
+  "annotationSha256": "850a3e9a5ee2fa1bd216a3cd0959aef5cc468236d5183684767526418296e08d",
+  "comparisonSha256": "87eb3f5eb3bac3261d22869ed5fadb67e4a87aefffaba17d8d5fe60baf227291",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Current native resolver and changed-pixel bounds identify the documented region.",
+      "references": [
+        "manifest.json: current resolver stacks and exact changed-pixel bounds"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames show an invented channel name, topic and category. No real text or media shown. No form changes submitted."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames and comparison inspected. Layout and restored frame match."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline identifies the effect without covering any entered text or labels."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "The affected form controls or background match the documented diff. Other visible colours follow their original values and transparency."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the Channel Name and Channel Topic input borders before focus."
+    }
+  }
+}

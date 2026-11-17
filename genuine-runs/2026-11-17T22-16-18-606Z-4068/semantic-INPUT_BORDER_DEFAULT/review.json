@@ -1,0 +1,45 @@
+{
+  "hashes": {
+    "before.png": "fa39a51315afe7e6d8a06b557dc91f50d5aacef500e08a25ac9db83504ed09cb",
+    "stability.png": "fa39a51315afe7e6d8a06b557dc91f50d5aacef500e08a25ac9db83504ed09cb",
+    "after.png": "5ec55cbf497a1b3edf5a8ef43b12655e7227e18e9361e231558a3c4520fbfd16",
+    "restored.png": "fa39a51315afe7e6d8a06b557dc91f50d5aacef500e08a25ac9db83504ed09cb"
+  },
+  "annotationSha256": "3aaa2146d4d10a60397c7780bab918cbc187780d917defddda2f8386fefdd23a",
+  "comparisonSha256": "8cc7d0c82d05af9914a7b2b4bfcf9d5207fbe347c74f53a9205b2e6d2cf103b9",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Runtime resolver consumer matches the visible part described by this comparison.",
+      "references": [
+        "manifest.json: InputFieldContainer resolver stack and exact pixel bounds on 352206"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames show stock labels and empty password fields. No credentials or account data entered."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames and focused crop inspected. Geometry is unchanged, and the restored frame matches the original."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline identifies the affected region without covering labels or controls."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "The change is confined to the documented header or input region as shown in the full original."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the outline around the current and new password inputs before focus."
+    }
+  }
+}

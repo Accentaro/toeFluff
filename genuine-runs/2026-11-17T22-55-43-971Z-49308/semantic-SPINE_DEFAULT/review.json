@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "03820a436f9f4416352b3b6e803ab5d81ee43428f7506efa4fa2929f168323ef",
+    "stability.png": "03820a436f9f4416352b3b6e803ab5d81ee43428f7506efa4fa2929f168323ef",
+    "after.png": "781fbf0888df3b53b68d5e7a2a5f261ab4b4e8d054d507472f9130459fca9e90",
+    "restored.png": "03820a436f9f4416352b3b6e803ab5d81ee43428f7506efa4fa2929f168323ef"
+  },
+  "annotationSha256": "1a7cb6d03f6dd5180c02e0cbe963b82e5754107f921fbe09cb12c75c3c83cdbc",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Android 352.6 runtime consumer trace resolves SPINE_DEFAULT in MarkupBlockQuote. Native markup source assigns it to borderLeftColor.",
+      "references": [
+        "capture manifest runtimeConsumerStacks, MarkupBlockQuote, Android 352.6",
+        "research/tabsv2/evidence/modern-352204/modules/m/5692.js:642?647, MarkupReactRules.native.tsx"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Inspected full native screens. Only generic fixture captions and fictional palette notes are visible."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Inspected all original frames and the comparison. The quote, bar and surrounding background are legible, stable and fully visible."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "The thin outline surrounds only the complete left bar in the after screenshot."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "The 576 changed pixels exactly fill the 12 ? 48 pixel left bar. No changes appear elsewhere. Baseline and restored images match exactly."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "The comparison describes the quote bar and identifies the native fictional fixture."
+    }
+  },
+  "comparisonSha256": "c1d0cf6df5187632e05105349fd37762abc5cebf240fe3921ed37b4dc30ac233"
+}

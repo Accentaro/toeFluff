@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "ef5f57945c7f4038705eb1ce08290a794d9fcba12895bad8d81c4c05e409e027",
+    "stability.png": "ef5f57945c7f4038705eb1ce08290a794d9fcba12895bad8d81c4c05e409e027",
+    "after.png": "5b54f63f533633b1b317de3820c923c45b188a372328441188784c6955f1c8d4",
+    "restored.png": "ef5f57945c7f4038705eb1ce08290a794d9fcba12895bad8d81c4c05e409e027"
+  },
+  "annotationSha256": "273860f7577ac50c3e3aefe6cf9bfb5c531de5ac6996fa21555d18438eef3366",
+  "comparisonSha256": "12fa8380e4849565fd06e0902e03bc0c6c362361dd65186471bce0e0e453ef41",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Native Username form resolves BACKGROUND_BASE_LOW for backgroundColor. Current runtime stack and visible body change confirm it.",
+      "references": [
+        "manifest.json: current Username renderer",
+        "research/tabsv2/evidence/modern-352204/modules/m/15915.js: UserSettingsChangeUsername background style"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full images show only the fictional username junipervale. Display-only UserStore copy used; no edits submitted."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Both full frames inspected with the keyboard dismissed. Header, form layout, and restored screenshot match."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline is below the help text and on the affected background."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Header colour and layout do not change. The translucent input composites over the changed background."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the background of the Username form in Account Settings."
+    }
+  }
+}

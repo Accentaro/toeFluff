@@ -77,6 +77,40 @@ export const botsChat = {
 	},
 }
 
+export const chatExamples = {
+	id: 'chat-examples', title: 'Threads, markdown & counts', group: 'Conversations',
+	render({ ui }) {
+		const messages = [
+			{ user: 'nova', time: '10:12', text: '**Palette notes** • Try `rosewood` for the accent. The draft is at https://example.test/palettes', quote: 'Keep the highlights readable on a dark background.' },
+			{ user: 'ren', time: '10:15', text: 'Here’s the draft configuration:', language: 'JSON', code: '{\n  "name": "Rosewood",\n  "accent": "#AF5572"\n}' },
+			{ user: 'nova', time: '10:18', threadStarted: true, thread: { name: 'Workshop palettes', count: 14, last: 'Ren: I added a softer accent.', route: 'thread-chat' } },
+			{ user: 'ren', time: '10:20', text: '@Juniper the palette is ready for a second look.', mentionsMe: true },
+		]
+		return exampleConversation('palette-lab', [...messages, ...(ui.sent?.['chat-examples'] || [])], ui, 12)
+	},
+	actions: chatActions('chat-examples'),
+}
+
+export const threadChat = {
+	id: 'thread-chat', title: 'Thread conversation', group: 'Conversations',
+	render({ ui }) {
+		const messages = [
+			{ user: 'nova', time: '10:18', text: 'Let’s compare the warm and cool accents here.' },
+			{ user: 'ren', time: '10:22', text: 'I added a softer accent. It works well next to the slate background.', reply: { user: 'nova', text: 'Let’s compare the warm and cool accents here.' } },
+		]
+		return exampleConversation('Workshop palettes', [...messages, ...(ui.sent?.['thread-chat'] || [])], ui)
+	},
+	actions: chatActions('thread-chat'),
+}
+
+function exampleConversation(name, messages, ui, count) {
+	return `${statusBar('STANDALONE_CHANNEL_CONTENT_BACKGROUND')}
+		${channelHeader({ type: count ? 'text' : 'thread', name, count })}
+		<div class="vp-chat" data-k="bg:CHANNEL_BACKGROUND_DEFAULT" data-n="Chat background" data-scroll="chat">${messages.map((m, i) => message(m, `example.${i}`, { ui })).join('')}</div>
+		${chatInput({ placeholder: `Message ${count ? '#' : ''}${name}`, active: ui.focused, value: ui.draft || '' })}
+		${navBar('MOBILE_KEYBOARD_GAP_BACKGROUND')}`
+}
+
 export const forum = {
 	id: 'forum', title: 'Forum channel', group: 'Conversations', capture: 'forum',
 	render({ params, ui }) {

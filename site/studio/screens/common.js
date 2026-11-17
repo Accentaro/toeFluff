@@ -14,12 +14,16 @@ export function navBar(bgKey) {
 	return `<div class="vp-navbar" data-k="bg:${bgKey}" data-n="Navigation bar area"><i data-fixed="Android gesture handle (system)"></i></div>`
 }
 
+export function notificationCount(count, label, { low = false, ring } = {}) {
+	return `<span class="vp-notification-count" data-k="bg:${low ? 'BACKGROUND_MOD_STRONG' : 'BACKGROUND_FEEDBACK_NOTIFICATION'} fg:WHITE${ring ? ` bd:${ring}` : ''}" data-n="${label}">${count}</span>`
+}
+
 export function rail(selected) {
 	const btn = (id, ic, label) => `<button class="vp-rail-btn${selected === id ? ' on' : ''}" data-go="${id}" data-k="${selected === id ? 'bg:BACKGROUND_BRAND fg:WHITE' : 'bg:MOBILE_GUILDBAR_ICON_BACKGROUND_DEFAULT fg:MOBILE_GUILDBAR_ICON_DEFAULT'}" data-n="${label} button" aria-label="${label}">${icon(ic, 24)}</button>`
 	return `<nav class="vp-rail" data-k="bg:BACKGROUND_BASE_LOWEST" data-n="Server rail" data-scroll="rail">
 		<div class="vp-rail-item">${selected === 'home' ? '<i class="vp-pip tall" data-k="bg:WHITE" data-n="Selected indicator"></i>' : ''}${btn('home', 'chat', 'Messages')}</div>
 		<div class="vp-rail-item">${btn('inbox', 'star', 'Favourites')}</div>
-		${servers.map(s => `<div class="vp-rail-item">${selected === s.id ? '<i class="vp-pip tall" data-k="bg:WHITE" data-n="Selected indicator"></i>' : s.unread ? '<i class="vp-pip" data-k="bg:WHITE" data-n="Unread indicator"></i>' : ''}<button class="vp-rail-server" data-go="${s.id === 'valenced' ? 'server' : 'server'}" data-hold="guildmenu:${s.id}" aria-label="${esc(s.name)}">${serverIcon(s, 48)}</button></div>`).join('')}
+		${servers.map(s => `<div class="vp-rail-item">${selected === s.id ? '<i class="vp-pip tall" data-k="bg:WHITE" data-n="Selected indicator"></i>' : s.unread ? '<i class="vp-pip" data-k="bg:WHITE" data-n="Unread indicator"></i>' : ''}<button class="vp-rail-server" data-go="server" data-hold="guildmenu:${s.id}" aria-label="${esc(s.name)}${s.mentions ? `, ${s.mentions} notifications` : ''}">${serverIcon(s, 48)}${s.mentions ? notificationCount(s.mentions, 'Server notification count', { low: s.low, ring: 'BACKGROUND_BASE_LOWEST' }) : ''}</button></div>`).join('')}
 	</nav>`
 }
 
@@ -45,13 +49,13 @@ export function clanTag(tag) {
 
 /** Channel type glyph. */
 export function channelIcon(type, size = 22) {
-	return icon({ text: 'hash', announcement: 'megaphone', forum: 'forum', rules: 'rules', voice: 'speaker', locked: 'hashLock', nsfw: 'hashWarn' }[type] || 'hash', size)
+	return icon({ text: 'hash', thread: 'thread', announcement: 'megaphone', forum: 'forum', rules: 'rules', voice: 'speaker', locked: 'hashLock', nsfw: 'hashWarn' }[type] || 'hash', size)
 }
 
 /** Header of a channel or DM: back arrow, name, search. */
-export function channelHeader({ type = 'text', name, dm, sub }) {
+export function channelHeader({ type = 'text', name, dm, sub, count }) {
 	return `<header class="vp-chan-header" data-k="bg:STANDALONE_CHANNEL_CONTENT_BACKGROUND bb:STANDALONE_CHANNEL_HEADER_BORDER" data-n="Channel header">
-		<button class="vp-icon-btn" data-back data-k="fg:ICON_SUBTLE" data-n="Back arrow" aria-label="Back">${icon('back', 24)}</button>
+		<button class="vp-icon-btn vp-channel-back" data-back data-k="fg:ICON_SUBTLE" data-n="Back arrow" aria-label="${count ? `Back, ${count} notifications` : 'Back'}">${icon('back', 24)}${count ? notificationCount(count, 'Back button notification count') : ''}</button>
 		<span class="vp-chan-title" data-go="channelinfo" data-n="Channel name (opens the channel page)">${dm ? avatar(dm, 24, { status: false }) : `<span class="vp-chan-type" data-k="fg:ICON_STRONG" data-n="Channel type icon">${channelIcon(type, 20)}</span>`}<b data-k="fg:MOBILE_TEXT_HEADING_PRIMARY">${esc(name)}</b><span data-k="fg:TEXT_SUBTLE">${icon('chevronRight', 16)}</span></span>
 		${sub ? `<span class="vp-chan-sub" data-k="fg:TEXT_MUTED">${esc(sub)}</span>` : dm ? '' : `<span class="vp-chan-sub" data-k="fg:TEXT_MUTED"><i class="vp-online-dot" data-k="bg:TEXT_STATUS_ONLINE" data-n="Online dot"></i>2 Online</span>`}
 		${dm
@@ -68,6 +72,18 @@ export function md(text) {
 		.replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
 		.replace(/(^|\s)@(\w+)/g, '$1<span class="vp-mention" data-k="bg:MENTION_BACKGROUND fg:MENTION_FOREGROUND" data-n="Mention">@$2</span>')
 		.replace(/(https?:\/\/\S+)/g, '<span class="vp-link" data-k="fg:TEXT_LINK" data-n="Link">$1</span>')
+}
+
+function codeBlock(code, language) {
+	const keys = 'bg:BACKGROUND_CODE bd:BORDER_NORMAL fg:TEXT_CODE'
+	if (!language) return `<pre class="vp-codeblock" data-k="${keys}" data-n="Code block">${esc(code)}</pre>`
+	return `<div class="vp-codeblock vp-code-listing" data-k="${keys}" data-n="Fenced code block"><div class="vp-code-language" data-k="fg:TEXT_MUTED" data-n="Code language">${esc(language)}</div><ol>${code.split('\n').map(line => `<li><code>${esc(line)}</code></li>`).join('')}</ol></div>`
+}
+
+function threadCard(thread) {
+	const body = `<span class="vp-thread-top"><b data-k="fg:TEXT_STRONG">${esc(thread.name)}</b><span data-k="fg:TEXT_BRAND" data-n="Thread reply count">${thread.count} ${icon('chevronRight', 12)}</span></span><span data-k="fg:TEXT_MUTED">${esc(thread.last)}</span>`
+	const props = 'class="vp-thread" data-k="bg:MOBILE_THREAD_EMBED_BACKGROUND bd:BORDER_SUBTLE" data-n="Thread preview"'
+	return thread.route ? `<button ${props} data-go="${thread.route}">${body}</button>` : `<div ${props}>${body}</div>`
 }
 
 export function reactions(list, msgIndex, toggled = {}) {
@@ -88,6 +104,11 @@ export function nameOf(id) {
 export function message(m, index, { grouped = false, ui = {}, dm = false } = {}) {
 	const where = dm ? '' : ':server'
 	const u = users[m.user] || users.me
+	if (m.threadStarted) return `<div class="vp-msg vp-thread-started" data-n="Thread started message">
+		<span class="vp-thread-start-icon" data-k="fg:ICON_MUTED" data-n="Thread started icon">${icon('thread', 20)}</span>
+		<i class="vp-thread-spine" data-k="bd:SPINE_DEFAULT" data-n="Chat thread connector (preview)"></i>
+		<div>${nameOf(u.id)} <span data-k="fg:TEXT_DEFAULT">started a thread:</span><b class="vp-thread-name" data-k="fg:TEXT_STRONG">${esc(m.thread.name)}</b><small data-k="fg:TEXT_MUTED">${esc(m.time)}</small>${threadCard(m.thread)}</div>
+	</div>`
 	const head = grouped ? '' : `<div class="vp-msg-head">${nameOf(u.id)}${u.bot ? '<span class="vp-app" data-k="bg:BACKGROUND_BRAND fg:WHITE" data-n="App badge">' + icon('check', 10) + 'APP</span>' : clanTag(u.tag)}<span class="vp-time" data-k="fg:TEXT_MUTED">${esc(m.time)}</span></div>`
 	const reply = m.reply ? `<div class="vp-reply"><i class="vp-reply-spine" data-k="bd:SPINE_DEFAULT" data-n="Reply line"></i>${avatar(m.reply.user, 16, { status: false })}${nameOf(m.reply.user)}${clanTag(users[m.reply.user]?.tag)}<span class="vp-reply-text" data-k="fg:TEXT_DEFAULT">${esc(m.reply.text)}</span></div>` : ''
 	// "X joined the server" and other system lines have no avatar or name row
@@ -106,11 +127,12 @@ export function message(m, index, { grouped = false, ui = {}, dm = false } = {})
 			<div class="vp-msg-body">
 				${head}
 				${m.text ? `<div class="vp-msg-text" data-k="fg:TEXT_STRONG">${md(m.text)}${m.edited ? ' <small data-k="fg:TEXT_MUTED">(edited)</small>' : ''}</div>` : ''}
-				${m.code ? `<pre class="vp-codeblock" data-k="bg:BACKGROUND_CODE bd:BORDER_NORMAL fg:TEXT_CODE" data-n="Code block">${esc(m.code)}</pre>` : ''}
+				${m.quote ? `<blockquote class="vp-markdown-quote" data-k="bl:SPINE_DEFAULT fg:TEXT_DEFAULT" data-n="Markdown quote">${md(m.quote)}</blockquote>` : ''}
+				${m.code ? codeBlock(m.code, m.language) : ''}
 				${m.spoiler ? `<div class="vp-msg-text" data-k="fg:TEXT_STRONG">${esc(m.spoiler[0])} <button class="vp-spoiler${ui.spoiler ? ' open' : ''}" data-act="spoiler" data-k="${ui.spoiler ? 'bg:SPOILER_REVEALED_BACKGROUND' : 'bg:SPOILER_HIDDEN_BACKGROUND'}" data-n="${ui.spoiler ? 'Revealed spoiler' : 'Hidden spoiler'}">${esc(m.spoiler[1])}</button></div>` : ''}
 				${m.embed ? embed(m.embed) : ''}
 				${reactions(m.reactions, index, ui.reacted)}
-				${m.thread ? `<div class="vp-thread" data-k="bg:MOBILE_THREAD_EMBED_BACKGROUND bd:BORDER_SUBTLE" data-n="Thread preview"><div class="vp-thread-top"><b data-k="fg:TEXT_STRONG">${esc(m.thread.name)}</b><span data-k="fg:TEXT_BRAND">${m.thread.count} ${icon('chevronRight', 12)}</span></div><i data-k="fg:TEXT_MUTED">${esc(m.thread.last)}</i></div>` : ''}
+				${m.thread ? threadCard(m.thread) : ''}
 			</div>
 		</div>
 	</div>`

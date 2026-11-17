@@ -21,11 +21,11 @@
     },
     "BACKGROUND_BASE_LOWER": {
       "area": "Backgrounds",
-      "text": "Colours the lower backdrop and fade behind the profile bar."
+      "text": "Colours the fades behind the server profile bar and floating chat composer, and the Dark swatch in App Theme."
     },
     "BACKGROUND_BASE_LOW": {
       "area": "Backgrounds",
-      "text": "Colours the Family Centre introduction card behind its artwork and content."
+      "text": "Colours the Inbox header and list, the Username and Password form backgrounds, and the Family Centre introduction card."
     },
     "PANEL_BG": {
       "area": "Backgrounds",
@@ -41,11 +41,11 @@
     },
     "MOBILE_ACTIONSHEET_BACKGROUND": {
       "area": "Backgrounds",
-      "text": "Colours the underlying Settings surface; this capture changes most of the viewport."
+      "text": "Colours the Settings hub, Password page header, channel details and Channel Settings, and the server menu sheet."
     },
     "BACKGROUND_SURFACE_HIGH": {
       "area": "Backgrounds",
-      "text": "Colours the raised card surface."
+      "text": "Fills raised cards and the ring around the unread Pinned Messages dot in Channel Settings."
     },
     "BACKGROUND_SURFACE_HIGHEST": {
       "area": "Backgrounds",
@@ -57,7 +57,7 @@
     },
     "BACKGROUND_SCRIM": {
       "area": "Backgrounds",
-      "text": "Colours the backdrop behind an open bottom sheet."
+      "text": "Dims the area behind bottom sheets, including the server menu and the Typing Indicator Text picker."
     },
     "BACKGROUND_MOD_SUBTLE": {
       "area": "Backgrounds",
@@ -69,7 +69,7 @@
     },
     "BACKGROUND_MOD_STRONG": {
       "area": "Backgrounds",
-      "text": "Colours the server-rail activity indicator background."
+      "text": "Fills lower-priority mention count pills and the server-rail activity indicator."
     },
     "BACKGROUND_CODE": {
       "area": "Chat",
@@ -89,15 +89,15 @@
     },
     "TEXT_MUTED": {
       "area": "Text",
-      "text": "Colours muted trailing details, including the version and enabled-plugin count. Colours the empty message composer placeholder. Colours the timestamp beside a message author."
+      "text": "Colours trailing Settings details, the chat composer placeholder, and message timestamps."
     },
     "TEXT_SUBTLE": {
       "area": "Text",
-      "text": "Colours Settings section headings, including Valenced and Account Settings. Colours the online-count text beneath the channel name."
+      "text": "Colours Settings section headings, the chat online count, the server title chevron and switch help text, and Channel Name and Topic labels."
     },
     "MOBILE_TEXT_HEADING_PRIMARY": {
       "area": "Text",
-      "text": "Colours the Settings page title. Colours the channel name in the chat header."
+      "text": "Colours the Settings title and the channel name in the chat header."
     },
     "TEXT_BRAND": {
       "area": "Text",
@@ -113,7 +113,7 @@
     },
     "INTERACTIVE_TEXT_DEFAULT": {
       "area": "Text",
-      "text": "Colours the close control and row chevrons on this Settings screen. Colours the chevron beside the channel name."
+      "text": "Colours the Settings close control and row chevrons, and the chevron beside the chat channel name."
     },
     "INTERACTIVE_TEXT_ACTIVE": {
       "area": "Chat",
@@ -157,7 +157,7 @@
     },
     "WHITE": {
       "area": "Icons",
-      "text": "Colours selected server initials and mention-count text."
+      "text": "Colours selected server initials and the digits on mention counts and the Back badge."
     },
     "TABLEROW_ICON_COLOR_DEFAULT": {
       "area": "Icons",
@@ -177,7 +177,7 @@
     },
     "BORDER_SUBTLE": {
       "area": "Borders and dividers",
-      "text": "Colours the thin separators between Settings rows."
+      "text": "Colours Settings row separators, the Inbox header divider, and the bars beside notification previews."
     },
     "BORDER_MUTED": {
       "area": "Borders and dividers",
@@ -305,7 +305,7 @@
     },
     "SPINE_DEFAULT": {
       "area": "Server rail and channel list",
-      "text": "Colours the connector lines between nested channels."
+      "text": "Colours channel-list thread connectors and the vertical bar beside markdown quotes."
     },
     "MOBILE_TOAST_BACKGROUND_DEFAULT": {
       "area": "Server rail and channel list",
@@ -341,11 +341,11 @@
     },
     "INPUT_BACKGROUND_DEFAULT": {
       "area": "Rows, cards and inputs",
-      "text": "Colours the Settings search-field fill."
+      "text": "Fills the Settings search field, password inputs, and Channel Name and Topic fields."
     },
     "INPUT_BORDER_DEFAULT": {
       "area": "Rows, cards and inputs",
-      "text": "Colours the outline around the Settings search field."
+      "text": "Outlines the Settings search field, password inputs, and Channel Name and Topic fields."
     },
     "INPUT_BORDER_ACTIVE": {
       "area": "Rows, cards and inputs",
@@ -393,7 +393,7 @@
     },
     "BACKGROUND_FEEDBACK_NOTIFICATION": {
       "area": "Status and badges",
-      "text": "Colours the notification-count badge beside Back."
+      "text": "Fills direct-mention count pills and the notification badge beside Back."
     },
     "SPOILER_HIDDEN_BACKGROUND": {
       "area": "Status and badges",
@@ -665,7 +665,7 @@
     },
     "REDESIGN_INPUT_CONTROL_SELECTED": {
       "area": "Switches and radios",
-      "text": "Colours the selected radio control fill. Colours the filled portion of the slider track."
+      "text": "Fills selected radio controls and the active portion of slider tracks."
     },
     "TOGGLEBUTTON_ICON_DEFAULT": {
       "area": "Buttons",
@@ -857,7 +857,7 @@
     },
     "MESSAGE_MENTIONED_BACKGROUND_DEFAULT": {
       "area": "Backgrounds",
-      "text": "Colours the background behind a message that mentions you. Colours a reply background when its ping mentions you."
+      "text": "Colours the background of messages that mention you, including replies with a ping."
     },
     "MESSAGE_HIGHLIGHT_BACKGROUND_DEFAULT": {
       "area": "Backgrounds",
@@ -1073,7 +1073,7 @@
       "text": "Supplies the translucent overlay on a pressed premium button."
     },
     "OPACITY_BLURPLE_16": {
-      "text": "Supplies the selected toggle background with retained opacity. Tints the selected reply target while preserving its opacity."
+      "text": "Tints selected toggles and the message you’re replying to at low opacity."
     },
     "OPACITY_BLURPLE_84": {
       "text": "Supplies the border of an unselected toggle while held."
@@ -1121,7 +1121,7 @@
       "skip": "Only specks over scrambled text in captures; not a reliable target."
     },
     "OPACITY_YELLOW_8": {
-      "text": "Tints mentioned-message backgrounds while preserving their low opacity. Tints replies that ping you, preserving the low opacity."
+      "text": "Tints messages that mention you, including replies with a ping, at low opacity."
     }
   }
 }

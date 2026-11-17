@@ -1,5 +1,179 @@
 {
   "semantic": {
+    "INPUT_BACKGROUND_DEFAULT": [
+      {
+        "image": "../images/verified/semantic-INPUT_BACKGROUND_DEFAULT-channel-settings-overview.png",
+        "screen": "channel-settings-overview",
+        "width": 2122,
+        "height": 917,
+        "description": "Fills the Channel Name and Channel Topic inputs before focus.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T22-29-12-193Z-49112/semantic-INPUT_BACKGROUND_DEFAULT/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T22-29-12-193Z-49112/semantic-INPUT_BACKGROUND_DEFAULT/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T22-29-12-193Z-49112/semantic-INPUT_BACKGROUND_DEFAULT/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T22-29-12-193Z-49112/semantic-INPUT_BACKGROUND_DEFAULT/restored.png",
+        "comparisonSha256": "40af00e3efca25e273aadb3ba48f2d146e237dcdd359962bd44609f9ea0baaf6"
+      },
+      {
+        "image": "../images/verified/semantic-INPUT_BACKGROUND_DEFAULT-settings-password.png",
+        "screen": "settings-password",
+        "width": 2152,
+        "height": 684,
+        "description": "Fills the current and new password inputs before focus.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T22-16-18-606Z-4068/semantic-INPUT_BACKGROUND_DEFAULT/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T22-16-18-606Z-4068/semantic-INPUT_BACKGROUND_DEFAULT/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T22-16-18-606Z-4068/semantic-INPUT_BACKGROUND_DEFAULT/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T22-16-18-606Z-4068/semantic-INPUT_BACKGROUND_DEFAULT/restored.png",
+        "comparisonSha256": "7435b7755fde2e285dc1cd763124d2e9992ee6f26f15c95385b663199d7fda53"
+      }
+    ],
+    "BACKGROUND_BASE_LOWER": [
+      {
+        "image": "../images/verified/semantic-BACKGROUND_BASE_LOWER-settings-app-theme.png",
+        "screen": "settings-app-theme",
+        "width": 1452,
+        "height": 533,
+        "description": "Colours the fill of the selected Dark swatch in App Theme.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T21-46-22-084Z-41104/semantic-BACKGROUND_BASE_LOWER/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T21-46-22-084Z-41104/semantic-BACKGROUND_BASE_LOWER/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T21-46-22-084Z-41104/semantic-BACKGROUND_BASE_LOWER/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T21-46-22-084Z-41104/semantic-BACKGROUND_BASE_LOWER/restored.png",
+        "comparisonSha256": "479ef4f0c015361e8e82add8c1f188bc93147715b34b90bbd2b275142e012871"
+      },
+      {
+        "image": "../images/verified/semantic-BACKGROUND_BASE_LOWER-chat-base-surfaces.png",
+        "screen": "chat-base-surfaces",
+        "width": 2232,
+        "height": 433,
+        "description": "Colours the gradient behind the floating chat composer.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T21-32-23-914Z-28676/semantic-BACKGROUND_BASE_LOWER/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T21-32-23-914Z-28676/semantic-BACKGROUND_BASE_LOWER/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T21-32-23-914Z-28676/semantic-BACKGROUND_BASE_LOWER/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T21-32-23-914Z-28676/semantic-BACKGROUND_BASE_LOWER/restored.png",
+        "comparisonSha256": "80709c999a9a9f9cc3f5b11b310e5df958e377a125a041fded95c8762feba32c"
+      }
+    ],
+    "BACKGROUND_MOD_STRONG": [
+      {
+        "image": "../images/verified/semantic-BACKGROUND_MOD_STRONG-native-mention-counts.png",
+        "screen": "native-mention-counts",
+        "width": 1472,
+        "height": 529,
+        "description": "Fills lower-priority mention count pills.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T23-00-33-971Z-36852/semantic-BACKGROUND_MOD_STRONG/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T23-00-33-971Z-36852/semantic-BACKGROUND_MOD_STRONG/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T23-00-33-971Z-36852/semantic-BACKGROUND_MOD_STRONG/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T23-00-33-971Z-36852/semantic-BACKGROUND_MOD_STRONG/restored.png",
+        "comparisonSha256": "a9a6349b3e170cc09ee04d7e2342e06dd171a67fb47c8dc45c8212a0eed01d76"
+      }
+    ],
+    "BACKGROUND_SCRIM": [
+      {
+        "image": "../images/verified/semantic-BACKGROUND_SCRIM-server-header-sheet.png",
+        "screen": "server-header-sheet",
+        "width": 2232,
+        "height": 840,
+        "description": "Colours the dimming layer behind the server menu sheet.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T21-52-28-508Z-14240/semantic-BACKGROUND_SCRIM/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T21-52-28-508Z-14240/semantic-BACKGROUND_SCRIM/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T21-52-28-508Z-14240/semantic-BACKGROUND_SCRIM/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T21-52-28-508Z-14240/semantic-BACKGROUND_SCRIM/restored.png",
+        "comparisonSha256": "f9c32f1fa5aa1958d769a812a0dba53d76319a05899f5019bafbaab4068fcfb5"
+      }
+    ],
+    "BACKGROUND_SURFACE_HIGH": [
+      {
+        "image": "../images/verified/semantic-BACKGROUND_SURFACE_HIGH-channel-settings-unread-pin.png",
+        "screen": "channel-settings-unread-pin",
+        "width": 2108,
+        "height": 341,
+        "description": "Colours the surround of the unread dot beside Pinned Messages in Channel Settings.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T22-32-22-613Z-19088/semantic-BACKGROUND_SURFACE_HIGH/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T22-32-22-613Z-19088/semantic-BACKGROUND_SURFACE_HIGH/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T22-32-22-613Z-19088/semantic-BACKGROUND_SURFACE_HIGH/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T22-32-22-613Z-19088/semantic-BACKGROUND_SURFACE_HIGH/restored.png",
+        "comparisonSha256": "903ede01b2f7115b73ee9f1101da8b7208789e38c8c6d07d1d836001fa5c8177"
+      }
+    ],
+    "BORDER_SUBTLE": [
+      {
+        "image": "../images/verified/semantic-BORDER_SUBTLE-inbox.png",
+        "screen": "inbox",
+        "width": 2232,
+        "height": 765,
+        "description": "Colours the Inbox header divider and the bars beside notification previews.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T21-21-54-228Z-39444/semantic-BORDER_SUBTLE/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T21-21-54-228Z-39444/semantic-BORDER_SUBTLE/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T21-21-54-228Z-39444/semantic-BORDER_SUBTLE/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T21-21-54-228Z-39444/semantic-BORDER_SUBTLE/restored.png",
+        "comparisonSha256": "d594e61e8a8ac48c83926e2d48e44b0519b2d303e75f9776827373b39189aa25"
+      }
+    ],
+    "INPUT_BORDER_DEFAULT": [
+      {
+        "image": "../images/verified/semantic-INPUT_BORDER_DEFAULT-channel-settings-overview.png",
+        "screen": "channel-settings-overview",
+        "width": 2122,
+        "height": 917,
+        "description": "Colours the Channel Name and Channel Topic input borders before focus.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T22-29-12-193Z-49112/semantic-INPUT_BORDER_DEFAULT/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T22-29-12-193Z-49112/semantic-INPUT_BORDER_DEFAULT/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T22-29-12-193Z-49112/semantic-INPUT_BORDER_DEFAULT/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T22-29-12-193Z-49112/semantic-INPUT_BORDER_DEFAULT/restored.png",
+        "comparisonSha256": "87eb3f5eb3bac3261d22869ed5fadb67e4a87aefffaba17d8d5fe60baf227291"
+      },
+      {
+        "image": "../images/verified/semantic-INPUT_BORDER_DEFAULT-settings-password.png",
+        "screen": "settings-password",
+        "width": 2152,
+        "height": 684,
+        "description": "Colours the outline around the current and new password inputs before focus.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T22-16-18-606Z-4068/semantic-INPUT_BORDER_DEFAULT/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T22-16-18-606Z-4068/semantic-INPUT_BORDER_DEFAULT/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T22-16-18-606Z-4068/semantic-INPUT_BORDER_DEFAULT/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T22-16-18-606Z-4068/semantic-INPUT_BORDER_DEFAULT/restored.png",
+        "comparisonSha256": "8cc7d0c82d05af9914a7b2b4bfcf9d5207fbe347c74f53a9205b2e6d2cf103b9"
+      }
+    ],
     "INTERACTIVE_TEXT_DEFAULT": [
       {
         "image": "../images/verified/semantic-INTERACTIVE_TEXT_DEFAULT-chat-text.png",
@@ -72,6 +246,38 @@
     ],
     "TEXT_SUBTLE": [
       {
+        "image": "../images/verified/semantic-TEXT_SUBTLE-channel-settings-overview.png",
+        "screen": "channel-settings-overview",
+        "width": 2122,
+        "height": 917,
+        "description": "Colours the Channel Name and Channel Topic field labels.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T22-29-12-193Z-49112/semantic-TEXT_SUBTLE/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T22-29-12-193Z-49112/semantic-TEXT_SUBTLE/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T22-29-12-193Z-49112/semantic-TEXT_SUBTLE/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T22-29-12-193Z-49112/semantic-TEXT_SUBTLE/restored.png",
+        "comparisonSha256": "24893a746fd244ff9ebb1897f58611b3d1492d0770c75b31f6aa599d456000db"
+      },
+      {
+        "image": "../images/verified/semantic-TEXT_SUBTLE-server-header-colours.png",
+        "screen": "server-header-colours",
+        "width": 2078,
+        "height": 383,
+        "description": "Colours the helper text beneath server menu switches.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T22-25-02-690Z-46316/semantic-TEXT_SUBTLE/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T22-25-02-690Z-46316/semantic-TEXT_SUBTLE/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T22-25-02-690Z-46316/semantic-TEXT_SUBTLE/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T22-25-02-690Z-46316/semantic-TEXT_SUBTLE/restored.png",
+        "comparisonSha256": "bd214d0831d86155021bc85667699a736a3d45ace6518ca356ee093499a9fee1"
+      },
+      {
         "image": "../images/verified/semantic-TEXT_SUBTLE-chat-text.png",
         "screen": "chat-text",
         "width": 1032,
@@ -86,6 +292,108 @@
         "originalAfter": "../genuine-runs/2026-11-17T20-23-18-495Z-37228/semantic-TEXT_SUBTLE/after.png",
         "originalRestored": "../genuine-runs/2026-11-17T20-23-18-495Z-37228/semantic-TEXT_SUBTLE/restored.png",
         "comparisonSha256": "e9138a5f2e0fd1446d07370bdab734bef1faa2fc7ab67b003f9e81d0635e7879"
+      }
+    ],
+    "WHITE": [
+      {
+        "image": "../images/verified/semantic-WHITE-native-mention-counts.png",
+        "screen": "native-mention-counts",
+        "width": 1472,
+        "height": 349,
+        "description": "Colours the digits on direct and lower-priority mention count pills.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T23-00-33-971Z-36852/semantic-WHITE/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T23-00-33-971Z-36852/semantic-WHITE/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T23-00-33-971Z-36852/semantic-WHITE/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T23-00-33-971Z-36852/semantic-WHITE/restored.png",
+        "comparisonSha256": "a28eb1e081ecea96908b0d0aa88c166376ad6a6a4102bb038600e3d77a3b6773"
+      }
+    ],
+    "MOBILE_ACTIONSHEET_BACKGROUND": [
+      {
+        "image": "../images/verified/semantic-MOBILE_ACTIONSHEET_BACKGROUND-channel-settings-overview.png",
+        "screen": "channel-settings-overview",
+        "width": 2232,
+        "height": 1095,
+        "description": "Colours the background of the Channel Settings page.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T22-29-12-193Z-49112/semantic-MOBILE_ACTIONSHEET_BACKGROUND/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T22-29-12-193Z-49112/semantic-MOBILE_ACTIONSHEET_BACKGROUND/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T22-29-12-193Z-49112/semantic-MOBILE_ACTIONSHEET_BACKGROUND/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T22-29-12-193Z-49112/semantic-MOBILE_ACTIONSHEET_BACKGROUND/restored.png",
+        "comparisonSha256": "b4a8d74b88b14a5295612ff3cc4cdaf73e4dd85e5421d0f32dd9744ceac23357"
+      },
+      {
+        "image": "../images/verified/semantic-MOBILE_ACTIONSHEET_BACKGROUND-server-header-colours.png",
+        "screen": "server-header-colours",
+        "width": 2232,
+        "height": 1110,
+        "description": "Colours the server menu sheet behind its details and action buttons.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T22-25-02-690Z-46316/semantic-MOBILE_ACTIONSHEET_BACKGROUND/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T22-25-02-690Z-46316/semantic-MOBILE_ACTIONSHEET_BACKGROUND/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T22-25-02-690Z-46316/semantic-MOBILE_ACTIONSHEET_BACKGROUND/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T22-25-02-690Z-46316/semantic-MOBILE_ACTIONSHEET_BACKGROUND/restored.png",
+        "comparisonSha256": "f2909267790bfe6ed1a99cc6e27ce1529a007b862c9750ce9411c1531e958297"
+      },
+      {
+        "image": "../images/verified/semantic-MOBILE_ACTIONSHEET_BACKGROUND-channel-members-loaded.png",
+        "screen": "channel-members-loaded",
+        "width": 2232,
+        "height": 1320,
+        "description": "Colours the channel details background behind its header, tabs and member list.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T22-20-49-225Z-47516/semantic-MOBILE_ACTIONSHEET_BACKGROUND/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T22-20-49-225Z-47516/semantic-MOBILE_ACTIONSHEET_BACKGROUND/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T22-20-49-225Z-47516/semantic-MOBILE_ACTIONSHEET_BACKGROUND/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T22-20-49-225Z-47516/semantic-MOBILE_ACTIONSHEET_BACKGROUND/restored.png",
+        "comparisonSha256": "2f3c860d02cb999b47e98831d1b2569e9fe6c1eb10bc00b564ac5b276ee09925"
+      },
+      {
+        "image": "../images/verified/semantic-MOBILE_ACTIONSHEET_BACKGROUND-settings-password.png",
+        "screen": "settings-password",
+        "width": 2232,
+        "height": 556,
+        "description": "Colours the Password page header behind its title and back button.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T22-16-18-606Z-4068/semantic-MOBILE_ACTIONSHEET_BACKGROUND/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T22-16-18-606Z-4068/semantic-MOBILE_ACTIONSHEET_BACKGROUND/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T22-16-18-606Z-4068/semantic-MOBILE_ACTIONSHEET_BACKGROUND/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T22-16-18-606Z-4068/semantic-MOBILE_ACTIONSHEET_BACKGROUND/restored.png",
+        "comparisonSha256": "1d0a20fd26940b2bc1a7b99c22f4e3f3a367dfc87d4438a9b6b6db598ca24f4b"
+      }
+    ],
+    "BACKGROUND_FEEDBACK_NOTIFICATION": [
+      {
+        "image": "../images/verified/semantic-BACKGROUND_FEEDBACK_NOTIFICATION-native-mention-counts.png",
+        "screen": "native-mention-counts",
+        "width": 1472,
+        "height": 529,
+        "description": "Fills direct-mention count pills.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T23-00-33-971Z-36852/semantic-BACKGROUND_FEEDBACK_NOTIFICATION/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T23-00-33-971Z-36852/semantic-BACKGROUND_FEEDBACK_NOTIFICATION/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T23-00-33-971Z-36852/semantic-BACKGROUND_FEEDBACK_NOTIFICATION/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T23-00-33-971Z-36852/semantic-BACKGROUND_FEEDBACK_NOTIFICATION/restored.png",
+        "comparisonSha256": "949b42e49da607e7b61dd2946f76f7bb64ddf0689149a4ccecb67d810375698b"
       }
     ],
     "REDESIGN_INPUT_CONTROL_SELECTED": [
@@ -104,6 +412,74 @@
         "originalAfter": "../genuine-runs/2026-11-16T19-34-18-859Z-45220/semantic-REDESIGN_INPUT_CONTROL_SELECTED/after.png",
         "originalRestored": "../genuine-runs/2026-11-16T19-34-18-859Z-45220/semantic-REDESIGN_INPUT_CONTROL_SELECTED/restored.png",
         "comparisonSha256": "f994171d4515ffd88c9129c19503497dfb2a184bd58111f142060c883244da05"
+      }
+    ],
+    "SPINE_DEFAULT": [
+      {
+        "image": "../images/verified/semantic-SPINE_DEFAULT-native-markdown-quote.png",
+        "screen": "native-markdown-quote",
+        "width": 1932,
+        "height": 290,
+        "description": "Colours the vertical bar beside a markdown quote.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T22-55-43-971Z-49308/semantic-SPINE_DEFAULT/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T22-55-43-971Z-49308/semantic-SPINE_DEFAULT/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T22-55-43-971Z-49308/semantic-SPINE_DEFAULT/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T22-55-43-971Z-49308/semantic-SPINE_DEFAULT/restored.png",
+        "comparisonSha256": "c1d0cf6df5187632e05105349fd37762abc5cebf240fe3921ed37b4dc30ac233"
+      }
+    ],
+    "BACKGROUND_BASE_LOW": [
+      {
+        "image": "../images/verified/semantic-BACKGROUND_BASE_LOW-settings-password.png",
+        "screen": "settings-password",
+        "width": 2232,
+        "height": 1254,
+        "description": "Colours the body behind the Password form.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T22-16-18-606Z-4068/semantic-BACKGROUND_BASE_LOW/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T22-16-18-606Z-4068/semantic-BACKGROUND_BASE_LOW/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T22-16-18-606Z-4068/semantic-BACKGROUND_BASE_LOW/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T22-16-18-606Z-4068/semantic-BACKGROUND_BASE_LOW/restored.png",
+        "comparisonSha256": "e3cc02296595caae95ab864dc6546719f96ee4ec1f19bec4af299de846a0b8d2"
+      },
+      {
+        "image": "../images/verified/semantic-BACKGROUND_BASE_LOW-settings-username.png",
+        "screen": "settings-username",
+        "width": 2232,
+        "height": 740,
+        "description": "Colours the background of the Username form in Account Settings.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T21-39-55-501Z-49928/semantic-BACKGROUND_BASE_LOW/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T21-39-55-501Z-49928/semantic-BACKGROUND_BASE_LOW/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T21-39-55-501Z-49928/semantic-BACKGROUND_BASE_LOW/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T21-39-55-501Z-49928/semantic-BACKGROUND_BASE_LOW/restored.png",
+        "comparisonSha256": "12fa8380e4849565fd06e0902e03bc0c6c362361dd65186471bce0e0e453ef41"
+      },
+      {
+        "image": "../images/verified/semantic-BACKGROUND_BASE_LOW-inbox.png",
+        "screen": "inbox",
+        "width": 2232,
+        "height": 765,
+        "description": "Colours the Inbox background behind its header and notification rows.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-17",
+        "format": "before-after",
+        "evidence": "../genuine-runs/2026-11-17T21-21-54-228Z-39444/semantic-BACKGROUND_BASE_LOW/review.json",
+        "originalBefore": "../genuine-runs/2026-11-17T21-21-54-228Z-39444/semantic-BACKGROUND_BASE_LOW/before.png",
+        "originalAfter": "../genuine-runs/2026-11-17T21-21-54-228Z-39444/semantic-BACKGROUND_BASE_LOW/after.png",
+        "originalRestored": "../genuine-runs/2026-11-17T21-21-54-228Z-39444/semantic-BACKGROUND_BASE_LOW/restored.png",
+        "comparisonSha256": "3e661541bef219e18acb4e833c5a162019dee9f2d09f9204f6789645cb9fe0b7"
       }
     ],
     "MESSAGE_MENTIONED_BACKGROUND_DEFAULT": [

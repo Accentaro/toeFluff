@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "a93e5e5a690c454258154c84d164ba7957d382ac57a8c60b8e046ccca3337ff7",
+    "stability.png": "a93e5e5a690c454258154c84d164ba7957d382ac57a8c60b8e046ccca3337ff7",
+    "after.png": "96c732cebecb9e15c506143d4f2540393e60e30f365f91e532a12feb9e96fcd0",
+    "restored.png": "a93e5e5a690c454258154c84d164ba7957d382ac57a8c60b8e046ccca3337ff7"
+  },
+  "annotationSha256": "50b41a0bb57213244bf301b390d8044939e11bac27e98b3d259c7f3d824904d2",
+  "comparisonSha256": "479ef4f0c015361e8e82add8c1f188bc93147715b34b90bbd2b275142e012871",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Selected theme item reads BACKGROUND_BASE_LOWER through the selected base. Current resolver trace and pixel bounds confirm the Dark swatch effect.",
+      "references": [
+        "manifest.json: current resolver trace and swatch pixel bounds",
+        "research/tabsv2/evidence/modern-352204/modules/m/16526.js: native App Theme selector item"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full images show the built-in App Theme demo, with canned names and messages; no account content."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full before and after frames and the focused comparison were inspected. Only the selected swatch fill changes; restoration is exact."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline sits inside the swatch fill. All four base swatches are visible at original scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Selection outline, the other swatches and the preview stay unchanged. Changed pixels are confined to the selected swatch."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the fill of the selected Dark swatch in App Theme."
+    }
+  }
+}

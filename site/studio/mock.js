@@ -18,8 +18,8 @@ export const users = {
 
 export const servers = [
 	{ id: 'valenced', name: 'Valenced', logo: 'valenced', unread: true },
-	{ id: 'lumen', name: 'Lumen Lab', glyph: 'L', hue: 20, unread: true },
-	{ id: 'garden', name: 'Pixel Garden', glyph: 'PG', hue: 140, unread: true },
+	{ id: 'lumen', name: 'Lumen Lab', glyph: 'L', hue: 20, unread: true, mentions: 1 },
+	{ id: 'garden', name: 'Pixel Garden', glyph: 'PG', hue: 140, unread: true, mentions: 24, low: true },
 	{ id: 'owls', name: 'Night Owls', glyph: 'NO', hue: 250, unread: true },
 	{ id: 'synth', name: 'Synth Club', glyph: 'S', hue: 320 },
 	{ id: 'cove', name: 'Cove Themes', glyph: 'CT', hue: 190, unread: true },
@@ -37,6 +37,7 @@ export const valenced = {
 			{ id: 'announcements', name: 'announcements', type: 'announcement' },
 			{ id: 'faq', name: 'faq', type: 'text' },
 			{ id: 'github', name: 'github', type: 'text', unread: true },
+			{ id: 'palette-lab', name: 'palette-lab', type: 'text', unread: true, mentions: 4, preview: 'chat-examples', threads: ['Workshop palettes'] },
 			{ id: 'staff', name: 'staff-only', type: 'locked' },
 			{ id: 'after-dark', name: 'after-dark', type: 'nsfw' },
 		] },

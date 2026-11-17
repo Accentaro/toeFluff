@@ -1,0 +1,45 @@
+{
+  "hashes": {
+    "before.png": "78bea00c3a6c7219ec7397a4a8487f770a4fb2d034837cc59add0cf2588db4b3",
+    "stability.png": "78bea00c3a6c7219ec7397a4a8487f770a4fb2d034837cc59add0cf2588db4b3",
+    "after.png": "c952efc3f2d980662a72cd0fba10344b1746e95fe142d7cfe881f5e65219e001",
+    "restored.png": "78bea00c3a6c7219ec7397a4a8487f770a4fb2d034837cc59add0cf2588db4b3"
+  },
+  "annotationSha256": "0e11452520ce517e59a43c32b0ec63497f9c9aa1ba8f2b2d4a8cf9561cc31945",
+  "comparisonSha256": "f2909267790bfe6ed1a99cc6e27ce1529a007b862c9750ce9411c1531e958297",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "GuildActionSheet, GuildActionSheetHeader and BottomSheet resolve the background in the current build.",
+      "references": [
+        "manifest.json: resolver stacks and scoped pixel differences on 352206"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames show fictional server and channel labels, invented description and generic icon. No account or message content appears."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames and comparison inspected. Screen, list position and restored appearance are identical."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline points at the affected surface or text and leaves the native contents legible."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "The sheet surface changes, including translucent children composited over it. The backdrop stays dim."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the server menu sheet behind its details and action buttons."
+    }
+  }
+}

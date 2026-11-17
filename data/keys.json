@@ -58,13 +58,15 @@
     {
       "key": "BACKGROUND_BASE_LOW",
       "area": "Backgrounds",
-      "description": "Colours the Family Centre introduction card behind its artwork and content.",
+      "description": "Colours the Inbox header and list, the Username and Password form backgrounds, and the Family Centre introduction card.",
       "image": "images/verified/semantic-BACKGROUND_BASE_LOW-family-centre.png",
       "screens": [
         "inbox",
         "colors",
         "themes",
-        "family-centre"
+        "family-centre",
+        "settings-username",
+        "settings-password"
       ],
       "defaults": {
         "dark": "#36373e",
@@ -84,7 +86,7 @@
     {
       "key": "BACKGROUND_BASE_LOWER",
       "area": "Backgrounds",
-      "description": "Colours the lower backdrop and fade behind the profile bar.",
+      "description": "Colours the fades behind the server profile bar and floating chat composer, and the Dark swatch in App Theme.",
       "image": "images/verified/semantic-BACKGROUND_BASE_LOWER-server.png",
       "screens": [
         "chat",
@@ -103,7 +105,9 @@
         "mention",
         "stickers",
         "toast",
-        "voice"
+        "voice",
+        "chat-base-surfaces",
+        "settings-app-theme"
       ],
       "defaults": {
         "dark": "#323339",
@@ -207,7 +211,7 @@
     {
       "key": "BACKGROUND_FEEDBACK_NOTIFICATION",
       "area": "Status and badges",
-      "description": "Colours the notification-count badge beside Back.",
+      "description": "Fills direct-mention count pills and the notification badge beside Back.",
       "image": "images/verified/semantic-BACKGROUND_FEEDBACK_NOTIFICATION-plugins.png",
       "screens": [
         "you",
@@ -216,7 +220,8 @@
         "colors",
         "plugins",
         "settings",
-        "themes"
+        "themes",
+        "native-mention-counts"
       ],
       "defaults": {
         "dark": "#d22d39",
@@ -260,7 +265,7 @@
     {
       "key": "BACKGROUND_MOD_STRONG",
       "area": "Backgrounds",
-      "description": "Colours the server-rail activity indicator background.",
+      "description": "Fills lower-priority mention count pills and the server-rail activity indicator.",
       "image": "images/verified/semantic-BACKGROUND_MOD_STRONG-server.png",
       "screens": [
         "actionsheet",
@@ -273,7 +278,8 @@
         "search",
         "server",
         "alert",
-        "channelsheet"
+        "channelsheet",
+        "native-mention-counts"
       ],
       "defaults": {
         "dark": "#97979f33",
@@ -317,7 +323,7 @@
     {
       "key": "BACKGROUND_SCRIM",
       "area": "Backgrounds",
-      "description": "Colours the backdrop behind an open bottom sheet.",
+      "description": "Dims the area behind bottom sheets, including the server menu and the Typing Indicator Text picker.",
       "image": "images/verified/semantic-BACKGROUND_SCRIM-typing-text-sheet.png",
       "screens": [
         "actionsheet",
@@ -325,7 +331,8 @@
         "guildsheet",
         "component-buttons",
         "channelsheet",
-        "typing-text-sheet"
+        "typing-text-sheet",
+        "server-header-sheet"
       ],
       "defaults": {
         "dark": "#000000cc",
@@ -345,7 +352,7 @@
     {
       "key": "BACKGROUND_SURFACE_HIGH",
       "area": "Backgrounds",
-      "description": "Colours the raised card surface.",
+      "description": "Fills raised cards and the ring around the unread Pinned Messages dot in Channel Settings.",
       "image": "images/verified/semantic-BACKGROUND_SURFACE_HIGH-native-surface-controls.png",
       "screens": [
         "chat",
@@ -357,7 +364,8 @@
         "you",
         "stickers",
         "voice",
-        "native-surface-controls"
+        "native-surface-controls",
+        "channel-settings-unread-pin"
       ],
       "defaults": {
         "dark": "#393a41",
@@ -464,7 +472,7 @@
     {
       "key": "BORDER_SUBTLE",
       "area": "Borders and dividers",
-      "description": "Colours the thin separators between Settings rows.",
+      "description": "Colours Settings row separators, the Inbox header divider, and the bars beside notification previews.",
       "image": "images/verified/semantic-BORDER_SUBTLE-settings.png",
       "screens": [
         "actionsheet",
@@ -913,6 +921,7 @@
       "key": "EMBED_BACKGROUND",
       "area": "Chat",
       "description": "Embed cards (bot messages, link previews). Unverified on Android 352206; no current visual consumer has been identified.",
+      "image": "images/semantic/EMBED_BACKGROUND.webp",
       "screens": [
         "chatinput",
         "emoji",
@@ -1036,6 +1045,7 @@
       "key": "ICON_VOICE_CONNECTED",
       "area": "Icons",
       "description": "Listening icon at the top right of activity cards. Unverified on Android 352206; no current visual consumer has been identified.",
+      "image": "images/semantic/ICON_VOICE_CONNECTED.webp",
       "screens": [
         "home",
         "component-activity"
@@ -1059,7 +1069,7 @@
     {
       "key": "INPUT_BACKGROUND_DEFAULT",
       "area": "Rows, cards and inputs",
-      "description": "Colours the Settings search-field fill.",
+      "description": "Fills the Settings search field, password inputs, and Channel Name and Topic fields.",
       "image": "images/verified/semantic-INPUT_BACKGROUND_DEFAULT-settings.png",
       "screens": [
         "emoji",
@@ -1067,7 +1077,9 @@
         "search",
         "settings",
         "gifs",
-        "stickers"
+        "stickers",
+        "settings-password",
+        "channel-settings-overview"
       ],
       "defaults": {
         "dark": "#00000014",
@@ -1111,7 +1123,7 @@
     {
       "key": "INPUT_BORDER_DEFAULT",
       "area": "Rows, cards and inputs",
-      "description": "Colours the outline around the Settings search field.",
+      "description": "Outlines the Settings search field, password inputs, and Channel Name and Topic fields.",
       "image": "images/verified/semantic-INPUT_BORDER_DEFAULT-settings.png",
       "screens": [
         "emoji",
@@ -1119,7 +1131,9 @@
         "settings",
         "gifs",
         "search",
-        "stickers"
+        "stickers",
+        "settings-password",
+        "channel-settings-overview"
       ],
       "defaults": {
         "dark": "#97979f33",
@@ -1279,7 +1293,7 @@
     {
       "key": "INTERACTIVE_TEXT_DEFAULT",
       "area": "Text",
-      "description": "Colours the close control and row chevrons on this Settings screen. Colours the chevron beside the channel name.",
+      "description": "Colours the Settings close control and row chevrons, and the chevron beside the chat channel name.",
       "image": "images/verified/semantic-INTERACTIVE_TEXT_DEFAULT-settings.png",
       "screens": [
         "actionsheet",
@@ -1373,7 +1387,7 @@
     {
       "key": "MOBILE_ACTIONSHEET_BACKGROUND",
       "area": "Backgrounds",
-      "description": "Colours the underlying Settings surface; this capture changes most of the viewport.",
+      "description": "Colours the Settings hub, Password page header, channel details and Channel Settings, and the server menu sheet.",
       "image": "images/verified/semantic-MOBILE_ACTIONSHEET_BACKGROUND-settings.png",
       "screens": [
         "colors",
@@ -1384,7 +1398,11 @@
         "appearance",
         "logout",
         "members",
-        "themes"
+        "themes",
+        "settings-password",
+        "channel-members-loaded",
+        "server-header-colours",
+        "channel-settings-overview"
       ],
       "defaults": {
         "dark": "#393a41",
@@ -1853,7 +1871,7 @@
     {
       "key": "MOBILE_TEXT_HEADING_PRIMARY",
       "area": "Text",
-      "description": "Colours the Settings page title. Colours the channel name in the chat header.",
+      "description": "Colours the Settings title and the channel name in the chat header.",
       "image": "images/verified/semantic-MOBILE_TEXT_HEADING_PRIMARY-settings.png",
       "screens": [
         "alert",
@@ -2122,11 +2140,12 @@
     {
       "key": "SPINE_DEFAULT",
       "area": "Server rail and channel list",
-      "description": "Colours the connector lines between nested channels.",
+      "description": "Colours channel-list thread connectors and the vertical bar beside markdown quotes.",
       "image": "images/verified/semantic-SPINE_DEFAULT-server.png",
       "screens": [
         "server",
-        "alert"
+        "alert",
+        "native-markdown-quote"
       ],
       "defaults": {
         "dark": "#595a63",
@@ -2596,7 +2615,7 @@
     {
       "key": "TEXT_MUTED",
       "area": "Text",
-      "description": "Colours muted trailing details, including the version and enabled-plugin count. Colours the empty message composer placeholder. Colours the timestamp beside a message author.",
+      "description": "Colours trailing Settings details, the chat composer placeholder, and message timestamps.",
       "image": "images/verified/semantic-TEXT_MUTED-settings.png",
       "screens": [
         "chat",
@@ -2720,7 +2739,7 @@
     {
       "key": "TEXT_SUBTLE",
       "area": "Text",
-      "description": "Colours Settings section headings, including Valenced and Account Settings. Colours the online-count text beneath the channel name.",
+      "description": "Colours Settings section headings, the chat online count, the server title chevron and switch help text, and Channel Name and Topic labels.",
       "image": "images/verified/semantic-TEXT_SUBTLE-settings.png",
       "screens": [
         "home",
@@ -2741,7 +2760,9 @@
         "mention",
         "stickers",
         "toast",
-        "chat-text"
+        "chat-text",
+        "server-header-colours",
+        "channel-settings-overview"
       ],
       "defaults": {
         "dark": "#c5c6ca",
@@ -2762,6 +2783,7 @@
       "key": "USER_PROFILE_ABOUT_ME_HEADING_TEXT",
       "area": "Profiles",
       "description": "Section headings on profiles, like \"Bio\". Unverified on Android 352206; no current visual consumer has been identified.",
+      "image": "images/semantic/USER_PROFILE_ABOUT_ME_HEADING_TEXT.webp",
       "screens": [
         "you"
       ],
@@ -2785,6 +2807,7 @@
       "key": "USER_PROFILE_GRADIENT_BACKGROUND",
       "area": "Profiles",
       "description": "Your profile (the You page) background when you have no profile theme. Unverified on Android 352206; no current visual consumer has been identified.",
+      "image": "images/semantic/USER_PROFILE_GRADIENT_BACKGROUND.webp",
       "screens": [
         "you"
       ],
@@ -2807,7 +2830,7 @@
     {
       "key": "WHITE",
       "area": "Icons",
-      "description": "Colours selected server initials and mention-count text.",
+      "description": "Colours selected server initials and the digits on mention counts and the Back badge.",
       "image": "images/verified/semantic-WHITE-server.png",
       "screens": [
         "chatinput",
@@ -2826,7 +2849,8 @@
         "members",
         "plugins",
         "settings",
-        "themes"
+        "themes",
+        "native-mention-counts"
       ],
       "defaults": {
         "dark": "#ffffff",
@@ -4384,7 +4408,7 @@
     {
       "key": "REDESIGN_INPUT_CONTROL_SELECTED",
       "area": "Switches and radios",
-      "description": "Colours the selected radio control fill. Colours the filled portion of the slider track.",
+      "description": "Fills selected radio controls and the active portion of slider tracks.",
       "image": "images/verified/semantic-REDESIGN_INPUT_CONTROL_SELECTED-native-form.png",
       "screens": [
         "component-checks",
@@ -5561,7 +5585,7 @@
     {
       "key": "MESSAGE_MENTIONED_BACKGROUND_DEFAULT",
       "area": "Backgrounds",
-      "description": "Colours the background behind a message that mentions you. Colours a reply background when its ping mentions you.",
+      "description": "Colours the background of messages that mention you, including replies with a ping.",
       "image": "images/verified/semantic-MESSAGE_MENTIONED_BACKGROUND_DEFAULT-chat-mention-highlight.png",
       "screens": [
         "chat-mention-highlight",
@@ -5714,6 +5738,7 @@
     {
       "key": "GREEN_NEW_25",
       "description": "Listening icons on activity cards. Unverified on Android 352206; no current visual consumer has been identified.",
+      "image": "images/raw/GREEN_NEW_25.webp",
       "value": "#73c48b",
       "usedBy": [
         "ICON_VOICE_CONNECTED",
@@ -6729,7 +6754,7 @@
     },
     {
       "key": "OPACITY_BLURPLE_16",
-      "description": "Supplies the selected toggle background with retained opacity. Tints the selected reply target while preserving its opacity.",
+      "description": "Tints selected toggles and the message you’re replying to at low opacity.",
       "image": "images/verified/raw-OPACITY_BLURPLE_16-native-toggle-icons-selected.png",
       "value": "#5865f229",
       "usedBy": [
@@ -6979,7 +7004,7 @@
     },
     {
       "key": "OPACITY_YELLOW_8",
-      "description": "Tints mentioned-message backgrounds while preserving their low opacity. Tints replies that ping you, preserving the low opacity.",
+      "description": "Tints messages that mention you, including replies with a ping, at low opacity.",
       "image": "images/verified/raw-OPACITY_YELLOW_8-chat-mention-highlight.png",
       "value": "#f8a30014",
       "usedBy": [
@@ -6995,5 +7020,5 @@
     }
   ],
   "reviewed": "2026-11-17",
-  "reviewedExamples": 296
+  "reviewedExamples": 318
 }

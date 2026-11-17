@@ -130,12 +130,16 @@
 .vp .vp-new { font-size: 11px; font-weight: 700; padding: 3px 7px; border-radius: 8px; }
 .vp .vp-chan-name { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .vp .vp-chan-name.unread { font-weight: 600; }
-.vp .vp-chan-count { font-size: 14px; font-weight: 600; }
+.vp .vp-notification-count { display: inline-grid; flex: none; place-items: center; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; font-size: 11px; font-weight: 700; line-height: 1; }
+.vp .vp-rail-item .vp-notification-count { position: absolute; right: 5px; bottom: -4px; height: 23px; min-width: 23px; border: 2px solid; }
+.vp .vp-channel-back { position: relative; }
+.vp .vp-channel-back .vp-notification-count { position: absolute; right: 1px; bottom: 3px; }
 .vp .vp-chan-wrap { position: relative; }
 .vp .vp-chan-pip { position: absolute; left: -17px; top: 14px; width: 4px; height: 8px; border-radius: 0 4px 4px 0; }
 .vp .vp-category { display: flex; align-items: center; gap: 3px; height: 37px; margin-top: 4px; font-size: 14px; font-weight: 600; }
 .vp .vp-category span.closed .ic { transform: rotate(-90deg); }
 .vp .vp-subthread { position: relative; height: 37px; display: flex; align-items: center; padding-left: 28px; font-size: 16px; }
+.vp .vp-subthread button { display: flex; align-items: center; gap: 8px; min-width: 0; height: 100%; }
 .vp .vp-spine { position: absolute; left: 10px; top: -8px; width: 12px; height: 26px; border: 2px solid; border-top: 0; border-right: 0; border-bottom-left-radius: 8px; }
 
 /* Channel header and chat */
@@ -167,6 +171,10 @@
 .vp .vp-reaction.add { padding: 0 6px; }
 .vp .vp-thread-spine { position: absolute; left: 19px; top: 48px; bottom: 28px; width: 24px; border: 2px solid; border-top: 0; border-right: 0; border-bottom-left-radius: 10px; }
 .vp .vp-thread { border: 1px solid; border-radius: 12px; padding: 9px 12px 10px 15px; font-size: 14px; margin-top: 10px; }
+.vp button.vp-thread { display: block; width: 100%; text-align: left; }
+.vp .vp-thread-started { position: relative; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 12px; }
+.vp .vp-thread-start-icon { display: grid; justify-content: center; align-self: start; padding-top: 2px; }
+.vp .vp-thread-started .vp-thread-spine { top: 33px; bottom: 33px; width: 30px; }
 .vp .vp-thread-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; }
 .vp .vp-thread-top span { display: flex; align-items: center; gap: 2px; font-weight: 600; }
 .vp .vp-reply { position: relative; display: flex; align-items: center; gap: 5px; padding-left: 52px; font-size: 14px; margin-bottom: 4px; white-space: nowrap; overflow: hidden; }
@@ -405,6 +413,10 @@
 .vp .vp-msg.mentioned { position: relative; }
 .vp .vp-mention-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 2px; }
 .vp .vp-codeblock { margin: 6px 0 2px; padding: 8px 10px; border: 1px solid; border-radius: 6px; font: 13px/18px ui-monospace, Consolas, monospace; white-space: pre-wrap; word-break: break-all; }
+.vp .vp-code-listing ol { margin: 5px 0 0; padding-left: 25px; }
+.vp .vp-code-listing li { padding-left: 5px; }
+.vp .vp-code-language { font: 600 11px/16px system-ui, sans-serif; }
+.vp .vp-markdown-quote { margin: 6px 0 0; padding-left: 8px; border-left: 4px solid; }
 .vp .vp-typing { position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 4px; height: 26px; padding: 0 16px; font-size: 13px; }
 .vp .vp-typing b { font-weight: 700; }
 .vp .vp-typing-dots { display: inline-flex; gap: 3px; margin-right: 4px; }
