@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f",
+    "stability.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f",
+    "after.png": "cfd570fa9b37b42461dfd4eb281f87acfea5d93a8acc33c103584bbc51cb1e0b",
+    "restored.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f"
+  },
+  "annotationSha256": "1ef760ad89887d4481b71fa18c3aba5c4479c0841887ead445d23236bd2e0332",
+  "comparisonSha256": "41c8b5c59dc422caf6b21e897e9ed04d7a3190e6941fabc2f8a32c75d883990c",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "native Text colour resolution; isolated override changes read channel labels and Channels & Roles. Token resolution recorded in runtimeConsumerStacks.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../first-reviewed-effects.png",
+        "../comparison-review.png",
+        "../../../fixtures/server-fixture-review.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full frame contact sheet inspected: fictional profile/channel/server labels and no identifying artwork."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full before/after frames and focused comparison inspected. Colours read channel names and Channels & Roles text."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline directly identifies channels & roles label. Native pixels preserved; text and affected target unobstructed."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Channel icons and unread labels stay unchanged. Full-frame changes agree with runtime consumers; stability and restoration have zero changed pixels."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours read channel names and Channels & Roles text."
+    }
+  }
+}

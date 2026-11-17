@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "6c740ae19207f787557d71b26d5b2c98faf108db353cc17120635d7eebbd2f84",
+    "stability.png": "6c740ae19207f787557d71b26d5b2c98faf108db353cc17120635d7eebbd2f84",
+    "after.png": "813d6c9c8eef9f29b4cded6718e7b499e9d7ce530e51360dee3663f192c58db1",
+    "restored.png": "6c740ae19207f787557d71b26d5b2c98faf108db353cc17120635d7eebbd2f84"
+  },
+  "annotationSha256": "4eb1c990ba60dbf19aa03151f3dfc91a098cb0fbd2ffdd8deccfa965a3294418",
+  "comparisonSha256": "2db578d337e19dfb150c44981b3a4c32bbcaff3cf264a716bc4cff9fbb1d2360",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Raw palette definition resolves to BADGE_COMMON_TEXT. Actual consumer stacks recorded during the independent raw override.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../full-frame-review.png",
+        "../comparison-review.png",
+        "../../../../publishing/toeFluff/data/tokens.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Inspected full native gallery frames: only stock labels and NEW badge, no personal data."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Native-scale comparisons and full-frame contact sheet inspected. Badge remains complete; only documented surface changes."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline accurately marks changed badge surface or text; no interface enlargement or recolouring."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effect {'pixels': 897, 'bounds': {'x': 507, 'y': 621, 'width': 66, 'height': 23}}; stability and restoration both zero pixels. Other gallery controls unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies the common badge text through its semantic alias."
+    }
+  }
+}

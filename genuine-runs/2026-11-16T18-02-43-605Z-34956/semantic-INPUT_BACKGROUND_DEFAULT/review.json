@@ -1,0 +1,53 @@
+{
+  "hashes": {
+    "before.png": "783c82c61d91b54b26196af5320fbc30dfc1c428d48520356aa3ad6fc6693d5e",
+    "stability.png": "783c82c61d91b54b26196af5320fbc30dfc1c428d48520356aa3ad6fc6693d5e",
+    "after.png": "a4a41890d7e774a560047fdc2f324991a407ba717a73c5cca45d021ced2e9f6e",
+    "restored.png": "783c82c61d91b54b26196af5320fbc30dfc1c428d48520356aa3ad6fc6693d5e"
+  },
+  "annotationSha256": "59424765ca5da4e416d8433b3431063d3eb0ff23182ad145916c9885cce7a29d",
+  "comparisonSha256": "68621c4e5626905014ba6452f7137686bc868172a5f1fa9cf78bb2dc8d3334e6",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Observed key-specific runtime consumer stack supports this Settings use. Import-path association is explicitly inferred by component name. Original native TypeScript source text and exhaustive application-wide uses are not claimed.",
+      "references": [
+        "index.android.bundle:7310:6401 (InputFieldContainer; runtime key-resolver trace)",
+        "design/components/Input/native/InputFieldContainer.native.tsx (independently observed import; association to stack inferred by name)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Inspected full originals and focused comparison: generic Settings labels, version string, plugin count, fixed time and native notification count only. No person/account names, messages, avatar photographs, contact details or connection values visible."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "The entire rounded search fill becomes pink, with smooth original corners. Search glyph and placeholder remain grey; headings and row card stay unchanged. Full originals were inspected before cropping. The bottom partial next row is ordinary scroll-viewport continuation, not a rendering fault. Focused comparison includes complete representative components and unchanged scale."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Inspected rendered comparison after final SVG generation. Thin gold outline identifies search field fill, remains outside its visible glyphs/edge, and matches the caption. Before/after use identical crop coordinates at native pixel scale; labels occupy separate margins."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "The entire rounded search fill becomes pink, with smooth original corners. Search glyph and placeholder remain grey; headings and row card stay unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Colours the Settings search-field fill."
+    }
+  },
+  "crop": [
+    18,
+    315,
+    1044,
+    174
+  ],
+  "scope": "One representative Settings usage, not exhaustive coverage of this key. No publication performed."
+}

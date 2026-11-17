@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f",
+    "stability.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f",
+    "after.png": "56fb17339cf3412b9d8ffd652049a20a7ce77a9b5336ae964b1d85a203b2d2ac",
+    "restored.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f"
+  },
+  "annotationSha256": "1a85025a65a74aaa234517227175f98d18acebf3603d371aa350e1f48e8ce209",
+  "comparisonSha256": "1c855738ded52e37a1df69d6143b6370932e3a487c2eae874e22f207ca267ee1",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Native SegmentedControl resolves MOBILE_SEGMENTED_CONTROL_INDICATOR_BACKGROUND, whose darker-base alias is OPACITY_20 with 0.2 opacity. Each phase remounts the native page to invalidate its cached indicator colour.",
+      "references": [
+        "manifest.runtimeConsumerStacks: MOBILE_SEGMENTED_CONTROL_INDICATOR_BACKGROUND / SegmentedControl",
+        "publishing/toeFluff/data/tokens.json darker raw alias OPACITY_20",
+        "modules/user_settings/defs/native/FamilyCenterSetting.tsx"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full screenshots contain public onboarding content only, no identities, family membership or dialogs."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full after and focused comparison inspected: only selected Activity pill receives muted pink tint, with retained semantic opacity. Complete control, no clipping or scrollbar artefact."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Gold rectangle outlines selected pill without overlapping text or changed pixels. Same native-scale crop; clear retained-opacity and remount descriptions."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "43714 changed pixels confined to selected pill. No change to tab base, labels, hero, dividers or system UI. Baseline/stability/restoration exact. Retried with 3000ms settling after earlier scrollbar drift; failed originals remain separate and unaccepted."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Supplies the translucent selected-tab indicator through its semantic alias."
+    }
+  },
+  "scope": "Stock Family Centre Activity tab, native remount between phases."
+}

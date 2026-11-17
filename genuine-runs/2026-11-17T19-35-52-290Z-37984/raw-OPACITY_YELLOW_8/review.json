@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "cd90d6ee8e32ee5f07edd27ab030c05a3025ea7b72b0541687d33b98738c993f",
+    "stability.png": "cd90d6ee8e32ee5f07edd27ab030c05a3025ea7b72b0541687d33b98738c993f",
+    "after.png": "f9e0fdfa0353a97889848f8971464ba200fa3798d600ce1e535ba46cf96767bf",
+    "restored.png": "cd90d6ee8e32ee5f07edd27ab030c05a3025ea7b72b0541687d33b98738c993f"
+  },
+  "annotationSha256": "feb39f259ce7c0fbac2d159a63e083e261f201bd4fa021c0bf7a0dd632ff1d21",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Raw OPACITY_YELLOW_8 resolves through MESSAGE_MENTIONED_BACKGROUND_DEFAULT in the current native createBackgroundHighlight consumer. The raw override preserves the token opacity; only this raw key changed.",
+      "references": [
+        "data/tokens.json: OPACITY_YELLOW_8 alias for MESSAGE_MENTIONED_BACKGROUND_DEFAULT",
+        "research/tabsv2/evidence/modern-352204/modules/m/8574.js: mentionedBackgroundColor",
+        "manifest.json: current 352206 runtime consumer trace and pixel differences"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames inspected: fictional names, generated avatars and workshop messages; no identifying data or private media."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full-frame after and original-scale comparison inspected. Brown mention tint becomes purple; original viewport and exact zero-drift baseline/restoration confirmed."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline points to the tinted background beside one complete message; no text or avatar covered."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Ordinary messages, yellow gutter, header and composer remain unchanged. Changed pixels are within mentioned-message fills."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Explains the background tint and preserved low opacity; does not claim the gutter changes."
+    }
+  },
+  "comparisonSha256": "dd932dd65d21fe655aecac264d81f00604d93daa2c4c8d55b3a6e1157eccaac4"
+}

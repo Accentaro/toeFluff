@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "0d80e95f7809d15d7eb60fb73be2b20f8ca3b561c4451e480954921a57269c73",
+    "stability.png": "0d80e95f7809d15d7eb60fb73be2b20f8ca3b561c4451e480954921a57269c73",
+    "after.png": "3a0fc64f9d7864106af091c6f1fe62d2f9a96158635d08658cae911ddb4e8815",
+    "restored.png": "0d80e95f7809d15d7eb60fb73be2b20f8ca3b561c4451e480954921a57269c73"
+  },
+  "annotationSha256": "fcd37202aa8ce17c7ba6678853e56a82b89a7088a999db66095f46b06181c89d",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Stock DesignSystemBadgeSetting renders Badge; captured parseThemedStyles consumer confirms exact key.",
+      "references": [
+        "modules/user_settings/defs/native/DesignSystemBadgeSetting.tsx",
+        "design/components/Badge/native/Badge.native.tsx",
+        "manifest.json#runtimeConsumerStacks"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full native screen inspected: only public design-system labels, no private information."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full screen and individual original-scale comparison inspected. Only NEW text changes; premium fill and rim remain unchanged."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Outline surrounds actual changed badge area; revised description documents the visible rim as well as the gradient. Original pixel scale retained."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full-frame differences confined to badge; stability and restoration zero pixels. Visible rim belongs to this Badge, not an unrelated control."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Colours the premium status badge text."
+    }
+  },
+  "comparisonSha256": "56087b381e45f0247db5c19fec3c5809c8dd6c32ad1df0e9f3d08e605e335787"
+}

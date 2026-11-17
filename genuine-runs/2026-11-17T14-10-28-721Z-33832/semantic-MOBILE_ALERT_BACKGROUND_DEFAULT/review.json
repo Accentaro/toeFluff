@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "8daec78d5e8030f7876018cea68d073b4d503c9c009e1f7e6200d1e4df64bce6",
+    "stability.png": "8daec78d5e8030f7876018cea68d073b4d503c9c009e1f7e6200d1e4df64bce6",
+    "after.png": "6422ac78f06e34aecf273ef8ef3e4805b9ac5416d235568ebd9472276de370ef",
+    "restored.png": "8daec78d5e8030f7876018cea68d073b4d503c9c009e1f7e6200d1e4df64bce6"
+  },
+  "annotationSha256": "4361fb8e2e6293e545753aceb4a2d32d2a91d0d3f36ff4aae1f5d20bb49dd238",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Original native AlertModal content surface uses MOBILE_ALERT_BACKGROUND_DEFAULT. Resolver and render cache probe verified; fresh original modal instances expose changes and reversal.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../alert-cache-probe.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Fictional workshop draft prompt; inert callbacks; background settings contain no personal information."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and original-scale comparison inspected. Zero stability and restoration drift; native rounded surface intact."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline identifies dialog backing without covering title, text or buttons."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Backdrop and primary button unchanged. Secondary translucent button naturally composites over changed parent surface."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Documents native dialog surface and fresh-instance refresh requirement."
+    }
+  },
+  "comparisonSha256": "ddda1d666c0ee5068d0fe26fa9c27605a50688a41de8615cb0ea572245db6b15"
+}

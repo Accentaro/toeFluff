@@ -215,6 +215,8 @@ table { width: 100%; border-collapse: collapse; font-size: 13px; }
 #lightbox img { width: 100%; display: block; border-radius: 8px; }
 .image-detail { display: flex; align-items: center; gap: var(--space-8); max-width: 960px; margin: 50px var(--space-6); cursor: auto; }
 .image-frame { position: relative; width: min(36vh, 48vw); flex: none; }
+.image-frame.wide { width: min(72vh, 62vw); }
+.card img.wide { width: 300px; }
 .image-detail figcaption { max-width: 360px; color: var(--text); line-height: 1.7; }
 #image-title { font: 17px var(--mono); overflow-wrap: anywhere; }
 #image-description { color: var(--muted); }
@@ -275,6 +277,8 @@ table { width: 100%; border-collapse: collapse; font-size: 13px; }
     .card img { width: clamp(125px, 32vw, 180px); height: auto; }
     .image-detail { flex-direction: column; gap: 18px; margin: 64px 20px var(--space-6); }
     .image-frame { width: min(30vh, 70vw); }
+    .image-frame.wide { width: 88vw; }
+    .card img.wide { width: clamp(220px, 70vw, 320px); }
     .image-detail figcaption { max-width: 90vw; }
     #lightbox { overflow-y: auto; }
     .toolbar { align-items: stretch; }
@@ -296,6 +300,21 @@ button.hex:hover { background: var(--surface-2); }
 .key-gallery { display: flex; gap: var(--space-3); overflow-x: auto; padding: var(--space-1) 2px var(--space-3); margin-top: auto; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
 .key-gallery figure { margin: 0; flex: none; }
 .key-gallery figcaption { margin-top: var(--space-2); font-size: 11px; color: var(--muted); }
+.card.has-reviewed-example { grid-column: 1 / -1; }
+.has-reviewed-example .key-gallery { display: block; }
+.verified-comparison .image-button { max-width: 100%; }
+.card .verified-comparison img.wide { width: min(1100px, 100%); height: auto; }
+.capture-provenance { margin: 14px 0; font-size: 13px; }
+.capture-provenance p { margin: 8px 0; }
+.historical-captures { margin: 12px 0; max-width: 100%; color: var(--muted); }
+.historical-gallery { display: flex; gap: 16px; overflow-x: auto; margin-top: 12px; }
+.review-status { display: inline-block; align-self: start; font-size: 12px; color: var(--muted); }
+.review-status.reviewed { color: #97d9b6; }
+#lightbox.reviewed-comparison { overflow: auto; place-items: start; }
+.reviewed-comparison .image-detail { display: block; max-width: 1600px; width: calc(100vw - 48px); margin: 60px 24px 24px; }
+.reviewed-comparison .image-frame.comparison { width: 100%; }
+#lightbox .image-frame.comparison img { width: 100%; height: auto; max-width: 100%; }
+.reviewed-comparison .image-detail figcaption { max-width: 700px; }
 #image-navigation { display: flex; align-items: center; gap: var(--space-4); margin: 20px 0; }
 #image-position { font-size: 12px; color: var(--muted); }
 

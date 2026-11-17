@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "8f5557bd1f10c3266be1aae6c728c825a2301cd184d265ddd9446af6b5e46247",
+    "stability.png": "8f5557bd1f10c3266be1aae6c728c825a2301cd184d265ddd9446af6b5e46247",
+    "after.png": "b764ad801daf5151e6ee2588b61c679bc233912332ff1a6223146db047c3b1a9",
+    "restored.png": "8f5557bd1f10c3266be1aae6c728c825a2301cd184d265ddd9446af6b5e46247"
+  },
+  "annotationSha256": "4f240ea3629f245b221ed1ae79cb12f0b40932429fda5436306186cfc889247d",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Original OptInChannelBanner uses CHAT_BANNER_BG, unlike unread banner. Current runtime traces and source 10986 confirm.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-opt-in-fixture.mjs"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Fictional workshop heading; native generic prompt; pointer events disabled."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and original-scale comparison inspected. Exact stability/restoration; no clipping or artefacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline identifies banner backing while leaving content clear."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Button, labels and surrounding content unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Describes add-channel prompt rather than unread-message banner."
+    }
+  },
+  "comparisonSha256": "11043045268abf8208faa4e808200eac5197812c676106a55c9402956d39137c"
+}

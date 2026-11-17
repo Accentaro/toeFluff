@@ -1,0 +1,45 @@
+{
+  "hashes": {
+    "before.png": "89553a25f7d3bde07ae9d47b9cdb86353f05ac9c44e852f6dfc9f380932ff255",
+    "stability.png": "89553a25f7d3bde07ae9d47b9cdb86353f05ac9c44e852f6dfc9f380932ff255",
+    "after.png": "37502880872e6ad6b7bfc6e8e5a79f30f4798d22e5a4e46352f0703e40e9fa1f",
+    "restored.png": "89553a25f7d3bde07ae9d47b9cdb86353f05ac9c44e852f6dfc9f380932ff255"
+  },
+  "annotationSha256": "94df0a98ef711bcf9a07e30ffab72aa1b63a0de6b31530e47237bf85f96e328e",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native useButtonPillStyles consumes CONTROL_OVERLAY_SECONDARY_BACKGROUND_ACTIVE for the held secondary-overlay variant.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames contain generic inert Button fixture labels only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and focused comparison inspected. Correct pressed background changes, without geometry drift. Exact stability, restoration and released-state verification."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline encloses the complete held secondary-overlay button at original pixel scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame difference is confined to held secondary-overlay fill; text and other button variants stay unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Fills the secondary overlay button while pressed."
+    }
+  },
+  "comparisonSha256": "0b27093fea6a4b714713c35877878820cca1e0f1a172cc014f26be8fcb5901d3"
+}

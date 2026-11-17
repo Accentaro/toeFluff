@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "6aba4723d88df79e4ed3266c24a90ab1b3679a64bce8e32a9ae15c776f6ebbe6",
+    "stability.png": "6aba4723d88df79e4ed3266c24a90ab1b3679a64bce8e32a9ae15c776f6ebbe6",
+    "after.png": "5107beef0a2c26da156b7c02f7ddf63e8310487fb193b6d14468a588f0fc8685",
+    "restored.png": "6aba4723d88df79e4ed3266c24a90ab1b3679a64bce8e32a9ae15c776f6ebbe6"
+  },
+  "annotationSha256": "895df7450727acad4ba052dc6e6ae01375f93bf75d32d83a126c681e3bab601e",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native premium Button consumes REDESIGN_BUTTON_PREMIUM_PRIMARY_PRESSED_BACKGROUND, which resolves BLACK at 10% opacity.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json#semantic.REDESIGN_BUTTON_PREMIUM_PRIMARY_PRESSED_BACKGROUND.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native Button fixture contains generic inert labels only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and corrected focused comparison inspected. The held premium gradient receives a translucent tint; it is not replaced with a solid fill. Exact stability, restoration and release."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline surrounds the full pressed premium button, preserving native scale and the gradient."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only the held premium primary background tint changes; secondary button and labels remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies the translucent overlay on a pressed premium button."
+    }
+  },
+  "comparisonSha256": "55e7239a0babdaa99e560d2952286bce397956b104f34232b0debd13e95f20f3"
+}

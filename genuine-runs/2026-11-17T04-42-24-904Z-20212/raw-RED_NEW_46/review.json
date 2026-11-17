@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "ae1bf8230b8d0da7ad7ea97ef5ef407771b1736cd395fc174c71fcd4db131c80",
+    "stability.png": "ae1bf8230b8d0da7ad7ea97ef5ef407771b1736cd395fc174c71fcd4db131c80",
+    "after.png": "1b3dfe50c8958e905c763bc1d7eb9e28fc6329c0475191b76ccc0e4609fae06f",
+    "restored.png": "ae1bf8230b8d0da7ad7ea97ef5ef407771b1736cd395fc174c71fcd4db131c80"
+  },
+  "annotationSha256": "5846e2236f3d6a222eb7375f4d4d9a89938fa524f919bbd5ea196e61b3552b7f",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native toggle styles consume TOGGLEBUTTON_CRITICAL_ICON_SELECTED through RED_NEW_46.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json#semantic.TOGGLEBUTTON_CRITICAL_ICON_SELECTED.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames contain native design-system documentation and demonstration controls only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full before/after frames and focused comparison inspected: selected critical icon changes in isolation. Baseline and restoration match exactly."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline marks the affected selected critical icon at original pixel scale. Adjacent toggles provide unchanged context."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame difference is confined to the expected selected critical icon; other controls and text remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies the selected critical toggle icon colour."
+    }
+  },
+  "comparisonSha256": "6b3dd31dbb0f17e55943575d78e62d77bcca0f29808975797beabca97d3ba0de"
+}

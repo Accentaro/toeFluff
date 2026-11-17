@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "44bb714748e3e54ffd9033f2802a2275c54f93f149a20b240d76581445071e87",
+    "stability.png": "44bb714748e3e54ffd9033f2802a2275c54f93f149a20b240d76581445071e87",
+    "after.png": "6df0a4287b8b5c8905af41b6245d9c0c5ac67bb3f8fa4d8e947cb6768d389493",
+    "restored.png": "44bb714748e3e54ffd9033f2802a2275c54f93f149a20b240d76581445071e87"
+  },
+  "annotationSha256": "fde6c3581700425d3b93271275f0c9304f5e7c4701aa4ceca66624c35594366b",
+  "comparisonSha256": "5ab1cd29857590f20f05d9bd422f7bea8de9eadc9da79f1ecb4d87f9f49a49f2",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Current resolver trace confirms stock ForumPostReactionButton styles; original sizing and styles retained, fictional props with inert callbacks.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-reaction-fixture.mjs"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames contain only fictional workshop content and stock Unicode emoji."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full before/after frames and original-scale comparison inspected. Exact baseline stability and restoration."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline identifies the unselected native reaction button."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only intended unselected fill or border changes; selected reaction and all other components unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the unselected forum reaction border."
+    }
+  }
+}

@@ -1,6 +1,6 @@
 // Discord's shared controls, as in the "Theme reference" captures. Press and hold a control to see its pressed
 // colours; those come from data-k-press, so the inspector lists them too.
-import { esc, icon, navBar, pageHeader, statusBar } from './common.js'
+import { esc, icon, navBar, pageHeader, sliderEl, statusBar, updateSlider } from './common.js'
 
 const btn = (label, keys, press, cls = '') => `<button class="vp-ref-btn ${cls}" data-k="${keys}" ${press ? `data-k-press="${press}"` : ''} data-n="${esc(label)} button">${label}</button>`
 
@@ -37,7 +37,7 @@ export const components = {
 					<p class="vp-ref-label" data-k="fg:TEXT_STRONG">Radio: unselected / selected</p>
 					<div class="vp-radios">${[0, 1].map(i => `<button data-act="radio:${i}" class="vp-radio${(ui.radio ?? 1) === i ? ' on' : ''}" data-k="${(ui.radio ?? 1) === i ? 'bg:REDESIGN_INPUT_CONTROL_SELECTED' : 'bd:RADIO_BORDER_DEFAULT'}" data-n="Radio">${(ui.radio ?? 1) === i ? '<i data-k="bg:WHITE"></i>' : ''}</button>`).join('')}</div>
 					<p class="vp-ref-label" data-k="fg:TEXT_STRONG">Slider</p>
-					<div class="vp-slider" data-k="bg:SLIDER_TRACK_BACKGROUND" data-n="Slider track"><i class="vp-slider-fill" data-k="bg:REDESIGN_INPUT_CONTROL_SELECTED" data-n="Slider fill" style="width:${ui.slider ?? 40}%"></i><input type="range" min="0" max="100" value="${ui.slider ?? 40}" data-input="slider" aria-label="Slider"><i class="vp-slider-thumb" data-k="bg:WHITE" data-n="Slider thumb" style="left:${ui.slider ?? 40}%"></i></div>
+					${sliderEl({ value: ui.slider ?? 40 })}
 				`)}
 				${section('Inputs', `
 					<p class="vp-ref-label" data-k="fg:TEXT_STRONG">Normal field</p>
@@ -94,10 +94,7 @@ export const components = {
 			return 'render'
 		},
 		slider: ({ el, ui }) => {
-			ui.slider = +el.value
-			const wrap = el.closest('.vp-slider')
-			wrap.querySelector('.vp-slider-fill').style.width = el.value + '%'
-			wrap.querySelector('.vp-slider-thumb').style.left = el.value + '%'
+			ui.slider = updateSlider(el)
 		},
 		toast: ({ arg, api }) => api.toast(arg, arg === 'success' ? 'Example success notification' : 'Example error notification'),
 	},

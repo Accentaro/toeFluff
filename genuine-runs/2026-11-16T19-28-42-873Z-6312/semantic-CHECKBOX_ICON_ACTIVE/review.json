@@ -1,0 +1,53 @@
+{
+  "hashes": {
+    "before.png": "3b9a0667d6e000abfd91d06343ae0ab51e0efdca711b25cd85f51b6cb018d89e",
+    "stability.png": "3b9a0667d6e000abfd91d06343ae0ab51e0efdca711b25cd85f51b6cb018d89e",
+    "after.png": "89c7f9baec355f061a24827293cbf23d223d6f9c9bbb58b34a7b71ff8d1673da",
+    "restored.png": "3b9a0667d6e000abfd91d06343ae0ab51e0efdca711b25cd85f51b6cb018d89e"
+  },
+  "annotationSha256": "c0ac12f3afb89cefda16d56b1e7c58ed439641b0ebaf058b9e5a97effcbd6d3b",
+  "comparisonSha256": "42f2cf2338272afb5a0b657f0c8dff3e83970f1349e7f78cfd14918184dbb0df",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual checkbox review 2026-11-16",
+      "notes": "Actual per-key resolver stacks name the checkbox consumer. The recorded source definition identifies the native form demo. Bundle coordinates are exact runtime stack positions, not Metro module IDs. No native TypeScript line mapping or exhaustive use claim.",
+      "references": [
+        "modules/user_settings/defs/native/DesignSystemFormPrimitivesSetting.tsx (native demo definition recorded by capture)",
+        "index.android.bundle:7157:1660 (FormCheckbox; actual key resolver stack)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual checkbox review 2026-11-16",
+      "notes": "Full originals show only generic native form demo labels, switches and checkboxes, fixed status icons and the explained native back notification badge. No personal names, account fields, avatars, attachments or messages are visible. This is a screen-specific review, not a blanket privacy claim."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual checkbox review 2026-11-16",
+      "notes": "White check marks become pink in checked grouped and inline controls. Blue fills and unchecked outlines remain unchanged. This is the resting checked state, not a pressed-state capture despite ACTIVE in the key name. Full originals and final rendered comparison were inspected individually. Top scroll continuation under the fixed header and bottom partial inline row are normal viewport boundaries; all highlighted controls are complete. No unexplained overlay, malformed shape or loading artifact observed. The first derived crop was refined to remove unrelated clipped heading fragments; raw originals are unchanged."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual checkbox review 2026-11-16",
+      "notes": "Inspected final comparison: gold outline identifies check mark without covering target pixels. Before/after use identical 1044 by 410 crops at original pixel scale. Both complete row controls, explanatory labels and surrounding margins are legible. Annotation is a separate programmatic SVG."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual checkbox review 2026-11-16",
+      "notes": "White check marks become pink in checked grouped and inline controls. Blue fills and unchecked outlines remain unchanged. This is the resting checked state, not a pressed-state capture despite ACTIVE in the key name. Text, separators, switches and background remain unchanged. Before, stability and restored hashes match exactly; recorded stability and restoration pixel counts are zero."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual checkbox review 2026-11-16",
+      "notes": "Colours the check mark inside checked checkboxes."
+    }
+  },
+  "crop": [
+    18,
+    1300,
+    1044,
+    410
+  ],
+  "scope": "Representative native checkbox use only; not integrated or published."
+}

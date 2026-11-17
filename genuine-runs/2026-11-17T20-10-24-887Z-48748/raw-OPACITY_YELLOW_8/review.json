@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "469e717f6ef453d7a001a36ced3e9af647a0c7158dbb45b4802a9d2a874d0404",
+    "stability.png": "469e717f6ef453d7a001a36ced3e9af647a0c7158dbb45b4802a9d2a874d0404",
+    "after.png": "639cf07f426d05966894cd285763f5b9aa532227e046d16bb66408366736d642",
+    "restored.png": "469e717f6ef453d7a001a36ced3e9af647a0c7158dbb45b4802a9d2a874d0404"
+  },
+  "annotationSha256": "a73589afec6178e8ce6f7a76132c087d3e0df144454c466bf2b5234e61793b20",
+  "comparisonSha256": "8181e3f26bea6bc0b3926c1af23509c8dc119f908bc657edf938e08e5554c2e6",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Original native reply renderer and background consumer. Copied display records select reply-with-ping and reply-without-ping; no messages sent. Current resolver stack confirms consumer.",
+      "references": [
+        "research/tabsv2/evidence/modern-352204/modules/m/8574.js: createBackgroundHighlight",
+        "scratchpad/theme-studio-qa/native-reply-fixture.mjs",
+        "manifest.json: current 352206 runtimeConsumerStacks"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames inspected: fictional names, messages and generic avatars; no real profile information."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full original frames and focused comparison inspected. Only pinged-reply backgrounds change; unpinged replies retain original fill. Baseline and restoration hashes match exactly."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Original-scale two-reply crop inspected. Outline sits on the affected background without covering text or avatars."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Unpinged replies, yellow gutter, composer, header and layout remain unchanged. Text and avatar edge compositing follows their changed parent background."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Description distinguishes replies with ping from replies without ping; raw description explains preserved opacity."
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f",
+    "stability.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f",
+    "after.png": "e2049f1a4991d71bfd1546443fbabc13f8acf65e644d536a44e2da4f3e0f68e5",
+    "restored.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f"
+  },
+  "annotationSha256": "4629f6191ec6acaff8231ffc1c13a3e929919e90d17a78c6470e37db22cdd576",
+  "comparisonSha256": "9a92d3ba031cfda9bbe8d43179435498c2dafe85e7bcdee31bd97dbe703f0902",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Actual resolver stack names SegmentedControl for MOBILE_SEGMENTED_CONTROL_BACKGROUND; native stock Family Centre Activity screen. The observed one-key effect agrees with that component. Runtime stack line positions are not Metro module IDs.",
+      "references": [
+        "modules/user_settings/defs/native/FamilyCenterSetting.tsx (import tracker)",
+        "manifest.runtimeConsumerStacks: SegmentedControl",
+        "publishing/toeFluff/data/tokens.json semantic MOBILE_SEGMENTED_CONTROL_BACKGROUND"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Full native before and after inspected: public onboarding text and static illustration only, no names, family membership or personal data. Permission dialogs dismissed before capture; none present in originals."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Only segmented tab area changes. The translucent selected indicator composites over the new base, so its apparent tint changes as expected. Labels, header, hero and remainder of page unchanged. Full originals and final comparison inspected, complete target, no clipping, loading or unexplained overlays."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Gold outline identifies Segmented tab background. Same native-scale crop, original PNG pixels preserved, no content covered. Focused crop includes complete affected component."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Only segmented tab area changes. The translucent selected indicator composites over the new base, so its apparent tint changes as expected. Labels, header, hero and remainder of page unchanged. Whole-frame diff is 107886 pixels, entirely inside documented bounds. Baseline/stability/restoration byte-identical."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Colours the background behind the Family Centre tabs."
+    }
+  },
+  "scope": "Stock native Family Centre Activity page on Android 352206, darker base. Representative use, not exhaustive coverage."
+}

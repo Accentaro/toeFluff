@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "2484c49c96247391a93e898ce36e5377784a435f2148094de5a4320ff12b62b2",
+    "stability.png": "2484c49c96247391a93e898ce36e5377784a435f2148094de5a4320ff12b62b2",
+    "after.png": "d7926ba24107ba98cf47a9e4e43da6f213901c2f9d6127504ae8d85f904da1dc",
+    "restored.png": "2484c49c96247391a93e898ce36e5377784a435f2148094de5a4320ff12b62b2"
+  },
+  "annotationSha256": "2649bfdf3cfc9ef56266caae5643e7255144f5567acd7e48b9ac1815cf51418c",
+  "comparisonSha256": "5b37c8f15fb92a8de72f035cfb0dd44e960ab7d449ce4eeccb1ec131930888d6",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "The actual resolver stack identifies CONTROL_PRIMARY_BORDER_ACTIVE in useButtonPillStyles and PillWrapper. Genuine Discord Design.Button primary variant, standard md size, inert action; runtime held pointer. Fixed React Native captions are not colour evidence.",
+      "references": [
+        "native-button-fixture.mjs SHA256 042745683a4934ba1fd291eca2ed23eb388000dbe9fc9318f51e213c70ef0dbe",
+        "Valence/ValenceBundle/bundle/lib/discord/src/types/index.ts:316",
+        "index.android.bundle:5495:14900 useButtonPillStyles; :5500:4193 PillWrapper (runtime positions, not Metro IDs)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full originals contain generic button labels and variant names only. No identity, messages or account fields. Native back notification badge remains unchanged."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Inspected full after and focused native-scale comparison. Pink appears only on the primary pressed outline; complete control, stable pressed fill and text, no clipping or overlays."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Gold outline surrounds the entire pressed control with a margin, covering no changed pixels. Same crop and original scale on both sides. Label specifically states pressed primary border."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full-frame change is 6524 pixels confined to the primary border. Baseline/stability/restoration match exactly. Warmup proves actual held state; release-check-0 matches the original resting PNG byte-for-byte. Remaining buttons, labels and system UI unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Outlines the primary button while it is held down."
+    }
+  },
+  "scope": "Native Button component fixture, primary pressed state; not stock Settings content or exhaustive usage."
+}

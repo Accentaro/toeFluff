@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "2b459bbbe91baa252715bf8564ee615d83b0ccb8941056c8b8a5fbf14d2c75fe",
+    "stability.png": "2b459bbbe91baa252715bf8564ee615d83b0ccb8941056c8b8a5fbf14d2c75fe",
+    "after.png": "09bded385de740ff350659faa27a7a9e1214ea5f60de6dcaf0803c159c7f0be9",
+    "restored.png": "2b459bbbe91baa252715bf8564ee615d83b0ccb8941056c8b8a5fbf14d2c75fe"
+  },
+  "annotationSha256": "27be7474dfce467fb2e7ae4701ee6d2909fe7aa3bd3563dbaeaeadeae0c3d7c6",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Stock DesignSystemBadgeSetting renders Badge; captured parseThemedStyles consumer stack confirms this exact key at runtime.",
+      "references": [
+        "modules/user_settings/defs/native/DesignSystemBadgeSetting.tsx",
+        "design/components/Badge/native/Badge.native.tsx",
+        "manifest.json#runtimeConsumerStacks"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Inspected full native screen: only public design-system labels, with no personal profile or messages."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Inspected full screen and each original-scale comparison: clean NEW badge with isolated background change."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Gold outline correctly encloses affected badge component. Labels remain outside native screenshot."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full-frame effect confined to badge; unchanged baseline stability and exact restoration (zero pixels)."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Colours the primary status badge background."
+    }
+  },
+  "comparisonSha256": "4017ed66033415ff28eded25128cb107dbeacc7c3f52e8c3eb023f52e8ac15ce"
+}

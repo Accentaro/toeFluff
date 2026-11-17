@@ -1,0 +1,49 @@
+{
+  "hashes": {
+    "before.png": "9cd13a635b5207f36a1dc1b3a86855a01863716c85eb45e49317e3c46e1cf0fd",
+    "stability.png": "9cd13a635b5207f36a1dc1b3a86855a01863716c85eb45e49317e3c46e1cf0fd",
+    "after.png": "43c883c16da770012b86f390025a700666f3c23600f68e0708be8af4bcea9264",
+    "restored.png": "9cd13a635b5207f36a1dc1b3a86855a01863716c85eb45e49317e3c46e1cf0fd"
+  },
+  "annotationSha256": "cbfdd75a3c5a45abbf6291d1ff799b53f73df2245a6cb33e39dec097871ba5d8",
+  "comparisonSha256": "67dd91f2f7df6f1bd8beb32f2c18d86b70445d2a62e1b0599b6b68d8eafc19be",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Native Button experimental_premium-primary variant matches the stock design gallery. Runtime token lookup traces recorded while held.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../full-frame-review.png",
+        "../released.png",
+        "../release-check-0.png",
+        "../../../native-premium-button-fixture.mjs"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full frames inspected: two inert native controls and synthetic labels only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Before/after/restored full frames and native-scale comparison inspected. Held fill alone changes; shape and white label stay intact."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Thin outline matches changed button fill at original native pixel scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effect {'pixels': 98294, 'bounds': {'x': 53, 'y': 391, 'width': 974, 'height': 103}}; zero stability/restoration drift. Secondary button unchanged; released screenshot exactly matches pre-press state."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the premium primary button fill while pressed."
+    }
+  }
+}

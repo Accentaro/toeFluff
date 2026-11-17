@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "038dd5f1d789ff1b338fa0094b0a029a858aea6f7de0692fa26332f9c3771a69",
+    "stability.png": "038dd5f1d789ff1b338fa0094b0a029a858aea6f7de0692fa26332f9c3771a69",
+    "after.png": "3233272f8587333b9a3cba212da8022feccbf5e4c2e7835b2488a404c68434e8",
+    "restored.png": "038dd5f1d789ff1b338fa0094b0a029a858aea6f7de0692fa26332f9c3771a69"
+  },
+  "annotationSha256": "3bf01b43654061d3ef81cc4a2cf98cbfc661e998926f939ee70be3525e8daf8a",
+  "comparisonSha256": "eef7d65c76062444671cb9987d63676ab7a22573119e647f7f8a1f0d61518de4",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "NativeSpoiler returned by Discord MarkupReactRules.spoiler.react consumes SPOILER_HIDDEN_BACKGROUND. NEUTRAL_36 is its dark/Ash raw alias, independently captured.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-markup-fixture.mjs",
+        "../../../data/tokens.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full original frame inspected: only fictional code, a fictional concealed phrase, and native setting labels."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame before/after inspection and original-pixel comparison passed. No clipping or unexplained rendering artifacts. Baseline and restoration are pixel-identical."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline follows the actual changed code background or hidden spoiler cover without covering its content."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only the 253 by 53 pixel spoiler cover changes; code samples, labels and surrounding surfaces remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies the hidden-spoiler background in the Ash base."
+    }
+  }
+}

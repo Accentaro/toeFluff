@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057",
+    "stability.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057",
+    "after.png": "aaf90446d606ad611a3851d0767a6c29c1833a5b629116b975f5f9add34c0265",
+    "restored.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057"
+  },
+  "annotationSha256": "97b7c50e7d71436c7c5e0e4c58fece144b22bf2d652ed040e9573e9b720feda4",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native Toast resolves TOAST_SUCCESS_BORDER through GREEN_NEW_42; runtime consumer stack and Ash token alias verified.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json#semantic.TOAST_SUCCESS_BORDER.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames show only native design demonstration text; no private profile, messages or account details."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full before/after frames and native-scale comparison inspected. Only the toast outline changes; exact baseline and restoration match."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline surrounds the affected toast, with clear label and no content obstruction."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame difference confined to the single toast. Other variants, text and feedback icons remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies the success toast outline."
+    }
+  },
+  "comparisonSha256": "3aca8ed76d4ea69491f70dbc799374e3fa906a3f873e17f2cf6aeb3b3322771a"
+}

@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "6b2df97cd1a25ab38a554f9fb0655ffa8b2964cbf7037e1e125588eb5779934a",
+    "stability.png": "6b2df97cd1a25ab38a554f9fb0655ffa8b2964cbf7037e1e125588eb5779934a",
+    "after.png": "a3bd19c11248533ada5354ca5d9b2ef5f99d152bd61fe7695c4e43a7691a3681",
+    "restored.png": "6b2df97cd1a25ab38a554f9fb0655ffa8b2964cbf7037e1e125588eb5779934a"
+  },
+  "annotationSha256": "472547f16272643dd270961f03197a70d3297cadc1ea453e21f9193388a78a77",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Stock DesignSystemBadgeSetting renders Badge; captured parseThemedStyles consumer confirms exact epic-rarity key.",
+      "references": [
+        "modules/user_settings/defs/native/DesignSystemBadgeSetting.tsx",
+        "design/components/Badge/native/Badge.native.tsx",
+        "manifest.json#runtimeConsumerStacks"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full screen inspected: public native design-system labels only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full native screen and individual comparison inspected. Epic background visibly changes cleanly in isolation."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Outline encloses actual changed component; labels outside native crop at original pixel scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full-frame diff confined to badge; stability and restoration both zero pixels."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Colours the epic rarity badge background."
+    }
+  },
+  "comparisonSha256": "ec095b368540087acdda2f1877c422a868a0f17ce5890e09ce0ead37682d1b5e"
+}

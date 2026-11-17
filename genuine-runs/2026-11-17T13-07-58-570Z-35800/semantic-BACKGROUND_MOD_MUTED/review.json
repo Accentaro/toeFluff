@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "6198dc21761b27bc7e221454ade0ad367b4ad5b2f5dad6b594d7758568212e74",
+    "stability.png": "6198dc21761b27bc7e221454ade0ad367b4ad5b2f5dad6b594d7758568212e74",
+    "after.png": "29b6b3da69d0ae76a96ee6e9a3bd9e30f4efe81065d205d611f5b2e604dceb15",
+    "restored.png": "6198dc21761b27bc7e221454ade0ad367b4ad5b2f5dad6b594d7758568212e74"
+  },
+  "annotationSha256": "8fefd27930ff60ad80c5f8499d4691bb4f4d658e59d9a70408486929751157ed",
+  "comparisonSha256": "6eb648589115401e4a762466cdd7390450ea8bca51a68a9cfa623cdfe6e723ea",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Original ActionSheetHeaderBar floating variant resolves BACKGROUND_MOD_MUTED; standard variant resolves a separate key. Current runtime stack confirms.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-handle-fixture.mjs"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames show only generic sheet labels and fictional workshop title."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full pairs and original-scale comparison inspected. Handle retains native dimensions, clear isolated effect, exact stability/restoration."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline points to the floating sheet drag handle."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Standard handle, labels and all other pixels unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the floating sheet drag handle."
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "bef9ebc6a292d67dc324564327aefdefa4361510e723a0f8d1a33ea62345368b",
+    "stability.png": "bef9ebc6a292d67dc324564327aefdefa4361510e723a0f8d1a33ea62345368b",
+    "after.png": "d5049161992ee449f366969cc9f4f7ad46149b0467cc217adb735b6ed4c1bfee",
+    "restored.png": "bef9ebc6a292d67dc324564327aefdefa4361510e723a0f8d1a33ea62345368b"
+  },
+  "annotationSha256": "dfc3626254edfad9894ebd31f7382ef1beae644047ca1f17ea849ef178b8e439",
+  "comparisonSha256": "6f57c19408d0045897014e455937bc7b7d25d75d6752093be801680c5d7bb054",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Token palette aliases and recorded actual native Badge consumer stacks match the documented surface. ILLO_BLUE_40 supplies both rare background and outline.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../references/raw-badge-rare-epic-review.png",
+        "../../../references/raw-badge-rare-epic-comparisons.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full native frames inspected: stock labels and NEW badges only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full frames and native-scale comparisons visually inspected; intended badge surface changes without clipping or artifacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline identifies affected badge text or surface and preserves original pixel scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effect {'pixels': 4525, 'bounds': {'x': 482, 'y': 610, 'width': 116, 'height': 47}}; zero stability and restoration drift. Other gallery controls unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies the rare badge background and border through semantic aliases."
+    }
+  }
+}

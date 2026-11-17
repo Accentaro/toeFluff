@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "b4d5d02d16f8cf7dfe0cd575dbba2c2a9049cde034e968b0220c7ccae0b14530",
+    "stability.png": "b4d5d02d16f8cf7dfe0cd575dbba2c2a9049cde034e968b0220c7ccae0b14530",
+    "after.png": "ac7005e7816cde862c338717fb1da199d33cf7ec3ac1f9308e133b893b6af8b2",
+    "restored.png": "b4d5d02d16f8cf7dfe0cd575dbba2c2a9049cde034e968b0220c7ccae0b14530"
+  },
+  "annotationSha256": "814f91c0fa1d184b908cbc93250842376f8a418e994e0ac8d995864a82624d34",
+  "comparisonSha256": "10a7da45a138deda7356da979d8bf2264f053b55c696c06c0101b8775ba05ba8",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Runtime useButtonPillStyles/PillWrapper consumes this key on native selected ToggleButton.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-toggle-button-fixture.mjs"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full original frames contain generic inert native controls and stock icons only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Both full original frames and original-scale annotated comparison inspected. Background changes clearly; baseline and restoration are identical, release verified."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline encloses selected labeled toggle background without covering content."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame pixel difference is confined to labeled toggle background. Border, text, icons and other controls remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the selected labeled toggle background while held."
+    }
+  }
+}

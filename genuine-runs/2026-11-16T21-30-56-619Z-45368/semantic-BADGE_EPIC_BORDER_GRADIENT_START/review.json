@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "6b2df97cd1a25ab38a554f9fb0655ffa8b2964cbf7037e1e125588eb5779934a",
+    "stability.png": "6b2df97cd1a25ab38a554f9fb0655ffa8b2964cbf7037e1e125588eb5779934a",
+    "after.png": "e98c6e14f3b60ff3093d1cc2b89d99c3dc084f8127a26188427fba9bb3089d4e",
+    "restored.png": "6b2df97cd1a25ab38a554f9fb0655ffa8b2964cbf7037e1e125588eb5779934a"
+  },
+  "annotationSha256": "24ba88810a7c77ab0771c199a86125862e3e2247351ec2486a2476caf86e318d",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Stock DesignSystemBadgeSetting renders Badge; exact key consumer recorded in manifest runtime stacks.",
+      "references": [
+        "modules/user_settings/defs/native/DesignSystemBadgeSetting.tsx",
+        "design/components/Badge/native/Badge.native.tsx",
+        "manifest.json#runtimeConsumerStacks"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full screen inspected: native public design-system labels only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full screen and individual comparison inspected. Green replacement clearly distinguishes the epic outline from its stock magenta."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Outline correctly encloses affected badge component(s); labels describe actual behavior at original pixel scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full-frame differences confined to badge; stability and restoration zero pixels."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Colours the epic rarity badge outline."
+    }
+  },
+  "comparisonSha256": "ab826ee773db6429e3cae5f3b1a4cca02b51b2948a2db042f5764eb648c5e59d"
+}

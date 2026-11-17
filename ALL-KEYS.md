@@ -24,7 +24,7 @@ have not been observed in the tested screens and states. This does not establish
 | yes | `BACKGROUND_FEEDBACK_NOTIFICATION` | #d22d39 | #d22d39 | #d22d39 | #d22d39 | RED_NEW_50 |
 |  | `BACKGROUND_FEEDBACK_POSITIVE` | #00854514 | #00854514 | #00854514 | #00854514 | OPACITY_GREEN_8 |
 |  | `BACKGROUND_FEEDBACK_WARNING` | #f8a30014 | #f8a30014 | #f8a30014 | #f8a30014 | OPACITY_YELLOW_8 |
-|  | `BACKGROUND_MOD_MUTED` | #97979f14 | #97979f14 | #97979f14 | #97979f14 | OPACITY_8 |
+| yes | `BACKGROUND_MOD_MUTED` | #97979f14 | #97979f14 | #97979f14 | #97979f14 | OPACITY_8 |
 | yes | `BACKGROUND_MOD_NORMAL` | #97979f29 | #97979f29 | #97979f29 | #97979f33 | OPACITY_16 |
 | yes | `BACKGROUND_MOD_STRONG` | #97979f33 | #97979f33 | #97979f3d | #97979f3d | OPACITY_20 |
 | yes | `BACKGROUND_MOD_SUBTLE` | #97979f1f | #97979f1f | #97979f1f | #97979f1f | OPACITY_12 |
@@ -35,7 +35,7 @@ have not been observed in the tested screens and states. This does not establish
 | yes | `BACKGROUND_SURFACE_HIGHEST` | #3f4048 | #2c2d32 | #ffffff | #17181b | NEUTRAL_60 |
 |  | `BACKGROUND_TILE_GRADIENT_PINK_END` | #6600664d | #6600664d | #fd99e94d | #6600664d | ILLO_PINK_70 |
 |  | `BACKGROUND_TILE_GRADIENT_PINK_START` | #b3269c4d | #b3269c4d | #fbe6ff4d | #b3269c4d | ILLO_PINK_50 |
-|  | `BACKGROUND_VOICE_MUTED` | #d22d391f | #d22d391f | #d22d391f | #d22d391f | OPACITY_RED_12 |
+| yes | `BACKGROUND_VOICE_MUTED` | #d22d391f | #d22d391f | #d22d391f | #d22d391f | OPACITY_RED_12 |
 | yes | `BADGE_COMMON_BACKGROUND` | #97979f3d | #97979f3d | #97979f3d | #97979f3d | OPACITY_24 |
 | yes | `BADGE_COMMON_BORDER` | #81828a | #81828a | #81828a | #81828a | NEUTRAL_35 |
 | yes | `BADGE_COMMON_TEXT` | #c9cace | #c9cace | #5f606a | #c9cace | NEUTRAL_15 |
@@ -77,7 +77,7 @@ have not been observed in the tested screens and states. This does not establish
 | yes | `BADGE_WARNING_BORDER` | #00000014 | #00000014 | #00000014 | #00000014 | OPACITY_BLACK_8 |
 | yes | `BADGE_WARNING_TEXT` | #000000 | #000000 | #000000 | #000000 | NEUTRAL_100 |
 |  | `BG_SURFACE_RAISED` | #383a40 | #26272f | #ffffff | #131318 | PRIMARY_560 |
-|  | `BLACK` | #000000 | #000000 | #000000 | #000000 | BLACK |
+| yes | `BLACK` | #000000 | #000000 | #000000 | #000000 | BLACK |
 |  | `BLUR_FALLBACK` | #1e1f22f5 | #2c2d35f5 | #41434af5 | #212229f5 | PRIMARY_700 |
 |  | `BLUR_FALLBACK_PRESSED` | #1a1b1ef5 | #26272ff5 | #383a40f5 | #1c1d23f5 | PRIMARY_730 |
 |  | `BORDER_FEEDBACK_CRITICAL` | #ffa09b | #f87e7a | #b92733 | #eb5f5e | RED_NEW_18 |
@@ -107,15 +107,15 @@ have not been observed in the tested screens and states. This does not establish
 |  | `CHANNELTEXTAREA_BACKGROUND` | #383a40 | #383a43 | #ebedef | #131318 | PRIMARY_560 |
 | yes | `CHANNEL_BACKGROUND_DEFAULT` | #323339 | #1a1a1e | #fbfbfb | #000000 | NEUTRAL_69 |
 | yes | `CHANNEL_ICON` | #999aa1 | #81828a | #666770 | #7a7b83 | NEUTRAL_28 |
-|  | `CHAT_BANNER_BG` | #393a41 | #242429 | #ffffff | #0a0a0c | NEUTRAL_64 |
+| yes | `CHAT_BANNER_BG` | #393a41 | #242429 | #ffffff | #0a0a0c | NEUTRAL_64 |
 |  | `CHAT_BORDER` | #97979f1f | #97979f1f | #97979f47 | #97979f33 | OPACITY_12 |
 |  | `CHAT_INPUT_ACTION_BUTTON_BACKGROUND` | #00000000 | #00000000 | #00000000 | #00000000 | TRANSPARENT |
 | yes | `CHAT_INPUT_ACTION_BUTTON_ICON_DEFAULT_TINT` | #c5c6ca | #abacb2 | #595a63 | #96979e | NEUTRAL_16 |
 |  | `CHAT_INPUT_ACTION_ICON_ACTIVE_TINT` | #ffffff | #fbfbfb | #28282d | #dcdcdf | NEUTRAL_1 |
 |  | `CHAT_INPUT_BACKGROUND` | #00000014 | #0000001f | #00000005 | #0000001f | OPACITY_BLACK_8 |
 | yes | `CHAT_INPUT_ICON_DEFAULT_TINT` | #c5c6ca | #abacb2 | #595a63 | #96979e | NEUTRAL_16 |
-|  | `CHAT_INPUT_SEND_BUTTON_ACTIVE_BACKGROUND` | #5865f2 | #5865f2 | #5865f2 | #5865f2 | BLURPLE_50 |
-|  | `CHAT_INPUT_SEND_BUTTON_ICON_ACTIVE_TINT` | #ffffff | #ffffff | #ffffff | #ffffff | NEUTRAL_1 |
+| yes | `CHAT_INPUT_SEND_BUTTON_ACTIVE_BACKGROUND` | #5865f2 | #5865f2 | #5865f2 | #5865f2 | BLURPLE_50 |
+| yes | `CHAT_INPUT_SEND_BUTTON_ICON_ACTIVE_TINT` | #ffffff | #ffffff | #ffffff | #ffffff | NEUTRAL_1 |
 | yes | `CHECKBOX_BACKGROUND_DEFAULT` | #00000014 | #00000014 | #0000000a | #00000014 | OPACITY_BLACK_8 |
 | yes | `CHECKBOX_BACKGROUND_SELECTED_DEFAULT` | #5865f2 | #5865f2 | #5865f2 | #5865f2 | BLURPLE_50 |
 | yes | `CHECKBOX_BORDER_DEFAULT` | #97979fa3 | #97979fa3 | #84858d | #97979fa3 | OPACITY_64 |
@@ -168,7 +168,7 @@ have not been observed in the tested screens and states. This does not establish
 |  | `CUSTOM_STATUS_BUBBLE_BG` | #3f4048 | #2c2d32 | #ffffff | #17181b | NEUTRAL_60 |
 |  | `DATEPICKER_RANGE_BACKGROUND_DEFAULT` | #5865f266 | #5865f266 | #5865f266 | #5865f266 | OPACITY_BLURPLE_40 |
 |  | `DATEPICKER_RANGE_BACKGROUND_HOVER` | #5865f299 | #5865f299 | #5865f299 | #5865f299 | OPACITY_BLURPLE_60 |
-| yes | `EMBED_BACKGROUND` | #393a41 | #242429 | #ffffff | #0a0a0c | NEUTRAL_64 |
+|  | `EMBED_BACKGROUND` | #393a41 | #242429 | #ffffff | #0a0a0c | NEUTRAL_64 |
 |  | `EMBED_BACKGROUND_ALTERNATE` | #393a41 | #242429 | #ffffff | #0a0a0c | NEUTRAL_64 |
 |  | `EXPRESSIVE_GRADIENT_BLUE_END` | #161a8a73 | #161a8a4d | #a0a9facc | #161a8a40 | ILLO_BLUE_60 |
 |  | `EXPRESSIVE_GRADIENT_BLUE_START` | #5865f273 | #5865f24d | #e6e8ffcc | #5865f240 | ILLO_BLUE_40 |
@@ -208,7 +208,7 @@ have not been observed in the tested screens and states. This does not establish
 |  | `HEXAGON_CAMPAIGN_PROMO_GRADIENT_4` | #e8a25299 | #e8a25299 | #e8a25299 | #e8a25299 | BG_GRADIENT_HEXAGON_PROMO_4 |
 |  | `HEXAGON_CAMPAIGN_PROMO_GRADIENT_SHADE` | #00000085 | #00000085 | #00000085 | #00000085 | BLACK |
 |  | `ICON_BRAND` | #94a8ff | #798df9 | #525fe0 | #6374f4 | BLURPLE_26 |
-|  | `ICON_DEFAULT` | #f3f3f4 | #efeff1 | #2e2e34 | #d4d5d8 | NEUTRAL_4 |
+| yes | `ICON_DEFAULT` | #f3f3f4 | #efeff1 | #2e2e34 | #d4d5d8 | NEUTRAL_4 |
 | yes | `ICON_FEEDBACK_CRITICAL` | #ffa09b | #f87e7a | #b92733 | #eb5f5e | RED_NEW_18 |
 |  | `ICON_FEEDBACK_INFO` | #8ebefa | #66a5f3 | #0361bc | #4591ec | BLUE_NEW_21 |
 |  | `ICON_FEEDBACK_NOTIFICATION` | #d22d39 | #d22d39 | #d22d39 | #d22d39 | RED_NEW_50 |
@@ -223,8 +223,8 @@ have not been observed in the tested screens and states. This does not establish
 |  | `ICON_STATUS_ONLINE` | #3d9e60 | #3d9e60 | #01783e | #3d9e60 | GREEN_NEW_40 |
 | yes | `ICON_STRONG` | #ffffff | #fbfbfb | #28282d | #dcdcdf | NEUTRAL_1 |
 | yes | `ICON_SUBTLE` | #c5c6ca | #abacb2 | #595a63 | #96979e | NEUTRAL_16 |
-|  | `ICON_TRANSPARENT` | #00000000 | #00000000 | #00000000 | #00000000 | TRANSPARENT |
-| yes | `ICON_VOICE_CONNECTED` | #73c48b | #53ad71 | #01783e | #3d9e60 | GREEN_NEW_25 |
+| yes | `ICON_TRANSPARENT` | #00000000 | #00000000 | #00000000 | #00000000 | TRANSPARENT |
+|  | `ICON_VOICE_CONNECTED` | #73c48b | #53ad71 | #01783e | #3d9e60 | GREEN_NEW_25 |
 |  | `ICON_VOICE_DISCONNECTED` | #ffa09b | #f87e7a | #b92733 | #eb5f5e | RED_NEW_18 |
 |  | `ICON_VOICE_MUTED` | #da3e44 | #da3e44 | #d22d39 | #da3e44 | RED_NEW_46 |
 |  | `ICON_VOICE_SPEAKING` | #3d9e60 | #3d9e60 | #269153 | #3d9e60 | GREEN_NEW_40 |
@@ -265,9 +265,9 @@ have not been observed in the tested screens and states. This does not establish
 |  | `MESSAGE_AUTOMOD_BACKGROUND_DEFAULT` | #f23f430d | #fa777b14 | #f23f430d | #fa777b14 | RED_400 |
 |  | `MESSAGE_AUTOMOD_BACKGROUND_HOVER` | #f23f431a | #f23f431a | #f23f431a | #f23f431a | RED_400 |
 |  | `MESSAGE_BACKGROUND_HOVER` | #97979f1f | #97979f1f | #97979f1f | #97979f1f | OPACITY_12 |
-|  | `MESSAGE_HIGHLIGHT_BACKGROUND_DEFAULT` | #5865f229 | #5865f229 | #5865f229 | #5865f229 | OPACITY_BLURPLE_16 |
+| yes | `MESSAGE_HIGHLIGHT_BACKGROUND_DEFAULT` | #5865f229 | #5865f229 | #5865f229 | #5865f229 | OPACITY_BLURPLE_16 |
 |  | `MESSAGE_HIGHLIGHT_BACKGROUND_HOVER` | #5865f21f | #5865f21f | #5865f233 | #5865f21f | OPACITY_BLURPLE_12 |
-|  | `MESSAGE_MENTIONED_BACKGROUND_DEFAULT` | #f8a30014 | #f8a30014 | #f8a30014 | #f8a30014 | OPACITY_YELLOW_8 |
+| yes | `MESSAGE_MENTIONED_BACKGROUND_DEFAULT` | #f8a30014 | #f8a30014 | #f8a30014 | #f8a30014 | OPACITY_YELLOW_8 |
 |  | `MESSAGE_MENTIONED_BACKGROUND_HOVER` | #f8a3000a | #f8a3000a | #f8a3001f | #f8a3000a | OPACITY_YELLOW_4 |
 | yes | `MOBILE_ACTIONSHEET_BACKGROUND` | #393a41 | #242429 | #ffffff | #0a0a0c | NEUTRAL_64 |
 | yes | `MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT` | #393a41 | #242429 | #ffffff | #0a0a0c | NEUTRAL_64 |
@@ -285,7 +285,7 @@ have not been observed in the tested screens and states. This does not establish
 |  | `MOBILE_COACHMARK_BORDER_DEFAULT` | #97979f1f | #97979f1f | #97979f47 | #97979f33 | OPACITY_12 |
 |  | `MOBILE_COMMAND_BAR_BACKGROUND` | #36373e | #202024 | #fbfbfb | #000000 | NEUTRAL_66 |
 |  | `MOBILE_COMMAND_BAR_DIVIDER` | #97979f0a | #97979f0a | #97979f33 | #97979f29 | OPACITY_4 |
-|  | `MOBILE_COMMAND_CATEGORIES_BACKGROUND` | #393a41 | #242429 | #ffffff | #0a0a0c | NEUTRAL_64 |
+| yes | `MOBILE_COMMAND_CATEGORIES_BACKGROUND` | #393a41 | #242429 | #ffffff | #0a0a0c | NEUTRAL_64 |
 |  | `MOBILE_EMBED_BACKGROUND_DEFAULT` | #393a41 | #242429 | #ffffff | #0a0a0c | NEUTRAL_64 |
 | yes | `MOBILE_EMOJI_BUTTON_BACKGROUND` | #97979f1f | #97979f1f | #97979f1f | #97979f1f | OPACITY_12 |
 | yes | `MOBILE_EXPRESSION_PICKER_BACKGROUND_DEFAULT` | #393a41 | #242429 | #ffffff | #0a0a0c | NEUTRAL_64 |
@@ -293,8 +293,8 @@ have not been observed in the tested screens and states. This does not establish
 |  | `MOBILE_FLOATINGBAR_BACKGROUND_HIGHER` | #3c3d45 | #28282d | #ffffff | #121214 | NEUTRAL_62 |
 | yes | `MOBILE_FLOATINGBAR_BACKGROUND_NAMEPLATE` | #3f4048 | #2c2d32 | #ffffff | #17181b | NEUTRAL_60 |
 |  | `MOBILE_FLOATINGBAR_BACKGROUND_SCRIM` | #36373e | #202024 | #fbfbfb | #000000 | NEUTRAL_66 |
-|  | `MOBILE_FLOATING_ACCESSORY_BACKGROUND` | #393a41 | #242429 | #ffffff | #0a0a0c | NEUTRAL_64 |
-|  | `MOBILE_FLOATING_ACCESSORY_BORDER` | #97979f1f | #97979f1f | #97979f47 | #97979f33 | OPACITY_12 |
+| yes | `MOBILE_FLOATING_ACCESSORY_BACKGROUND` | #393a41 | #242429 | #ffffff | #0a0a0c | NEUTRAL_64 |
+| yes | `MOBILE_FLOATING_ACCESSORY_BORDER` | #97979f1f | #97979f1f | #97979f47 | #97979f33 | OPACITY_12 |
 | yes | `MOBILE_GUILDBAR_ICON_BACKGROUND_DEFAULT` | #97979f1f | #97979f1f | #97979f1f | #97979f1f | OPACITY_12 |
 | yes | `MOBILE_GUILDBAR_ICON_DEFAULT` | #c5c6ca | #abacb2 | #595a63 | #96979e | NEUTRAL_16 |
 |  | `MOBILE_HEADER_BORDER` | #97979f70 | #97979f70 | #97979f85 | #97979f70 | OPACITY_44 |
@@ -363,7 +363,7 @@ have not been observed in the tested screens and states. This does not establish
 |  | `REDESIGN_INPUT_CONTROL_ACTIVE_BG` | #282a2e | #31323b | #ffffff | #2c2d35 | PRIMARY_645 |
 | yes | `REDESIGN_INPUT_CONTROL_SELECTED` | #5865f2 | #5865f2 | #5865f2 | #5865f2 | BRAND_500 |
 |  | `SHARE_CHAT_INPUT_BACKGROUND` | #35363c | #212125 | #efeff1 | #101013 | NEUTRAL_67 |
-|  | `SLIDER_TRACK_BACKGROUND` | #595a63 | #474851 | #c5c6ca | #383940 | NEUTRAL_47 |
+| yes | `SLIDER_TRACK_BACKGROUND` | #595a63 | #474851 | #c5c6ca | #383940 | NEUTRAL_47 |
 | yes | `SPINE_DEFAULT` | #595a63 | #474851 | #c5c6ca | #383940 | NEUTRAL_47 |
 | yes | `SPOILER_HIDDEN_BACKGROUND` | #7d7e87 | #666770 | #8f9097 | #595a63 | NEUTRAL_36 |
 |  | `SPOILER_REVEALED_BACKGROUND` | #232428 | #6c6f7c29 | #ebedef | #6c6f7c29 | PRIMARY_660 |
@@ -402,7 +402,7 @@ have not been observed in the tested screens and states. This does not establish
 | yes | `TEXT_FEEDBACK_CRITICAL` | #ffa09b | #f87e7a | #b92733 | #eb5f5e | RED_NEW_18 |
 |  | `TEXT_FEEDBACK_INFO` | #8ebefa | #66a5f3 | #0361bc | #4591ec | BLUE_NEW_21 |
 | yes | `TEXT_FEEDBACK_POSITIVE` | #7ecb94 | #5eb479 | #01713a | #41a063 | GREEN_NEW_22 |
-|  | `TEXT_FEEDBACK_WARNING` | #fcb529 | #ea9800 | #945300 | #ce8100 | YELLOW_NEW_38 |
+| yes | `TEXT_FEEDBACK_WARNING` | #fcb529 | #ea9800 | #945300 | #ce8100 | YELLOW_NEW_38 |
 | yes | `TEXT_LINK` | #76aff6 | #4d96ee | #006dd4 | #2781e7 | BLUE_NEW_27 |
 | yes | `TEXT_MUTED` | #abacb2 | #96979e | #6c6d76 | #81828a | NEUTRAL_23 |
 |  | `TEXT_OVERLAY_DARK` | #000000 | #000000 | #000000 | #000000 | NEUTRAL_100 |
@@ -410,7 +410,7 @@ have not been observed in the tested screens and states. This does not establish
 |  | `TEXT_STATUS_DND` | #dc4247 | #dc4247 | #d22d39 | #dc4247 | RED_NEW_45 |
 |  | `TEXT_STATUS_IDLE` | #ffcb6e | #ffcb6e | #faaa00 | #ffcb6e | YELLOW_NEW_22 |
 |  | `TEXT_STATUS_OFFLINE` | #9d9ea5 | #9d9ea5 | #5f606a | #9d9ea5 | NEUTRAL_27 |
-|  | `TEXT_STATUS_ONLINE` | #3d9e60 | #3d9e60 | #01783e | #3d9e60 | GREEN_NEW_40 |
+| yes | `TEXT_STATUS_ONLINE` | #3d9e60 | #3d9e60 | #01783e | #3d9e60 | GREEN_NEW_40 |
 | yes | `TEXT_STRONG` | #ffffff | #fbfbfb | #28282d | #dcdcdf | NEUTRAL_1 |
 | yes | `TEXT_SUBTLE` | #c5c6ca | #abacb2 | #595a63 | #96979e | NEUTRAL_16 |
 |  | `TEXT_VOICE_CONNECTED` | #73c48b | #53ad71 | #01783e | #3d9e60 | GREEN_NEW_25 |
@@ -445,9 +445,9 @@ have not been observed in the tested screens and states. This does not establish
 |  | `TOGGLEBUTTON_ICON_ONLY_ICON_SELECTED_HOVER` | #ffffff | #fbfbfb | #28282d | #dcdcdf | NEUTRAL_1 |
 | yes | `TOGGLEBUTTON_ICON_SELECTED` | #ffffff | #fbfbfb | #28282d | #dcdcdf | NEUTRAL_1 |
 |  | `TOGGLEBUTTON_ICON_SELECTED_HOVER` | #ffffff | #fbfbfb | #28282d | #dcdcdf | NEUTRAL_1 |
-| yes | `USER_PROFILE_ABOUT_ME_HEADING_TEXT` | #ffffff | #fbfbfb | #28282d | #dcdcdf | NEUTRAL_1 |
+|  | `USER_PROFILE_ABOUT_ME_HEADING_TEXT` | #ffffff | #fbfbfb | #28282d | #dcdcdf | NEUTRAL_1 |
 |  | `USER_PROFILE_CONTAINER_BACKGROUND` | #97979f1f | #97979f1f | #97979f1f | #97979f1f | OPACITY_12 |
-| yes | `USER_PROFILE_GRADIENT_BACKGROUND` | #2c2d32 | #121214 | #f3f3f4 | #000000 | NEUTRAL_73 |
+|  | `USER_PROFILE_GRADIENT_BACKGROUND` | #2c2d32 | #121214 | #f3f3f4 | #000000 | NEUTRAL_73 |
 |  | `VOICE_CHANNEL_USER_LIMIT_ACCENT_BACKGROUND` | #97979f33 | #97979f33 | #97979f3d | #97979f3d | OPACITY_20 |
 |  | `VOICE_CHANNEL_USER_LIMIT_BACKGROUND` | #36373e | #202024 | #fbfbfb | #000000 | NEUTRAL_66 |
 |  | `VOICE_CHANNEL_USER_LIMIT_ICON` | #c5c6ca | #abacb2 | #595a63 | #96979e | NEUTRAL_16 |

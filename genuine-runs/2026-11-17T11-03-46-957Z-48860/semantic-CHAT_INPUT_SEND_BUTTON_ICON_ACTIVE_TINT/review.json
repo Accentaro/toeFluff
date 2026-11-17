@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "4f7fd63c6b0f229ecf97a40c4b37950f3075993c3ec983c3661521a11871df14",
+    "stability.png": "4f7fd63c6b0f229ecf97a40c4b37950f3075993c3ec983c3661521a11871df14",
+    "after.png": "4c64549a3b639a8a86d6875da2915e5148a00dbd9aa257a295e97c80b1c2c6f4",
+    "restored.png": "4f7fd63c6b0f229ecf97a40c4b37950f3075993c3ec983c3661521a11871df14"
+  },
+  "annotationSha256": "1fb6bcace22dc171ae1cec60fc35e9d965dddcf14887fc8f579c7ffe16081532",
+  "comparisonSha256": "d4f9533a60321d406d93d349fc032f2b1596ceddfe7c73006eeef2a1a856ba42",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "ChatInputSendButton runtime resolver trace establishes this active arrow tint.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames inspected: fictional names, avatars, channel, messages and unsent draft."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame and original-scale comparison inspected. Arrow tint changes cleanly; zero baseline and restoration pixel drift."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline identifies the arrow rather than the surrounding button background."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Changes limited to arrow pixels; button background, composer and chat are unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the send arrow when a message draft is present."
+    }
+  }
+}

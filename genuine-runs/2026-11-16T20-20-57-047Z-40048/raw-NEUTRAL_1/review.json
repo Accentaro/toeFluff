@@ -1,0 +1,92 @@
+{
+  "hashes": {
+    "before.png": "d647d0bfbf6d66ccbeed8af155be06b27c4aadfc0bf3eb2771c76d2b1b1cb7a5",
+    "stability.png": "d647d0bfbf6d66ccbeed8af155be06b27c4aadfc0bf3eb2771c76d2b1b1cb7a5",
+    "after.png": "d625a86615951639db0f882b3623d1b60ec24dc4cda3eea0aff96c44e6d37c53",
+    "restored.png": "d647d0bfbf6d66ccbeed8af155be06b27c4aadfc0bf3eb2771c76d2b1b1cb7a5"
+  },
+  "annotationSha256": "c861e1266bb705fc0b8fd3212044c51e6c72fdbbba2ddd02a435c71cc2d25b4c",
+  "comparisonSha256": "e38ed5c782276e6a94f9e1d762255ad64097febfd3b47fc291c715bebc220541",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual raw Button review 2026-11-16",
+      "notes": "Only the raw token was overridden. Recorded semantic alias names independently checked against tokens.semantic[alias].darker.raw. Actual resolver consumer stacks provide runtime proof; coordinates are not Metro IDs. Real native Design.Button fixture, standard md props and inert callbacks; captions fixed gray, not token evidence. No exhaustive use claim.",
+      "references": [
+        "native-button-fixture.mjs SHA256 042745683a4934ba1fd291eca2ed23eb388000dbe9fc9318f51e213c70ef0dbe",
+        "publishing/toeFluff/data/tokens.json SHA256 706726a2d06dcb6b8e69a7ffbaf8d8a0fb93f8c2ce265aa949255b5dfe1b3b0c",
+        "CONTROL_PRIMARY_TEXT_DEFAULT.darker.raw = NEUTRAL_1",
+        "CONTROL_CRITICAL_PRIMARY_TEXT_DEFAULT.darker.raw = NEUTRAL_1",
+        "CONTROL_CONNECTED_TEXT_DEFAULT.darker.raw = NEUTRAL_1",
+        "CONTROL_OVERLAY_PRIMARY_BACKGROUND_DEFAULT.darker.raw = NEUTRAL_1",
+        "CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT.darker.raw = NEUTRAL_1",
+        "index.android.bundle:5495:11132 (useButtonTextColorStyles, via CONTROL_PRIMARY_TEXT_DEFAULT)",
+        "index.android.bundle:5489:7690 (BaseTextButton, via CONTROL_PRIMARY_TEXT_DEFAULT)",
+        "index.android.bundle:5495:14900 (useButtonPillStyles, via CONTROL_PRIMARY_TEXT_DEFAULT)",
+        "index.android.bundle:5500:4193 (PillWrapper, via CONTROL_PRIMARY_TEXT_DEFAULT)",
+        "index.android.bundle:5495:11132 (useButtonTextColorStyles, via CONTROL_CRITICAL_PRIMARY_TEXT_DEFAULT)",
+        "index.android.bundle:5489:7690 (BaseTextButton, via CONTROL_CRITICAL_PRIMARY_TEXT_DEFAULT)",
+        "index.android.bundle:5495:14900 (useButtonPillStyles, via CONTROL_CRITICAL_PRIMARY_TEXT_DEFAULT)",
+        "index.android.bundle:5500:4193 (PillWrapper, via CONTROL_CRITICAL_PRIMARY_TEXT_DEFAULT)",
+        "index.android.bundle:5495:11132 (useButtonTextColorStyles, via CONTROL_CONNECTED_TEXT_DEFAULT)",
+        "index.android.bundle:5489:7690 (BaseTextButton, via CONTROL_CONNECTED_TEXT_DEFAULT)",
+        "index.android.bundle:5495:14900 (useButtonPillStyles, via CONTROL_CONNECTED_TEXT_DEFAULT)",
+        "index.android.bundle:5500:4193 (PillWrapper, via CONTROL_CONNECTED_TEXT_DEFAULT)",
+        "index.android.bundle:5495:14900 (useButtonPillStyles, via CONTROL_OVERLAY_PRIMARY_BACKGROUND_DEFAULT)",
+        "index.android.bundle:5500:4193 (PillWrapper, via CONTROL_OVERLAY_PRIMARY_BACKGROUND_DEFAULT)",
+        "index.android.bundle:5495:11132 (useButtonTextColorStyles, via CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT)",
+        "index.android.bundle:5489:7690 (BaseTextButton, via CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT)",
+        "index.android.bundle:5495:14900 (useButtonPillStyles, via CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT)",
+        "index.android.bundle:5500:4193 (PillWrapper, via CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual raw Button review 2026-11-16",
+      "notes": "Full baseline/after inspected. Only generic action labels and variant captions, fixed status icons and explained native badge; no private profile data or messages."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual raw Button review 2026-11-16",
+      "notes": "Primary, destructive, active and secondary-overlay white labels turn pink; primary-overlay white fill also turns pink. Black primary-overlay label, secondary/tertiary white labels, fixed gray captions and remaining fills remain unchanged. Related changes match the recorded semantic aliases of this single raw token. Full baseline is verified resting native fixture; final comparison individually inspected. No clipping, unexpected overlays or malformed rendering. Focused view shows representative use; full originals preserve all additional effects."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual raw Button review 2026-11-16",
+      "notes": "Gold outline surrounds primary overlay fill without covering changed pixels. Identical crop and original scale before/after. Labels describe raw propagation; additional uses noted. Separate SVG, no altered screenshot pixels."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual raw Button review 2026-11-16",
+      "notes": "Primary, destructive, active and secondary-overlay white labels turn pink; primary-overlay white fill also turns pink. Black primary-overlay label, secondary/tertiary white labels, fixed gray captions and remaining fills remain unchanged. Related changes match the recorded semantic aliases of this single raw token. Multiple semantic aliases of one raw token are intended dependent changes, not extra key mutations. Baseline/stability/restored hashes identical; zero drift."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual raw Button review 2026-11-16",
+      "notes": "Supplies bright button labels and the primary overlay fill."
+    }
+  },
+  "crop": [
+    18,
+    1265,
+    1044,
+    690
+  ],
+  "rawSemanticAliases": [
+    "CONTROL_PRIMARY_TEXT_DEFAULT",
+    "CONTROL_CRITICAL_PRIMARY_TEXT_DEFAULT",
+    "CONTROL_CONNECTED_TEXT_DEFAULT",
+    "CONTROL_OVERLAY_PRIMARY_BACKGROUND_DEFAULT",
+    "CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT"
+  ],
+  "fixtureProvenance": {
+    "kind": "native-component-fixture",
+    "source": "../../native-button-fixture.mjs",
+    "sha256": "042745683a4934ba1fd291eca2ed23eb388000dbe9fc9318f51e213c70ef0dbe",
+    "components": "Discord Design.Button; standard md props, no component styling overrides",
+    "labels": "React Native Text variant captions use fixed gray; not token evidence",
+    "actions": "Inert callbacks; no account or external actions",
+    "registration": "Clone of native Button Settings route with custom getComponent; not stock route content"
+  },
+  "scope": "Representative native Button uses of raw token; not exhaustive. Not integrated or published."
+}

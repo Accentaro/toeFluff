@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "4a4351e40039801645432d9bf22f9af1cc4b8b36b1da7fcf5d2ab76a914a8c2b",
+    "stability.png": "4a4351e40039801645432d9bf22f9af1cc4b8b36b1da7fcf5d2ab76a914a8c2b",
+    "after.png": "e074bc9f0a6402f5c1a1c5c2febeca0c896d8c763985fe854cf994e4742fc987",
+    "restored.png": "4a4351e40039801645432d9bf22f9af1cc4b8b36b1da7fcf5d2ab76a914a8c2b"
+  },
+  "annotationSha256": "3626f8d341a61696f1a2c5bcccb8c39d04618e118297e4564b525ad9f3a8cc57",
+  "comparisonSha256": "c80c000efb3d091180e294a8988751de036cac5311190bb9fbf4296adc6e0239",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "GuildsBarActivityIndicatorBase activity disk; ActionSheetHeaderBar is also recorded but not visible here.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../full-seven-review.png",
+        "../../../fixtures/server-fixture-review.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full server frames inspected: fictional guild/channel names, initials, profile and activity; identifying artwork absent."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame contact sheet and focused comparison visually inspected. Colours the server-rail activity indicator background."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Revised native-scale comparison inspected; outline directly identifies voice activity indicator."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "GuildsBarActivityIndicatorBase activity disk; ActionSheetHeaderBar is also recorded but not visible here. All visible changes agree with these consumers. Stability and restoration pixel differences are zero."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the server-rail activity indicator background. The speaker glyph stays unchanged."
+    }
+  }
+}

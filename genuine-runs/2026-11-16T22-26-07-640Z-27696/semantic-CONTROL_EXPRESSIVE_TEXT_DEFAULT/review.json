@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "ccda8e204fca2e81ad8b7cf4fd063488f74bb9401a3501c0d87c8309a5d232eb",
+    "stability.png": "ccda8e204fca2e81ad8b7cf4fd063488f74bb9401a3501c0d87c8309a5d232eb",
+    "after.png": "783e6ebf12e013733591509509335b26f81b69d076eaba1f863ed23c070910e6",
+    "restored.png": "ccda8e204fca2e81ad8b7cf4fd063488f74bb9401a3501c0d87c8309a5d232eb"
+  },
+  "annotationSha256": "c24913f438a21ac7d86a81dd09e59f9efdad8c63ce2877117b721532ec3470b9",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Runtime single-key lookup reaches useButtonTextColorStyles/BaseTextButton and PillWrapper. Native stock DesignSystemsButtonSetting definition recorded in manifest.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../full-frame-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Inspected full native gallery and focused comparison: generic component variant labels only; no personal profile or messages."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Inspected original-scale comparison and full-frame overview. Entire target button visible; isolated colour change clear; no rendering artifacts or clipped target."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Programmatic outline surrounds expressive button label without covering content. Identical native-scale crop in both panels."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effect confined to {'x': 455, 'y': 1457, 'width': 168, 'height': 34} (1957 pixels). Stability and restoration both zero changed pixels; surrounding buttons unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the label on an expressive button. Matches observed effect; gradient stops are distinguished."
+    }
+  },
+  "comparisonSha256": "bf7233a9c93d58f384557ee608e9266c15d2163b1c4f39608db7ea7f31255026"
+}

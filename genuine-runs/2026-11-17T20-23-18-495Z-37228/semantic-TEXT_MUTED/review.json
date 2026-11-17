@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "a62b8497316ccff4cfbb12ab8e13fca963a244fcf106cf928267fd66a833a678",
+    "stability.png": "a62b8497316ccff4cfbb12ab8e13fca963a244fcf106cf928267fd66a833a678",
+    "after.png": "9eab06184abf2f0fcdf6bcdd72d6127ba314eb2683dcb20a905d536c2df3dce5",
+    "restored.png": "a62b8497316ccff4cfbb12ab8e13fca963a244fcf106cf928267fd66a833a678"
+  },
+  "annotationSha256": "d4216fb73383263245c4f0b21171259bed3d0e9c44900c1c8b8f5d8cde3b0199",
+  "comparisonSha256": "0a8f8509ad66ddb7e2d9c929c5caa65d16da44a9c257d88900b102ba21a87177",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Current 352206 runtime semantic resolver stacks and exact changed-pixel bounds identify this native component. Source references supplement the current runtime evidence.",
+      "references": [
+        "manifest.json: runtimeConsumerStacks and effect.bounds",
+        "scratchpad/theme-studio-qa/replacement-source-index.json: TEXT_MUTED",
+        "research/tabsv2/evidence/modern-352204/modules/m/12465.js: ChatInputNativeComponent"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full original frames inspected: fictional names/messages, generic avatars and empty composer."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames and original-scale comparison inspected. Only the documented message placeholder changes; baseline and restored hashes match."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline tightly encloses the changed component without covering content. Crop includes neighbouring controls for context."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Changed-pixel bounds confined to the documented component; layout and neighbouring colours unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the empty message composer placeholder. This example claims placeholder only: timestamp usage requires separate native-cache investigation."
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "708e722eb3e8f458f92971713d139a70fb6843fea16911f26ea1e91b7135728c",
+    "stability.png": "708e722eb3e8f458f92971713d139a70fb6843fea16911f26ea1e91b7135728c",
+    "after.png": "ecdd80c6d930803c5a8d0220683ae55a95101f9f18bfcc79590ee72703d74cd2",
+    "restored.png": "708e722eb3e8f458f92971713d139a70fb6843fea16911f26ea1e91b7135728c"
+  },
+  "annotationSha256": "ce82761bddf9c8ee795adca72f38b3f8eb1729195d8a9c62bca1ed49ba175982",
+  "comparisonSha256": "2d7ecdf4aaaf6be1d65952aafc17a9d943fe63639e46e37d0dea62aa3cdbbc33",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "BaseChannelIcon and BaseIconImage resolves CHANNEL_ICON; runtime stacks and isolated change verified.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../full-frame-review.png",
+        "../../../fixtures/server-fixture-review.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full frames inspected; only fictional profile/server/channel labels and initials."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full before/after/restored frames and native-scale comparison inspected. Colours channel icons for read channels and Channels & Roles."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline matches channels & roles icon. Labels and target are fully visible."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Unread channel icons use a different token. Full-frame differences confined to intended glyphs. Zero stability/restoration drift."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours channel icons for read channels and Channels & Roles."
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "hashes": {
+    "before.png": "742be3650fa1208789ac7c7b9f62afc6526e04202d433fc3ae188dcd19f0292c",
+    "stability.png": "742be3650fa1208789ac7c7b9f62afc6526e04202d433fc3ae188dcd19f0292c",
+    "after.png": "659bb64bc1905a38399d272566d714a4d03f55d8e6154ba035cd7adff0376e48",
+    "restored.png": "742be3650fa1208789ac7c7b9f62afc6526e04202d433fc3ae188dcd19f0292c"
+  },
+  "annotationSha256": "2cb41a0afc168d6b3cefc2a286e49e3f5040f870f9ee6d59faaaa71b4391700b",
+  "comparisonSha256": "6f9a63d49fb779ee98aa2453b65aaeb27c2df4e84bb61fc0743b21f1beaafd41",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Actual CONTROL_OVERLAY_PRIMARY_BACKGROUND_ACTIVE consumer is experimental_premium-secondary native Button in this build, confirmed by isolated runtime lookup and override.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../full-frame-review.png",
+        "../released.png",
+        "../release-check-0.png",
+        "../../../native-premium-button-fixture.mjs"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full frames inspected: inert native controls with synthetic captions only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full held before/after/restored frames and native-scale comparison inspected; secondary fill changes, its label and primary button remain unchanged."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline identifies the pressed secondary fill without altering native pixels."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effect {'pixels': 98124, 'bounds': {'x': 53, 'y': 631, 'width': 974, 'height': 103}}; zero stability/restoration drift and exact pre-press released appearance recovered."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the premium secondary button fill while pressed."
+    }
+  }
+}

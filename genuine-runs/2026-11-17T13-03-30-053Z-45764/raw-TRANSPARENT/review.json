@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "a84009ed9c18b1aa5f11d6f40f5b86692a230639518f8d16fb86f5b0915eac88",
+    "stability.png": "a84009ed9c18b1aa5f11d6f40f5b86692a230639518f8d16fb86f5b0915eac88",
+    "after.png": "4ccb522a2af5500addf6a60a7286f96235dcd404b50821cabb4ff0af1067c721",
+    "restored.png": "a84009ed9c18b1aa5f11d6f40f5b86692a230639518f8d16fb86f5b0915eac88"
+  },
+  "annotationSha256": "05fe50f5aee2a9efaf87eea77e12a56750aa30e0a1a95090afa7ce4aae197b50",
+  "comparisonSha256": "5d11abdcd07b811138fa7adb2448e8dc964305c709c3fa9f801f212dd3d6f8b4",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native Card source selects unsafe_rawColors.TRANSPARENT for transparent variant. Independent raw capture changes only that card.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-surface-fixture.mjs",
+        "../../../remaining-source-consumers.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames contain only fictional workshop notes."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full before/after pairs and original-scale comparisons inspected. Exact stability/restoration. Card and toast use original native styles and dimensions."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline marks changed card surface, toast surface or toast border."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Other card/toast and text unchanged apart from natural antialiasing over changed background."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies the transparent card background."
+    }
+  }
+}

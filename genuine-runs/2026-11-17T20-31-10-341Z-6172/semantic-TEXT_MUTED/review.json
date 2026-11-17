@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "a62b8497316ccff4cfbb12ab8e13fca963a244fcf106cf928267fd66a833a678",
+    "stability.png": "a62b8497316ccff4cfbb12ab8e13fca963a244fcf106cf928267fd66a833a678",
+    "after.png": "1b1b62d1d5a70aefdc520b864c5a4bbce79dd204ed35e94cac6bcf40bebea9a7",
+    "restored.png": "a62b8497316ccff4cfbb12ab8e13fca963a244fcf106cf928267fd66a833a678"
+  },
+  "annotationSha256": "4e0f713d493d16bf23b34ee56ea53c2bed224d3e0cdf40b1228fd709c38c6bf8",
+  "comparisonSha256": "558ea002b52b893e0d8a6ba2818dc74c6bb892a283a21140c763ec07d1a7d0d9",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Current native resolveMessageContentColors maps TEXT_MUTED to timestampColor. Both exact native style caches refreshed before remount; no colours forced outside theme store.",
+      "references": [
+        "research/tabsv2/evidence/modern-352204/modules/m/8296.js: timestampColor",
+        "manifest.json: runtimeConsumerStacks",
+        "scratchpad/theme-studio-qa/native-content-cache-discovery.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames inspected: fictional names and messages, generic avatars, empty draft."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Native timestamps and the separately documented composer placeholder change. Layout, author names and bodies unchanged; exact stability and restoration."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Focused original-scale comparison inspected. Outline encloses the timestamp without covering author or body."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Timestamp glyphs and placeholder are source-confirmed consumers. No unrelated colour or geometry changes."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Describes the timestamp use separately from the composer example."
+    }
+  }
+}

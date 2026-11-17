@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "fb6323bfca76c51377548a1af04a7b9c1b2623a359b71f23e41c4c6cb7a3006d",
+    "stability.png": "fb6323bfca76c51377548a1af04a7b9c1b2623a359b71f23e41c4c6cb7a3006d",
+    "after.png": "204d92c1e14aa10b218278f83bea551e45346eec4accfefac7194bee1a14d5e5",
+    "restored.png": "fb6323bfca76c51377548a1af04a7b9c1b2623a359b71f23e41c4c6cb7a3006d"
+  },
+  "annotationSha256": "d2fab25009d83cfae3436c0fb390260afc64b67ad46b9517e205bf6b2f0de9a3",
+  "comparisonSha256": "493d68ee59e16b663e1df6cccdc94f1236f87474d10f911afb55606c86e714bb",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Source callers verify critical-secondary and icon-only props; runtime ButtonHooks traces confirm key. Original native Button/IconButton styles and standard md dimensions; inert callbacks.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-extended-button-fixture.mjs",
+        "../../../remaining-source-consumers.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames inspected: fictional workshop draft and native copy glyph only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and original-scale comparison inspected. Same native held state; exact baseline, theme restoration and released resting frame verified."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline identifies changed fill, border, label or glyph."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Other controls unchanged. Text antialiasing blends naturally over changed fill."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the held critical secondary button outline."
+    }
+  }
+}

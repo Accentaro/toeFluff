@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "99db381bd270c6cc81a024a559024f5b5167d9d2927e42f9340df82fd6ccb59d",
+    "stability.png": "99db381bd270c6cc81a024a559024f5b5167d9d2927e42f9340df82fd6ccb59d",
+    "after.png": "323a0712f4a333cb549f69068967a91e262791a76f21e9a0a80bb251e3879dd6",
+    "restored.png": "99db381bd270c6cc81a024a559024f5b5167d9d2927e42f9340df82fd6ccb59d"
+  },
+  "annotationSha256": "bb0818cc117eb39b61d567faf4ac3b35a539915ff0a8b94b1c552993c16831a1",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Original ContextMenuItem highlighted native style; source 15215 and runtime resolver trace confirm key.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-menu-fixture.mjs"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Fictional palette actions; inert callbacks; no profile content."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and original-scale comparison inspected. Native row shape intact; zero drift and exact restoration."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline surrounds highlighted action, leaving label visible."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Other menu action, labels and page remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Accurately describes highlighted context-menu surface."
+    }
+  },
+  "comparisonSha256": "246ab2e8b0f94bb6f66e16be7075428c9d84a6aa0a98924166dcc47329e4abe6"
+}

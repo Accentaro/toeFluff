@@ -1,0 +1,49 @@
+{
+  "hashes": {
+    "before.png": "5d0b9f0af4a775ab12641381289bc8fd658e8c3426b8bdfeb19c2fa2524834bc",
+    "stability.png": "5d0b9f0af4a775ab12641381289bc8fd658e8c3426b8bdfeb19c2fa2524834bc",
+    "after.png": "b2fcb9324e9d895cc357da5c67e15ed64e101bbb9ff267dfd9241a1b80987cc4",
+    "restored.png": "5d0b9f0af4a775ab12641381289bc8fd658e8c3426b8bdfeb19c2fa2524834bc"
+  },
+  "annotationSha256": "9094d3644d968c81815a4072bad528ad99771572770a10262426ff3039a38bbc",
+  "comparisonSha256": "5ae0714e8916d73a618d5bf24aad8764beb2a7e8fadd53f3acf9b1ecb299e0a3",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Real local CREATE_PENDING_REPLY activates native reply target. createChannelStream marks this target isEditing, consumed by original createBackgroundHighlight; current runtime stack verified. No messages sent.",
+      "references": [
+        "research/tabsv2/evidence/modern-352204/modules/m/8574.js: editingColor",
+        "research/tabsv2/evidence/modern-352204/modules/m/12968.js: replyingMessageId sets isEditing",
+        "research/tabsv2/evidence/modern-352204/modules/m/10057.js: local pending reply events",
+        "scratchpad/theme-studio-qa/native-reply-target-fixture.mjs",
+        "manifest.json: current 352206 runtimeConsumerStacks"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full original frames inspected: fictional names/messages, generic avatars, empty draft."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames and focused original-scale comparisons inspected. Selected reply target alone changes background. Stable baseline and exact restoration."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline identifies empty background on the selected message; no text covered. Reply composer provides visible state context."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Mentioned rows, ordinary rows, reply composer, gutter and header unchanged; antialiasing blends with changed background."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Distinguishes selected reply target from pinged replies; raw description explains retained opacity."
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "64cc36b8185c4628a760893b94d89413c5a9dc78be971481c5225ea6e9100dd6",
+    "stability.png": "64cc36b8185c4628a760893b94d89413c5a9dc78be971481c5225ea6e9100dd6",
+    "after.png": "dd8b26aac3617a92a86b157392238f790f7d71fd9b15f2b1de7962e36acb651c",
+    "restored.png": "64cc36b8185c4628a760893b94d89413c5a9dc78be971481c5225ea6e9100dd6"
+  },
+  "annotationSha256": "cb33d01028d73be150d0d0e16c1cef956b2aeb28710540302d3845f933e9cd2b",
+  "comparisonSha256": "e3101e9c0acd5cb57085e77248d095aaaff549037b783f67d69f023264a281df",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "FormRadio/useRadioStyles resolves RADIO_BORDER_DEFAULT through OPACITY_64; CHECKBOX_BORDER_DEFAULT also uses this raw colour in the mounted offscreen checkbox section.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json#semantic.RADIO_BORDER_DEFAULT.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames contain only native component demonstration copy and fictional title."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Original full frames and focused comparison inspected. Two enabled unselected radio outlines and the dimmed disabled outline change; selected radio and switches do not. Baseline and restoration exactly match."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline encloses both representative unselected radios at original pixel scale without obscuring the rings."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame difference confined to three expected unselected radio outlines, including disabled state. No other visible components change."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies unselected radio outlines."
+    }
+  }
+}

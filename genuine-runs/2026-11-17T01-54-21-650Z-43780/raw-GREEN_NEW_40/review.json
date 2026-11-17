@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "6b691b37ea131a2751fba60a46d6b50ead6a2d434aa41ca68f7d29370cea5c1c",
+    "stability.png": "6b691b37ea131a2751fba60a46d6b50ead6a2d434aa41ca68f7d29370cea5c1c",
+    "after.png": "a81f594ee82031903858b6272387a603389416bb326777d410780c006fe7a5ba",
+    "restored.png": "6b691b37ea131a2751fba60a46d6b50ead6a2d434aa41ca68f7d29370cea5c1c"
+  },
+  "annotationSha256": "0b2765be1b90d75f095961dd8aa98be5089fd85ddb8a7568261aa32cc829e31b",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Ash token alias TEXT_STATUS_ONLINE uses GREEN_NEW_40; runtime trace confirms MemberCount. Independent raw capture matches the semantic effect.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json",
+        "../full-frame-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full before/after inspected: fictional channel, profile, avatar and plain messages."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full frames and native-scale comparison inspected: only the documented dot or composer fill changes."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline directly identifies the changed component at original pixel scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Zero stability/restoration drift. Header and message contents remain unchanged; antialiasing composites over the changed fill."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies the online-status dot in Ash. The count text keeps its own colour."
+    }
+  },
+  "comparisonSha256": "6955ea56494f007c0b5bfbd8f8853712e52b20be3713b834714c8aeff73dc58b"
+}

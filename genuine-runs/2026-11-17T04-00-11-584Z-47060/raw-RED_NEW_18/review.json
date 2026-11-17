@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057",
+    "stability.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057",
+    "after.png": "5449c1e924b2c1e243db86063495739393615c8f5c1602a7a5bc6255594eeae9",
+    "restored.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057"
+  },
+  "annotationSha256": "70f347792a96f6a43fd5389d4afba74d601c4b31474cb319eb942915239b5d04",
+  "comparisonSha256": "9d5fdf3c91296980491f45c5935bc893202d5d93d7bfa4555627cf1234706f1d",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native BaseIconImage resolves ICON_FEEDBACK_CRITICAL through RED_NEW_18; runtime consumer and token alias verified. Other recorded aliases belong to mounted consumers outside this visible example.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json#semantic.ICON_FEEDBACK_CRITICAL.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame review shows native demonstration copy only; no personal content."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Before/after full frames and focused annotated comparison inspected. Only the 43px feedback icon changes. Exact baseline stability and restoration."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline encloses the feedback icon without covering its glyph."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame difference is confined to the feedback icon; text, background, border and other toast variants remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies the critical toast icon colour."
+    }
+  }
+}

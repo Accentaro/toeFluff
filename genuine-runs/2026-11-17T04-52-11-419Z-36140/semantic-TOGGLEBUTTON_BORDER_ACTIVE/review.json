@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "317bcc58a6937613f3cb3f6f080ae26bc7b777958c933b6b4fe4e51df45bc606",
+    "stability.png": "317bcc58a6937613f3cb3f6f080ae26bc7b777958c933b6b4fe4e51df45bc606",
+    "after.png": "a89e7d2d9a3bb4b7f5f41b2e23fc26fa96e56f0c914f47ac478847c49ac99931",
+    "restored.png": "317bcc58a6937613f3cb3f6f080ae26bc7b777958c933b6b4fe4e51df45bc606"
+  },
+  "annotationSha256": "66ecda415c3dc99c01625f7ea1f52feb1d53dbe386ba1e51d1d4eb4d38a990cd",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native ToggleIconButton consumes TOGGLEBUTTON_BORDER_ACTIVE.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json#semantic.TOGGLEBUTTON_BORDER_ACTIVE.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames contain only generic inert native toggle labels and stock icons."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame contact and individual original-scale comparison inspected. Held unselected default border changes clearly; exact stability, restoration and released state."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline correctly surrounds the affected border while leaving it visible at native pixel scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only held unselected default border changes; its fill and icon and all other controls remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the border of an unselected toggle while held."
+    }
+  },
+  "comparisonSha256": "ba1f44c679afcb160ce73814b0c2cb752ebfa7856c5e331086cc5980523f4dd4"
+}

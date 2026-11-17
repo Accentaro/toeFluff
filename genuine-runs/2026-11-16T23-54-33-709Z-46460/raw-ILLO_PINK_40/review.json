@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "6b2df97cd1a25ab38a554f9fb0655ffa8b2964cbf7037e1e125588eb5779934a",
+    "stability.png": "6b2df97cd1a25ab38a554f9fb0655ffa8b2964cbf7037e1e125588eb5779934a",
+    "after.png": "e98c6e14f3b60ff3093d1cc2b89d99c3dc084f8127a26188427fba9bb3089d4e",
+    "restored.png": "6b2df97cd1a25ab38a554f9fb0655ffa8b2964cbf7037e1e125588eb5779934a"
+  },
+  "annotationSha256": "6a57721733f9e8b7d8544d6b074f74c8e190894dc07c7f8b0e7ebfff4f449fe0",
+  "comparisonSha256": "d805bebcc51b7167c6294e2cb4d270277c669b469f7904f93b05863675695c89",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "ILLO_PINK_40 resolves through BADGE_EPIC_BORDER_GRADIENT_START. Actual Badge consumer paints a solid outline, as independently verified for the semantic key.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../full-frame-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full native frames inspected: stock gallery labels only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Green recapture clearly distinguishes the changed outline. Full frames and native-scale comparison inspected, without clipping or artifacts. Earlier pink-on-magenta capture rejected."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline surrounds the actual affected badge edge; caption accurately describes solid outline behaviour."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Only {'pixels': 898, 'bounds': {'x': 482, 'y': 610, 'width': 116, 'height': 47}} changes; text and fill preserved. Zero stability/restoration drift."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies the epic badge outline through its gradient-start alias."
+    }
+  }
+}

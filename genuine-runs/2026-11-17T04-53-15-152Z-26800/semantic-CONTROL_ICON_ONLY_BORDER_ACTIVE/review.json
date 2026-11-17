@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "d59bbfd6ea700bc89a34edb591ae8078ad42db0e138e8cf19671469fcc5b4ffd",
+    "stability.png": "d59bbfd6ea700bc89a34edb591ae8078ad42db0e138e8cf19671469fcc5b4ffd",
+    "after.png": "c4fabe553ecc658813237defc63f4e2045c64da92519aa7c9b4248c8ef6a3567",
+    "restored.png": "d59bbfd6ea700bc89a34edb591ae8078ad42db0e138e8cf19671469fcc5b4ffd"
+  },
+  "annotationSha256": "26141ec0b7f8f38738beb404381b92594b5f53571ff622876151db48ea434d9f",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native icon-only ToggleIconButton consumes CONTROL_ICON_ONLY_BORDER_ACTIVE in its held state.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-toggle-component-props.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames contain generic inert native toggle labels and stock icons only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame contact and individual original-scale comparison inspected. Intended held icon-only component changes clearly. Exact baseline, restoration and released state."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline correctly encloses the affected component without covering it; native pixel scale retained."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame change confined to held icon-only control; other toggle controls and labels remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the border of an icon-only toggle while held."
+    }
+  },
+  "comparisonSha256": "956a92e9cb6514edb999268fcddce36bc632b6480a9920179562c1fe685d016a"
+}

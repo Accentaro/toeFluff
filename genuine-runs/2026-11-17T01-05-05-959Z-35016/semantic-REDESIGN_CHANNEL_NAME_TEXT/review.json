@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f",
+    "stability.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f",
+    "after.png": "bdd67a2f02074e83abd763f626534f64bd14f5ec453b92dafb8cf61e1ca5bf79",
+    "restored.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f"
+  },
+  "annotationSha256": "aeac04b9d192db9742f603361fd2ff13e16ae1f309cef0b2e6d5d22b0d952fc6",
+  "comparisonSha256": "764837d4d64d8957db15ffb60b38f93fdc33482dc22c3563b3f05805b7942ae3",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "native Text colour resolution resolves this key; isolated override matches visible unread rows.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../full-frame-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame inspection confirms fictional server/channel/profile names and activity."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Recaptured full before/after frames and focused comparison inspected. Colours unread channel names in the server list."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline identifies unread channel name. Native size retained, labels unobstructed."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Read-channel names and icons stay unchanged. Zero full-frame stability/restoration differences. Earlier failed trial remains excluded."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours unread channel names in the server list."
+    }
+  }
+}

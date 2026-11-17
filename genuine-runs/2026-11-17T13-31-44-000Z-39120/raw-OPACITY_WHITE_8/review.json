@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "82f902cdecdfa963528070f83fb5af39bf8cc0301230aac751ef1ce5e045db93",
+    "stability.png": "82f902cdecdfa963528070f83fb5af39bf8cc0301230aac751ef1ce5e045db93",
+    "after.png": "880e106d1dbbb472a04765489cf7bab20475db91ea701d2e9b2fedf58a85b923",
+    "restored.png": "82f902cdecdfa963528070f83fb5af39bf8cc0301230aac751ef1ce5e045db93"
+  },
+  "annotationSha256": "593e0372f53dc24413ee946c291f9a5b2f40d93c4315af0161bc9492bdf65ffa",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native Badge border aliases OPACITY_WHITE_8 for all four status variants; current resolver traces and source verified.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-status-badge-fixture.mjs"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Fictional workshop notes and stock native badges only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full pairs and original-scale detail inspected. Black override makes faint white border dark at original 8% opacity; zero drift and exact restoration."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline surrounds representative critical badge without covering its border or text."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "All four badge borders share this raw key and change as intended; fills/text remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "States subtle effect, preserved opacity and other affected badges."
+    }
+  },
+  "comparisonSha256": "e34f10afdd2faa82f87421753b085e516a326aa8c2c6edbcee937f67ab2cf930"
+}

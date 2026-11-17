@@ -1,0 +1,58 @@
+{
+  "hashes": {
+    "before.png": "783c82c61d91b54b26196af5320fbc30dfc1c428d48520356aa3ad6fc6693d5e",
+    "stability.png": "783c82c61d91b54b26196af5320fbc30dfc1c428d48520356aa3ad6fc6693d5e",
+    "after.png": "2f6904d0bfcab7c64f31c9827b5b0615cc85f7e93772faf62696d891b4a708c4",
+    "restored.png": "783c82c61d91b54b26196af5320fbc30dfc1c428d48520356aa3ad6fc6693d5e"
+  },
+  "annotationSha256": "e00aa6997ace784955f9665ca8077521cd8e93e969c43134b93f3b9810245280",
+  "comparisonSha256": "e6e128c13ba6dba077c32971ccdeaf607ad51ef1784060a15b814f4eaf076095",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Observed key-specific runtime consumer stack supports this Settings use. Import-path association is explicitly inferred by component name. Original native TypeScript source text and exhaustive application-wide uses are not claimed. The Android gesture handle changes from light to dark because its platform rendering adapts to the brighter underlying surface. AOSP RegionSamplingHelper samples screen luminance and uses threshold 0.5 for navigation contrast; NavigationHandle.setDarkIntensity blends its light/dark colours. This explains the observed dependent platform effect; no second colour-key override occurred. Full screenshots retain the handle.",
+      "references": [
+        "index.android.bundle:7423:984 (useNavigationTheme; runtime key-resolver trace)",
+        "index.android.bundle:16099:4021 (AppNavigationContainer; runtime key-resolver trace)",
+        "index.android.bundle:18638:8129 (SettingsNavigator; runtime key-resolver trace)",
+        "design/components/Navigator/native/useNavigationTheme.native.tsx (independently observed import; association to stack inferred by name)",
+        "modules/user_settings/core/native/SettingsNavigator.tsx (independently observed import; association to stack inferred by name)",
+        "https://android.googlesource.com/platform/frameworks/base/+/08bb56af61017f352ce2e2b46d4f2630640f5c84/packages/SystemUI/shared/src/com/android/systemui/shared/navigationbar/RegionSamplingHelper.java",
+        "https://android.googlesource.com/platform/frameworks/base/+/f3005426a365/packages/SystemUI/src/com/android/systemui/navigationbar/gestural/NavigationHandle.java"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Inspected full originals and focused comparison: generic Settings labels, version string, plugin count, fixed time and native notification count only. No person/account names, messages, avatar photographs, contact details or connection values visible."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Page surface and status-bar background become pink. Row cards and search fill retain translucent overlays and therefore tint over the changed parent; text and glyph shapes stay intact. Android gesture handle changes from light to dark; explained dependent platform contrast response. Full originals were inspected before cropping. The bottom partial next row is ordinary scroll-viewport continuation, not a rendering fault. Focused comparison includes complete representative components and unchanged scale."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Inspected rendered comparison after final SVG generation. Thin gold outline identifies settings surface, remains outside its visible glyphs/edge, and matches the caption. Before/after use identical crop coordinates at native pixel scale; labels occupy separate margins."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Page surface and status-bar background become pink. Row cards and search fill retain translucent overlays and therefore tint over the changed parent; text and glyph shapes stay intact. Android gesture handle changes from light to dark; explained dependent platform contrast response. The Android gesture handle changes from light to dark because its platform rendering adapts to the brighter underlying surface. AOSP RegionSamplingHelper samples screen luminance and uses threshold 0.5 for navigation contrast; NavigationHandle.setDarkIntensity blends its light/dark colours. This explains the observed dependent platform effect; no second colour-key override occurred. Full screenshots retain the handle."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Colours the underlying Settings surface; this capture changes most of the viewport."
+    }
+  },
+  "crop": [
+    0,
+    140,
+    1080,
+    1070
+  ],
+  "scope": "One representative Settings usage, not exhaustive coverage of this key. No publication performed."
+}

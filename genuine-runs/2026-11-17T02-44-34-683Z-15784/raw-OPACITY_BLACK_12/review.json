@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652",
+    "stability.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652",
+    "after.png": "59fada63221853d0d10058a12ad0ed8e79720a76a8bbe5fbb54b741cf507d385",
+    "restored.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652"
+  },
+  "annotationSha256": "5db2b7365a518bf11eb313f78ff081666a81efc785878cd5257af2b6719930e5",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native FormSwitch resolves SWITCH_BACKGROUND_DEFAULT through OPACITY_BLACK_12 in Ash. Only inactive switch tracks change.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks (Discord 352.6 / 352206)",
+        "../../../data/tokens.json#semantic (Ash uses dark base)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected full-frame pair: public plugin names/descriptions and anonymous notification count only; no profile, messages or private account information."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected full-frame before/after and focused native-scale comparison. Stable list geometry; native top-edge scroll fade retained. No unexplained rendering changes."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected final comparison: thin outline identifies Off switch track without covering content. Inactive-switch crop revised to remove the fragment of adjacent text."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "The active switches and white thumbs retain their own colours. Full-frame baseline and restored pixels match exactly."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies inactive switch backgrounds in Ash."
+    }
+  },
+  "comparisonSha256": "ce7a5fac65243387e2f578340d993bcac522fb83fc413144792a72ab4459ea42"
+}

@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "3099ad0607ea5a6f2700d16613180d5f6c7582bf9dc4c0e70b84be6b8695670f",
+    "stability.png": "3099ad0607ea5a6f2700d16613180d5f6c7582bf9dc4c0e70b84be6b8695670f",
+    "after.png": "7542da403f0b8a34a04ba16698c3213050a19e783fffa309d399e9cb518bdfd2",
+    "restored.png": "3099ad0607ea5a6f2700d16613180d5f6c7582bf9dc4c0e70b84be6b8695670f"
+  },
+  "annotationSha256": "adc8089e2cb1934e4fb8ce8539702f6bccdb815906538811c97165af53f9bdd4",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "useButtonPillStyles resolves CONTROL_OVERLAY_SECONDARY_BACKGROUND_DEFAULT through OPACITY_BLACK_56.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json#semantic.CONTROL_OVERLAY_SECONDARY_BACKGROUND_DEFAULT.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native Button fixture has generic inert labels only; no personal information in full frames."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and focused comparison inspected. Secondary overlay fill changes visibly, preserving alpha, shape and text. Exact baseline and restored frame."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline accurately surrounds the secondary overlay button; complete label and native pixel dimensions retained."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only the secondary overlay button fill changes in full-frame inspection and pixel bounds."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies the secondary overlay button background."
+    }
+  },
+  "comparisonSha256": "dc0a7a78569c1ef6cef5b6fac0d11d47f516a2524e159cb371065b11b346718a"
+}

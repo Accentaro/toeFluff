@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "798bde0a6cdd53c67dd6cdf545234896ea9122a04e8d52ecd231a5f569db4911",
+    "stability.png": "798bde0a6cdd53c67dd6cdf545234896ea9122a04e8d52ecd231a5f569db4911",
+    "after.png": "953a03ae83fef22f4f177c9e27b6f4807bc80855fafd4fa7f9b1e5fae8a4f921",
+    "restored.png": "798bde0a6cdd53c67dd6cdf545234896ea9122a04e8d52ecd231a5f569db4911"
+  },
+  "annotationSha256": "429fc1f9b96b1e46d144b49b43e6b67f54d43e48e8506f291816b22ff9184ea3",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Catalogue definition and Ash mapping read. Runtime stacks identify EmojiPickerCategoriesItem background. The original ICON_MUTED description omitted its sheet-handle use; this capture demonstrates it.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json",
+        "../first-review.png",
+        "../last-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full before/after inspected: standard Unicode People category; fictional channel visible behind scrim. No personal favourites or custom emoji are visible."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Opaque override reveals circular unselected-category backgrounds, as resolved by EmojiPickerCategoriesItem; these are genuine changed surfaces, not rendering artifacts. Full frames and focused comparison inspected."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Programmatic outline correctly surrounds the documented surface, glyph, placeholder or handle; no enlarged interface elements."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Stability and restoration are pixel-identical. Transparency blending and Android gesture-handle contrast are documented expected consequences; no unrelated content or geometry changed."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the transparent backgrounds of unselected categories. An opaque override makes the circular backgrounds visible."
+    }
+  },
+  "comparisonSha256": "85de95ce1596bb7691a404134c8c55abba75f9a46307cde3db9ad186ab998630"
+}

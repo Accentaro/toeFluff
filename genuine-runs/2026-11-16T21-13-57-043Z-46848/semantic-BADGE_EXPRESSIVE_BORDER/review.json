@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "9dca4a23bc0420fd6893c4d7600b27dca95a0bc10fb4cff7796ef0d51480c1ea",
+    "stability.png": "9dca4a23bc0420fd6893c4d7600b27dca95a0bc10fb4cff7796ef0d51480c1ea",
+    "after.png": "2514899564f686738ca6af3c803b0ee8ce5f55437ebddffb70a022261ac4a1ce",
+    "restored.png": "9dca4a23bc0420fd6893c4d7600b27dca95a0bc10fb4cff7796ef0d51480c1ea"
+  },
+  "annotationSha256": "3acd9c8a7bd34132daf558732a7c98fd6f6fe40a98a66c22d810a107c96c9ed5",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Stock DesignSystemBadgeSetting renders Badge; captured parseThemedStyles consumer confirms exact key.",
+      "references": [
+        "modules/user_settings/defs/native/DesignSystemBadgeSetting.tsx",
+        "design/components/Badge/native/Badge.native.tsx",
+        "manifest.json#runtimeConsumerStacks"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full screen inspected: only public design-system labels, no private information."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full screen and all three comparisons inspected individually. Only intended expressive NEW badge component changes, with clean native rendering."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Outline encloses actual affected component without covering it; original pixel scale retained."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full-frame differences confined to badge; stability and restoration zero pixels."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Colours the expressive status badge border."
+    }
+  },
+  "comparisonSha256": "a8b12d2003d7cdc588605fb52513eb190cb9fc3f66e83676bb7235bbe64a6249"
+}

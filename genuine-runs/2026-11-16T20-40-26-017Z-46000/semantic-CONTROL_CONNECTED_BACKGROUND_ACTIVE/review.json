@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "82d8240e00b341439bda952ecbf572c256f83844e02ffbc6efa60316773a2622",
+    "stability.png": "82d8240e00b341439bda952ecbf572c256f83844e02ffbc6efa60316773a2622",
+    "after.png": "c8fc79222c8d697e69eeb38b9b92b90ef5f9c5f27ce6cfca0dfe18f6af69ccda",
+    "restored.png": "82d8240e00b341439bda952ecbf572c256f83844e02ffbc6efa60316773a2622"
+  },
+  "annotationSha256": "7784ced0e2d6d2870abedaa71c97301f9f7b4ae28505b268de312100595af1fa",
+  "comparisonSha256": "2e595ca098d7efe927408eecdc199b53faaddd1aaace9ef9f37aa144e6403f6c",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Actual resolver stacks resolve CONTROL_CONNECTED_BACKGROUND_ACTIVE in useButtonPillStyles/PillWrapper. Genuine Design.Button active variant at standard md size, inert action, real held pointer.",
+      "references": [
+        "native-button-fixture.mjs SHA256 042745683a4934ba1fd291eca2ed23eb388000dbe9fc9318f51e213c70ef0dbe",
+        "Valence/ValenceBundle/bundle/lib/discord/src/types/index.ts:316",
+        "manifest.runtimeConsumerStacks: useButtonPillStyles/PillWrapper"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full originals contain generic controls and labels only; no personal content or account actions."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Inspected full after and focused comparison individually. Only connected pressed fill changes. Label remains white, other controls retain resting appearance. No clipping or rendering artefacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Gold outline surrounds connected button with margin. Identical native-scale crop and specific pressed fill label; all changed pixels unobscured."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full-frame effect 98880 pixels confined to connected control. Exact baseline/stability/restoration; release frame equals pre-press resting PNG. All other controls and system chrome unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Colours the connected button fill while it is held down."
+    }
+  },
+  "scope": "Native Button active variant in held state; not stock Settings content."
+}

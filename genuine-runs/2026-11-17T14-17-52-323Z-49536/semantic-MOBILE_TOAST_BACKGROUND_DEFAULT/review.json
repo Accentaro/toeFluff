@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "df5976b03c1766408f25bea04bcc43452c1ae01041e9886c039db77ead7e36d0",
+    "stability.png": "df5976b03c1766408f25bea04bcc43452c1ae01041e9886c039db77ead7e36d0",
+    "after.png": "fd09ff3e1820462e3d16a1a981a5bc61ab0c0eaf2ab1b3f9cb1f46998fbba599",
+    "restored.png": "df5976b03c1766408f25bea04bcc43452c1ae01041e9886c039db77ead7e36d0"
+  },
+  "annotationSha256": "8c090b168d5d2931e9d962806b792e1a2e987c4e6bc52dee0c1d85b4b4da916f",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Original ChannelBadge isNewChannel branch loads NewBadge, whose native styles use MOBILE_TOAST_BACKGROUND_DEFAULT. Current resolver trace verified.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-new-badge-fixture.mjs"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Fictional workshop channel only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full pair and original-scale comparison inspected; exact baseline/restoration and native badge size."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline identifies the native New badge surface without covering text."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Channel label, badge label and rest of page unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Explicitly identifies current NewBadge usage rather than assuming modern toast surface."
+    }
+  },
+  "comparisonSha256": "d879c884fdc7b0cc3d38d3c9e8e3f67070043749f4673293685b118e76069113"
+}

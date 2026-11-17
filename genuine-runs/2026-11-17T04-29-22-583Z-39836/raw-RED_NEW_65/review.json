@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "b10cea997bd5c07c769c8b360d26a6cd3b5f3befec9345e70ea4020bd47e54a1",
+    "stability.png": "b10cea997bd5c07c769c8b360d26a6cd3b5f3befec9345e70ea4020bd47e54a1",
+    "after.png": "b2e04b4230416304b48e9166c0005c27fada14cadb64028c9d70f5d7ea7ec071",
+    "restored.png": "b10cea997bd5c07c769c8b360d26a6cd3b5f3befec9345e70ea4020bd47e54a1"
+  },
+  "annotationSha256": "a1dbb563cec0d624ff47aeab317e32e68c3b73924a95c220a703e5b1dede1859",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "useButtonPillStyles resolves CONTROL_CRITICAL_PRIMARY_BACKGROUND_ACTIVE through RED_NEW_65.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json#semantic.CONTROL_CRITICAL_PRIMARY_BACKGROUND_ACTIVE.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native Button fixture uses generic inert labels without personal data."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and final comparison inspected. Destructive pressed fill alone changes. Baseline, restoration and pointer-release check match exactly."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline surrounds the pressed button at native pixel scale without covering text."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only destructive pressed fill changes; other buttons and all labels remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies the destructive button background while pressed."
+    }
+  },
+  "comparisonSha256": "2263e4974ccd5f76f074e54759e07f94e6295717c86005b0ed7e71a424efc7a0"
+}

@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "f1e95a9b037330930b04ac9bf06695ebb3af7b4646537a4dee99bd2e1338e502",
+    "stability.png": "f1e95a9b037330930b04ac9bf06695ebb3af7b4646537a4dee99bd2e1338e502",
+    "after.png": "dc646f2265bc4dc54b3cef9c66a219712f43b5bb46524dc51183177169cc8457",
+    "restored.png": "f1e95a9b037330930b04ac9bf06695ebb3af7b4646537a4dee99bd2e1338e502"
+  },
+  "annotationSha256": "2dc23a1e4943be456710328daf12acd6d4b2a5c52c1ea174251b87aefb562dcc",
+  "comparisonSha256": "99276519e187adb62064a64903e415c490f022d4873500149abdc5d8178b7b5c",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Source callers verify critical-secondary and icon-only props; runtime ButtonHooks traces confirm key. Original native Button/IconButton styles and standard md dimensions; inert callbacks.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-extended-button-fixture.mjs",
+        "../../../remaining-source-consumers.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames inspected: fictional workshop draft and native copy glyph only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full pairs and original-scale annotations inspected. Zero baseline/restoration drift; intended effect clearly visible."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline identifies changed fill, border, label or glyph."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Other controls unchanged. Text antialiasing blends naturally over changed fill."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the critical secondary button outline."
+    }
+  }
+}

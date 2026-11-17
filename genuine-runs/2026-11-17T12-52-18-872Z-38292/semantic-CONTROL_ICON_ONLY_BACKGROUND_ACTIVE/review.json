@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "9a8a2d517f9559dcca7a46e3dec55efc7f5a2ebfc36a8c052a4e79a03388c973",
+    "stability.png": "9a8a2d517f9559dcca7a46e3dec55efc7f5a2ebfc36a8c052a4e79a03388c973",
+    "after.png": "9209f559aadc5776156a6c663af00d35cb5c5369bc85c4b0253fb9d64cc9d3d2",
+    "restored.png": "9a8a2d517f9559dcca7a46e3dec55efc7f5a2ebfc36a8c052a4e79a03388c973"
+  },
+  "annotationSha256": "a5bb9a7ba7e79ca0ff03aac54afc9b4c2d7c99de82d7978fa40e30b36a9cbb6d",
+  "comparisonSha256": "ed1384f8a646c3d90d63497d0fc9dd27fcc4cae01e3cff45d07016fd3f7d6d78",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Source callers verify critical-secondary and icon-only props; runtime ButtonHooks traces confirm key. Original native Button/IconButton styles and standard md dimensions; inert callbacks.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-extended-button-fixture.mjs",
+        "../../../remaining-source-consumers.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames inspected: fictional workshop draft and native copy glyph only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and original-scale comparison inspected. Same native held state; exact baseline, theme restoration and released resting frame verified."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline marks the held icon-only surface; glyph and label remain unchanged."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Other controls unchanged. Text antialiasing blends naturally over changed fill."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the held icon-only button background."
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "bb48ae1bb18fcd9c580b6d7f928f436e1a27fe912cea6b0b860fdc45a6eb66d3",
+    "stability.png": "bb48ae1bb18fcd9c580b6d7f928f436e1a27fe912cea6b0b860fdc45a6eb66d3",
+    "after.png": "6ff369892ca4e443c9c47e80bcca06ffbdabf455f36a3cc1751c0527c15db3a1",
+    "restored.png": "bb48ae1bb18fcd9c580b6d7f928f436e1a27fe912cea6b0b860fdc45a6eb66d3"
+  },
+  "annotationSha256": "0ea2f2d402c163da0ef6f39285fa85bb8dcfa14b7b139212604ba4ae8bc9f220",
+  "comparisonSha256": "a72328a26358b5a99beb9ba2b021043797e898c48ae5ba3542d0fd55076cd465",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native YouBarBackground selects this key when hasNameplate is true. Fixture changes only that display prop; current resolver trace confirms key.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../nameplate-fixture-runtime.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames inspected: fictional guild/channel/profile names, generic artwork and avatars, no private message content."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full pairs and original-scale crop inspected. Native mask and shape intact, exact stability/restoration. Underlying channel partially visible behind floating bar is normal native overlay."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline marks right backing surface without covering avatar or text."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Server content, avatar, glyphs and text unchanged except normal antialiasing over changed background."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the profile bar backing when a nameplate is active."
+    }
+  }
+}

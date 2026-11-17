@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057",
+    "stability.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057",
+    "after.png": "d944e72aca17b207bfae72b71e66c3adac9ad033b380dcc75d6a77980bc4ed99",
+    "restored.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057"
+  },
+  "annotationSha256": "d23630d190bdde1339d265c15ce925748e710c20d4de4b3e1bf4def97d2d594d",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native Toast resolves TOAST_CRITICAL_BORDER through RED_NEW_42; runtime consumer stack and Ash token alias verified.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json#semantic.TOAST_CRITICAL_BORDER.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames show only native design demonstration text; no private profile, messages or account details."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full before/after frames and native-scale comparison inspected. Only the toast outline changes; exact baseline and restoration match."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline surrounds the affected toast, with clear label and no content obstruction."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame difference confined to the single toast. Other variants, text and feedback icons remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies the critical toast outline."
+    }
+  },
+  "comparisonSha256": "41f8ff5464395204dd646431cc09e2247111b89b726aca506b8c6d0be401ea80"
+}

@@ -1,0 +1,54 @@
+{
+  "hashes": {
+    "before.png": "7d9d30357866a8f7a73fd9ae3f01fb0111459926dfe718f9dfb81fe784122a46",
+    "stability.png": "7d9d30357866a8f7a73fd9ae3f01fb0111459926dfe718f9dfb81fe784122a46",
+    "after.png": "54d8b0795277e62dd4cfddae61effaa9d28179dd1c0f20680ffe39f4e814b51c",
+    "restored.png": "7d9d30357866a8f7a73fd9ae3f01fb0111459926dfe718f9dfb81fe784122a46"
+  },
+  "annotationSha256": "d8dafea07988917699f61a6d1ee049ce3dd49bb55bb4f96a17854c2c5caa438c",
+  "comparisonSha256": "bee925dbe6bebb3e37dbb49ab5225bf2f779af1b00b120e0ec3e450f9a39de0f",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual form review 2026-11-16",
+      "notes": "Per-key manifest contains actual resolver-call stacks naming the native consumer. Source definition is the genuine form demo. Bundle coordinates are exact stack positions, not Metro IDs; no native TypeScript line mapping or exhaustive usage claim.",
+      "references": [
+        "modules/user_settings/defs/native/DesignSystemFormPrimitivesSetting.tsx (native demo definition recorded by capture)",
+        "index.android.bundle:7583:2630 (FormSwitch; actual key resolver stack)",
+        "index.android.bundle:7583:4782 (FormSwitch; actual key resolver stack)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual form review 2026-11-16",
+      "notes": "Full originals and comparison contain only native demo headings, generic labels and fixed status icons. No names, messages, account values, media or real profile images. The red notification count is explained native back-icon UI."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual form review 2026-11-16",
+      "notes": "Only thin outlines of off-switch tracks become pink. Dark interior and white left thumb retain their colours. On-switch outlines/fills and radio controls remain unchanged. Inspected full originals before crop and rendered comparison afterward. Bottom partial row is normal scroll continuation; focused artifact shows complete target controls. No loading, malformed overlay or rendering artifact observed."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual form review 2026-11-16",
+      "notes": "Gold outline surrounds off-switch track outline without covering the changed pixels. Description and supporting note match observed behavior. Before/after crops use identical coordinates and native pixel scale; margins contain all documentation text."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual form review 2026-11-16",
+      "notes": "Only thin outlines of off-switch tracks become pink. Dark interior and white left thumb retain their colours. On-switch outlines/fills and radio controls remain unchanged. Before/stability/restored hashes match exactly; unchanged scene and positions verified."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual form review 2026-11-16",
+      "notes": "Colours the track outline of switches that are off."
+    }
+  },
+  "crop": [
+    18,
+    1950,
+    1044,
+    390
+  ],
+  "scope": "Representative native form use only; not published or integrated."
+}

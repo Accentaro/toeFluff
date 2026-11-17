@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057",
+    "stability.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057",
+    "after.png": "b00f6f3184378604c431fc627fb663755277ab7178d4cabcabec521eeb74c6a8",
+    "restored.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057"
+  },
+  "annotationSha256": "d531747121cd3d2d82856334645022b3d3dceb31ea9e5b29cf58703e0d28bd06",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native Toast resolves TOAST_CRITICAL_BACKGROUND through OPACITY_RED_20; runtime consumer stack and Ash token alias verified.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json#semantic.TOAST_CRITICAL_BACKGROUND.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames show only native design demonstration text; no private profile, messages or account details."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full before/after frames and native-scale comparison inspected. Only the toast background tint changes; exact baseline and restoration match."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline surrounds the affected toast, with clear label and no content obstruction."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame difference confined to the single toast. Other variants, text and feedback icons remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies the critical toast background in Ash."
+    }
+  },
+  "comparisonSha256": "d92b4502e4392b56e72dbd6bf106a4a10175eb02ccd223ad6b9c8f94cdda4272"
+}

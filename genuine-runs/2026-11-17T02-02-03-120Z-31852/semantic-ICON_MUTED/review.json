@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "798bde0a6cdd53c67dd6cdf545234896ea9122a04e8d52ecd231a5f569db4911",
+    "stability.png": "798bde0a6cdd53c67dd6cdf545234896ea9122a04e8d52ecd231a5f569db4911",
+    "after.png": "fd84364a99d3a5690296ebb99caaa3fddc79c7c0fcfdf3930000baf82f138566",
+    "restored.png": "798bde0a6cdd53c67dd6cdf545234896ea9122a04e8d52ecd231a5f569db4911"
+  },
+  "annotationSha256": "6d95b30e2347856f163cd9a32996032de342aca3bc4d2ba97adf33a48ad24b3e",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Catalogue definition and Ash mapping read. Runtime stacks identify DragHandle. The original ICON_MUTED description omitted its sheet-handle use; this capture demonstrates it.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json",
+        "../first-review.png",
+        "../last-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full before/after inspected: standard Unicode People category; fictional channel visible behind scrim. No personal favourites or custom emoji are visible."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame sheets and native-scale annotated comparisons inspected. Native partial last row is ordinary scroll clipping; focused examples use complete controls."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Programmatic outline correctly surrounds the documented surface, glyph, placeholder or handle; no enlarged interface elements."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Stability and restoration are pixel-identical. Transparency blending and Android gesture-handle contrast are documented expected consequences; no unrelated content or geometry changed."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the emoji sheet handle. The segmented tabs and search field stay unchanged."
+    }
+  },
+  "comparisonSha256": "772e0f9dcb91a79f93c2e0ad31288d4a8510cdfef86a1cdbde452b08d67e6a45"
+}

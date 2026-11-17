@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "294b4810c301bd30fd3b275817acdd2054f04cbb0e9456d26471f578f0e4ba7e",
+    "stability.png": "294b4810c301bd30fd3b275817acdd2054f04cbb0e9456d26471f578f0e4ba7e",
+    "after.png": "42c84082dba1f8ac4ce38e30336f3fed1bfe01383c596352540e9d9b6416b64a",
+    "restored.png": "294b4810c301bd30fd3b275817acdd2054f04cbb0e9456d26471f578f0e4ba7e"
+  },
+  "annotationSha256": "5a7ba0e9889da4b282b407570ece90a8f96b244d3819a4de844791473ff2ffe8",
+  "comparisonSha256": "a9b001c92b92d33dea4f41225bbe700fe562fb0f74a3d07ff34ac56c8bc27bb7",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Runtime Backdrop trace consumes BACKGROUND_SCRIM; catalogue alias maps its dark value to OPACITY_BLACK_80.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/keys.json#BACKGROUND_SCRIM"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames contain fictional Juniper Vale and generic typing settings only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Original before is hash-identical to already inspected semantic capture; raw after full frame and corrected comparison inspected. Exact stability/restoration."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline identifies the backdrop above the sheet without obscuring sheet content."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame changes are confined to backdrop; sheet surface, title, options, radio indicators and navigation remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies sheet backdrop through BACKGROUND_SCRIM, retaining 80% opacity with raw colour override."
+    }
+  }
+}

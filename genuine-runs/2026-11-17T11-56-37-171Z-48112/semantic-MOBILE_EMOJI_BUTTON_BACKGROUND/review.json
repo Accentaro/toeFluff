@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "6f4ab99a4bf4b1a4b85fcae792db04d6261f7da0e32c7783a4866270c76e28a8",
+    "stability.png": "6f4ab99a4bf4b1a4b85fcae792db04d6261f7da0e32c7783a4866270c76e28a8",
+    "after.png": "e23b3a38a88d67cff2489a3713d5fadd071226ef7018d646829189600a04bd1b",
+    "restored.png": "6f4ab99a4bf4b1a4b85fcae792db04d6261f7da0e32c7783a4866270c76e28a8"
+  },
+  "annotationSha256": "72b32db7422008a0729fd391b6eb5a46d5d6d8a5d9042da22c08070466c2b1f0",
+  "comparisonSha256": "e67096cc9e9a7443c50ed7256a0d66ae88a556b9d64b2ce7544101e6e9555a31",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Resolver trace identifies EmojiReactionRowButton or GradientBackground in the native message action sheet.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../reaction-fixture-runtime.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames inspected; fictional chat, generic avatars and stock Unicode emoji; actions inert."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full originals and original-scale comparison inspected. Stable baseline and exact restoration. Sheet continues below viewport; bottom partial Bookmark row is its native scroll boundary."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline identifies the affected quick-reaction surfaces or representative upper sheet region."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only intended surface changes. Translucent rows and emoji buttons blend over the changed sheet background; underlying chat remains unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the quick-reaction button backgrounds."
+    }
+  }
+}

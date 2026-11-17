@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "b5a5a07dadcc7e06877a7f9c38f6b4867b80192feaf009ed56e1768383f5116b",
+    "stability.png": "b5a5a07dadcc7e06877a7f9c38f6b4867b80192feaf009ed56e1768383f5116b",
+    "after.png": "3911bafb0766f1c778b9a4cecd4bc423eb7abe96a80263014bbfa2dd4c83467e",
+    "restored.png": "b5a5a07dadcc7e06877a7f9c38f6b4867b80192feaf009ed56e1768383f5116b"
+  },
+  "annotationSha256": "d8c499051a4fa3ed35093248cebc51fb27eb8347781029ea05c6ea5aa8e21261",
+  "comparisonSha256": "e38336c20d09980553420d0ce1d0c2450adf642f027d4a591c695da8dd3c7c8e",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Runtime MessagesItemChannelContent resolves this token; isolated override demonstrates its conversation-name glyphs.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../messages-privacy-runtime.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame comparison inspected: fictional names, messages and guild initials; generic avatars and no original profile decorations or activity artwork."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame diagnostic and original-scale comparison inspected. Intended change is clear; baseline and restoration have zero pixel drift."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline accurately identifies the affected component without covering content."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Changes confined to conversation-name glyphs; other text, icons and surfaces unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours conversation names in the Messages list."
+    }
+  }
+}

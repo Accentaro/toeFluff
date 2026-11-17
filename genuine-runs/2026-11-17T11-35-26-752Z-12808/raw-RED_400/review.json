@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "e206a3cd3de57c3014e506bb331754ce1f5cc65727cec7cdb99e9fe06877f415",
+    "stability.png": "e206a3cd3de57c3014e506bb331754ce1f5cc65727cec7cdb99e9fe06877f415",
+    "after.png": "495e4907c992683b3d62ea48fa2c3251c8051404afef00f4af53948270b9e15f",
+    "restored.png": "e206a3cd3de57c3014e506bb331754ce1f5cc65727cec7cdb99e9fe06877f415"
+  },
+  "annotationSha256": "16e85272f30abba649479aad6875349cb444c193a7a6e4520430a1df2b74b043",
+  "comparisonSha256": "63d131e5fee17f865dedfc2bef973e7cafc4875eecb1c65d9e440ee238ffc4f2",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "MicButton renders VoicePanelRiveMicButton color #f23f43 (RED_400). Single raw override changes only its glyph; see source-runtime.json.",
+      "references": [
+        "source-runtime.json",
+        "manifest.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames inspected; fictional chat and generic avatars; voice preview only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and original-scale comparison inspected; exact baseline stability and restoration."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline directly identifies the microphone glyph."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only microphone glyph changes; button surface and all surrounding controls unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the muted microphone glyph in the voice preview."
+    }
+  }
+}

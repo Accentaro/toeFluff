@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652",
+    "stability.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652",
+    "after.png": "204bbe0cc210ba4674282546f966bbdc1f7fbcfa3cdbfd621460e7e0d7eef389",
+    "restored.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652"
+  },
+  "annotationSha256": "09e92fbf5f65a3dc6bd9f710ce18c62d826d00c64217ab56d0ac326c82a19eef",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native Card resolves TABLEROW_BACKGROUND_DEFAULT and CARD_MUTED_BG through OPACITY_8 in Ash. Both aliases preserve translucency; plugin card surfaces visibly change.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks (Discord 352.6 / 352206)",
+        "../../../data/tokens.json#semantic (Ash uses dark base)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected full-frame pair: public plugin names/descriptions and anonymous notification count only; no profile, messages or private account information."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected full-frame before/after and focused native-scale comparison. Stable list geometry; native top-edge scroll fade retained. No unexplained rendering changes."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected final comparison: thin outline identifies Plugin card without covering content. Inactive-switch crop revised to remove the fragment of adjacent text."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Raw aliases preserve their opacity; text and controls stay unchanged. Full-frame baseline and restored pixels match exactly."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Tints the translucent plugin-card surfaces in Ash."
+    }
+  },
+  "comparisonSha256": "b2179f3a153ee0ba8d4c5ecb74eb0d6a4c1614baed9dcf17f45961bd66d58246"
+}

@@ -152,7 +152,7 @@ export async function mount(host) {
 	setRawPalette(VT.tokens.raw)
 	let repairReport = null, pendingUpdate = null, history = null
 	// Token history drives the update; it is only fetched once a theme might need it.
-	const loadHistory = () => history ??= fetch(new URL('./token-history.json', import.meta.url)).then(r => r.ok ? r.json() : null).catch(() => null)
+	const loadHistory = () => history ??= fetch(new URL(`./token-history.json${window.SITE_DATA_VERSION ? '?v=' + window.SITE_DATA_VERSION : ''}`, import.meta.url)).then(r => r.ok ? r.json() : null).catch(() => null)
 	async function checkForUpdate() {
 		const hist = await loadHistory()
 		const { report } = modernize(store.theme, VT.tokens, hist)
@@ -444,7 +444,7 @@ export async function mount(host) {
 		setTab('property')
 		renderProperty()
 		restoreHighlight()
-		history.replaceState(null, '', `#studio/${raw ? '@' : ''}${key}`)
+		window.history.replaceState(null, '', `#studio/${raw ? '@' : ''}${key}`)
 	}
 
 	function restoreHighlight() {
@@ -555,7 +555,7 @@ export async function mount(host) {
 		<article class="st-prop">
 			<header class="st-prop-head">
 				<div><span class="st-kind">${raw ? 'Raw colour' : 'Semantic key'}${m.area ? ` / ${esc(m.area)}` : ''}</span><h2><button class="st-copy-key" data-copy="${esc(key)}" title="Copy key name">${esc(key).replace(/_/g, '_<wbr>')}</button></h2></div>
-				${capture ? `<button class="st-thumb" data-shot="${esc(capture.image)}" title="Open the documented screenshot"><img src="${esc(capture.image)}" alt="${esc(key)} in ${esc(screenLabel(capture.screen))}" loading="lazy"><span class="st-thumb-focus" style="left:${capture.focus.x * 100}%;top:${capture.focus.y * 100}%;width:${capture.focus.width * 100}%;height:${capture.focus.height * 100}%"></span></button>` : ''}
+				${capture ? `<button class="st-thumb" data-shot="${esc(capture.image)}" title="Open the documented screenshot"><img src="${esc(capture.image)}" alt="${esc(key)} in ${esc(screenLabel(capture.screen))}" loading="lazy">${capture.focus ? `<span class="st-thumb-focus" style="left:${capture.focus.x * 100}%;top:${capture.focus.y * 100}%;width:${capture.focus.width * 100}%;height:${capture.focus.height * 100}%"></span>` : ''}</button>` : ''}
 			</header>
 			<p class="st-desc">${esc(description)}</p>
 			<p class="st-meta"><span class="st-verify ${v.level}">${esc(v.level === 'none' ? (known ? 'No documented example' : 'Unknown key') : m.tested ? `Tested on ${(raw ? 1 : m.tested.screens.length)} screen${raw || m.tested.screens.length === 1 ? '' : 's'}` : '')}</span><a href="${docsLink(key, raw)}">${(raw ? testedRaw : tested).has(key) ? 'See tested examples' : 'See in All colour keys'} &rarr;</a></p>
@@ -916,7 +916,7 @@ export async function mount(host) {
 
 	async function loadTemplate() {
 		try {
-			const text = await (await fetch('../template/legacy-theme.json')).text()
+			const text = await (await fetch(`../template/legacy-theme.json${window.SITE_DATA_VERSION ? '?v=' + window.SITE_DATA_VERSION : ''}`)).text()
 			const { theme } = importText(text)
 			store.replace(theme, 'template')
 			VT.toast('Loaded the Dusk template. Ctrl+Z undoes it.')
@@ -1222,11 +1222,11 @@ export async function mount(host) {
 			if (!param) return layoutPhone()
 			const value = decodeURIComponent(param)
 			if (value === '!dusk') {
-				history.replaceState(null, '', '#studio')
+				window.history.replaceState(null, '', '#studio')
 				return loadTemplate()
 			}
 			if (value === '!new' || value === '!import') {
-				history.replaceState(null, '', '#studio')
+				window.history.replaceState(null, '', '#studio')
 				if (value === '!new') {
 					store.replace({}, 'new')
 					VT.toast('Started a new theme. Undo brings your previous theme back.')

@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "626a79b26c0f43955b2760000d2b71e1d8ab856701af1fd44dce7c66a41b666e",
+    "stability.png": "626a79b26c0f43955b2760000d2b71e1d8ab856701af1fd44dce7c66a41b666e",
+    "after.png": "fe5e2f85f932974d06db007c15b4c60004518e487171036e5f013d5ee6cc1b3e",
+    "restored.png": "626a79b26c0f43955b2760000d2b71e1d8ab856701af1fd44dce7c66a41b666e"
+  },
+  "annotationSha256": "5046585f502d4a94a480335521751f8f8b7dcbac277a072a555cef74084a78ca",
+  "comparisonSha256": "a3f1031840d09696a1f1ffaf22f0a599820896bffa2692ea01ccb32aaf6978c1",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native ChatInput resolver trace identifies the focused composer surface.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full originals inspected: fictional names, avatars, messages, channel and selected unsent draft."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and corrected original-scale comparison inspected. Selection avoids caret blink; baseline and restoration match exactly."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline accurately identifies the full composer surface without covering controls."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only composer fill changes. Its translucent selection highlight and antialiased controls naturally composite over the new surface; send button and outside chat remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the focused message composer background. Caption explains the translucent selection highlight."
+    }
+  }
+}

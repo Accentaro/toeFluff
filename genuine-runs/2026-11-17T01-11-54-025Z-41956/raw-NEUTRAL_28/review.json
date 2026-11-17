@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "466e1a8894ba3fd5284afa2869db45171b19c591e3056b0e5149a9079e74a210",
+    "stability.png": "466e1a8894ba3fd5284afa2869db45171b19c591e3056b0e5149a9079e74a210",
+    "after.png": "09ea05dfd69d8c264a1db85ceed122b24c9dc1e00b72c06e4c19c54d4d201349",
+    "restored.png": "466e1a8894ba3fd5284afa2869db45171b19c591e3056b0e5149a9079e74a210"
+  },
+  "annotationSha256": "45d086bf0b5a5fa4f2b86c99db70be26a40b342d9b1be4087d5d97abaef4baf3",
+  "comparisonSha256": "66aff58db095e3eb6146f3af6743277b93a13f31f15f6b9a30a8bf4ef4d96338",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "BaseChannelIcon and BaseIconImage via CHANNEL_ICON. Raw aliases checked for dark/Ash, with runtime consumer stacks and isolated raw override.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json",
+        "../first-effects-review.png",
+        "../last-effects-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full native before/after frames inspected: fictional names, initials, activity and profile image."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame contact sheets and native-scale focused comparison inspected. Supplies read-channel icons in Ash."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline identifies channels & roles icon; labels and affected component visible at original scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Unread channel icons and channel labels stay unchanged. Full-frame changes match aliases, including alpha compositing over changed surfaces. Native navigation contrast adapts for lower backdrop. Stability and restoration differences are zero."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies read-channel icons in Ash."
+    }
+  }
+}

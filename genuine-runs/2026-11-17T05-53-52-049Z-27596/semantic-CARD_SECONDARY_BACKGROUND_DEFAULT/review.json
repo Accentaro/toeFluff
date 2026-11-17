@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "ce3ac80ccb92c2573432629a8391c7793f147e00fe26c5b91e5102ffc95f0286",
+    "stability.png": "ce3ac80ccb92c2573432629a8391c7793f147e00fe26c5b91e5102ffc95f0286",
+    "after.png": "867a43f193efd5ce86f2794b38962039e5ed3ab150b71143b008ecdcddb4bf00",
+    "restored.png": "ce3ac80ccb92c2573432629a8391c7793f147e00fe26c5b91e5102ffc95f0286"
+  },
+  "annotationSha256": "0c06860e278333bf8c1cb9c702f4faa37d70337f2c1fd4254deb674e9d6cdd80",
+  "comparisonSha256": "b12f226edd744b885209300428a6af46ef962ba3e0b3a6804bb9d3e44f254e25",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Runtime Card consumes this key. Messages-screen Card configuration observed as secondary/faint/low and reused without changing its native implementation.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-card-props.json",
+        "../../../native-card-fixture.mjs"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full originals use fictional club, names and generic explanatory text."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Both full originals and original-scale comparison inspected; complete card surface changes clearly without clipping. Baseline and restoration match exactly."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline identifies the complete secondary Card surface without covering content."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Pixel changes remain within Card bounds. Text colours and surrounding screen remain unchanged; faint border naturally composites over changed surface."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the surface of a native secondary Card. Caption identifies genuine native component and fictional content."
+    }
+  }
+}

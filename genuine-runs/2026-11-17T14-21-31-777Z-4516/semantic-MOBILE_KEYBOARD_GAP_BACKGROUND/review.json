@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "c5fd490a57c2e7ab757d3e2b82394ce9c6821b9eb1c3ead3d67dd91709464b03",
+    "stability.png": "c5fd490a57c2e7ab757d3e2b82394ce9c6821b9eb1c3ead3d67dd91709464b03",
+    "after.png": "b15ac15d748c1ceee21aa40e0ea8417eab4e2b86829ec36ddbd9afa89bf3da88",
+    "restored.png": "c5fd490a57c2e7ab757d3e2b82394ce9c6821b9eb1c3ead3d67dd91709464b03"
+  },
+  "annotationSha256": "633158b34f948205278db5ab663bddf9d5a6e89002c8cbcdbb9e5ed0aab50669",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Original ChannelSafeAreaBottomAnimated.android and useChannelSafeAreaBottomStyles use this token. Native height hook/device insets retained with only channelId supplied.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-safe-area-fixture.mjs"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Fictional workshop labels; no private channel content or keyboard suggestions."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full pair and original-scale comparison inspected. Native 63px device-derived strip height unchanged. Exact stability/restoration."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline identifies original native inset strip without obscuring it."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only native inset fill changes; surrounding headings and page remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Explicitly documents isolated native component and system-keyboard occlusion in full chat."
+    }
+  },
+  "comparisonSha256": "28e7b67e04c29e564883bc50f8738ab6bc1263e2d33c217c5a5dda628df2030d"
+}

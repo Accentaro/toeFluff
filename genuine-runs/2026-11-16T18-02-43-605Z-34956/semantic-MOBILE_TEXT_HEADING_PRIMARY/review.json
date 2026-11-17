@@ -1,0 +1,54 @@
+{
+  "hashes": {
+    "before.png": "783c82c61d91b54b26196af5320fbc30dfc1c428d48520356aa3ad6fc6693d5e",
+    "stability.png": "783c82c61d91b54b26196af5320fbc30dfc1c428d48520356aa3ad6fc6693d5e",
+    "after.png": "492328dd8d7f6ac1b022ed815f5c29934d2637d6f0237b2f8e1a4e91ad3be904",
+    "restored.png": "783c82c61d91b54b26196af5320fbc30dfc1c428d48520356aa3ad6fc6693d5e"
+  },
+  "annotationSha256": "d2b7a3ce6b4fc7d7c773ac9b087d6d722fa44d79348077a03a0458ef943718d7",
+  "comparisonSha256": "24096dc228dda6d2e1fa6638c8a82eb04c32965a1d47a561fa7fea7aa75d354b",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Observed key-specific runtime consumer stack supports this Settings use. Import-path association is explicitly inferred by component name. Original native TypeScript source text and exhaustive application-wide uses are not claimed.",
+      "references": [
+        "index.android.bundle:5478:3738 (Text; runtime key-resolver trace)",
+        "index.android.bundle:14685:2464 (VerifiedIcon; runtime key-resolver trace)",
+        "design/components/Text/native/Text.tsx (independently observed import; association to stack inferred by name)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Inspected full originals and focused comparison: generic Settings labels, version string, plugin count, fixed time and native notification count only. No person/account names, messages, avatar photographs, contact details or connection values visible."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Only the Settings page title becomes pink. Close X, native notification badge, section headings and row labels retain their colours. Title fits completely inside the outlined target. Full originals were inspected before cropping. The bottom partial next row is ordinary scroll-viewport continuation, not a rendering fault. Focused comparison includes complete representative components and unchanged scale."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Inspected rendered comparison after final SVG generation. Thin gold outline identifies settings title, remains outside its visible glyphs/edge, and matches the caption. Before/after use identical crop coordinates at native pixel scale; labels occupy separate margins."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Only the Settings page title becomes pink. Close X, native notification badge, section headings and row labels retain their colours. Title fits completely inside the outlined target."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Colours the Settings page title."
+    }
+  },
+  "crop": [
+    18,
+    160,
+    1044,
+    135
+  ],
+  "scope": "One representative Settings usage, not exhaustive coverage of this key. No publication performed."
+}

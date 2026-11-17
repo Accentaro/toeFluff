@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "bd9180a30b3cff17350c5cc3342213a113c319cb334f6e412ee1acd627b30a6f",
+    "stability.png": "bd9180a30b3cff17350c5cc3342213a113c319cb334f6e412ee1acd627b30a6f",
+    "after.png": "c74a2b2bfcd7c55cb247b61d0a53d8477d68b6124fed91ef0f233f03d3a5957e",
+    "restored.png": "bd9180a30b3cff17350c5cc3342213a113c319cb334f6e412ee1acd627b30a6f"
+  },
+  "annotationSha256": "0bc75f6160b219250d0d47921bc2b8528373ba143298635c58d46a8935d30a5c",
+  "comparisonSha256": "75d7fee4f5a32adc6dea061d38764e8207f6a214ee4dead344dedda6300f1d2a",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Actual per-key resolver stacks resolve CONTROL_CRITICAL_PRIMARY_BORDER_ACTIVE in useButtonPillStyles/PillWrapper. Genuine Design.Button destructive variant at standard md size; inert action; real held pointer.",
+      "references": [
+        "native-button-fixture.mjs SHA256 042745683a4934ba1fd291eca2ed23eb388000dbe9fc9318f51e213c70ef0dbe",
+        "Valence/ValenceBundle/bundle/lib/discord/src/types/index.ts:316",
+        "manifest.runtimeConsumerStacks: useButtonPillStyles/PillWrapper"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full images show generic controls only. Delete draft callback is inert; no account action, identity, messages or media."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full after and focused comparison inspected individually. Only destructive pressed border changes. White text unchanged; all other variants at resting appearance. Complete controls, no clipping or artefacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Gold outline encloses the destructive button without covering its changed border. Identical crop and original scale in both panels. Held-state explanation is explicit."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full-frame effect of 6524 pixels confined to destructive button. Exact stability and restoration, then release-check matches pre-press resting PNG. Other buttons and system UI unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Colours the destructive button border while it is held down."
+    }
+  },
+  "scope": "Native destructive Button fixture held state only; not stock Settings content."
+}

@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "29a1ed61fa2f5bb694b63e1d292a25bb2d0dd550db384c2e6fc78bd137b2d103",
+    "stability.png": "29a1ed61fa2f5bb694b63e1d292a25bb2d0dd550db384c2e6fc78bd137b2d103",
+    "after.png": "e4d3f84ae534afe6c297de1675833b7fe5076f7603b3e92a4284b9535507ab7b",
+    "restored.png": "29a1ed61fa2f5bb694b63e1d292a25bb2d0dd550db384c2e6fc78bd137b2d103"
+  },
+  "annotationSha256": "33deabb4fc9552082b82f6dd652e45f55a5dbefc6cb8b9491cab0908c350b65d",
+  "comparisonSha256": "f57bee213dd0bdaf4385fabc7ce47a6103a44bdc7b3dc4250fa052c195d6838b",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Current native Badge resolver trace and native source getBadgeColors verify this variant and separate fill/border/text usage. Original Badge component, dimensions and styles retained.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-status-badge-fixture.mjs"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames contain only fictional workshop labels."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full before/after frames and original-scale comparisons individually inspected. Exact stability and restoration. Distinct isolated fill, thin outline or text change."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline surrounds the actual changed badge surface or label without covering it."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Other three badges, labels, screen and navigation remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the success badge outline."
+    }
+  }
+}

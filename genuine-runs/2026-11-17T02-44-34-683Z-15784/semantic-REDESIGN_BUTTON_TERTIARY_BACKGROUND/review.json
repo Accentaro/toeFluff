@@ -1,0 +1,45 @@
+{
+  "hashes": {
+    "before.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652",
+    "stability.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652",
+    "after.png": "32cb145140312986b49d22eedaa90ce5f65e99ab37e9a20de053f823bd6d8e02",
+    "restored.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652"
+  },
+  "annotationSha256": "e8cb17ab965a43e7b27c9f0398cc43a07c36507379effa97b7d79846ca16240c",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native useButtonPillStyles / PillWrapper resolves REDESIGN_BUTTON_TERTIARY_BACKGROUND for the toolbar buttons.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks (Discord 352.6 / 352206)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected full-frame pair: public plugin names/descriptions and anonymous notification count only; no profile, messages or private account information."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected full-frame before/after and focused native-scale comparison. Stable list geometry; native top-edge scroll fade retained. No unexplained rendering changes."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected final comparison: thin outline identifies Settings button surface without covering content. Inactive-switch crop revised to remove the fragment of adjacent text."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Also affects the filter button; icons keep their own colour. Full-frame baseline and restored pixels match exactly."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours tertiary toolbar button backgrounds."
+    }
+  },
+  "comparisonSha256": "cde4b60804f91b96795aab0399b96b76a2b73d10833e9650c7b512a91b16ca2a"
+}

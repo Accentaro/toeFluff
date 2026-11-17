@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "1511d3b64a0243e080745a89dd795d3ab12edb78886b9e3a1e8ce62f6201d914",
+    "stability.png": "1511d3b64a0243e080745a89dd795d3ab12edb78886b9e3a1e8ce62f6201d914",
+    "after.png": "353c1777d69d1c63b50b194a01b9d907c34481731aed26b1de216285561dd1d0",
+    "restored.png": "1511d3b64a0243e080745a89dd795d3ab12edb78886b9e3a1e8ce62f6201d914"
+  },
+  "annotationSha256": "4f97a5f8ef760b2f9c7fce2b2ae3bb276048e433ebc4b23c746401bb38a732f0",
+  "comparisonSha256": "7275c9a24b863302e9cb4e30971fe1ce8fbdef6b972acad1ef827e10250246dc",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Runtime token traces confirm useButtonTextColorStyles / useIconTintStyles / BaseIconButton in the stock native button gallery.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../full-frame-review.png",
+        "../comparison-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame contact sheet inspected: stock captions and icons, no personal data."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full frames and native-scale annotated comparisons inspected together. Selected bell-slash controls remain complete, without clipping or artifacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Thin outline identifies the changed icon; adjacent variants provide unchanged context."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame difference confined to {'pixels': 1271, 'bounds': {'x': 69, 'y': 2000, 'width': 50, 'height': 51}}; zero stability and restoration differences. Adjacent variants unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the icon of a selected standard toggle button."
+    }
+  }
+}

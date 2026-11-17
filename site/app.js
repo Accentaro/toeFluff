@@ -2,6 +2,8 @@ import { createStore } from './studio/store.js'
 
 // Everything is read from the repo at load time, so the site always matches the latest capture run.
 const ROOT = '../'
+// Version of the data and pictures (tools/stamp.mjs), so an update never mixes with an old cached copy
+const V = window.SITE_DATA_VERSION ? `?v=${window.SITE_DATA_VERSION}` : ''
 const BASES = [['dark', 'Ash'], ['darker', 'Dark'], ['light', 'Light'], ['midnight', 'Onyx']]
 const $ = sel => document.querySelector(sel)
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
@@ -13,7 +15,7 @@ $('.skip-link').onclick = e => {
 }
 
 const get = async (path, type = 'json') => {
-	const res = await fetch(ROOT + path)
+	const res = await fetch(ROOT + path + V)
 	if (!res.ok) throw new Error(`${path}: ${res.status}`)
 	return type === 'json' ? res.json() : res.text()
 }
@@ -46,10 +48,10 @@ function focusOutline(capture) {
 }
 
 let imageGroup = [], imageIndex = 0
-const screenNames = { chat: 'Announcements', chatinput: 'Chat', keyboard: 'Chat with keyboard', emoji: 'Emoji picker', server: 'Channel list', settings: 'Settings', plugins: 'Plugins', colors: 'Theme colours', alert: 'Alert', actionsheet: 'Message menu', guildsheet: 'Server menu', forum: 'Forum', search: 'Member search', members: 'Members', home: 'Direct messages', you: 'Your profile', inbox: 'Inbox', 'chat-scrolled': 'Chat / Scrolled back', 'chat-unread-preview': 'Chat / Unread preview', 'chat-floating-preview': 'Chat / Jump button preview', 'component-activity': 'Listening activity preview', 'component-buttons': 'Button styles', 'component-buttons-more': 'Additional button styles', 'component-disabled': 'Disabled buttons', 'component-inputs': 'Text fields', 'component-checks': 'Checkboxes, radios and slider', 'component-cards': 'Cards', 'component-badges': 'Badges', 'component-badges-premium': 'Premium badge', 'component-badges-rarity': 'Rarity badges', 'component-notices': 'Notices', 'component-toggles': 'Toggle buttons', 'component-icons': 'Icon buttons', 'component-rows': 'Settings row', 'component-toast-default': 'Notification', 'component-toast-success': 'Success notification', 'component-toast-critical': 'Error notification' }
+const screenNames = { dm: 'Direct message', logout: 'Settings / Log Out', toast: 'Toast', chat: 'Text channel', mention: 'Mention suggestions', command: 'Slash commands', gifs: 'GIF picker', stickers: 'Sticker picker', voice: 'Voice channel', channelsheet: 'Channel menu', themes: 'Themes settings', appearance: 'Appearance settings', accessibility: 'Accessibility settings', chatinput: 'Chat', keyboard: 'Chat with keyboard', emoji: 'Emoji picker', server: 'Channel list', settings: 'Settings', plugins: 'Plugins', colors: 'Theme colours', alert: 'Alert', actionsheet: 'Message menu', guildsheet: 'Server menu', forum: 'Forum', search: 'Member search', members: 'Channel members', home: 'Direct messages', you: 'Your profile', inbox: 'Inbox', 'chat-timestamps': 'Chat / Message timestamps', 'chat-text': 'Chat / Text and header', 'chat-reply-target': 'Chat / Selected reply target', 'chat-reply-highlight': 'Chat / Reply with ping', 'chat-mention-highlight': 'Chat / Mention highlight', 'chat-scrolled': 'Chat / Scrolled back', 'chat-unread-preview': 'Chat / Unread preview', 'chat-floating-preview': 'Chat / Jump button preview', 'component-activity': 'Listening activity preview', 'component-buttons': 'Button styles', 'component-buttons-more': 'Additional button styles', 'component-disabled': 'Disabled buttons', 'component-inputs': 'Text fields', 'component-checks': 'Checkboxes, radios and slider', 'component-cards': 'Cards', 'component-badges': 'Badges', 'component-badges-premium': 'Premium badge', 'component-badges-rarity': 'Rarity badges', 'component-notices': 'Notices', 'component-toggles': 'Toggle buttons', 'component-icons': 'Icon buttons', 'component-rows': 'Settings row', 'component-toast-default': 'Notification', 'component-toast-success': 'Success notification', 'component-toast-critical': 'Error notification' }
 
 function openImage(src, alt, button) {
-	imageGroup = [...(button?.closest('.key-gallery')?.querySelectorAll('.image-button') || [button])].filter(Boolean)
+	imageGroup = [...(button?.closest('.key-gallery')?.querySelectorAll('.image-button') || [button])].filter(candidate => candidate && candidate.dataset.verified === button?.dataset.verified)
 	imageIndex = imageGroup.indexOf(button)
 	$('#image-navigation').hidden = imageGroup.length < 2
 	$('#image-position').textContent = `${imageIndex + 1} / ${imageGroup.length}`
@@ -60,6 +62,9 @@ function openImage(src, alt, button) {
 	$('#image-title').textContent = button?.dataset.name || alt || 'Theme screenshot'
 	$('#image-description').textContent = button?.dataset.description || 'Pink marks the colour changed by this key.'
 	$('#image-original').href = src
+	box.querySelector('.image-frame').classList.toggle('wide', !!button?.querySelector('img.wide'))
+	box.querySelector('.image-frame').classList.toggle('comparison', button?.dataset.verified === 'true')
+	box.classList.toggle('reviewed-comparison', button?.dataset.verified === 'true')
 	const outline = box.querySelector('.focus-outline')
 	const source = button?.querySelector('.focus-outline')
 	outline.hidden = !source
@@ -114,7 +119,7 @@ function renderGuide() {
 		<div class="hero-copy">
 		<h1>Your colours.<br>Your Discord.</h1>
 		<p class="lead">Recolour Discord on Android with Valenced. Change colours on a live preview, then export a theme you can install.</p>
-		<div class="hero-actions"><a class="button primary" href="#studio">Open the studio</a><a class="button" href="#keys">Browse tested keys</a></div>
+		<div class="hero-actions"><a class="button primary" href="#studio">Open the studio</a><a class="button" href="#keys">Browse colour examples</a></div>
 		<p class="hero-note">Free, no account. Your theme is saved in this browser.</p>
 		</div>
 		<div class="hero-demo"><div id="guide-live" class="live-preview" aria-label="Live theme preview"><p class="empty" role="status">Loading preview…</p></div></div>
@@ -160,13 +165,15 @@ function renderKeys() {
 
 	const card = k => {
 		const capture = captures[kind][k.key]
-		const image = capture ? capture.image : ROOT + k.image
-		const shots = capture ? [capture, ...(examples[kind][k.key] || [])] : [{ image }]
-		const gallery = shots.map(shot => {
-			const screen = screenNames[shot.screen] || (shot.screen?.startsWith('component-') ? shot.screen.slice(10).replace('buttons-more-pressed-', 'Pressed / ').replace('buttons-pressed-', 'Pressed / ').replace('icons-pressed-', 'Pressed icon / ').replace('rows-pressed-', 'Pressed / ').replace('toggles-pressed-', 'Pressed toggle / ').replaceAll('-', ' ') : 'Earlier probe')
-			const description = `Pink shows: ${shot.description || k.description}${shot.measurement === 'baseline-difference' ? ' This colour is partly transparent.' : ''}${shot.textScrambled ? ' Personal text is scrambled.' : ''}`
-			return `<figure><button class="image-button" data-name="${esc(k.key)}" data-screen="${esc(screen)}" data-description="${esc(description)}" aria-label="Enlarge ${esc(k.key)}: ${esc(screen)}"><img src="${esc(shot.image)}" alt="${esc(k.key)} in ${esc(screen)}" loading="lazy" width="1080" height="2400">${focusOutline(shot)}<span class="image-zoom">Enlarge</span></button><figcaption>${esc(screen)}${shot.measurement === 'baseline-difference' ? ' / Partly transparent' : ''}${shot.textScrambled ? ' / Text scrambled' : ''}</figcaption></figure>`
-		}).join('')
+		const shots = [capture, ...(examples[kind][k.key] || [])].filter(shot => shot?.reviewStatus === 'verified')
+		const renderShot = shot => {
+			const verified = shot.reviewStatus === 'verified'
+			const screen = screenNames[shot.screen] || ({'native-form': 'Native radio and switch controls', 'native-checkbox': 'Native checkbox controls', 'native-slider': 'Native slider', 'native-textinput': 'Native text inputs', 'native-button-fixture': 'Native Button component fixture'}[shot.screen]) || (shot.screen?.startsWith('component-') ? shot.screen.slice(10).replace('buttons-more-pressed-', 'Pressed / ').replace('buttons-pressed-', 'Pressed / ').replace('icons-pressed-', 'Pressed icon / ').replace('rows-pressed-', 'Pressed / ').replace('toggles-pressed-', 'Pressed toggle / ').replaceAll('-', ' ') : (shot.screen?.replace(/^native-/, '').replace(/-fixture|-fictional/g, '').replaceAll('-', ' ').replace(/^./, c => c.toUpperCase()) || 'Colour example'))
+			const description = verified ? shot.description : 'Historical example — awaiting recapture and verification. Do not use this image as proof of the key’s effect.'
+			return `<figure class="${verified ? 'verified-comparison' : 'historical-example'}"><button class="image-button" data-verified="${verified}" data-name="${esc(k.key)}" data-screen="${esc(screen)}" data-description="${esc(description)}" aria-label="Enlarge ${esc(k.key)}: ${esc(screen)}"><img src="${esc(shot.image)}" alt="${esc(k.key)} in ${esc(screen)}${verified ? ', before and after' : ', unverified historical example'}" loading="lazy" width="${shot.width || 1080}" height="${shot.height || 2400}" class="${(shot.height || 2400) / (shot.width || 1080) < 1.6 ? 'wide' : ''}">${verified ? '' : focusOutline(shot)}<span class="image-zoom">${verified ? 'Inspect comparison' : 'Enlarge'}</span></button><figcaption>${esc(screen)}${verified ? "" : " - Unverified historical example"}</figcaption>${verified ? `<details class="capture-provenance"><summary>About this example</summary><p>One colour key changed; all other theme values stayed the same.</p><p><a href="${esc(shot.originalBefore)}" target="_blank" rel="noopener">Original before</a> · <a href="${esc(shot.originalAfter)}" target="_blank" rel="noopener">Original after</a> · <a href="${esc(shot.originalRestored)}" target="_blank" rel="noopener">Restored</a> · <a href="${esc(shot.evidence)}" target="_blank" rel="noopener">Review evidence</a></p></details>` : ''}</figure>`
+		}
+		const reviewed = shots.filter(s => s.reviewStatus === 'verified')
+		const gallery = reviewed.map(renderShot).join('') || '<p class="empty">No verified screenshot is available for this key on this Discord build.</p>'
 		// Base defaults with their hex, which themers copy from constantly; click a hex to copy it
 		const hex = v => v ? `<button class="hex" data-key="${esc(v)}" title="Copy ${esc(v)}">${esc(v)}</button>` : '<span class="hex">none</span>'
 		const swatches = kind === 'semantic'
@@ -174,7 +181,7 @@ function renderKeys() {
 			: `<span class="swatch">${dot(k.value)}${hex(k.value)}</span>${k.usedBy.length ? `<span class="used-by swatch-raw">Used by ${k.usedBy.length} semantic key${k.usedBy.length > 1 ? 's' : ''}</span>` : ''}`
 		const current = kind === 'semantic' ? store.semanticInfo(k.key, 'dark') : store.rawInfo(k.key)
 		const yours = current.source === 'default' ? '' : `<span class="yours">${dot(current.value)}Your theme: ${esc(current.value)}</span>`
-		return `<div class="card">
+		return `<div class="card ${reviewed.length ? 'has-reviewed-example' : ''}">
 			<div class="card-body">
 				<button class="key" data-key="${esc(k.key)}" title="Copy">${esc(k.key).replace(/_/g, '_<wbr>')}</button>
 				<p>${inline(esc(k.description))}</p>
@@ -243,7 +250,7 @@ $('#keys-list').onclick = e => {
 function renderAll() {
 	const q = $('#all-search').value.trim().toLowerCase()
 	const testedOnly = $('#all-tested').checked
-	const tested = new Set(data.semantic.map(k => k.key))
+	const tested = new Set(data.semantic.filter(k => k.reviewStatus === 'verified').map(k => k.key))
 	const rows = Object.keys(resolved.semantic).sort()
 		.filter(k => (!q || k.toLowerCase().includes(q)) && (!testedOnly || tested.has(k)))
 		.map(k => {
@@ -363,14 +370,15 @@ function route() {
 ;(async () => {
 	;[data, resolved, tokens, descriptions, examples, captures] = await Promise.all([
 		get('data/keys.json'), get('data/resolved.json'), get('data/tokens.json'), get('data/descriptions.json'),
-		fetch('capture-examples.json').then(res => { if (!res.ok) throw new Error('Could not load grouped examples'); return res.json() }),
-		fetch('capture-data.json').then(res => { if (!res.ok) throw new Error('Could not load screenshot details'); return res.json() }),
+		fetch('capture-examples.json' + V).then(res => { if (!res.ok) throw new Error('Could not load grouped examples'); return res.json() }),
+		fetch('capture-data.json' + V).then(res => { if (!res.ok) throw new Error('Could not load screenshot details'); return res.json() }),
 	])
 	areas = descriptions.areas
+	if (V) for (const set of [captures, examples]) for (const kind of Object.values(set)) for (const v of Object.values(kind)) for (const e of [v].flat()) if (e.image && !e.image.includes('?')) e.image += V
 	// One copy of the reference data, shared with the studio so the two cannot disagree
 	store = createStore({ tokens })
 	window.VT = { store, data, resolved, tokens, descriptions, captures, examples, screenNames, openImage: (src, alt) => openImage(src, alt, null), toast, copy }
-	$('#keys-meta').textContent = `Each picture shows one key set to pink, so you can see exactly what it paints. Tap a picture to enlarge it, or a key name to copy it. Captured on Discord ${data.discord}, Ash theme.`
+	$('#keys-meta').textContent = 'See what each semantic or raw colour changes. Compare the original appearance with a single-key override, and open an image for a closer look.'
 	await Promise.all([renderGuide(), renderTemplates()])
 	store.on('change', () => {
 		updateThemePresence()

@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f",
+    "stability.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f",
+    "after.png": "c41963277ee7a1302f828ea74c7b0eef84e6c221c32333e6e93ce2ed6857bd05",
+    "restored.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f"
+  },
+  "annotationSha256": "733f7f78a60b37fcfe385cf4f3360494c5f7d28ba584a96a1d62788aadce6d8a",
+  "comparisonSha256": "c9270b1612eeebf11adcfc94a28677b2efc1e65b1ac4b2fade5079ffeda85b01",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Actual SegmentedControl resolver stack resolves this key. Live update initially had zero visible effect; reopening the native Family Centre page after every phase demonstrates the mounted indicator colour. Source alias OPACITY_20 is recorded in tokens.json.",
+      "references": [
+        "manifest.runtimeConsumerStacks: SegmentedControl",
+        "modules/user_settings/defs/native/FamilyCenterSetting.tsx",
+        "publishing/toeFluff/data/tokens.json semantic MOBILE_SEGMENTED_CONTROL_INDICATOR_BACKGROUND"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full native frames show public onboarding text and illustration only, no family membership, identities, account fields or dialogs."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full after and focused comparison inspected. Only selected Activity indicator turns pink; labels, tab base, hero and other controls unchanged. Complete pill with rounded corners, no clipping or artefacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Gold rectangle surrounds selected pill with margin. Same crop and original pixel scale; no label or changed pixel covered. Remount requirement explained."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "43742 changed pixels confined to selected indicator bounds. Baseline/stability/restoration exactly match despite each remount; other visible components unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Colours the selected tab indicator in Family Centre."
+    }
+  },
+  "scope": "Stock native Family Centre Activity tab; screen reopened between phases."
+}

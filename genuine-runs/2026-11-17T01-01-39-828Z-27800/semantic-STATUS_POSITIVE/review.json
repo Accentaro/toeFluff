@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f",
+    "stability.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f",
+    "after.png": "3d5e67c170950afe7dd9ed29c39db8b31bd01857b0988dcf2e83cb80b16cd063",
+    "restored.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f"
+  },
+  "annotationSha256": "4ddbe3445b39519d8a735ac9a1493b092e600dc08722ea214761ee88e7c25880",
+  "comparisonSha256": "68f4dea982b7ef406e18bc6c4e7285179581a5b3e83d6fe127300c06e0092adf",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "BaseIconImage activity glyph; QuestProgressIndicator also resolves this token offscreen. Isolated override and runtime consumer stacks verified.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../first-effects-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full server before/after frames inspected; fictional names, initials and activity."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effects and native-scale comparisons inspected. Colours the positive activity icon in the profile bar."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline identifies activity icon without covering the label; revised connector outline fits inside image."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Fictional activity; profile text remains unchanged. Full-frame effect matches native consumers. Zero stability/restoration drift."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the positive activity icon in the profile bar."
+    }
+  }
+}

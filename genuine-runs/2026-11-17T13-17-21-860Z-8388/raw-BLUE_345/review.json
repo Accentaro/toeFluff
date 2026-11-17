@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "560870ba16d06cf4213ffe3e28634812a210f4a9b42cb93c7b1d30e8c0c3fbe8",
+    "stability.png": "560870ba16d06cf4213ffe3e28634812a210f4a9b42cb93c7b1d30e8c0c3fbe8",
+    "after.png": "8129be2e2515d7f5b9cc8f049f4c30a4245772a618d95dfee3746bebfdf87395",
+    "restored.png": "560870ba16d06cf4213ffe3e28634812a210f4a9b42cb93c7b1d30e8c0c3fbe8"
+  },
+  "annotationSha256": "1d3527eeeb32b4e5bae1a9e3774409461ed162f5eb168cd54047755df05bd96a",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Original HelpMessage raw colour lookup confirmed in source module 7938; current runtime component shows isolated icon change. Static message surface remains unchanged.",
+      "references": [
+        "../../../native-help-fixture.mjs",
+        "../../../../../research/tabsv2/evidence/modern-352204/modules/m/7938.js"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames inspected: fictional workshop notes, no personal content."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full pairs and original-scale comparison inspected; native geometry intact. Zero baseline drift and exact restoration."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline identifies the actual changed component without covering its content."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Pixel bounds and full frames confirm isolated change; other controls, text and surfaces stable."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the native information message icon."
+    }
+  },
+  "comparisonSha256": "f21db146d4d0fd8bfe99ad35bed106abf20a9e785a3c1849049d3280b7c654f3"
+}

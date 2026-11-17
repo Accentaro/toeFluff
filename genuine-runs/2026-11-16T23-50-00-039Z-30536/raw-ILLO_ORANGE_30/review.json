@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "fccab16ffccf66971aefc50d2010b20204fada0dc41cb6b3502162f7c04ce05f",
+    "stability.png": "fccab16ffccf66971aefc50d2010b20204fada0dc41cb6b3502162f7c04ce05f",
+    "after.png": "8f0022a02ef6b79d744d75a40cf1f6d72ff0da8bd0993fd892d5d1386f827968",
+    "restored.png": "fccab16ffccf66971aefc50d2010b20204fada0dc41cb6b3502162f7c04ce05f"
+  },
+  "annotationSha256": "7bb3436f068908a6bf4342293bc83393c1d61d3547a711fcb49c33824515aedf",
+  "comparisonSha256": "8730f286331c9568e174fb363c6e520e3c1f911e6ed3f1c27397f54bbc66071d",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Raw palette aliases and actual native Badge consumer stacks verified. Mythic text colour also supplies its outline.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../references/raw-badge-mythic-expressive-review.png",
+        "../../../references/raw-badge-mythic-expressive-comparisons.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame native gallery inspected: stock captions and NEW badges only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full frames and native-scale annotated comparisons inspected. Intended colour effect is visible without clipping or artifacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline identifies actual changed surface, including both text and outline for ILLO_ORANGE_30."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effect {'pixels': 1795, 'bounds': {'x': 482, 'y': 610, 'width': 116, 'height': 47}}; zero stability/restoration drift. All other gallery components unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies the mythic badge text and border through semantic aliases."
+    }
+  }
+}

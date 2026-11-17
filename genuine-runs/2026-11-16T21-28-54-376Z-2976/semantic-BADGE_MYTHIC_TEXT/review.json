@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "fccab16ffccf66971aefc50d2010b20204fada0dc41cb6b3502162f7c04ce05f",
+    "stability.png": "fccab16ffccf66971aefc50d2010b20204fada0dc41cb6b3502162f7c04ce05f",
+    "after.png": "8f0022a02ef6b79d744d75a40cf1f6d72ff0da8bd0993fd892d5d1386f827968",
+    "restored.png": "fccab16ffccf66971aefc50d2010b20204fada0dc41cb6b3502162f7c04ce05f"
+  },
+  "annotationSha256": "5acb79ac67e831a357158c1889dd6ee2f80de4915a8ef60a74bd239499e4a2a3",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Stock DesignSystemBadgeSetting renders Badge; exact key consumer recorded in manifest runtime stacks.",
+      "references": [
+        "modules/user_settings/defs/native/DesignSystemBadgeSetting.tsx",
+        "design/components/Badge/native/Badge.native.tsx",
+        "manifest.json#runtimeConsumerStacks"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full screen inspected: native public design-system labels only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full screen and individual comparison inspected. Mythic text token changes both text and outline; background token changes only fill."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Outline correctly encloses affected badge component(s); labels describe actual behavior at original pixel scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full-frame differences confined to badge; stability and restoration zero pixels."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Colours both mythic badge text and its outline."
+    }
+  },
+  "comparisonSha256": "f3bdc41adaff110fff6c6190f72b5bf1e179814da6868f87980535e36ed5b131"
+}

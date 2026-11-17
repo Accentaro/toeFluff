@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "4d1bb4b344026f2229733676b30d2eaaab09278a250afed2c05e441ad2b9d06a",
+    "stability.png": "4d1bb4b344026f2229733676b30d2eaaab09278a250afed2c05e441ad2b9d06a",
+    "after.png": "49a2873f1b34135e33b7bd7dec9bd195879664958566347fa6c4bfe4f0a6a0bb",
+    "restored.png": "4d1bb4b344026f2229733676b30d2eaaab09278a250afed2c05e441ad2b9d06a"
+  },
+  "annotationSha256": "729577d11ff045e56471d6cdcd7d43be552cd79598098f8cf3d085c7637b2244",
+  "comparisonSha256": "d9374d7e3aadb186156c7cea6a39639596bf1758f87c30f43c6e125c76deaa5d",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Actual per-key resolver stacks resolve CONTROL_SECONDARY_BACKGROUND_ACTIVE in useButtonPillStyles/PillWrapper. Genuine Design.Button secondary variant at standard md size; inert action; real held pointer. Fixed captions are not token evidence.",
+      "references": [
+        "native-button-fixture.mjs SHA256 042745683a4934ba1fd291eca2ed23eb388000dbe9fc9318f51e213c70ef0dbe",
+        "Valence/ValenceBundle/bundle/lib/discord/src/types/index.ts:316",
+        "index.android.bundle useButtonPillStyles/PillWrapper (actual runtimeConsumerStacks in manifest)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full images show only generic controls and labels; no personal identity, account fields, messages or media."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full after and focused comparison inspected individually. Only secondary pressed fill changes. Text remains white; other buttons remain at resting appearance. Complete controls, no clipping or rendering artefacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Gold outline encloses the complete secondary button without covering changed pixels. Both panels use identical crop at original scale. Description identifies the pressed fill."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full-frame effect of 99113 pixels confined to the secondary control. Zero stability/restoration difference, and final release matches pre-press resting PNG exactly. All other controls and system chrome unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Colours the secondary button fill while it is held down."
+    }
+  },
+  "scope": "Genuine native Button fixture, secondary held state only; not stock Settings content."
+}

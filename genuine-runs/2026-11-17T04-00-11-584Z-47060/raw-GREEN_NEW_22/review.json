@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057",
+    "stability.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057",
+    "after.png": "b841928ebb146182a2074ed370d60ca082c7f042f19bccc228cb4177836fb1f2",
+    "restored.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057"
+  },
+  "annotationSha256": "42303340f9dcc124e5b1a256c90d2790e8c6ad4f2103d71db0adb591349faa67",
+  "comparisonSha256": "340a9981ff342e4945719c0bb80fc76129e77e9fad53d8476533d71207d5b152",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native BaseIconImage resolves ICON_FEEDBACK_POSITIVE through GREEN_NEW_22; runtime consumer and token alias verified. Other recorded aliases belong to mounted consumers outside this visible example.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json#semantic.ICON_FEEDBACK_POSITIVE.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame review shows native demonstration copy only; no personal content."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Before/after full frames and focused annotated comparison inspected. Only the 43px feedback icon changes. Exact baseline stability and restoration."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline encloses the feedback icon without covering its glyph."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame difference is confined to the feedback icon; text, background, border and other toast variants remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies the success toast icon colour."
+    }
+  }
+}

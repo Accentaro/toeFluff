@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "f1e95a9b037330930b04ac9bf06695ebb3af7b4646537a4dee99bd2e1338e502",
+    "stability.png": "f1e95a9b037330930b04ac9bf06695ebb3af7b4646537a4dee99bd2e1338e502",
+    "after.png": "2c9238650cdb50cc733d79dd1c2a956f390ab73b0c3e5cbaa27e02d79e5994dd",
+    "restored.png": "f1e95a9b037330930b04ac9bf06695ebb3af7b4646537a4dee99bd2e1338e502"
+  },
+  "annotationSha256": "aa2666913675be4fc82413c8aad6c26eaabe8e964d3fca5af343e108b89ed0f5",
+  "comparisonSha256": "77d142b53ed2e3ee2a81d928945b5464bffecb8916d75eab2e43f5a3ad6c195f",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Source callers verify critical-secondary and icon-only props; runtime ButtonHooks traces confirm key. Original native Button/IconButton styles and standard md dimensions; inert callbacks.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-extended-button-fixture.mjs",
+        "../../../remaining-source-consumers.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames inspected: fictional workshop draft and native copy glyph only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full pairs and original-scale annotations inspected. Zero baseline/restoration drift; intended effect clearly visible."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline identifies changed fill, border, label or glyph."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Other controls unchanged. Text antialiasing blends naturally over changed fill."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the critical secondary button fill."
+    }
+  }
+}

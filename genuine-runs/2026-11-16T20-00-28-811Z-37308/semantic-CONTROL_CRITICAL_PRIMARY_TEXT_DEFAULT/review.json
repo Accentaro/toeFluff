@@ -1,0 +1,67 @@
+{
+  "hashes": {
+    "before.png": "d647d0bfbf6d66ccbeed8af155be06b27c4aadfc0bf3eb2771c76d2b1b1cb7a5",
+    "stability.png": "d647d0bfbf6d66ccbeed8af155be06b27c4aadfc0bf3eb2771c76d2b1b1cb7a5",
+    "after.png": "5ffcd6b0a1b354e8dc83b61620c6ce63da1d11654e6dd6b9e1711b3e9ecedf58",
+    "restored.png": "d647d0bfbf6d66ccbeed8af155be06b27c4aadfc0bf3eb2771c76d2b1b1cb7a5"
+  },
+  "annotationSha256": "bce4a647f81e61ba9fdefd6c3a46c1c34e43f28b7d92dbd2f0ff2c156b348daa",
+  "comparisonSha256": "604d764523713a170bb99361bdd0276323f36208652c21e55b708c3884832393",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual native Button fixture review 2026-11-16",
+      "notes": "Per-key actual resolver stacks name native Button style consumers. The test uses real Discord Design.Button with standard md size and native variant props; fixture supplies layout and inert onPress only. Fixed-gray React Native captions are not token evidence. This is a component fixture, not stock Settings content. Bundle coordinates are runtime stack positions, never Metro IDs. Pre-capture source-audit-buttons.json corroborates native consumers but current stacks are primary evidence.",
+      "references": [
+        "native-button-fixture.mjs SHA256 042745683a4934ba1fd291eca2ed23eb388000dbe9fc9318f51e213c70ef0dbe",
+        "Valence/ValenceBundle/bundle/lib/discord/src/types/index.ts:316 (BaseButtonProps variants and size), :335 (ButtonProps), :351 (sizes)",
+        "fixture-provenance.json SHA256 da28d3f539b8c9dc62a8ea262b8bcde8475f93a8ffc0d91e2f9475e88921365c",
+        "index.android.bundle:5495:11132 (useButtonTextColorStyles; current per-key resolver stack)",
+        "index.android.bundle:5489:7690 (BaseTextButton; current per-key resolver stack)",
+        "index.android.bundle:5495:14900 (useButtonPillStyles; current per-key resolver stack)",
+        "index.android.bundle:5500:4193 (PillWrapper; current per-key resolver stack)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual native Button fixture review 2026-11-16",
+      "notes": "Full baseline and individual after inspected: generic fixed action labels and variant captions; no profile data, messages, avatars, account fields or media. Native back notification badge explained. Inert callbacks do not perform label actions."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual native Button fixture review 2026-11-16",
+      "notes": "Only the label text of the destructive variant changes to pink. Fill and outline remain unchanged. Other variants, fixed gray captions, title, badge and status icons remain unchanged. Inspected full original and final focused comparison individually. Complete controls at standard md native dimensions; no clipping, gradient animation, loading or unexplained overlay. No screenshot pixels replaced or dimmed."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual native Button fixture review 2026-11-16",
+      "notes": "Final gold outline surrounds destructive button label text without covering changed pixels. Captions show native variant. Before/after coordinates and original pixel scale identical; complete controls and labels readable. Separate SVG preserves raw PNGs."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual native Button fixture review 2026-11-16",
+      "notes": "Only the label text of the destructive variant changes to pink. Fill and outline remain unchanged. Other variants, fixed gray captions, title, badge and status icons remain unchanged. All original hashes verified; baseline, stability and restoration identical. Zero stability/restoration drift."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual native Button fixture review 2026-11-16",
+      "notes": "Colours the label text of destructive buttons."
+    }
+  },
+  "crop": [
+    18,
+    1025,
+    1044,
+    210
+  ],
+  "fixtureProvenance": {
+    "kind": "native-component-fixture",
+    "source": "../../native-button-fixture.mjs",
+    "sha256": "042745683a4934ba1fd291eca2ed23eb388000dbe9fc9318f51e213c70ef0dbe",
+    "components": "Discord Design.Button; standard md props, no component styling overrides",
+    "labels": "React Native Text variant captions use fixed gray; not token evidence",
+    "actions": "Inert callbacks; no account or external actions",
+    "registration": "Clone of native Button Settings route with custom getComponent; not stock route content"
+  },
+  "scope": "Native Button fixture resting state only; not stock page, exhaustive coverage or pressed state. Not integrated or published."
+}

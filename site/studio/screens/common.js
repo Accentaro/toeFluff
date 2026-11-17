@@ -45,16 +45,19 @@ export function clanTag(tag) {
 
 /** Channel type glyph. */
 export function channelIcon(type, size = 22) {
-	return icon({ text: 'hash', announcement: 'megaphone', forum: 'forum', rules: 'rules' }[type] || 'hash', size)
+	return icon({ text: 'hash', announcement: 'megaphone', forum: 'forum', rules: 'rules', voice: 'speaker', locked: 'hashLock', nsfw: 'hashWarn' }[type] || 'hash', size)
 }
 
 /** Header of a channel or DM: back arrow, name, search. */
 export function channelHeader({ type = 'text', name, dm, sub }) {
 	return `<header class="vp-chan-header" data-k="bg:STANDALONE_CHANNEL_CONTENT_BACKGROUND bb:STANDALONE_CHANNEL_HEADER_BORDER" data-n="Channel header">
 		<button class="vp-icon-btn" data-back data-k="fg:ICON_SUBTLE" data-n="Back arrow" aria-label="Back">${icon('back', 24)}</button>
-		<span class="vp-chan-title">${dm ? avatar(dm, 24, { status: false }) : `<span class="vp-chan-type" data-k="fg:ICON_STRONG" data-n="Channel type icon">${channelIcon(type, 20)}</span>`}<b data-k="fg:MOBILE_TEXT_HEADING_PRIMARY">${esc(name)}</b><span data-k="fg:ICON_SUBTLE">${icon('chevronRight', 16)}</span></span>
-		${sub ? `<span class="vp-chan-sub" data-k="fg:TEXT_MUTED">${esc(sub)}</span>` : ''}
-		<button class="vp-icon-btn" data-k="fg:ICON_SUBTLE" data-n="Search button" data-go="search" aria-label="Search">${icon('search', 22)}</button>
+		<span class="vp-chan-title" data-go="channelinfo" data-n="Channel name (opens the channel page)">${dm ? avatar(dm, 24, { status: false }) : `<span class="vp-chan-type" data-k="fg:ICON_STRONG" data-n="Channel type icon">${channelIcon(type, 20)}</span>`}<b data-k="fg:MOBILE_TEXT_HEADING_PRIMARY">${esc(name)}</b><span data-k="fg:TEXT_SUBTLE">${icon('chevronRight', 16)}</span></span>
+		${sub ? `<span class="vp-chan-sub" data-k="fg:TEXT_MUTED">${esc(sub)}</span>` : dm ? '' : `<span class="vp-chan-sub" data-k="fg:TEXT_MUTED"><i class="vp-online-dot" data-k="bg:TEXT_STATUS_ONLINE" data-n="Online dot"></i>2 Online</span>`}
+		${dm
+			// In a DM, call, video and search all use INTERACTIVE_ICON_DEFAULT (verified on Discord 352)
+			? `<button class="vp-icon-btn" data-k="fg:INTERACTIVE_ICON_DEFAULT" data-n="Voice call button" aria-label="Call">${icon('phone', 22)}</button><button class="vp-icon-btn" data-k="fg:INTERACTIVE_ICON_DEFAULT" data-n="Video call button" aria-label="Video call">${icon('camera', 22)}</button><button class="vp-icon-btn" data-k="fg:INTERACTIVE_ICON_DEFAULT" data-n="Search button" data-go="search" aria-label="Search">${icon('search', 22)}</button>`
+			: `<button class="vp-icon-btn" data-k="fg:ICON_SUBTLE" data-n="Search button" data-go="search" aria-label="Search">${icon('search', 22)}</button>`}
 	</header>`
 }
 
@@ -82,18 +85,29 @@ export function nameOf(id) {
 }
 
 /** One chat message. `index` addresses it for reactions and the long-press menu. */
-export function message(m, index, { grouped = false, ui = {} } = {}) {
+export function message(m, index, { grouped = false, ui = {}, dm = false } = {}) {
+	const where = dm ? '' : ':server'
 	const u = users[m.user] || users.me
 	const head = grouped ? '' : `<div class="vp-msg-head">${nameOf(u.id)}${u.bot ? '<span class="vp-app" data-k="bg:BACKGROUND_BRAND fg:WHITE" data-n="App badge">' + icon('check', 10) + 'APP</span>' : clanTag(u.tag)}<span class="vp-time" data-k="fg:TEXT_MUTED">${esc(m.time)}</span></div>`
 	const reply = m.reply ? `<div class="vp-reply"><i class="vp-reply-spine" data-k="bd:SPINE_DEFAULT" data-n="Reply line"></i>${avatar(m.reply.user, 16, { status: false })}${nameOf(m.reply.user)}${clanTag(users[m.reply.user]?.tag)}<span class="vp-reply-text" data-k="fg:TEXT_DEFAULT">${esc(m.reply.text)}</span></div>` : ''
-	return `<div class="vp-msg${grouped ? ' grouped' : ''}" data-hold="msgmenu:${index}" data-n="Message">
+	// "X joined the server" and other system lines have no avatar or name row
+	if (m.system) return `<div class="vp-msg vp-system" data-n="System message">
+		<span class="vp-system-icon" data-k="fg:TEXT_FEEDBACK_POSITIVE" data-n="Join arrow">${icon('arrowRight', 18)}</span>
+		<span data-k="fg:TEXT_MUTED">${m.system.replace('{name}', `</span><b data-k="fg:TEXT_STRONG">${esc(u.name)}</b><span data-k="fg:TEXT_MUTED">`)}</span>
+		<small data-k="fg:TEXT_MUTED">${esc(m.time)}</small>
+	</div>`
+	const mentioned = m.mentionsMe ? ' data-k="bg:MESSAGE_MENTIONED_BACKGROUND_DEFAULT"' : ''
+	return `<div class="vp-msg${grouped ? ' grouped' : ''}${m.mentionsMe ? ' mentioned' : ''}" data-hold="msgmenu:${index}" data-n="${m.mentionsMe ? 'Message that mentions you' : 'Message'}"${mentioned}>
+		${m.mentionsMe ? '<i class="vp-mention-bar" data-k="bg:TEXT_FEEDBACK_WARNING" data-n="Mention highlight bar"></i>' : ''}
 		${reply}
 		<div class="vp-msg-row">
 			${m.thread ? '<i class="vp-thread-spine" data-k="bd:SPINE_DEFAULT" data-n="Thread line"></i>' : ''}
-			<span class="vp-msg-avatar" data-go="profile:${u.id}">${grouped ? '' : avatar(u.id, 40, { status: false })}</span>
+			<span class="vp-msg-avatar" data-go="profile:${u.id}${where}">${grouped ? '' : avatar(u.id, 40, { status: false })}</span>
 			<div class="vp-msg-body">
 				${head}
 				${m.text ? `<div class="vp-msg-text" data-k="fg:TEXT_STRONG">${md(m.text)}${m.edited ? ' <small data-k="fg:TEXT_MUTED">(edited)</small>' : ''}</div>` : ''}
+				${m.code ? `<pre class="vp-codeblock" data-k="bg:BACKGROUND_CODE bd:BORDER_NORMAL fg:TEXT_CODE" data-n="Code block">${esc(m.code)}</pre>` : ''}
+				${m.spoiler ? `<div class="vp-msg-text" data-k="fg:TEXT_STRONG">${esc(m.spoiler[0])} <button class="vp-spoiler${ui.spoiler ? ' open' : ''}" data-act="spoiler" data-k="${ui.spoiler ? 'bg:SPOILER_REVEALED_BACKGROUND' : 'bg:SPOILER_HIDDEN_BACKGROUND'}" data-n="${ui.spoiler ? 'Revealed spoiler' : 'Hidden spoiler'}">${esc(m.spoiler[1])}</button></div>` : ''}
 				${m.embed ? embed(m.embed) : ''}
 				${reactions(m.reactions, index, ui.reacted)}
 				${m.thread ? `<div class="vp-thread" data-k="bg:MOBILE_THREAD_EMBED_BACKGROUND bd:BORDER_SUBTLE" data-n="Thread preview"><div class="vp-thread-top"><b data-k="fg:TEXT_STRONG">${esc(m.thread.name)}</b><span data-k="fg:TEXT_BRAND">${m.thread.count} ${icon('chevronRight', 12)}</span></div><i data-k="fg:TEXT_MUTED">${esc(m.thread.last)}</i></div>` : ''}
@@ -120,9 +134,9 @@ export function chatInput({ placeholder, active, value = '', picker = false }) {
 		: `<button class="vp-send" data-k="fg:ICON_MUTED" data-n="Send arrow" aria-label="Send">${icon('send', 24)}</button>`
 	return `<div class="vp-chatinput-wrap" data-k="bg:BACKGROUND_BASE_LOWER" data-n="Behind the chat box">
 		<div class="vp-chatinput${active ? ' active' : ''}" data-k="${keys}" data-n="${active ? 'Chat box (typing)' : 'Chat box'}">
-			<button class="vp-ci-btn" data-k="fg:CHAT_INPUT_ACTION_BUTTON_ICON_DEFAULT_TINT" data-n="Attach (+)" data-act="attach" aria-label="Attach">${icon('plus', 24)}</button>
+			<button class="vp-ci-btn" data-k="fg:CHAT_INPUT_ACTION_BUTTON_ICON_DEFAULT_TINT" data-n="Attach (+)" data-open="attach" aria-label="Attach">${icon('plus', 24)}</button>
 			<input class="vp-ci-field" data-k="fg:TEXT_STRONG x:TEXT_MUTED" data-n="Message field and placeholder" data-input="type" data-enter="send" data-focus="focus" data-blur="blur" placeholder="${esc(placeholder)}" value="${esc(value)}" aria-label="${esc(placeholder)}">
-			<button class="vp-ci-btn" data-k="fg:CHAT_INPUT_ACTION_BUTTON_ICON_DEFAULT_TINT" data-n="Gift" aria-label="Gift">${icon('gift', 22)}</button>
+			<button class="vp-ci-btn" data-k="fg:CHAT_INPUT_ACTION_BUTTON_ICON_DEFAULT_TINT" data-n="Gift" data-open="gift" aria-label="Gift">${icon('gift', 22)}</button>
 			<button class="vp-ci-btn" data-k="fg:CHAT_INPUT_ICON_DEFAULT_TINT" data-n="Emoji button" data-act="${picker ? 'keyboard' : 'picker'}" aria-label="Emoji">${icon(picker ? 'keyboard' : 'emoji', 24)}</button>
 			${send}
 		</div>
@@ -130,10 +144,10 @@ export function chatInput({ placeholder, active, value = '', picker = false }) {
 }
 
 /** Settings-style page header: close or back, title, optional trailing button. */
-export function pageHeader(title, { close = false, trailing = '', bg = 'MOBILE_ACTIONSHEET_BACKGROUND' } = {}) {
+export function pageHeader(title, { close = false, trailing = '', glyph = '', bg = 'MOBILE_ACTIONSHEET_BACKGROUND' } = {}) {
 	return `<header class="vp-page-header" data-k="bg:${bg}" data-n="Page header">
 		<button class="vp-icon-btn" data-back data-k="fg:INTERACTIVE_TEXT_DEFAULT" data-n="${close ? 'Close' : 'Back'} button" aria-label="${close ? 'Close' : 'Back'}">${icon(close ? 'close' : 'back', 24)}</button>
-		<h1 data-k="fg:MOBILE_TEXT_HEADING_PRIMARY">${esc(title)}</h1>
+		<h1 data-k="fg:MOBILE_TEXT_HEADING_PRIMARY">${glyph ? icon(glyph, 24) : ''}${esc(title)}</h1>
 		${trailing}
 	</header>`
 }
@@ -151,14 +165,14 @@ export function searchField(placeholder, { filter = false, active = false, value
 /** A grouped list of settings rows. */
 export function rowGroup(rows, { card = 'CARD_MUTED_BG' } = {}) {
 	return `<div class="vp-rowgroup" data-k="bg:${card}" data-n="Grouped rows">${rows.map((r, i) => `
-		<button class="vp-row" ${r.go ? `data-go="${r.go}"` : ''} ${r.act ? `data-act="${r.act}"` : ''} data-n="Settings row">
-			<span class="vp-row-icon" data-k="fg:TABLEROW_ICON_COLOR_DEFAULT">${icon(r.icon, 24)}</span>
+		<${r.static ? 'div' : 'button'} class="vp-row${r.description ? ' vp-row-description' : ''}" ${r.go ? `data-go="${r.go}"` : ''} ${r.act ? `data-act="${r.act}"` : ''} data-n="Settings row">
+			<span class="vp-row-icon" data-k="fg:${r.critical ? 'TEXT_FEEDBACK_CRITICAL' : 'TABLEROW_ICON_COLOR_DEFAULT'}">${icon(r.icon, 24)}</span>
 			<span class="vp-row-label${i < rows.length - 1 ? ' divided' : ''}" data-k="bb:BORDER_SUBTLE" data-n="Row divider">
-				<span data-k="fg:TEXT_STRONG">${esc(r.label)}</span>
+				<span data-k="fg:${r.critical ? 'TEXT_FEEDBACK_CRITICAL' : 'TEXT_STRONG'}">${esc(r.label)}${r.description ? `<small data-k="fg:TEXT_MUTED">${esc(r.description)}</small>` : ''}</span>
 				${r.value ? `<small data-k="fg:TEXT_MUTED">${esc(r.value)}</small>` : ''}
 				${r.chevron === false ? '' : `<span class="vp-chev" data-k="fg:INTERACTIVE_TEXT_DEFAULT" data-n="Chevron">${icon('chevronRight', 20)}</span>`}
 			</span>
-		</button>`).join('')}</div>`
+		</${r.static ? 'div' : 'button'}>`).join('')}</div>`
 }
 
 export function sectionLabel(text) {
@@ -167,6 +181,26 @@ export function sectionLabel(text) {
 
 export function switchEl(on, act) {
 	return `<button class="vp-switch${on ? ' on' : ''}" role="switch" aria-checked="${on}" data-act="${act}" data-k="${on ? 'bg:SWITCH_BACKGROUND_SELECTED_DEFAULT bd:SWITCH_BORDER_SELECTED_DEFAULT' : 'bg:SWITCH_BACKGROUND_DEFAULT bd:SWITCH_BORDER_DEFAULT'}" data-n="Switch ${on ? 'on' : 'off'}"><i data-k="bg:${on ? 'SWITCH_THUMB_BACKGROUND_SELECTED_DEFAULT' : 'SWITCH_THUMB_BACKGROUND_DEFAULT'}" data-n="Switch knob"></i></button>`
+}
+
+/** Native range input supplies pointer and keyboard behaviour; themed pieces supply its appearance. */
+export function sliderEl({ value, min = 0, max = 100, step = 1, label = 'Slider', action = 'slider', suffix = '', id = '' }) {
+	const amount = Math.min(max, Math.max(min, Number(value)))
+	const percent = (amount - min) / (max - min) * 100
+	return `<div class="vp-slider"><i class="vp-slider-track" data-k="bg:SLIDER_TRACK_BACKGROUND" data-n="Slider track"></i><i class="vp-slider-fill" data-k="bg:REDESIGN_INPUT_CONTROL_SELECTED" data-n="Slider fill" style="width:${percent}%"></i><input ${id ? `id="${esc(id)}"` : ''} type="range" min="${min}" max="${max}" step="${step}" value="${amount}" data-input="${esc(action)}" data-suffix="${esc(suffix)}" aria-label="${esc(label)}" aria-valuetext="${amount}${esc(suffix)}"><i class="vp-slider-thumb" data-fixed="Native slider thumb; colour binding unverified" style="left:${percent}%"></i></div>`
+}
+
+export function updateSlider(el) {
+	const value = Number(el.value)
+	const percent = (value - Number(el.min)) / (Number(el.max) - Number(el.min)) * 100
+	const wrap = el.closest('.vp-slider')
+	wrap.querySelector('.vp-slider-fill').style.width = `${percent}%`
+	wrap.querySelector('.vp-slider-thumb').style.left = `${percent}%`
+	const display = `${value}${el.dataset.suffix || ''}`
+	el.setAttribute('aria-valuetext', display)
+	const output = wrap.closest('.vp-setting-slider')?.querySelector('output')
+	if (output) output.textContent = display
+	return value
 }
 
 export { icon, avatar }

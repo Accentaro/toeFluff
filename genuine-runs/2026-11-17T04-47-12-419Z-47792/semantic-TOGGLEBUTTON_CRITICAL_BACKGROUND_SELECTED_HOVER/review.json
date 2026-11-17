@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "ba2361349105d84532064440bbd12ac6f11e0ddf6059b709073791aec4db5654",
+    "stability.png": "ba2361349105d84532064440bbd12ac6f11e0ddf6059b709073791aec4db5654",
+    "after.png": "9360b67107e42b6fcb99e12b3a6e42074f8b3cbb415f7a595c4c378cea25fa3e",
+    "restored.png": "ba2361349105d84532064440bbd12ac6f11e0ddf6059b709073791aec4db5654"
+  },
+  "annotationSha256": "920fd10025b65e45aad43b37e9099e0e944fadb007849aa8ed359f84190cc751",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native ToggleIconButton resolves TOGGLEBUTTON_CRITICAL_BACKGROUND_SELECTED_HOVER directly. Actual native props and Bell/BellSlash assets are recorded in native-toggle-component-props.json.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-toggle-component-props.json",
+        "../../../data/tokens.json#semantic.TOGGLEBUTTON_CRITICAL_BACKGROUND_SELECTED_HOVER.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames contain generic inert native toggle labels and stock icons only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame contact and individual original-scale comparison inspected. Intended held critical component changes clearly. Exact baseline, restoration and pointer release."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline identifies only the intended component and leaves icon and borders visible at native pixel scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame differences confined to the held critical selected control; all other toggle controls and labels stay unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the background of a selected critical toggle while held."
+    }
+  },
+  "comparisonSha256": "e369eaf9e8a2d56777e951f48266ed3050a5a6e609ad97d1ebbfe893ad79aa40"
+}

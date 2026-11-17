@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "5e0c2282fc623a0b56fce143b43fe858ad6b2b7e788d0da776f620911f2b63fa",
+    "stability.png": "5e0c2282fc623a0b56fce143b43fe858ad6b2b7e788d0da776f620911f2b63fa",
+    "after.png": "649fac02d0719948b32cfede8bb288eb676f33ffa423170f274a94f6f5ff3ffe",
+    "restored.png": "5e0c2282fc623a0b56fce143b43fe858ad6b2b7e788d0da776f620911f2b63fa"
+  },
+  "annotationSha256": "5bbe7d658ec1a7cb1d43f13427468af788d350f218a312def1cf649c08beb14d",
+  "comparisonSha256": "4baf4fb6704b0bda6e8480183b67a6ac4e0d2f1f1bcbf30a66fa03b474e0d907",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Current runtime resolver stack confirms generateSeparatorRowData and readStyleProperties. Targeted native style cache cleared each phase; no output colours substituted.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-style-cache-probe.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames inspected: fictional messages, channel, names and generic avatars. Unread label is a display-only native separator fixture."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and original-scale comparisons inspected. Zero baseline drift and exact restoration. Focused divider crop has no clipped neighbouring row."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline identifies the actual changed line or count label."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only divider line or count label changed, separately. All other pixels stable."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the unread-message count label."
+    }
+  }
+}

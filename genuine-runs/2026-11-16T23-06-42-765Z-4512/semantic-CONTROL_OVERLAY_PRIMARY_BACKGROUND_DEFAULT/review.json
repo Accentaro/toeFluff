@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "5a80938521e62fa31077e8043be62946acc3c5dae4fb19a7c3e1ad39aec362b8",
+    "stability.png": "5a80938521e62fa31077e8043be62946acc3c5dae4fb19a7c3e1ad39aec362b8",
+    "after.png": "d0e96718945c62ce7886eeb834f6234b4a504b6594a954e9b99e8fb108870a96",
+    "restored.png": "5a80938521e62fa31077e8043be62946acc3c5dae4fb19a7c3e1ad39aec362b8"
+  },
+  "annotationSha256": "7f9c51358ae50308763c32c0d82dc1af557cee41d3835fa57c1ca965066af63e",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Runtime token resolution reaches useButtonPillStyles and PillWrapper in the stock native Button setting. Actual isolated consumer is experimental premium secondary, not the visible primary-overlay demo.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "full-frame-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full native gallery and focused comparison inspected: built-in component names, no personal profile/message information."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Inspected full-frame before/after overview and original-scale comparison. Premium secondary fill changes clearly; target is fully visible without artifacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline surrounds complete premium secondary button without covering its label. Same native scale and crop."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effect is confined to x42 y1153 width996 height105, 100898 pixels. Other buttons including primary-overlay remain unchanged. Stability/restoration both zero pixels."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Description states actual observed experimental premium secondary background usage; does not infer meaning from the colour key name."
+    }
+  },
+  "comparisonSha256": "30cbfd6d49ade0db58f04707788f901eeead25b9ed97bdc3c2b090ff61d2466e"
+}

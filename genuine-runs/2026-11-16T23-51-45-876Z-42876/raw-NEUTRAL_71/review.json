@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "9dca4a23bc0420fd6893c4d7600b27dca95a0bc10fb4cff7796ef0d51480c1ea",
+    "stability.png": "9dca4a23bc0420fd6893c4d7600b27dca95a0bc10fb4cff7796ef0d51480c1ea",
+    "after.png": "daa58d1e607e6da18e90adeec53a890b0937b684c21cb7bbadd3db6be0a6379a",
+    "restored.png": "9dca4a23bc0420fd6893c4d7600b27dca95a0bc10fb4cff7796ef0d51480c1ea"
+  },
+  "annotationSha256": "d61bd7717990d24abd67efb05c06a4050fa164f981b00e5378ff039d754eecbe",
+  "comparisonSha256": "15ce213914c808635835defa28f45645a66020ff19830f7e516a1a8739971fdf",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Raw palette aliases and actual native Badge consumer stacks verified. Mythic text colour also supplies its outline.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../references/raw-badge-mythic-expressive-review.png",
+        "../../../references/raw-badge-mythic-expressive-comparisons.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame native gallery inspected: stock captions and NEW badges only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full frames and native-scale annotated comparisons inspected. Intended colour effect is visible without clipping or artifacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline identifies actual changed surface, including both text and outline for ILLO_ORANGE_30."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effect {'pixels': 897, 'bounds': {'x': 507, 'y': 621, 'width': 66, 'height': 23}}; zero stability/restoration drift. All other gallery components unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies the expressive badge text through its semantic alias."
+    }
+  }
+}

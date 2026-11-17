@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "4d51480928e66f97c47c83ae85e568aede39294386d588be9e7b00be50f56792",
+    "stability.png": "4d51480928e66f97c47c83ae85e568aede39294386d588be9e7b00be50f56792",
+    "after.png": "346f39972a5a1ddeff01f8a77fb4bb87e30c516c0b0f2ac3ad38bb33de7f994e",
+    "restored.png": "4d51480928e66f97c47c83ae85e568aede39294386d588be9e7b00be50f56792"
+  },
+  "annotationSha256": "de305fa022721e93c6f5ea72419233eba54a82ea7822fbb5cb787f9449ea77b2",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native GuildBoostingUpsell and its FEATURES_PREMIUM_GUILD_USER use raw GUILD_BOOSTING_PINK for member-list/profile badge glyphs; upload glyph shares key. Current runtime original component verified.",
+      "references": [
+        "../../../native-boost-benefits-fixture.mjs",
+        "../../../../../research/tabsv2/evidence/modern-352204/modules/m/14767.js"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames show only generic native boost marketing and benefits, no account information."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full pair and original-scale comparison inspected. Exact stability/restoration. Native glyph dimensions preserved; hero artwork unchanged."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline identifies the two representative changed benefit icons."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only three intended benefit glyphs change; other icons, text and artwork stable."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Accurately distinguishes tintable icons and static artwork and documents additional upload glyph."
+    }
+  },
+  "comparisonSha256": "1f9e950068c66282168389e17dc43f5db9fea6e9926f540791431aeabbf1bb4c"
+}

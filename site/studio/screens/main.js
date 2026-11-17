@@ -53,6 +53,9 @@ export const home = {
 	},
 }
 
+// Icon of an unread or open channel; read channels use CHANNEL_ICON. Confirmed against the capture of Discord 352.
+const UNREAD_ICON = 'INTERACTIVE_TEXT_ACTIVE'
+
 export const server = {
 	id: 'server', title: 'Server channels', group: 'Main', capture: 'server',
 	render({ ui }) {
@@ -61,12 +64,13 @@ export const server = {
 			const active = ui.selected === c.id
 			const unread = c.unread && !ui.read?.[c.id]
 			return `<div class="vp-chan-wrap">
-				${unread ? '<i class="vp-chan-pip" data-k="bg:REDESIGN_CHANNEL_NAME_TEXT" data-n="Unread indicator"></i>' : ''}
+				${unread ? `<i class="vp-chan-pip" data-k="bg:${UNREAD_ICON}" data-n="Unread indicator"></i>` : ''}
 				<button class="vp-chan${active ? ' on' : ''}" data-act="channel:${c.id}" data-n="Channel row" ${active ? 'data-k="bg:MOBILE_CHANNEL_ITEM_BACKGROUND_SELECTED"' : ''}>
-					<span data-k="fg:CHANNEL_ICON" data-n="Channel icon">${channelIcon(c.type, 22)}</span>
-					<span class="vp-chan-name${unread ? ' unread' : ''}" data-k="fg:${unread || active ? 'REDESIGN_CHANNEL_NAME_TEXT' : 'REDESIGN_CHANNEL_NAME_MUTED_TEXT'}" data-n="${unread ? 'Unread channel name' : 'Channel name'}">${esc(c.name)}</span>
+					<span class="${c.muted ? 'vp-chan-muted' : ''}" data-k="fg:${unread || active ? UNREAD_ICON : 'CHANNEL_ICON'}" data-n="${unread ? 'Unread channel icon' : 'Channel icon'}">${channelIcon(c.type, 22)}</span>
+					<span class="vp-chan-name${unread ? ' unread' : ''}${c.muted ? ' vp-chan-muted' : ''}" data-k="fg:${unread || active ? 'REDESIGN_CHANNEL_NAME_TEXT' : 'REDESIGN_CHANNEL_NAME_MUTED_TEXT'}" data-n="${c.muted ? 'Muted channel name' : unread ? 'Unread channel name' : 'Channel name'}">${esc(c.name)}</span>
 					${c.mentions && unread ? `<span class="vp-chan-count" data-k="fg:TEXT_MUTED">${c.mentions}</span>` : ''}
 				</button>
+				${(c.members || []).map(id => `<div class="vp-voice-user" data-n="Person in the voice channel">${avatar(id, 24, { status: false })}<span data-k="fg:REDESIGN_CHANNEL_NAME_MUTED_TEXT">${esc(users[id].name)}</span></div>`).join('')}
 				${(c.threads || []).map(t => `<div class="vp-subthread"><i class="vp-spine" data-k="bd:SPINE_DEFAULT" data-n="Thread spine"></i><span data-k="fg:REDESIGN_CHANNEL_NAME_MUTED_TEXT">${esc(t)}</span></div>`).join('')}
 			</div>`
 		}
@@ -77,7 +81,7 @@ export const server = {
 			${panel(`
 				<div class="vp-banner" data-fixed="Server banner (user content)"><span>${valencedWordmark}</span></div>
 				<div class="vp-guild-head">
-					<button class="vp-guild-name" data-open="guildmenu" data-n="Server name"><b data-k="fg:MOBILE_TEXT_HEADING_PRIMARY">Valenced</b><span class="vp-guild-badge" data-fixed="Server badge">${icon('boost', 16)}</span><span data-k="fg:TEXT_MUTED">${icon('chevronRight', 14)}</span></button>
+					<button class="vp-guild-name" data-open="serverinfo" data-n="Server name"><b data-k="fg:MOBILE_TEXT_HEADING_PRIMARY">Valenced</b><span class="vp-guild-badge" data-fixed="Server badge">${icon('boost', 16)}</span><span data-k="fg:TEXT_MUTED">${icon('chevronRight', 14)}</span></button>
 					<p data-k="fg:TEXT_MUTED">${valenced.members} Members <span>&bull;</span> Community</p>
 					<div class="vp-guild-actions">
 						<button class="vp-btn-secondary grow" data-k="bg:CONTROL_SECONDARY_BACKGROUND_DEFAULT fg:CONTROL_SECONDARY_TEXT_DEFAULT bd:CONTROL_SECONDARY_BORDER_DEFAULT" data-n="Search button" data-go="search">${icon('search', 20)}Search</button>
@@ -90,7 +94,7 @@ export const server = {
 				<button class="vp-chan vp-chan-roles" data-n="Channels &amp; Roles"><span data-k="fg:CHANNEL_ICON">${icon('channelsRoles', 22)}</span><span data-k="fg:REDESIGN_CHANNEL_NAME_MUTED_TEXT">Channels &amp; Roles</span><span class="vp-new" data-k="bg:MOBILE_TOAST_BACKGROUND_DEFAULT fg:TEXT_BRAND" data-n="NEW pill">NEW</span></button>
 				<hr data-k="bt:BORDER_SUBTLE" data-n="Divider">
 				${valenced.categories.map((cat, i) => `
-					<button class="vp-category" data-act="collapse:${i}" data-k="fg:TEXT_MUTED" data-n="Category">${esc(cat.name)} <span class="${collapsed[i] ? 'closed' : ''}">${icon('chevronDown', 14)}</span></button>
+					<button class="vp-category" data-act="collapse:${i}" data-k="fg:TEXT_SUBTLE" data-n="Category">${esc(cat.name)} <span class="${collapsed[i] ? 'closed' : ''}">${icon('chevronDown', 14)}</span></button>
 					${cat.channels.filter(c => !collapsed[i] || c.unread).map(chan).join('')}`).join('')}
 				<div class="vp-dock-space"></div>`, 'Channel list panel')}
 		</div>
@@ -106,6 +110,7 @@ export const server = {
 			ui.selected = arg
 			ui.read = { ...ui.read, [arg]: true }
 			const c = valenced.categories.flatMap(x => x.channels).find(x => x.id === arg)
+			if (c.type === 'voice') return api.open('voice', { arg, keepScreen: true })
 			if (c.type === 'forum') return api.go('forum', { id: arg })
 			if (arg === 'bots' || arg === 'general' || arg === 'github') return api.go('bots', { id: arg })
 			return api.go('chat', { id: arg })
@@ -136,7 +141,7 @@ export const dm = {
 				${d.group ? '' : `<div class="vp-intro-actions"><button class="vp-btn-secondary" data-k="bg:CONTROL_SECONDARY_BACKGROUND_DEFAULT fg:CONTROL_SECONDARY_TEXT_DEFAULT bd:CONTROL_SECONDARY_BORDER_DEFAULT" data-n="Secondary button" data-go="profile:${d.user}">View Profile</button></div>`}
 			</div>
 			<div class="vp-day" data-k="bt:BORDER_SUBTLE" data-n="Date divider"><span data-k="fg:TEXT_MUTED bg:CHANNEL_BACKGROUND_DEFAULT">Today</span></div>
-			${msgs.map((m, i) => message(m, `dm.${i}`, { grouped: i > 0 && msgs[i - 1].user === m.user, ui })).join('')}
+			${msgs.map((m, i) => message(m, `dm.${i}`, { grouped: i > 0 && msgs[i - 1].user === m.user, ui, dm: true })).join('')}
 		</div>
 		${chatInput({ placeholder: `Message ${d.group ? title : '@' + title}`, active: ui.focused, value: ui.draft || '' })}
 		${navBar('MOBILE_KEYBOARD_GAP_BACKGROUND')}`
@@ -151,6 +156,10 @@ export const dm = {
 /** Typing, sending and reacting, shared by every chat screen. */
 export function chatActions(kind) {
 	return {
+		spoiler: ({ ui }) => {
+			ui.spoiler = !ui.spoiler
+			return 'render'
+		},
 		type: ({ el, ui }) => {
 			const had = !!ui.draft
 			ui.draft = el.value

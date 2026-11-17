@@ -1,0 +1,53 @@
+{
+  "hashes": {
+    "before.png": "1e8cd5cd756e5fc9aa12d476109bdb4dcb3740cf85593ce6597d5022549074d5",
+    "stability.png": "1e8cd5cd756e5fc9aa12d476109bdb4dcb3740cf85593ce6597d5022549074d5",
+    "after.png": "9aecc668ccc039870172dedf1039ba6ecaf0db950d99bacd6e89ea492b7c2bc8",
+    "restored.png": "1e8cd5cd756e5fc9aa12d476109bdb4dcb3740cf85593ce6597d5022549074d5"
+  },
+  "annotationSha256": "2876e933564ae997643ffef199406954761956722c39b7bd210db6477aa6e251",
+  "comparisonSha256": "77499a02d697712d405efbe078a315bf1e3c02a48b3d3a81456e90613e65fdc2",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Observed key-specific runtime consumer stack supports this Settings use. Import-path association is explicitly inferred by component name. Original native TypeScript source text and exhaustive application-wide uses are not claimed.",
+      "references": [
+        "index.android.bundle:5478:3738 (Text; runtime key-resolver trace)",
+        "design/components/Text/native/Text.tsx (independently observed import; association to stack inferred by name)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Inspected full originals and focused comparison: generic Settings labels, version string, plugin count, fixed time and native notification count only. No person/account names, messages, avatar photographs, contact details or connection values visible."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Valenced and Account Settings section headings become pink; corresponding row labels remain white. Focused crop deliberately contrasts the pink heading with the white first-row label. Full originals were inspected before cropping. The bottom partial next row is ordinary scroll-viewport continuation, not a rendering fault. Focused comparison includes complete representative components and unchanged scale."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Inspected rendered comparison after final SVG generation. Thin gold outline identifies section heading, remains outside its visible glyphs/edge, and matches the caption. Before/after use identical crop coordinates at native pixel scale; labels occupy separate margins."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Valenced and Account Settings section headings become pink; corresponding row labels remain white. Focused crop deliberately contrasts the pink heading with the white first-row label."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Colours Settings section headings, including Valenced and Account Settings."
+    }
+  },
+  "crop": [
+    18,
+    495,
+    1044,
+    247
+  ],
+  "scope": "One representative Settings usage, not exhaustive coverage of this key. No publication performed."
+}

@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "6b2df97cd1a25ab38a554f9fb0655ffa8b2964cbf7037e1e125588eb5779934a",
+    "stability.png": "6b2df97cd1a25ab38a554f9fb0655ffa8b2964cbf7037e1e125588eb5779934a",
+    "after.png": "6d47f6a1b7c35e3063fed2da24e69af706a265eb2810b82a6e6485700cbdd7ed",
+    "restored.png": "6b2df97cd1a25ab38a554f9fb0655ffa8b2964cbf7037e1e125588eb5779934a"
+  },
+  "annotationSha256": "d65c4851d53bea5e089c7bec24032d45d2320992d0da67c184eb89bd4d8f892c",
+  "comparisonSha256": "f375735d49f8488ee2b4b4e50f9cabefb4ca9cab450a55041abc9114a2b10caf",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Token palette aliases and recorded actual native Badge consumer stacks match the documented surface. ILLO_BLUE_40 supplies both rare background and outline.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../references/raw-badge-rare-epic-review.png",
+        "../../../references/raw-badge-rare-epic-comparisons.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full native frames inspected: stock labels and NEW badges only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full frames and native-scale comparisons visually inspected; intended badge surface changes without clipping or artifacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline identifies affected badge text or surface and preserves original pixel scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effect {'pixels': 3903, 'bounds': {'x': 482, 'y': 610, 'width': 116, 'height': 47}}; zero stability and restoration drift. Other gallery controls unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies the epic badge background through its semantic alias."
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f",
+    "stability.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f",
+    "after.png": "b629193126f709096da515560cd3ac9f3392509e2016f806b18eb27a4b4506bc",
+    "restored.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f"
+  },
+  "annotationSha256": "6386990ee595757e5c5477f9e0b8b337f41644762e42498665892da3c9bbdd32",
+  "comparisonSha256": "ac34a8c671a5e0d459f49de14983692a248bfeb075ffe4583da7f17c081af79c",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "GuildIconInner and GuildsBarAnimatedItemWrapper. Token resolution recorded in runtimeConsumerStacks.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../first-reviewed-effects.png",
+        "../comparison-review.png",
+        "../../../fixtures/server-fixture-review.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full frame contact sheet inspected: fictional profile/channel/server labels and no identifying artwork."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full before/after frames and focused comparison inspected. Colours unselected server tiles in the rail."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline directly identifies unselected server tile. Native pixels preserved; text and affected target unobstructed."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Selected server background remains unchanged. Full-frame changes agree with runtime consumers; stability and restoration have zero changed pixels."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours unselected server tiles in the rail."
+    }
+  }
+}

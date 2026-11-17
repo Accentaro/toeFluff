@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "4d1bb4b344026f2229733676b30d2eaaab09278a250afed2c05e441ad2b9d06a",
+    "stability.png": "4d1bb4b344026f2229733676b30d2eaaab09278a250afed2c05e441ad2b9d06a",
+    "after.png": "51a51aed1a91049a6724457594ad36f984032c08821604b1f9fc20cd4d49d7ae",
+    "restored.png": "4d1bb4b344026f2229733676b30d2eaaab09278a250afed2c05e441ad2b9d06a"
+  },
+  "annotationSha256": "6eb4bdc4cfc769366d817802345d12867d72f8fc916fab90831d058859e2a6de",
+  "comparisonSha256": "5acd225a3d5ee25f3178c70b25c816000296f0dafe2cc200a4def6f10dd461b6",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Actual per-key resolver stacks resolve CONTROL_SECONDARY_BORDER_ACTIVE in useButtonPillStyles/PillWrapper. Genuine Design.Button secondary variant at standard md size; inert action; real held pointer. Fixed captions are not token evidence.",
+      "references": [
+        "native-button-fixture.mjs SHA256 042745683a4934ba1fd291eca2ed23eb388000dbe9fc9318f51e213c70ef0dbe",
+        "Valence/ValenceBundle/bundle/lib/discord/src/types/index.ts:316",
+        "index.android.bundle useButtonPillStyles/PillWrapper (actual runtimeConsumerStacks in manifest)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full images show only generic controls and labels; no personal identity, account fields, messages or media."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full after and focused comparison inspected individually. Only secondary pressed border changes. Text remains white; other buttons remain at resting appearance. Complete controls, no clipping or rendering artefacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Gold outline encloses the complete secondary button without covering changed pixels. Both panels use identical crop at original scale. Description identifies the pressed border."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full-frame effect of 6524 pixels confined to the secondary control. Zero stability/restoration difference, and final release matches pre-press resting PNG exactly. All other controls and system chrome unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Colours the secondary button border while it is held down."
+    }
+  },
+  "scope": "Genuine native Button fixture, secondary held state only; not stock Settings content."
+}

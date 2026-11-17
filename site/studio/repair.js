@@ -131,7 +131,7 @@ export function createRepair({ host, store, tokens, toast }) {
 		loading = true
 		render()
 		try {
-			const response = await fetch(new URL('./token-history.json', import.meta.url))
+			const response = await fetch(new URL(`./token-history.json${window.SITE_DATA_VERSION ? '?v=' + window.SITE_DATA_VERSION : ''}`, import.meta.url))
 			if (!response.ok) throw new Error('History request failed')
 			const data = await response.json()
 			if (!Array.isArray(data.snapshots) || !data.snapshots.length || data.snapshots.some(s => !s.semantic || !s.raw || !/^[a-f0-9]{40}$/.test(s.commit))) throw new Error('Invalid history')

@@ -1,0 +1,58 @@
+{
+  "hashes": {
+    "before.png": "1e8cd5cd756e5fc9aa12d476109bdb4dcb3740cf85593ce6597d5022549074d5",
+    "stability.png": "1e8cd5cd756e5fc9aa12d476109bdb4dcb3740cf85593ce6597d5022549074d5",
+    "after.png": "f90e149a5bb24df91029152f0e671b741446ba38821ba24490a1226d87acc4a5",
+    "restored.png": "1e8cd5cd756e5fc9aa12d476109bdb4dcb3740cf85593ce6597d5022549074d5"
+  },
+  "annotationSha256": "9473b4ac7597539345d26a736f63d27058f9881ccde6e8435f17f26efe73472f",
+  "comparisonSha256": "b9d9329fdcd372b512dda3fbb5f95109a389e11a21eb371e00814cc51e7addfc",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Observed key-specific runtime consumer stack supports this Settings use. Import-path association is explicitly inferred by component name. Original native TypeScript source text and exhaustive application-wide uses are not claimed.",
+      "references": [
+        "index.android.bundle:7423:1051 (useNavigationTheme; runtime key-resolver trace)",
+        "index.android.bundle:16099:4021 (AppNavigationContainer; runtime key-resolver trace)",
+        "index.android.bundle:12121:7550 (TabItem; runtime key-resolver trace)",
+        "index.android.bundle:5478:3738 (Text; runtime key-resolver trace)",
+        "design/components/Navigator/native/useNavigationTheme.native.tsx (independently observed import; association to stack inferred by name)",
+        "design/components/Tabs/native/TabItem.native.tsx (independently observed import; association to stack inferred by name)",
+        "design/components/Text/native/Text.tsx (independently observed import; association to stack inferred by name)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Inspected full originals and focused comparison: generic Settings labels, version string, plugin count, fixed time and native notification count only. No person/account names, messages, avatar photographs, contact details or connection values visible."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "The version string and 13 enabled detail become pink. Primary labels, icons, chevrons and section headings are unchanged. Annotation selects the complete version string. Full originals were inspected before cropping. The bottom partial next row is ordinary scroll-viewport continuation, not a rendering fault. Focused comparison includes complete representative components and unchanged scale."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Inspected rendered comparison after final SVG generation. Thin gold outline identifies trailing row detail, remains outside its visible glyphs/edge, and matches the caption. Before/after use identical crop coordinates at native pixel scale; labels occupy separate margins."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "The version string and 13 enabled detail become pink. Primary labels, icons, chevrons and section headings are unchanged. Annotation selects the complete version string."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Colours muted trailing details, including the version and enabled-plugin count."
+    }
+  },
+  "crop": [
+    18,
+    570,
+    1044,
+    330
+  ],
+  "scope": "One representative Settings usage, not exhaustive coverage of this key. No publication performed."
+}

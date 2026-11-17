@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "b56473b4e552669d07d5d5f9210d760bbe14cecdaf802ce091a7c97ba2ace3e0",
+    "stability.png": "b56473b4e552669d07d5d5f9210d760bbe14cecdaf802ce091a7c97ba2ace3e0",
+    "after.png": "ad7e07200f3acd2c52b9331f6349b705dc93cf00588b6bec1b9890f9ca76a3fe",
+    "restored.png": "b56473b4e552669d07d5d5f9210d760bbe14cecdaf802ce091a7c97ba2ace3e0"
+  },
+  "annotationSha256": "d6d53c73b1261425df8115fbbbc1cf46c7c80b036f427a736c5fad7b7d55c6b0",
+  "comparisonSha256": "5af7e9d7d35ed8c02e43eb99c5756d93f6a0c8befca44465dca42ce6e6316460",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native resolver stack identifies AutocompleteWrapper, ApplicationCommandDiscovery or ApplicationCommandsCategories; see manifest runtimeConsumerStacks.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames inspected: fictional command descriptions, names and channel; generic app and user avatars."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and original-scale comparison inspected. Partial third command is the native scroll viewport boundary. Baseline and restoration are pixel identical."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline identifies the measured affected surface or panel border without covering content."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Changes confined to the intended panel area. Translucent category icons naturally composite over its background. Chat and composer unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the outline around command suggestions."
+    }
+  }
+}

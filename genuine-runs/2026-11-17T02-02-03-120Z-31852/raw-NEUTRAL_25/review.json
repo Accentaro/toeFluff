@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "798bde0a6cdd53c67dd6cdf545234896ea9122a04e8d52ecd231a5f569db4911",
+    "stability.png": "798bde0a6cdd53c67dd6cdf545234896ea9122a04e8d52ecd231a5f569db4911",
+    "after.png": "50e32d1afb05979af71fb1caddae9e25237bfc5242e6aae73797fd100c22129f",
+    "restored.png": "798bde0a6cdd53c67dd6cdf545234896ea9122a04e8d52ecd231a5f569db4911"
+  },
+  "annotationSha256": "9b281c226209bcc88274b98bd34a810a98440c1e0d1edc87202d9398b5a75208",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Catalogue definition and Ash mapping read. Runtime stacks identify BaseTextField via INPUT_PLACEHOLDER_TEXT_DEFAULT. The original ICON_MUTED description omitted its sheet-handle use; this capture demonstrates it.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json",
+        "../first-review.png",
+        "../last-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full before/after inspected: standard Unicode People category; fictional channel visible behind scrim. No personal favourites or custom emoji are visible."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame sheets and native-scale annotated comparisons inspected. Native partial last row is ordinary scroll clipping; focused examples use complete controls."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Programmatic outline correctly surrounds the documented surface, glyph, placeholder or handle; no enlarged interface elements."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Stability and restoration are pixel-identical. Transparency blending and Android gesture-handle contrast are documented expected consequences; no unrelated content or geometry changed."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies the emoji-search placeholder text in Ash. The search icon and input border keep their own colours."
+    }
+  },
+  "comparisonSha256": "2a6085a778f93a6075846d84f788cf9318a941b0b9cee2275802bf92cf7b2584"
+}

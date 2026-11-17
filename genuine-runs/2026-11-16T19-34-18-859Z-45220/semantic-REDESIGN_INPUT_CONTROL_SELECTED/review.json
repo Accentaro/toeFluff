@@ -1,0 +1,55 @@
+{
+  "hashes": {
+    "before.png": "d90097e1b9278d942a1c4b43b5f096d9a33e882bde7199e0134629809bf2939f",
+    "stability.png": "d90097e1b9278d942a1c4b43b5f096d9a33e882bde7199e0134629809bf2939f",
+    "after.png": "a423e195e34cbfe77d69d010f5fb4101d2276bfa06fb8df07dec5b19ef9a5bcf",
+    "restored.png": "d90097e1b9278d942a1c4b43b5f096d9a33e882bde7199e0134629809bf2939f"
+  },
+  "annotationSha256": "216c9529a8f0b83b95ed6be59c988473c33d999ad57d26bc6f34c622abbd3ecf",
+  "comparisonSha256": "f994171d4515ffd88c9129c19503497dfb2a184bd58111f142060c883244da05",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual slider review 2026-11-16",
+      "notes": "Actual per-key resolver stack explicitly names Slider. Demo source definition is recorded. Bundle line/column references are runtime stack coordinates, not Metro IDs or original TypeScript lines. Selected control also resolves in offscreen FormRadio; its distinct radio example must be retained.",
+      "references": [
+        "modules/user_settings/defs/native/DesignSystemFormPrimitivesSetting.tsx (native demo definition)",
+        "index.android.bundle:7275:4056 (useRadioStyles; actual key resolver stack)",
+        "index.android.bundle:7275:1425 (FormRadio; actual key resolver stack)",
+        "index.android.bundle:15567:2310 (Slider; actual key resolver stack)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual slider review 2026-11-16",
+      "notes": "Inspected full baseline and after images: generic native demo labels, explained back notification count and fixed status icons. No names, profile media, account information or personal messages visible."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual slider review 2026-11-16",
+      "notes": "Only the filled left track becomes bright pink; unfilled right track stays dark. The circular thumb remains pale lavender, sampled centre RGBA (201,205,251,255), unchanged before/after. Volume label, speaker icons, checkbox controls, scene background and header remain unchanged. Full originals show complete slider panel above gesture navigation with no clipping or unexplained overlays. Normal scrolled content boundary under fixed header is unchanged. Inspected final derived comparison after correcting initial label encoding and moving outline clear of thumb."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual slider review 2026-11-16",
+      "notes": "Final gold outline encloses representative middle portion of the relevant track without covering it or touching thumb. Whole slider card is visible in both identical crops at original pixel scale. Labels correctly identify filled versus unfilled portion. Raw images preserved; SVG is separate."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual slider review 2026-11-16",
+      "notes": "Only the filled left track becomes bright pink; unfilled right track stays dark. The circular thumb remains pale lavender, sampled centre RGBA (201,205,251,255), unchanged before/after. Volume label, speaker icons, checkbox controls, scene background and header remain unchanged. Baseline/stability/restored hashes match exactly and both drift counts are zero."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual slider review 2026-11-16",
+      "notes": "Colours the filled portion of the slider track."
+    }
+  },
+  "crop": [
+    18,
+    2110,
+    1044,
+    220
+  ],
+  "scope": "Distinct slider use; retain accepted radio example. Not integrated or published."
+}

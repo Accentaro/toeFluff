@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "a62b8497316ccff4cfbb12ab8e13fca963a244fcf106cf928267fd66a833a678",
+    "stability.png": "a62b8497316ccff4cfbb12ab8e13fca963a244fcf106cf928267fd66a833a678",
+    "after.png": "cd684be28aa3e12a7cca3ae17e26abebab851a1486e152cf54d0eddc0906e295",
+    "restored.png": "a62b8497316ccff4cfbb12ab8e13fca963a244fcf106cf928267fd66a833a678"
+  },
+  "annotationSha256": "bc36e7d21dd57e8eb28674944a51426d8dc6f508c11558aee4c0ee8d0a694389",
+  "comparisonSha256": "12decde83c9b8285952097ce41ea983ffb0cac24b796ff230003fb9c9cecfe28",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Current 352206 runtime semantic resolver stacks and exact changed-pixel bounds identify this native component. Source references supplement the current runtime evidence.",
+      "references": [
+        "manifest.json: runtimeConsumerStacks and effect.bounds",
+        "scratchpad/theme-studio-qa/replacement-source-index.json: INTERACTIVE_TEXT_DEFAULT",
+        "research/tabsv2/evidence/modern-352204/modules/m/13960.js: ChannelHeaderShared"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full original frames inspected: fictional names/messages, generic avatars and empty composer."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames and original-scale comparison inspected. Only the documented channel-details chevron changes; baseline and restored hashes match."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline tightly encloses the changed component without covering content. Crop includes neighbouring controls for context."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Changed-pixel bounds confined to the documented component; layout and neighbouring colours unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the chevron beside the channel name."
+    }
+  }
+}

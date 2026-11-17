@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "ea047b669a9ffa11ffc60f7922aa00e02ce92283ef995dc4b4f3cf33d82381af",
+    "stability.png": "ea047b669a9ffa11ffc60f7922aa00e02ce92283ef995dc4b4f3cf33d82381af",
+    "after.png": "2f32f42d956dd72fad548a70a27d5cfdf1934f9c6e7c0707271fde93957c6d9f",
+    "restored.png": "ea047b669a9ffa11ffc60f7922aa00e02ce92283ef995dc4b4f3cf33d82381af"
+  },
+  "annotationSha256": "13de418c600a79e351780cfe811234746ced6613162dfd7e03cbd6083a44b69b",
+  "comparisonSha256": "1652ec3976fb5d6b484a3adfcc6a6e28da5680bb76b06700da2c89e414d7d720",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Original changelog LHeading resolves added/progress/improved style properties to the tested key. Current runtime trace confirms consumer. Raw aliases captured independently.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-changelog-fixture.mjs"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames contain only fictional workshop release notes."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full before/after pairs and original-scale annotations inspected; exact stability/restoration and clear heading/divider changes."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline identifies both related uses: heading label and horizontal divider."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Other update headings and all body text unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the improved update heading and divider."
+    }
+  }
+}

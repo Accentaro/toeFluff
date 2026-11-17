@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "0d80e95f7809d15d7eb60fb73be2b20f8ca3b561c4451e480954921a57269c73",
+    "stability.png": "0d80e95f7809d15d7eb60fb73be2b20f8ca3b561c4451e480954921a57269c73",
+    "after.png": "7a264b1b2d206eb050b9ed14369583829166bf05ba294d2e49b2d4b007c965b8",
+    "restored.png": "0d80e95f7809d15d7eb60fb73be2b20f8ca3b561c4451e480954921a57269c73"
+  },
+  "annotationSha256": "1fe08ec309bb830b0676d2be7d4ae87ab03b4a50d51a7a7ea55fd1f703caa7b6",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Stock DesignSystemBadgeSetting renders Badge; captured parseThemedStyles consumer confirms exact key.",
+      "references": [
+        "modules/user_settings/defs/native/DesignSystemBadgeSetting.tsx",
+        "design/components/Badge/native/Badge.native.tsx",
+        "manifest.json#runtimeConsumerStacks"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full native screen inspected: only public design-system labels, no private information."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full screen and individual original-scale comparison inspected. Gradient start and rim both change; gradient end and white NEW lettering remain unchanged."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Outline surrounds actual changed badge area; revised description documents the visible rim as well as the gradient. Original pixel scale retained."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full-frame differences confined to badge; stability and restoration zero pixels. Visible rim belongs to this Badge, not an unrelated control."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Colours the premium gradient start and its visible rim."
+    }
+  },
+  "comparisonSha256": "a242e970b7e9dcbf98baed989b9aa672ba794a2655a21abd21e077911bd17c1a"
+}

@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f",
+    "stability.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f",
+    "after.png": "2539415288c673991f4f03e3c3b23f047c9009507315e9489e9b207f7c67ba77",
+    "restored.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f"
+  },
+  "annotationSha256": "9f99ed8d7471334d6dc0c3cdcd6981631f547470b02e840a94b8aab3629343df",
+  "comparisonSha256": "9c6a4b16cf321b6dc126b5894c1310559373e2768479cef9a24729dcaf6756a9",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "BaseIconImage. Token resolution recorded in runtimeConsumerStacks.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../first-reviewed-effects.png",
+        "../comparison-review.png",
+        "../../../fixtures/server-fixture-review.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full frame contact sheet inspected: fictional profile/channel/server labels and no identifying artwork."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full before/after frames and focused comparison inspected. Colours the Direct Messages and Favourites rail glyphs."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline directly identifies direct messages glyph. Native pixels preserved; text and affected target unobstructed."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Server initials use a different text token. Full-frame changes agree with runtime consumers; stability and restoration have zero changed pixels."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the Direct Messages and Favourites rail glyphs."
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "1befdbd0d8f1c988f7cd131b5ae0f712b122b4627877cf61dc2c1e2819d593ea",
+    "stability.png": "1befdbd0d8f1c988f7cd131b5ae0f712b122b4627877cf61dc2c1e2819d593ea",
+    "after.png": "5721ee29c3f2d161b00b58a6b5aeaebb407faeda6b405f512021c7f362b631d5",
+    "restored.png": "1befdbd0d8f1c988f7cd131b5ae0f712b122b4627877cf61dc2c1e2819d593ea"
+  },
+  "annotationSha256": "f2fe3081f2d8a7a863a96a5b6aaab4d2e3317a23695806bbe420e859af22aa65",
+  "comparisonSha256": "589f6d5821cb0fde0d975149318499fa95b2095199285d66fb0d646a040b83c0",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Runtime resolver trace identifies the native send-button consumer; testing used a real unsent draft in Discord chat.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames contain fictional names, avatars, channel, message text and a fictional draft. No message was sent."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full before/after frames and original-scale focused comparison inspected. Baseline and restoration match exactly. Enabled button fill changes cleanly."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline follows the enabled send-button bounds without covering its arrow."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only send-button background changes; arrow, composer and chat are unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the send button when a message draft is present."
+    }
+  }
+}

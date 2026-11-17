@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "a62b8497316ccff4cfbb12ab8e13fca963a244fcf106cf928267fd66a833a678",
+    "stability.png": "a62b8497316ccff4cfbb12ab8e13fca963a244fcf106cf928267fd66a833a678",
+    "after.png": "4199e64985f938d748acf916f92d58146a5af0d041c3ddd3abb5d0347e7b146c",
+    "restored.png": "a62b8497316ccff4cfbb12ab8e13fca963a244fcf106cf928267fd66a833a678"
+  },
+  "annotationSha256": "394d78590b8f945a17d6342975166de33649a039aa29c67668de95cf934fb57e",
+  "comparisonSha256": "c0c5d66fd830d5ed3003837d9329a78b8b55d02ed4ac1a8bb75b298224f17cf4",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Current 352206 runtime semantic resolver stacks and exact changed-pixel bounds identify this native component. Source references supplement the current runtime evidence.",
+      "references": [
+        "manifest.json: runtimeConsumerStacks and effect.bounds",
+        "scratchpad/theme-studio-qa/replacement-source-index.json: MOBILE_TEXT_HEADING_PRIMARY",
+        "research/tabsv2/evidence/modern-352204/modules/m/13960.js: ChannelHeaderShared"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full original frames inspected: fictional names/messages, generic avatars and empty composer."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full frames and original-scale comparison inspected. Only the documented channel-name text changes; baseline and restored hashes match."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Outline tightly encloses the changed component without covering content. Crop includes neighbouring controls for context."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Changed-pixel bounds confined to the documented component; layout and neighbouring colours unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Colours the channel name in the chat header."
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "3b62e28cfd4ebcaf9e73aef701b94b336201c3a926bbe190482501fb8415f81a",
+    "stability.png": "3b62e28cfd4ebcaf9e73aef701b94b336201c3a926bbe190482501fb8415f81a",
+    "after.png": "09e2249d7e77fea998300ae91a46c349c4db90f9d508cea0b00a76a2ff673fb1",
+    "restored.png": "3b62e28cfd4ebcaf9e73aef701b94b336201c3a926bbe190482501fb8415f81a"
+  },
+  "annotationSha256": "11f3948e52dd3fb6eeaf48d1b6c1da8f7c1a8f08351ef462f4daac233b9ac5dd",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Original Button experimental_premium-basic reads this raw gradient stop; source 5242 and current native component verified.",
+      "references": [
+        "../../../native-basic-premium-fixture.mjs",
+        "../../../../../research/tabsv2/evidence/modern-352204/modules/m/5242.js"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Fictional workshop copy, inert action, no personal information."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full pairs and original-scale comparisons inspected. Zero baseline drift and exact restoration; native gradient shape intact."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline identifies respective gradient stop without covering button label."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only gradient blending changes; label, dimensions and surrounding content remain stable."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the middle stop of the Basic button gradient."
+    }
+  },
+  "comparisonSha256": "0566db6e3c733f1b20277190a0cc0b4277562765334a7d3bb01c1b1b4b97352b"
+}

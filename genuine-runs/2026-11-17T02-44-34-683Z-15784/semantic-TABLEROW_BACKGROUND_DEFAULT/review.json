@@ -1,0 +1,45 @@
+{
+  "hashes": {
+    "before.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652",
+    "stability.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652",
+    "after.png": "195c343eb3285ebe3936067c45767f41588049185f919cc3ebaeed4dc1823cf9",
+    "restored.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652"
+  },
+  "annotationSha256": "96be1094b456ac7b4eec6dc850990e3ba61f9b783fa4b5b29de1444fb3f25aea",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native Card resolves TABLEROW_BACKGROUND_DEFAULT for each plugin card; inactive tracks composite over that background.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks (Discord 352.6 / 352206)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected full-frame pair: public plugin names/descriptions and anonymous notification count only; no profile, messages or private account information."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected full-frame before/after and focused native-scale comparison. Stable list geometry; native top-edge scroll fade retained. No unexplained rendering changes."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected final comparison: thin outline identifies Plugin card without covering content. Inactive-switch crop revised to remove the fragment of adjacent text."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Off-switch tracks blend over the card; text and active switches keep their colours. Full-frame baseline and restored pixels match exactly."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the default plugin-card background."
+    }
+  },
+  "comparisonSha256": "f67edae66cff1dfe354145511be51fac60843f11179cf2113c731c408dd39b11"
+}

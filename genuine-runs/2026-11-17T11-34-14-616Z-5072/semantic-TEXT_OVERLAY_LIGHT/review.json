@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "e206a3cd3de57c3014e506bb331754ce1f5cc65727cec7cdb99e9fe06877f415",
+    "stability.png": "e206a3cd3de57c3014e506bb331754ce1f5cc65727cec7cdb99e9fe06877f415",
+    "after.png": "bcafd46fa6180d715cb782ec731f0005e9546d530cd01b10c798bdf7bad19e95",
+    "restored.png": "e206a3cd3de57c3014e506bb331754ce1f5cc65727cec7cdb99e9fe06877f415"
+  },
+  "annotationSha256": "c35d34c26b3e5c7727dc9fdb7f5f09c67f166b606ccebc13896c16e9ef4cb278",
+  "comparisonSha256": "16d670e692060c3a807be26655606533c82aaa7cb522fa1d94735ff2fe946ded",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native MicButton/Text resolver traces on voice preview confirm the affected control; see runtimeConsumerStacks.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames inspected; fictional chat and generic avatars; no call joined."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and original-scale comparison inspected; stable baseline and exact restoration."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline identifies the native control surface or label without covering it."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Pixel changes confined to intended surface/label; other controls and underlying chat unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the Join Voice button label."
+    }
+  }
+}

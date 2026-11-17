@@ -5,6 +5,15 @@ const fill = d => `<path d="${d}"/>`
 const stroke = (d, w = 2) => `<path d="${d}" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`
 
 const P = {
+    refresh: stroke('M20 10a8 8 0 1 0-2 8M20 4v6h-6'),
+    eye: stroke('M2 12s3-8 10-8 10 8 10 8-3 8-10 8S2 12 2 12Z') + fill('M16 12a4 4 0 1 1-4-4 3 3 0 0 0 4 4Z'),
+    qr: stroke('M3 3h6v6H3V3ZM15 3h6v6h-6V3ZM3 15h6v6H3v-6ZM15 15h6v6h-6v-6M12 3v3M3 12h3M12 12h3M12 18v3') + fill('M5 5h2v2H5ZM17 5h2v2h-2ZM5 17h2v2H5ZM17 17h2v2h-2Z'),
+    mobileDevice: stroke('M7 2h10a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1ZM10 18h4'),
+    paymentCard: fill('M3 4h18a2 2 0 0 1 2 2v2H1V6a2 2 0 0 1 2-2ZM1 11h22v7a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-7Zm3 3v2h7v-2H4Zm13 0v2h3v-2h-3ZM4 17v1h4v-1H4Z'),
+    flag: fill('M3 2a1 1 0 0 1 1 1v1l9-2a2 2 0 0 1 2 2v1l5-1a2 2 0 0 1 2 2v9l-8 2a2 2 0 0 1-2-2v-1l-8 2v5a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1Z'),
+    file: stroke('M14 3H5v18h14V8l-5-5ZM14 3v5h5M8 12h8M8 16h6'),
+    disconnected: stroke('M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18ZM6 6l12 12'),
+    monitorError: stroke('M3 4h18v13H3V4ZM8 21h8M12 17v4M9 8l6 6M15 8l-6 6'),
 	chat: fill('M12 3C6.9 3 3 6.5 3 10.9c0 2.4 1.2 4.5 3 6V21l3.9-2.3c.7.2 1.4.2 2.1.2 5.1 0 9-3.5 9-7.9S17.1 3 12 3Z'),
 	star: fill('M12 2.8l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.6l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z'),
 	hash: stroke('M10 3 8 21M16 3l-2 18M4 8.5h17M3 15.5h17', 2),
@@ -15,6 +24,11 @@ const P = {
 	back: stroke('M20 12H4.5M11 5l-7 7 7 7', 2.1),
 	chevronRight: stroke('M9 5.5 15.5 12 9 18.5', 2.2),
 	chevronLeft: stroke('M15 5.5 8.5 12 15 18.5', 2.2),
+	// Private and age-restricted channels: Discord's hash with a padlock or warning badge
+	hashLock: stroke('M9 4 7.4 20M14 4l-.7 6M3.5 9h11M3 15h9M13 15l-.6 5', 2) + fill('M17 12.5v-1.5a2.5 2.5 0 0 1 5 0v1.5h.3c.4 0 .7.3.7.7v4.6c0 .4-.3.7-.7.7h-5.6c-.4 0-.7-.3-.7-.7v-4.6c0-.4.3-.7.7-.7H17Zm1.2 0h2.6V11a1.3 1.3 0 0 0-2.6 0v1.5Z'),
+	hashWarn: stroke('M9 4 7.4 20M14 4l-.7 6M3.5 9h11M3 15h9M13 15l-.6 5', 2) + fill('M19.5 10.5 23.7 18c.3.5-.1 1-.6 1h-7.2c-.5 0-.9-.5-.6-1l4.2-7.5ZM19 13.2v2.6h1v-2.6h-1Zm0 3.4v1h1v-1h-1Z'),
+	arrowRight: stroke('M4 12h15M13 6l6 6-6 6', 2.2),
+	speaker: fill('M11 4.5a1 1 0 0 1 1.7.7v13.6a1 1 0 0 1-1.7.7L6.6 15H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h2.6L11 4.5Zm4.6 3.1a1 1 0 0 1 1.4.1 6.5 6.5 0 0 1 0 8.6 1 1 0 1 1-1.5-1.3 4.5 4.5 0 0 0 0-6 1 1 0 0 1 .1-1.4Z'),
 	chevronDown: stroke('M5.5 9 12 15.5 18.5 9', 2.2),
 	close: stroke('M5.5 5.5l13 13M18.5 5.5l-13 13', 2.2),
 	plus: stroke('M12 4.5v15M4.5 12h15', 2.2),
@@ -22,6 +36,7 @@ const P = {
 	emoji: fill('M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-3.5 7a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm7 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM7.2 14.1a1 1 0 0 1 1.3.4A4 4 0 0 0 12 16.5a4 4 0 0 0 3.5-2 1 1 0 0 1 1.7 1A6 6 0 0 1 12 18.5a6 6 0 0 1-5.2-3 1 1 0 0 1 .4-1.4Z'),
 	send: fill('M3.4 3.2c-.5-.2-1 .3-.9.8l1.9 7a1 1 0 0 0 .8.7l7.3 1c.3 0 .3.5 0 .6l-7.3 1a1 1 0 0 0-.8.7l-1.9 7c-.1.5.4 1 .9.8l17.8-8.5a1 1 0 0 0 0-1.8L3.4 3.2Z'),
 	bell: fill('M12 2a7 7 0 0 0-7 7v3.6l-1.7 2.9A1 1 0 0 0 4.2 17h15.6a1 1 0 0 0 .9-1.5L19 12.6V9a7 7 0 0 0-7-7Zm-2.9 16.5a3 3 0 0 0 5.8 0H9.1Z'),
+    bellOff: stroke('M4 4l16 16M9 20h6M6 8v5l-2 3h12M10 4a6 6 0 0 1 8 6v3'),
 	gear: fill('M10.6 2h2.8l.5 2.6a7.7 7.7 0 0 1 1.9 1.1l2.5-.9 1.4 2.4-2 1.7a7.7 7.7 0 0 1 0 2.2l2 1.7-1.4 2.4-2.5-.9c-.6.5-1.2.8-1.9 1.1l-.5 2.6h-2.8l-.5-2.6a7.7 7.7 0 0 1-1.9-1.1l-2.5.9-1.4-2.4 2-1.7a7.7 7.7 0 0 1 0-2.2l-2-1.7 1.4-2.4 2.5.9c.6-.5 1.2-.8 1.9-1.1L10.6 2ZM12 8.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Z'),
 	userPlus: fill('M9.5 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8ZM2 19c0-3.3 3.4-6 7.5-6 1.4 0 2.6.3 3.7.8A5.5 5.5 0 0 0 12.2 21H3a1 1 0 0 1-1-1v-1Zm16-4a1 1 0 0 1 1 1v1.5h1.5a1 1 0 1 1 0 2H19V21a1 1 0 1 1-2 0v-1.5h-1.5a1 1 0 1 1 0-2H17V16a1 1 0 0 1 1-1Z'),
 	channelsRoles: fill('M3 5h13v2H3zm0 5h9v2H3zm0 5h6v2H3zm13.5-5a4 4 0 0 1 3.3 6.3l2 2-1.4 1.4-2-2A4 4 0 1 1 16.5 10Zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z'),
@@ -49,7 +64,7 @@ const P = {
 	family: fill('M8 3a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm8.5 2a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2 17c0-3.3 2.7-6 6-6s6 2.7 6 6v3H2v-3Zm13.5 3v-3c0-1.6-.5-3-1.3-4.2a5 5 0 0 1 7.8 4.2v3h-6.5Z'),
 	key: fill('M15.5 2a6.5 6.5 0 1 1-2 12.7L11.2 17H9v2H7v2H3v-3.8l6.3-6.3A6.5 6.5 0 0 1 15.5 2Zm1.5 3.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z'),
 	devices: fill('M3 4h14a2 2 0 0 1 2 2v2h-2V6H3v10h8v2H1v-1a1 1 0 0 1 1-1V6a2 2 0 0 1 1-2Zm11 6h7a1.5 1.5 0 0 1 1.5 1.5v8A1.5 1.5 0 0 1 21 21h-7a1.5 1.5 0 0 1-1.5-1.5v-8A1.5 1.5 0 0 1 14 10Zm3.5 8.5a.8.8 0 1 0 0 1.6.8.8 0 0 0 0-1.6Z'),
-	quests: fill('M12 2.5a9.5 9.5 0 0 0-8.7 13.3l1.9-1A7.5 7.5 0 0 1 12 4.5c2.9 0 5.4 1.6 6.6 4l1.8-1A9.5 9.5 0 0 0 12 2.5Zm7.8 7.4-1.8.9a7.5 7.5 0 0 1-12.7 6.6l-1.6 1.2A9.5 9.5 0 0 0 19.8 9.9ZM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z'),
+	quests: stroke('M10 20c-5-2-7-7-5-12M14 20c5-2 7-7 5-12M7 22l5-2 5 2', 1.8) + '<ellipse cx="7" cy="5" rx="2.3" ry="4" transform="rotate(35 7 5)"/><ellipse cx="4.5" cy="10" rx="2.3" ry="4" transform="rotate(-25 4.5 10)"/><ellipse cx="5.5" cy="15" rx="2.3" ry="4" transform="rotate(-50 5.5 15)"/><ellipse cx="8" cy="18" rx="2.2" ry="3.8" transform="rotate(-65 8 18)"/><ellipse cx="17" cy="5" rx="2.3" ry="4" transform="rotate(-35 17 5)"/><ellipse cx="19.5" cy="10" rx="2.3" ry="4" transform="rotate(25 19.5 10)"/><ellipse cx="18.5" cy="15" rx="2.3" ry="4" transform="rotate(50 18.5 15)"/><ellipse cx="16" cy="18" rx="2.2" ry="3.8" transform="rotate(65 16 18)"/>',
 	shop: fill('M4 4h16l1.5 5a3 3 0 0 1-5 2.2 3 3 0 0 1-4.5 0 3 3 0 0 1-4.5 0A3 3 0 0 1 2.5 9L4 4Zm0 9.8c1 .4 2.2.4 3.2 0A5 5 0 0 0 12 15a5 5 0 0 0 4.8-1.2c1 .4 2.2.4 3.2 0V20a1 1 0 0 1-1 1h-4v-4h-6v4H5a1 1 0 0 1-1-1v-6.2Z'),
 	pencil: fill('M15.6 3.6a2 2 0 0 1 2.8 0l2 2a2 2 0 0 1 0 2.8L9 19.8 3 21l1.2-6L15.6 3.6Z'),
 	sort: stroke('M7 4v16M3.5 7.5 7 4l3.5 3.5M17 20V4M13.5 16.5 17 20l3.5-3.5', 1.9),
@@ -72,6 +87,8 @@ const P = {
 	compose: fill('M5 4h8v2H6v12h12v-7h2v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm13.4-1.4 2 2a1 1 0 0 1 0 1.4L13 13.4l-3.4.8.8-3.4L17.9 3.2a1 1 0 0 1 .5-.6Z'),
 	camera: fill('M9 3h6l1.5 2H20a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3.5L9 3Zm3 5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Z'),
 	boost: fill('M12 2 4 7v10l8 5 8-5V7l-8-5Zm0 4 4.5 3v6L12 18l-4.5-3V9L12 6Z'),
+	external: stroke('M6 18 18 6M6 6h12v12', 2),
+	help: '<circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M9 8a3 3 0 0 1 6 0c0 2-3 2-3 4m0 3v1" fill="none" stroke="var(--c-BACKGROUND_SURFACE_HIGH)" stroke-width="2" stroke-linecap="round"/>',
 	threadSpine: '',
 	wave: fill('M8.5 5.5a1.5 1.5 0 0 1 2.6-1l5.6 6.5-.7-3a1.5 1.5 0 1 1 2.9-.7l1.5 6a7 7 0 0 1-12 6.3l-4.2-4.9a1.5 1.5 0 0 1 2.3-2l2.4 2.8L5 9.8a1.5 1.5 0 0 1 2.3-2l4 4.7.6-.5L8.8 6.6c-.2-.3-.3-.7-.3-1.1Z'),
 	logout: fill('M4 3h9a1 1 0 0 1 1 1v3h-2V5H5v14h7v-2h2v3a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm13 5 5 4-5 4v-3h-7v-2h7V8Z'),
@@ -82,6 +99,7 @@ const P = {
 
 /** Inline SVG icon. `size` in dp. */
 export function icon(name, size = 24, cls = '') {
+	if (name === 'piggyBank') return `<span class="ic${cls ? ' ' + cls : ''}" aria-hidden="true" style="display:inline-block;width:${size}px;height:${size}px;background:currentColor;mask:url('${new URL('../assets/settings-reference/piggy-bank.png', import.meta.url).href}') center/contain no-repeat"></span>`
 	return `<svg class="ic${cls ? ' ' + cls : ''}" width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${P[name] || ''}</svg>`
 }
 

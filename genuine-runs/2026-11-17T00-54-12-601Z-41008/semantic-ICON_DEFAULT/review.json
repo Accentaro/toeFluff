@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "708e722eb3e8f458f92971713d139a70fb6843fea16911f26ea1e91b7135728c",
+    "stability.png": "708e722eb3e8f458f92971713d139a70fb6843fea16911f26ea1e91b7135728c",
+    "after.png": "e9394d8e399e8128b589a34f2331b62e3cd856810ea7a0133532fb1b84173872",
+    "restored.png": "708e722eb3e8f458f92971713d139a70fb6843fea16911f26ea1e91b7135728c"
+  },
+  "annotationSha256": "cb357b3076ba9a5f0ea1c50b4b42edbf8c065e0745af83ba1d3a531f521f9fa2",
+  "comparisonSha256": "c33405c85a2bba8e3dd00fefcbb636e53eec5db698e319c416b33793a26f65f8",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "GuildsBarActivityIndicatorBase resolves ICON_DEFAULT; runtime stacks and isolated change verified.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../full-frame-review.png",
+        "../../../fixtures/server-fixture-review.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full frames inspected; only fictional profile/server/channel labels and initials."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full before/after/restored frames and native-scale comparison inspected. Colours the speaker glyph in the server activity indicator."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline matches speaker glyph. Labels and target are fully visible."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "The indicator background remains unchanged. Full-frame differences confined to intended glyphs. Zero stability/restoration drift."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the speaker glyph in the server activity indicator."
+    }
+  }
+}

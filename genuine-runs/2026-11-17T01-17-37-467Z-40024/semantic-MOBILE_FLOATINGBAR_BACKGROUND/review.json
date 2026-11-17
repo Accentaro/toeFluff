@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "466e1a8894ba3fd5284afa2869db45171b19c591e3056b0e5149a9079e74a210",
+    "stability.png": "466e1a8894ba3fd5284afa2869db45171b19c591e3056b0e5149a9079e74a210",
+    "after.png": "b5336a5316c3bb82081df82c9a546f700a4000e16c585632d57c4300045ef722",
+    "restored.png": "466e1a8894ba3fd5284afa2869db45171b19c591e3056b0e5149a9079e74a210"
+  },
+  "annotationSha256": "baf7780fbe9bdf7af1a6dd10453192ce4b9009bd5367e18fc9214128cb11c37f",
+  "comparisonSha256": "ced7b52233fd74a166e960eafb81af29c50caf18ac962083c4a4d8054bf4a22e",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "YouBarBackground resolves MOBILE_FLOATINGBAR_BACKGROUND; independent semantic capture agrees with raw NEUTRAL_64 in Ash.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "full-frame-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full before/after inspected: fictional profile, activity, server and channel labels."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full frames and native-scale comparison inspected; only floating profile surface changes."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline lies inside the changed profile-bar surface without covering text or glyphs."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Text, icons and avatar remain unchanged. Alpha edges and status cutout composite over changed background; zero stability/restoration drift."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the floating profile-bar surface."
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "317bcc58a6937613f3cb3f6f080ae26bc7b777958c933b6b4fe4e51df45bc606",
+    "stability.png": "317bcc58a6937613f3cb3f6f080ae26bc7b777958c933b6b4fe4e51df45bc606",
+    "after.png": "fd690c3d60ef78a4bbdbb6db46fcc1646112a1e56efe10bdbda241b644608489",
+    "restored.png": "317bcc58a6937613f3cb3f6f080ae26bc7b777958c933b6b4fe4e51df45bc606"
+  },
+  "annotationSha256": "4d283fd6a2d61a6f1ab5153686f0480e4352d8124f4d11c8494824bb3052896f",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native ToggleIconButton consumes TOGGLEBUTTON_BORDER_ACTIVE through OPACITY_BLURPLE_84.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json#semantic.TOGGLEBUTTON_BORDER_ACTIVE.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames contain only generic inert native toggle labels and stock icons."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame contact and individual original-scale comparison inspected. Held unselected default border changes clearly; exact stability, restoration and released state."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline correctly surrounds the affected border while leaving it visible at native pixel scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only held unselected default border changes; its fill and icon and all other controls remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies the border of an unselected toggle while held."
+    }
+  },
+  "comparisonSha256": "07931c4560ad7976fa288f4bb200882beda455895d2332178e2a3cc0dfa4ae70"
+}

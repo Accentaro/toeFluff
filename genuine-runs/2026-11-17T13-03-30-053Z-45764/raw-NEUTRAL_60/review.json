@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "a84009ed9c18b1aa5f11d6f40f5b86692a230639518f8d16fb86f5b0915eac88",
+    "stability.png": "a84009ed9c18b1aa5f11d6f40f5b86692a230639518f8d16fb86f5b0915eac88",
+    "after.png": "7a15524f54ec43cfd0bf32785d0880cd86afc47a045cda48345ed78684471c18",
+    "restored.png": "a84009ed9c18b1aa5f11d6f40f5b86692a230639518f8d16fb86f5b0915eac88"
+  },
+  "annotationSha256": "36709b0b72b2a8e63f0fe6262cc4e4f3d30c12dec2bf50a4fd35d824127e584f",
+  "comparisonSha256": "c44d25a0127aea593be8fd8ae1d9f46680c6a599d38bc4cea0f776d73881e0f2",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Current native Card or Mana Toast runtime resolver trace verifies the actual key. NEUTRAL_60 is the dark toast surface alias.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-surface-fixture.mjs",
+        "../../../remaining-source-consumers.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames contain only fictional workshop notes."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full before/after pairs and original-scale comparisons inspected. Exact stability/restoration. Card and toast use original native styles and dimensions."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline marks changed card surface, toast surface or toast border."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Other card/toast and text unchanged apart from natural antialiasing over changed background."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the default toast surface."
+    }
+  }
+}

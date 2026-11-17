@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f",
+    "stability.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f",
+    "after.png": "04ab5f0df9d3a2b750925a51a6ce339e2397b15d4cf4b402eb747486410246db",
+    "restored.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f"
+  },
+  "annotationSha256": "cc0a517484aa84d639057e8d251490a5b32f5fff9b31864c3f48685f2b741b8c",
+  "comparisonSha256": "e65e896d0bfe3860d7dab3a0dd719846de0b840e7f841ba5a4332ca48cea6ee5",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Actual resolver stack names FamilyCenterActivityBanner for BACKGROUND_BASE_LOW; native stock Family Centre Activity screen. The observed one-key effect agrees with that component. Runtime stack line positions are not Metro module IDs.",
+      "references": [
+        "modules/user_settings/defs/native/FamilyCenterSetting.tsx (import tracker)",
+        "manifest.runtimeConsumerStacks: FamilyCenterActivityBanner",
+        "publishing/toeFluff/data/tokens.json semantic BACKGROUND_BASE_LOW"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Full native before and after inspected: public onboarding text and static illustration only, no names, family membership or personal data. Permission dialogs dismissed before capture; none present in originals."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Native introduction card changes behind its content and transparent illustration; text, button and outer page unchanged. Artwork transparency correctly exposes changed background, not an unrelated artwork tint. Full originals and final comparison inspected, complete target, no clipping, loading or unexplained overlays."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Gold outline identifies Introduction card. Same native-scale crop, original PNG pixels preserved, no content covered. Focused crop includes complete affected component."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Native introduction card changes behind its content and transparent illustration; text, button and outer page unchanged. Artwork transparency correctly exposes changed background, not an unrelated artwork tint. Whole-frame diff is 758694 pixels, entirely inside documented bounds. Baseline/stability/restoration byte-identical."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Colours the Family Centre introduction card behind its artwork and content."
+    }
+  },
+  "scope": "Stock native Family Centre Activity page on Android 352206, darker base. Representative use, not exhaustive coverage."
+}

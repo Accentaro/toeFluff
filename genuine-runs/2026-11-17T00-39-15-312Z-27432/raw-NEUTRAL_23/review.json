@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "4a4351e40039801645432d9bf22f9af1cc4b8b36b1da7fcf5d2ab76a914a8c2b",
+    "stability.png": "4a4351e40039801645432d9bf22f9af1cc4b8b36b1da7fcf5d2ab76a914a8c2b",
+    "after.png": "48730573c16060f362bc9f6ebee11849b30b2d60f2a65e999873856a292c8bbf",
+    "restored.png": "4a4351e40039801645432d9bf22f9af1cc4b8b36b1da7fcf5d2ab76a914a8c2b"
+  },
+  "annotationSha256": "cee30769d27778ea742504b0eb16933d3770dafab51886720e293cb8bf5eb942",
+  "comparisonSha256": "08668eafe3c1fef9d686c074d1fa4c0a90f50634945e45244c0c0e3ce3cbe876",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Raw NEUTRAL_23 supplies MOBILE_GUILDBAR_ICON_DEFAULT, ICON_SUBTLE, TEXT_SUBTLE and other subtle-role tokens in darker. Runtime lookup stacks and isolated raw override confirm multiple native consumers.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../full-frame-review.png",
+        "../../../fixtures/server-fixture-review.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full before/after server frames inspected: fictional initials, guild/channel/profile names and activity."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Successful recapture full frames and native-scale focused comparison inspected. Unselected server initials, section captions, top icons and profile bell change; active server initials, channel titles and badges stay unchanged."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline identifies one representative unselected server initial. Small crop sits at original pixel scale inside a wider documentation canvas; no cut labels or enlargement."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effect {'pixels': 19069, 'bounds': {'x': 64, 'y': 189, 'width': 918, 'height': 2096}}; all observed changes match subtle-role aliases. Zero stability and restoration drift. Earlier non-restoring trial remains rejected."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies unselected server initials and subtle labels/icons."
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "466e1a8894ba3fd5284afa2869db45171b19c591e3056b0e5149a9079e74a210",
+    "stability.png": "466e1a8894ba3fd5284afa2869db45171b19c591e3056b0e5149a9079e74a210",
+    "after.png": "b5336a5316c3bb82081df82c9a546f700a4000e16c585632d57c4300045ef722",
+    "restored.png": "466e1a8894ba3fd5284afa2869db45171b19c591e3056b0e5149a9079e74a210"
+  },
+  "annotationSha256": "0bf22345e1daf4c70dcb4860606ace06ab3315533e021b96268998d068d0d3ae",
+  "comparisonSha256": "db11eeb85ef1f8c95384e794577d43b6a94d8ef0873a6743604ac999c4a595c5",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "YouBarBackground via MOBILE_FLOATINGBAR_BACKGROUND. Raw aliases checked for dark/Ash, with runtime consumer stacks and isolated raw override.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json",
+        "../first-effects-review.png",
+        "../last-effects-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full native before/after frames inspected: fictional names, initials, activity and profile image."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame contact sheets and native-scale focused comparison inspected. Supplies the floating profile-bar surface in Ash."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline identifies profile-bar background; labels and affected component visible at original scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Profile text, activity icon and bell keep their colours. Full-frame changes match aliases, including alpha compositing over changed surfaces. Native navigation contrast adapts for lower backdrop. Stability and restoration differences are zero."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies the floating profile-bar surface in Ash."
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "d2edda2831567186d36f7fa53992472672d6aa2b6078393d1ce9cc7af598f7e5",
+    "stability.png": "d2edda2831567186d36f7fa53992472672d6aa2b6078393d1ce9cc7af598f7e5",
+    "after.png": "22a1cee1cdf96a4cb8c84bce8f0b8f4570fc5c85d6f4a87b92b1659efff00fa5",
+    "restored.png": "d2edda2831567186d36f7fa53992472672d6aa2b6078393d1ce9cc7af598f7e5"
+  },
+  "annotationSha256": "2bc152401dec8f35b54b991d70f2567ccbe94fb4b68d1122e719d3bef789f869",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Actual token lookup traces useButtonTextColorStyles/useIconTintStyles to BaseIconButton in stock native Button gallery. Independent override isolates the corresponding toggle variant.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../full-frame-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame gallery and focused comparison inspected. Stock component captions and icons only; no account or message data."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Individually inspected comparison at native pixel scale; all three complete bell icons are visible. Only the expected icon changes; no clipping or rendering artifacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Thin outline precisely surrounds the affected icon, with adjacent variants retained for context. No enlargement or image recolouring."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effect 1266 pixels at {'x': 368, 'y': 2001, 'width': 41, 'height': 49}. Other two toggle icons, Notifications button and unrelated gallery components unchanged. Stability/restoration zero pixels."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the icon of an unselected icon-only toggle button. Variant and unselected state match observed runtime behaviour."
+    }
+  },
+  "comparisonSha256": "6a8b37f843d82113da05ce8172ab87b45b55fff5bbfd3139d6113ff2d4edfe6d"
+}

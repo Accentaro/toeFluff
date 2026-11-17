@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "f1e95a9b037330930b04ac9bf06695ebb3af7b4646537a4dee99bd2e1338e502",
+    "stability.png": "f1e95a9b037330930b04ac9bf06695ebb3af7b4646537a4dee99bd2e1338e502",
+    "after.png": "f8ad8b2ac80ecfdee2a570de3d8a623cc3dd0341ebfad0221487677f78ab1a72",
+    "restored.png": "f1e95a9b037330930b04ac9bf06695ebb3af7b4646537a4dee99bd2e1338e502"
+  },
+  "annotationSha256": "1f9419d6609c3bc889351064cb66e7f6419f37d7994ceb0655c97521668685de",
+  "comparisonSha256": "e70dea64691ec6eb9d138f8cc4520049c20c60a889186b148a894ec5f11b2692",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Source callers verify critical-secondary and icon-only props; runtime ButtonHooks traces confirm key. Original native Button/IconButton styles and standard md dimensions; inert callbacks.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-extended-button-fixture.mjs",
+        "../../../remaining-source-consumers.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames inspected: fictional workshop draft and native copy glyph only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full pairs and original-scale annotations inspected. Zero baseline/restoration drift; intended effect clearly visible."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline identifies changed fill, border, label or glyph."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Other controls unchanged. Text antialiasing blends naturally over changed fill."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the critical secondary button label."
+    }
+  }
+}

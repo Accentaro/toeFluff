@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "2b459bbbe91baa252715bf8564ee615d83b0ccb8941056c8b8a5fbf14d2c75fe",
+    "stability.png": "2b459bbbe91baa252715bf8564ee615d83b0ccb8941056c8b8a5fbf14d2c75fe",
+    "after.png": "06e79684341c2535472e6bea3ce014547c1f18907cd8425655e3efdcfa187ca6",
+    "restored.png": "2b459bbbe91baa252715bf8564ee615d83b0ccb8941056c8b8a5fbf14d2c75fe"
+  },
+  "annotationSha256": "c6a468f591277b3ec0b8be149fe99fafb4bb48b4160d85d4c0548deef71429b0",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Stock DesignSystemBadgeSetting renders Badge; captured parseThemedStyles consumer stack confirms this exact key at runtime.",
+      "references": [
+        "modules/user_settings/defs/native/DesignSystemBadgeSetting.tsx",
+        "design/components/Badge/native/Badge.native.tsx",
+        "manifest.json#runtimeConsumerStacks"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Inspected full native screen: only public design-system labels, with no personal profile or messages."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Inspected full screen and each original-scale comparison: clean NEW badge with isolated border change."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Gold outline correctly encloses affected badge component. Labels remain outside native screenshot."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full-frame effect confined to badge; unchanged baseline stability and exact restoration (zero pixels)."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Colours the primary status badge border."
+    }
+  },
+  "comparisonSha256": "67256d24fc1b8c63ef85040653c2578680a3e5e6c0500bdf2f333312d4a4f2cf"
+}

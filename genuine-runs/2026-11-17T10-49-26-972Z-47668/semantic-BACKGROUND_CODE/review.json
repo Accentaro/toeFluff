@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "038dd5f1d789ff1b338fa0094b0a029a858aea6f7de0692fa26332f9c3771a69",
+    "stability.png": "038dd5f1d789ff1b338fa0094b0a029a858aea6f7de0692fa26332f9c3771a69",
+    "after.png": "e65ddc8e442961d67328fc526b5297070c926a6241fe3d3d01a417b38152aef5",
+    "restored.png": "038dd5f1d789ff1b338fa0094b0a029a858aea6f7de0692fa26332f9c3771a69"
+  },
+  "annotationSha256": "71aec95420494339293b34e8ee5faa290d13fc4855e838e3e489b2bc798b0849",
+  "comparisonSha256": "15888e4fd35cfc0ab8ebcd97ddbe204ab565c4012a7f5c15ef55fb948f4622f4",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Runtime resolver traces identify MarkupInlineCode and MarkupCodeBlock. Fixture uses Discord native MarkupReactRules components unchanged.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-markup-fixture.mjs",
+        "../../../data/tokens.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full original frame inspected: only fictional code, a fictional concealed phrase, and native setting labels."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame before/after inspection and original-pixel comparison passed. No clipping or unexplained rendering artifacts. Baseline and restoration are pixel-identical."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline follows the actual changed code background or hidden spoiler cover without covering its content."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only code backgrounds change; text, labels, spoiler and surrounding surfaces remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours inline code and fenced-code backgrounds."
+    }
+  }
+}

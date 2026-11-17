@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "798bde0a6cdd53c67dd6cdf545234896ea9122a04e8d52ecd231a5f569db4911",
+    "stability.png": "798bde0a6cdd53c67dd6cdf545234896ea9122a04e8d52ecd231a5f569db4911",
+    "after.png": "93155f9f007332296a36f05448ddf66ecc3015da38b5c0cd9836a6d7a7d2abc3",
+    "restored.png": "798bde0a6cdd53c67dd6cdf545234896ea9122a04e8d52ecd231a5f569db4911"
+  },
+  "annotationSha256": "6575955484c05c82e414b170c303dcc04b30d5a8c20e09beda4678bf1597395e",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Catalogue definition and Ash mapping read. Runtime stacks identify NavScrim via ANDROID_NAVIGATION_SCRIM_BACKGROUND at 0.5 opacity. The original ICON_MUTED description omitted its sheet-handle use; this capture demonstrates it.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json",
+        "../first-review.png",
+        "../last-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full before/after inspected: standard Unicode People category; fictional channel visible behind scrim. No personal favourites or custom emoji are visible."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame sheets and native-scale annotated comparisons inspected. Native partial last row is ordinary scroll clipping; focused examples use complete controls."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Programmatic outline correctly surrounds the documented surface, glyph, placeholder or handle; no enlarged interface elements."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Stability and restoration are pixel-identical. Transparency blending and Android gesture-handle contrast are documented expected consequences; no unrelated content or geometry changed."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies the navigation scrim colour below the picker. The translucent semantic alias blends this raw colour."
+    }
+  },
+  "comparisonSha256": "d7d868f37ce523ca737a01aee8a4250856c927a44a0dc3dc628c521e6d5a9cee"
+}

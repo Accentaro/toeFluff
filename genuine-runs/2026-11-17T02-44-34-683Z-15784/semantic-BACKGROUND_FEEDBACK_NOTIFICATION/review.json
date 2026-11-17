@@ -1,0 +1,45 @@
+{
+  "hashes": {
+    "before.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652",
+    "stability.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652",
+    "after.png": "ea23cd452e4bf10b71a9b1ffa851a888f22d63e843b8783ce644432c146679b3",
+    "restored.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652"
+  },
+  "annotationSha256": "7fef3e166d8d950ec9d9278b52be334cb053c9d6016a49ec9e9bf79b617a8cba",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native Badge resolves BACKGROUND_FEEDBACK_NOTIFICATION for the back-navigation notification count.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks (Discord 352.6 / 352206)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected full-frame pair: public plugin names/descriptions and anonymous notification count only; no profile, messages or private account information."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected full-frame before/after and focused native-scale comparison. Stable list geometry; native top-edge scroll fade retained. No unexplained rendering changes."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected final comparison: thin outline identifies Notification badge without covering content. Inactive-switch crop revised to remove the fragment of adjacent text."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "The count and Back arrow remain unchanged. Full-frame baseline and restored pixels match exactly."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the notification-count badge beside Back."
+    }
+  },
+  "comparisonSha256": "a156a70c72dde13c3339c371c3e498a7c41f6bbe339d07249ceb0e1710e2f673"
+}

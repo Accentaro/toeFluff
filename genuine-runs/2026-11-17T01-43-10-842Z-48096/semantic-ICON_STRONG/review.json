@@ -1,0 +1,50 @@
+{
+  "hashes": {
+    "before.png": "6b691b37ea131a2751fba60a46d6b50ead6a2d434aa41ca68f7d29370cea5c1c",
+    "stability.png": "6b691b37ea131a2751fba60a46d6b50ead6a2d434aa41ca68f7d29370cea5c1c",
+    "after.png": "e8d722e4871d04a4e930475a35811245a780c2588062df54600d1b58ad8c449a",
+    "restored.png": "6b691b37ea131a2751fba60a46d6b50ead6a2d434aa41ca68f7d29370cea5c1c"
+  },
+  "annotationSha256": "cc005f4061319337fcba626045da6a2c26c64fe93030c105f048a39f9de1cab5",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Catalogue definition and Ash alias read; BaseIconImage resolves this key in captured runtime stacks. Scope is this native chat viewport.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json",
+        "../first-review.png",
+        "../second-review.png",
+        "../third-review.png",
+        "../last-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full frames inspected: fictional channel, profile, avatars and plain message bodies; no private rich text, links or media."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame contact sheets and native-scale comparisons inspected. Composer/header targets render cleanly; no unexpected overlays or shifted content."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Programmatic outline inspected on the changed component; native pixel scale retained. Header-border crop revised to avoid a clipped message line."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Zero stability and restoration drift. Only the documented surface or glyphs change; translucent edge/fade compositing follows the changed background."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the channel-type icon beside the title. Back, search and chevron keep their own colours."
+    }
+  },
+  "comparisonSha256": "727e0f66b24e3319c57b936d9bf1e307cf2267d5e61f67bff662ca66d813cc63"
+}

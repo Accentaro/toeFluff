@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "466e1a8894ba3fd5284afa2869db45171b19c591e3056b0e5149a9079e74a210",
+    "stability.png": "466e1a8894ba3fd5284afa2869db45171b19c591e3056b0e5149a9079e74a210",
+    "after.png": "6d24e087100cb9139fdff3d9fa0b11e71718852ca4a3ec7de2691548c4ee35ed",
+    "restored.png": "466e1a8894ba3fd5284afa2869db45171b19c591e3056b0e5149a9079e74a210"
+  },
+  "annotationSha256": "39460612b90941320ca559d21ae765fa28b7e2fb054c9372b411d3e2a7784bf5",
+  "comparisonSha256": "47ed5159b8444e2a27ca7045a183f1aab8bf43abb5e8fff4e8eddedc99e029f9",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "ChannelListPanelBackdrop, GuildInfoHeader and YouBarFloatingShade via PANEL_BG and BACKGROUND_BASE_LOWER. Raw aliases checked for dark/Ash, with runtime consumer stacks and isolated raw override.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json",
+        "../first-effects-review.png",
+        "../last-effects-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full native before/after frames inspected: fictional names, initials, activity and profile image."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame contact sheets and native-scale focused comparison inspected. Supplies the channel panel and lower app backdrop in Ash."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline identifies channel-list background; labels and affected component visible at original scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Also affects the fade behind the profile bar. Full-frame changes match aliases, including alpha compositing over changed surfaces. Native navigation contrast adapts for lower backdrop. Stability and restoration differences are zero."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies the channel panel and lower app backdrop in Ash."
+    }
+  }
+}

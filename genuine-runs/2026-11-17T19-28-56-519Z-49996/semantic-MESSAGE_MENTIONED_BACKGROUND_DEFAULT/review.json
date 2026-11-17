@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "cd90d6ee8e32ee5f07edd27ab030c05a3025ea7b72b0541687d33b98738c993f",
+    "stability.png": "cd90d6ee8e32ee5f07edd27ab030c05a3025ea7b72b0541687d33b98738c993f",
+    "after.png": "fe20a6549bd28c859a510430226a041261f7ab908fb0cae4e6fd7d4657bb297a",
+    "restored.png": "cd90d6ee8e32ee5f07edd27ab030c05a3025ea7b72b0541687d33b98738c993f"
+  },
+  "annotationSha256": "84fa975d09af20470c22533a247c28d5aeae37896afcc0a6d66b839de3ddabda",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Current runtime resolver stack reaches createBackgroundHighlight in RowGeneratorUtils. A copied message input is marked mentioned; original native renderer computes the background and gutter. No message was sent or account store mutated.",
+      "references": [
+        "research/tabsv2/evidence/modern-352204/modules/m/8574.js: MESSAGE_MENTIONED_BACKGROUND_DEFAULT -> mentionedBackgroundColor",
+        "manifest.json: current 352206 runtimeConsumerStacks createBackgroundHighlight",
+        "scratchpad/theme-studio-qa/native-highlight-fixture.mjs; current mention-input copy uses deterministic message-id suffix"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full original frames inspected: fictional names, avatar and message text; no personal profile details or external media."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Full before and after frames inspected. Mentioned rows change fill; ordinary rows, layout and header remain unchanged. Baseline stability and restoration are exact."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Original-scale comparison inspected: outline identifies empty background area of one complete mentioned message, without covering text or avatar."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Changed pixels lie within mentioned-message fills; the yellow gutter remains yellow. Text and avatar edge compositing follows the changed parent background."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual inspection",
+      "notes": "Concise description identifies the mentioned-message background and distinguishes the independent yellow gutter."
+    }
+  },
+  "comparisonSha256": "3566825e99c02100d6f8ef4a75e44c2578495aba872e2f1254aa023571ab6b83"
+}

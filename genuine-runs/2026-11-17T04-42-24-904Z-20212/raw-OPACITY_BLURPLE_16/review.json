@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "ae1bf8230b8d0da7ad7ea97ef5ef407771b1736cd395fc174c71fcd4db131c80",
+    "stability.png": "ae1bf8230b8d0da7ad7ea97ef5ef407771b1736cd395fc174c71fcd4db131c80",
+    "after.png": "6c1baa88cc19b6bbb365b5d5200b5e821e5763b28b6bd0f16503be937e08863c",
+    "restored.png": "ae1bf8230b8d0da7ad7ea97ef5ef407771b1736cd395fc174c71fcd4db131c80"
+  },
+  "annotationSha256": "17ec8f31b2ea278789168e46c34b974465cd6db9bb5af2c97fafe4e933f2e478",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native toggle styles consume TOGGLEBUTTON_BACKGROUND_SELECTED through OPACITY_BLURPLE_16.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json#semantic.TOGGLEBUTTON_BACKGROUND_SELECTED.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames contain native design-system documentation and demonstration controls only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full before/after frames and focused comparison inspected: selected default background tint changes in isolation. Baseline and restoration match exactly."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline marks the affected selected default background tint at original pixel scale. Adjacent toggles provide unchanged context."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame difference is confined to the expected selected default background tint; other controls and text remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies the selected toggle background with retained opacity."
+    }
+  },
+  "comparisonSha256": "151c56d9c968995f1af46b701c1d0c9fd1520e42e3bbff329bfd41ff7e3d5b90"
+}

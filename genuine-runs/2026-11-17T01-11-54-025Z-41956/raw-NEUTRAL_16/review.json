@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "466e1a8894ba3fd5284afa2869db45171b19c591e3056b0e5149a9079e74a210",
+    "stability.png": "466e1a8894ba3fd5284afa2869db45171b19c591e3056b0e5149a9079e74a210",
+    "after.png": "508acb2b77060130620bbbea025d8c73b281107c6492b942baca7c1363c652a9",
+    "restored.png": "466e1a8894ba3fd5284afa2869db45171b19c591e3056b0e5149a9079e74a210"
+  },
+  "annotationSha256": "e3603f9363b52b743110a8a529f4b91edd09d0ac4732b8ac536a488a4a7197ae",
+  "comparisonSha256": "d03192fda9ee17bc47d4aa0d4a0813bda6ed788b68985bcc267f400877e1d587",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "GuildIconInner, ChannelListStickyHeader, Text and BaseIconImage through subtle/default-interactive aliases. Raw aliases checked for dark/Ash, with runtime consumer stacks and isolated raw override.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json",
+        "../first-effects-review.png",
+        "../last-effects-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full native before/after frames inspected: fictional names, initials, activity and profile image."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame contact sheets and native-scale focused comparison inspected. Supplies subtle labels, rail glyphs and unselected initials in Ash."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline identifies unselected server initials; labels and affected component visible at original scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Other uses include section captions and the profile bell. Full-frame changes match aliases, including alpha compositing over changed surfaces. Native navigation contrast adapts for lower backdrop. Stability and restoration differences are zero."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies subtle labels, rail glyphs and unselected initials in Ash."
+    }
+  }
+}

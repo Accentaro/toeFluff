@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "b5a5a07dadcc7e06877a7f9c38f6b4867b80192feaf009ed56e1768383f5116b",
+    "stability.png": "b5a5a07dadcc7e06877a7f9c38f6b4867b80192feaf009ed56e1768383f5116b",
+    "after.png": "f1e8bd4f1841461f6b34c573ad8ddec6cf2173d430bcccfc1d43968a51cb508a",
+    "restored.png": "b5a5a07dadcc7e06877a7f9c38f6b4867b80192feaf009ed56e1768383f5116b"
+  },
+  "annotationSha256": "4a6427f08426e805439eee5bc9eb5afd4adf51861cffe8d549b8696001b23862",
+  "comparisonSha256": "325945416afa6dcd67f5c60c4211104f9b4c181a3f971b17f17ca237ba3e89a1",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Runtime GuildsBarAnimatedItemWrapper resolves this token; isolated override demonstrates its selected Messages button fill.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../messages-privacy-runtime.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame comparison inspected: fictional names, messages and guild initials; generic avatars and no original profile decorations or activity artwork."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame diagnostic and original-scale comparison inspected. Intended change is clear; baseline and restoration have zero pixel drift."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline accurately identifies the affected component without covering content."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Changes confined to selected Messages button fill; other text, icons and surfaces unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the selected Messages button in the server sidebar."
+    }
+  }
+}

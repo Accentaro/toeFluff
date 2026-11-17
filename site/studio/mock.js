@@ -2,9 +2,9 @@
 // Avatars, server icons, role colours and embed accents are user content in Discord, so they stay fixed.
 
 export const users = {
-	me: { id: 'me', name: 'Juniper', username: 'juniper.dev', hue: 32, status: 'idle', tag: 'MOSS', pronouns: 'she/her', bio: 'Theme tinkerer. Making Discord softer, one colour key at a time.', activity: 'Visual Studio Code' },
-	palm: { id: 'palm', name: 'Palm', username: 'palmdevs', hue: 260, status: 'online', role: '#6fc8f2', tag: 'VLCD', pronouns: 'he/him', bio: 'I make things with user experience and accessibility in mind. Dry jokes too.' },
-	quill: { id: 'quill', name: 'Quill', username: 'quill.ink', hue: 340, status: 'dnd', role: '#f47fa4', tag: 'INK' },
+	me: { id: 'me', name: 'Juniper', username: 'juniper_demo', hue: 32, status: 'idle', tag: 'MOSS', pronouns: 'she/her', bio: 'Theme tinkerer. Making Discord softer, one colour key at a time.', activity: 'Visual Studio Code' },
+	palm: { id: 'palm', friend: true, roles: [['Team', '#6fc8f2'], ['Plugin Dev', '#57d6a0'], ['Theme Maker', '#e86bd6']], connections: [['GitHub', 'palmdevs'], ['Spotify', 'Palm'], ['Steam', 'palm_']], name: 'Palm', username: 'palmdevs', hue: 260, status: 'online', role: '#6fc8f2', tag: 'VLCD', pronouns: 'he/him', bio: 'I make things with user experience and accessibility in mind. Dry jokes too.' },
+	quill: { id: 'quill', roles: [['Mod', '#f47fa4']], connections: [['GitHub', 'quill-ink']], name: 'Quill', username: 'quill.ink', hue: 340, status: 'dnd', role: '#f47fa4', tag: 'INK' },
 	tempo: { id: 'tempo', name: 'Tempo', username: 'tempo', hue: 190, status: 'online', bot: true },
 	sol: { id: 'sol', name: 'sol', username: 'solstice', hue: 48, status: 'online', role: '#f5c542', tag: 'SUN' },
 	ren: { id: 'ren', name: 'Ren', username: 'ren.codes', hue: 150, status: 'idle', role: '#57d6a0' },
@@ -13,7 +13,7 @@ export const users = {
 	vex: { id: 'vex', name: 'vex', username: 'vexillum', hue: 285, status: 'dnd', role: '#b18cff', tag: 'FLAG' },
 	lumen: { id: 'lumen', name: 'Lumen', username: 'lumen', hue: 95, status: 'online', role: '#ff8a5c' },
 	ash: { id: 'ash', name: 'Ashwin', username: 'ashwin', hue: 225, status: 'offline' },
-	nova: { id: 'nova', name: 'Nova', username: 'nova.exe', hue: 310, status: 'online', role: '#e86bd6', tag: 'STAR' },
+	nova: { id: 'nova', friend: true, roles: [['Contributor', '#e86bd6'], ['Theme Maker', '#b18cff']], connections: [['Spotify', 'nova.exe'], ['YouTube', 'Nova Plays']], name: 'Nova', username: 'nova.exe', hue: 310, status: 'online', role: '#e86bd6', tag: 'STAR' },
 }
 
 export const servers = [
@@ -37,6 +37,8 @@ export const valenced = {
 			{ id: 'announcements', name: 'announcements', type: 'announcement' },
 			{ id: 'faq', name: 'faq', type: 'text' },
 			{ id: 'github', name: 'github', type: 'text', unread: true },
+			{ id: 'staff', name: 'staff-only', type: 'locked' },
+			{ id: 'after-dark', name: 'after-dark', type: 'nsfw' },
 		] },
 		{ name: 'Addons', channels: [
 			{ id: 'plugins', name: 'plugins', type: 'forum' },
@@ -47,7 +49,10 @@ export const valenced = {
 			{ id: 'general', name: 'general', type: 'text', unread: true },
 			{ id: 'bots', name: 'bots', type: 'text', unread: true },
 			{ id: 'showcase', name: 'showcase', type: 'text' },
+			{ id: 'off-topic', name: 'off-topic', type: 'text', muted: true },
 			{ id: 'support', name: 'support', type: 'forum' },
+			{ id: 'voice', name: 'Lounge', type: 'voice', members: ['nova', 'ren'] },
+			{ id: 'stage', name: 'Quiet room', type: 'voice' },
 		] },
 	],
 }
@@ -71,7 +76,11 @@ export const bots = {
 		} },
 		{ user: 'nova', time: '02:17', text: '@sol how are you still on top' },
 		{ user: 'sol', time: '02:17', text: 'consistency :)' },
+		{ user: 'lumen', time: '02:18', system: '{name} just showed up!' },
+		{ user: 'ren', time: '02:19', mentionsMe: true, text: '@Juniper this is what I set the chat box to:', code: '"MOBILE_CHATINPUT_BACKGROUND_DEFAULT": ["#1c1827"]' },
+		{ user: 'mika', time: '02:20', spoiler: ['the onyx version is', 'even better'] },
 	],
+	typing: 'Nova',
 }
 
 export const dms = [

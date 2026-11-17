@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "ccda8e204fca2e81ad8b7cf4fd063488f74bb9401a3501c0d87c8309a5d232eb",
+    "stability.png": "ccda8e204fca2e81ad8b7cf4fd063488f74bb9401a3501c0d87c8309a5d232eb",
+    "after.png": "317fb6b2271ceb5818fa9f948c6b09a3d90075bc24bb7e84046807cf4c61a2e5",
+    "restored.png": "ccda8e204fca2e81ad8b7cf4fd063488f74bb9401a3501c0d87c8309a5d232eb"
+  },
+  "annotationSha256": "5c1f0137fc4ee86760558e8eb02ac0220be14c102c3207569343bdbb528df964",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Runtime single-key lookup reaches PillWrapper gradient construction. Native stock DesignSystemsButtonSetting definition recorded in manifest.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../full-frame-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Inspected full native gallery and focused comparison: generic component variant labels only; no personal profile or messages."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Inspected original-scale comparison and full-frame overview. Entire target button visible; isolated colour change clear; no rendering artifacts or clipped target."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Programmatic outline surrounds premium primary button gradient without covering content. Identical native-scale crop in both panels."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effect confined to {'x': 45, 'y': 1717, 'width': 492, 'height': 100} (47457 pixels). Stability and restoration both zero changed pixels; surrounding buttons unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the first stop of the premium primary button gradient. Matches observed effect; gradient stops are distinguished."
+    }
+  },
+  "comparisonSha256": "4dd8e4e0b533029ec31f4b76a8700ee39e6de494d7f0cba5a6699ca307117f8f"
+}

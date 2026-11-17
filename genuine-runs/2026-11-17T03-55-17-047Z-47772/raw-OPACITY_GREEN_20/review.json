@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057",
+    "stability.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057",
+    "after.png": "814230cbf60c6481b1a15434f4c09ebd0562a04370a876e3dab9f30c5495e34d",
+    "restored.png": "c33ccaa4b511852de496670214f9728e56b8895690409c7612e80b81ad397057"
+  },
+  "annotationSha256": "589d4c4ab39762966fd0be6a4734f9314d9a0f2e80f0594c96c47f4165863cd0",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native Toast resolves TOAST_SUCCESS_BACKGROUND through OPACITY_GREEN_20; runtime consumer stack and Ash token alias verified.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json#semantic.TOAST_SUCCESS_BACKGROUND.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames show only native design demonstration text; no private profile, messages or account details."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full before/after frames and native-scale comparison inspected. Only the toast background tint changes; exact baseline and restoration match."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline surrounds the affected toast, with clear label and no content obstruction."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame difference confined to the single toast. Other variants, text and feedback icons remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies the success toast background in Ash."
+    }
+  },
+  "comparisonSha256": "4da2d6f8a24d1fa3336090fa2ba1025e369af4c6a8d0705d8567a52c7907b34d"
+}

@@ -1,0 +1,54 @@
+{
+  "hashes": {
+    "before.png": "5755b90edd0b87ba2fdb2e9034e1e9c115279b633971f6e850beea2de16977b8",
+    "stability.png": "5755b90edd0b87ba2fdb2e9034e1e9c115279b633971f6e850beea2de16977b8",
+    "after.png": "2834eca8a3a96600493d02a523bea410c114bc783b6a89dbe7e25f22118ef0ce",
+    "restored.png": "5755b90edd0b87ba2fdb2e9034e1e9c115279b633971f6e850beea2de16977b8"
+  },
+  "annotationSha256": "0b6d6b4d5f87303b54da6a5989c8e83363327d5616d5613d06c4e42feb3191c6",
+  "comparisonSha256": "583cdd6b0bf8c65c11fe84bdca758205f4c932b5629eb63a1d9a7d3680b0942f",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual input review 2026-11-16",
+      "notes": "Actual key resolver call stacks name the listed native consumers. Source definition records the genuine text input demo. Bundle coordinates are runtime positions, not Metro IDs or original TypeScript lines. Text stack includes screenshot-scrambler wrapper; this review does not claim all plugins inactive.",
+      "references": [
+        "modules/user_settings/defs/native/DesignSystemsTextInputSetting.tsx (native demo definition)",
+        "index.android.bundle:5912:1111 (BaseIconImage; actual resolver stack)",
+        "index.android.bundle:5478:3738 (Text; actual resolver stack)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual input review 2026-11-16",
+      "notes": "Inspected full original baseline/after. Generic native demo instructions and placeholder labels only. Password is an empty placeholder, not a credential. No personal names, media, account values or messages visible. Native back notification badge is explained."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual input review 2026-11-16",
+      "notes": "Error sentence and its circular exclamation icon both turn pink, as does the Required Field asterisk further down the full original. Input error border remains coral; neutral labels, placeholders and field outlines stay unchanged. The TEXT key genuinely controls this icon; ICON_FEEDBACK_CRITICAL has no effect here. Full erroneous field and feedback are complete. Bottom partially visible small input is normal scroll continuation. No loading or unexplained overlay. Final focused comparison inspected; target has no clipping."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual input review 2026-11-16",
+      "notes": "Gold outline identifies error message and icon without covering changed pixels. Both crops use the same coordinates at native pixel scale. Clear context includes label, input and error feedback. Programmatic SVG separate from untouched raw PNGs."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual input review 2026-11-16",
+      "notes": "Error sentence and its circular exclamation icon both turn pink, as does the Required Field asterisk further down the full original. Input error border remains coral; neutral labels, placeholders and field outlines stay unchanged. The TEXT key genuinely controls this icon; ICON_FEEDBACK_CRITICAL has no effect here. Before/stability/restored hashes match; zero stability and restoration pixel drift."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual input review 2026-11-16",
+      "notes": "Colours error messages, their icon and required-field markers."
+    }
+  },
+  "crop": [
+    18,
+    350,
+    1044,
+    360
+  ],
+  "scope": "Representative native text input use only; not integrated or published."
+}

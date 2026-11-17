@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f",
+    "stability.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f",
+    "after.png": "4b466d318439fd4e11a17998cb8ff9b150a0071c3a087cdb9ee0843bf10eece9",
+    "restored.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f"
+  },
+  "annotationSha256": "dbe9c5d4c5aaa3d756153c4ec9c7334144786e4886657e6de15f02210afd15ae",
+  "comparisonSha256": "3cf2ee0fa61b700fb1ae24e01913ac7e715a97d25e12de07f36e61e08874df0f",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Actual resolver stack names MarkupLink for TEXT_LINK; native stock Family Centre Activity screen. The observed one-key effect agrees with that component. Runtime stack line positions are not Metro module IDs.",
+      "references": [
+        "modules/user_settings/defs/native/FamilyCenterSetting.tsx (import tracker)",
+        "manifest.runtimeConsumerStacks: MarkupLink",
+        "publishing/toeFluff/data/tokens.json semantic TEXT_LINK"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Full native before and after inspected: public onboarding text and static illustration only, no names, family membership or personal data. Permission dialogs dismissed before capture; none present in originals."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Only Learn more glyphs change. Surrounding description, illustration, primary action and all other visible content stay unchanged. Full originals and final comparison inspected, complete target, no clipping, loading or unexplained overlays."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Gold outline identifies Learn more link. Same native-scale crop, original PNG pixels preserved, no content covered. Focused crop includes complete affected component."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Only Learn more glyphs change. Surrounding description, illustration, primary action and all other visible content stay unchanged. Whole-frame diff is 1614 pixels, entirely inside documented bounds. Baseline/stability/restoration byte-identical."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex individual native Family Centre review 2026-11-16",
+      "notes": "Colours the Learn more link in the Family Centre introduction."
+    }
+  },
+  "scope": "Stock native Family Centre Activity page on Android 352206, darker base. Representative use, not exhaustive coverage."
+}

@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "d533ef909df1681be43b697d0d37f90a2f9a6816050460f968969900af7c4d9b",
+    "stability.png": "d533ef909df1681be43b697d0d37f90a2f9a6816050460f968969900af7c4d9b",
+    "after.png": "36da2c9935793860366ff1d01dc4867d3f5a9bf1680a43ffdcbe7f64f7f24ebc",
+    "restored.png": "d533ef909df1681be43b697d0d37f90a2f9a6816050460f968969900af7c4d9b"
+  },
+  "annotationSha256": "0a657c2976424d21aefaca124281c53e98f09b6982885fe86bbbe6026f87d4b6",
+  "comparisonSha256": "2cb7d1f326a7b874c011ab60babd95e346ff1757097aacdddf7c19ced58f7a7a",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Runtime consumer resolves the focused native composer border. Actual focused chat input with a fictional unsent draft was tested.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full originals inspected: fictional names, avatar images, channel title, messages and draft. No message sent."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full-frame comparison and focused original-pixel comparison inspected. Caret absent consistently in this pair; stability and restoration both zero."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline surrounds the composer without obscuring its changed thin border."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only composer outline changes; fill, draft, controls, send button and chat remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the outline of the focused message composer."
+    }
+  }
+}

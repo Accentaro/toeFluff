@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "6d467fa3f865042fccb0aa7dd7c27b199477fc098d26d7082b8b391c3dc64b6c",
+    "stability.png": "6d467fa3f865042fccb0aa7dd7c27b199477fc098d26d7082b8b391c3dc64b6c",
+    "after.png": "1000d393d4817c9e2cab0d5329473e82c425ce9b4207bf5d7fe9e86855815a64",
+    "restored.png": "6d467fa3f865042fccb0aa7dd7c27b199477fc098d26d7082b8b391c3dc64b6c"
+  },
+  "annotationSha256": "32dc208260be67c4adf9de81161e44e65929db974e29500aa45954bb0f5993a3",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Actual runtime token lookup reaches Toast; imported module paths independently recorded in toast-runtime-source.json. This is the native design-system toast, not the website preview.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../toast-runtime-source.json",
+        "../../../references/toast-components-ready.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Inspected native gallery and focused example: generic built-in toast copy, no real account information; surrounding demo names are stock fixtures."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Inspected before/after comparison at original pixel scale. The outline changes clearly. Entire toast visible, no clipped neighbouring title, loading state or rendering artifact."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Inspected programmatic outline: targets the outline without covering the toast label. Same crop, native scale and consistent annotation style."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame diff restricted to target bounds {'x': 271, 'y': 1597, 'width': 540, 'height': 116}; 3848 changed pixels. Other variants, labels and controls unchanged; stability/restoration each zero pixels."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the outline of a critical toast. Concise and matches the observed isolated visual effect."
+    }
+  },
+  "comparisonSha256": "ef2f2d994429acefaa385e5cea92587f13eed2438033805f07a3501a07b38fad"
+}

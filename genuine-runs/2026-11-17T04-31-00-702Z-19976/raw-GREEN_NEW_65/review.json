@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "93e7879c1a046a4a276e542416f7d65b784223c37cf95caebea27374d0c16c85",
+    "stability.png": "93e7879c1a046a4a276e542416f7d65b784223c37cf95caebea27374d0c16c85",
+    "after.png": "5b59662532c8e90c4779b76c5f55a5dfef8c02b4311a6d6835040d1c83331158",
+    "restored.png": "93e7879c1a046a4a276e542416f7d65b784223c37cf95caebea27374d0c16c85"
+  },
+  "annotationSha256": "d9e612f80f52c78b8acfb7e434aa2be58d9f3424e4e1e856616de9ba8c9ce2da",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "useButtonPillStyles resolves CONTROL_CONNECTED_BACKGROUND_ACTIVE through GREEN_NEW_65.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json#semantic.CONTROL_CONNECTED_BACKGROUND_ACTIVE.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native Button fixture uses generic inert labels without personal data."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and final comparison inspected. Connected pressed fill alone changes. Baseline, restoration and pointer-release check match exactly."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline surrounds the pressed connected button at native pixel scale without covering text."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only connected pressed fill changes; other buttons and all labels remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies the connected button background while pressed."
+    }
+  },
+  "comparisonSha256": "49cc1576ba06cadf91e731c8bff8e14bb16b31bff401c92c53e2e5e15d427f7b"
+}

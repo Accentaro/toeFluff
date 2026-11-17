@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "1511d3b64a0243e080745a89dd795d3ab12edb78886b9e3a1e8ce62f6201d914",
+    "stability.png": "1511d3b64a0243e080745a89dd795d3ab12edb78886b9e3a1e8ce62f6201d914",
+    "after.png": "7fbb9e51840f4ba73a4519b870b3511088373fa93a4de655119be29ab9b8ff3e",
+    "restored.png": "1511d3b64a0243e080745a89dd795d3ab12edb78886b9e3a1e8ce62f6201d914"
+  },
+  "annotationSha256": "8d3cdbd7b4707617f0751592b7ea74199e423944657272067dc962e76ce72266",
+  "comparisonSha256": "cbcf8ea7604148e93d6688bc4dc31dcb6b732ddc2920fb90febe210c024658bd",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Runtime token traces confirm useButtonPillStyles / PillWrapper in the stock native button gallery.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../full-frame-review.png",
+        "../comparison-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame contact sheet inspected: stock captions and icons, no personal data."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full frames and native-scale annotated comparisons inspected together. Selected bell-slash controls remain complete, without clipping or artifacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Thin outline identifies the changed button surface; adjacent variants provide unchanged context."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame difference confined to {'pixels': 9192, 'bounds': {'x': 42, 'y': 1973, 'width': 105, 'height': 105}}; zero stability and restoration differences. Adjacent variants unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the background of a selected standard toggle button."
+    }
+  }
+}

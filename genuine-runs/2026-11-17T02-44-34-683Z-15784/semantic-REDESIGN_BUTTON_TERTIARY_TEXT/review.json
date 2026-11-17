@@ -1,0 +1,45 @@
+{
+  "hashes": {
+    "before.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652",
+    "stability.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652",
+    "after.png": "f293ff3cb7b5cdd691d75969341c2350a2aee5363a15920a4ba922a839f2dd8c",
+    "restored.png": "f107d9f720a566ccb27a93e8716120137ba1297b8facb01634b42d0a99573652"
+  },
+  "annotationSha256": "981376bebe3b88918aa5f1a7943d221bbba5510449f20b4748bded5d23b60a34",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native useButtonTextColorStyles / useIconTintStyles / BaseIconButton resolves REDESIGN_BUTTON_TERTIARY_TEXT for toolbar glyphs.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks (Discord 352.6 / 352206)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected full-frame pair: public plugin names/descriptions and anonymous notification count only; no profile, messages or private account information."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected full-frame before/after and focused native-scale comparison. Stable list geometry; native top-edge scroll fade retained. No unexplained rendering changes."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Inspected final comparison: thin outline identifies Settings icon without covering content. Inactive-switch crop revised to remove the fragment of adjacent text."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Also affects the filter icon; button surfaces remain unchanged. Full-frame baseline and restored pixels match exactly."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours tertiary toolbar button icons."
+    }
+  },
+  "comparisonSha256": "fbfe4535c8e4dcbe5f49eefe1d2b7164c5ae048fa9cf63f3390c8c8c32e7e3fd"
+}

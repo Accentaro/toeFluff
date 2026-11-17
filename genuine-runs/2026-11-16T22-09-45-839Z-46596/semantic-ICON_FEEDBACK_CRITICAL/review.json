@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "6d467fa3f865042fccb0aa7dd7c27b199477fc098d26d7082b8b391c3dc64b6c",
+    "stability.png": "6d467fa3f865042fccb0aa7dd7c27b199477fc098d26d7082b8b391c3dc64b6c",
+    "after.png": "076cfe8e231af3003bab3ba3399081fd67884dd99837a54469d7de5385bad08d",
+    "restored.png": "6d467fa3f865042fccb0aa7dd7c27b199477fc098d26d7082b8b391c3dc64b6c"
+  },
+  "annotationSha256": "b6a4e1cc254eee9d9efce8e52135bd1b74695528246241e714c88df7d8890c74",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Actual runtime token lookup reaches BaseIconImage; imported module paths independently recorded in toast-runtime-source.json. This is the native design-system toast, not the website preview.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../toast-runtime-source.json",
+        "../../../references/toast-components-ready.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Inspected native gallery and focused example: generic built-in toast copy, no real account information; surrounding demo names are stock fixtures."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Inspected before/after comparison at original pixel scale. The exclamation-circle fill changes clearly. Entire toast visible, no clipped neighbouring title, loading state or rendering artifact."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Inspected programmatic outline: targets the exclamation-circle fill without covering the toast label. Same crop, native scale and consistent annotation style."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame diff restricted to target bounds {'x': 305, 'y': 1633, 'width': 43, 'height': 43}; 1467 changed pixels. Other variants, labels and controls unchanged; stability/restoration each zero pixels."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the feedback icon of a critical toast. Concise and matches the observed isolated visual effect."
+    }
+  },
+  "comparisonSha256": "73ea36e7242aaec3fc0aaac2063afa114b07e39edefa672bb122dcadd4d3e33b"
+}

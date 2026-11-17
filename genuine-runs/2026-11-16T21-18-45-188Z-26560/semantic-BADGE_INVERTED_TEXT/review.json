@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "dc2b07e087fb15c78fffae7b4b229a3206483219c2001eced6b0b0df0bb7135c",
+    "stability.png": "dc2b07e087fb15c78fffae7b4b229a3206483219c2001eced6b0b0df0bb7135c",
+    "after.png": "ff2b9cd5a63884f3af0f527087bb23f63e67eb7634f2981381db10b872720730",
+    "restored.png": "dc2b07e087fb15c78fffae7b4b229a3206483219c2001eced6b0b0df0bb7135c"
+  },
+  "annotationSha256": "314a5aa2e27eb7428affdfba9b1e22eed9b467132fca7ca783f3c1337a66a98f",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Stock DesignSystemBadgeSetting renders Badge; captured parseThemedStyles consumer confirms exact key.",
+      "references": [
+        "modules/user_settings/defs/native/DesignSystemBadgeSetting.tsx",
+        "design/components/Badge/native/Badge.native.tsx",
+        "manifest.json#runtimeConsumerStacks"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Inspected full screen: public native design-system labels, no private profile data."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full screen and each comparison inspected: inverted badge text changes cleanly in isolation."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Outline encloses changed badge component, labels outside native crop at original scale."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full-frame diff confined to badge; stability and restoration both zero pixels."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Colours the inverted status badge text."
+    }
+  },
+  "comparisonSha256": "4331df07ec13c7379eaf2f549799e4ee1ff5f60a2732cab57b28978d49d52dbd"
+}

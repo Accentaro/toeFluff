@@ -11,10 +11,10 @@ export const msgmenu = {
 	render() {
 		const row = (ic, label, act, chevron) => `<button class="vp-sheet-row" data-act="${act}" data-n="Action sheet row"><span data-k="fg:TABLEROW_ICON_COLOR_DEFAULT">${icon(ic, 24)}</span><span class="vp-sheet-label" data-k="bb:BORDER_SUBTLE"><span data-k="fg:TEXT_STRONG">${label}</span>${chevron ? `<span data-k="fg:INTERACTIVE_TEXT_DEFAULT">${icon('chevronRight', 20)}</span>` : ''}</span></button>`
 		return `${scrim()}
-		<div class="vp-sheet" data-k="bg:MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT bd:BORDER_SUBTLE" data-n="Message menu">
+		<div class="vp-sheet" data-k="bg:MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT" data-n="Message menu">
 			<i class="vp-handle" data-k="bg:BACKGROUND_MOD_STRONG" data-n="Sheet handle"></i>
 			<div class="vp-quick">${quickReactions.map(e => `<button data-act="react:${e}" data-k="bg:MOBILE_EMOJI_BUTTON_BACKGROUND" data-n="Quick reaction"><span data-fixed="Emoji">${e}</span></button>`).join('')}<button data-open="emoji" data-k="bg:MOBILE_EMOJI_BUTTON_BACKGROUND fg:INTERACTIVE_ICON_DEFAULT" data-n="More reactions">${icon('emoji', 26)}</button></div>
-			<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Grouped rows">${row('reply', 'Reply', 'close')}${row('forward', 'Forward', 'done:Forwarded')}</div>
+			<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Grouped rows">${row('reply', 'Reply', 'close')}${row('forward', 'Forward', 'done:Forwarded')}${row('thread', 'Create Thread', 'done:Thread created')}</div>
 			<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Grouped rows" data-scroll="sheet">
 				${row('copy', 'Copy Text', 'copy')}
 				${row('markUnread', 'Mark Unread', 'done:Marked unread')}
@@ -109,22 +109,30 @@ export const emoji = {
 	id: 'emoji', title: 'Emoji picker', group: 'Menus and sheets', capture: 'emoji', screen: 'bots',
 	render({ state }) {
 		const own = (state.ui.emoji ??= {})
-		const tab = own.tab || 'Emoji'
+		const typing = Number.isInteger(state.overlayParams?.typingSlot)
+		const tab = typing ? 'Emoji' : own.tab || 'Emoji'
 		const cat = own.cat || 'top'
 		const host = state.ui[state.screen] || {}
 		const q = own.q || ''
 		const list = q ? Object.values(emojiSets).flat().filter((_, i) => i % 3 === q.length % 3) : emojiSets[cat]
 		return `<div class="vp-picker-dim" data-close></div>
-		<div class="vp-picker-input">${chatInput({ placeholder: 'Message #bots', active: false, value: host.draft || '', picker: true })}</div>
-		<div class="vp-picker" data-k="bg:MOBILE_EXPRESSION_PICKER_BACKGROUND_DEFAULT bd:BORDER_SUBTLE" data-n="Expression picker">
+		${typing ? '' : `<div class="vp-picker-input">${chatInput({ placeholder: 'Message #bots', active: false, value: host.draft || '', picker: true })}</div>`}
+		<div class="vp-picker${typing ? ' vp-typing-picker' : ''}" data-k="bg:MOBILE_EXPRESSION_PICKER_BACKGROUND_DEFAULT bd:BORDER_SUBTLE" data-n="Expression picker">
 			<i class="vp-handle" data-k="bg:BACKGROUND_MOD_STRONG" data-n="Sheet handle"></i>
-			<div class="vp-segmented" data-k="bg:MOBILE_SEGMENTED_CONTROL_BACKGROUND" data-n="Segmented control">${['Emoji', 'GIFs', 'Stickers'].map(t => `<button data-act="tab:${t}" class="${t === tab ? 'on' : ''}" data-k="${t === tab ? 'bg:MOBILE_SEGMENTED_CONTROL_INDICATOR_BACKGROUND fg:TEXT_STRONG' : 'fg:TEXT_MUTED'}" data-n="${t === tab ? 'Selected segment' : 'Segment'}">${t}</button>`).join('')}</div>
+			${typing ? '' : `<div class="vp-segmented" data-k="bg:MOBILE_SEGMENTED_CONTROL_BACKGROUND" data-n="Segmented control">${['Emoji', 'GIFs', 'Stickers'].map(t => `<button data-act="tab:${t}" class="${t === tab ? 'on' : ''}" data-k="${t === tab ? 'bg:MOBILE_SEGMENTED_CONTROL_INDICATOR_BACKGROUND fg:TEXT_STRONG' : 'fg:TEXT_MUTED'}" data-n="${t === tab ? 'Selected segment' : 'Segment'}">${t}</button>`).join('')}</div>`}
 			${tab === 'Emoji' ? `
 			<label class="vp-search" data-k="bg:INPUT_BACKGROUND_DEFAULT bd:INPUT_BORDER_DEFAULT" data-n="Search field"><span data-k="fg:INPUT_ICON_DEFAULT">${icon('search', 20)}</span><input data-k="fg:INPUT_TEXT_DEFAULT x:INPUT_PLACEHOLDER_TEXT_DEFAULT" placeholder="Find the perfect emoji" value="${esc(q)}" data-input="q" aria-label="Find emoji"></label>
 			<h3 class="vp-picker-head" data-k="bg:BACKGROUND_SURFACE_HIGH fg:TEXT_STRONG" data-n="Picker section header">${q ? 'Results' : { top: 'Top Emojis in Valenced', people: 'People', nature: 'Nature', food: 'Food' }[cat]}</h3>
 			<div class="vp-emoji-grid" data-scroll="emoji">${list.map(e => `<button data-act="pick:${e}" data-fixed="Emoji">${e}</button>`).join('')}</div>
 			<nav class="vp-picker-foot" data-k="bg:BACKGROUND_SURFACE_HIGH" data-n="Category bar">${[['top', 'trophy'], ['people', 'emoji'], ['nature', 'star'], ['food', 'clock']].map(([id, ic]) => `<button data-act="cat:${id}" ${id === cat ? 'data-k="bg:INTERACTIVE_BACKGROUND_ACTIVE fg:INTERACTIVE_ICON_DEFAULT" data-n="Selected category"' : 'data-k="fg:ICON_MUTED" data-n="Category icon"'}>${icon(ic, 22)}</button>`).join('')}<button class="end" data-act="backspace" data-k="fg:ICON_MUTED" data-n="Backspace">${icon('backspace', 22)}</button></nav>`
-			: `<p class="vp-empty" data-k="fg:TEXT_MUTED">${tab} need a network connection, so the preview leaves them out.</p>`}
+			: tab === 'GIFs' ? `
+			<label class="vp-search" data-k="bg:INPUT_BACKGROUND_DEFAULT bd:INPUT_BORDER_DEFAULT" data-n="Search field"><span data-k="fg:INPUT_ICON_DEFAULT">${icon('search', 20)}</span><input data-k="fg:INPUT_TEXT_DEFAULT x:INPUT_PLACEHOLDER_TEXT_DEFAULT" placeholder="Search Klipy" aria-label="Search GIFs"></label>
+			<div class="vp-gif-grid" data-scroll="gifs">${[['Favourites', 'star', 280], ['Trending GIFs', 'image', 20], ['excited', '', 50], ['thumbs up', '', 200], ['wave', '', 140], ['facepalm', '', 330], ['dance', '', 300], ['sleepy', '', 230]].map(([label, ic, h]) => `<button class="vp-gif-tile" data-act="na" data-fixed="GIF (content)" style="background:linear-gradient(135deg,hsl(${h} 35% 40%),hsl(${h + 30} 40% 22%))"><span class="vp-gif-label">${ic ? `<span data-k="fg:WHITE">${icon(ic, 18)}</span>` : ''}<b data-k="fg:TEXT_OVERLAY_LIGHT">${label}</b></span></button>`).join('')}</div>`
+			: `
+			<label class="vp-search" data-k="bg:INPUT_BACKGROUND_DEFAULT bd:INPUT_BORDER_DEFAULT" data-n="Search field"><span data-k="fg:INPUT_ICON_DEFAULT">${icon('search', 20)}</span><input data-k="fg:INPUT_TEXT_DEFAULT x:INPUT_PLACEHOLDER_TEXT_DEFAULT" placeholder="Find the perfect sticker" aria-label="Search stickers"></label>
+			<h3 class="vp-picker-head" data-k="fg:TEXT_STRONG" data-n="Picker section header">Frequently Used</h3>
+			<div class="vp-sticker-grid" data-scroll="stickers">${['🐸', '🦆', '🐱', '🌟', '🍩', '🎧', '🦊', '🌈'].map(e => `<button data-act="na" data-fixed="Sticker (content)">${e}</button>`).join('')}</div>
+			<nav class="vp-picker-foot" data-k="bg:BACKGROUND_SURFACE_HIGH" data-n="Category bar">${['clock', 'star', 'emoji', 'puzzle'].map((ic, i) => `<button data-act="na" ${i === 0 ? 'data-k="bg:INTERACTIVE_BACKGROUND_ACTIVE fg:INTERACTIVE_ICON_ACTIVE" data-n="Selected category"' : 'data-k="fg:INTERACTIVE_ICON_DEFAULT" data-n="Category"'}>${icon(ic, 22)}</button>`).join('')}</nav>`}
 		</div>
 		${navScrim()}`
 	},
@@ -147,6 +155,12 @@ export const emoji = {
 		},
 		pick: ({ arg, api }) => {
 			const host = (api.state.ui[api.state.screen] ??= {})
+            const slot = api.state.overlayParams?.typingSlot
+            if (Number.isInteger(slot)) {
+                if (!host.emojis?.some(Boolean)) host.emojis=[arg,arg,arg]
+                else host.emojis[slot]=arg
+                host.dirty=true;api.close();api.render();return
+            }
 			host.draft = (host.draft || '') + arg
 			return 'render'
 		},
@@ -172,6 +186,7 @@ export const emoji = {
 			host.draft = el.value
 		},
 		attach: ({ api }) => api.toast('critical', 'Uploads are not available in the preview'),
+		na: ({ api }) => api.toast('default', 'Not available in the preview'),
 		focus: () => {},
 		blur: () => {},
 	},

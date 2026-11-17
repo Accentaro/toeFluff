@@ -1,0 +1,73 @@
+{
+  "hashes": {
+    "before.png": "d647d0bfbf6d66ccbeed8af155be06b27c4aadfc0bf3eb2771c76d2b1b1cb7a5",
+    "stability.png": "d647d0bfbf6d66ccbeed8af155be06b27c4aadfc0bf3eb2771c76d2b1b1cb7a5",
+    "after.png": "0ec9fac005a9608cc836e1befc8bf61639d668c6b8692ce0e5e35c466af5a0be",
+    "restored.png": "d647d0bfbf6d66ccbeed8af155be06b27c4aadfc0bf3eb2771c76d2b1b1cb7a5"
+  },
+  "annotationSha256": "eb78f1a06daaab3641a4084ed05ce346dee839c98b112e2132ddd3e424fbc9bb",
+  "comparisonSha256": "de87d679e55d2303e43fbedfd2ca53e7b0c7e52c5e8c1969c99b2aec7a30c77b",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual raw Button review 2026-11-16",
+      "notes": "Only the raw token was overridden. Recorded semantic alias names independently checked against tokens.semantic[alias].darker.raw. Actual resolver consumer stacks provide runtime proof; coordinates are not Metro IDs. Real native Design.Button fixture, standard md props and inert callbacks; captions fixed gray, not token evidence. No exhaustive use claim.",
+      "references": [
+        "native-button-fixture.mjs SHA256 042745683a4934ba1fd291eca2ed23eb388000dbe9fc9318f51e213c70ef0dbe",
+        "publishing/toeFluff/data/tokens.json SHA256 706726a2d06dcb6b8e69a7ffbaf8d8a0fb93f8c2ce265aa949255b5dfe1b3b0c",
+        "BACKGROUND_FEEDBACK_NOTIFICATION.darker.raw = RED_NEW_50",
+        "CONTROL_CRITICAL_PRIMARY_BACKGROUND_DEFAULT.darker.raw = RED_NEW_50",
+        "index.android.bundle:7423:1099 (useNavigationTheme, via BACKGROUND_FEEDBACK_NOTIFICATION)",
+        "index.android.bundle:16099:4021 (AppNavigationContainer, via BACKGROUND_FEEDBACK_NOTIFICATION)",
+        "index.android.bundle:15701:3574 (Badge, via BACKGROUND_FEEDBACK_NOTIFICATION)",
+        "index.android.bundle:5495:14900 (useButtonPillStyles, via CONTROL_CRITICAL_PRIMARY_BACKGROUND_DEFAULT)",
+        "index.android.bundle:5500:4193 (PillWrapper, via CONTROL_CRITICAL_PRIMARY_BACKGROUND_DEFAULT)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual raw Button review 2026-11-16",
+      "notes": "Full baseline/after inspected. Only generic action labels and variant captions, fixed status icons and explained native badge; no private profile data or messages."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual raw Button review 2026-11-16",
+      "notes": "Destructive red fill and the native back notification badge fill both turn pink. White labels and badge numeral remain unchanged. These related changes match the two recorded semantic aliases of this single raw token. Full baseline is verified resting native fixture; final comparison individually inspected. No clipping, unexpected overlays or malformed rendering. Focused view shows representative use; full originals preserve all additional effects."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual raw Button review 2026-11-16",
+      "notes": "Gold outline surrounds destructive button fill without covering changed pixels. Identical crop and original scale before/after. Labels describe raw propagation; additional uses noted. Separate SVG, no altered screenshot pixels."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual raw Button review 2026-11-16",
+      "notes": "Destructive red fill and the native back notification badge fill both turn pink. White labels and badge numeral remain unchanged. These related changes match the two recorded semantic aliases of this single raw token. Multiple semantic aliases of one raw token are intended dependent changes, not extra key mutations. Baseline/stability/restored hashes identical; zero drift."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit individual raw Button review 2026-11-16",
+      "notes": "Supplies destructive button fills and notification badge fills."
+    }
+  },
+  "crop": [
+    18,
+    1025,
+    1044,
+    210
+  ],
+  "rawSemanticAliases": [
+    "BACKGROUND_FEEDBACK_NOTIFICATION",
+    "CONTROL_CRITICAL_PRIMARY_BACKGROUND_DEFAULT"
+  ],
+  "fixtureProvenance": {
+    "kind": "native-component-fixture",
+    "source": "../../native-button-fixture.mjs",
+    "sha256": "042745683a4934ba1fd291eca2ed23eb388000dbe9fc9318f51e213c70ef0dbe",
+    "components": "Discord Design.Button; standard md props, no component styling overrides",
+    "labels": "React Native Text variant captions use fixed gray; not token evidence",
+    "actions": "Inert callbacks; no account or external actions",
+    "registration": "Clone of native Button Settings route with custom getComponent; not stock route content"
+  },
+  "scope": "Representative native Button uses of raw token; not exhaustive. Not integrated or published."
+}

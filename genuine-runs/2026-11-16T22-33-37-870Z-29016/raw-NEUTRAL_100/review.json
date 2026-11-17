@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "ccda8e204fca2e81ad8b7cf4fd063488f74bb9401a3501c0d87c8309a5d232eb",
+    "stability.png": "ccda8e204fca2e81ad8b7cf4fd063488f74bb9401a3501c0d87c8309a5d232eb",
+    "after.png": "783e6ebf12e013733591509509335b26f81b69d076eaba1f863ed23c070910e6",
+    "restored.png": "ccda8e204fca2e81ad8b7cf4fd063488f74bb9401a3501c0d87c8309a5d232eb"
+  },
+  "annotationSha256": "31ce642eb5785f84a862df2645e6f68852d33a3a40fefa457a9885c992913714",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Palette definition aliases CONTROL_EXPRESSIVE_TEXT_DEFAULT in darker base. Independent raw override traced runtime consumers; exact same full-frame effect as semantic counterpart.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../../../publishing/toeFluff/data/tokens.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Generic stock button variant labels only. Full originals byte-identical to previously visually inspected native gallery frames."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Individually inspected raw before/after comparison at native scale. Entire button visible, isolated clear effect, no clipped target or artifacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Inspected outline placement around expressive button label. Label does not cover content; crop and scale identical."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame change confined to {'x': 455, 'y': 1457, 'width': 168, 'height': 34}. Stability/restoration zero. All four original files hash-identical to corresponding reviewed semantic capture."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies the palette colour for the expressive button label in Dark mode. Matches observed palette effect on this native screen."
+    }
+  },
+  "comparisonSha256": "563742cb805423f93e5f2d6c176e86f4a6dd3bd8048b89e7f2adec8a6e0043c6"
+}

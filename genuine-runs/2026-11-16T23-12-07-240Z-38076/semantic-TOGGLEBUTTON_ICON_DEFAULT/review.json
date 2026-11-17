@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "d2edda2831567186d36f7fa53992472672d6aa2b6078393d1ce9cc7af598f7e5",
+    "stability.png": "d2edda2831567186d36f7fa53992472672d6aa2b6078393d1ce9cc7af598f7e5",
+    "after.png": "5d5800e106ba2efba56e356dba0b24e3394c08f039cf9d913f7a514b12f9c261",
+    "restored.png": "d2edda2831567186d36f7fa53992472672d6aa2b6078393d1ce9cc7af598f7e5"
+  },
+  "annotationSha256": "bb1eda78385e690618ea0a4c3b923fd12844574ff35ee1d4c8cb2dc03ce8f44e",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Actual token lookup traces useButtonTextColorStyles/useIconTintStyles to BaseIconButton in stock native Button gallery. Independent override isolates the corresponding toggle variant.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../full-frame-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame gallery and focused comparison inspected. Stock component captions and icons only; no account or message data."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Individually inspected comparison at native pixel scale; all three complete bell icons are visible. Only the expected icon changes; no clipping or rendering artifacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Thin outline precisely surrounds the affected icon, with adjacent variants retained for context. No enlargement or image recolouring."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effect 1266 pixels at {'x': 74, 'y': 2001, 'width': 41, 'height': 49}. Other two toggle icons, Notifications button and unrelated gallery components unchanged. Stability/restoration zero pixels."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the icon of an unselected standard toggle button. Variant and unselected state match observed runtime behaviour."
+    }
+  },
+  "comparisonSha256": "74b4d206b70b0d38a69b8e62b04ad45c71049aad5c4e68e34b22771d30b36d1a"
+}

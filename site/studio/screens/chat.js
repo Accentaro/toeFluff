@@ -1,6 +1,6 @@
 // Channel screens: an announcement channel, a busy text channel with unreads, a forum and member search.
 import { announcements, bots, memberGroups, users, valenced } from '../mock.js'
-import { avatar, channelHeader, chatInput, clanTag, esc, icon, message, navBar, statusBar } from './common.js'
+import { avatar, channelHeader, chatInput, clanTag, esc, icon, md, message, nameOf, navBar, statusBar } from './common.js'
 import { chatActions } from './main.js'
 
 const channelName = id => valenced.categories.flatMap(c => c.channels).find(c => c.id === id) || { name: id, type: 'text' }
@@ -59,6 +59,7 @@ export const botsChat = {
 				${msgs.map((m, i) => message(m, `b.${i}`, { ui })).join('')}
 			</div>
 			<button class="vp-jump" data-k="bg:MOBILE_FLOATINGBAR_BACKGROUND fg:INTERACTIVE_ICON_DEFAULT" data-n="Jump to latest button" data-act="jump" aria-label="Jump to latest">${icon('arrowDown', 22)}</button>
+			${bots.typing ? `<div class="vp-typing" data-k="bg:BACKGROUND_BASE_LOWER" data-n="Typing indicator"><span class="vp-typing-dots" data-k="fg:TEXT_DEFAULT"><i></i><i></i><i></i></span><b data-k="fg:TEXT_STRONG">${esc(bots.typing)}</b><span data-k="fg:TEXT_DEFAULT"> is typing...</span></div>` : ''}
 		</div>
 		${chatInput({ placeholder: `Message #${c.name}`, active: ui.focused, value: ui.draft || '' })}
 		${navBar('MOBILE_KEYBOARD_GAP_BACKGROUND')}`
@@ -115,6 +116,20 @@ export const forum = {
 	},
 }
 
+// Search tab contents. Media and files are user content; rows around them use the same keys as chat.
+function searchTab(tab, ui) {
+	const head = (who, when) => `<div class="vp-result-head">${avatar(who, 24, { status: false })}${nameOf(who)}<small data-k="fg:TEXT_MUTED">${esc(when)}</small></div>`
+	if (tab === 'Media') return `<div class="vp-media-grid">${[200, 30, 260, 140, 320, 90, 170, 10, 280].map((h, i) => `<span class="vp-media-tile" data-fixed="Image (user content)" style="background:linear-gradient(135deg,hsl(${h} 40% 38%),hsl(${h + 40} 45% 22%))">${i === 1 || i === 6 ? `<i class="vp-media-play">${icon('send', 16)}</i>` : ''}</span>`).join('')}</div>`
+	if (tab === 'Pins') return [['palm', '28/10/2026', 'Read #rules before posting, and use the forum for plugin requests.'], ['quill', '21/10/2026', 'Theme keys reference: themes.benjiisworld.com']].map(([who, when, text]) => `
+		<div class="vp-result" data-k="bg:CARD_MUTED_BG bd:BORDER_SUBTLE" data-n="Pinned message">${head(who, when)}<p data-k="fg:TEXT_STRONG">${md(text)}</p></div>`).join('')
+	if (tab === 'Threads') return `<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Thread list">${[['Dark mode contrast', 41, '2h'], ['Server drawer feedback', 12, '1d'], ['Release notes 1.2.4', 7, '4d']].map(([name, n, when], i, a) => `
+		<button class="vp-row" data-go="chat" data-n="Thread row"><span class="vp-row-icon" data-k="fg:CHANNEL_ICON">${icon('thread', 22)}</span><span class="vp-row-label${i < a.length - 1 ? ' divided' : ''}" data-k="bb:BORDER_SUBTLE"><span><span class="vp-thread-name" data-k="fg:TEXT_STRONG">${esc(name)}</span><small data-k="fg:TEXT_MUTED">${n} messages &bull; ${when}</small></span></span></button>`).join('')}</div>`
+	if (tab === 'Links') return [['ren', 'Today', 'github.com', 'Valenced/valenced-plugin-template'], ['nova', 'Yesterday', 'themes.benjiisworld.com', 'Valenced Theme Studio']].map(([who, when, host, title]) => `
+		<div class="vp-result" data-k="bg:CARD_MUTED_BG bd:BORDER_SUBTLE" data-n="Link result">${head(who, when)}<span class="vp-link-card" data-k="bg:EMBED_BACKGROUND" data-n="Link preview"><small data-k="fg:TEXT_MUTED">${esc(host)}</small><b data-k="fg:TEXT_LINK">${esc(title)}</b></span></div>`).join('')
+	return [['juniper', 'legacy-theme.json', '3 KB'], ['palm', 'valenced-1.2.4.apk', '41.6 MB'], ['quill', 'crash-log.txt', '18 KB']].map(([who, name, size]) => `
+		<div class="vp-result" data-k="bg:CARD_MUTED_BG bd:BORDER_SUBTLE" data-n="File result">${head(who, 'This week')}<span class="vp-file" data-k="bg:EMBED_BACKGROUND bd:BORDER_SUBTLE" data-n="File attachment"><span data-k="fg:TEXT_LINK">${icon('apps', 26)}</span><span><b data-k="fg:TEXT_LINK">${esc(name)}</b><small data-k="fg:TEXT_MUTED">${size}</small></span></span></div>`).join('')
+}
+
 export const search = {
 	id: 'search', title: 'Member search', group: 'Server', capture: 'search',
 	render({ ui }) {
@@ -130,14 +145,14 @@ export const search = {
 					<span class="vp-chip" data-k="bg:BACKGROUND_MOD_SUBTLE fg:TEXT_DEFAULT" data-n="Filter chip">in: announcements</span>
 					<input data-k="fg:INPUT_TEXT_DEFAULT" data-input="q" value="${esc(ui.q || '')}" aria-label="Search members">
 				</label>
-				<button class="vp-square-btn" data-k="bg:REDESIGN_BUTTON_TERTIARY_BACKGROUND fg:REDESIGN_BUTTON_TERTIARY_TEXT" data-n="Filter button" aria-label="Filters">${icon('filter', 22)}</button>
+				<button class="vp-square-btn" data-open="searchfilter" data-k="bg:REDESIGN_BUTTON_TERTIARY_BACKGROUND fg:REDESIGN_BUTTON_TERTIARY_TEXT" data-n="Filter button" aria-label="Filters">${icon('filter', 22)}</button>
 			</div>
 			<nav class="vp-tabs" data-k="bb:BORDER_SUBTLE" data-n="Tabs">${['Members', 'Media', 'Pins', 'Threads', 'Links', 'Files'].map(t => `<button data-act="tab:${t}" class="${t === tab ? 'on' : ''}" data-k="fg:${t === tab ? 'TEXT_BRAND' : 'TEXT_MUTED'}" data-n="${t === tab ? 'Selected tab' : 'Tab'}">${t}${t === tab ? '<i data-k="bg:BACKGROUND_BRAND" data-n="Tab indicator"></i>' : ''}</button>`).join('')}</nav>
 			<div class="vp-page-scroll" data-scroll="search">
-				${tab !== 'Members' ? `<p class="vp-empty" data-k="fg:TEXT_MUTED">No ${tab.toLowerCase()} in this channel yet.</p>` : groups.map(([g, list]) => `
+				${tab !== 'Members' ? searchTab(tab, ui) : groups.map(([g, list]) => `
 					<h2 class="vp-member-group" data-k="fg:TEXT_SUBTLE">${g} &mdash; ${list.length}</h2>
 					<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Member group">${list.map(([id, status, kind], i) => `
-						<button class="vp-member" data-go="profile:${id}" data-n="Member row">
+						<button class="vp-member" data-go="profile:${id}:server" data-n="Member row">
 							${avatar(id, 40)}
 							<span class="vp-member-text${i < list.length - 1 ? ' divided' : ''}" data-k="bb:BORDER_SUBTLE">
 								<span class="vp-member-name"><b style="color:${users[id].role || 'inherit'}" ${users[id].role ? 'data-fixed="Role colour (set by the server)"' : 'data-k="fg:TEXT_STRONG"'}>${esc(users[id].name)}</b>${users[id].bot ? `<span class="vp-app" data-k="bg:BACKGROUND_BRAND fg:WHITE" data-n="App badge">APP</span>` : clanTag(users[id].tag)}</span>
@@ -161,5 +176,37 @@ export const search = {
 			input?.focus()
 			input?.setSelectionRange(input.value.length, input.value.length)
 		},
+	},
+}
+
+/** Tapping a channel's name in its header: the channel page with members, media, pins and more (checked against Discord 352). */
+export const channelInfo = {
+	id: 'channelinfo', title: 'Channel page', group: 'Server', capture: 'members',
+	render({ ui, params }) {
+		const tab = ui.tab || 'Members'
+		const c = channelName(params.id || 'bots')
+		const online = memberGroups.flatMap(([, l]) => l).filter(([id]) => users[id].status !== 'offline')
+		const offline = memberGroups.flatMap(([, l]) => l).filter(([id]) => users[id].status === 'offline')
+		const group = (title, list) => list.length ? `<h2 class="vp-member-group" data-k="fg:TEXT_SUBTLE">${title} &mdash; ${list.length}</h2>
+			<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Member group">${list.map(([id, status], i) => `
+				<button class="vp-member" data-go="profile:${id}:server" data-n="Member row">${avatar(id, 40)}<span class="vp-member-text${i < list.length - 1 ? ' divided' : ''}" data-k="bb:BORDER_SUBTLE"><span class="vp-member-name"><b style="color:${users[id].role || 'inherit'}" ${users[id].role ? 'data-fixed="Role colour (set by the server)"' : 'data-k="fg:TEXT_STRONG"'}>${esc(users[id].name)}</b>${clanTag(users[id].tag)}</span><small data-k="fg:TEXT_DEFAULT">${esc(status)}</small></span></button>`).join('')}</div>` : ''
+		return `${statusBar('MOBILE_ACTIONSHEET_BACKGROUND', '2:36')}
+		<div class="vp-page" data-k="bg:MOBILE_ACTIONSHEET_BACKGROUND" data-n="Channel page">
+			<header class="vp-page-header" data-n="Page header">
+				<button class="vp-icon-btn" data-back data-k="fg:INTERACTIVE_TEXT_DEFAULT" data-n="Back button" aria-label="Back">${icon('back', 24)}</button>
+				<span class="grow"></span>
+				${['search', 'bell', 'gear'].map(ic => `<button class="vp-icon-btn" ${ic === 'search' ? 'data-go="search"' : 'data-act="na"'} data-k="fg:INTERACTIVE_ICON_DEFAULT" data-n="Header button" aria-label="${ic}">${icon(ic, 24)}</button>`).join('')}
+			</header>
+			<div class="vp-chaninfo-head"><span class="vp-chaninfo-tile" data-k="bg:BACKGROUND_MOD_MUTED fg:TEXT_STRONG" data-n="Channel icon tile">${icon('hash', 22)}</span><span><b data-k="fg:TEXT_STRONG">${esc(c.name)}</b><small data-k="fg:TEXT_MUTED">Text Channel</small></span></div>
+			<nav class="vp-tabs" data-k="bb:BORDER_SUBTLE" data-n="Tabs">${['Members', 'Media', 'Pins', 'Threads', 'Links', 'Files'].map(t => `<button data-act="tab:${t}" class="${t === tab ? 'on' : ''}" data-k="fg:${t === tab ? 'TEXT_BRAND' : 'TEXT_MUTED'}" data-n="${t === tab ? 'Selected tab' : 'Tab'}">${t}${t === tab ? '<i data-k="bg:BACKGROUND_BRAND" data-n="Tab indicator"></i>' : ''}</button>`).join('')}</nav>
+			<div class="vp-page-scroll" data-scroll="channelinfo">
+				${tab === 'Members' ? `<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Grouped rows"><button class="vp-row" data-act="na" data-n="Settings row"><span class="vp-row-icon" data-k="fg:TABLEROW_ICON_COLOR_DEFAULT">${icon('gear', 24)}</span><span class="vp-row-label"><span data-k="fg:TEXT_STRONG">Manage channel access</span><span class="vp-chev" data-k="fg:INTERACTIVE_TEXT_DEFAULT">${icon('chevronRight', 20)}</span></span></button></div>${group('Online', online)}${group('Offline', offline)}` : searchTab(tab, ui)}
+			</div>
+		</div>
+		${navBar('MOBILE_ACTIONSHEET_BACKGROUND')}`
+	},
+	actions: {
+		tab: ({ arg, ui }) => { ui.tab = arg; return 'render' },
+		na: ({ api }) => api.toast('default', 'Not available in the preview'),
 	},
 }

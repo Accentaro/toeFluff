@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f",
+    "stability.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f",
+    "after.png": "4b2371281e578bc4390ef55c070735cadf43fbd7bfd4bac99effc9c78b7a1b1e",
+    "restored.png": "d9f9519fa0c303c3208d51904409ec3a02adaec1936ab76d6d7a493f6fcd656f"
+  },
+  "annotationSha256": "59a44135fb21687d8a38bc38a9be3ecbacaba528d5b63fe7c3eabd3412758571",
+  "comparisonSha256": "c4a7dbe797e70a17e5dbb36e461d5bcb0e785b1639303b33fa759d16a7a2b7d8",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Actual resolver trace follows active-base aliases MOBILE_SEGMENTED_CONTROL_BACKGROUND and BORDER_SUBTLE to OPACITY_12. Both retain semantic opacity. Native SegmentedControl and row-divider consumers correspond to visible changes.",
+      "references": [
+        "manifest.runtimeConsumerStacks: MOBILE_SEGMENTED_CONTROL_BACKGROUND and BORDER_SUBTLE",
+        "publishing/toeFluff/data/tokens.json darker raw aliases OPACITY_12",
+        "modules/user_settings/defs/native/FamilyCenterSetting.tsx"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Full native images show public Family Centre onboarding only, with no identities, family membership or dialogs."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Inspected full after and focused comparison. Tab background and two lower row dividers receive a subtle pink tint; labels and illustration unchanged. The selected indicator composites over the new background. No clipping or unexplained artefacts."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Gold outline surrounds complete segmented control without covering pixels. Identical crop at original scale; footer explicitly identifies the additional dividers in full originals."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "112837 changed pixels belong to tab background and row dividers; both have verified raw aliases. Baseline, stability and restoration byte-identical. A subsequent OPACITY_20 test in the same run failed on scrollbar drift and remains rejected; this completed key passed independently."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex individual visual review 2026-11-16",
+      "notes": "Supplies the translucent tab background and subtle row dividers."
+    }
+  },
+  "scope": "Family Centre representative raw-alias use; all affected components documented. Screen reopened between phases."
+}

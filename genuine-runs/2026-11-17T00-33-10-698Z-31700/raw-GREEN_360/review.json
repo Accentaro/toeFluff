@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "7217355a28cab58778febfc0e50ffa71ebb0ff331609d47dac702e8edad46ebe",
+    "stability.png": "7217355a28cab58778febfc0e50ffa71ebb0ff331609d47dac702e8edad46ebe",
+    "after.png": "61a77b56446c547a9799e5ded343105dc2989aeb64bc3c534dd6d2250d70e324",
+    "restored.png": "7217355a28cab58778febfc0e50ffa71ebb0ff331609d47dac702e8edad46ebe"
+  },
+  "annotationSha256": "fe8e007477fbb8992d6cb491ebcd616f861d41d33e294ec76e2bf0ed3ef342a3",
+  "comparisonSha256": "6e0acf1eb83fc6a47cc0023b0e8e64ad015ae27bb8271375609ba4d8eb43b1dc",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "GREEN_360 supplies STATUS_POSITIVE in darker. Actual runtime consumer BaseIconImage confirmed; the full-frame override isolates the profile activity controller icon.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../neutral23-full-review.png",
+        "../../../fixtures/server-fixture-review.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Whole-frame baseline is byte-identical to the inspected native server baseline in neutral23-full-review.png. Fictional names, initials and activity text; no real profile artwork."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Native-scale activity-line comparison inspected. Icon clearly changes green to pink; text is unchanged."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline matches the actual activity icon. Revised crop excludes the username completely, avoiding a partially clipped label."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame difference is exactly 612 pixels at x233/y2280, 30x26. No pixels change elsewhere; stability and restoration both zero."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies the positive activity icon colour in the profile bar."
+    }
+  }
+}

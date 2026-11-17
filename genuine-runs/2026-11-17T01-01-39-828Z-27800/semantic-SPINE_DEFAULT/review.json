@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f",
+    "stability.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f",
+    "after.png": "ee776475321436111746eaf4f38f87306a0e4dce6bddb182256f319fb24d9718",
+    "restored.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f"
+  },
+  "annotationSha256": "9addd418fc0bbf5d3f54c169cfdf069f3ce5ed2f17c74c3561da0363c66f0f3d",
+  "comparisonSha256": "7cca57395842bc46dd953ee81708b917c70a345f383e8bb548d0e813b332c18c",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "ThreadChannel connector style. Isolated override and runtime consumer stacks verified.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../first-effects-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full server before/after frames inspected; fictional names, initials and activity."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effects and native-scale comparisons inspected. Colours the connector lines between nested channels."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline identifies channel-list connector without covering the label; revised connector outline fits inside image."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Channel icons and labels stay unchanged. Full-frame effect matches native consumers. Zero stability/restoration drift."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the connector lines between nested channels."
+    }
+  }
+}

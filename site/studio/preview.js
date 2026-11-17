@@ -107,12 +107,24 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 		return { mock, ui, params: dry ? {} : state.params, base: store.base, state, dry }
 	}
 
+	function paintRenderedKeys(root) {
+		for (const el of root.querySelectorAll(KEYED)) {
+			for (const p of elKeys(el)) {
+				const used = p.raw ? usedRaw : usedSemantic
+				if (used.has(p.key)) continue
+				used.add(p.key)
+				phone.style.setProperty(`${p.raw ? '--r-' : '--c-'}${p.key}`, (p.raw ? store.rawColor(p.key) : store.color(p.key)) || 'transparent')
+			}
+		}
+		applyKeys(root)
+	}
+
 	function render() {
 		const screen = screens[state.screen]
 		const scrollers = [...screenEl.querySelectorAll('[data-scroll]')].map(el => [el.dataset.scroll, el.scrollTop])
 		screenEl.innerHTML = screen.render(ctxFor(state.screen))
 		screenEl.dataset.screen = state.screen
-		applyKeys(screenEl)
+		paintRenderedKeys(screenEl)
 		// keep scroll positions across re-renders of the same screen
 		if (render.last === state.screen)
 			for (const [name, top] of scrollers) {
@@ -129,7 +141,7 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 		overlayEl.innerHTML = ov ? ov.render(ctxFor(state.overlay)) : ''
 		overlayEl.dataset.overlay = state.overlay || ''
 		if (ov) {
-			applyKeys(overlayEl)
+			paintRenderedKeys(overlayEl)
 			ov.mounted?.(overlayEl, ctxFor(state.overlay))
 		}
 		pinned = null
@@ -147,10 +159,22 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 		onNavigate?.(state)
 	}
 
+	// Where Back leads when there's no history to return to, as in Discord's own navigation
+	const PARENT = { ...Object.fromEntries(Object.values(screens).filter(screen => screen.group === 'Settings').map(screen => [screen.id, 'settings'])), 'theme-fonts': 'themes', 'theme-icons': 'themes', 'theme-emojis': 'themes', chat: 'server', bots: 'server', forum: 'server', search: 'bots', channelinfo: 'bots', dm: 'home', inbox: 'home', you: 'home', quests: 'you', shop: 'you', nitro: 'you', profile: 'home', settings: 'you', plugins: 'settings', colors: 'themes', components: 'settings', appearance: 'settings', 'web-browser': 'settings', advanced: 'settings', 'discord-theme': 'appearance', server: 'home' }
+	// Leaving a chat always lands on its channel or DM list, as on Discord; other pages step back through history
+	const CHATS = new Set(['chat', 'bots', 'forum', 'dm'])
 	function back() {
 		if (state.overlay) return close()
+		if (CHATS.has(state.screen)) {
+			const parent = PARENT[state.screen]
+			while (state.history.length && state.history.at(-1)[0] !== parent) state.history.pop()
+			state.history.pop()
+			return go(parent, {}, { push: false })
+		}
 		const prev = state.history.pop()
-		if (prev) go(prev[0], prev[1], { push: false })
+		if (prev) return go(prev[0], prev[1], { push: false })
+		const parent = PARENT[state.screen]
+		if (parent) go(parent, {}, { push: false })
 	}
 
 	function open(id, params = {}) {
@@ -179,12 +203,12 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 		const el = document.createElement('div')
 		const keys = kind === 'critical'
 			? 'bg:TOAST_CRITICAL_BACKGROUND bd:TOAST_CRITICAL_BORDER'
-			: kind === 'success' ? 'bg:TOAST_SUCCESS_BACKGROUND bd:TOAST_SUCCESS_BORDER' : 'bg:MOBILE_TOAST_BACKGROUND_DEFAULT bd:BORDER_SUBTLE'
-		const iconKeys = kind === 'critical' ? 'fg:ICON_FEEDBACK_CRITICAL' : kind === 'success' ? 'fg:ICON_FEEDBACK_POSITIVE' : 'fg:ICON_DEFAULT'
+			: kind === 'success' ? 'bg:TOAST_SUCCESS_BACKGROUND bd:TOAST_SUCCESS_BORDER' : 'bg:BACKGROUND_SURFACE_HIGHEST bd:BORDER_NORMAL'
+		const iconKeys = kind === 'critical' ? 'fg:ICON_FEEDBACK_CRITICAL' : kind === 'success' ? 'fg:ICON_FEEDBACK_POSITIVE' : 'fg:TEXT_STRONG'
 		el.className = 'vp-toast'
 		el.dataset.k = keys
 		el.dataset.n = kind === 'critical' ? 'Error notification' : kind === 'success' ? 'Success notification' : 'Toast'
-		el.innerHTML = `<span data-k="${iconKeys}">${toastIcon(kind)}</span><span data-k="fg:TEXT_DEFAULT">${text}</span>`
+		el.innerHTML = `<span data-k="${iconKeys}">${toastIcon(kind)}</span><span data-k="fg:${kind === 'critical' || kind === 'success' ? 'TEXT_DEFAULT' : 'TEXT_STRONG'}">${text}</span>`
 		toastEl.append(el)
 		applyKeys(el.parentElement)
 		setTimeout(() => el.classList.add('out'), state.holdToasts ? 1e9 : 2600)
@@ -196,7 +220,7 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 
 	// ---------- interaction
 
-	const api = { go, back, open, close, toast, render, renderOverlay, state }
+	const api = { go, back, open, close, toast, render, renderOverlay, state, setBase: base => { store.base = base } }
 
 	function runAction(el, kind, e) {
 		const owner = el.closest('.vp-overlay') ? overlays[state.overlay] : screens[state.screen]
@@ -227,8 +251,8 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 			return open(id, { arg, keepScreen: true })
 		}
 		if (go_) {
-			const [screen, arg] = go_.dataset.go.split(':')
-			return go(screen, arg ? { id: arg } : {})
+			const [screen, arg, ctx] = go_.dataset.go.split(':')
+			return go(screen, arg ? { id: arg, ...(ctx ? { ctx } : {}) } : {})
 		}
 	})
 
@@ -257,6 +281,76 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 		const [id, arg] = el.dataset.hold.split(':')
 		open(id, { arg, keepScreen: true })
 	})
+
+	// Drag to scroll, like a finger on the phone. A drag that moves more than a few pixels scrolls the
+	// nearest scrollable area and doesn't count as a tap.
+	let drag = null, dragged = false
+	const scrollerOf = el => {
+		for (let n = el; n && n !== phone; n = n.parentElement) {
+			const s = getComputedStyle(n)
+			if ((/(auto|scroll)/.test(s.overflowY) && n.scrollHeight > n.clientHeight + 1) || (/(auto|scroll)/.test(s.overflowX) && n.scrollWidth > n.clientWidth + 1)) return n
+		}
+		return null
+	}
+	// Sheets (menus, pickers, the server sheet, voice panel) can be pulled down to close, as on the phone
+	const SHEETS = '.vp-sheet, .vp-info-sheet, .vp-picker, .vp-voice'
+	let pull = null
+	phone.addEventListener('pointerdown', e => {
+		if (inspecting || e.button !== 0 || e.target.closest('input, textarea')) return
+		const el = scrollerOf(e.target)
+		dragged = false
+		const sheet = e.target.closest(SHEETS)
+		pull = sheet && overlayEl.contains(sheet) ? { sheet, y: e.clientY, x: e.clientX, id: e.pointerId, scroller: el, on: false } : null
+		drag = el && { el, x: e.clientX, y: e.clientY, top: el.scrollTop, left: el.scrollLeft, id: e.pointerId }
+	})
+	window.addEventListener('pointermove', e => {
+		if (!pull || e.pointerId !== pull.id) return
+		const scale = phone.getBoundingClientRect().width / phone.offsetWidth || 1
+		const dy = (e.clientY - pull.y) / scale, dx = (e.clientX - pull.x) / scale
+		// start pulling only on a downward drag while the sheet's own list is at its top
+		if (!pull.on) {
+			if (dy < 8 || Math.abs(dx) > dy || (pull.scroller && pull.scroller.scrollTop > 0)) return
+			pull.on = true; dragged = true; drag = null; cancelHold(); release()
+			pull.sheet.style.transition = 'none'
+		}
+		pull.dy = Math.max(0, dy)
+		pull.sheet.style.transform = `translateY(${pull.dy}px)`
+	})
+	window.addEventListener('pointerup', () => {
+		if (!pull) return
+		const p = pull
+		pull = null
+		if (!p.on) return
+		const h = p.sheet.offsetHeight || 400
+		p.sheet.style.transition = 'transform .18s ease-out'
+		if (p.dy > Math.min(140, h * 0.3)) {
+			p.sheet.style.transform = `translateY(${h}px)`
+			setTimeout(close, 170)
+		} else p.sheet.style.transform = ''
+	})
+	window.addEventListener('pointermove', e => {
+		if (!drag || e.pointerId !== drag.id) return
+		const dx = e.clientX - drag.x, dy = e.clientY - drag.y
+		if (!dragged && Math.abs(dx) + Math.abs(dy) < 6) return
+		if (!dragged) { dragged = true; cancelHold(); release() }
+		// the phone is scaled; convert screen pixels back to phone pixels
+		const scale = phone.getBoundingClientRect().width / phone.offsetWidth || 1
+		drag.el.scrollTop = drag.top - dy / scale
+		drag.el.scrollLeft = drag.left - dx / scale
+	})
+	let swipe = null
+	phone.addEventListener('pointerdown', e => { if (!inspecting && e.button === 0 && !e.target.closest('input, textarea')) swipe = { x: e.clientX, y: e.clientY, carousel: !!e.target.closest('[data-nitro-carousel]') } })
+	window.addEventListener('pointerup', e => {
+		drag = null
+		if (!swipe) return
+		if (swipe.carousel) { swipe = null; return }
+		const scale = phone.getBoundingClientRect().width / phone.offsetWidth || 1
+		const dx = (e.clientX - swipe.x) / scale, dy = (e.clientY - swipe.y) / scale
+		swipe = null
+		// a mostly sideways drag to the right: back, like swiping a chat away to the channel list
+		if (dx > 90 && Math.abs(dy) < dx * 0.5 && !state.overlay && PARENT[state.screen] && state.screen !== 'server') { dragged = true; back() }
+	})
+	phone.addEventListener('click', e => { if (dragged) { e.stopPropagation(); e.preventDefault(); dragged = false } }, true)
 
 	// Pressed colours: data-k-press swaps in while the pointer is down, as Discord's pressed states do
 	let pressed = null
@@ -408,7 +502,19 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 		return `left:${x}px;top:${Math.max(4, y)}px`
 	}
 
-	phone.addEventListener('scroll', () => requestAnimationFrame(drawMarks), true)
+	phone.addEventListener('scroll', e => {
+		const track = e.target
+		if (track.hasAttribute('data-nitro-carousel')) {
+			const index = Math.round(track.scrollLeft / (track.firstElementChild.offsetWidth + 8))
+			track.nextElementSibling.querySelectorAll('button').forEach((dot, i) => {
+				const key = i === index ? 'TEXT_BRAND' : 'BACKGROUND_MOD_STRONG'
+				dot.setAttribute('aria-current', String(i === index))
+				dot.dataset.k = 'bg:' + key
+				dot.style.backgroundColor = `var(--c-${key})`
+			})
+		}
+		requestAnimationFrame(drawMarks)
+	}, true)
 
 	/** Number of visible elements using a key, for the editor's "N on this screen" readout. */
 	function countKey(key, raw = false) {

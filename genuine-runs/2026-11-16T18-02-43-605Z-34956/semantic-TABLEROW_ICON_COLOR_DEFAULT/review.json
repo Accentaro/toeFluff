@@ -1,0 +1,53 @@
+{
+  "hashes": {
+    "before.png": "a5c4cdcbf0a1cb51d487a4641c8e47bcb151f9e1b76026519bc1ff4c9278c330",
+    "stability.png": "a5c4cdcbf0a1cb51d487a4641c8e47bcb151f9e1b76026519bc1ff4c9278c330",
+    "after.png": "161c8a1e0792a32269a12cf21354716c8ace2aac6bb1c7e2af90aaa600cd457b",
+    "restored.png": "a5c4cdcbf0a1cb51d487a4641c8e47bcb151f9e1b76026519bc1ff4c9278c330"
+  },
+  "annotationSha256": "87d420b7d359f0ad3306a50e4cdae610f11e721839d0870a8027d2348ccfbda8",
+  "comparisonSha256": "39dc85506478af29290c128e34dae8367d9108f1fe26ed1a3828be69ca6d63f4",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Observed key-specific runtime consumer stack supports this Settings use. Import-path association is explicitly inferred by component name. Original native TypeScript source text and exhaustive application-wide uses are not claimed.",
+      "references": [
+        "index.android.bundle:7167:1061 (TableRowIcon; runtime key-resolver trace)",
+        "design/components/TableRow/native/TableRowIcon.native.tsx (independently observed import; association to stack inferred by name)"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Inspected full originals and focused comparison: generic Settings labels, version string, plugin count, fixed time and native notification count only. No person/account names, messages, avatar photographs, contact details or connection values visible."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Leading icons in both Settings groups become pink. Row labels, chevrons, trailing details and section headings retain their original colours. Focused crop shows two complete icons. Full originals were inspected before cropping. The bottom partial next row is ordinary scroll-viewport continuation, not a rendering fault. Focused comparison includes complete representative components and unchanged scale."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Inspected rendered comparison after final SVG generation. Thin gold outline identifies leading row icon, remains outside its visible glyphs/edge, and matches the caption. Before/after use identical crop coordinates at native pixel scale; labels occupy separate margins."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Leading icons in both Settings groups become pink. Row labels, chevrons, trailing details and section headings retain their original colours. Focused crop shows two complete icons."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex capture_audit visual inspection 2026-11-16",
+      "notes": "Colours the leading icons in Settings rows."
+    }
+  },
+  "crop": [
+    18,
+    570,
+    1044,
+    330
+  ],
+  "scope": "One representative Settings usage, not exhaustive coverage of this key. No publication performed."
+}

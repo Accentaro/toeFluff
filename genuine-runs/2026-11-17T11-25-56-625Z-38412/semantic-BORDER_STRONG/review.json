@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "53c460eb34886a4cf26a9022a7ad709c154a1e6bd0b2b51e6739ed5ead7f9374",
+    "stability.png": "53c460eb34886a4cf26a9022a7ad709c154a1e6bd0b2b51e6739ed5ead7f9374",
+    "after.png": "64b31d42ab770fb9072c0c45312e95750cd28201ba6335d689d8d8c5d9329d45",
+    "restored.png": "53c460eb34886a4cf26a9022a7ad709c154a1e6bd0b2b51e6739ed5ead7f9374"
+  },
+  "annotationSha256": "6f360c9d5b799eeb65e4fa15fe4d5c747e7653241ffc9902f390d143c7a34d6a",
+  "comparisonSha256": "8f86233f91d70b3e0ae99468d19f52c949e27a585f96cda0c3c864efa800f4d2",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Card resolver trace confirms BORDER_STRONG; CardProps explicitly supports strong borders.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../../../Valence/ValenceBundle/bundle/lib/discord/src/types/index.ts"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Fictional inert card content; full frames inspected."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and original-scale comparison inspected; exact stability and restoration."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline follows measured strong border without obscuring it."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only lower card border changes; fill, text and upper card unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Colours the strong outline of a native Card."
+    }
+  }
+}

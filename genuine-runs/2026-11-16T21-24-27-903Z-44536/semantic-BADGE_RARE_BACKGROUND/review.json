@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "bef9ebc6a292d67dc324564327aefdefa4361510e723a0f8d1a33ea62345368b",
+    "stability.png": "bef9ebc6a292d67dc324564327aefdefa4361510e723a0f8d1a33ea62345368b",
+    "after.png": "8d990fc9d5507e9cab334469c62471d40c12a3a62213db8f87197dae0970ad47",
+    "restored.png": "bef9ebc6a292d67dc324564327aefdefa4361510e723a0f8d1a33ea62345368b"
+  },
+  "annotationSha256": "c3c42cfd289fb5cfbd775902f8479bb0df1f124b756c4ddc247ec5471e6a34b1",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Stock DesignSystemBadgeSetting renders Badge; captured parseThemedStyles consumer confirms exact rare-rarity key.",
+      "references": [
+        "modules/user_settings/defs/native/DesignSystemBadgeSetting.tsx",
+        "design/components/Badge/native/Badge.native.tsx",
+        "manifest.json#runtimeConsumerStacks"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full screen inspected: public native design-system labels only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full screen and each comparison inspected. Rare badge background changes cleanly in isolation."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Outline encloses affected component without covering it; revised border label describes actual solid native rendering. Original scale retained."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full-frame diff confined to badge; baseline stability and restoration both zero pixels."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Colours the rare badge background."
+    }
+  },
+  "comparisonSha256": "cf1043216cb62736003f200b4cec6bee84980c90fdfbe40293ca142ef9e85d09"
+}

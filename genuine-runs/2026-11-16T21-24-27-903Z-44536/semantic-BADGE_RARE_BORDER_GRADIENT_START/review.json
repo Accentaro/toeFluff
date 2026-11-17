@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "bef9ebc6a292d67dc324564327aefdefa4361510e723a0f8d1a33ea62345368b",
+    "stability.png": "bef9ebc6a292d67dc324564327aefdefa4361510e723a0f8d1a33ea62345368b",
+    "after.png": "fcc9ba2302bd2ac88dcef75f0d356ec321a1563eca47ed23d75c6076763906d6",
+    "restored.png": "bef9ebc6a292d67dc324564327aefdefa4361510e723a0f8d1a33ea62345368b"
+  },
+  "annotationSha256": "3f8cdba25b1eb4706047bf3108bb40b964ec10187830965692f8a9c2beb30ba1",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Stock DesignSystemBadgeSetting renders Badge; captured parseThemedStyles consumer confirms exact rare-rarity key.",
+      "references": [
+        "modules/user_settings/defs/native/DesignSystemBadgeSetting.tsx",
+        "design/components/Badge/native/Badge.native.tsx",
+        "manifest.json#runtimeConsumerStacks"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full screen inspected: public native design-system labels only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full screen and each comparison inspected. Rare badge solid outline changes; this build does not show a border gradient despite the token name."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Outline encloses affected component without covering it; revised border label describes actual solid native rendering. Original scale retained."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full-frame diff confined to badge; baseline stability and restoration both zero pixels."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Colours the rare badge outline in this native variant."
+    }
+  },
+  "comparisonSha256": "cf362c3c817b219102d0060a92f53ee5fa5289eadf4c7e386dc95703980348b7"
+}

@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "189a692d2b1b58984a17514ec7a0aa1afa152e2551aea08f45c159628bbde567",
+    "stability.png": "189a692d2b1b58984a17514ec7a0aa1afa152e2551aea08f45c159628bbde567",
+    "after.png": "af3f3793d82a53990c0d0028199c84eb3df003371d3630c95825f49fb7b63ddd",
+    "restored.png": "189a692d2b1b58984a17514ec7a0aa1afa152e2551aea08f45c159628bbde567"
+  },
+  "annotationSha256": "e6df44ba9fcfbfdb58766528a0815af484de515d06e1e34d595a2a9d455de58d",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "FormRadio/useRadioStyles resolves REDESIGN_INPUT_CONTROL_SELECTED through BRAND_500 on the Ash base. Runtime stacks and token alias verified.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks (Discord 352.6 / 352206)",
+        "../../../data/tokens.json#semantic.REDESIGN_INPUT_CONTROL_SELECTED.dark"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames contain only native theme entries and temporary QA identifier; no private profile or message data."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full before/after pair and focused native-scale comparison inspected. Only the selected radio fill changes; white centre remains unchanged. Baseline and restoration have zero pixel differences."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Final thin outline encloses the selected radio control without masking its centre. Native scale retained."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Entire screen difference is confined to the selected 63 by 63 pixel radio bounds. Theme swatches remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies the selected radio-control fill in Ash."
+    }
+  },
+  "comparisonSha256": "e89a7b4a93679c44e60eb2d004eb66e29e1a880f595935db38892bb6cc3eb615"
+}

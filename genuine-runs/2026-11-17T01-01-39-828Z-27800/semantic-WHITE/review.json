@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f",
+    "stability.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f",
+    "after.png": "dcce47ef7956a4db336c206b925f317789403e936cefb0895c4b720538f6d856",
+    "restored.png": "27049b6fe3cef23880336c813f2d30ea2a0f7f17c46d40537b2a42939ea3dc5f"
+  },
+  "annotationSha256": "1e87417198daea5f46e720b2fe7af161b380d15fc8f99d6ba72e9f8dd8809ec4",
+  "comparisonSha256": "d39c0d20d747b95212b9b044edd069afed0b10f63100b3b3a1bf696fbe218c4a",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "GuildIconInner and Badge. Isolated override and runtime consumer stacks verified.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../white-full-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full server before/after frames inspected; fictional names, initials and activity."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effects and native-scale comparisons inspected. Colours selected server initials and mention-count text."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline identifies selected server initials without covering the label; revised connector outline fits inside image."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Also changes mention-count text in the server rail. Full-frame effect matches native consumers. Zero stability/restoration drift."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours selected server initials and mention-count text."
+    }
+  }
+}

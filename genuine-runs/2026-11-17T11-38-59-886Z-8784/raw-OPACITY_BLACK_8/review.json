@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "a3303b9623f7c39eb5e1d4a9003fe6d25d696abbe2c05d342e44679d5c879f0e",
+    "stability.png": "a3303b9623f7c39eb5e1d4a9003fe6d25d696abbe2c05d342e44679d5c879f0e",
+    "after.png": "352547db1cb09e407f45addf8c5d0bbefa7b57c6f9fb44bcb6564279f445ac46",
+    "restored.png": "a3303b9623f7c39eb5e1d4a9003fe6d25d696abbe2c05d342e44679d5c879f0e"
+  },
+  "annotationSha256": "79aa0a98dbeaf5979f640940000e513f7ce45b35fe61a4ff0f5e7a76d9de10a3",
+  "comparisonSha256": "ad22fabcc43af34350788651cd4bfeab498c81ea5747d8f05a43baa7e652c4bb",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native Checkbox resolver traces and token alias confirm unchecked fill uses OPACITY_BLACK_8.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Native inert form playground, no personal data; full frames inspected."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full frames and original-scale comparison inspected; visible muted pink fill, exact stability/restoration."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Thin outline identifies unchecked fill without hiding the border."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Only unchecked checkbox fill and its antialiased inner edge change; checked box, labels and switches unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Tints the unchecked checkbox fill at native low opacity."
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "6c740ae19207f787557d71b26d5b2c98faf108db353cc17120635d7eebbd2f84",
+    "stability.png": "6c740ae19207f787557d71b26d5b2c98faf108db353cc17120635d7eebbd2f84",
+    "after.png": "efe1c3bce3239581366cd39c742460ed177e68df87c2b64919db7714a57dcd0f",
+    "restored.png": "6c740ae19207f787557d71b26d5b2c98faf108db353cc17120635d7eebbd2f84"
+  },
+  "annotationSha256": "b80083de86886d6a6452d97b0955ae8f96e994f62830fa2f1928587a0c0fd776",
+  "comparisonSha256": "0f27d946a7b5e97f8f88f43d3df51c38a00779bcdfc57f2f90887ee43668637d",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Raw palette definition resolves to BADGE_COMMON_BACKGROUND. Actual consumer stacks recorded during the independent raw override.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../full-frame-review.png",
+        "../comparison-review.png",
+        "../../../../publishing/toeFluff/data/tokens.json"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Inspected full native gallery frames: only stock labels and NEW badge, no personal data."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Native-scale comparisons and full-frame contact sheet inspected. Badge remains complete; only documented surface changes."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Outline accurately marks changed badge surface or text; no interface enlargement or recolouring."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame effect {'pixels': 3911, 'bounds': {'x': 482, 'y': 610, 'width': 116, 'height': 47}}; stability and restoration both zero pixels. Other gallery controls unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Supplies the common badge background through its semantic alias."
+    }
+  }
+}

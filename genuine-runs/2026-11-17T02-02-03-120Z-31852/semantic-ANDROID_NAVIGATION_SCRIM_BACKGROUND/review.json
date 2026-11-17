@@ -1,0 +1,48 @@
+{
+  "hashes": {
+    "before.png": "798bde0a6cdd53c67dd6cdf545234896ea9122a04e8d52ecd231a5f569db4911",
+    "stability.png": "798bde0a6cdd53c67dd6cdf545234896ea9122a04e8d52ecd231a5f569db4911",
+    "after.png": "704cfb3e046c073ea1cbce5ba659f2dd83c183baa0b508e2afc2cf2ae2dc20a0",
+    "restored.png": "798bde0a6cdd53c67dd6cdf545234896ea9122a04e8d52ecd231a5f569db4911"
+  },
+  "annotationSha256": "2bb3ab0f63e13ffd6fbb530636ebb89a610768e3824ae348acaf4bf756cf153c",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Catalogue definition and Ash mapping read. Runtime stacks identify NavScrim. The original ICON_MUTED description omitted its sheet-handle use; this capture demonstrates it.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../data/tokens.json",
+        "../first-review.png",
+        "../last-review.png"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full before/after inspected: standard Unicode People category; fictional channel visible behind scrim. No personal favourites or custom emoji are visible."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Full-frame sheets and native-scale annotated comparisons inspected. Native partial last row is ordinary scroll clipping; focused examples use complete controls."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Programmatic outline correctly surrounds the documented surface, glyph, placeholder or handle; no enlarged interface elements."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Stability and restoration are pixel-identical. Transparency blending and Android gesture-handle contrast are documented expected consequences; no unrelated content or geometry changed."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex",
+      "notes": "Colours the navigation strip while the picker is open. Android automatically adjusts gesture-handle contrast."
+    }
+  },
+  "comparisonSha256": "02bdd420510051d83bd1660906bb6ad1046f9eb98c9f5e427a37a638d0d3e9dd"
+}

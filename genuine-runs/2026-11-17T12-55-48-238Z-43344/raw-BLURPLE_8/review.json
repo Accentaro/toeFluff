@@ -1,0 +1,46 @@
+{
+  "hashes": {
+    "before.png": "ad091c0a30a6940f6e57b8ea317dcc059c9ea017f6c06d1eab56ceb09411531c",
+    "stability.png": "ad091c0a30a6940f6e57b8ea317dcc059c9ea017f6c06d1eab56ceb09411531c",
+    "after.png": "bfcfb3b7f86f6d7b3bb6206e0ddf37852e967a34353fd872a05025c001cf6f2d",
+    "restored.png": "ad091c0a30a6940f6e57b8ea317dcc059c9ea017f6c06d1eab56ceb09411531c"
+  },
+  "annotationSha256": "1c5eff2572bdbe2d7dac04b9234629640561ad96fa476656c917ab64784f7d0a",
+  "comparisonSha256": "2bf8672d5b12ac2220d13126d9d458ed00fdab7fe7a26050f57fc6b844d7f0d8",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Stock native markup parser produces everyone AST; original MarkupMention renderer resolves MENTION_FOREGROUND. BLURPLE_8 is its dark raw alias, captured independently.",
+      "references": [
+        "manifest.json#runtimeConsumerStacks",
+        "../../../native-mention-fixture.mjs"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Generic everyone mention and fictional meetup text; no account identifiers or interactive mention actions."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Full pairs and original-scale comparisons inspected. Exact stability/restoration and clear text change."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Outline identifies mention text without hiding the glyphs."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Mention background and surrounding text remain unchanged."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual/source review",
+      "notes": "Supplies mention text colour in the dark theme."
+    }
+  }
+}

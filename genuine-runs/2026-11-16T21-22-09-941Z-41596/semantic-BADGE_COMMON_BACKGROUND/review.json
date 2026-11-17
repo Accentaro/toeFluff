@@ -1,0 +1,47 @@
+{
+  "hashes": {
+    "before.png": "6c740ae19207f787557d71b26d5b2c98faf108db353cc17120635d7eebbd2f84",
+    "stability.png": "6c740ae19207f787557d71b26d5b2c98faf108db353cc17120635d7eebbd2f84",
+    "after.png": "f4510c22617713a2f2bd83e72775f918f7e8df6c2795c03ca1931b918f05ef0b",
+    "restored.png": "6c740ae19207f787557d71b26d5b2c98faf108db353cc17120635d7eebbd2f84"
+  },
+  "annotationSha256": "ec7499c99427dfb64781837bf908d38a35313e339937f694b37de66e3cf16937",
+  "checks": {
+    "source": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Stock DesignSystemBadgeSetting renders Badge; captured parseThemedStyles consumer confirms exact common-rarity key.",
+      "references": [
+        "modules/user_settings/defs/native/DesignSystemBadgeSetting.tsx",
+        "design/components/Badge/native/Badge.native.tsx",
+        "manifest.json#runtimeConsumerStacks"
+      ]
+    },
+    "privacy": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full screen inspected: public native design-system labels only."
+    },
+    "visual": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full screen and each comparison inspected: common rarity badge background changes cleanly in isolation."
+    },
+    "annotation": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Outline encloses affected component without covering it; labels outside native crop and original scale retained."
+    },
+    "unrelatedComponents": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Full-frame diff confined to badge; baseline stability and restoration both zero pixels."
+    },
+    "description": {
+      "status": "pass",
+      "reviewer": "Codex visual QA",
+      "notes": "Colours the common rarity badge background."
+    }
+  },
+  "comparisonSha256": "bd6cdb643694037ce6e53417512d070d36cf7cc954fead1b8ba3cdfbffec76cc"
+}
