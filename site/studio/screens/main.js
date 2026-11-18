@@ -105,7 +105,7 @@ export const server = {
 				${valenced.categories.map((cat, i) => `
 					<button class="vp-category" data-act="collapse:${i}" data-k="fg:TEXT_SUBTLE" data-n="Category">${esc(cat.name)} <span class="${collapsed[i] ? 'closed' : ''}">${icon('chevronDown', 14)}</span></button>
 					${cat.channels.filter(c => (!collapsed[i] || c.unread) && (ui.showAllVoice || c.type !== 'voice' || c.members?.length || (state.ui.voice?.joined && state.ui.voice.channel === c.id))).map(chan).join('')}`).join('')}
-				<button class="vp-show-voice" data-act="showvoice" data-k="bg:CONTROL_SECONDARY_BACKGROUND_DEFAULT fg:CONTROL_SECONDARY_TEXT_DEFAULT" data-n="Show all voice channels">${icon('speaker', 16)}${ui.showAllVoice ? 'Hide Voice Channels' : 'Show All'}</button>
+				<button class="vp-show-voice" data-act="showvoice" data-k="bg:CONTROL_SECONDARY_BACKGROUND_DEFAULT fg:CONTROL_SECONDARY_TEXT_DEFAULT" data-n="Show all voice channels"><span data-k="fg:INTERACTIVE_ICON_DEFAULT" data-n="Show all voice channels icon">${icon('speaker', 16)}</span>${ui.showAllVoice ? 'Hide Voice Channels' : 'Show All'}</button>
 				<div class="vp-dock-space"></div>`, 'Channel list panel')}
 		</div>
 		${dock()}
