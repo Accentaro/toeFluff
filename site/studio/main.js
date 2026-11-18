@@ -588,7 +588,7 @@ export async function mount(host) {
 			picker.set(info.own && HEX.test(info.own) ? info.own : info.value)
 			const users = [...store.usersOfRaw(key)].sort()
 			extra.innerHTML = `<h3>Used by ${users.length} semantic key${users.length === 1 ? '' : 's'} on some base</h3>
-				<p class="muted">Raw colours apply to every base. Semantic keys set in your theme win over them.</p>
+				<p class="muted">Raw colours apply to every base. Semantic overrides take priority only where a component uses that semantic key; native Android components can read raw colours directly.</p>
 				<div class="st-chips">${users.slice(0, 60).map(k => `<button class="st-chip${tested.has(k) ? '' : ' faint'}" data-select="${k}">${k}</button>`).join('')}${users.length > 60 ? `<span class="muted">and ${users.length - 60} more</span>` : ''}</div>`
 			return
 		}

@@ -553,6 +553,9 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 	render()
 
 	const unsubscribe = store.on('change', detail => paint(detail))
+	const unsubscribeBase = store.on('base', () => {
+		if (screenEl.querySelector('.vp-thread')) render()
+	})
 
 	// Live getters: Object.assign would copy their values once
 	Object.defineProperties(api, {
@@ -565,6 +568,7 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 		phone, device,
 		destroy() {
 			unsubscribe()
+			unsubscribeBase()
 			window.removeEventListener('pointerup', release)
 			cancelHold()
 		},

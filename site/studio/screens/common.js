@@ -80,9 +80,18 @@ function codeBlock(code, language) {
 	return `<div class="vp-codeblock vp-code-listing" data-k="${keys}" data-n="Fenced code block"><div class="vp-code-language" data-k="fg:TEXT_MUTED" data-n="Code language">${esc(language)}</div><ol>${code.split('\n').map(line => `<li><code>${esc(line)}</code></li>`).join('')}</ol></div>`
 }
 
-function threadCard(thread) {
-	const body = `<span class="vp-thread-top"><b data-k="fg:TEXT_STRONG">${esc(thread.name)}</b><span data-k="fg:TEXT_BRAND" data-n="Thread reply count">${thread.count} ${icon('chevronRight', 12)}</span></span><span data-k="fg:TEXT_MUTED">${esc(thread.last)}</span>`
-	const props = 'class="vp-thread" data-k="bg:MOBILE_THREAD_EMBED_BACKGROUND bd:BORDER_SUBTLE" data-n="Thread preview"'
+// Discord Android 352206 reads these native raw resources, bypassing semantic overrides.
+const threadColors = {
+	dark: ['NEUTRAL_64', 'NEUTRAL_1', 'NEUTRAL_4', 'BLUE_NEW_27'],
+	darker: ['NEUTRAL_79', 'NEUTRAL_2', 'NEUTRAL_5', 'BLUE_NEW_37'],
+	light: ['NEUTRAL_1', 'NEUTRAL_76', 'NEUTRAL_72', 'BLUE_NEW_53'],
+	midnight: ['NEUTRAL_96', 'NEUTRAL_10', 'NEUTRAL_12', 'BLUE_NEW_45'],
+}
+
+function threadCard(thread, base) {
+	const [background, title, text, link] = threadColors[base]
+	const body = `<span class="vp-thread-top"><b data-k="fg:@${title}" data-n="Thread title">${esc(thread.name)}</b><span data-k="fg:@${link}" data-n="Thread reply count">${thread.count} ${icon('chevronRight', 12)}</span></span><span data-k="fg:@${text}" data-n="Thread message preview">${thread.author ? `<b data-k="fg:@${title}" data-n="Thread preview author">${esc(thread.author)}</b> ` : ''}${esc(thread.last)}</span>`
+	const props = `class="vp-thread" data-k="bg:@${background} bd:BORDER_SUBTLE" data-n="Thread preview (Android raw colours)"`
 	return thread.route ? `<button ${props} data-go="${thread.route}">${body}</button>` : `<div ${props}>${body}</div>`
 }
 
@@ -101,13 +110,13 @@ export function nameOf(id) {
 }
 
 /** One chat message. `index` addresses it for reactions and the long-press menu. */
-export function message(m, index, { grouped = false, ui = {}, dm = false } = {}) {
+export function message(m, index, { grouped = false, ui = {}, dm = false, base = 'dark' } = {}) {
 	const where = dm ? '' : ':server'
 	const u = users[m.user] || users.me
 	if (m.threadStarted) return `<div class="vp-msg vp-thread-started" data-n="Thread started message">
 		<span class="vp-thread-start-icon" data-k="fg:ICON_MUTED" data-n="Thread started icon">${icon('thread', 20)}</span>
 		<i class="vp-thread-spine" data-k="bd:SPINE_DEFAULT" data-n="Chat thread connector (preview)"></i>
-		<div>${nameOf(u.id)} <span data-k="fg:TEXT_DEFAULT">started a thread:</span><b class="vp-thread-name" data-k="fg:TEXT_STRONG">${esc(m.thread.name)}</b><small data-k="fg:TEXT_MUTED">${esc(m.time)}</small>${threadCard(m.thread)}</div>
+		<div>${nameOf(u.id)} <span data-k="fg:TEXT_DEFAULT">started a thread:</span><b class="vp-thread-name" data-k="fg:TEXT_STRONG">${esc(m.thread.name)}</b><small data-k="fg:TEXT_MUTED">${esc(m.time)}</small>${threadCard(m.thread, base)}</div>
 	</div>`
 	const head = grouped ? '' : `<div class="vp-msg-head">${nameOf(u.id)}${u.bot ? '<span class="vp-app" data-k="bg:BACKGROUND_BRAND fg:WHITE" data-n="App badge">' + icon('check', 10) + 'APP</span>' : clanTag(u.tag)}<span class="vp-time" data-k="fg:TEXT_MUTED">${esc(m.time)}</span></div>`
 	const reply = m.reply ? `<div class="vp-reply"><i class="vp-reply-spine" data-k="bd:SPINE_DEFAULT" data-n="Reply line"></i>${avatar(m.reply.user, 16, { status: false })}${nameOf(m.reply.user)}${clanTag(users[m.reply.user]?.tag)}<span class="vp-reply-text" data-k="fg:TEXT_DEFAULT">${esc(m.reply.text)}</span></div>` : ''
@@ -132,7 +141,7 @@ export function message(m, index, { grouped = false, ui = {}, dm = false } = {})
 				${m.spoiler ? `<div class="vp-msg-text" data-k="fg:TEXT_STRONG">${esc(m.spoiler[0])} <button class="vp-spoiler${ui.spoiler ? ' open' : ''}" data-act="spoiler" data-k="${ui.spoiler ? 'bg:SPOILER_REVEALED_BACKGROUND' : 'bg:SPOILER_HIDDEN_BACKGROUND'}" data-n="${ui.spoiler ? 'Revealed spoiler' : 'Hidden spoiler'}">${esc(m.spoiler[1])}</button></div>` : ''}
 				${m.embed ? embed(m.embed) : ''}
 				${reactions(m.reactions, index, ui.reacted)}
-				${m.thread ? threadCard(m.thread) : ''}
+				${m.thread ? threadCard(m.thread, base) : ''}
 			</div>
 		</div>
 	</div>`

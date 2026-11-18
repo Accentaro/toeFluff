@@ -7,7 +7,7 @@ const channelName = id => valenced.categories.flatMap(c => c.channels).find(c =>
 
 export const chat = {
 	id: 'chat', title: 'Announcement channel', group: 'Conversations', capture: 'chat',
-	render({ params, ui }) {
+	render({ params, ui, base }) {
 		const c = channelName(params.id || 'announcements')
 		const msgs = [...announcements, ...(ui.sent?.[c.id] || [])]
 		return `${statusBar('STANDALONE_CHANNEL_CONTENT_BACKGROUND')}
@@ -15,7 +15,7 @@ export const chat = {
 		<div class="vp-chat" data-k="bg:CHANNEL_BACKGROUND_DEFAULT" data-n="Chat background" data-scroll="chat">
 			<div class="vp-msg-tail" data-k="fg:TEXT_STRONG">and force stopping the app multiple times. Recovery mode should trigger automatically and let you back in. You can reload the app again to exit recovery mode.<br><br>This doesn't seem to be a plugin issue. I'm looking into the root cause of it.</div>
 			<div class="vp-msg-tail-reactions">${reactionsRow([['✅', 13], ['🥔', 7]], 'tail', ui)}</div>
-			${msgs.map((m, i) => message(m, `a.${i}`, { ui })).join('')}
+			${msgs.map((m, i) => message(m, `a.${i}`, { ui, base })).join('')}
 		</div>
 		${c.type === 'announcement' ? `<div class="vp-follow-wrap" data-k="bg:MOBILE_KEYBOARD_GAP_BACKGROUND" data-n="Under the chat"><div class="vp-follow" data-k="bg:BACKGROUND_SURFACE_HIGH bd:BORDER_MUTED" data-n="Follow card">
 			<p data-k="fg:TEXT_DEFAULT">Follow to get this channel's updates in your own server.</p>
@@ -47,7 +47,7 @@ function reactionsRow(list, id, ui) {
 
 export const botsChat = {
 	id: 'bots', title: 'Text channel with unreads', group: 'Conversations', capture: 'chatinput',
-	render({ params, ui }) {
+	render({ params, ui, base }) {
 		const c = channelName(params.id || 'bots')
 		const msgs = [...bots.messages, ...(ui.sent?.[c.id] || [])]
 		return `${statusBar('STANDALONE_CHANNEL_CONTENT_BACKGROUND', '2:36')}
@@ -56,7 +56,7 @@ export const botsChat = {
 			${ui.dismissed ? '' : `<button class="vp-unread-bar" data-k="bg:BACKGROUND_BRAND fg:TEXT_OVERLAY_LIGHT" data-n="Unread banner" data-act="dismiss"><span>${bots.unread} new messages since ${bots.since}</span>${icon('close', 22)}</button>`}
 			<div class="vp-chat" data-k="bg:CHANNEL_BACKGROUND_DEFAULT" data-n="Chat background" data-scroll="chat">
 				<div class="vp-newdiv" data-k="bt:MOBILE_CHAT_NEW_MESSAGE_BORDER" data-n="New messages divider"><span data-k="fg:MOBILE_CHAT_NEW_MESSAGE_TEXT bg:CHANNEL_BACKGROUND_DEFAULT" data-n="NEW MESSAGES label">NEW MESSAGES</span></div>
-				${msgs.map((m, i) => message(m, `b.${i}`, { ui })).join('')}
+				${msgs.map((m, i) => message(m, `b.${i}`, { ui, base })).join('')}
 			</div>
 			<button class="vp-jump" data-k="bg:MOBILE_FLOATINGBAR_BACKGROUND fg:INTERACTIVE_ICON_DEFAULT" data-n="Jump to latest button" data-act="jump" aria-label="Jump to latest">${icon('arrowDown', 22)}</button>
 			${bots.typing ? `<div class="vp-typing" data-k="bg:BACKGROUND_BASE_LOWER" data-n="Typing indicator"><span class="vp-typing-dots" data-k="fg:TEXT_DEFAULT"><i></i><i></i><i></i></span><b data-k="fg:TEXT_STRONG">${esc(bots.typing)}</b><span data-k="fg:TEXT_DEFAULT"> is typing...</span></div>` : ''}
@@ -79,34 +79,34 @@ export const botsChat = {
 
 export const chatExamples = {
 	id: 'chat-examples', title: 'Threads, markdown & counts', group: 'Conversations',
-	render({ ui }) {
+	render({ ui, base }) {
 		const messages = [
 			{ user: 'nova', time: '10:12', text: '**Palette notes** • Try `rosewood` for the accent. The draft is at https://example.test/palettes', quote: 'Keep the highlights readable on a dark background.' },
 			{ user: 'ren', time: '10:15', text: 'Here’s the draft configuration:', language: 'JSON', code: '{\n  "name": "Rosewood",\n  "accent": "#AF5572"\n}' },
-			{ user: 'nova', time: '10:18', threadStarted: true, thread: { name: 'Workshop palettes', count: 14, last: 'Ren: I added a softer accent.', route: 'thread-chat' } },
+			{ user: 'nova', time: '10:18', threadStarted: true, thread: { name: 'Workshop palettes', count: 14, author: 'Ren', last: 'I added a softer accent.', route: 'thread-chat' } },
 			{ user: 'ren', time: '10:20', text: '@Juniper the palette is ready for a second look.', mentionsMe: true },
 		]
-		return exampleConversation('palette-lab', [...messages, ...(ui.sent?.['chat-examples'] || [])], ui, 12)
+		return exampleConversation('palette-lab', [...messages, ...(ui.sent?.['chat-examples'] || [])], ui, 12, base)
 	},
 	actions: chatActions('chat-examples'),
 }
 
 export const threadChat = {
 	id: 'thread-chat', title: 'Thread conversation', group: 'Conversations',
-	render({ ui }) {
+	render({ ui, base }) {
 		const messages = [
 			{ user: 'nova', time: '10:18', text: 'Let’s compare the warm and cool accents here.' },
 			{ user: 'ren', time: '10:22', text: 'I added a softer accent. It works well next to the slate background.', reply: { user: 'nova', text: 'Let’s compare the warm and cool accents here.' } },
 		]
-		return exampleConversation('Workshop palettes', [...messages, ...(ui.sent?.['thread-chat'] || [])], ui)
+		return exampleConversation('Workshop palettes', [...messages, ...(ui.sent?.['thread-chat'] || [])], ui, undefined, base)
 	},
 	actions: chatActions('thread-chat'),
 }
 
-function exampleConversation(name, messages, ui, count) {
+function exampleConversation(name, messages, ui, count, base) {
 	return `${statusBar('STANDALONE_CHANNEL_CONTENT_BACKGROUND')}
 		${channelHeader({ type: count ? 'text' : 'thread', name, count })}
-		<div class="vp-chat" data-k="bg:CHANNEL_BACKGROUND_DEFAULT" data-n="Chat background" data-scroll="chat">${messages.map((m, i) => message(m, `example.${i}`, { ui })).join('')}</div>
+		<div class="vp-chat" data-k="bg:CHANNEL_BACKGROUND_DEFAULT" data-n="Chat background" data-scroll="chat">${messages.map((m, i) => message(m, `example.${i}`, { ui, base })).join('')}</div>
 		${chatInput({ placeholder: `Message ${count ? '#' : ''}${name}`, active: ui.focused, value: ui.draft || '' })}
 		${navBar('MOBILE_KEYBOARD_GAP_BACKGROUND')}`
 }
