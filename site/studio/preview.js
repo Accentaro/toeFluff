@@ -449,6 +449,13 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 			if (bg && !own.some(o => o.key === bg.key)) context.push({ ...bg, name: p.dataset.n || '' })
 			p = p.parentElement
 		}
+		// Surface colours belong in the editable parts even when the click lands on text or emoji artwork.
+		if (state.overlay === 'msgmenu' || el.closest('.vp-member-card')) {
+			for (let i = context.length - 1; i >= 0; i--) {
+				if (['CARD_MUTED_BG', 'MOBILE_EMOJI_BUTTON_BACKGROUND', 'TABLEROW_BACKGROUND_DEFAULT'].includes(context[i].key))
+					own.unshift(...context.splice(i, 1))
+			}
+		}
 		return {
 			name: TAB_PARTS[tabPart] || el.dataset.n || el.dataset.fixed || guessName(el),
 			fixed: el.dataset.fixed && !own.length ? el.dataset.fixed : null,

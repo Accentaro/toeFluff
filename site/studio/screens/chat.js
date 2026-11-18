@@ -3,6 +3,20 @@ import { announcements, bots, memberGroups, users, valenced } from '../mock.js'
 import { avatar, channelHeader, chatInput, clanTag, esc, icon, md, message, nameOf, navBar, statusBar } from './common.js'
 import { chatActions } from './main.js'
 
+// Fictional collectible artwork; its palette is independent of theme colours.
+const memberNameplates = { palm: 'aurora', nova: 'stars', mika: 'aurora' }
+function memberRow([id, status, kind], i, list) {
+	const u = users[id], plate = memberNameplates[id]
+	return `<button class="vp-member vp-member-card${plate ? ' has-nameplate' : ''}" data-go="profile:${id}:server" data-k="bg:${plate ? 'TABLEROW_BACKGROUND_DEFAULT' : 'CARD_MUTED_BG'}" data-n="${plate ? 'Member row with nameplate' : 'Member row without nameplate'}">
+		${plate ? `<span class="vp-member-art ${plate}" data-fixed="Nameplate artwork (collectible palette, not a theme colour)"><i></i></span>` : ''}
+		${avatar(id, 32, { status: u.status !== 'offline' })}
+		<span class="vp-member-text${i < list.length - 1 ? ' divided' : ''}" ${i < list.length - 1 ? 'data-k="bb:BORDER_SUBTLE" data-n="Member row divider"' : ''}>
+			<span class="vp-member-name"><b style="color:${u.role || 'inherit'}" ${u.role ? 'data-fixed="Role colour (set by the server)"' : 'data-k="fg:MOBILE_TEXT_HEADING_PRIMARY" data-n="Member name"'}>${esc(u.name)}</b>${u.bot ? `<span class="vp-app" data-k="bg:BACKGROUND_BRAND fg:WHITE" data-n="App badge">${icon('check', 12)} APP</span>` : clanTag(u.tag)}</span>
+			${status ? `<small data-k="fg:TEXT_DEFAULT" data-n="Member activity">${kind === 'game' ? `<span data-k="fg:TEXT_FEEDBACK_POSITIVE">${icon('games', 14)}</span>` : ''}${esc(status)}</small>` : ''}
+		</span>
+	</button>`
+}
+
 const channelName = id => valenced.categories.flatMap(c => c.channels).find(c => c.id === id) || { name: id, type: 'text' }
 
 export const chat = {
@@ -185,15 +199,7 @@ export const search = {
 			<div class="vp-page-scroll" data-scroll="search">
 				${tab !== 'Members' ? searchTab(tab, ui) : groups.map(([g, list]) => `
 					<h2 class="vp-member-group" data-k="fg:TEXT_SUBTLE">${g} &mdash; ${list.length}</h2>
-					<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Member group">${list.map(([id, status, kind], i) => `
-						<button class="vp-member" data-go="profile:${id}:server" data-n="Member row">
-							${avatar(id, 40)}
-							<span class="vp-member-text${i < list.length - 1 ? ' divided' : ''}" data-k="bb:BORDER_SUBTLE">
-								<span class="vp-member-name"><b style="color:${users[id].role || 'inherit'}" ${users[id].role ? 'data-fixed="Role colour (set by the server)"' : 'data-k="fg:TEXT_STRONG"'}>${esc(users[id].name)}</b>${users[id].bot ? `<span class="vp-app" data-k="bg:BACKGROUND_BRAND fg:WHITE" data-n="App badge">APP</span>` : clanTag(users[id].tag)}</span>
-								<small data-k="fg:TEXT_DEFAULT">${kind === 'game' ? `<span data-k="fg:TEXT_FEEDBACK_POSITIVE">${icon('games', 14)}</span>` : ''}${esc(status)}</small>
-							</span>
-						</button>`).join('')}
-					</div>`).join('')}
+					<div class="vp-rowgroup vp-members">${list.map(memberRow).join('')}</div>`).join('')}
 			</div>
 		</div>
 		${navBar('MOBILE_ACTIONSHEET_BACKGROUND')}`
@@ -220,10 +226,9 @@ export const channelInfo = {
 		const tab = ui.tab || 'Members'
 		const c = channelName(params.id || 'bots')
 		const online = memberGroups.flatMap(([, l]) => l).filter(([id]) => users[id].status !== 'offline')
-		const offline = memberGroups.flatMap(([, l]) => l).filter(([id]) => users[id].status === 'offline')
+		const offline = [['mika', ''], ['ash', '']]
 		const group = (title, list) => list.length ? `<h2 class="vp-member-group" data-k="fg:TEXT_SUBTLE">${title} &mdash; ${list.length}</h2>
-			<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Member group">${list.map(([id, status], i) => `
-				<button class="vp-member" data-go="profile:${id}:server" data-n="Member row">${avatar(id, 40)}<span class="vp-member-text${i < list.length - 1 ? ' divided' : ''}" data-k="bb:BORDER_SUBTLE"><span class="vp-member-name"><b style="color:${users[id].role || 'inherit'}" ${users[id].role ? 'data-fixed="Role colour (set by the server)"' : 'data-k="fg:TEXT_STRONG"'}>${esc(users[id].name)}</b>${clanTag(users[id].tag)}</span><small data-k="fg:TEXT_DEFAULT">${esc(status)}</small></span></button>`).join('')}</div>` : ''
+			<div class="vp-rowgroup vp-members">${list.map(memberRow).join('')}</div>` : ''
 		return `${statusBar('MOBILE_ACTIONSHEET_BACKGROUND', '2:36')}
 		<div class="vp-page" data-k="bg:MOBILE_ACTIONSHEET_BACKGROUND" data-n="Channel page">
 			<header class="vp-page-header" data-n="Page header">
@@ -231,10 +236,10 @@ export const channelInfo = {
 				<span class="grow"></span>
 				${['search', 'bell', 'gear'].map(ic => `<button class="vp-icon-btn" ${ic === 'search' ? 'data-go="search"' : 'data-act="na"'} data-k="fg:INTERACTIVE_ICON_DEFAULT" data-n="Header button" aria-label="${ic}">${icon(ic, 24)}</button>`).join('')}
 			</header>
-			<div class="vp-chaninfo-head"><span class="vp-chaninfo-tile" data-k="bg:BACKGROUND_MOD_MUTED fg:TEXT_STRONG" data-n="Channel icon tile">${icon('hash', 22)}</span><span><b data-k="fg:TEXT_STRONG">${esc(c.name)}</b><small data-k="fg:TEXT_MUTED">Text Channel</small></span></div>
+			<div class="vp-chaninfo-head"><span class="vp-chaninfo-tile" data-k="bg:BACKGROUND_MOD_MUTED fg:TEXT_STRONG" data-n="Channel icon tile">${icon('hash', 22)}</span><span><b data-k="fg:TEXT_STRONG">${esc(c.name)}</b><small data-k="fg:TEXT_MUTED">Valenced</small></span></div>
 			<nav class="vp-tabs" data-k="bb:BORDER_SUBTLE" data-n="Tabs">${['Members', 'Media', 'Pins', 'Threads', 'Links', 'Files'].map(t => `<button data-act="tab:${t}" class="${t === tab ? 'on' : ''}" data-k="fg:${t === tab ? 'TEXT_BRAND' : 'TEXT_MUTED'}" data-n="${t === tab ? 'Selected tab' : 'Tab'}">${t}${t === tab ? '<i data-k="bg:BACKGROUND_BRAND" data-n="Tab indicator"></i>' : ''}</button>`).join('')}</nav>
 			<div class="vp-page-scroll" data-scroll="channelinfo">
-				${tab === 'Members' ? `<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Grouped rows"><button class="vp-row" data-act="na" data-n="Settings row"><span class="vp-row-icon" data-k="fg:TABLEROW_ICON_COLOR_DEFAULT">${icon('gear', 24)}</span><span class="vp-row-label"><span data-k="fg:TEXT_STRONG">Manage channel access</span><span class="vp-chev" data-k="fg:INTERACTIVE_TEXT_DEFAULT">${icon('chevronRight', 20)}</span></span></button></div>${group('Online', online)}${group('Offline', offline)}` : searchTab(tab, ui)}
+				${tab === 'Members' ? `<div class="vp-rowgroup" data-k="bg:CONTROL_SECONDARY_BACKGROUND_DEFAULT" data-n="Manage channel access"><button class="vp-row" data-act="na" data-n="Settings row"><span class="vp-row-icon" data-k="fg:TABLEROW_ICON_COLOR_DEFAULT">${icon('gear', 24)}</span><span class="vp-row-label"><span data-k="fg:TEXT_STRONG">Manage channel access</span><span class="vp-chev" data-k="fg:INTERACTIVE_TEXT_DEFAULT">${icon('chevronRight', 20)}</span></span></button></div>${group('Online', online)}${group('Offline', offline)}` : searchTab(tab, ui)}
 			</div>
 		</div>
 		${navBar('MOBILE_ACTIONSHEET_BACKGROUND')}`

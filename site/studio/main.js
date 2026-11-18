@@ -59,7 +59,7 @@ export async function mount(host) {
 	// ---------- layout
 
 	host.innerHTML = `
-	<div class="st" data-view="preview" style="--keys-w:${ui.keysW}px;--edit-w:${ui.editW}px">
+	<div class="st" data-controls="collapsed" data-view="preview" style="--keys-w:${ui.keysW}px;--edit-w:${ui.editW}px">
 		<div class="st-bar">
 			<input class="st-name" aria-label="Theme name" spellcheck="false">
 			<div class="st-group">
@@ -86,7 +86,7 @@ export async function mount(host) {
 			<input type="file" class="st-file" accept=".json,.ts,.js,.txt,application/json" hidden>
 		</div>
 		<section class="st-section st-repair-banner" aria-label="Theme repairs" hidden></section>
-		<nav class="st-tabs" aria-label="Studio panels"><button data-view="keys">Keys</button><button data-view="edit">Edit</button><button data-view="preview">Preview</button></nav>
+		<nav class="st-tabs" aria-label="Studio panels"><button data-view="keys">Keys</button><button data-view="edit">Edit</button><button data-view="preview">Preview</button><button class="st-controls-toggle" aria-expanded="false">Controls</button></nav>
 		<div class="st-body${ui.keysHidden ? ' keys-hidden' : ''}">
 			<aside class="st-keys" aria-label="Theme keys">
 				<div class="st-keys-head">
@@ -210,7 +210,7 @@ export async function mount(host) {
 				const first = info.props.find(p => !p.pressed) || info.props[0]
 				select(first.key, first.raw, { from: 'inspector' })
 			} else renderProperty()
-			if (matchMedia('(max-width: 900px)').matches) setView('edit')
+			if (matchMedia('(max-width: 900px)').matches) setView('inspect')
 		},
 		onNavigate: () => {
 			syncScreenSelect()
@@ -846,6 +846,14 @@ export async function mount(host) {
 			</div>
 		</section>
 		<section class="st-section">
+			<h3>Tweaks</h3>
+			<p class="small muted">Make reaction buttons and grouped menu rows fully opaque, keeping their colours on every base. This also affects other cards that share the grouped-row colour.</p>
+			<button data-cmd="opaque-menu">Make menu backgrounds opaque</button>
+			<p class="small muted">Make member rows with and without nameplates fully opaque on every base. Keeps the nameplate artwork. These colours also affect other cards and table rows.</p>
+			<button data-cmd="opaque-members">Make member backgrounds opaque</button>
+			<p class="small muted">Included in JSON and plugin exports. Undo restores the previous colours.</p>
+		</section>
+		<section class="st-section">
 			<h3>Bases</h3>
 			<p class="muted small">Ash ${count('dark')}, Dark ${count('darker')}, Light ${count('light')}, Onyx ${count('midnight')} semantic colours; ${Object.keys(t.raw).length} raw.</p>
 			${LINKABLE.map(b => `<label class="st-check"><input type="checkbox" data-link="${b}" ${t.links[b] ? 'checked' : ''}> ${BASE_NAMES[b]} follows Ash</label>`).join('')}
@@ -899,6 +907,16 @@ export async function mount(host) {
 		if (e.target.closest('[data-cmd="repair"]')) {
 			setTab('repair')
 			if (matchMedia('(max-width: 900px)').matches) setView('edit')
+		}
+		if (e.target.closest('[data-cmd="opaque-menu"]')) {
+			try {
+				VT.toast(store.makeMenuBackgroundsOpaque() ? 'Menu backgrounds are opaque. Undo restores the previous colours.' : 'Menu backgrounds are already opaque.')
+			} catch (error) { VT.toast(error.message) }
+		}
+		if (e.target.closest('[data-cmd="opaque-members"]')) {
+			try {
+				VT.toast(store.makeMemberBackgroundsOpaque() ? 'Member backgrounds are opaque. Undo restores the previous colours.' : 'Member backgrounds are already opaque.')
+			} catch (error) { VT.toast(error.message) }
 		}
 		if (e.target.closest('[data-cmd="repair-all"]')) updateTheme()
 	})
@@ -1084,11 +1102,17 @@ export async function mount(host) {
 	function setView(v) {
 		ui.view = v
 		root.dataset.view = v
-		host.querySelectorAll('.st-tabs button').forEach(b => {
-			b.classList.toggle('on', b.dataset.view === v)
-			b.setAttribute('aria-pressed', String(b.dataset.view === v))
+		host.querySelectorAll('.st-tabs [data-view]').forEach(b => {
+			b.classList.toggle('on', b.dataset.view === (v === 'inspect' ? 'preview' : v))
+			b.setAttribute('aria-pressed', String(b.dataset.view === (v === 'inspect' ? 'preview' : v)))
 		})
-		if (v === 'preview') requestAnimationFrame(layoutPhone)
+		if (v === 'preview' || v === 'inspect') requestAnimationFrame(layoutPhone)
+	}
+	$('.st-controls-toggle').onclick = e => {
+		const expanded = root.dataset.controls !== 'expanded'
+		root.dataset.controls = expanded ? 'expanded' : 'collapsed'
+		e.currentTarget.setAttribute('aria-expanded', String(expanded))
+		e.currentTarget.textContent = expanded ? 'Hide controls' : 'Controls'
 	}
 	host.querySelector('.st-tabs').addEventListener('click', e => {
 		const v = e.target.closest('[data-view]')?.dataset.view

@@ -266,6 +266,20 @@
 .vp .vp-member-text.divided { border-bottom-style: solid; }
 .vp .vp-member-name { display: flex; align-items: center; gap: 6px; font-size: 16px; font-weight: 600; }
 .vp .vp-member-text small { font-size: 14px; display: flex; gap: 4px; align-items: center; white-space: nowrap; overflow: hidden; }
+.vp .vp-members { background: transparent; overflow: hidden; }
+.vp .vp-member-card { position: relative; isolation: isolate; padding-right: 12px; }
+.vp .vp-member-card .vp-member-text { position: relative; min-height: 56px; padding: 8px 0; }
+.vp .vp-member-card .vp-av { position: relative; flex: none; }
+.vp .vp-member-card .vp-member-name { min-height: 20px; }
+.vp .vp-member-card .vp-member-name b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.vp .vp-member-card .vp-app { display: inline-flex; align-items: center; gap: 3px; }
+.vp .vp-member-art { position: absolute; inset: 0; z-index: -1; overflow: hidden; background: linear-gradient(90deg, transparent 10%, #08646026); }
+.vp .vp-member-art i { position: absolute; inset: -40% -10%; opacity: .45; animation: vp-nameplate-drift 8s ease-in-out infinite alternate; }
+.vp .vp-member-art.aurora i { background: radial-gradient(ellipse at 90% 80%, #7deed755, transparent 55%), repeating-linear-gradient(125deg, transparent 0 24px, #7deed71f 28px, transparent 34px 60px); }
+.vp .vp-member-art.stars { background: linear-gradient(90deg, transparent 10%, #730bc826); }
+.vp .vp-member-art.stars i { background: radial-gradient(circle at 70% 35%, #efd9ff 0 1px, transparent 2px), radial-gradient(circle at 88% 65%, #efd9ff 0 2px, transparent 3px), radial-gradient(circle at 52% 55%, #efd9ff 0 1px, transparent 2px), radial-gradient(ellipse at right, #972fed55, transparent 65%); }
+@keyframes vp-nameplate-drift { to { transform: translateX(8px); opacity: .75; } }
+@media (prefers-reduced-motion: reduce) { .vp .vp-member-art i { animation: none; } }
 .vp .vp-page, .vp .vp-rowgroup { --ring: var(--c-MOBILE_ACTIONSHEET_BACKGROUND); }
 
 /* Forum */

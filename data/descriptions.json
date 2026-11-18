@@ -333,11 +333,11 @@
     },
     "CARD_MUTED_BG": {
       "area": "Rows, cards and inputs",
-      "text": "Colours the rounded cards that group Settings rows."
+      "text": "Colours grouped Settings and action-sheet rows, and member rows without nameplates."
     },
     "TABLEROW_BACKGROUND_DEFAULT": {
       "area": "Rows, cards and inputs",
-      "text": "Colours the default plugin-card background."
+      "text": "Colours the default plugin-card background and member rows with nameplates. Nameplate artwork keeps its own palette."
     },
     "INPUT_BACKGROUND_DEFAULT": {
       "area": "Rows, cards and inputs",

@@ -155,6 +155,20 @@ export function createStore({ tokens, initialTheme, persistent = true }) {
 		return set
 	}
 
+	/** Keep every base's effective colour, but require an explicit opaque alpha. */
+	function makeBackgroundsOpaque(keys) {
+		const next = structuredClone(theme)
+		for (const b of BASES) for (const key of keys) {
+			const info = semanticInfo(key, b)
+			if (info.invalid || !info.value || !HEX.test(info.value))
+				throw new Error(`Choose a valid ${BASE_NAMES[b]} colour for ${key} first.`)
+			next.semantic[b][key] = expand(info.value).slice(0, 7) + 'ff'
+		}
+		if (JSON.stringify(next.semantic) === JSON.stringify(theme.semantic)) return false
+		store.replace(next, 'background-opacity')
+		return true
+	}
+
 	const store = {
 		tokens,
 		get theme() { return theme },
@@ -200,6 +214,13 @@ export function createStore({ tokens, initialTheme, persistent = true }) {
 			else theme.raw[name] = value
 			persist()
 			emit('change', { raw: [name], semantic: [...usersOfRaw(name)] })
+		},
+
+		makeMenuBackgroundsOpaque() {
+			return makeBackgroundsOpaque(['CARD_MUTED_BG', 'MOBILE_EMOJI_BUTTON_BACKGROUND'])
+		},
+		makeMemberBackgroundsOpaque() {
+			return makeBackgroundsOpaque(['CARD_MUTED_BG', 'TABLEROW_BACKGROUND_DEFAULT'])
 		},
 
 		/** Resets a key on every base. */

@@ -520,7 +520,7 @@
     {
       "key": "CARD_MUTED_BG",
       "area": "Rows, cards and inputs",
-      "description": "Colours the rounded cards that group Settings rows.",
+      "description": "Colours grouped Settings and action-sheet rows, and member rows without nameplates.",
       "image": "images/verified/semantic-CARD_MUTED_BG-settings.png",
       "screens": [
         "actionsheet",
@@ -2440,7 +2440,7 @@
     {
       "key": "TABLEROW_BACKGROUND_DEFAULT",
       "area": "Rows, cards and inputs",
-      "description": "Colours the default plugin-card background.",
+      "description": "Colours the default plugin-card background and member rows with nameplates. Nameplate artwork keeps its own palette.",
       "image": "images/verified/semantic-TABLEROW_BACKGROUND_DEFAULT-plugins.png",
       "screens": [
         "plugins",
