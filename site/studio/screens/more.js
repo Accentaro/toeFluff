@@ -1,7 +1,7 @@
 // Voice channel panel, chat box sheets (attachments, gifts), search filters and the server info page.
 // Voice panel keys are from the Discord 352 capture; the others follow the sheets they share a design with.
-import { users, valenced } from '../mock.js'
-import { avatar, esc, icon, navBar, rowGroup, sectionLabel, statusBar, switchEl } from './common.js'
+import { users, valenced, serverIcon, servers } from '../mock.js'
+import { valencedWordmark, avatar, esc, icon, navBar, rowGroup, sectionLabel, statusBar, switchEl } from './common.js'
 
 const scrim = () => `<div class="vp-scrim" data-close data-k="bg:BACKGROUND_SCRIM" data-n="Scrim"></div>`
 const navScrim = () => `<div class="vp-nav-scrim" data-k="bg:ANDROID_NAVIGATION_SCRIM_BACKGROUND" data-n="Navigation bar while a sheet is open"><i data-fixed="Android gesture handle (system)"></i></div>`
@@ -12,10 +12,11 @@ const notInPreview = ({ api }) => api.toast('default', 'Not available in the pre
 export const voice = {
 	id: 'voice', title: 'Voice channel', group: 'Server', capture: 'voice', screen: 'server',
 	render({ state }) {
-		const c = valenced.categories.flatMap(x => x.channels).find(x => x.id === state.overlayParams?.arg) || { name: 'Lounge', members: ['nova', 'ren'] }
+		const c = valenced.categories.flatMap(x => x.channels).find(x => x.id === state.overlayParams?.arg) || { name: 'Lounge', members: ['nova', 'ren'], speaking: ['nova'] }
 		const people = c.members || []
 		const own = (state.ui.voice ??= {})
-		return `<div class="vp-voice" data-k="bg:BACKGROUND_BASE_LOWER" data-n="Voice channel panel">
+		const joined = own.joined && own.channel === (c.id || 'voice')
+		return `<div class="vp-voice${joined ? ' joined' : ''}" data-k="bg:BACKGROUND_BASE_LOWER" data-n="Voice channel panel">
 			<div class="vp-voice-top">
 				<button class="vp-voice-pill sq" data-close data-k="bg:CONTROL_OVERLAY_SECONDARY_BACKGROUND_DEFAULT fg:CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT" data-n="Collapse button">${icon('chevronDown', 20)}</button>
 				<button class="vp-voice-pill" data-k="bg:CONTROL_OVERLAY_SECONDARY_BACKGROUND_DEFAULT fg:CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT" data-n="Channel name">${esc(c.name)} ${icon('chevronRight', 16)}</button>
@@ -23,13 +24,14 @@ export const voice = {
 				<button class="vp-voice-pill sq" data-k="bg:CONTROL_OVERLAY_SECONDARY_BACKGROUND_DEFAULT fg:CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT" data-n="Speaker button">${icon('speaker', 20)}</button>
 			</div>
 			${people.length
-				? `<div class="vp-voice-tiles">${people.map(id => `<div class="vp-voice-tile" data-k="bg:VOICE_VIDEO_VIDEO_TILE_BACKGROUND" data-n="Person tile">${avatar(id, 64, { status: false })}<span class="vp-voice-name" data-k="bg:BACKGROUND_SCRIM fg:TEXT_OVERLAY_LIGHT" data-n="Name label">${esc(users[id].name)}</span></div>`).join('')}</div>`
+				? joined ? `<div class="vp-voice-tiles">${people.map(id => `<div class="vp-voice-tile${c.speaking?.includes(id) ? ' speaking' : ''}" data-k="bg:VOICE_VIDEO_VIDEO_TILE_BACKGROUND${c.speaking?.includes(id) ? ' bd:STATUS_SPEAKING' : ''}" data-n="${c.speaking?.includes(id) ? 'Speaking person tile' : 'Person tile'}">${avatar(id, 64, { status: false })}<span class="vp-voice-name" data-k="bg:BACKGROUND_SCRIM fg:TEXT_OVERLAY_LIGHT" data-n="Name label">${esc(users[id].name)}</span></div>`).join('')}</div>`
+				: `<div class="vp-voice-people"><p data-k="fg:TEXT_SUBTLE" data-n="Voice participant count">${people.length} ${people.length === 1 ? 'Person' : 'People'} in Voice</p><div class="vp-voice-people-list" data-k="bg:CARD_MUTED_BG" data-n="Voice participants">${people.map(id => `<div class="vp-voice-person">${avatar(id, 32, { status: false })}<span data-k="fg:TEXT_DEFAULT" data-n="Voice participant name">${esc(users[id].name)}</span></div>`).join('')}</div></div>`
 				: `<p class="vp-voice-empty" data-k="fg:TEXT_DEFAULT">No one's here yet!<br>When you are ready to talk, just hop in.</p>`}
 			<div class="vp-voice-bar" data-k="bg:MOBILE_FLOATINGBAR_BACKGROUND bd:BORDER_SUBTLE" data-n="Voice controls">
 				${handle()}
 				<div class="vp-voice-controls">
-					<button class="vp-voice-btn" data-act="mute" data-k="${own.unmuted ? 'bg:CONTROL_SECONDARY_BACKGROUND_DEFAULT fg:INTERACTIVE_ICON_DEFAULT' : 'bg:BACKGROUND_VOICE_MUTED fg:ICON_VOICE_MUTED'}" data-n="${own.unmuted ? 'Microphone' : 'Microphone (muted)'}">${icon('mic', 24)}</button>
-					<button class="vp-voice-join" data-act="join" data-k="${own.joined ? 'bg:CONTROL_CRITICAL_PRIMARY_BACKGROUND_DEFAULT fg:CONTROL_CRITICAL_PRIMARY_TEXT_DEFAULT' : 'bg:CONTROL_CONNECTED_BACKGROUND_DEFAULT fg:TEXT_OVERLAY_LIGHT'}" data-n="${own.joined ? 'Leave button' : 'Join Voice button'}">${own.joined ? 'Disconnect' : 'Join Voice'}</button>
+					<button class="vp-voice-btn" data-act="mute" data-k="${own.unmuted ? 'bg:CONTROL_SECONDARY_BACKGROUND_DEFAULT fg:INTERACTIVE_ICON_DEFAULT' : 'bg:BACKGROUND_VOICE_MUTED fg:ICON_VOICE_MUTED'}" data-n="${own.unmuted ? 'Microphone' : 'Microphone (muted)'}">${icon(own.unmuted ? 'mic' : 'micOff', 24)}</button>
+					<button class="vp-voice-join" data-act="join" data-k="${joined ? 'bg:CONTROL_CRITICAL_PRIMARY_BACKGROUND_DEFAULT fg:CONTROL_CRITICAL_PRIMARY_TEXT_DEFAULT' : 'bg:CONTROL_CONNECTED_BACKGROUND_DEFAULT fg:TEXT_OVERLAY_LIGHT'}" data-n="${joined ? 'Leave button' : 'Join Voice button'}">${joined ? 'Disconnect' : 'Join Voice'}</button>
 					<button class="vp-voice-btn plain" data-act="na" data-k="fg:ICON_STRONG" data-n="Text chat button">${icon('chat', 24)}</button>
 				</div>
 			</div>
@@ -40,9 +42,11 @@ export const voice = {
 		mute: ({ api }) => { api.state.ui.voice.unmuted = !api.state.ui.voice.unmuted; return 'render' },
 		join: ({ api }) => {
 			const v = api.state.ui.voice
-			v.joined = !v.joined
+			const channel = api.state.overlayParams?.arg || 'voice'
+			v.joined = !(v.joined && v.channel === channel)
+			v.channel = v.joined ? channel : null
 			api.toast(v.joined ? 'success' : 'default', v.joined ? 'Connected to voice' : 'Disconnected')
-			return 'render'
+			api.render()
 		},
 		na: notInPreview,
 	},
@@ -113,26 +117,31 @@ export const serverinfo = {
 		const ui = (state.ui.serverinfo ??= {})
 		const btn = (ic, label, act) => `<button class="vp-info-btn" data-act="${act}" data-n="${label} button"><span data-k="bg:BACKGROUND_MOD_NORMAL fg:INTERACTIVE_ICON_DEFAULT">${icon(ic, 22)}</span><small data-k="fg:TEXT_DEFAULT">${label}</small></button>`
 		const plain = (label, sub, act) => `<button class="vp-row" data-act="${act}" data-n="Row"><span class="vp-row-label divided" data-k="bb:BORDER_SUBTLE"><span class="vp-row-stack"><span data-k="fg:TEXT_STRONG">${label}</span>${sub ? `<small data-k="fg:TEXT_MUTED">${sub}</small>` : ''}</span></span></button>`
+		const toggle = (label, key, initial = false, sub = '') => `<div class="vp-row" data-n="Switch row"><span class="vp-row-label divided" data-k="bb:BORDER_SUBTLE"><span class="vp-row-stack"><span data-k="fg:TEXT_STRONG">${label}</span>${sub ? `<small data-k="fg:TEXT_SUBTLE">${sub}</small>` : ''}</span>${switchEl(ui[key] ?? initial, 'toggle:' + key)}</span></div>`
 		return `${scrim()}
 		<div class="vp-info-sheet" data-k="bg:MOBILE_ACTIONSHEET_BACKGROUND" data-n="Server info sheet" data-scroll="serverinfo">
-			<div class="vp-info-banner" data-fixed="Server banner (user content)"></div>
+			<div class="vp-info-banner" data-fixed="Server banner (user content)">${valencedWordmark}</div>
 			<div class="vp-info-head">
-				<span class="vp-info-icon" data-k="bg:MOBILE_ACTIONSHEET_BACKGROUND" data-n="Icon ring"><span data-fixed="Server icon (user content)">${icon('boost', 34)}</span></span>
+				<span class="vp-info-icon" data-k="bg:MOBILE_ACTIONSHEET_BACKGROUND" data-n="Icon ring">${serverIcon(servers[0], 62)}</span>
 				<h1 data-k="fg:MOBILE_TEXT_HEADING_PRIMARY"><span class="vp-guild-badge" data-fixed="Server badge">${icon('boost', 18)}</span>Valenced</h1>
 				<p class="vp-info-desc" data-k="fg:TEXT_DEFAULT">Valenced is a client modification for Discord mobile.<br>https://valenced.app</p>
 				<p class="vp-info-meta"><span class="vp-info-chip" data-k="bg:BACKGROUND_MOD_NORMAL fg:TEXT_STRONG" data-n="Community chip">${icon('globe', 14)} Community Server</span><span data-k="fg:TEXT_MUTED"><i class="vp-dot" data-k="bg:TEXT_STATUS_ONLINE"></i> 2,263 Online</span><span data-k="fg:TEXT_MUTED"><i class="vp-dot" data-k="bg:ICON_STATUS_OFFLINE"></i> ${valenced.members} Members</span></p>
 			</div>
 			<div class="vp-info-btns">${btn('boost', '25 Boosts', 'na')}${btn('userPlus', 'Invite', 'invite')}${btn('bell', 'Notifications', 'na')}${btn('gear', 'Settings', 'na')}</div>
 			<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Grouped rows">${plain('Mark as Read', '', 'read')}${plain('Channels &amp; Roles', '', 'na')}</div>
-			<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Grouped rows">${plain('Edit Per-server Profile', 'Juniper', 'na')}${plain('Server Tag', '', 'na')}<div class="vp-row" data-n="Switch row"><span class="vp-row-label" data-k="bb:BORDER_SUBTLE"><span data-k="fg:TEXT_STRONG">Show All Channels</span>${switchEl(!!ui.all, 'toggle:all')}</span></div></div>
-			<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Grouped rows">${plain('Report Raid', '', 'na')}${plain('<span data-k="fg:TEXT_FEEDBACK_CRITICAL">Leave Server</span>', '', 'na')}</div>
-			<div class="vp-fab-space"></div>
+			<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Grouped rows">${plain('Edit Per-server Profile', 'Juniper', 'na')}${plain('<span class="vp-server-tag" data-fixed="Server tag">&#9889; VLCD</span> Server Tag', '', 'na')}${toggle('Show All Channels', 'all')}${toggle('Hide Muted Channels', 'hideMuted')}${toggle('Allow Direct Messages', 'dm', true, 'Anyone in the server can message you')}${toggle('Allow Message Requests', 'requests', true, 'Filter messages from members you may not know')}${plain('Report Server', '', 'na')}${plain('<span data-k="fg:TEXT_FEEDBACK_CRITICAL">Leave Server</span>', '', 'na')}</div>
+			<h2 class="vp-info-section" data-k="fg:TEXT_SUBTLE">Developer Mode</h2>
+			<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Developer actions">${plain('Copy Server ID', '', 'copyid')}</div>
+			<h2 class="vp-info-section" data-k="fg:TEXT_SUBTLE">Server Emoji <small data-fixed="Nitro promotion">&bull; Use anywhere with Nitro</small></h2>
+			<div class="vp-info-emojis" data-k="bg:CARD_MUTED_BG" data-n="Server emoji card"><span data-fixed="Server emoji artwork">&#127803; &#129418; &#127808; &#127752; &#127800; &#128008; &#127754; &#129417; &#11088; &#127912; &#127769; &#127807; &#128029; &#127812; &#129419; &#127825; &#127918; &#128156; &#129483; &#128056;</span><small data-k="fg:TEXT_MUTED">+30</small></div>
+			<div class="vp-info-bottom"></div>
 		</div>
 		${navScrim()}`
 	},
 	actions: {
-		toggle: ({ arg, api }) => { api.state.ui.serverinfo[arg] = !api.state.ui.serverinfo[arg]; return 'render' },
+		toggle: ({ arg, api }) => { api.state.ui.serverinfo[arg] = !(api.state.ui.serverinfo[arg] ?? ['dm', 'requests'].includes(arg)); return 'render' },
 		invite: ({ api }) => api.toast('success', 'Invite link copied'),
+		copyid: ({ api }) => api.toast('default', 'Example server ID: 123456789012345678'),
 		read: ({ api }) => { api.close(); api.toast('success', 'Marked as read') },
 		na: notInPreview,
 	},

@@ -88,6 +88,8 @@ const threadColors = {
 	midnight: ['NEUTRAL_96', 'NEUTRAL_10', 'NEUTRAL_12', 'BLUE_NEW_45'],
 }
 
+const chatSpineColors = { dark: 'NEUTRAL_47', darker: 'NEUTRAL_55', light: 'NEUTRAL_16', midnight: 'NEUTRAL_65' }
+
 function threadCard(thread, base) {
 	const [background, title, text, link] = threadColors[base]
 	const body = `<span class="vp-thread-top"><b data-k="fg:@${title}" data-n="Thread title">${esc(thread.name)}</b><span data-k="fg:@${link}" data-n="Thread reply count">${thread.count} ${icon('chevronRight', 12)}</span></span><span data-k="fg:@${text}" data-n="Thread message preview">${thread.author ? `<b data-k="fg:@${title}" data-n="Thread preview author">${esc(thread.author)}</b> ` : ''}${esc(thread.last)}</span>`
@@ -115,11 +117,11 @@ export function message(m, index, { grouped = false, ui = {}, dm = false, base =
 	const u = users[m.user] || users.me
 	if (m.threadStarted) return `<div class="vp-msg vp-thread-started" data-n="Thread started message">
 		<span class="vp-thread-start-icon" data-k="fg:ICON_MUTED" data-n="Thread started icon">${icon('thread', 20)}</span>
-		<i class="vp-thread-spine" data-k="bd:SPINE_DEFAULT" data-n="Chat thread connector (preview)"></i>
+		<i class="vp-thread-spine" data-k="bd:@${chatSpineColors[base]}" data-n="Chat thread connector (Android raw colour)"></i>
 		<div>${nameOf(u.id)} <span data-k="fg:TEXT_DEFAULT">started a thread:</span><b class="vp-thread-name" data-k="fg:TEXT_STRONG">${esc(m.thread.name)}</b><small data-k="fg:TEXT_MUTED">${esc(m.time)}</small>${threadCard(m.thread, base)}</div>
 	</div>`
 	const head = grouped ? '' : `<div class="vp-msg-head">${nameOf(u.id)}${u.bot ? '<span class="vp-app" data-k="bg:BACKGROUND_BRAND fg:WHITE" data-n="App badge">' + icon('check', 10) + 'APP</span>' : clanTag(u.tag)}<span class="vp-time" data-k="fg:TEXT_MUTED">${esc(m.time)}</span></div>`
-	const reply = m.reply ? `<div class="vp-reply"><i class="vp-reply-spine" data-k="bd:SPINE_DEFAULT" data-n="Reply line"></i>${avatar(m.reply.user, 16, { status: false })}${nameOf(m.reply.user)}${clanTag(users[m.reply.user]?.tag)}<span class="vp-reply-text" data-k="fg:TEXT_DEFAULT">${esc(m.reply.text)}</span></div>` : ''
+	const reply = m.reply ? `<div class="vp-reply"><i class="vp-reply-spine" data-k="bd:@${chatSpineColors[base]}" data-n="Reply line (Android raw colour)"></i>${avatar(m.reply.user, 16, { status: false })}${nameOf(m.reply.user)}${clanTag(users[m.reply.user]?.tag)}<span class="vp-reply-text" data-k="fg:TEXT_DEFAULT">${esc(m.reply.text)}</span></div>` : ''
 	// "X joined the server" and other system lines have no avatar or name row
 	if (m.system) return `<div class="vp-msg vp-system" data-n="System message">
 		<span class="vp-system-icon" data-k="fg:TEXT_FEEDBACK_POSITIVE" data-n="Join arrow">${icon('arrowRight', 18)}</span>
@@ -127,11 +129,11 @@ export function message(m, index, { grouped = false, ui = {}, dm = false, base =
 		<small data-k="fg:TEXT_MUTED">${esc(m.time)}</small>
 	</div>`
 	const mentioned = m.mentionsMe ? ' data-k="bg:MESSAGE_MENTIONED_BACKGROUND_DEFAULT"' : ''
-	return `<div class="vp-msg${grouped ? ' grouped' : ''}${m.mentionsMe ? ' mentioned' : ''}" data-hold="msgmenu:${index}" data-n="${m.mentionsMe ? 'Message that mentions you' : 'Message'}"${mentioned}>
+	return `<div class="vp-msg${grouped ? ' grouped' : ''}${m.mentionsMe ? ' mentioned' : ''}" data-hold="msgmenu:${index}" data-message-own="${m.user === 'me'}" data-n="${m.mentionsMe ? 'Message that mentions you' : 'Message'}"${mentioned}>
 		${m.mentionsMe ? '<i class="vp-mention-bar" data-k="bg:TEXT_FEEDBACK_WARNING" data-n="Mention highlight bar"></i>' : ''}
 		${reply}
 		<div class="vp-msg-row">
-			${m.thread ? '<i class="vp-thread-spine" data-k="bd:SPINE_DEFAULT" data-n="Thread line"></i>' : ''}
+			${m.thread ? `<i class="vp-thread-spine" data-k="bd:@${chatSpineColors[base]}" data-n="Chat thread connector (Android raw colour)"></i>` : ''}
 			<span class="vp-msg-avatar" data-go="profile:${u.id}${where}">${grouped ? '' : avatar(u.id, 40, { status: false })}</span>
 			<div class="vp-msg-body">
 				${head}
@@ -233,5 +235,7 @@ export function updateSlider(el) {
 	if (output) output.textContent = display
 	return value
 }
+
+export const valencedWordmark = `<svg viewBox="0 0 330 70" width="250" height="54" aria-hidden="true"><g fill="none" stroke="#0b1114" stroke-width="5"><circle cx="35" cy="35" r="27"/><circle cx="35" cy="35" r="14"/></g><g fill="#0b1114"><circle cx="35" cy="35" r="5"/><circle cx="35" cy="8" r="5"/><circle cx="12" cy="48" r="5"/><circle cx="58" cy="48" r="5"/></g><text x="74" y="44" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="36" fill="#0b1114" letter-spacing="-1">VALENCED</text><text x="76" y="60" font-family="Arial, sans-serif" font-weight="700" font-size="10.5" fill="#0b1114">Supercharge your Discord experience.</text></svg>`
 
 export { icon, avatar }

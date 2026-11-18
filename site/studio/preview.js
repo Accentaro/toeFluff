@@ -138,11 +138,17 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 
 	function renderOverlay() {
 		const ov = state.overlay && overlays[state.overlay]
+		const scrolls = overlayEl.dataset.overlay === state.overlay
+			? [...overlayEl.querySelectorAll('[data-scroll]')].map(el => [el.dataset.scroll, el.scrollTop]) : []
 		overlayEl.innerHTML = ov ? ov.render(ctxFor(state.overlay)) : ''
 		overlayEl.dataset.overlay = state.overlay || ''
 		if (ov) {
 			paintRenderedKeys(overlayEl)
 			ov.mounted?.(overlayEl, ctxFor(state.overlay))
+			for (const [name, top] of scrolls) {
+				const el = [...overlayEl.querySelectorAll('[data-scroll]')].find(el => el.dataset.scroll === name)
+				if (el) el.scrollTop = top
+			}
 		}
 		pinned = null
 		requestAnimationFrame(drawMarks)
@@ -266,7 +272,7 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 		holdTimer = setTimeout(() => {
 			held = true
 			const [id, arg] = el.dataset.hold.split(':')
-			open(id, { arg, keepScreen: true })
+			open(id, { arg, keepScreen: true, own: el.dataset.messageOwn === 'true' })
 		}, 450)
 	})
 	const cancelHold = () => clearTimeout(holdTimer)
@@ -279,7 +285,7 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 		if (!el || inspecting) return
 		e.preventDefault()
 		const [id, arg] = el.dataset.hold.split(':')
-		open(id, { arg, keepScreen: true })
+		open(id, { arg, keepScreen: true, own: el.dataset.messageOwn === 'true' })
 	})
 
 	// Drag to scroll, like a finger on the phone. A drag that moves more than a few pixels scrolls the
@@ -554,7 +560,7 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 
 	const unsubscribe = store.on('change', detail => paint(detail))
 	const unsubscribeBase = store.on('base', () => {
-		if (screenEl.querySelector('.vp-thread')) render()
+		if (screenEl.querySelector('.vp-thread, .vp-reply')) render()
 	})
 
 	// Live getters: Object.assign would copy their values once

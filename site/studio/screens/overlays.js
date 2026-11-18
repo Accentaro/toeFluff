@@ -8,23 +8,33 @@ const quickReactions = ['🤣', '😭', '🫶', '❤️', '🔥']
 
 export const msgmenu = {
 	id: 'msgmenu', title: 'Message menu', group: 'Menus and sheets', capture: 'actionsheet', screen: 'chat',
-	render() {
-		const row = (ic, label, act, chevron) => `<button class="vp-sheet-row" data-act="${act}" data-n="Action sheet row"><span data-k="fg:TABLEROW_ICON_COLOR_DEFAULT">${icon(ic, 24)}</span><span class="vp-sheet-label" data-k="bb:BORDER_SUBTLE"><span data-k="fg:TEXT_STRONG">${label}</span>${chevron ? `<span data-k="fg:INTERACTIVE_TEXT_DEFAULT">${icon('chevronRight', 20)}</span>` : ''}</span></button>`
+	render({ state }) {
+		const own = !!state.overlayParams?.own
+		const row = (ic, label, act, chevron, critical = false) => `<button class="vp-sheet-row" data-act="${act}" data-n="Action sheet row"><span data-k="fg:${critical ? 'TEXT_FEEDBACK_CRITICAL' : 'TABLEROW_ICON_COLOR_DEFAULT'}">${icon(ic, 24)}</span><span class="vp-sheet-label" data-k="bb:BORDER_SUBTLE"><span data-k="fg:${critical ? 'TEXT_FEEDBACK_CRITICAL' : 'TEXT_STRONG'}">${label}</span>${chevron ? `<span data-k="fg:INTERACTIVE_TEXT_DEFAULT">${icon('chevronRight', 20)}</span>` : ''}</span></button>`
 		return `${scrim()}
-		<div class="vp-sheet" data-k="bg:MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT" data-n="Message menu">
+		<div class="vp-sheet vp-message-sheet" data-k="bg:MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT" data-n="Message menu">
 			<i class="vp-handle" data-k="bg:BACKGROUND_MOD_STRONG" data-n="Sheet handle"></i>
-			<div class="vp-quick">${quickReactions.map(e => `<button data-act="react:${e}" data-k="bg:MOBILE_EMOJI_BUTTON_BACKGROUND" data-n="Quick reaction"><span data-fixed="Emoji">${e}</span></button>`).join('')}<button data-open="emoji" data-k="bg:MOBILE_EMOJI_BUTTON_BACKGROUND fg:INTERACTIVE_ICON_DEFAULT" data-n="More reactions">${icon('emoji', 26)}</button></div>
-			<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Grouped rows">${row('reply', 'Reply', 'close')}${row('forward', 'Forward', 'done:Forwarded')}${row('thread', 'Create Thread', 'done:Thread created')}</div>
-			<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Grouped rows" data-scroll="sheet">
+			<div class="vp-message-scroll" data-scroll="message-sheet"><div class="vp-quick">${quickReactions.map(e => `<button data-act="react:${e}" data-k="bg:MOBILE_EMOJI_BUTTON_BACKGROUND" data-n="Quick reaction"><span data-fixed="Emoji">${e}</span></button>`).join('')}<button data-open="emoji" data-k="bg:MOBILE_EMOJI_BUTTON_BACKGROUND fg:INTERACTIVE_ICON_DEFAULT" data-n="More reactions">${icon('emoji', 26)}</button></div>
+			<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Grouped rows">${own ? row('pencil', 'Edit Message', 'close') : ''}${row('reply', 'Reply', 'close')}${row('forward', 'Forward', 'done:Forwarded')}${row('thread', 'Create Thread', 'done:Thread created')}</div>
+			<div class="vp-rowgroup" data-k="bg:CARD_MUTED_BG" data-n="Grouped rows">
 				${row('copy', 'Copy Text', 'copy')}
 				${row('markUnread', 'Mark Unread', 'done:Marked unread')}
 				${row('pin', 'Pin Message', 'done:Pinned')}
 				${row('bookmark', 'Bookmark Message', 'done:Bookmarked')}
 				${row('clock', 'Create Reminder', 'done:Reminder set for 1 hour', true)}
 				${row('apps', 'Apps', 'done:No apps for this message', true)}
+				${row('mention', 'Mention', 'close')}
+				${row('link', 'Copy Message Link', 'done:Example message link')}
+				${row('id', 'Copy Message ID', 'done:Example message ID')}
+			</div>
+			${own ? `<div class="vp-rowgroup vp-message-delete" data-k="bg:CARD_MUTED_BG fg:TEXT_FEEDBACK_CRITICAL">${row('trash', 'Delete Message', 'close', false, true)}</div>` : ''}
 			</div>
 		</div>
 		${navScrim()}`
+	},
+	mounted(el) {
+		const scroll = el.querySelector('.vp-message-scroll')
+		scroll.addEventListener('scroll', () => { if (scroll.scrollTop > 0) scroll.parentElement.classList.add('expanded') }, { passive: true })
 	},
 	actions: {
 		react: ({ arg, api }) => {

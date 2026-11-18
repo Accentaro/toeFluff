@@ -52,7 +52,7 @@ export const valenced = {
 			{ id: 'showcase', name: 'showcase', type: 'text' },
 			{ id: 'off-topic', name: 'off-topic', type: 'text', muted: true },
 			{ id: 'support', name: 'support', type: 'forum' },
-			{ id: 'voice', name: 'Lounge', type: 'voice', members: ['nova', 'ren'] },
+			{ id: 'voice', name: 'Lounge', type: 'voice', members: ['nova', 'ren'], speaking: ['nova'] },
 			{ id: 'stage', name: 'Quiet room', type: 'voice' },
 		] },
 	],

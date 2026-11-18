@@ -1,6 +1,6 @@
 // The main screens: the Messages list, a server's channel list, and DM conversations.
 import { activities, avatar, conversations, dms, users, valenced } from '../mock.js'
-import { channelHeader, channelIcon, chatInput, clanTag, esc, icon, message, navBar, notificationCount, rail, statusBar, userPanel } from './common.js'
+import { valencedWordmark, channelHeader, channelIcon, chatInput, clanTag, esc, icon, message, navBar, notificationCount, rail, statusBar, userPanel } from './common.js'
 
 /** The rounded panel to the right of the rail, shared by Messages and a server's channel list. */
 const panel = (inner, n) => `<section class="vp-panel" data-k="bg:PANEL_BG bd:APP_FRAME_BORDER" data-n="${n}" data-scroll="panel">${inner}</section>`
@@ -58,15 +58,16 @@ const UNREAD_ICON = 'INTERACTIVE_TEXT_ACTIVE'
 
 export const server = {
 	id: 'server', title: 'Server channels', group: 'Main', capture: 'server',
-	render({ ui }) {
+	render({ ui, state }) {
 		const collapsed = ui.collapsed || {}
 		const chan = c => {
+			const connected = state.ui.voice?.joined && state.ui.voice.channel === c.id
 			const active = ui.selected === c.id
 			const unread = c.unread && !ui.read?.[c.id]
 			return `<div class="vp-chan-wrap">
 				${unread ? `<i class="vp-chan-pip" data-k="bg:${UNREAD_ICON}" data-n="Unread indicator"></i>` : ''}
 				<button class="vp-chan${active ? ' on' : ''}" data-act="channel:${c.id}" data-n="Channel row" ${active ? 'data-k="bg:MOBILE_CHANNEL_ITEM_BACKGROUND_SELECTED"' : ''}>
-					<span class="${c.muted ? 'vp-chan-muted' : ''}" data-k="fg:${unread || active ? UNREAD_ICON : 'CHANNEL_ICON'}" data-n="${unread ? 'Unread channel icon' : 'Channel icon'}">${channelIcon(c.type, 22)}</span>
+					<span class="${c.muted ? 'vp-chan-muted' : ''}" data-k="fg:${connected ? 'STATUS_POSITIVE' : unread || active ? UNREAD_ICON : 'CHANNEL_ICON'}" data-n="${connected ? 'Connected voice channel icon' : unread ? 'Unread channel icon' : 'Channel icon'}">${channelIcon(c.type, 22)}</span>
 					<span class="vp-chan-name${unread ? ' unread' : ''}${c.muted ? ' vp-chan-muted' : ''}" data-k="fg:${unread || active ? 'REDESIGN_CHANNEL_NAME_TEXT' : 'REDESIGN_CHANNEL_NAME_MUTED_TEXT'}" data-n="${c.muted ? 'Muted channel name' : unread ? 'Unread channel name' : 'Channel name'}">${esc(c.name)}</span>
 					${c.mentions && unread ? notificationCount(c.mentions, 'Channel mention count') : ''}
 				</button>
@@ -103,13 +104,15 @@ export const server = {
 				<hr data-k="bt:BORDER_SUBTLE" data-n="Divider">
 				${valenced.categories.map((cat, i) => `
 					<button class="vp-category" data-act="collapse:${i}" data-k="fg:TEXT_SUBTLE" data-n="Category">${esc(cat.name)} <span class="${collapsed[i] ? 'closed' : ''}">${icon('chevronDown', 14)}</span></button>
-					${cat.channels.filter(c => !collapsed[i] || c.unread).map(chan).join('')}`).join('')}
+					${cat.channels.filter(c => (!collapsed[i] || c.unread) && (ui.showAllVoice || c.type !== 'voice' || c.members?.length || (state.ui.voice?.joined && state.ui.voice.channel === c.id))).map(chan).join('')}`).join('')}
+				<button class="vp-show-voice" data-act="showvoice" data-k="bg:CONTROL_SECONDARY_BACKGROUND_DEFAULT fg:CONTROL_SECONDARY_TEXT_DEFAULT" data-n="Show all voice channels">${icon('speaker', 16)}${ui.showAllVoice ? 'Hide Voice Channels' : 'Show All'}</button>
 				<div class="vp-dock-space"></div>`, 'Channel list panel')}
 		</div>
 		${dock()}
 		${navBar('BACKGROUND_BASE_LOWER')}`
 	},
 	actions: {
+		showvoice: ({ ui }) => { ui.showAllVoice = !ui.showAllVoice; return 'render' },
 		collapse: ({ arg, ui }) => {
 			ui.collapsed = { ...ui.collapsed, [arg]: !ui.collapsed?.[arg] }
 			return 'render'
@@ -129,12 +132,10 @@ export const server = {
 	},
 }
 
-const valencedWordmark = `<svg viewBox="0 0 330 70" width="250" height="54" aria-hidden="true"><g fill="none" stroke="#0b1114" stroke-width="5"><circle cx="35" cy="35" r="27"/><circle cx="35" cy="35" r="14"/></g><g fill="#0b1114"><circle cx="35" cy="35" r="5"/><circle cx="35" cy="8" r="5"/><circle cx="12" cy="48" r="5"/><circle cx="58" cy="48" r="5"/></g><text x="74" y="44" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="36" fill="#0b1114" letter-spacing="-1">VALENCED</text><text x="76" y="60" font-family="Arial, sans-serif" font-weight="700" font-size="10.5" fill="#0b1114">Supercharge your Discord experience.</text></svg>`
-
 /** A DM or group DM conversation. */
 export const dm = {
 	id: 'dm', title: 'Direct message', group: 'Conversations', capture: 'chatinput',
-	render({ params, ui }) {
+	render({ params, ui, base }) {
 		const id = params.id || 'quill'
 		const d = dms.find(x => x.id === id) || dms[0]
 		const msgs = [...(conversations[id] || conversations.quill), ...(ui.sent?.[id] || [])]
@@ -150,7 +151,7 @@ export const dm = {
 				${d.group ? '' : `<div class="vp-intro-actions"><button class="vp-btn-secondary" data-k="bg:CONTROL_SECONDARY_BACKGROUND_DEFAULT fg:CONTROL_SECONDARY_TEXT_DEFAULT bd:CONTROL_SECONDARY_BORDER_DEFAULT" data-n="Secondary button" data-go="profile:${d.user}">View Profile</button></div>`}
 			</div>
 			<div class="vp-day" data-k="bt:BORDER_SUBTLE" data-n="Date divider"><span data-k="fg:TEXT_MUTED bg:CHANNEL_BACKGROUND_DEFAULT">Today</span></div>
-			${msgs.map((m, i) => message(m, `dm.${i}`, { grouped: i > 0 && msgs[i - 1].user === m.user, ui, dm: true })).join('')}
+			${msgs.map((m, i) => message(m, `dm.${i}`, { grouped: i > 0 && msgs[i - 1].user === m.user, ui, dm: true, base })).join('')}
 		</div>
 		${chatInput({ placeholder: `Message ${d.group ? title : '@' + title}`, active: ui.focused, value: ui.draft || '' })}
 		${navBar('MOBILE_KEYBOARD_GAP_BACKGROUND')}`
