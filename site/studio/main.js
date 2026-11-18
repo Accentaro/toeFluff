@@ -7,6 +7,7 @@ import { exportLegacy, exportManifest, exportPlugin, importText, setRawPalette, 
 import { modernize } from './convert.js'
 import { HEX, contrast, over, parse } from './color.js'
 import * as mock from './mock.js'
+import { mountBackground, TAB_PARTS } from './appearance.js'
 import { createRepair } from './repair.js'
 
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
@@ -34,7 +35,9 @@ export async function mount(host) {
 		onScreen: false,
 		selected: null,
 		target: saved.base || 'dark',
-		tab: saved.tab || 'property',
+		tab: saved.tab === 'appearance' ? 'theme' : saved.tab || 'property',
+		tabPart: null,
+		tabColor: null,
 		inspected: null,
 		highlight: saved.highlight ?? true,
 		device: saved.device || '412x915',
@@ -66,6 +69,7 @@ export async function mount(host) {
 			<div class="segmented st-bases-switch" role="group" aria-label="Base theme">${BASES.map((b, i) => `<button data-base="${b}" title="${BASE_NAMES[b]} (${b}), key ${i + 1}">${BASE_NAMES[b]}</button>`).join('')}</div>
 			<span class="st-spacer"></span>
 			<span class="st-saved" role="status"></span>
+			<button data-cmd="background">Background image</button>
 			<button data-cmd="import" title="Import a theme file">Import</button>
 			<div class="st-menu">
 				<button class="primary" data-cmd="export-menu" aria-haspopup="true" aria-expanded="false" title="Export (Ctrl+E)">Export</button>
@@ -104,7 +108,7 @@ export async function mount(host) {
 				<div class="segmented st-edit-tabs" role="group" aria-label="Editor panels"><button data-tab="property">Property</button><button data-tab="source">Source</button><button data-tab="theme">Theme</button><button data-tab="repair">Repair</button></div>
 				<div class="st-pane" data-pane="property"></div>
 				<div class="st-pane" data-pane="source"></div>
-				<div class="st-pane" data-pane="theme"></div>
+				<div class="st-pane" data-pane="theme"><div class="st-theme-settings"></div><div class="st-background-settings"></div></div>
 				<div class="st-pane" data-pane="repair"></div>
 			</section>
 			<div class="st-resize" data-resize="edit" aria-label="Editor width" role="separator" tabindex="0" aria-orientation="vertical" title="Drag to resize"></div>
@@ -147,7 +151,7 @@ export async function mount(host) {
 	const keysList = $('.st-keys-list')
 	const propPane = $('[data-pane="property"]')
 	const sourcePane = $('[data-pane="source"]')
-	const themePane = $('[data-pane="theme"]')
+	const themePane = $('.st-theme-settings')
 	const repair = createRepair({ host: $('[data-pane="repair"]'), store, tokens: VT.tokens, toast: VT.toast })
 	setRawPalette(VT.tokens.raw)
 	let repairReport = null, pendingUpdate = null, history = null
@@ -199,8 +203,10 @@ export async function mount(host) {
 		mock,
 		onInspect: info => {
 			ui.inspected = info
+			if (!info?.tabPart) { ui.tabPart = null; preview.editTab(null) }
 			setTab('property')
-			if (info?.props?.length) {
+			if (info?.tabPart) selectTabPart(info.tabPart)
+			else if (info?.props?.length) {
 				const first = info.props.find(p => !p.pressed) || info.props[0]
 				select(first.key, first.raw, { from: 'inspector' })
 			} else renderProperty()
@@ -214,6 +220,7 @@ export async function mount(host) {
 			if (ui.selected && ui.highlight) preview.highlight(ui.selected.key, ui.selected.raw)
 		},
 	})
+	mountBackground({ host: $('.st-background-settings'), store, toast: VT.toast })
 	if (saved.screen && preview.screens[saved.screen]) preview.go(saved.screen, {}, { push: false })
 
 	const groups = {}
@@ -427,6 +434,8 @@ export async function mount(host) {
 	// ---------- selection and highlighting
 
 	function select(key, raw = false, { from } = {}) {
+		ui.tabPart = null
+		preview.editTab(null)
 		ui.selected = { key, raw }
 		if (from !== 'inspector') ui.inspected = ui.inspected && ui.inspected.props.some(p => p.key === key && !!p.raw === raw) ? ui.inspected : null
 		// make sure the list shows the key
@@ -477,11 +486,18 @@ export async function mount(host) {
 			const set = new Set()
 			for (const b of BASES) for (const v of Object.values(store.theme.semantic[b])) if (HEX.test(v)) set.add(v.toLowerCase())
 			for (const v of Object.values(store.theme.raw)) if (HEX.test(v)) set.add(v.toLowerCase())
+			for (const v of Object.values(store.theme.meta.appearance?.tabs || {})) if (HEX.test(v)) set.add(v.toLowerCase())
 			return [...set]
 		},
 	})
 	let pickerDriving = false
 	function applyPicked(hex, final) {
+		if (ui.tabPart) {
+			ui.tabColor = hex
+			preview.editTab(ui.tabPart, hex)
+			propPane.querySelector('[data-tab-status]').textContent = 'Preview only. Click Apply to theme to save.'
+			return
+		}
 		if (!ui.selected) return
 		pickerDriving = true
 		const { key, raw } = ui.selected
@@ -535,7 +551,28 @@ export async function mount(host) {
 		</div>`
 	}
 
+	function selectTabPart(part) {
+		ui.tabPart = part
+		ui.selected = null
+		ui.tabColor = store.theme.meta.appearance?.tabs?.[part] || store.color(part === 'text' ? 'TEXT_MUTED' : part === 'indicator' ? 'BACKGROUND_BRAND' : 'MOBILE_ACTIONSHEET_BACKGROUND')
+		preview.editTab(null)
+		preview.highlight(null)
+		setTab('property')
+		renderProperty()
+	}
+
 	function renderProperty() {
+		if (ui.tabPart) {
+			propPane.innerHTML = `<article class="st-prop"><header class="st-prop-head"><div><span class="st-kind">Inspecting tabs</span><h2>${TAB_PARTS[ui.tabPart]}</h2></div></header>
+				<div class="st-row wrap">${Object.entries(TAB_PARTS).map(([key, label]) => `<button data-tab-part="${key}" aria-pressed="${ui.tabPart === key}">${label}</button>`).join('')}</div>
+				<p class="st-desc">Pick a colour, then apply it to your theme. All tab labels share one colour; the indicator marks the selected tab.</p>
+				<div class="st-picker-slot"></div><div class="st-row"><button class="primary" data-cmd="apply-tab">Apply to theme</button><button data-cmd="reset-tab">Reset</button></div>
+				<p class="small muted" data-tab-status role="status">Applies to tabs on every base. Requires plugin export.</p></article>`
+			propPane.querySelector('.st-picker-slot').append(picker.el)
+			picker.set(ui.tabColor)
+			picker.refreshPalette()
+			return
+		}
 		if (!ui.selected) {
 			propPane.innerHTML = `${inspectedCard()}<div class="st-blank">
 				<h2>Pick something to edit</h2>
@@ -624,6 +661,18 @@ export async function mount(host) {
 
 	propPane.addEventListener('click', e => {
 		const t = e.target
+		const part = t.closest('[data-tab-part]')?.dataset.tabPart
+		if (part) return selectTabPart(part)
+		if (t.closest('[data-cmd="apply-tab"], [data-cmd="reset-tab"]')) {
+			const tabs = { ...store.theme.meta.appearance?.tabs }
+			if (t.closest('[data-cmd="reset-tab"]')) delete tabs[ui.tabPart]
+			else tabs[ui.tabPart] = ui.tabColor
+			preview.editTab(null)
+			store.setMeta({ appearance: { ...store.theme.meta.appearance, tabs } })
+			selectTabPart(ui.tabPart)
+			propPane.querySelector('[data-tab-status]').textContent = 'Applied to theme. Plugin source updated.'
+			return
+		}
 		const sel = t.closest('[data-select]')
 		if (sel) return select(sel.dataset.select, !!sel.dataset.raw, { from: sel.closest('.st-inspect') ? 'inspector' : 'panel' })
 		const show = t.closest('[data-show]')
@@ -654,6 +703,8 @@ export async function mount(host) {
 		if (copyKey) return VT.copy(copyKey.dataset.copy)
 		const cmd = t.closest('[data-cmd]')?.dataset.cmd
 		if (cmd === 'clear-inspect') {
+			ui.tabPart = null
+			preview.editTab(null)
 			ui.inspected = null
 			renderProperty()
 		}
@@ -749,8 +800,10 @@ export async function mount(host) {
 		highlightSource()
 		const next = result.theme
 		const current = store.theme
+		if (next.meta.appearance?.background?.path === current.meta.appearance?.background?.path && current.meta.appearance?.background?.preview) next.meta.appearance.background.preview = current.meta.appearance.background.preview
 		// Fields one format cannot hold are kept from the current theme
 		next.meta = { ...current.meta, ...pickDefined(next.meta), extra: result.format === 'legacy' ? next.meta.extra : current.meta.extra, plugin: next.meta.plugin || current.meta.plugin }
+		if (result.format !== 'plugin') next.meta.appearance = { ...current.meta.appearance, ...next.meta.appearance }
 		if (result.format === 'plugin' && !Object.keys(next.meta).includes('authors')) next.meta.authors = current.meta.authors
 		sourceApplying = true
 		store.replace(next, 'source', { coalesce: 'source' })
@@ -838,6 +891,11 @@ export async function mount(host) {
 	// ---------- commands
 
 	host.addEventListener('click', e => {
+		if (e.target.closest('[data-cmd="background"]')) {
+			setTab('theme')
+			if (matchMedia('(max-width: 900px)').matches) setView('edit')
+			$('.st-background-settings').scrollIntoView({ block: 'start' })
+		}
 		if (e.target.closest('[data-cmd="repair"]')) {
 			setTab('repair')
 			if (matchMedia('(max-width: 900px)').matches) setView('edit')
@@ -1007,6 +1065,7 @@ export async function mount(host) {
 		persistUi()
 	}
 	function setTab(tab) {
+		if (tab !== 'property' && ui.tabPart) { ui.tabPart = null; preview.editTab(null) }
 		ui.tab = tab
 		host.querySelectorAll('.st-edit-tabs button').forEach(b => {
 			b.classList.toggle('on', b.dataset.tab === tab)
@@ -1162,6 +1221,7 @@ export async function mount(host) {
 		syncHistoryButtons()
 	})
 	store.on('meta', () => {
+		if (ui.tabPart) selectTabPart(ui.tabPart)
 		if (!metaEditing) {
 			$('.st-name').value = store.theme.meta.name
 			if (ui.tab === 'theme') renderTheme()

@@ -234,3 +234,6 @@
 .st-code:focus-within { outline: 2px solid var(--focus); outline-offset: 2px; }
 
 .st-repair-banner { padding: 12px 16px; margin: 0; flex: none; max-height: 30%; overflow: auto; border-bottom: 1px solid var(--line); }
+
+.st-edit-tabs { flex-wrap: wrap; }
+.st-appearance input[type="file"] { max-width: 100%; }

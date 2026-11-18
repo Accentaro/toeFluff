@@ -281,7 +281,8 @@ async function renderTemplates() {
 
 function updateThemePresence() {
 	const modified = store.modified()
-	const count = modified.semantic.size + modified.raw.size
+	const appearance = store.theme.meta.appearance
+	const count = modified.semantic.size + modified.raw.size + Object.keys(appearance?.tabs || {}).length + Number(!!appearance?.background)
 	const el = $('#theme-presence')
 	el.textContent = `${store.theme.meta.name || 'Untitled theme'} · ${count} changed`
 	el.title = 'Open your theme in the studio'

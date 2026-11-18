@@ -2,6 +2,7 @@
 // Colours resolve exactly like Discord + Valenced: a theme's semantic value wins for its base, otherwise the
 // semantic token's raw colour (theme raw override, else Discord's) at the token's opacity.
 import { HEX } from './color.js'
+import { readAppearance } from './appearance.js'
 
 export const BASES = ['dark', 'darker', 'light', 'midnight']
 export const BASE_NAMES = { dark: 'Ash', darker: 'Dark', light: 'Light', midnight: 'Onyx' }
@@ -23,8 +24,15 @@ export function emptyTheme() {
 /** Fills in anything missing so older saves and imports always have the full shape. */
 export function normalizeTheme(t) {
 	const base = emptyTheme()
+	const meta = { ...base.meta, ...(t?.meta || {}), extra: { ...(t?.meta?.extra || {}) } }
+	if (meta.appearance) meta.appearance = readAppearance(meta.appearance)
+	const background = meta.extra.background
+	if (!meta.appearance && background?.url) {
+		try { meta.appearance = readAppearance({ background: { path: background.url, opacity: background.alpha, blur: background.blur } }) }
+		catch { /* Keep unsupported imported fields intact for legacy export. */ }
+	}
 	return {
-		meta: { ...base.meta, ...(t?.meta || {}), extra: { ...(t?.meta?.extra || {}) } },
+		meta,
 		semantic: Object.fromEntries(BASES.map(b => [b, { ...(t?.semantic?.[b] || {}) }])),
 		raw: { ...(t?.raw || {}) },
 		links: { ...base.links, ...(t?.links || {}) },

@@ -2,6 +2,8 @@
 //  - Legacy JSON (Vendetta/Bunny spec 2), read by the Legacy Themes plugin (themes.legacy/js/parsers.ts):
 //    semanticColors: { KEY: [dark, light, midnight?] }, dark also paints Dark (darker), midnight falls back to dark.
 //  - A theme plugin's ThemeColors ({ semantic: { dark, darker, light, midnight }, raw }), as in template/plugin/js/index.ts.
+import { readAppearance } from './appearance.js'
+import { tabPluginImports, tabPluginCode, tabPluginStart } from './tab-plugin.js'
 import { HEX } from './color.js'
 import { BASES, emptyTheme, normalizeTheme } from './store.js'
 import { cssToHex } from './convert.js'
@@ -23,6 +25,10 @@ const sortKeys = obj => Object.fromEntries(Object.entries(obj).sort(([a], [b]) =
 /** Legacy JSON text plus anything that could not be expressed in it. */
 export function exportLegacy(theme) {
 	const warnings = []
+	const appearance = readAppearance(theme.meta.appearance)
+	if (appearance.tabs) warnings.push('Tab styling needs the plugin export; legacy JSON cannot apply it.')
+	if (appearance.background && !appearance.background.path.startsWith('http')) warnings.push('Uploaded backgrounds need the plugin export and the downloaded image asset. Legacy JSON needs a hosted image URL.')
+	if (appearance.background && appearance.background.dimming !== 0.7) warnings.push('Legacy JSON cannot set surface dimming; Valenced uses 0.7. Use the plugin export to retain it.')
 	const s = theme.semantic
 	const keys = [...new Set([...Object.keys(s.dark), ...Object.keys(s.light), ...Object.keys(s.midnight), ...(theme.links.darker ? [] : Object.keys(s.darker))])].sort()
 
@@ -54,6 +60,7 @@ export function exportLegacy(theme) {
 		semanticColors,
 		rawColors: sortKeys(theme.raw),
 		...extra,
+		...(appearance.background?.path.startsWith('http') ? { background: { url: appearance.background.path, alpha: appearance.background.opacity, blur: appearance.background.blur } } : {}),
 		spec: 2,
 	}
 	if (!json.authors.length) delete json.authors
@@ -98,6 +105,9 @@ function hint(key, descriptions) {
 
 /** Theme plugin js/index.ts, in the starter template's style. */
 export function exportPlugin(theme, descriptions) {
+	const appearance = readAppearance(theme.meta.appearance)
+	const background = appearance.background && Object.fromEntries(Object.entries(appearance.background).filter(([key]) => key !== 'preview'))
+	const exportedAppearance = { ...appearance, ...(background ? { background } : {}) }
 	const flat = flatten(theme)
 	const plugin = theme.meta.plugin || {}
 	const group = plugin.group || 'my-themes'
@@ -119,6 +129,9 @@ export function exportPlugin(theme, descriptions) {
 /// <reference types="@valenced/themes-api" />
 
 import type { ThemeColors } from '@valenced/themes-api/types'
+${appearance.tabs ? tabPluginImports() : ''}
+// @studio-appearance ${JSON.stringify(exportedAppearance)}
+${appearance.tabs ? tabPluginCode(appearance.tabs) : ''}
 
 const colors: ThemeColors = {
 	semantic: {
@@ -136,12 +149,15 @@ export default plugin({
 		themes.registerTheme(${q(group)}, ${q(id)}, {
 			name: ${q(theme.meta.name || 'Untitled theme')},
 			description: ${q(theme.meta.description || '')},
-			getColors: () => colors,
+			getColors: () => colors,${background ? `\n\t\t\tbackground: ${JSON.stringify(background)},` : ''}
 		})
-	},
+	},${appearance.tabs ? tabPluginStart : ''}
 })
 `
-	return { text, warnings: [] }
+	return { text, warnings: [
+		...(background && !background.path.startsWith('http') ? [`Include ${background.path} in your plugin folder. Download it from Background image.`] : []),
+		...(appearance.tabs ? ['Tab styling runs while this plugin is enabled, regardless of the selected colour theme.'] : []),
+	] }
 }
 
 export function exportManifest(theme) {
@@ -298,6 +314,10 @@ export function importLegacy(json) {
 	if (typeof json.name !== 'string' || !json.name.trim()) warnings.push('The theme had no name, which Valenced refuses; it was given one.')
 	const theme = emptyTheme()
 	legacyMeta(theme, json, new Set([...LEGACY_KNOWN, 'author']), warnings)
+	if (json.background?.url) {
+		try { theme.meta.appearance = readAppearance({ background: { path: json.background.url, opacity: json.background.alpha, blur: json.background.blur } }) }
+		catch { warnings.push('The imported background could not be previewed; its original field was kept.') }
+	}
 	const read = colourReader(warnings)
 
 	const sc = json.semanticColors && typeof json.semanticColors === 'object' ? json.semanticColors : {}
@@ -420,6 +440,8 @@ export function importPlugin(text) {
 	if (raw) colors.raw = parseObject(raw, warnings)
 
 	const meta = {}
+	const appearance = text.match(/^\/\/ @studio-appearance (.+)$/m)
+	if (appearance) meta.appearance = readAppearance(JSON.parse(appearance[1]))
 	const reg = clean.match(/registerTheme\(\s*(['"`])(.*?)\1\s*,\s*(['"`])(.*?)\3\s*,\s*\{/)
 	if (reg) {
 		const opts = findObject(clean.slice(reg.index), /registerTheme\([^{]*\{/)

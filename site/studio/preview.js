@@ -1,6 +1,7 @@
 // The interactive phone. Screens are plain HTML templates; each themed element declares the keys that paint it
 // in data-k ("bg:PANEL_BG fg:TEXT_STRONG"). That one attribute drives both the styling and the inspector,
 // so what the inspector reports is exactly what paints the element.
+import { paintAppearance, TAB_PARTS } from './appearance.js'
 import { screens, overlays } from './screens/index.js'
 
 /** data-k property -> CSS property and the label the inspector shows. Raw keys are written @NAME. */
@@ -50,6 +51,7 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 	let inspecting = false
 	let pinned = null
 	let highlightKey = null
+	let draftTabs = null
 	let hoverEl = null
 
 	host.innerHTML = `
@@ -95,6 +97,7 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 			for (const k of detail.semantic || []) if (usedSemantic.has(k)) style.setProperty(`--c-${k}`, store.color(k) || 'transparent')
 			for (const k of detail.raw || []) if (usedRaw.has(k)) style.setProperty(`--r-${k}`, store.rawColor(k) || 'transparent')
 		}
+		paintAppearance(phone, store, draftTabs)
 		phone.dataset.base = store.base
 		phone.classList.toggle('vp-light', store.base === 'light')
 		if (highlightKey || pinned) requestAnimationFrame(drawMarks)
@@ -125,6 +128,7 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 		screenEl.innerHTML = screen.render(ctxFor(state.screen))
 		screenEl.dataset.screen = state.screen
 		paintRenderedKeys(screenEl)
+		paintAppearance(phone, store, draftTabs)
 		// keep scroll positions across re-renders of the same screen
 		if (render.last === state.screen)
 			for (const [name, top] of scrollers) {
@@ -436,6 +440,7 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 
 	/** What the inspector panel shows for an element. */
 	function describe(el) {
+		const tabPart = el.closest('.vp-tabs') ? (el.matches('i') ? 'indicator' : el.closest('button') ? 'text' : 'row') : null
 		const own = [...parseKeys(el.dataset.k), ...parseKeys(el.dataset.kPress).map(p => ({ ...p, pressed: true }))]
 		const context = []
 		let p = el.parentElement
@@ -445,9 +450,10 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 			p = p.parentElement
 		}
 		return {
-			name: el.dataset.n || el.dataset.fixed || guessName(el),
+			name: TAB_PARTS[tabPart] || el.dataset.n || el.dataset.fixed || guessName(el),
 			fixed: el.dataset.fixed && !own.length ? el.dataset.fixed : null,
-			props: own,
+			props: tabPart ? [] : own,
+			tabPart,
 			context,
 			screen: state.screen,
 			overlay: state.overlay,
@@ -481,6 +487,11 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 		return el.offsetParent !== null || el.tagName === 'svg' || getComputedStyle(el).position === 'fixed'
 	}
 
+	function tabTargets(el) {
+		const row = el.closest('.vp-tabs')
+		return row && el.closest('button') && !el.matches('i') ? [...row.querySelectorAll('button')] : [el]
+	}
+
 	function drawMarks() {
 		let html = ''
 		if (highlightKey) {
@@ -489,8 +500,8 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 				if (elKeys(el).some(p => p.key === highlightKey.key && p.raw === highlightKey.raw)) html += boxFor(el, 'vp-mark key')
 			}
 		}
-		if (inspecting && hoverEl && hoverEl !== pinned) html += boxFor(hoverEl, 'vp-mark hover')
-		if (pinned && pinned.isConnected) html += boxFor(pinned, 'vp-mark pinned')
+		if (inspecting && hoverEl && hoverEl !== pinned) html += tabTargets(hoverEl).map(el => boxFor(el, 'vp-mark hover')).join('')
+		if (pinned && pinned.isConnected) html += tabTargets(pinned).map(el => boxFor(el, 'vp-mark pinned')).join('')
 		marks.innerHTML = html
 		if (inspecting && hoverEl) {
 			const d = describe(hoverEl)
@@ -558,6 +569,7 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 	paint()
 	render()
 
+	const unsubscribeMeta = store.on('meta', () => paint())
 	const unsubscribe = store.on('change', detail => paint(detail))
 	const unsubscribeBase = store.on('base', () => {
 		if (screenEl.querySelector('.vp-thread, .vp-reply')) render()
@@ -572,8 +584,13 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 	})
 	return Object.assign(api, {
 		phone, device,
+		editTab(part, color) {
+			draftTabs = part ? { [part]: color } : null
+			paintAppearance(phone, store, draftTabs)
+		},
 		destroy() {
 			unsubscribe()
+			unsubscribeMeta()
 			unsubscribeBase()
 			window.removeEventListener('pointerup', release)
 			cancelHold()
