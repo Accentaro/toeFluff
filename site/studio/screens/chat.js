@@ -91,6 +91,15 @@ export const botsChat = {
 	},
 }
 
+export const embedExamples = {
+	id: 'embed-examples', title: 'V1 & V2 embeds', group: 'Conversations',
+	render({ ui, base }) {
+		const messages = bots.messages.filter(m => m.embed || m.embedV2)
+		return exampleConversation('embed-examples', [...messages, ...(ui.sent?.['embed-examples'] || [])], ui, 2, base)
+	},
+	actions: chatActions('embed-examples'),
+}
+
 export const chatExamples = {
 	id: 'chat-examples', title: 'Threads, markdown & counts', group: 'Conversations',
 	render({ ui, base }) {

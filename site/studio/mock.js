@@ -75,6 +75,8 @@ export const bots = {
 			footer: 'Crown claimed by sol!',
 			meta: 'dream pop', sub: 'Artist - 22 listeners - 1,347 plays',
 		} },
+		{ user: 'tempo', time: '02:16', embedV2: { title: 'Components V2', text: 'A container with text and a separator. Inspect each part to find its colour key.', footer: 'The heading and body use raw colours on Android.' } },
+		{ user: 'tempo', time: '02:16', embedV2: { title: 'An accented container', accent: '#e3366d', text: 'The bot chooses this accent stripe.', footer: 'The container background and outline still follow your theme.' } },
 		{ user: 'nova', time: '02:17', text: '@sol how are you still on top' },
 		{ user: 'sol', time: '02:17', text: 'consistency :)' },
 		{ user: 'lumen', time: '02:18', system: '{name} just showed up!' },

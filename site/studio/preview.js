@@ -579,7 +579,7 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 	const unsubscribeMeta = store.on('meta', () => paint())
 	const unsubscribe = store.on('change', detail => paint(detail))
 	const unsubscribeBase = store.on('base', () => {
-		if (screenEl.querySelector('.vp-thread, .vp-reply')) render()
+		if (screenEl.querySelector('.vp-thread, .vp-reply, .vp-embed-v2')) render()
 	})
 
 	// Live getters: Object.assign would copy their values once

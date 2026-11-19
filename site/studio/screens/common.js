@@ -142,6 +142,7 @@ export function message(m, index, { grouped = false, ui = {}, dm = false, base =
 				${m.code ? codeBlock(m.code, m.language) : ''}
 				${m.spoiler ? `<div class="vp-msg-text" data-k="fg:TEXT_STRONG">${esc(m.spoiler[0])} <button class="vp-spoiler${ui.spoiler ? ' open' : ''}" data-act="spoiler" data-k="${ui.spoiler ? 'bg:SPOILER_REVEALED_BACKGROUND' : 'bg:SPOILER_HIDDEN_BACKGROUND'}" data-n="${ui.spoiler ? 'Revealed spoiler' : 'Hidden spoiler'}">${esc(m.spoiler[1])}</button></div>` : ''}
 				${m.embed ? embed(m.embed) : ''}
+				${m.embedV2 ? embedV2(m.embedV2, base) : ''}
 				${reactions(m.reactions, index, ui.reacted)}
 				${m.thread ? threadCard(m.thread, base) : ''}
 			</div>
@@ -150,12 +151,29 @@ export function message(m, index, { grouped = false, ui = {}, dm = false, base =
 }
 
 function embed(e) {
-	return `<div class="vp-embed" data-k="bg:EMBED_BACKGROUND" data-n="Embed" style="border-left-color:${e.accent}">
+	return `<div class="vp-embed" data-k="bg:EMBED_BACKGROUND" data-n="V1 embed" style="border-left-color:${e.accent}">
 		<b class="vp-embed-title" data-k="fg:TEXT_LINK">${esc(e.title)}</b>
 		<ol class="vp-embed-list" data-k="fg:TEXT_DEFAULT">${e.lines.map(([n, plays, bold]) => `<li><span data-k="fg:TEXT_LINK">${esc(n)}</span> - <b>${plays}</b> plays</li>`).join('')}</ol>
 		<p data-k="fg:TEXT_DEFAULT">${esc(e.footer)}</p>
 		<small data-k="fg:TEXT_DEFAULT"><b>${esc(e.meta)}</b><br>${esc(e.sub)}</small>
 		<span class="vp-embed-thumb" data-fixed="Embed image (content)"></span>
+	</div>`
+}
+
+// Android 352206 Components V2 text and separators consume raw colours.
+const embedV2Colors = {
+	dark: ['NEUTRAL_4', 'NEUTRAL_23'], darker: ['NEUTRAL_5', 'NEUTRAL_29'],
+	light: ['NEUTRAL_72', 'NEUTRAL_41'], midnight: ['NEUTRAL_12', 'NEUTRAL_35'],
+}
+
+function embedV2(e, base) {
+	const [text, divider] = embedV2Colors[base]
+	return `<div class="vp-embed-v2" data-k="bg:EMBED_BACKGROUND bd:BORDER_SUBTLE" data-n="V2 container">
+		${e.accent ? `<i class="vp-embed-v2-accent" style="background:${esc(e.accent)}" data-fixed="V2 accent colour (set by the bot)"></i>` : ''}
+		<h3 data-k="fg:@${text}" data-n="V2 heading (Android raw colour)">${esc(e.title)}</h3>
+		<p data-k="fg:@${text}" data-n="V2 text (Android raw colour)">${esc(e.text)}</p>
+		<hr data-k="bt:@${divider}" data-n="V2 separator (Android raw colour)">
+		<p data-k="fg:@${text}" data-n="V2 text (Android raw colour)">${esc(e.footer)}</p>
 	</div>`
 }
 
