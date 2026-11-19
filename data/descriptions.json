@@ -77,7 +77,7 @@
     },
     "EMBED_BACKGROUND": {
       "area": "Chat",
-      "text": "Embed cards (bot messages, link previews). Unverified on Android 352206; no current visual consumer has been identified."
+      "text": "Colours V2 container backgrounds."
     },
     "TEXT_STRONG": {
       "area": "Text",
@@ -177,7 +177,7 @@
     },
     "BORDER_SUBTLE": {
       "area": "Borders and dividers",
-      "text": "Colours Settings row separators, the Inbox header divider, and the bars beside notification previews."
+      "text": "Colours Settings row separators, the Inbox header divider, and the bars beside notification previews. Colours V2 container outlines. Timestamp backgrounds use the Dark value on Ash, Dark and Onyx, and the Light value on Light."
     },
     "BORDER_MUTED": {
       "area": "Borders and dividers",
@@ -209,11 +209,11 @@
     },
     "CONTROL_SECONDARY_BACKGROUND_DEFAULT": {
       "area": "Buttons",
-      "text": "Colours the fill of secondary and tertiary buttons."
+      "text": "Colours the fill of secondary and tertiary buttons. Colours V2 secondary pagination-button backgrounds; disabled buttons render the background at 50% opacity."
     },
     "CONTROL_SECONDARY_BORDER_DEFAULT": {
       "area": "Buttons",
-      "text": "Colours the outline of secondary and tertiary buttons."
+      "text": "Colours the outline of secondary and tertiary buttons. Colours V2 secondary pagination-button outlines, including disabled buttons."
     },
     "CONTROL_SECONDARY_TEXT_DEFAULT": {
       "area": "Buttons",
@@ -896,13 +896,13 @@
       "text": "Supplies the emoji-search placeholder text in Ash."
     },
     "NEUTRAL_23": {
-      "text": "Supplies unselected server initials and subtle labels/icons."
+      "text": "Supplies unselected server initials and subtle labels/icons. Colours V2 subtext (including genre/footer lines) and separators on Ash."
     },
     "NEUTRAL_16": {
       "text": "Supplies subtle labels, rail glyphs and unselected initials in Ash."
     },
     "NEUTRAL_4": {
-      "text": "Supplies default text and icons in Ash."
+      "text": "Supplies default text and icons in Ash. Colours ordinary V2 headings, body text, bold and italic text on Ash; links, timestamps and subtext have separate bindings."
     },
     "NEUTRAL_1": {
       "text": "Supplies bright button labels and the primary overlay fill."
@@ -917,7 +917,7 @@
       "text": "Supplies mention text colour in the dark theme."
     },
     "BLUE_NEW_27": {
-      "text": "Supplies link text through TEXT_LINK in the Ash theme."
+      "text": "Supplies link text through TEXT_LINK in the Ash theme. Colours links inside V2 text on Ash."
     },
     "GREEN_360": {
       "text": "Supplies the positive activity icon colour in the profile bar."
@@ -959,7 +959,7 @@
       "text": "Colours the first stop of the premium primary button gradient."
     },
     "NEUTRAL_35": {
-      "text": "Supplies the common badge border through its semantic alias."
+      "text": "Supplies the common badge border through its semantic alias. Colours V2 subtext (including genre/footer lines) and separators on Onyx."
     },
     "NEUTRAL_15": {
       "text": "Supplies the common badge text through its semantic alias."
@@ -1122,6 +1122,36 @@
     },
     "OPACITY_YELLOW_8": {
       "text": "Tints messages that mention you, including replies with a ping, at low opacity."
+    },
+    "PRIMARY_200": {
+      "text": "Colours V2 timestamp text on Ash, Dark and Onyx."
+    },
+    "NEUTRAL_5": {
+      "text": "Colours ordinary V2 headings, body text, bold and italic text on Dark; links, timestamps and subtext have separate bindings."
+    },
+    "NEUTRAL_29": {
+      "text": "Colours V2 subtext (including genre/footer lines) and separators on Dark."
+    },
+    "BLUE_NEW_37": {
+      "text": "Colours links inside V2 text on Dark."
+    },
+    "NEUTRAL_72": {
+      "text": "Colours ordinary V2 headings, body text, bold and italic text on Light; links, timestamps and subtext have separate bindings."
+    },
+    "NEUTRAL_41": {
+      "text": "Colours V2 subtext (including genre/footer lines) and separators on Light."
+    },
+    "BLUE_NEW_53": {
+      "text": "Colours links inside V2 text on Light."
+    },
+    "PRIMARY_600": {
+      "text": "Colours V2 timestamp text on Light."
+    },
+    "NEUTRAL_12": {
+      "text": "Colours ordinary V2 headings, body text, bold and italic text on Onyx; links, timestamps and subtext have separate bindings."
+    },
+    "BLUE_NEW_45": {
+      "text": "Colours links inside V2 text on Onyx."
     }
   }
 }

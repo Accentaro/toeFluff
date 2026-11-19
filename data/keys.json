@@ -472,7 +472,7 @@
     {
       "key": "BORDER_SUBTLE",
       "area": "Borders and dividers",
-      "description": "Colours Settings row separators, the Inbox header divider, and the bars beside notification previews.",
+      "description": "Colours Settings row separators, the Inbox header divider, and the bars beside notification previews. Colours V2 container outlines. Timestamp backgrounds use the Dark value on Ash, Dark and Onyx, and the Light value on Light.",
       "image": "images/verified/semantic-BORDER_SUBTLE-settings.png",
       "screens": [
         "actionsheet",
@@ -500,7 +500,8 @@
         "stickers",
         "themes",
         "toast",
-        "voice"
+        "voice",
+        "embed-overview"
       ],
       "defaults": {
         "dark": "#97979f1f",
@@ -816,7 +817,7 @@
     {
       "key": "CONTROL_SECONDARY_BACKGROUND_DEFAULT",
       "area": "Buttons",
-      "description": "Colours the fill of secondary and tertiary buttons.",
+      "description": "Colours the fill of secondary and tertiary buttons. Colours V2 secondary pagination-button backgrounds; disabled buttons render the background at 50% opacity.",
       "image": "images/verified/semantic-CONTROL_SECONDARY_BACKGROUND_DEFAULT-native-button-fixture.png",
       "screens": [
         "alert",
@@ -832,7 +833,8 @@
         "search",
         "themes",
         "voice",
-        "native-button-fixture"
+        "native-button-fixture",
+        "embed-overview"
       ],
       "defaults": {
         "dark": "#97979f1f",
@@ -852,7 +854,7 @@
     {
       "key": "CONTROL_SECONDARY_BORDER_DEFAULT",
       "area": "Buttons",
-      "description": "Colours the outline of secondary and tertiary buttons.",
+      "description": "Colours the outline of secondary and tertiary buttons. Colours V2 secondary pagination-button outlines, including disabled buttons.",
       "image": "images/verified/semantic-CONTROL_SECONDARY_BORDER_DEFAULT-native-button-fixture.png",
       "screens": [
         "alert",
@@ -868,7 +870,8 @@
         "members",
         "search",
         "themes",
-        "native-button-fixture"
+        "native-button-fixture",
+        "embed-overview"
       ],
       "defaults": {
         "dark": "#97979f0a",
@@ -920,12 +923,13 @@
     {
       "key": "EMBED_BACKGROUND",
       "area": "Chat",
-      "description": "Embed cards (bot messages, link previews). Unverified on Android 352206; no current visual consumer has been identified.",
-      "image": "images/semantic/EMBED_BACKGROUND.webp",
+      "description": "Colours V2 container backgrounds.",
+      "image": "images/verified/v2-overview-dark.png",
       "screens": [
         "chatinput",
         "emoji",
-        "keyboard"
+        "keyboard",
+        "embed-overview"
       ],
       "defaults": {
         "dark": "#393a41",
@@ -939,9 +943,8 @@
         "light": "NEUTRAL_1",
         "midnight": "NEUTRAL_96"
       },
-      "reviewStatus": "unverified",
-      "tested": false,
-      "verificationNote": "No visual consumer verified on Android 352206. Historical examples remain unverified."
+      "reviewStatus": "verified",
+      "tested": true
     },
     {
       "key": "ICON_MUTED",
@@ -5633,7 +5636,7 @@
   "raw": [
     {
       "key": "BLUE_NEW_27",
-      "description": "Supplies link text through TEXT_LINK in the Ash theme.",
+      "description": "Supplies link text through TEXT_LINK in the Ash theme. Colours links inside V2 text on Ash.",
       "image": "images/verified/raw-BLUE_NEW_27-family-centre.png",
       "value": "#76aff6",
       "usedBy": [
@@ -5642,7 +5645,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "family-centre"
+        "family-centre",
+        "embed-overview"
       ]
     },
     {
@@ -5851,7 +5855,7 @@
     },
     {
       "key": "NEUTRAL_23",
-      "description": "Supplies unselected server initials and subtle labels/icons.",
+      "description": "Supplies unselected server initials and subtle labels/icons. Colours V2 subtext (including genre/footer lines) and separators on Ash.",
       "image": "images/verified/raw-NEUTRAL_23-server.png",
       "value": "#abacb2",
       "usedBy": [
@@ -5862,7 +5866,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "server"
+        "server",
+        "embed-overview"
       ]
     },
     {
@@ -5896,7 +5901,7 @@
     },
     {
       "key": "NEUTRAL_4",
-      "description": "Supplies default text and icons in Ash.",
+      "description": "Supplies default text and icons in Ash. Colours ordinary V2 headings, body text, bold and italic text on Ash; links, timestamps and subtext have separate bindings.",
       "image": "images/verified/raw-NEUTRAL_4-server-ash.png",
       "value": "#f3f3f4",
       "usedBy": [
@@ -5917,7 +5922,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "server-ash"
+        "server-ash",
+        "embed-overview"
       ]
     },
     {
@@ -6134,7 +6140,7 @@
     },
     {
       "key": "NEUTRAL_35",
-      "description": "Supplies the common badge border through its semantic alias.",
+      "description": "Supplies the common badge border through its semantic alias. Colours V2 subtext (including genre/footer lines) and separators on Onyx.",
       "image": "images/verified/raw-NEUTRAL_35-native-badge-common.png",
       "value": "#81828a",
       "usedBy": [
@@ -6143,7 +6149,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "native-badge-common"
+        "native-badge-common",
+        "embed-overview"
       ]
     },
     {
@@ -7017,8 +7024,206 @@
         "chat-mention-highlight",
         "chat-reply-highlight"
       ]
+    },
+    {
+      "key": "PRIMARY_200",
+      "description": "Colours V2 timestamp text on Ash, Dark and Onyx.",
+      "image": "images/verified/v2-overview-dark.png",
+      "value": "#e3e5e8",
+      "usedBy": [],
+      "reviewStatus": "verified",
+      "tested": true,
+      "screens": [
+        "embed-overview"
+      ]
+    },
+    {
+      "key": "NEUTRAL_5",
+      "description": "Colours ordinary V2 headings, body text, bold and italic text on Dark; links, timestamps and subtext have separate bindings.",
+      "image": "images/verified/v2-overview-darker.png",
+      "value": "#efeff1",
+      "usedBy": [
+        "ICON_DEFAULT",
+        "INPUT_TEXT_DEFAULT",
+        "INPUT_TEXT_ERROR_DEFAULT",
+        "MOBILE_CHATINPUT_BACKGROUND_ACTIVE",
+        "MOBILE_CHATINPUT_BACKGROUND_DEFAULT",
+        "MOBILE_VOICE_MESSAGE_RECORDING_SPINNER_COLOR",
+        "MOBILE_VOICE_MESSAGE_RECORDING_WAVEFORM_BAR_BACKGROUND",
+        "REDESIGN_BUTTON_TERTIARY_TEXT",
+        "SHARE_CHAT_INPUT_BACKGROUND",
+        "TEXT_DEFAULT",
+        "TOGGLEBUTTON_CRITICAL_ICON_DEFAULT",
+        "TOGGLEBUTTON_CRITICAL_ICON_HOVER",
+        "TOGGLEBUTTON_ICON_ACTIVE",
+        "TOGGLEBUTTON_ICON_DEFAULT",
+        "TOGGLEBUTTON_ICON_HOVER",
+        "TOGGLEBUTTON_ICON_ONLY_ICON_DEFAULT"
+      ],
+      "reviewStatus": "verified",
+      "tested": true,
+      "screens": [
+        "embed-overview"
+      ]
+    },
+    {
+      "key": "NEUTRAL_29",
+      "description": "Colours V2 subtext (including genre/footer lines) and separators on Dark.",
+      "image": "images/verified/v2-overview-darker.png",
+      "value": "#96979e",
+      "usedBy": [
+        "CHAT_INPUT_ACTION_BUTTON_ICON_DEFAULT_TINT",
+        "CHAT_INPUT_ICON_DEFAULT_TINT",
+        "CONTROL_ICON_ONLY_ICON_DEFAULT",
+        "ICON_MUTED",
+        "ICON_SUBTLE",
+        "INPUT_ICON_DEFAULT",
+        "INTERACTIVE_ICON_DEFAULT",
+        "INTERACTIVE_TEXT_DEFAULT",
+        "MESSAGES_ITEM_CHANNEL_TEXT_DEFAULT",
+        "MOBILE_GUILDBAR_ICON_DEFAULT",
+        "MOBILE_UNREADBAR_TEXT_DEFAULT",
+        "REACTION_TEXT_DEFAULT",
+        "REDESIGN_CHANNEL_NAME_MUTED_TEXT",
+        "TAB_LABEL_TEXT_DEFAULT",
+        "TEXT_MUTED",
+        "TEXT_SUBTLE",
+        "VOICE_CHANNEL_USER_LIMIT_ICON",
+        "VOICE_CHANNEL_USER_LIMIT_TEXT"
+      ],
+      "reviewStatus": "verified",
+      "tested": true,
+      "screens": [
+        "embed-overview"
+      ]
+    },
+    {
+      "key": "BLUE_NEW_37",
+      "description": "Colours links inside V2 text on Dark.",
+      "image": "images/verified/v2-overview-darker.png",
+      "value": "#4d96ee",
+      "usedBy": [
+        "STEAM_REVIEW_TEXT_POSITIVE",
+        "TEXT_LINK"
+      ],
+      "reviewStatus": "verified",
+      "tested": true,
+      "screens": [
+        "embed-overview"
+      ]
+    },
+    {
+      "key": "NEUTRAL_72",
+      "description": "Colours ordinary V2 headings, body text, bold and italic text on Light; links, timestamps and subtext have separate bindings.",
+      "image": "images/verified/v2-overview-light.png",
+      "value": "#2e2e34",
+      "usedBy": [
+        "ICON_DEFAULT",
+        "INPUT_TEXT_DEFAULT",
+        "INPUT_TEXT_ERROR_DEFAULT",
+        "MOBILE_VOICE_MESSAGE_RECORDING_SPINNER_COLOR",
+        "MOBILE_VOICE_MESSAGE_RECORDING_WAVEFORM_BAR_BACKGROUND",
+        "REDESIGN_BUTTON_TERTIARY_TEXT",
+        "TEXT_DEFAULT",
+        "TOGGLEBUTTON_CRITICAL_ICON_DEFAULT",
+        "TOGGLEBUTTON_CRITICAL_ICON_HOVER",
+        "TOGGLEBUTTON_ICON_ACTIVE",
+        "TOGGLEBUTTON_ICON_DEFAULT",
+        "TOGGLEBUTTON_ICON_HOVER",
+        "TOGGLEBUTTON_ICON_ONLY_ICON_DEFAULT"
+      ],
+      "reviewStatus": "verified",
+      "tested": true,
+      "screens": [
+        "embed-overview"
+      ]
+    },
+    {
+      "key": "NEUTRAL_41",
+      "description": "Colours V2 subtext (including genre/footer lines) and separators on Light.",
+      "image": "images/verified/v2-overview-light.png",
+      "value": "#6c6d76",
+      "usedBy": [
+        "ICON_MUTED",
+        "REDESIGN_CHANNEL_NAME_MUTED_TEXT",
+        "TEXT_MUTED"
+      ],
+      "reviewStatus": "verified",
+      "tested": true,
+      "screens": [
+        "embed-overview"
+      ]
+    },
+    {
+      "key": "BLUE_NEW_53",
+      "description": "Colours links inside V2 text on Light.",
+      "image": "images/verified/v2-overview-light.png",
+      "value": "#006dd4",
+      "usedBy": [
+        "STEAM_REVIEW_TEXT_POSITIVE",
+        "TEXT_LINK"
+      ],
+      "reviewStatus": "verified",
+      "tested": true,
+      "screens": [
+        "embed-overview"
+      ]
+    },
+    {
+      "key": "PRIMARY_600",
+      "description": "Colours V2 timestamp text on Light.",
+      "image": "images/verified/v2-overview-light.png",
+      "value": "#313338",
+      "usedBy": [],
+      "reviewStatus": "verified",
+      "tested": true,
+      "screens": [
+        "embed-overview"
+      ]
+    },
+    {
+      "key": "NEUTRAL_12",
+      "description": "Colours ordinary V2 headings, body text, bold and italic text on Onyx; links, timestamps and subtext have separate bindings.",
+      "image": "images/verified/v2-overview-midnight.png",
+      "value": "#d4d5d8",
+      "usedBy": [
+        "EXPRESSIVE_GRADIENT_TENURE_BADGE_SILVER_START",
+        "ICON_DEFAULT",
+        "INPUT_TEXT_DEFAULT",
+        "INPUT_TEXT_ERROR_DEFAULT",
+        "MOBILE_VOICE_MESSAGE_RECORDING_SPINNER_COLOR",
+        "MOBILE_VOICE_MESSAGE_RECORDING_WAVEFORM_BAR_BACKGROUND",
+        "REDESIGN_BUTTON_TERTIARY_TEXT",
+        "TEXT_DEFAULT",
+        "TOGGLEBUTTON_CRITICAL_ICON_DEFAULT",
+        "TOGGLEBUTTON_CRITICAL_ICON_HOVER",
+        "TOGGLEBUTTON_ICON_ACTIVE",
+        "TOGGLEBUTTON_ICON_DEFAULT",
+        "TOGGLEBUTTON_ICON_HOVER",
+        "TOGGLEBUTTON_ICON_ONLY_ICON_DEFAULT"
+      ],
+      "reviewStatus": "verified",
+      "tested": true,
+      "screens": [
+        "embed-overview"
+      ]
+    },
+    {
+      "key": "BLUE_NEW_45",
+      "description": "Colours links inside V2 text on Onyx.",
+      "image": "images/verified/v2-overview-midnight.png",
+      "value": "#2781e7",
+      "usedBy": [
+        "STEAM_REVIEW_TEXT_POSITIVE",
+        "TEXT_LINK"
+      ],
+      "reviewStatus": "verified",
+      "tested": true,
+      "screens": [
+        "embed-overview"
+      ]
     }
   ],
-  "reviewed": "2026-11-17",
-  "reviewedExamples": 318
+  "reviewed": "2026-11-19",
+  "reviewedExamples": 361
 }

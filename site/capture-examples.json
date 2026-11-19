@@ -138,6 +138,42 @@
         "originalAfter": "../genuine-runs/2026-11-17T21-21-54-228Z-39444/semantic-BORDER_SUBTLE/after.png",
         "originalRestored": "../genuine-runs/2026-11-17T21-21-54-228Z-39444/semantic-BORDER_SUBTLE/restored.png",
         "comparisonSha256": "d594e61e8a8ac48c83926e2d48e44b0519b2d303e75f9776827373b39189aa25"
+      },
+      {
+        "image": "../images/verified/v2-overview-dark.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 container outlines. Timestamp backgrounds use the Dark value on Ash, Dark and Onyx, and the Light value on Light. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "dark"
+      },
+      {
+        "image": "../images/verified/v2-overview-darker.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 container outlines. Timestamp backgrounds use the Dark value on Ash, Dark and Onyx, and the Light value on Light. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "darker"
+      },
+      {
+        "image": "../images/verified/v2-overview-light.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 container outlines. Timestamp backgrounds use the Dark value on Ash, Dark and Onyx, and the Light value on Light. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "light"
+      },
+      {
+        "image": "../images/verified/v2-overview-midnight.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 container outlines. Timestamp backgrounds use the Dark value on Ash, Dark and Onyx, and the Light value on Light. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "midnight"
       }
     ],
     "INPUT_BORDER_DEFAULT": [
@@ -499,6 +535,120 @@
         "originalRestored": "../genuine-runs/2026-11-17T20-10-24-887Z-48748/semantic-MESSAGE_MENTIONED_BACKGROUND_DEFAULT/restored.png",
         "comparisonSha256": "e3e8fc69e7a1444973fb5c06d3e2a1ad87ab91af8f964c4cf909c577d7ac95ff"
       }
+    ],
+    "EMBED_BACKGROUND": [
+      {
+        "image": "../images/verified/v2-overview-dark.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 container backgrounds. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "dark"
+      },
+      {
+        "image": "../images/verified/v2-overview-darker.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 container backgrounds. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "darker"
+      },
+      {
+        "image": "../images/verified/v2-overview-light.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 container backgrounds. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "light"
+      },
+      {
+        "image": "../images/verified/v2-overview-midnight.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 container backgrounds. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "midnight"
+      }
+    ],
+    "CONTROL_SECONDARY_BACKGROUND_DEFAULT": [
+      {
+        "image": "../images/verified/v2-overview-dark.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 secondary pagination-button backgrounds; disabled buttons render the background at 50% opacity. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "dark"
+      },
+      {
+        "image": "../images/verified/v2-overview-darker.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 secondary pagination-button backgrounds; disabled buttons render the background at 50% opacity. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "darker"
+      },
+      {
+        "image": "../images/verified/v2-overview-light.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 secondary pagination-button backgrounds; disabled buttons render the background at 50% opacity. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "light"
+      },
+      {
+        "image": "../images/verified/v2-overview-midnight.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 secondary pagination-button backgrounds; disabled buttons render the background at 50% opacity. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "midnight"
+      }
+    ],
+    "CONTROL_SECONDARY_BORDER_DEFAULT": [
+      {
+        "image": "../images/verified/v2-overview-dark.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 secondary pagination-button outlines, including disabled buttons. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "dark"
+      },
+      {
+        "image": "../images/verified/v2-overview-darker.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 secondary pagination-button outlines, including disabled buttons. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "darker"
+      },
+      {
+        "image": "../images/verified/v2-overview-light.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 secondary pagination-button outlines, including disabled buttons. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "light"
+      },
+      {
+        "image": "../images/verified/v2-overview-midnight.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 secondary pagination-button outlines, including disabled buttons. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "midnight"
+      }
     ]
   },
   "raw": {
@@ -536,6 +686,178 @@
         "originalAfter": "../genuine-runs/2026-11-17T20-10-24-887Z-48748/raw-OPACITY_YELLOW_8/after.png",
         "originalRestored": "../genuine-runs/2026-11-17T20-10-24-887Z-48748/raw-OPACITY_YELLOW_8/restored.png",
         "comparisonSha256": "8181e3f26bea6bc0b3926c1af23509c8dc119f908bc657edf938e08e5554c2e6"
+      }
+    ],
+    "NEUTRAL_4": [
+      {
+        "image": "../images/verified/v2-overview-dark.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours ordinary V2 headings, body text, bold and italic text on Ash; links, timestamps and subtext have separate bindings. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "dark"
+      }
+    ],
+    "NEUTRAL_23": [
+      {
+        "image": "../images/verified/v2-overview-dark.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 subtext (including genre/footer lines) and separators on Ash. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "dark"
+      }
+    ],
+    "BLUE_NEW_27": [
+      {
+        "image": "../images/verified/v2-overview-dark.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours links inside V2 text on Ash. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "dark"
+      }
+    ],
+    "PRIMARY_200": [
+      {
+        "image": "../images/verified/v2-overview-dark.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 timestamp text on Ash, Dark and Onyx. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "dark"
+      },
+      {
+        "image": "../images/verified/v2-overview-darker.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 timestamp text on Ash, Dark and Onyx. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "darker"
+      },
+      {
+        "image": "../images/verified/v2-overview-midnight.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 timestamp text on Ash, Dark and Onyx. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "midnight"
+      }
+    ],
+    "NEUTRAL_5": [
+      {
+        "image": "../images/verified/v2-overview-darker.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours ordinary V2 headings, body text, bold and italic text on Dark; links, timestamps and subtext have separate bindings. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "darker"
+      }
+    ],
+    "NEUTRAL_29": [
+      {
+        "image": "../images/verified/v2-overview-darker.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 subtext (including genre/footer lines) and separators on Dark. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "darker"
+      }
+    ],
+    "BLUE_NEW_37": [
+      {
+        "image": "../images/verified/v2-overview-darker.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours links inside V2 text on Dark. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "darker"
+      }
+    ],
+    "NEUTRAL_72": [
+      {
+        "image": "../images/verified/v2-overview-light.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours ordinary V2 headings, body text, bold and italic text on Light; links, timestamps and subtext have separate bindings. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "light"
+      }
+    ],
+    "NEUTRAL_41": [
+      {
+        "image": "../images/verified/v2-overview-light.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 subtext (including genre/footer lines) and separators on Light. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "light"
+      }
+    ],
+    "BLUE_NEW_53": [
+      {
+        "image": "../images/verified/v2-overview-light.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours links inside V2 text on Light. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "light"
+      }
+    ],
+    "PRIMARY_600": [
+      {
+        "image": "../images/verified/v2-overview-light.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 timestamp text on Light. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "light"
+      }
+    ],
+    "NEUTRAL_12": [
+      {
+        "image": "../images/verified/v2-overview-midnight.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours ordinary V2 headings, body text, bold and italic text on Onyx; links, timestamps and subtext have separate bindings. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "midnight"
+      }
+    ],
+    "NEUTRAL_35": [
+      {
+        "image": "../images/verified/v2-overview-midnight.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours V2 subtext (including genre/footer lines) and separators on Onyx. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "midnight"
+      }
+    ],
+    "BLUE_NEW_45": [
+      {
+        "image": "../images/verified/v2-overview-midnight.png",
+        "screen": "embed-overview",
+        "width": 1760,
+        "height": 692,
+        "description": "Colours links inside V2 text on Onyx. Android 352206; default at left, colour probes at right.",
+        "reviewStatus": "verified",
+        "base": "midnight"
       }
     ]
   }

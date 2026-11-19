@@ -97,6 +97,7 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 			for (const k of detail.semantic || []) if (usedSemantic.has(k)) style.setProperty(`--c-${k}`, store.color(k) || 'transparent')
 			for (const k of detail.raw || []) if (usedRaw.has(k)) style.setProperty(`--r-${k}`, store.rawColor(k) || 'transparent')
 		}
+		paintBaseKeys(phone)
 		paintAppearance(phone, store, draftTabs)
 		phone.dataset.base = store.base
 		phone.classList.toggle('vp-light', store.base === 'light')
@@ -110,6 +111,16 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 		return { mock, ui, params: dry ? {} : state.params, base: store.base, state, dry }
 	}
 
+	// Native timestamps use Dark's background on Ash and Onyx too.
+	function paintBaseKeys(root) {
+		for (const el of root.querySelectorAll('[data-k-base]')) {
+			for (const p of parseKeys(el.dataset.k)) {
+				const css = PROPS[p.prop][0]
+				if (css && !p.raw) el.style.setProperty(css, store.color(p.key, el.dataset.kBase) || 'transparent')
+			}
+		}
+	}
+
 	function paintRenderedKeys(root) {
 		for (const el of root.querySelectorAll(KEYED)) {
 			for (const p of elKeys(el)) {
@@ -120,6 +131,7 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 			}
 		}
 		applyKeys(root)
+		paintBaseKeys(root)
 	}
 
 	function render() {
@@ -432,6 +444,12 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 		if (!inspecting) return
 		e.preventDefault()
 		e.stopPropagation()
+	}, true)
+	// Disabled controls suppress clicks, but still expose pointer events for inspection.
+	phone.addEventListener('pointerdown', e => {
+		if (!inspecting || e.button !== 0) return
+		e.preventDefault()
+		e.stopPropagation()
 		const el = inspectable(e.target)
 		pinned = el
 		drawMarks()
@@ -441,12 +459,12 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 	/** What the inspector panel shows for an element. */
 	function describe(el) {
 		const tabPart = el.closest('.vp-tabs') ? (el.matches('i') ? 'indicator' : el.closest('button') ? 'text' : 'row') : null
-		const own = [...parseKeys(el.dataset.k), ...parseKeys(el.dataset.kPress).map(p => ({ ...p, pressed: true }))]
+		const own = [...parseKeys(el.dataset.k), ...parseKeys(el.dataset.kPress).map(p => ({ ...p, pressed: true }))].map(p => el.dataset.kBase && !p.raw ? { ...p, base: el.dataset.kBase } : p)
 		const context = []
 		let p = el.parentElement
 		while (p && p !== phone && context.length < 3) {
 			const bg = parseKeys(p.dataset?.k).find(x => x.prop === 'bg')
-			if (bg && !own.some(o => o.key === bg.key)) context.push({ ...bg, name: p.dataset.n || '' })
+			if (bg && !own.some(o => o.key === bg.key)) context.push({ ...bg, ...(p.dataset.kBase ? { base: p.dataset.kBase } : {}), name: p.dataset.n || '' })
 			p = p.parentElement
 		}
 		// Surface colours belong in the editable parts even when the click lands on text or emoji artwork.

@@ -208,6 +208,7 @@ export async function mount(host) {
 			if (info?.tabPart) selectTabPart(info.tabPart)
 			else if (info?.props?.length) {
 				const first = info.props.find(p => !p.pressed) || info.props[0]
+				if (first.base) setBase(first.base)
 				select(first.key, first.raw, { from: 'inspector' })
 			} else renderProperty()
 			if (matchMedia('(max-width: 900px)').matches) setView('inspect')
@@ -513,7 +514,7 @@ export async function mount(host) {
 	function verification(key, raw, capture) {
 		const t = raw ? testedRaw.get(key) : tested.get(key)
 		if (!t) return { level: 'none', text: 'Not verified. Placed from the key name; the real app may differ.' }
-		const screens = raw ? [VT.captures.raw[key]?.screen].filter(Boolean) : t.screens
+		const screens = raw ? (t.screens || [VT.captures.raw[key]?.screen].filter(Boolean)) : t.screens
 		if (capture && screens.includes(capture)) return { level: 'here', text: 'Verified on this screen' }
 		return { level: 'elsewhere', text: `Verified on ${screens.slice(0, 4).map(screenLabel).join(', ')}${screens.length > 4 ? '...' : ''}` }
 	}
@@ -534,12 +535,12 @@ export async function mount(host) {
 		if (!d) return ''
 		const capture = d.capture
 		const row = p => {
-			const info = p.raw ? store.rawInfo(p.key) : store.semanticInfo(p.key)
+			const info = p.raw ? store.rawInfo(p.key) : store.semanticInfo(p.key, p.base || store.base)
 			const v = verification(p.key, p.raw, capture)
 			const sel = ui.selected && ui.selected.key === p.key && !!ui.selected.raw === !!p.raw
-			return `<button class="st-iprop${sel ? ' on' : ''}" data-select="${esc(p.key)}" data-raw="${p.raw ? 1 : ''}">
+			return `<button class="st-iprop${sel ? ' on' : ''}" data-select="${esc(p.key)}" data-key-base="${p.base || ''}" data-raw="${p.raw ? 1 : ''}">
 				<span class="st-sw"><i style="${swatchStyle(info.value)}"></i></span>
-				<span class="st-iprop-text"><small>${esc(PROPS[p.prop][1])}${p.pressed ? ' (pressed)' : ''}</small><code>${p.raw ? '<em>raw</em> ' : ''}${esc(p.key)}</code></span>
+				<span class="st-iprop-text"><small>${esc(PROPS[p.prop][1])}${p.pressed ? ' (pressed)' : ''}${p.base ? ` (${BASE_NAMES[p.base]})` : ''}</small><code>${p.raw ? '<em>raw</em> ' : ''}${esc(p.key)}</code></span>
 				<span class="st-verify ${v.level}" title="${esc(v.text)}">${v.level === 'here' ? 'Verified' : v.level === 'elsewhere' ? 'Tested elsewhere' : 'Unverified'}</span>
 			</button>`
 		}
@@ -547,7 +548,7 @@ export async function mount(host) {
 			<div class="st-inspect-head"><span><small>Inspecting</small><b>${esc(d.name)}</b></span><button class="st-icon-btn" data-cmd="clear-inspect" aria-label="Close inspector card">&times;</button></div>
 			${d.fixed ? `<p class="st-fixed"><b>Fixed styling.</b> ${esc(d.fixed)} is not drawn from theme colours, so no key changes it.</p>` : ''}
 			${d.props.length ? `<div class="st-iprops">${d.props.map(row).join('')}</div>` : ''}
-			${d.context.length ? `<p class="st-context">Sits on ${d.context.map(c => `<button class="st-chip" data-select="${esc(c.key)}" data-raw="${c.raw ? 1 : ''}">${esc(c.key)}</button>`).join(' ')}</p>` : ''}
+			${d.context.length ? `<p class="st-context">Sits on ${d.context.map(c => `<button class="st-chip" data-select="${esc(c.key)}" data-key-base="${c.base || ''}" data-raw="${c.raw ? 1 : ''}">${esc(c.key)}${c.base ? ` (${BASE_NAMES[c.base]})` : ''}</button>`).join(' ')}</p>` : ''}
 		</div>`
 	}
 
@@ -674,7 +675,10 @@ export async function mount(host) {
 			return
 		}
 		const sel = t.closest('[data-select]')
-		if (sel) return select(sel.dataset.select, !!sel.dataset.raw, { from: sel.closest('.st-inspect') ? 'inspector' : 'panel' })
+		if (sel) {
+			if (sel.dataset.keyBase) setBase(sel.dataset.keyBase)
+			return select(sel.dataset.select, !!sel.dataset.raw, { from: sel.closest('.st-inspect') ? 'inspector' : 'panel' })
+		}
 		const show = t.closest('[data-show]')
 		if (show) {
 			const [kind, id] = show.dataset.show.split(':')

@@ -168,12 +168,20 @@ const embedV2Colors = {
 
 function embedV2(e, base) {
 	const [text, divider] = embedV2Colors[base]
-	return `<div class="vp-embed-v2" data-k="bg:EMBED_BACKGROUND bd:BORDER_SUBTLE" data-n="V2 container">
+	const link = { dark: 'BLUE_NEW_27', darker: 'BLUE_NEW_37', light: 'BLUE_NEW_53', midnight: 'BLUE_NEW_45' }[base]
+	const timestamp = base === 'light' ? 'PRIMARY_600' : 'PRIMARY_200'
+	return `<div class="vp-embed-v2${e.days ? ' vp-embed-v2-overview' : ''}" data-k="bg:EMBED_BACKGROUND bd:BORDER_SUBTLE" data-n="V2 container">
 		${e.accent ? `<i class="vp-embed-v2-accent" style="background:${esc(e.accent)}" data-fixed="V2 accent colour (set by the bot)"></i>` : ''}
-		<h3 data-k="fg:@${text}" data-n="V2 heading (Android raw colour)">${esc(e.title)}</h3>
-		<p data-k="fg:@${text}" data-n="V2 text (Android raw colour)">${esc(e.text)}</p>
+		<h3 data-k="fg:@${text}" data-n="V2 heading (Android raw colour)">${esc(e.title)}${e.days ? ` <span data-k="fg:@${link}" data-n="V2 link (Android raw colour)">${esc(e.listener)}</span>` : ''}</h3>
+		${e.days ? `${e.days.map(day => `<hr data-k="bt:@${divider}" data-n="V2 separator (Android raw colour)">
+			<p data-k="fg:@${text}" data-n="V2 bold text (Android raw colour)"><b><span class="vp-embed-v2-timestamp" data-k="bg:BORDER_SUBTLE" data-k-base="${base === 'light' ? 'light' : 'darker'}" data-n="V2 timestamp background (native Light or Dark base)"><span data-k="fg:@${timestamp}" data-n="V2 timestamp text (Android raw colour)">${esc(day.date)}</span></span> - ${esc(day.duration)} - ${day.plays} plays</b></p>
+			<p data-k="fg:@${divider}" data-n="V2 subtext (Android raw colour)"><em>${esc(day.genres)}</em></p>
+			<p data-k="fg:@${text}" data-n="V2 body and italic text (Android raw colour)">${day.tracks.map(([name, plays]) => `${esc(name)} - <em>${plays} plays</em>`).join('<br>')}</p>`).join('')}
+			<hr data-k="bt:@${divider}" data-n="V2 separator (Android raw colour)">
+			<p data-k="fg:@${divider}" data-n="V2 footer subtext (Android raw colour)">${esc(e.footer)}<br>${esc(e.summary)}</p>
+			<div class="vp-embed-v2-buttons">${['\u23ee\ufe0f', '\u25c0\ufe0f', '\u25b6\ufe0f', '\u23ed\ufe0f', '\ud83d\udd22'].map((emoji, i) => `<button disabled aria-label="${['First page', 'Previous page', 'Next page', 'Last page', 'Jump to page'][i]}" data-k="bd:CONTROL_SECONDARY_BORDER_DEFAULT" data-n="V2 disabled pagination button"><i class="vp-embed-v2-button-bg" data-k="bg:CONTROL_SECONDARY_BACKGROUND_DEFAULT" data-n="V2 disabled button background (50% opacity)"></i><span data-fixed="Pagination emoji artwork (bot content)">${emoji}</span></button>`).join('')}</div>` : `<p data-k="fg:@${text}" data-n="V2 text (Android raw colour)">${esc(e.text)}</p>
 		<hr data-k="bt:@${divider}" data-n="V2 separator (Android raw colour)">
-		<p data-k="fg:@${text}" data-n="V2 text (Android raw colour)">${esc(e.footer)}</p>
+		<p data-k="fg:@${text}" data-n="V2 text (Android raw colour)">${esc(e.footer)}</p>`}
 	</div>`
 }
 

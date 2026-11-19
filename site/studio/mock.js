@@ -75,6 +75,14 @@ export const bots = {
 			footer: 'Crown claimed by sol!',
 			meta: 'dream pop', sub: 'Artist - 22 listeners - 1,347 plays',
 		} },
+		{ user: 'tempo', time: '02:16', embedV2: {
+			title: 'Daily overview for', listener: 'Juniper',
+			days: [
+				{ date: '18 November 2026', duration: '4h8m', plays: 65, genres: 'dream pop - ambient - indie', tracks: [['Aurora Bloom', 12], ['Aurora Bloom - Chasing Lights', 7], ['Lunar Radio - Ocean Blue', 3]] },
+				{ date: '17 November 2026', duration: '2h46m', plays: 56, genres: 'electronic - shoegaze - synth pop', tracks: [['Lunar Radio', 22], ['Lunar Radio - Night Drive', 7], ['Aurora Bloom - Daylight', 2]] },
+			],
+			footer: '1/8 - Top genres, artist, album and track', summary: '200 unique tracks - 257 total plays - 64.2 avg',
+		} },
 		{ user: 'tempo', time: '02:16', embedV2: { title: 'Components V2', text: 'A container with text and a separator. Inspect each part to find its colour key.', footer: 'The heading and body use raw colours on Android.' } },
 		{ user: 'tempo', time: '02:16', embedV2: { title: 'An accented container', accent: '#e3366d', text: 'The bot chooses this accent stripe.', footer: 'The container background and outline still follow your theme.' } },
 		{ user: 'nova', time: '02:17', text: '@sol how are you still on top' },
