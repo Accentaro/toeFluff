@@ -98,13 +98,20 @@ function threadCard(thread, base) {
 	return thread.route ? `<button ${props} data-go="${thread.route}">${body}</button>` : `<div ${props}>${body}</div>`
 }
 
-export function reactions(list, msgIndex, toggled = {}) {
+// Native chat reactions on Discord 352.6 use Android raw colours, except the unselected fill.
+const reactionTextColors = { dark: ['NEUTRAL_16', 'NEUTRAL_1'], darker: ['NEUTRAL_23', 'NEUTRAL_2'], light: ['NEUTRAL_47', 'NEUTRAL_76'], midnight: ['NEUTRAL_29', 'NEUTRAL_10'] }
+export function reactionKeys(mine, base = 'dark') {
+	const [normal, selected] = reactionTextColors[base]
+	return mine ? `bg:@BRAND_NEW_500_ALPHA_20 bd:@BRAND_560 fg:@${selected}` : `bg:BACKGROUND_MOD_STRONG fg:@${normal}`
+}
+
+export function reactions(list, msgIndex, toggled = {}, base = 'dark') {
 	if (!list?.length) return ''
 	list = list.map(([e, n, mine], i) => {
 		if (!toggled[`${msgIndex}.${i}`]) return [e, n, mine]
 		return [e, mine ? n - 1 : n + 1, !mine]
 	})
-	return `<div class="vp-reactions">${list.map(([e, n, mine], i) => `<button class="vp-reaction${mine ? ' on' : ''}" data-act="react:${msgIndex}.${i}" data-k="${mine ? 'bg:REACTION_BACKGROUND_REACTED_DEFAULT bd:REACTION_BORDER_REACTED_DEFAULT fg:REACTION_TEXT_REACTED_DEFAULT' : 'bg:BACKGROUND_MOD_STRONG fg:REACTION_TEXT_DEFAULT'}" data-n="${mine ? 'Your reaction' : 'Reaction'}"><span data-fixed="Emoji">${e}</span>${n}</button>`).join('')}<button class="vp-reaction add" data-k="bg:BACKGROUND_MOD_STRONG fg:INTERACTIVE_ICON_DEFAULT" data-n="Add reaction" data-open="emoji">${icon('emoji', 18)}</button></div>`
+	return `<div class="vp-reactions">${list.map(([e, n, mine], i) => `<button class="vp-reaction${mine ? ' on' : ''}" data-act="react:${msgIndex}.${i}" data-k="${reactionKeys(mine, base)}" data-n="${mine ? 'Your reaction' : 'Reaction'}"><span data-fixed="Emoji">${e}</span>${n}</button>`).join('')}<button class="vp-reaction add" data-k="${reactionKeys(false, base)}" data-n="Add reaction" data-open="emoji">${icon('emoji', 18)}</button></div>`
 }
 
 export function nameOf(id) {
@@ -144,7 +151,7 @@ export function message(m, index, { grouped = false, ui = {}, dm = false, base =
 				${m.spoiler ? `<div class="vp-msg-text" data-k="fg:TEXT_STRONG">${esc(m.spoiler[0])} <button class="vp-spoiler${ui.spoiler ? ' open' : ''}" data-act="spoiler" data-k="${ui.spoiler ? 'bg:SPOILER_REVEALED_BACKGROUND' : 'bg:SPOILER_HIDDEN_BACKGROUND'}" data-n="${ui.spoiler ? 'Revealed spoiler' : 'Hidden spoiler'}">${esc(m.spoiler[1])}</button></div>` : ''}
 				${m.embed ? embed(m.embed) : ''}
 				${m.embedV2 ? embedV2(m.embedV2, base) : ''}
-				${reactions(m.reactions, index, ui.reacted)}
+				${reactions(m.reactions, index, ui.reacted, base)}
 				${m.thread ? threadCard(m.thread, base) : ''}
 			</div>
 		</div>

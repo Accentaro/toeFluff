@@ -1,6 +1,6 @@
 // Channel screens: an announcement channel, a busy text channel with unreads, a forum and member search.
 import { announcements, bots, memberGroups, users, valenced } from '../mock.js'
-import { avatar, channelHeader, chatInput, clanTag, esc, icon, md, message, nameOf, navBar, statusBar } from './common.js'
+import { avatar, channelHeader, chatInput, clanTag, esc, icon, md, message, nameOf, navBar, reactionKeys, statusBar } from './common.js'
 import { chatActions } from './main.js'
 
 // Fictional collectible artwork; its palette is independent of theme colours.
@@ -28,7 +28,7 @@ export const chat = {
 		${channelHeader({ type: c.type, name: c.name })}
 		<div class="vp-chat" data-k="bg:CHANNEL_BACKGROUND_DEFAULT" data-n="Chat background" data-scroll="chat">
 			<div class="vp-msg-tail" data-k="fg:TEXT_STRONG">and force stopping the app multiple times. Recovery mode should trigger automatically and let you back in. You can reload the app again to exit recovery mode.<br><br>This doesn't seem to be a plugin issue. I'm looking into the root cause of it.</div>
-			<div class="vp-msg-tail-reactions">${reactionsRow([['✅', 13], ['🥔', 7]], 'tail', ui)}</div>
+			<div class="vp-msg-tail-reactions">${reactionsRow([['✅', 13], ['🥔', 7]], 'tail', ui, base)}</div>
 			${msgs.map((m, i) => message(m, `a.${i}`, { ui, base })).join('')}
 		</div>
 		${c.type === 'announcement' ? `<div class="vp-follow-wrap" data-k="bg:MOBILE_KEYBOARD_GAP_BACKGROUND" data-n="Under the chat"><div class="vp-follow" data-k="bg:BACKGROUND_SURFACE_HIGH bd:BORDER_MUTED" data-n="Follow card">
@@ -52,11 +52,11 @@ export const chat = {
 }
 
 /** Reaction row for the partly scrolled-off message at the top of the announcements screen. */
-function reactionsRow(list, id, ui) {
+function reactionsRow(list, id, ui, base) {
 	return list.map(([e, n], i) => {
 		const on = ui.reacted?.[`${id}.${i}`]
-		return `<button class="vp-reaction${on ? ' on' : ''}" data-act="react:${id}.${i}" data-k="${on ? 'bg:REACTION_BACKGROUND_REACTED_DEFAULT bd:REACTION_BORDER_REACTED_DEFAULT fg:REACTION_TEXT_REACTED_DEFAULT' : 'bg:BACKGROUND_MOD_STRONG fg:REACTION_TEXT_DEFAULT'}" data-n="Reaction"><span data-fixed="Emoji">${e}</span>${on ? n + 1 : n}</button>`
-	}).join('') + `<button class="vp-reaction add" data-k="bg:BACKGROUND_MOD_STRONG fg:INTERACTIVE_ICON_DEFAULT" data-n="Add reaction" data-open="emoji">${icon('emoji', 18)}</button>`
+		return `<button class="vp-reaction${on ? ' on' : ''}" data-act="react:${id}.${i}" data-k="${reactionKeys(on, base)}" data-n="Reaction"><span data-fixed="Emoji">${e}</span>${on ? n + 1 : n}</button>`
+	}).join('') + `<button class="vp-reaction add" data-k="${reactionKeys(false, base)}" data-n="Add reaction" data-open="emoji">${icon('emoji', 18)}</button>`
 }
 
 export const botsChat = {
