@@ -122,7 +122,7 @@ export async function mount(host) {
 					<span class="st-spacer"></span>
 					<select class="st-device" aria-label="Device size">${DEVICES.map(([v, l]) => `<option value="${v}">${l}${v === 'custom' ? '' : ` ${v.replace('x', ' x ')}`}</option>`).join('')}</select>
 					<span class="st-custom" hidden><input type="number" min="300" max="600" class="st-w" aria-label="Width"> x <input type="number" min="560" max="1200" class="st-h" aria-label="Height"></span>
-					<select class="st-zoom" aria-label="Zoom"><option value="fit">Fit</option><option value="1">100%</option><option value="0.75">75%</option><option value="0.5">50%</option></select>
+					<select class="st-zoom" aria-label="Zoom"><option value="fit">Fit</option><option value="2">200%</option><option value="1.5">150%</option><option value="1">100%</option><option value="0.75">75%</option><option value="0.5">50%</option></select>
 				</div>
 				<div class="st-stage"><div class="st-stage-inner"><div class="st-phone-host"></div></div></div>
 				<p class="st-pv-foot"></p>
@@ -570,6 +570,7 @@ export async function mount(host) {
 				<div class="st-picker-slot"></div><div class="st-row"><button class="primary" data-cmd="apply-tab">Apply to theme</button><button data-cmd="reset-tab">Reset</button></div>
 				<p class="small muted" data-tab-status role="status">Applies to tabs on every base. Requires plugin export.</p></article>`
 			propPane.querySelector('.st-picker-slot').append(picker.el)
+			picker.setLabel('Edit tab colour')
 			picker.set(ui.tabColor)
 			picker.refreshPalette()
 			return
@@ -597,7 +598,7 @@ export async function mount(host) {
 			</header>
 			<p class="st-desc">${esc(description)}</p>
 			<p class="st-meta"><span class="st-verify ${v.level}">${esc(v.level === 'none' ? (known ? 'No documented example' : 'Unknown key') : m.tested ? `Tested on ${(raw ? 1 : m.tested.screens.length)} screen${raw || m.tested.screens.length === 1 ? '' : 's'}` : '')}</span><a href="${docsLink(key, raw)}">${(raw ? testedRaw : tested).has(key) ? 'See tested examples' : 'See in All colour keys'} &rarr;</a></p>
-			<div class="st-presence"></div>
+			<details class="st-screen-examples"><summary>Where this colour appears</summary><div class="st-presence"></div></details>
 			<div class="st-values"></div>
 			<div class="st-picker-slot"></div>
 			<div class="st-extra"></div>
@@ -616,6 +617,7 @@ export async function mount(host) {
 		if (!wrap) return
 		if (raw) {
 			const info = store.rawInfo(key)
+			picker.setLabel('Edit colour across all bases')
 			wrap.innerHTML = `<div class="st-base-row on">
 				<span class="st-sw big"><i style="${swatchStyle(info.value)}"></i></span>
 				<span class="st-base-name">All bases</span>
@@ -631,10 +633,11 @@ export async function mount(host) {
 			return
 		}
 		const target = ui.target
+		picker.setLabel(`Edit ${BASE_NAMES[target]} colour`)
 		wrap.innerHTML = BASES.map(b => {
 			const info = store.semanticInfo(key, b)
 			const linked = b !== 'dark' && store.theme.links[b]
-			return `<div class="st-base-row${b === target ? ' on' : ''}" data-target="${b}" role="button" tabindex="0" aria-label="Edit ${BASE_NAMES[b]}">
+			return `<div class="st-base-row${b === target ? ' on' : ''}" data-target="${b}" role="button" tabindex="0" aria-label="Edit ${BASE_NAMES[b]}${b === store.base ? ", currently previewing" : ""}" title="${esc(sourceLabel(info))}${b === store.base ? "; currently previewing" : ""}">
 				<span class="st-sw big"><i style="${swatchStyle(info.value)}"></i></span>
 				<span class="st-base-name">${BASE_NAMES[b]}${b === store.base ? ' <em>previewing</em>' : ''}</span>
 				<code>${esc(info.invalid ? info.own : info.value ?? 'none')}</code>
