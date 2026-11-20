@@ -88,6 +88,7 @@ const threadColors = {
 	midnight: ['NEUTRAL_96', 'NEUTRAL_10', 'NEUTRAL_12', 'BLUE_NEW_45'],
 }
 
+const threadTimestampColors = { dark: 'NEUTRAL_23', darker: 'NEUTRAL_29', light: 'NEUTRAL_41', midnight: 'NEUTRAL_35' }
 const chatSpineColors = { dark: 'NEUTRAL_47', darker: 'NEUTRAL_55', light: 'NEUTRAL_16', midnight: 'NEUTRAL_65' }
 
 function threadCard(thread, base) {
@@ -118,7 +119,7 @@ export function message(m, index, { grouped = false, ui = {}, dm = false, base =
 	if (m.threadStarted) return `<div class="vp-msg vp-thread-started" data-n="Thread started message">
 		<span class="vp-thread-start-icon" data-k="fg:ICON_MUTED" data-n="Thread started icon">${icon('thread', 20)}</span>
 		<i class="vp-thread-spine" data-k="bd:@${chatSpineColors[base]}" data-n="Chat thread connector (Android raw colour)"></i>
-		<div>${nameOf(u.id)} <span data-k="fg:TEXT_DEFAULT">started a thread:</span><b class="vp-thread-name" data-k="fg:TEXT_STRONG">${esc(m.thread.name)}</b><small data-k="fg:${base === 'darker' ? '@NEUTRAL_29' : 'TEXT_MUTED'}" data-n="Thread created timestamp">${esc(m.time)}</small>${threadCard(m.thread, base)}</div>
+		<div>${nameOf(u.id)} <span data-k="fg:TEXT_DEFAULT">started a thread:</span><b class="vp-thread-name" data-k="fg:TEXT_STRONG">${esc(m.thread.name)}</b><small data-k="fg:@${threadTimestampColors[base]}" data-n="Thread created timestamp (Android raw colour)">${esc(m.time)}</small>${threadCard(m.thread, base)}</div>
 	</div>`
 	const head = grouped ? '' : `<div class="vp-msg-head">${nameOf(u.id)}${u.bot ? '<span class="vp-app" data-k="bg:BACKGROUND_BRAND fg:WHITE" data-n="App badge">' + icon('check', 10) + 'APP</span>' : clanTag(u.tag)}<span class="vp-time" data-k="fg:TEXT_MUTED">${esc(m.time)}</span></div>`
 	const reply = m.reply ? `<div class="vp-reply"><i class="vp-reply-spine" data-k="bd:@${chatSpineColors[base]}" data-n="Reply line (Android raw colour)"></i>${avatar(m.reply.user, 16, { status: false })}${nameOf(m.reply.user)}${clanTag(users[m.reply.user]?.tag)}<span class="vp-reply-text" data-k="fg:TEXT_DEFAULT">${esc(m.reply.text)}</span></div>` : ''
