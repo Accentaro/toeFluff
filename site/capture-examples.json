@@ -84,6 +84,50 @@
         "originalAfter": "../genuine-runs/2026-11-17T23-00-33-971Z-36852/semantic-BACKGROUND_MOD_STRONG/after.png",
         "originalRestored": "../genuine-runs/2026-11-17T23-00-33-971Z-36852/semantic-BACKGROUND_MOD_STRONG/restored.png",
         "comparisonSha256": "a9a6349b3e170cc09ee04d7e2342e06dd171a67fb47c8dc45c8212a0eed01d76"
+      },
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "BACKGROUND_MOD_STRONG: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "BACKGROUND_MOD_STRONG: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "BACKGROUND_MOD_STRONG: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "BACKGROUND_MOD_STRONG: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
       }
     ],
     "BACKGROUND_SCRIM": [
@@ -102,6 +146,50 @@
         "originalAfter": "../genuine-runs/2026-11-17T21-52-28-508Z-14240/semantic-BACKGROUND_SCRIM/after.png",
         "originalRestored": "../genuine-runs/2026-11-17T21-52-28-508Z-14240/semantic-BACKGROUND_SCRIM/restored.png",
         "comparisonSha256": "f9c32f1fa5aa1958d769a812a0dba53d76319a05899f5019bafbaab4068fcfb5"
+      },
+      {
+        "image": "../images/verified/status-dark-scrims.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "BACKGROUND_SCRIM: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-scrims.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "BACKGROUND_SCRIM: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-scrims.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "BACKGROUND_SCRIM: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-scrims.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "BACKGROUND_SCRIM: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
       }
     ],
     "BACKGROUND_SURFACE_HIGH": [
@@ -174,6 +262,50 @@
         "description": "Colours V2 container outlines. Timestamp backgrounds use the Dark value on Ash, Dark and Onyx, and the Light value on Light. Android 352206; default at left, colour probes at right.",
         "reviewStatus": "verified",
         "base": "midnight"
+      },
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "BORDER_SUBTLE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "BORDER_SUBTLE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "BORDER_SUBTLE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "BORDER_SUBTLE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
       }
     ],
     "INPUT_BORDER_DEFAULT": [
@@ -226,6 +358,50 @@
         "originalAfter": "../genuine-runs/2026-11-17T20-23-18-495Z-37228/semantic-INTERACTIVE_TEXT_DEFAULT/after.png",
         "originalRestored": "../genuine-runs/2026-11-17T20-23-18-495Z-37228/semantic-INTERACTIVE_TEXT_DEFAULT/restored.png",
         "comparisonSha256": "12decde83c9b8285952097ce41ea983ffb0cac24b796ff230003fb9c9cecfe28"
+      },
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "INTERACTIVE_TEXT_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "INTERACTIVE_TEXT_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "INTERACTIVE_TEXT_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "INTERACTIVE_TEXT_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
       }
     ],
     "MOBILE_TEXT_HEADING_PRIMARY": [
@@ -244,6 +420,50 @@
         "originalAfter": "../genuine-runs/2026-11-17T20-23-18-495Z-37228/semantic-MOBILE_TEXT_HEADING_PRIMARY/after.png",
         "originalRestored": "../genuine-runs/2026-11-17T20-23-18-495Z-37228/semantic-MOBILE_TEXT_HEADING_PRIMARY/restored.png",
         "comparisonSha256": "c0c5d66fd830d5ed3003837d9329a78b8b55d02ed4ac1a8bb75b298224f17cf4"
+      },
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "MOBILE_TEXT_HEADING_PRIMARY: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "MOBILE_TEXT_HEADING_PRIMARY: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "MOBILE_TEXT_HEADING_PRIMARY: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "MOBILE_TEXT_HEADING_PRIMARY: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
       }
     ],
     "TEXT_MUTED": [
@@ -328,6 +548,50 @@
         "originalAfter": "../genuine-runs/2026-11-17T20-23-18-495Z-37228/semantic-TEXT_SUBTLE/after.png",
         "originalRestored": "../genuine-runs/2026-11-17T20-23-18-495Z-37228/semantic-TEXT_SUBTLE/restored.png",
         "comparisonSha256": "e9138a5f2e0fd1446d07370bdab734bef1faa2fc7ab67b003f9e81d0635e7879"
+      },
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_SUBTLE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_SUBTLE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_SUBTLE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_SUBTLE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
       }
     ],
     "WHITE": [
@@ -346,6 +610,50 @@
         "originalAfter": "../genuine-runs/2026-11-17T23-00-33-971Z-36852/semantic-WHITE/after.png",
         "originalRestored": "../genuine-runs/2026-11-17T23-00-33-971Z-36852/semantic-WHITE/restored.png",
         "comparisonSha256": "a28eb1e081ecea96908b0d0aa88c166376ad6a6a4102bb038600e3d77a3b6773"
+      },
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "WHITE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "WHITE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "WHITE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "WHITE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
       }
     ],
     "MOBILE_ACTIONSHEET_BACKGROUND": [
@@ -448,6 +756,50 @@
         "originalAfter": "../genuine-runs/2026-11-16T19-34-18-859Z-45220/semantic-REDESIGN_INPUT_CONTROL_SELECTED/after.png",
         "originalRestored": "../genuine-runs/2026-11-16T19-34-18-859Z-45220/semantic-REDESIGN_INPUT_CONTROL_SELECTED/restored.png",
         "comparisonSha256": "f994171d4515ffd88c9129c19503497dfb2a184bd58111f142060c883244da05"
+      },
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "REDESIGN_INPUT_CONTROL_SELECTED: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "REDESIGN_INPUT_CONTROL_SELECTED: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "REDESIGN_INPUT_CONTROL_SELECTED: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "REDESIGN_INPUT_CONTROL_SELECTED: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
       }
     ],
     "SPINE_DEFAULT": [
@@ -648,6 +1000,558 @@
         "description": "Colours V2 secondary pagination-button outlines, including disabled buttons. Android 352206; default at left, colour probes at right.",
         "reviewStatus": "verified",
         "base": "midnight"
+      }
+    ],
+    "MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT": [
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
+      }
+    ],
+    "CARD_MUTED_BG": [
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "CARD_MUTED_BG: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "CARD_MUTED_BG: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "CARD_MUTED_BG: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "CARD_MUTED_BG: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
+      }
+    ],
+    "TABLEROW_BACKGROUND_DEFAULT": [
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TABLEROW_BACKGROUND_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TABLEROW_BACKGROUND_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TABLEROW_BACKGROUND_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TABLEROW_BACKGROUND_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
+      }
+    ],
+    "TEXT_STRONG": [
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STRONG: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STRONG: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STRONG: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STRONG: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
+      }
+    ],
+    "INTERACTIVE_ICON_DEFAULT": [
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "INTERACTIVE_ICON_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "INTERACTIVE_ICON_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "INTERACTIVE_ICON_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "INTERACTIVE_ICON_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
+      }
+    ],
+    "TABLEROW_ICON_COLOR_DEFAULT": [
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TABLEROW_ICON_COLOR_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TABLEROW_ICON_COLOR_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TABLEROW_ICON_COLOR_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TABLEROW_ICON_COLOR_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
+      }
+    ],
+    "RADIO_BORDER_DEFAULT": [
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "RADIO_BORDER_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "RADIO_BORDER_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "RADIO_BORDER_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "RADIO_BORDER_DEFAULT: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
+      }
+    ],
+    "TEXT_STATUS_ONLINE": [
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STATUS_ONLINE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STATUS_ONLINE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STATUS_ONLINE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STATUS_ONLINE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
+      }
+    ],
+    "ANDROID_NAVIGATION_SCRIM_BACKGROUND": [
+      {
+        "image": "../images/verified/status-dark-scrims.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "ANDROID_NAVIGATION_SCRIM_BACKGROUND: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-scrims.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "ANDROID_NAVIGATION_SCRIM_BACKGROUND: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-scrims.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "ANDROID_NAVIGATION_SCRIM_BACKGROUND: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-scrims.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "ANDROID_NAVIGATION_SCRIM_BACKGROUND: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
+      }
+    ],
+    "TEXT_STATUS_IDLE": [
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STATUS_IDLE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STATUS_IDLE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STATUS_IDLE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STATUS_IDLE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
+      }
+    ],
+    "TEXT_STATUS_DND": [
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STATUS_DND: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STATUS_DND: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STATUS_DND: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STATUS_DND: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
+      }
+    ],
+    "TEXT_STATUS_OFFLINE": [
+      {
+        "image": "../images/verified/status-dark-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STATUS_OFFLINE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "dark",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-darker-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STATUS_OFFLINE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "darker",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-light-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STATUS_OFFLINE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "light",
+        "date": "2026-11-21",
+        "format": "before-after"
+      },
+      {
+        "image": "../images/verified/status-midnight-verified.png",
+        "screen": "status",
+        "width": 2160,
+        "height": 2400,
+        "description": "TEXT_STATUS_OFFLINE: Change Online Status. Native Discord 352.6; baseline left, colour probes right.",
+        "reviewStatus": "verified",
+        "base": "midnight",
+        "date": "2026-11-21",
+        "format": "before-after"
       }
     ]
   },

@@ -1104,3 +1104,10 @@
 
 .vp .vp-provider-riot-games { border-radius:50%; background:#eb0029; padding:4px; box-sizing:border-box; }
 .vp .vp-provider-battlenet { border-radius:50%; background:#0074e1; padding:2px; box-sizing:border-box; }
+
+/* Expanded online-status sheet. */
+.vp .vp-status-sheet { top: 108px; border: 0; padding: 28px 0 0; gap: 0; }
+.vp .vp-status-scroll { overflow-y: auto; min-height: 0; padding-bottom: 40px; }
+.vp .vp-status-scroll h1 { font-size: 18px; font-weight: 600; text-align: center; margin: 0 16px; }
+.vp .vp-status-sheet .vp-rowgroup { flex: none; overflow: hidden; border-radius: 16px; }
+.vp .vp-custom-status { margin: 24px 16px 0; width: calc(100% - 32px); border-radius: 16px; font-size: 16px; }

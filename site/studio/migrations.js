@@ -8,6 +8,7 @@
 // and the community map at https://github.com/blancodagoat/theme-fixer (Discord 345.0).
 // Every destination is checked against this site's token table at runtime.
 export const MIGRATIONS = {
+	MOBILE_ACTIONSHEET_GRADIANT_BACKGROUND_DEFAULT: ['MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT'],
 	// Backgrounds, most specific first
 	CHAT_BACKGROUND: ['CHANNEL_BACKGROUND_DEFAULT', 'STANDALONE_CHANNEL_CONTENT_BACKGROUND'],
 	BACKGROUND_MOBILE_PRIMARY: ['CHANNEL_BACKGROUND_DEFAULT', 'STANDALONE_CHANNEL_CONTENT_BACKGROUND', 'BACKGROUND_BASE_LOW'],

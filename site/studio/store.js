@@ -2,7 +2,7 @@
 // Colours resolve exactly like Discord + Valenced: a theme's semantic value wins for its base, otherwise the
 // semantic token's raw colour (theme raw override, else Discord's) at the token's opacity.
 import { HEX } from './color.js'
-import { readAppearance } from './appearance.js'
+import { readAppearance, messageSheetGradient } from './appearance.js'
 
 export const BASES = ['dark', 'darker', 'light', 'midnight']
 export const BASE_NAMES = { dark: 'Ash', darker: 'Dark', light: 'Light', midnight: 'Onyx' }
@@ -114,6 +114,10 @@ export function createStore({ tokens, initialTheme, persistent = true }) {
 		if (b !== 'dark' && theme.links[b]) {
 			const ash = theme.semantic.dark[key]
 			if (ash && HEX.test(ash)) return { ...info, value: expand(ash), source: 'linked' }
+		}
+		if (key === 'MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT' && theme.meta.appearance?.background) {
+			const value = messageSheetGradient(semanticInfo('BACKGROUND_BASE_LOWER', b).value, b)
+			if (value) return { ...info, value, source: 'gradient' }
 		}
 		return { ...info, value: token.value, source: token.rawSource === 'theme' ? 'raw' : 'default' }
 	}

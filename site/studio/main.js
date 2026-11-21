@@ -524,6 +524,7 @@ export async function mount(host) {
 	}
 
 	function sourceLabel(info) {
+		if (info.source === 'gradient') return 'Background-image gradient'
 		if (info.source === 'theme') return 'Your theme'
 		if (info.source === 'linked') return 'Follows Ash'
 		if (info.source === 'raw') return `Via ${info.token.raw} (themed)`
@@ -660,7 +661,7 @@ export async function mount(host) {
 			})
 			contrastHtml = `<h3>Contrast on ${BASE_NAMES[target]}</h3><div class="st-contrasts">${bgs.join('')}</div><p class="muted small">Chat, channel list and settings pages. 4.5:1 or more reads comfortably.</p>`
 		}
-		extra.innerHTML = `${tk?.raw ? `<h3>Discord's default on ${BASE_NAMES[target]}</h3><p class="st-chain"><code>${esc(info.default)}</code> = <button class="st-chip" data-select="${tk.raw}" data-raw="1">${tk.raw}</button>${tk.opacity < 1 ? ` at ${Math.round(tk.opacity * 100)}% opacity` : ''}. Editing ${tk.raw} changes every key that uses it.</p>` : ''}${contrastHtml}`
+		extra.innerHTML = `${info.source === 'gradient' ? '<h3>Background-image gradient</h3><p>Discord derives this sheet colour from BACKGROUND_BASE_LOWER while an image is enabled. Set this key directly to override it; its ordinary NEUTRAL fallback is not used for this gradient.</p>' : tk?.raw ? `<h3>Discord's default on ${BASE_NAMES[target]}</h3><p class="st-chain"><code>${esc(info.default)}</code> = <button class="st-chip" data-select="${tk.raw}" data-raw="1">${tk.raw}</button>${tk.opacity < 1 ? ` at ${Math.round(tk.opacity * 100)}% opacity` : ''}. Editing ${tk.raw} changes every key that uses it.</p>` : ''}${contrastHtml}`
 	}
 
 	propPane.addEventListener('click', e => {
@@ -1252,6 +1253,7 @@ export async function mount(host) {
 		syncHistoryButtons()
 	})
 	store.on('meta', () => {
+		if (ui.tab === 'property') renderProperty()
 		if (ui.tabPart) selectTabPart(ui.tabPart)
 		if (!metaEditing) {
 			$('.st-name').value = store.theme.meta.name

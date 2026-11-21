@@ -21,7 +21,7 @@ export const voice = {
 				<button class="vp-voice-pill sq" data-close data-k="bg:CONTROL_OVERLAY_SECONDARY_BACKGROUND_DEFAULT fg:CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT" data-n="Collapse button">${icon('chevronDown', 20)}</button>
 				<button class="vp-voice-pill" data-k="bg:CONTROL_OVERLAY_SECONDARY_BACKGROUND_DEFAULT fg:CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT" data-n="Channel name">${esc(c.name)} ${icon('chevronRight', 16)}</button>
 				<span class="grow"></span>
-				<button class="vp-voice-pill sq" data-k="bg:CONTROL_OVERLAY_SECONDARY_BACKGROUND_DEFAULT fg:CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT" data-n="Speaker button">${icon('speaker', 20)}</button>
+				<button class="vp-voice-pill sq" data-k="${joined ? 'bg:CONTROL_OVERLAY_PRIMARY_BACKGROUND_DEFAULT' : 'bg:CONTROL_OVERLAY_SECONDARY_BACKGROUND_DEFAULT fg:CONTROL_OVERLAY_SECONDARY_TEXT_DEFAULT'}" ${joined ? 'data-k-base="light"' : ''} data-n="Speaker button${joined ? ' background (Light slot)' : ''}">${joined ? `<span data-k="fg:CONTROL_OVERLAY_PRIMARY_TEXT_DEFAULT" data-k-base="midnight" data-n="Speaker icon (Onyx slot)">${icon('speaker', 20)}</span>` : icon('speaker', 20)}</button>
 			</div>
 			${people.length
 				? joined ? `<div class="vp-voice-tiles">${people.map(id => `<div class="vp-voice-tile${c.speaking?.includes(id) ? ' speaking' : ''}" data-k="bg:VOICE_VIDEO_VIDEO_TILE_BACKGROUND${c.speaking?.includes(id) ? ' bd:STATUS_SPEAKING' : ''}" data-n="${c.speaking?.includes(id) ? 'Speaking person tile' : 'Person tile'}">${avatar(id, 64, { status: false })}<span class="vp-voice-name" data-k="bg:BACKGROUND_SCRIM fg:TEXT_OVERLAY_LIGHT" data-n="Name label">${esc(users[id].name)}</span></div>`).join('')}</div>`
@@ -31,7 +31,7 @@ export const voice = {
 				${handle()}
 				<div class="vp-voice-controls">
 					<button class="vp-voice-btn" data-act="mute" data-k="${own.unmuted ? 'bg:CONTROL_SECONDARY_BACKGROUND_DEFAULT fg:INTERACTIVE_ICON_DEFAULT' : 'bg:BACKGROUND_VOICE_MUTED fg:ICON_VOICE_MUTED'}" data-n="${own.unmuted ? 'Microphone' : 'Microphone (muted)'}">${icon(own.unmuted ? 'mic' : 'micOff', 24)}</button>
-					<button class="vp-voice-join" data-act="join" data-k="${joined ? 'bg:CONTROL_CRITICAL_PRIMARY_BACKGROUND_DEFAULT fg:CONTROL_CRITICAL_PRIMARY_TEXT_DEFAULT' : 'bg:CONTROL_CONNECTED_BACKGROUND_DEFAULT fg:TEXT_OVERLAY_LIGHT'}" data-n="${joined ? 'Leave button' : 'Join Voice button'}">${joined ? 'Disconnect' : 'Join Voice'}</button>
+					<button class="vp-voice-join" data-act="join" data-k="${joined ? 'bg:CONTROL_CRITICAL_PRIMARY_BACKGROUND_DEFAULT fg:CONTROL_CRITICAL_PRIMARY_TEXT_DEFAULT' : 'bg:@GREEN_360 fg:TEXT_OVERLAY_LIGHT'}" data-n="${joined ? 'Leave button' : 'Join Voice button (raw fill; requires app restart)'}">${joined ? 'Disconnect' : 'Join Voice'}</button>
 					<button class="vp-voice-btn plain" data-act="na" data-k="fg:ICON_STRONG" data-n="Text chat button">${icon('chat', 24)}</button>
 				</div>
 			</div>

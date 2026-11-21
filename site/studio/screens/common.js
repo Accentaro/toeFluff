@@ -35,7 +35,7 @@ export function userPanel() {
 			<span class="vp-quest-icon" data-fixed="Quest artwork">${icon('quests', 22)}</span>
 			<span class="vp-quest-text"><b data-k="fg:TEXT_STRONG">Quest Completed!</b><span data-k="fg:TEXT_DEFAULT">Claim by 01/12/2026</span></span>
 		</div>
-		<div class="vp-nameplate" data-k="bg:MOBILE_FLOATINGBAR_BACKGROUND_NAMEPLATE" data-n="Nameplate" data-go="you">
+		<div class="vp-nameplate" data-k="bg:MOBILE_FLOATINGBAR_BACKGROUND_NAMEPLATE" data-n="Nameplate" data-go="you" data-hold="status">
 			${avatar('me', 40)}
 			<span class="vp-np-text"><span class="vp-np-name"><b data-k="fg:TEXT_STRONG">${me.name}</b>${clanTag(me.tag)}<span data-k="fg:TEXT_STRONG">${icon('chevronDown', 16)}</span></span><span class="vp-np-activity" data-k="fg:TEXT_DEFAULT"><span data-k="fg:TEXT_FEEDBACK_POSITIVE">${icon('games', 15)}</span>${me.activity}</span></span>
 			<button class="vp-overlay-btn" data-k="bg:CONTROL_OVERLAY_SECONDARY_BACKGROUND_DEFAULT fg:WHITE" data-n="Notification bell" data-act="bell" aria-label="Notifications">${icon('bell', 20)}</button>
@@ -66,16 +66,19 @@ export function channelHeader({ type = 'text', name, dm, sub, count }) {
 }
 
 /** Inline markdown used by mock messages: `code`, @mentions, **bold**, links. */
-export function md(text) {
+const inlineCodeColors = { dark: 'NEUTRAL_4', darker: 'NEUTRAL_5', light: 'NEUTRAL_72', midnight: 'NEUTRAL_12' }
+const codeTextColors = { dark: 'NEUTRAL_1', darker: 'NEUTRAL_8', light: 'NEUTRAL_66', midnight: 'NEUTRAL_15' }
+
+export function md(text, base = 'dark') {
 	return esc(text)
-		.replace(/`([^`]+)`/g, '<code class="vp-code" data-k="bg:BACKGROUND_CODE bd:BORDER_NORMAL" data-n="Inline code">$1</code>')
+		.replace(/`([^`]+)`/g, `<code class="vp-code" data-k="bg:BACKGROUND_CODE bd:BORDER_NORMAL fg:@${inlineCodeColors[base]}" data-n="Inline code (Android raw text colour)">$1</code>`)
 		.replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
 		.replace(/(^|\s)@(\w+)/g, '$1<span class="vp-mention" data-k="bg:MENTION_BACKGROUND fg:MENTION_FOREGROUND" data-n="Mention">@$2</span>')
 		.replace(/(https?:\/\/\S+)/g, '<span class="vp-link" data-k="fg:TEXT_LINK" data-n="Link">$1</span>')
 }
 
-function codeBlock(code, language) {
-	const keys = 'bg:BACKGROUND_CODE bd:BORDER_NORMAL fg:TEXT_CODE'
+function codeBlock(code, language, base) {
+	const keys = `bg:BACKGROUND_CODE bd:BORDER_NORMAL fg:@${codeTextColors[base]}`
 	if (!language) return `<pre class="vp-codeblock" data-k="${keys}" data-n="Code block">${esc(code)}</pre>`
 	return `<div class="vp-codeblock vp-code-listing" data-k="${keys}" data-n="Fenced code block"><div class="vp-code-language" data-k="fg:TEXT_MUTED" data-n="Code language">${esc(language)}</div><ol>${code.split('\n').map(line => `<li><code>${esc(line)}</code></li>`).join('')}</ol></div>`
 }
@@ -145,9 +148,9 @@ export function message(m, index, { grouped = false, ui = {}, dm = false, base =
 			<span class="vp-msg-avatar" data-go="profile:${u.id}${where}">${grouped ? '' : avatar(u.id, 40, { status: false })}</span>
 			<div class="vp-msg-body">
 				${head}
-				${m.text ? `<div class="vp-msg-text" data-k="fg:TEXT_STRONG">${md(m.text)}${m.edited ? ' <small data-k="fg:TEXT_MUTED">(edited)</small>' : ''}</div>` : ''}
-				${m.quote ? `<blockquote class="vp-markdown-quote" data-k="bl:SPINE_DEFAULT fg:TEXT_DEFAULT" data-n="Markdown quote">${md(m.quote)}</blockquote>` : ''}
-				${m.code ? codeBlock(m.code, m.language) : ''}
+				${m.text ? `<div class="vp-msg-text" data-k="fg:TEXT_STRONG">${md(m.text, base)}${m.edited ? ' <small data-k="fg:TEXT_MUTED">(edited)</small>' : ''}</div>` : ''}
+				${m.quote ? `<blockquote class="vp-markdown-quote" data-k="bl:SPINE_DEFAULT fg:TEXT_DEFAULT" data-n="Markdown quote">${md(m.quote, base)}</blockquote>` : ''}
+				${m.code ? codeBlock(m.code, m.language, base) : ''}
 				${m.spoiler ? `<div class="vp-msg-text" data-k="fg:TEXT_STRONG">${esc(m.spoiler[0])} <button class="vp-spoiler${ui.spoiler ? ' open' : ''}" data-act="spoiler" data-k="${ui.spoiler ? 'bg:SPOILER_REVEALED_BACKGROUND' : 'bg:SPOILER_HIDDEN_BACKGROUND'}" data-n="${ui.spoiler ? 'Revealed spoiler' : 'Hidden spoiler'}">${esc(m.spoiler[1])}</button></div>` : ''}
 				${m.embed ? embed(m.embed) : ''}
 				${m.embedV2 ? embedV2(m.embedV2, base) : ''}

@@ -445,6 +445,11 @@ export function importPlugin(text) {
 	const reg = clean.match(/registerTheme\(\s*(['"`])(.*?)\1\s*,\s*(['"`])(.*?)\3\s*,\s*\{/)
 	if (reg) {
 		const opts = findObject(clean.slice(reg.index), /registerTheme\([^{]*\{/)
+		if (!appearance && opts) {
+			const background = findObject(opts.text, /\bbackground\s*:\s*\{/)
+			if (background) meta.appearance = readAppearance({ background: parseObject(background, warnings, true) })
+			else if (/\bbackground\s*:/.test(opts.text)) warnings.push('The background uses an expression and could not be imported. Add its image in the Theme tab.')
+		}
 		const name = opts?.text.match(/\bname\s*:\s*(['"`])((?:\\.|(?!\1).)*)\1/)
 		const desc = opts?.text.match(/\bdescription\s*:\s*(['"`])((?:\\.|(?!\1).)*)\1/)
 		if (name) meta.name = unescape(name[2])
@@ -498,7 +503,7 @@ function findObject(src, re) {
 }
 
 /** Object literal of string values (one level of nesting for bases). Other expressions are reported. */
-function parseObject({ text }, warnings) {
+function parseObject({ text }, warnings, numbers = false) {
 	let i = 0
 	const ws = () => { while (/\s|,/.test(text[i] || '')) i++ }
 	function value() {
@@ -523,6 +528,7 @@ function parseObject({ text }, warnings) {
 		}
 		const expr = text.slice(i, j).trim()
 		i = j
+		if (numbers && /^-?(?:\d+\.?\d*|\.\d+)(?:e[+-]?\d+)?$/i.test(expr)) return Number(expr)
 		return { unsupported: expr }
 	}
 	function object() {

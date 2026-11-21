@@ -97,6 +97,8 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 			for (const k of detail.semantic || []) if (usedSemantic.has(k)) style.setProperty(`--c-${k}`, store.color(k) || 'transparent')
 			for (const k of detail.raw || []) if (usedRaw.has(k)) style.setProperty(`--r-${k}`, store.rawColor(k) || 'transparent')
 		}
+		// The sheet's gradient default also changes when the background surface colour changes.
+		style.setProperty('--c-MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT', store.color('MOBILE_ACTIONSHEET_GRADIENT_BACKGROUND_DEFAULT') || 'transparent')
 		paintBaseKeys(phone)
 		paintAppearance(phone, store, draftTabs)
 		phone.dataset.base = store.base

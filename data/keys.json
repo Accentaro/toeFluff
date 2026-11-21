@@ -13,7 +13,8 @@
         "emoji",
         "channelsheet",
         "gifs",
-        "stickers"
+        "stickers",
+        "status"
       ],
       "defaults": {
         "dark": "#0c0c0d80",
@@ -279,7 +280,8 @@
         "server",
         "alert",
         "channelsheet",
-        "native-mention-counts"
+        "native-mention-counts",
+        "status"
       ],
       "defaults": {
         "dark": "#97979f33",
@@ -332,7 +334,8 @@
         "component-buttons",
         "channelsheet",
         "typing-text-sheet",
-        "server-header-sheet"
+        "server-header-sheet",
+        "status"
       ],
       "defaults": {
         "dark": "#000000cc",
@@ -501,7 +504,8 @@
         "themes",
         "toast",
         "voice",
-        "embed-overview"
+        "embed-overview",
+        "status"
       ],
       "defaults": {
         "dark": "#97979f1f",
@@ -535,7 +539,8 @@
         "logout",
         "members",
         "mention",
-        "themes"
+        "themes",
+        "status"
       ],
       "defaults": {
         "dark": "#97979f14",
@@ -1234,7 +1239,7 @@
     {
       "key": "INTERACTIVE_ICON_DEFAULT",
       "area": "Icons",
-      "description": "Colours the category glyphs and backspace icon.",
+      "description": "Colours emoji category glyphs, backspace, and the custom-status emoji icon in Change Online Status.",
       "image": "images/verified/semantic-INTERACTIVE_ICON_DEFAULT-emoji.png",
       "screens": [
         "emoji",
@@ -1247,7 +1252,8 @@
         "gifs",
         "mention",
         "stickers",
-        "toast"
+        "toast",
+        "status"
       ],
       "defaults": {
         "dark": "#c5c6ca",
@@ -1320,7 +1326,8 @@
         "stickers",
         "themes",
         "voice",
-        "chat-text"
+        "chat-text",
+        "status"
       ],
       "defaults": {
         "dark": "#c5c6ca",
@@ -1430,7 +1437,8 @@
       "screens": [
         "actionsheet",
         "channelsheet",
-        "message-sheet-fictional"
+        "message-sheet-fictional",
+        "status"
       ],
       "defaults": {
         "dark": "#393a41",
@@ -1903,7 +1911,8 @@
         "stickers",
         "themes",
         "toast",
-        "chat-text"
+        "chat-text",
+        "status"
       ],
       "defaults": {
         "dark": "#ffffff",
@@ -1978,7 +1987,8 @@
         "colors",
         "accessibility",
         "appearance",
-        "native-form"
+        "native-form",
+        "status"
       ],
       "defaults": {
         "dark": "#97979fa3",
@@ -2451,7 +2461,8 @@
         "accessibility",
         "appearance",
         "members",
-        "themes"
+        "themes",
+        "status"
       ],
       "defaults": {
         "dark": "#97979f14",
@@ -2479,7 +2490,8 @@
         "channelsheet",
         "logout",
         "members",
-        "search"
+        "search",
+        "status"
       ],
       "defaults": {
         "dark": "#ffffff",
@@ -2722,7 +2734,8 @@
         "search",
         "stickers",
         "themes",
-        "toast"
+        "toast",
+        "status"
       ],
       "defaults": {
         "dark": "#ffffff",
@@ -2765,7 +2778,8 @@
         "toast",
         "chat-text",
         "server-header-colours",
-        "channel-settings-overview"
+        "channel-settings-overview",
+        "status"
       ],
       "defaults": {
         "dark": "#c5c6ca",
@@ -2853,7 +2867,8 @@
         "plugins",
         "settings",
         "themes",
-        "native-mention-counts"
+        "native-mention-counts",
+        "status"
       ],
       "defaults": {
         "dark": "#ffffff",
@@ -4419,7 +4434,8 @@
         "appearance",
         "colors",
         "native-form",
-        "native-slider"
+        "native-slider",
+        "status"
       ],
       "defaults": {
         "dark": "#5865f2",
@@ -5318,7 +5334,8 @@
         "gifs",
         "mention",
         "stickers",
-        "toast"
+        "toast",
+        "status"
       ],
       "defaults": {
         "dark": "#3d9e60",
@@ -5631,6 +5648,75 @@
       "reviewStatus": "verified",
       "tested": true,
       "image": "images/verified/semantic-MESSAGE_HIGHLIGHT_BACKGROUND_DEFAULT-chat-reply-target.png"
+    },
+    {
+      "key": "TEXT_STATUS_IDLE",
+      "area": "Status",
+      "description": "Colours the Idle symbol in the online status sheet.",
+      "image": "images/verified/status-dark-verified.png",
+      "screens": [
+        "status"
+      ],
+      "defaults": {
+        "dark": "#ffcb6e",
+        "darker": "#ffcb6e",
+        "light": "#faaa00",
+        "midnight": "#ffcb6e"
+      },
+      "raw": {
+        "dark": "YELLOW_NEW_22",
+        "darker": "YELLOW_NEW_22",
+        "light": "YELLOW_NEW_45",
+        "midnight": "YELLOW_NEW_22"
+      },
+      "reviewStatus": "verified",
+      "tested": true
+    },
+    {
+      "key": "TEXT_STATUS_DND",
+      "area": "Status",
+      "description": "Colours the Do Not Disturb symbol in the online status sheet.",
+      "image": "images/verified/status-dark-verified.png",
+      "screens": [
+        "status"
+      ],
+      "defaults": {
+        "dark": "#dc4247",
+        "darker": "#dc4247",
+        "light": "#d22d39",
+        "midnight": "#dc4247"
+      },
+      "raw": {
+        "dark": "RED_NEW_45",
+        "darker": "RED_NEW_45",
+        "light": "RED_NEW_50",
+        "midnight": "RED_NEW_45"
+      },
+      "reviewStatus": "verified",
+      "tested": true
+    },
+    {
+      "key": "TEXT_STATUS_OFFLINE",
+      "area": "Status",
+      "description": "Colours the Invisible symbol in the online status sheet.",
+      "image": "images/verified/status-dark-verified.png",
+      "screens": [
+        "status"
+      ],
+      "defaults": {
+        "dark": "#9d9ea5",
+        "darker": "#9d9ea5",
+        "light": "#5f606a",
+        "midnight": "#9d9ea5"
+      },
+      "raw": {
+        "dark": "NEUTRAL_27",
+        "darker": "NEUTRAL_27",
+        "light": "NEUTRAL_45",
+        "midnight": "NEUTRAL_27"
+      },
+      "reviewStatus": "verified",
+      "tested": true
     }
   ],
   "raw": [
@@ -5708,7 +5794,7 @@
     },
     {
       "key": "GREEN_360",
-      "description": "Supplies the positive activity icon colour in the profile bar.",
+      "description": "Supplies the positive activity icon colour in the profile bar and the Join Voice button fill. Join Voice was visually verified on Ash, Dark, Light and Onyx in Discord 352.6 with red and cyan cold-start probes; restart the app after editing because live changes can retain its cached fill.",
       "image": "images/verified/raw-GREEN_360-server.png",
       "value": "#23a55a",
       "usedBy": [
@@ -5720,7 +5806,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "server"
+        "server",
+        "voice"
       ]
     },
     {

@@ -1,4 +1,4 @@
-import { HEX, normalize } from './color.js'
+import { HEX, normalize, parse, rgbToHsl, hslToRgb, toHex } from './color.js'
 
 const esc = value => String(value ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c])
 export const TAB_PARTS = { row: 'Tab row background', text: 'All tab text', indicator: 'Selected tab indicator' }
@@ -31,6 +31,21 @@ export function readAppearance(value) {
 	}
 	return out
 }
+// Discord 352's action-sheet gradient token, with Valenced's background baseMix of 100.
+export function messageSheetGradient(surface, base) {
+	const light = base === 'light', weight = light ? 0.5 : 0.32, overlay = light ? 255 : 0
+	const rgb = parse(surface)
+	if (!rgb) return undefined
+	for (const channel of ['r', 'g', 'b']) {
+		const gradient = Math.min(255, Math.max(0, Math.round((rgb[channel] - (1 - weight) * overlay) / weight)))
+		rgb[channel] = Math.round(gradient * weight + (1 - weight) * overlay)
+	}
+	const { h, s, l } = rgbToHsl(rgb)
+	// Discord rounds the saturation adjustment to RGB before applying lightness.
+	const adjusted = rgbToHsl(parse(toHex(hslToRgb(h, s * (light ? 0.8 : 0.5), l))))
+	return toHex(hslToRgb(adjusted.h, adjusted.s, light ? 0.925 : 0.12))
+}
+
 export function mountBackground({ host, store, toast }) {
 	let draft, revision = 0
 	function render() {

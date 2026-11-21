@@ -9,9 +9,10 @@ import { chat, botsChat, embedExamples, embedOverview, chatExamples, threadChat,
 import { settings, pluginsPage, colors, you, userProfile, inboxPage } from './pages.js'
 import { components } from './components.js'
 import { msgmenu, alert, guildmenu, emoji } from './overlays.js'
+import { statusSheet } from './status.js'
 import { attach, gift, searchfilter, serverinfo, voice } from './more.js'
 
 const byId = list => Object.fromEntries(list.map(s => [s.id, s]))
 
 export const screens = byId([home, server, inboxPage, chat, botsChat, embedExamples, embedOverview, chatExamples, threadChat, dm, forum, search, channelInfo, you, userProfile, quests, shop, nitro, settings, pluginsPage, colors, appearance, discordTheme, webBrowser, advanced, ...settingsPages, components])
-export const overlays = byId([nitroBadgeSheet, questMenu, questWhy, questFilters, sensitiveFilterSheet, typingTextSheet, typingAnimationSheet, inputModeSheet, addConnectionSheet, msgmenu, emoji, alert, guildmenu, voice, attach, gift, searchfilter, serverinfo])
+export const overlays = byId([statusSheet, nitroBadgeSheet, questMenu, questWhy, questFilters, sensitiveFilterSheet, typingTextSheet, typingAnimationSheet, inputModeSheet, addConnectionSheet, msgmenu, emoji, alert, guildmenu, voice, attach, gift, searchfilter, serverinfo])
