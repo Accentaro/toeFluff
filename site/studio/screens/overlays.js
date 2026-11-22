@@ -63,7 +63,8 @@ const alerts = {
 }
 
 export const alert = {
-	id: 'alert', title: 'Alert', group: 'Menus and sheets', capture: 'alert', screen: 'home',
+	// Every key here re-checked on all four bases (352.6, 2026-11-21) on Discord's own "Plugins failed to start" alert
+	id: 'alert', title: 'Alert', group: 'Popups', capture: 'alert', screen: 'home',
 	render({ state }) {
 		const a = alerts[state.overlayParams?.arg] || alerts.default
 		const confirm = a.critical

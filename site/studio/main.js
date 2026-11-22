@@ -226,8 +226,10 @@ export async function mount(host) {
 
 	const groups = {}
 	for (const s of Object.values(preview.screens)) (groups[s.group] ??= []).push(['screen', s])
-	$('.st-screen').innerHTML = Object.entries(groups).map(([g, list]) => `<optgroup label="${esc(g)}">${list.map(([, s]) => `<option value="screen:${s.id}">${esc(s.title)}</option>`).join('')}</optgroup>`).join('')
-		+ `<optgroup label="Open over a screen">${Object.values(preview.overlays).map(o => `<option value="overlay:${o.id}">${esc(o.title)}</option>`).join('')}</optgroup>`
+	// Popups can be screens or overlays; both kinds share the Popups group
+	for (const o of Object.values(preview.overlays)) if (o.group === 'Popups') (groups.Popups ??= []).push(['overlay', o])
+	$('.st-screen').innerHTML = Object.entries(groups).map(([g, list]) => `<optgroup label="${esc(g)}">${list.map(([kind, s]) => `<option value="${kind}:${s.id}">${esc(s.title)}</option>`).join('')}</optgroup>`).join('')
+		+ `<optgroup label="Open over a screen">${Object.values(preview.overlays).filter(o => o.group !== 'Popups').map(o => `<option value="overlay:${o.id}">${esc(o.title)}</option>`).join('')}</optgroup>`
 	function syncScreenSelect() {
 		$('.st-screen').value = preview.overlay ? `overlay:${preview.overlay}` : `screen:${preview.screen}`
 	}
