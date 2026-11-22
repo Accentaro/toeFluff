@@ -388,7 +388,6 @@
 .vp .vp-picker-foot button { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; }
 .vp .vp-picker-foot .end { margin-left: auto; }
 .vp .vp-toasts { position: absolute; top: 56px; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 30; pointer-events: none; }
-.vp .vp-toast { display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 14px 0 10px; border-radius: 17px; border: 1px solid; font-size: 14px; font-weight: 500; animation: vp-pop .16s ease-out; transition: opacity .3s; }
 .vp .vp-toast.out { opacity: 0; }
 @keyframes vp-up { from { transform: translateY(40px); opacity: .4; } }
 @keyframes vp-pop { from { opacity: 0; scale: .96; } }
@@ -445,6 +444,7 @@
 .vp .vp-code-listing li { padding-left: 5px; }
 .vp .vp-code-language { font: 600 11px/16px system-ui, sans-serif; }
 .vp .vp-markdown-quote { margin: 6px 0 0; padding-left: 8px; border-left: 4px solid; }
+.vp .vp-toast { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 42px; max-width: 300px; padding: 8px 18px 8px 14px; border-radius: 16px; border: 1.5px solid; font-size: 16px; line-height: 21px; font-weight: 400; box-shadow: 0 6px 18px rgba(0, 0, 0, .28); animation: vp-pop .16s ease-out; transition: opacity .3s; }
 .vp .vp-typing { position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 4px; height: 26px; padding: 0 16px; font-size: 13px; }
 .vp .vp-typing b { font-weight: 700; }
 .vp .vp-typing-dots { display: inline-flex; gap: 3px; margin-right: 4px; }

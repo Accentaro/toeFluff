@@ -232,7 +232,7 @@ export function createPreview({ store, host, mock, onInspect, onNavigate }) {
 		el.className = 'vp-toast'
 		el.dataset.k = keys
 		el.dataset.n = kind === 'critical' ? 'Error notification' : kind === 'success' ? 'Success notification' : 'Toast'
-		el.innerHTML = `<span data-k="${iconKeys}">${toastIcon(kind)}</span><span data-k="fg:${kind === 'critical' || kind === 'success' ? 'TEXT_DEFAULT' : 'TEXT_STRONG'}">${text}</span>`
+		el.innerHTML = `<span data-k="${iconKeys}">${toastIcon(kind)}</span><span data-k="fg:TEXT_STRONG">${text}</span>`
 		toastEl.append(el)
 		applyKeys(el.parentElement)
 		setTimeout(() => el.classList.add('out'), state.holdToasts ? 1e9 : 2600)
