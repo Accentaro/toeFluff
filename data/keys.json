@@ -167,7 +167,8 @@
         "colors",
         "members",
         "themes",
-        "messages-fictional"
+        "messages-fictional",
+        "popup-banner"
       ],
       "defaults": {
         "dark": "#5865f2",
@@ -192,7 +193,8 @@
       "screens": [
         "chat",
         "members",
-        "native-markup-fictional"
+        "native-markup-fictional",
+        "message-formats"
       ],
       "defaults": {
         "dark": "#5865f214",
@@ -281,7 +283,8 @@
         "alert",
         "channelsheet",
         "native-mention-counts",
-        "status"
+        "status",
+        "message-formats"
       ],
       "defaults": {
         "dark": "#97979f33",
@@ -395,7 +398,8 @@
         "colors",
         "themes",
         "toast",
-        "native-surface-controls"
+        "native-surface-controls",
+        "popup-toasts"
       ],
       "defaults": {
         "dark": "#3f4048",
@@ -455,7 +459,9 @@
         "chat",
         "members",
         "toast",
-        "native-surface-controls"
+        "native-surface-controls",
+        "popup-toasts",
+        "message-formats"
       ],
       "defaults": {
         "dark": "#97979f33",
@@ -505,7 +511,9 @@
         "toast",
         "voice",
         "embed-overview",
-        "status"
+        "status",
+        "popup-banner",
+        "message-formats"
       ],
       "defaults": {
         "dark": "#97979f1f",
@@ -597,7 +605,8 @@
         "gifs",
         "mention",
         "stickers",
-        "toast"
+        "toast",
+        "message-formats"
       ],
       "defaults": {
         "dark": "#323339",
@@ -934,7 +943,8 @@
         "chatinput",
         "emoji",
         "keyboard",
-        "embed-overview"
+        "embed-overview",
+        "message-formats"
       ],
       "defaults": {
         "dark": "#393a41",
@@ -1282,7 +1292,8 @@
         "server",
         "alert",
         "mention",
-        "stickers"
+        "stickers",
+        "message-formats"
       ],
       "defaults": {
         "dark": "#ffffff",
@@ -1463,7 +1474,8 @@
       "screens": [
         "alert",
         "stickers",
-        "native-alert"
+        "native-alert",
+        "popup-banner"
       ],
       "defaults": {
         "dark": "#393a41",
@@ -1912,7 +1924,8 @@
         "themes",
         "toast",
         "chat-text",
-        "status"
+        "status",
+        "popup-banner"
       ],
       "defaults": {
         "dark": "#ffffff",
@@ -2559,7 +2572,8 @@
         "mention",
         "stickers",
         "toast",
-        "voice"
+        "voice",
+        "message-formats"
       ],
       "defaults": {
         "dark": "#f3f3f4",
@@ -2610,7 +2624,8 @@
         "accessibility",
         "colors",
         "themes",
-        "family-centre"
+        "family-centre",
+        "message-formats"
       ],
       "defaults": {
         "dark": "#76aff6",
@@ -2658,7 +2673,9 @@
         "themes",
         "toast",
         "chat-text",
-        "chat-timestamps"
+        "chat-timestamps",
+        "popup-banner",
+        "message-formats"
       ],
       "defaults": {
         "dark": "#abacb2",
@@ -2735,7 +2752,10 @@
         "stickers",
         "themes",
         "toast",
-        "status"
+        "status",
+        "popup-toasts",
+        "popup-banner",
+        "message-formats"
       ],
       "defaults": {
         "dark": "#ffffff",
@@ -4917,7 +4937,8 @@
       "image": "images/verified/semantic-TOAST_CRITICAL_BORDER-native-toast-components.png",
       "screens": [
         "component-toast-critical",
-        "native-toast-components"
+        "native-toast-components",
+        "popup-toasts"
       ],
       "defaults": {
         "dark": "#e24d50",
@@ -4941,7 +4962,8 @@
       "image": "images/verified/semantic-TOAST_CRITICAL_BACKGROUND-native-toast-components.png",
       "screens": [
         "component-toast-critical",
-        "native-toast-components"
+        "native-toast-components",
+        "popup-toasts"
       ],
       "defaults": {
         "dark": "#d22d3933",
@@ -4965,7 +4987,8 @@
       "image": "images/verified/semantic-ICON_FEEDBACK_CRITICAL-native-toast-components.png",
       "screens": [
         "component-toast-critical",
-        "native-toast-components"
+        "native-toast-components",
+        "popup-toasts"
       ],
       "defaults": {
         "dark": "#ffa09b",
@@ -4989,7 +5012,8 @@
       "image": "images/verified/semantic-TOAST_SUCCESS_BORDER-native-toast-components.png",
       "screens": [
         "component-toast-success",
-        "native-toast-components"
+        "native-toast-components",
+        "popup-toasts"
       ],
       "defaults": {
         "dark": "#34995b",
@@ -5013,7 +5037,8 @@
       "image": "images/verified/semantic-TOAST_SUCCESS_BACKGROUND-native-toast-components.png",
       "screens": [
         "component-toast-success",
-        "native-toast-components"
+        "native-toast-components",
+        "popup-toasts"
       ],
       "defaults": {
         "dark": "#00854533",
@@ -5037,7 +5062,8 @@
       "image": "images/verified/semantic-ICON_FEEDBACK_POSITIVE-native-toast-components.png",
       "screens": [
         "component-toast-success",
-        "native-toast-components"
+        "native-toast-components",
+        "popup-toasts"
       ],
       "defaults": {
         "dark": "#7ecb94",
@@ -5609,7 +5635,8 @@
       "image": "images/verified/semantic-MESSAGE_MENTIONED_BACKGROUND_DEFAULT-chat-mention-highlight.png",
       "screens": [
         "chat-mention-highlight",
-        "chat-reply-highlight"
+        "chat-reply-highlight",
+        "message-formats"
       ],
       "defaults": {
         "dark": "#f8a30014",
@@ -5732,7 +5759,8 @@
       "tested": true,
       "screens": [
         "family-centre",
-        "embed-overview"
+        "embed-overview",
+        "message-formats"
       ]
     },
     {
@@ -5837,7 +5865,10 @@
       ],
       "reviewStatus": "unverified",
       "tested": false,
-      "verificationNote": "No visual consumer verified on Android 352206. Historical examples remain unverified."
+      "verificationNote": "No visual consumer verified on Android 352206. Historical examples remain unverified.",
+      "screens": [
+        "message-formats"
+      ]
     },
     {
       "key": "GUILD_BOOSTING_PINK",
@@ -5909,7 +5940,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "native-button-fixture"
+        "native-button-fixture",
+        "message-formats"
       ]
     },
     {
@@ -5937,7 +5969,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "server-ash"
+        "server-ash",
+        "message-formats"
       ]
     },
     {
@@ -5954,7 +5987,8 @@
       "tested": true,
       "screens": [
         "server",
-        "embed-overview"
+        "embed-overview",
+        "message-formats"
       ]
     },
     {
@@ -6010,7 +6044,8 @@
       "tested": true,
       "screens": [
         "server-ash",
-        "embed-overview"
+        "embed-overview",
+        "message-formats"
       ]
     },
     {
@@ -6025,7 +6060,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "server-ash"
+        "server-ash",
+        "message-formats"
       ]
     },
     {
@@ -6107,7 +6143,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "family-centre"
+        "family-centre",
+        "message-formats"
       ]
     },
     {
@@ -6237,7 +6274,8 @@
       "tested": true,
       "screens": [
         "native-badge-common",
-        "embed-overview"
+        "embed-overview",
+        "message-formats"
       ]
     },
     {
@@ -6251,7 +6289,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "native-badge-common"
+        "native-badge-common",
+        "message-formats"
       ]
     },
     {
@@ -6546,7 +6585,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "native-help-messages"
+        "native-help-messages",
+        "message-formats"
       ]
     },
     {
@@ -6562,7 +6602,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "voice-preview-fictional"
+        "voice-preview-fictional",
+        "voice"
       ]
     },
     {
@@ -7060,7 +7101,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "native-markup-fictional"
+        "native-markup-fictional",
+        "message-formats"
       ]
     },
     {
@@ -7121,7 +7163,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "embed-overview"
+        "embed-overview",
+        "message-formats"
       ]
     },
     {
@@ -7150,7 +7193,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "embed-overview"
+        "embed-overview",
+        "message-formats"
       ]
     },
     {
@@ -7181,7 +7225,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "embed-overview"
+        "embed-overview",
+        "message-formats"
       ]
     },
     {
@@ -7196,7 +7241,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "embed-overview"
+        "embed-overview",
+        "message-formats"
       ]
     },
     {
@@ -7222,7 +7268,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "embed-overview"
+        "embed-overview",
+        "message-formats"
       ]
     },
     {
@@ -7238,7 +7285,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "embed-overview"
+        "embed-overview",
+        "message-formats"
       ]
     },
     {
@@ -7253,7 +7301,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "embed-overview"
+        "embed-overview",
+        "message-formats"
       ]
     },
     {
@@ -7265,7 +7314,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "embed-overview"
+        "embed-overview",
+        "message-formats"
       ]
     },
     {
@@ -7292,7 +7342,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "embed-overview"
+        "embed-overview",
+        "message-formats"
       ]
     },
     {
@@ -7307,7 +7358,8 @@
       "reviewStatus": "verified",
       "tested": true,
       "screens": [
-        "embed-overview"
+        "embed-overview",
+        "message-formats"
       ]
     }
   ],
