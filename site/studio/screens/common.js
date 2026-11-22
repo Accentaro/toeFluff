@@ -66,8 +66,8 @@ export function channelHeader({ type = 'text', name, dm, sub, count }) {
 }
 
 /** Inline markdown used by mock messages: `code`, @mentions, **bold**, links. */
-const inlineCodeColors = { dark: 'NEUTRAL_4', darker: 'NEUTRAL_5', light: 'NEUTRAL_72', midnight: 'NEUTRAL_12' }
-const codeTextColors = { dark: 'NEUTRAL_1', darker: 'NEUTRAL_8', light: 'NEUTRAL_66', midnight: 'NEUTRAL_15' }
+export const inlineCodeColors = { dark: 'NEUTRAL_4', darker: 'NEUTRAL_5', light: 'NEUTRAL_72', midnight: 'NEUTRAL_12' }
+export const codeTextColors = { dark: 'NEUTRAL_1', darker: 'NEUTRAL_8', light: 'NEUTRAL_66', midnight: 'NEUTRAL_15' }
 
 export function md(text, base = 'dark') {
 	return esc(text)
@@ -84,7 +84,7 @@ function codeBlock(code, language, base) {
 }
 
 // Discord Android 352206 reads these native raw resources, bypassing semantic overrides.
-const threadColors = {
+export const threadColors = {
 	dark: ['NEUTRAL_64', 'NEUTRAL_1', 'NEUTRAL_4', 'BLUE_NEW_27'],
 	darker: ['NEUTRAL_79', 'NEUTRAL_2', 'NEUTRAL_5', 'BLUE_NEW_37'],
 	light: ['NEUTRAL_1', 'NEUTRAL_76', 'NEUTRAL_72', 'BLUE_NEW_53'],
@@ -93,8 +93,8 @@ const threadColors = {
 
 // Hidden spoiler cover and mention bar are drawn natively from raw colours (all four bases checked on 352.6).
 export const spoilerColors = { dark: 'NEUTRAL_36', darker: 'NEUTRAL_43', light: 'NEUTRAL_31', midnight: 'NEUTRAL_47' }
-const threadTimestampColors = { dark: 'NEUTRAL_23', darker: 'NEUTRAL_29', light: 'NEUTRAL_41', midnight: 'NEUTRAL_35' }
-const chatSpineColors = { dark: 'NEUTRAL_47', darker: 'NEUTRAL_55', light: 'NEUTRAL_16', midnight: 'NEUTRAL_65' }
+export const threadTimestampColors = { dark: 'NEUTRAL_23', darker: 'NEUTRAL_29', light: 'NEUTRAL_41', midnight: 'NEUTRAL_35' }
+export const chatSpineColors = { dark: 'NEUTRAL_47', darker: 'NEUTRAL_55', light: 'NEUTRAL_16', midnight: 'NEUTRAL_65' }
 
 function threadCard(thread, base) {
 	const [background, title, text, link] = threadColors[base]
@@ -177,7 +177,7 @@ function embed(e, base) {
 }
 
 // Android 352206 Components V2 text and separators consume raw colours.
-const embedV2Colors = {
+export const embedV2Colors = {
 	dark: ['NEUTRAL_4', 'NEUTRAL_23'], darker: ['NEUTRAL_5', 'NEUTRAL_29'],
 	light: ['NEUTRAL_72', 'NEUTRAL_41'], midnight: ['NEUTRAL_12', 'NEUTRAL_35'],
 }

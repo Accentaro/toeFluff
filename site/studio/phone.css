@@ -444,6 +444,22 @@
 .vp .vp-code-listing li { padding-left: 5px; }
 .vp .vp-code-language { font: 600 11px/16px system-ui, sans-serif; }
 .vp .vp-markdown-quote { margin: 6px 0 0; padding-left: 8px; border-left: 4px solid; }
+.vp .vp-fmt-h1 { font-size: 24px; line-height: 30px; font-weight: 800; margin-top: 2px; }
+.vp .vp-fmt-h2 { font-size: 20px; line-height: 26px; font-weight: 700; margin-top: 4px; }
+.vp .vp-fmt-h3 { font-size: 17px; line-height: 23px; font-weight: 700; margin-top: 4px; }
+.vp .vp-fmt-sub { font-size: 12.5px; line-height: 18px; margin: 2px 0; }
+.vp .vp-fmt-list { list-style: none; margin: 2px 0; padding: 0; }
+.vp .vp-fmt-list li { display: flex; align-items: center; gap: 10px; }
+.vp .vp-fmt-list i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex: none; }
+.vp .vp-fmt-time { border-radius: 4px; padding: 0 3px; }
+.vp .vp-fmt-embed { padding: 10px 14px 12px; line-height: 21px; display: flex; flex-direction: column; gap: 4px; }
+.vp .vp-fmt-embed p { margin: 0; }
+.vp .vp-fmt-e-author { font-size: 13px; font-weight: 600; }
+.vp .vp-fmt-e-field { display: flex; flex-direction: column; margin-top: 4px; }
+.vp .vp-fmt-image { width: 200px; height: 200px; margin-top: 6px; border-radius: 14px; background: linear-gradient(160deg, #3da35d, #1f6b3a); }
+.vp .vp-fmt-video { height: 150px; margin-top: 4px; border-radius: 10px; background: linear-gradient(120deg, #2a3a6a, #b5a8c9); display: grid; place-items: center; }
+.vp .vp-fmt-video i { width: 46px; height: 46px; border-radius: 50%; background: rgba(0, 0, 0, .6); }
+.vp .vp-fmt-video i::after { content: ''; display: block; margin: 14px 0 0 18px; border-left: 14px solid #fff; border-top: 9px solid transparent; border-bottom: 9px solid transparent; }
 .vp .vp-toast { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 42px; max-width: 300px; padding: 8px 18px 8px 14px; border-radius: 16px; border: 1.5px solid; font-size: 16px; line-height: 21px; font-weight: 400; box-shadow: 0 6px 18px rgba(0, 0, 0, .28); animation: vp-pop .16s ease-out; transition: opacity .3s; }
 .vp .vp-toast > span:first-child:not(:last-child) { display: inline-flex; flex: none; }
 .vp .vp-toast.vp-toast-plain { padding-left: 18px; }
