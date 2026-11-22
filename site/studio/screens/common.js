@@ -149,7 +149,7 @@ export function message(m, index, { grouped = false, ui = {}, dm = false, base =
 			<div class="vp-msg-body">
 				${head}
 				${m.text ? `<div class="vp-msg-text" data-k="fg:TEXT_STRONG">${md(m.text, base)}${m.edited ? ' <small data-k="fg:TEXT_MUTED">(edited)</small>' : ''}</div>` : ''}
-				${m.quote ? `<blockquote class="vp-markdown-quote" data-k="bl:SPINE_DEFAULT fg:TEXT_DEFAULT" data-n="Markdown quote">${md(m.quote, base)}</blockquote>` : ''}
+				${m.quote ? `<blockquote class="vp-markdown-quote" data-k="bl:@${chatSpineColors[base]} fg:TEXT_STRONG" data-n="Markdown quote (bar is an Android raw colour)">${md(m.quote, base)}</blockquote>` : ''}
 				${m.code ? codeBlock(m.code, m.language, base) : ''}
 				${m.spoiler ? `<div class="vp-msg-text" data-k="fg:TEXT_STRONG">${esc(m.spoiler[0])} <button class="vp-spoiler${ui.spoiler ? ' open' : ''}" data-act="spoiler" data-k="${ui.spoiler ? 'bg:SPOILER_REVEALED_BACKGROUND' : 'bg:SPOILER_HIDDEN_BACKGROUND'}" data-n="${ui.spoiler ? 'Revealed spoiler' : 'Hidden spoiler'}">${esc(m.spoiler[1])}</button></div>` : ''}
 				${m.embed ? embed(m.embed, base) : ''}
