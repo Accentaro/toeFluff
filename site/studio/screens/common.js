@@ -91,6 +91,8 @@ const threadColors = {
 	midnight: ['NEUTRAL_96', 'NEUTRAL_10', 'NEUTRAL_12', 'BLUE_NEW_45'],
 }
 
+// Hidden spoiler cover and mention bar are drawn natively from raw colours (all four bases checked on 352.6).
+export const spoilerColors = { dark: 'NEUTRAL_36', darker: 'NEUTRAL_43', light: 'NEUTRAL_31', midnight: 'NEUTRAL_47' }
 const threadTimestampColors = { dark: 'NEUTRAL_23', darker: 'NEUTRAL_29', light: 'NEUTRAL_41', midnight: 'NEUTRAL_35' }
 const chatSpineColors = { dark: 'NEUTRAL_47', darker: 'NEUTRAL_55', light: 'NEUTRAL_16', midnight: 'NEUTRAL_65' }
 
@@ -151,7 +153,7 @@ export function message(m, index, { grouped = false, ui = {}, dm = false, base =
 				${m.text ? `<div class="vp-msg-text" data-k="fg:TEXT_STRONG">${md(m.text, base)}${m.edited ? ' <small data-k="fg:TEXT_MUTED">(edited)</small>' : ''}</div>` : ''}
 				${m.quote ? `<blockquote class="vp-markdown-quote" data-k="bl:@${chatSpineColors[base]} fg:TEXT_STRONG" data-n="Markdown quote (bar is an Android raw colour)">${md(m.quote, base)}</blockquote>` : ''}
 				${m.code ? codeBlock(m.code, m.language, base) : ''}
-				${m.spoiler ? `<div class="vp-msg-text" data-k="fg:TEXT_STRONG">${esc(m.spoiler[0])} <button class="vp-spoiler${ui.spoiler ? ' open' : ''}" data-act="spoiler" data-k="${ui.spoiler ? 'bg:SPOILER_REVEALED_BACKGROUND' : 'bg:SPOILER_HIDDEN_BACKGROUND'}" data-n="${ui.spoiler ? 'Revealed spoiler' : 'Hidden spoiler'}">${esc(m.spoiler[1])}</button></div>` : ''}
+				${m.spoiler ? `<div class="vp-msg-text" data-k="fg:TEXT_STRONG">${esc(m.spoiler[0])} <button class="vp-spoiler${ui.spoiler ? ' open' : ''}" data-act="spoiler" data-k="${ui.spoiler ? 'bg:SPOILER_REVEALED_BACKGROUND' : `bg:@${spoilerColors[base]}`}" data-n="${ui.spoiler ? 'Revealed spoiler' : 'Hidden spoiler (Android raw colour)'}">${esc(m.spoiler[1])}</button></div>` : ''}
 				${m.embed ? embed(m.embed, base) : ''}
 				${m.embedV2 ? embedV2(m.embedV2, base) : ''}
 				${reactions(m.reactions, index, ui.reacted, base)}
