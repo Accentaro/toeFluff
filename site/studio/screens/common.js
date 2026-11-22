@@ -73,7 +73,7 @@ export function md(text, base = 'dark') {
 	return esc(text)
 		.replace(/`([^`]+)`/g, `<code class="vp-code" data-k="bg:BACKGROUND_CODE bd:BORDER_NORMAL fg:@${inlineCodeColors[base]}" data-n="Inline code (Android raw text colour)">$1</code>`)
 		.replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
-		.replace(/(^|\s)@(\w+)/g, '$1<span class="vp-mention" data-k="bg:MENTION_BACKGROUND fg:MENTION_FOREGROUND" data-n="Mention">@$2</span>')
+		.replace(/(^|\s)@(\w+)/g, `$1<span class="vp-mention${base === 'light' ? ' light' : ''}" data-fixed="Mention (fixed colour; no key changes it on 352.6)">@$2</span>`)
 		.replace(/(https?:\/\/\S+)/g, '<span class="vp-link" data-k="fg:TEXT_LINK" data-n="Link">$1</span>')
 }
 
@@ -141,7 +141,7 @@ export function message(m, index, { grouped = false, ui = {}, dm = false, base =
 	</div>`
 	const mentioned = m.mentionsMe ? ' data-k="bg:MESSAGE_MENTIONED_BACKGROUND_DEFAULT"' : ''
 	return `<div class="vp-msg${grouped ? ' grouped' : ''}${m.mentionsMe ? ' mentioned' : ''}" data-hold="msgmenu:${index}" data-message-own="${m.user === 'me'}" data-n="${m.mentionsMe ? 'Message that mentions you' : 'Message'}"${mentioned}>
-		${m.mentionsMe ? '<i class="vp-mention-bar" data-k="bg:TEXT_FEEDBACK_WARNING" data-n="Mention highlight bar"></i>' : ''}
+		${m.mentionsMe ? '<i class="vp-mention-bar" data-k="bg:@YELLOW_300" data-n="Mention highlight bar (Android raw colour)"></i>' : ''}
 		${reply}
 		<div class="vp-msg-row">
 			${m.thread ? `<i class="vp-thread-spine" data-k="bd:@${chatSpineColors[base]}" data-n="Chat thread connector (Android raw colour)"></i>` : ''}

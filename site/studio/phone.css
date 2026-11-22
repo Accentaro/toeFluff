@@ -164,7 +164,8 @@
 .vp .vp-msg-text { font-size: 16px; line-height: 22.5px; overflow-wrap: anywhere; margin-top: 1px; }
 .vp .vp-msg-text small { font-size: 13px; }
 .vp .vp-code { font: 14px/18px ui-monospace, Consolas, monospace; padding: 1px 3px; border: 1px solid; border-radius: 4px; }
-.vp .vp-mention { border-radius: 4px; padding: 0 2px; font-weight: 500; }
+.vp .vp-mention { border-radius: 4px; padding: 0 2px; font-weight: 500; background: rgba(93, 100, 241, .31); color: #c9cdfb; }
+.vp .vp-mention.light { background: #e7e9fd; color: #505cdc; }
 .vp .vp-reactions { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
 .vp .vp-reaction { display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 8px; border-radius: 8px; font-size: 14px; font-weight: 600; border: 1px solid transparent; }
 .vp .vp-reaction span { font-size: 19px; line-height: 1; }
