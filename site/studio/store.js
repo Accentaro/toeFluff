@@ -21,6 +21,12 @@ export function emptyTheme() {
 	}
 }
 
+/** Runs fn and returns { value } or { error }, so each caller decides how to handle a failure. */
+export function attempt(fn) {
+	try { return { value: fn() } }
+	catch (error) { return { error } }
+}
+
 /** Fills in anything missing so older saves and imports always have the full shape. */
 export function normalizeTheme(t) {
 	const base = emptyTheme()
@@ -28,8 +34,9 @@ export function normalizeTheme(t) {
 	if (meta.appearance) meta.appearance = readAppearance(meta.appearance)
 	const background = meta.extra.background
 	if (!meta.appearance && background?.url) {
-		try { meta.appearance = readAppearance({ background: { path: background.url, opacity: background.alpha, blur: background.blur } }) }
-		catch { /* Keep unsupported imported fields intact for legacy export. */ }
+		const legacy = attempt(() => readAppearance({ background: { path: background.url, opacity: background.alpha, blur: background.blur } }))
+		if (legacy.error) console.warn('Keeping the legacy background as imported:', legacy.error.message)
+		else meta.appearance = legacy.value
 	}
 	return {
 		meta,
@@ -60,12 +67,9 @@ export function createStore({ tokens, initialTheme, persistent = true }) {
 	const isKnownRaw = key => key in tokens.raw
 
 	function load() {
-		try {
-			const saved = JSON.parse(localStorage.getItem(STORE_KEY))
-			return saved ? normalizeTheme(saved) : null
-		} catch {
-			return null
-		}
+		const stored = attempt(() => JSON.parse(localStorage.getItem(STORE_KEY)))
+		if (stored.error) console.warn('Could not read the saved theme, starting fresh:', stored.error)
+		return stored.value ? normalizeTheme(stored.value) : null
 	}
 
 	let saveTimer

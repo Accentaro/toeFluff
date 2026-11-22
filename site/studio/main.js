@@ -1,6 +1,6 @@
 // Theme studio: key navigator, editor and inspector around the interactive phone.
 // Loaded on demand from app.js, which has already fetched the shared reference data into window.VT.
-import { BASES, BASE_NAMES, LINKABLE } from './store.js'
+import { BASES, BASE_NAMES, LINKABLE, attempt } from './store.js'
 import { createPreview, PROPS } from './preview.js'
 import { createPicker } from './picker.js'
 import { exportLegacy, exportManifest, exportPlugin, importText, setRawPalette, validate } from './formats.js'
@@ -26,7 +26,9 @@ export async function mount(host) {
 	const areas = VT.descriptions.areas
 	const screenLabel = id => VT.screenNames[id] || id
 
-	const saved = (() => { try { return JSON.parse(localStorage.getItem(UI_KEY)) || {} } catch { return {} } })()
+	const storedUi = attempt(() => JSON.parse(localStorage.getItem(UI_KEY)))
+	if (storedUi.error) console.warn('Could not read the saved studio view:', storedUi.error)
+	const saved = storedUi.value || {}
 	const ui = {
 		kind: saved.kind || 'semantic',
 		scope: saved.scope || 'tested',
