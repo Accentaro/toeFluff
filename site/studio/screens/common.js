@@ -152,7 +152,7 @@ export function message(m, index, { grouped = false, ui = {}, dm = false, base =
 				${m.quote ? `<blockquote class="vp-markdown-quote" data-k="bl:SPINE_DEFAULT fg:TEXT_DEFAULT" data-n="Markdown quote">${md(m.quote, base)}</blockquote>` : ''}
 				${m.code ? codeBlock(m.code, m.language, base) : ''}
 				${m.spoiler ? `<div class="vp-msg-text" data-k="fg:TEXT_STRONG">${esc(m.spoiler[0])} <button class="vp-spoiler${ui.spoiler ? ' open' : ''}" data-act="spoiler" data-k="${ui.spoiler ? 'bg:SPOILER_REVEALED_BACKGROUND' : 'bg:SPOILER_HIDDEN_BACKGROUND'}" data-n="${ui.spoiler ? 'Revealed spoiler' : 'Hidden spoiler'}">${esc(m.spoiler[1])}</button></div>` : ''}
-				${m.embed ? embed(m.embed) : ''}
+				${m.embed ? embed(m.embed, base) : ''}
 				${m.embedV2 ? embedV2(m.embedV2, base) : ''}
 				${reactions(m.reactions, index, ui.reacted, base)}
 				${m.thread ? threadCard(m.thread, base) : ''}
@@ -161,12 +161,15 @@ export function message(m, index, { grouped = false, ui = {}, dm = false, base =
 	</div>`
 }
 
-function embed(e) {
+// Embed titles and links ignore TEXT_LINK and take a raw blue per base (checked on all four bases, 352.6).
+export const embedLinkColors = { dark: 'BLUE_NEW_27', darker: 'BLUE_NEW_37', light: 'BLUE_NEW_53', midnight: 'BLUE_NEW_45' }
+
+function embed(e, base) {
 	return `<div class="vp-embed" data-k="bg:EMBED_BACKGROUND" data-n="V1 embed" style="border-left-color:${e.accent}">
-		<b class="vp-embed-title" data-k="fg:TEXT_LINK">${esc(e.title)}</b>
-		<ol class="vp-embed-list" data-k="fg:TEXT_DEFAULT">${e.lines.map(([n, plays, bold]) => `<li><span data-k="fg:TEXT_LINK">${esc(n)}</span> - <b>${plays}</b> plays</li>`).join('')}</ol>
+		<b class="vp-embed-title" data-k="fg:@${embedLinkColors[base]}" data-n="Embed title (Android raw colour)">${esc(e.title)}</b>
+		<ol class="vp-embed-list" data-k="fg:TEXT_DEFAULT">${e.lines.map(([n, plays, bold]) => `<li><span data-k="fg:@${embedLinkColors[base]}" data-n="Embed link (Android raw colour)">${esc(n)}</span> - <b>${plays}</b> plays</li>`).join('')}</ol>
 		<p data-k="fg:TEXT_DEFAULT">${esc(e.footer)}</p>
-		<small data-k="fg:TEXT_DEFAULT"><b>${esc(e.meta)}</b><br>${esc(e.sub)}</small>
+		<small data-k="fg:@${embedV2Colors[base][0]}" data-n="Embed footer (Android raw colour)"><b>${esc(e.meta)}</b><br>${esc(e.sub)}</small>
 		<span class="vp-embed-thumb" data-fixed="Embed image (content)"></span>
 	</div>`
 }
@@ -179,7 +182,7 @@ const embedV2Colors = {
 
 function embedV2(e, base) {
 	const [text, divider] = embedV2Colors[base]
-	const link = { dark: 'BLUE_NEW_27', darker: 'BLUE_NEW_37', light: 'BLUE_NEW_53', midnight: 'BLUE_NEW_45' }[base]
+	const link = embedLinkColors[base]
 	const timestamp = base === 'light' ? 'PRIMARY_600' : 'PRIMARY_200'
 	return `<div class="vp-embed-v2${e.days ? ' vp-embed-v2-overview' : ''}" data-k="bg:EMBED_BACKGROUND bd:BORDER_SUBTLE" data-n="V2 container">
 		${e.accent ? `<i class="vp-embed-v2-accent" style="background:${esc(e.accent)}" data-fixed="V2 accent colour (set by the bot)"></i>` : ''}
