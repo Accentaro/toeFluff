@@ -1,5 +1,7 @@
 // Voice channel panel, chat box sheets (attachments, gifts), search filters and the server info page.
 // Voice panel keys are from the Discord 352 capture; the others follow the sheets they share a design with.
+// Voice panel re-checked on all four bases (352.6, 2026-11-21): the muted mic icon only follows raw RED_400, the
+// unmuted mic has no fill, and Join Voice only follows raw GREEN_360.
 import { users, valenced, serverIcon, servers } from '../mock.js'
 import { valencedWordmark, avatar, esc, icon, navBar, rowGroup, sectionLabel, statusBar, switchEl } from './common.js'
 
@@ -30,7 +32,7 @@ export const voice = {
 			<div class="vp-voice-bar" data-k="bg:MOBILE_FLOATINGBAR_BACKGROUND bd:BORDER_SUBTLE" data-n="Voice controls">
 				${handle()}
 				<div class="vp-voice-controls">
-					<button class="vp-voice-btn" data-act="mute" data-k="${own.unmuted ? 'bg:CONTROL_SECONDARY_BACKGROUND_DEFAULT fg:INTERACTIVE_ICON_DEFAULT' : 'bg:BACKGROUND_VOICE_MUTED fg:ICON_VOICE_MUTED'}" data-n="${own.unmuted ? 'Microphone' : 'Microphone (muted)'}">${icon(own.unmuted ? 'mic' : 'micOff', 24)}</button>
+					<button class="vp-voice-btn" data-act="mute" data-k="${own.unmuted ? 'fg:ICON_STRONG' : 'bg:BACKGROUND_VOICE_MUTED fg:@RED_400'}" data-n="${own.unmuted ? 'Microphone (no fill)' : 'Microphone (muted; icon is a raw colour)'}">${icon(own.unmuted ? 'mic' : 'micOff', 24)}</button>
 					<button class="vp-voice-join" data-act="join" data-k="${joined ? 'bg:CONTROL_CRITICAL_PRIMARY_BACKGROUND_DEFAULT fg:CONTROL_CRITICAL_PRIMARY_TEXT_DEFAULT' : 'bg:@GREEN_360 fg:TEXT_OVERLAY_LIGHT'}" data-n="${joined ? 'Leave button' : 'Join Voice button (raw fill; requires app restart)'}">${joined ? 'Disconnect' : 'Join Voice'}</button>
 					<button class="vp-voice-btn plain" data-act="na" data-k="fg:ICON_STRONG" data-n="Text chat button">${icon('chat', 24)}</button>
 				</div>
